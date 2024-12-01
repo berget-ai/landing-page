@@ -24,7 +24,8 @@ export function Hero() {
       </div>
       
       <div className="container mx-auto px-4 py-32">
-        <div className="max-w-3xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8">
             <Shield className="w-4 h-4 mr-2" />
             <span className="text-sm">A secure, compliant and sustainable AI-cloud for Europe</span>
@@ -50,7 +51,15 @@ export function Hero() {
             </Button>
           </div>
 
-          <div className="mt-8 mb-12">
+
+          <SocialProof />
+          
+          <div className="mt-24 lg:hidden">
+            <ClientLogos />
+          </div>
+          </div>
+
+          <div className="lg:pl-8">
             <div className="bg-black/50 backdrop-blur-sm rounded-lg border border-white/10 overflow-hidden">
               <div className="flex items-center gap-2 px-4 py-2 border-b border-white/10 bg-white/5">
                 <div className="flex gap-1.5">
@@ -76,11 +85,9 @@ export function Hero() {
               </div>
             </div>
           </div>
-
-          <SocialProof />
         </div>
 
-        <div className="mt-24">
+        <div className="hidden lg:block mt-24">
           <ClientLogos />
         </div>
       </div>
