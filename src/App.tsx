@@ -3,12 +3,12 @@ import { Footer } from '@/components/layout/Footer';
 import { Hero } from '@/components/sections/Hero';
 import { Features } from '@/components/sections/Features';
 import { ModelInference } from '@/components/sections/ModelInference';
-import { NetworkConnectivity } from '@/components/sections/NetworkConnectivity';
-import { RagRecipes } from '@/components/sections/RagRecipes';
+import { Compliance } from '@/components/sections/Compliance';
 import { Testimonials } from '@/components/sections/Testimonials';
 import { Pricing } from '@/components/sections/Pricing';
-import { Success } from '@/components/sections/Success';
 import { ChatWidget } from '@/components/chat/ChatWidget';
+import { RagRecipes } from './components/sections/RagRecipes';
+import { Success } from './components/sections/Success';
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
         <Hero />
         <Features />
         <ModelInference />
-        <NetworkConnectivity />
+        <Compliance />
         <RagRecipes />
         <Testimonials />
         <Success />
