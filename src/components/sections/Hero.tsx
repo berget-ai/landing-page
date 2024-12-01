@@ -50,11 +50,9 @@ export function Hero() {
             </Button>
           </div>
 
-          <SocialProof />
-        </div>
-
-        <div className="mt-24">
-          <ClientLogos />
+          <div className="mt-24">
+            <ClientLogos />
+          </div>
         </div>
       </div>
     </div>
