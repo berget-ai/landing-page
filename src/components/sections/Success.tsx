@@ -19,15 +19,26 @@ const testimonials = [
 
 const certifications = [
   {
-    name: "ISO 27001 & GDPR",
-    description: "EU Compliant Security",
+    name: "ISO 27001",
+    description: "Information Security Management",
     icon: Shield
+  },
+  {
+    name: "GDPR Compliant",
+    description: "EU Data Protection",
+    icon: CheckCircle
+  },
+  {
+    name: "NIS-2 Ready",
+    description: "Network Security",
+    icon: Award
   }
 ];
 
 const stats = [
-  { value: "99.99%", label: "Uptime" },
-  { value: "24/7", label: "Support" }
+  { value: "99.99%", label: "Uptime SLA" },
+  { value: "50ms", label: "Avg. Latency" },
+  { value: "24/7", label: "Monitoring" }
 ];
 
 export function Success() {

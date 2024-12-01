@@ -95,7 +95,7 @@ export function ComparisonTable() {
               <th className="text-left p-4 bg-white/5">Features</th>
               <th className="p-4 bg-white/5">
                 <div className="text-center">
-                  <div className="font-medium">Berget</div>
+                  <div className="font-medium">Berget AI</div>
                   <div className="text-sm text-white/60">Native EU Cloud</div>
                 </div>
               </th>

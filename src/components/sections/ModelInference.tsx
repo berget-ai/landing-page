@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Bot, Cpu, Sparkles, Zap } from 'lucide-react';
+import { Bot, Cpu, Sparkles, Zap, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { ModelChat } from '@/components/modals/ModelChat';
 
 const models = [
   {
@@ -24,10 +26,12 @@ const models = [
 ];
 
 export function ModelInference() {
+  const [selectedModel, setSelectedModel] = useState<typeof models[0] | null>(null);
+
   return (
     <section className="py-24 relative">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-1 gap-16">
           {/* Serverless Inference */}
           <div className="space-y-12">
             <div className="space-y-6">
@@ -74,9 +78,19 @@ export function ModelInference() {
                         <h4 className="font-medium mb-1">{model.name}</h4>
                         <p className="text-sm text-white/60">{model.description}</p>
                       </div>
-                      <div className="text-right">
-                        <div className="text-sm font-medium">{model.specs}</div>
-                        <div className="text-xs text-white/40">{model.type}</div>
+                      <div className="flex items-start gap-4">
+                        <div className="text-right">
+                          <div className="text-sm font-medium">{model.specs}</div>
+                          <div className="text-xs text-white/40">{model.type}</div>
+                        </div>
+                        <Button 
+                          variant="secondary" 
+                          size="sm"
+                          className="shrink-0"
+                          onClick={() => setSelectedModel(model)}
+                        >
+                          <MessageSquare className="w-4 h-4" />
+                        </Button>
                       </div>
                     </div>
                   </motion.div>
@@ -85,46 +99,18 @@ export function ModelInference() {
             </div>
           </div>
 
-          {/* Dedicated Inference */}
-          <div className="space-y-12">
-            <div className="relative p-8 rounded-2xl border border-white/10 overflow-hidden group hover:border-white/20 transition-colors">
-              <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent" />
-              
-              <div className="relative space-y-6">
-                <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
-                  <Cpu className="w-6 h-6" />
-                </div>
-
-                <div>
-                  <h3 className="text-xl font-medium mb-2">Dedicated Inference</h3>
-                  <p className="text-white/60 leading-relaxed">
-                    Host any model, open-source, fine-tuned or one that you trained yourself on our dedicated infrastructure as you scale. Load any model, select GPU instances and deploy your own dedicated inference service and endpoint in a heartbeat.
-                  </p>
-                </div>
-
-                <div className="flex flex-col gap-3">
-                  <div className="flex items-center justify-between p-3 rounded-lg bg-white/5">
-                    <span>Production-grade latency</span>
-                    <span className="text-white/60">~50ms</span>
-                  </div>
-                  <div className="flex items-center justify-between p-3 rounded-lg bg-white/5">
-                    <span>Dedicated GPU resources</span>
-                    <span className="text-white/60">Up to 8x A100</span>
-                  </div>
-                  <div className="flex items-center justify-between p-3 rounded-lg bg-white/5">
-                    <span>Custom model support</span>
-                    <span className="text-white/60">Any framework</span>
-                  </div>
-                </div>
-
-                <Button variant="secondary" className="w-full">
-                  Learn More About Dedicated Inference
-                </Button>
-              </div>
-            </div>
-          </div>
+          
         </div>
       </div>
+
+      {/* Model Chat Modal */}
+      {selectedModel && (
+        <ModelChat
+          isOpen={!!selectedModel}
+          onClose={() => setSelectedModel(null)}
+          model={selectedModel}
+        />
+      )}
     </section>
   );
 }
