@@ -18,6 +18,7 @@ function App() {
       <Header />
       <main>
         <Hero />
+        <Overview />
         <Features />
         <ModelInference />
         <Compliance />
