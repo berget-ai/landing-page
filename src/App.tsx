@@ -1,6 +1,7 @@
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Hero } from '@/components/sections/Hero';
+import { Overview } from '@/components/sections/Overview';
 import { Features } from '@/components/sections/Features';
 import { ModelInference } from '@/components/sections/ModelInference';
 import { Compliance } from '@/components/sections/Compliance';
