@@ -4,6 +4,7 @@ import { Hero } from '@/components/sections/Hero';
 import { Features } from '@/components/sections/Features';
 import { ModelInference } from '@/components/sections/ModelInference';
 import { Compliance } from '@/components/sections/Compliance';
+import { Sustainability } from '@/components/sections/Sustainability';
 import { Testimonials } from '@/components/sections/Testimonials';
 import { Pricing } from '@/components/sections/Pricing';
 import { ChatWidget } from '@/components/chat/ChatWidget';
@@ -20,6 +21,7 @@ function App() {
         <Features />
         <ModelInference />
         <Compliance />
+        <Sustainability />
         <RagRecipes />
         <Testimonials />
         <Success />
