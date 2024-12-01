@@ -24,3 +24,30 @@ dist-ssr
 *.sw?
 .aider*
 .env
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Build outputs
+dist/
+build/
+coverage/
+
+# IDE and OS files
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# npm/yarn lock files (optional - you might want to keep these in version control)
+# package-lock.json
+# yarn.lock
