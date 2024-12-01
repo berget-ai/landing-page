@@ -24,16 +24,16 @@ const sustainabilityPoints = [
 
 export function Sustainability() {
   return (
-    <section className="py-24 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-emerald-500/10 to-transparent opacity-30" />
+    <section className="py-24 relative overflow-hidden dark:text-white light:text-gray-900">
+      <div className="absolute inset-0 bg-gradient-to-b from-emerald-500/10 to-transparent opacity-30 dark:opacity-30 light:opacity-10" />
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-emerald-500/10 text-emerald-400 mb-6">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-emerald-500/10 dark:text-emerald-400 light:text-emerald-600 mb-6">
             <Leaf className="w-4 h-4 mr-2" />
             <span className="text-sm">Sustainable by Design</span>
           </div>
           <h2 className="text-4xl font-medium mb-6">Our Sustainability Pledge</h2>
-          <p className="text-lg text-white/60">
+          <p className="text-lg dark:text-white/60 light:text-gray-600">
             We're building Europe's most sustainable AI infrastructure. Our commitment to the environment is fundamental to our operations, not an afterthought.
           </p>
         </div>
@@ -46,15 +46,15 @@ export function Sustainability() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="p-8 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors relative group"
+              className="p-8 rounded-xl dark:bg-white/5 light:bg-white dark:border-white/10 light:border-gray-200 dark:hover:bg-white/10 light:hover:bg-gray-50 transition-colors relative group shadow-sm"
             >
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500/0 via-emerald-500/50 to-emerald-500/0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
               <div className="mb-6">
-                <point.icon className="w-10 h-10 text-emerald-400" />
+                <point.icon className="w-10 h-10 dark:text-emerald-400 light:text-emerald-600" />
               </div>
               <h3 className="text-2xl font-medium mb-3">{point.title}</h3>
-              <p className="text-white/60 mb-4">{point.description}</p>
-              <div className="text-sm font-medium text-emerald-400">{point.stats}</div>
+              <p className="dark:text-white/60 light:text-gray-600 mb-4">{point.description}</p>
+              <div className="text-sm font-medium dark:text-emerald-400 light:text-emerald-600">{point.stats}</div>
             </motion.div>
           ))}
         </div>
