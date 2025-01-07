@@ -40,7 +40,7 @@ const team = [
 
 export function About() {
   return (
-    <section className="py-24 relative">
+    <section className="py-24 relative" id="about">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background/50 to-background" />
       
       <div className="container mx-auto px-4 relative">
