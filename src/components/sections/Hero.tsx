@@ -1,4 +1,4 @@
-import { ArrowRight, Server, Shield, Users, Cpu, Database } from 'lucide-react';
+import { ArrowRight, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { SocialProof } from './hero/SocialProof';
 import { ClientLogos } from './hero/ClientLogos';

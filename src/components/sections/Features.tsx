@@ -2,7 +2,6 @@ import { Bot, Lock, Server } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { FeatureCard } from './FeatureCard';
 import { FeatureCarousel } from './features/FeatureCarousel';
-import { NetworkPreview } from '@/components/previews/NetworkPreview';
 
 export function Features() {
   return (

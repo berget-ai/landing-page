@@ -8,7 +8,7 @@ interface ResourceEstimatorProps {
   onResize: (resources: ClusterResources) => void;
 }
 
-export function ResourceEstimator({ resources, currentCluster, onResize }: ResourceEstimatorProps) {
+export function ResourceEstimator({ currentCluster, onResize }: ResourceEstimatorProps) {
   const [values, setValues] = useState(currentCluster);
 
   const handleChange = (key: keyof ClusterResources, value: number[]) => {

@@ -8,7 +8,7 @@ interface StepReviewProps {
   clusterResources: ClusterResources;
 }
 
-export function StepReview({ recipe, selectedResource, clusterResources }: StepReviewProps) {
+export function StepReview({ recipe, selectedResource }: StepReviewProps) {
   if (!recipe || !selectedResource) return null;
 
   return (

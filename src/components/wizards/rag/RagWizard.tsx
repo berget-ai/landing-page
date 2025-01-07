@@ -40,7 +40,11 @@ export function RagWizard({ isOpen, onClose, recipe }: RagWizardProps) {
     setLoading(false);
   };
 
-  const steps = [
+  const steps: Array<{
+    title: string;
+    component: React.ComponentType<any>;
+    props: Partial<StepFeaturesProps & StepResourcesProps & StepAnalysisProps & StepReviewProps>;
+  }> = [
     {
       title: 'Features',
       component: StepFeatures,

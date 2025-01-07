@@ -63,7 +63,7 @@ export function RagRecipes() {
             }}
           >
             <AnimatePresence>
-              {recipes.map((recipe, index) => (
+              {recipes.map((recipe) => (
                 <motion.div
                   key={recipe.id}
                   initial={{ opacity: 0, scale: 0.8 }}

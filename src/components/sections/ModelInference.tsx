@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Bot, Cpu, Sparkles, Zap, MessageSquare } from 'lucide-react';
+import { Bot, Sparkles, Zap, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ModelChat } from '@/components/modals/ModelChat';
 
