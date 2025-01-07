@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: berget-website
-        image: ghcr.io/bergetai/website:latest
+        image: ghcr.io/berget-cloud/landing-page:latest
         ports:
         - containerPort: 80
         resources:
