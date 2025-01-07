@@ -63,6 +63,7 @@ export function useChat(config: ChatConfig) {
       setIsTyping(true);
       setError(null);
 
+      const chat = createOdooChat(config);
       await chat.sendMessage(content);
     } catch (err) {
       setError('Failed to send message');
