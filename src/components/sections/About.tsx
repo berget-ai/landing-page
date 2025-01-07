@@ -107,7 +107,7 @@ export function About() {
             making AI infrastructure more secure, sustainable, and accessible.
           </p>
           <Button size="lg" asChild>
-            <a href="https://odoo.berget.ai/jobs" target="_blank" rel="noopener noreferrer">
+            <a href="https://odoo.berget.cloud/jobs" target="_blank" rel="noopener noreferrer">
               View Open Positions
             </a>
           </Button>
