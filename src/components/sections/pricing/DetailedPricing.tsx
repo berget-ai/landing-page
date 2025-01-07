@@ -30,13 +30,31 @@ const inferenceModels: PricingRow[] = [
     sek: "Input: 49 / M tokens\nOutput: 149 / M tokens",
     eur: "Input: 5 / M tokens\nOutput: 15 / M tokens",
     badge: "Popular",
-    tooltip: "Mest använda modellen för generell text generation"
+    tooltip: "Most used model for general text generation"
   },
   {
     name: "Llama 3.1 70B Nemotron",
     sek: "Input: 20 / M tokens\nOutput: 80 / M tokens",
     eur: "Input: 1.99 / M tokens\nOutput: 7.99 / M tokens",
-    tooltip: "Optimerad för svenska språket"
+    tooltip: "Optimized for Swedish language"
+  },
+  {
+    name: "Mixtral 8x7B Instruct",
+    sek: "Input: 30 / M tokens\nOutput: 90 / M tokens",
+    eur: "Input: 3 / M tokens\nOutput: 9 / M tokens",
+    tooltip: "High performance mixture-of-experts model"
+  },
+  {
+    name: "Whisper Large v3",
+    sek: "199 / hour of audio",
+    eur: "19.99 / hour of audio",
+    tooltip: "Speech recognition and translation"
+  },
+  {
+    name: "Stable Diffusion XL",
+    sek: "2.99 / image",
+    eur: "0.29 / image",
+    tooltip: "High quality image generation"
   }
 ];
 
@@ -48,26 +66,108 @@ const networkPricing: PricingRow[] = [
   },
   {
     name: "Dedicated IPv4 address",
-    sek: "XX / month",
-    eur: "XX / month"
+    sek: "499 / month",
+    eur: "49 / month",
+    tooltip: "Static IP for whitelisting"
+  },
+  {
+    name: "VPN Connection",
+    sek: "999 / month",
+    eur: "99 / month",
+    tooltip: "Secure private network connection"
+  },
+  {
+    name: "AWS Direct Connect",
+    sek: "4999 / month",
+    eur: "499 / month",
+    tooltip: "Dedicated connection to AWS"
+  },
+  {
+    name: "Azure ExpressRoute",
+    sek: "4999 / month",
+    eur: "499 / month",
+    tooltip: "Dedicated connection to Azure"
   },
   {
     name: "Egress traffic",
-    description: "Free of charge, Fair Use",
-    badge: "Free"
+    description: "Free up to 1TB/month, then 0.09 SEK/GB",
+    badge: "Free tier"
+  }
+];
+
+const storageOptions: PricingRow[] = [
+  {
+    name: "Standard Storage",
+    sek: "0.19 / GB / month",
+    eur: "0.019 / GB / month",
+    tooltip: "General purpose storage"
+  },
+  {
+    name: "High-Performance Storage",
+    sek: "0.49 / GB / month",
+    eur: "0.049 / GB / month",
+    tooltip: "SSD-backed storage for high IOPS"
+  },
+  {
+    name: "Vector Database",
+    sek: "0.99 / GB / month",
+    eur: "0.099 / GB / month",
+    tooltip: "Optimized for embeddings storage"
+  },
+  {
+    name: "Backup Storage",
+    sek: "0.09 / GB / month",
+    eur: "0.009 / GB / month",
+    tooltip: "Long-term data retention"
+  }
+];
+
+const supportTiers: PricingRow[] = [
+  {
+    name: "Community Support",
+    description: "Forum & Documentation",
+    badge: "Free",
+    tooltip: "Community-based support"
+  },
+  {
+    name: "Developer Support",
+    sek: "4999 / month",
+    eur: "499 / month",
+    tooltip: "Email support with 24h response time"
+  },
+  {
+    name: "Business Support",
+    sek: "19999 / month",
+    eur: "1999 / month",
+    tooltip: "24/7 support with 1h response time"
+  },
+  {
+    name: "Enterprise Support",
+    description: "Custom SLA & Dedicated TAM",
+    tooltip: "Tailored support package"
   }
 ];
 
 const customServices: PricingRow[] = [
   {
-    name: "Dedicated Inference",
-    description: "Billed based on GPU resource use",
-    tooltip: "Dedikerade GPU-resurser för dina modeller"
+    name: "Dedicated GPU Instances",
+    description: "From 9999 SEK/month per A100",
+    tooltip: "Dedicated GPU resources for your models"
   },
   {
-    name: "Model fine-tuning",
-    description: "Billed based on GPU resource use",
-    tooltip: "Anpassa modeller för dina specifika behov"
+    name: "Model Fine-tuning",
+    description: "From 4999 SEK per training job",
+    tooltip: "Customize models for your needs"
+  },
+  {
+    name: "Custom Model Deployment",
+    description: "From 1999 SEK per model",
+    tooltip: "Deploy your own models"
+  },
+  {
+    name: "Consulting Services",
+    description: "1499 SEK/hour",
+    tooltip: "Expert guidance and implementation"
   }
 ];
 
@@ -124,9 +224,11 @@ function PricingSection({ title, rows }: { title: string; rows: PricingRow[] }) 
 export function DetailedPricing() {
   return (
     <div className="space-y-12">
-      <PricingSection title="Serverless inference" rows={inferenceModels} />
+      <PricingSection title="Serverless Inference" rows={inferenceModels} />
       <PricingSection title="Network & Connectivity" rows={networkPricing} />
-      <PricingSection title="Custom Services" rows={customServices} />
+      <PricingSection title="Storage Options" rows={storageOptions} />
+      <PricingSection title="Support Plans" rows={supportTiers} />
+      <PricingSection title="Professional Services" rows={customServices} />
     </div>
   );
 }
