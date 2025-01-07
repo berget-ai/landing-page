@@ -7,6 +7,10 @@ import { StepResources } from './steps/StepResources';
 import { StepAnalysis } from './steps/StepAnalysis';
 import { StepReview } from './steps/StepReview';
 import type { Recipe } from '@/types/recipes';
+import type { StepFeaturesProps } from './steps/StepFeatures';
+import type { StepResourcesProps } from './steps/StepResources';
+import type { StepAnalysisProps } from './steps/StepAnalysis';
+import type { StepReviewProps } from './steps/StepReview';
 import type { ResourceOption, ClusterResources } from '@/types/resources';
 
 interface RagWizardProps {
