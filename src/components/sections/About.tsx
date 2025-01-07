@@ -4,36 +4,36 @@ import { Button } from '@/components/ui/button';
 
 const team = [
   {
-    name: 'Erik Moberg',
-    role: 'CEO & Co-founder',
-    bio: 'Previously CTO at Epidemic Sound. 15+ years of experience in scaling technology companies.',
-    image: '/team/erik.jpg',
+    name: 'Christian Landgren',
+    role: 'CPTO',
+    bio: 'Serial entrepreneur and tech innovator. Expert in building developer-first platforms and open source solutions.',
+    image: '/team/christian.jpg',
     links: {
-      linkedin: 'https://linkedin.com/in/erikmoberg',
-      github: 'https://github.com/erikmoberg',
-      email: 'erik@berget.ai'
+      linkedin: 'https://linkedin.com/in/christianlandgren',
+      github: 'https://github.com/irony',
+      email: 'christian@berget.ai'
     }
   },
   {
-    name: 'Marcus Wallén',
-    role: 'CTO & Co-founder',
-    bio: 'Former Lead Engineer at Klarna. Expert in distributed systems and cloud infrastructure.',
-    image: '/team/marcus.jpg',
+    name: 'Andreas Lundmark',
+    role: 'Head of AI Strategy',
+    bio: 'Former Partner and Nordic AI Lead at Boston Consulting Group. Deep expertise in enterprise AI transformation.',
+    image: '/team/andreas.jpg',
     links: {
-      linkedin: 'https://linkedin.com/in/marcuswallen',
-      github: 'https://github.com/marcuswallen',
-      email: 'marcus@berget.ai'
+      linkedin: 'https://linkedin.com/in/andreaslundmark',
+      github: 'https://github.com/alundmark',
+      email: 'andreas@berget.ai'
     }
   },
   {
-    name: 'Anna Lindström',
-    role: 'Head of AI Research',
-    bio: 'PhD in Machine Learning from KTH. Previously led AI initiatives at Spotify.',
-    image: '/team/anna.jpg',
+    name: 'John Angelmo',
+    role: 'Infrastructure Lead',
+    bio: 'Former Kubernetes Team Lead at Tele2. Expert in cloud infrastructure and customer support.',
+    image: '/team/john.jpg',
     links: {
-      linkedin: 'https://linkedin.com/in/annalindstrom',
-      github: 'https://github.com/annalindstrom',
-      email: 'anna@berget.ai'
+      linkedin: 'https://linkedin.com/in/johnangelmo',
+      github: 'https://github.com/jangelmo',
+      email: 'john@berget.ai'
     }
   }
 ];
