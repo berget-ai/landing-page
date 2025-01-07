@@ -4,6 +4,17 @@ import { Button } from '@/components/ui/button';
 
 const team = [
   {
+    name: 'Andreas Lundmark',
+    role: 'CEO',
+    bio: 'Former Partner and Nordic AI Lead at Boston Consulting Group. Deep expertise in enterprise AI transformation.',
+    image: '/team/andreas.jpg',
+    links: {
+      linkedin: 'https://linkedin.com/in/andreaslundmark',
+      github: 'https://github.com/alundmark',
+      email: 'andreas@berget.ai'
+    }
+  },
+  {
     name: 'Christian Landgren',
     role: 'CPTO',
     bio: 'Serial entrepreneur and tech innovator. Expert in building developer-first platforms and open source solutions.',
@@ -12,17 +23,6 @@ const team = [
       linkedin: 'https://linkedin.com/in/christianlandgren',
       github: 'https://github.com/irony',
       email: 'christian@berget.ai'
-    }
-  },
-  {
-    name: 'Andreas Lundmark',
-    role: 'Head of AI Strategy',
-    bio: 'Former Partner and Nordic AI Lead at Boston Consulting Group. Deep expertise in enterprise AI transformation.',
-    image: '/team/andreas.jpg',
-    links: {
-      linkedin: 'https://linkedin.com/in/andreaslundmark',
-      github: 'https://github.com/alundmark',
-      email: 'andreas@berget.ai'
     }
   },
   {
