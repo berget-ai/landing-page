@@ -8,7 +8,7 @@ interface FeatureContentProps {
 
 export function FeatureContent({ feature, isActive }: FeatureContentProps) {
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: isActive ? 1 : 0, scale: isActive ? 1 : 0.9 }}
@@ -22,7 +22,7 @@ export function FeatureContent({ feature, isActive }: FeatureContentProps) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : 20 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="text-2xl font-medium"
+        className="text-5xl font-medium leading-tight tracking-tight"
       >
         {feature.title}
       </motion.h3>
