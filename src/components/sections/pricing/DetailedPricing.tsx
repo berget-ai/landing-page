@@ -27,33 +27,28 @@ interface PricingRow {
 const inferenceModels: PricingRow[] = [
   {
     name: "Llama 3.1 405B Instruct",
-    sek: "Input: 49 / M tokens\nOutput: 149 / M tokens",
-    eur: "Input: 5 / M tokens\nOutput: 15 / M tokens",
+    eur: "Input: €5 / M tokens\nOutput: €15 / M tokens",
     badge: "Popular",
     tooltip: "Most used model for general text generation"
   },
   {
     name: "Llama 3.1 70B Nemotron",
-    sek: "Input: 20 / M tokens\nOutput: 80 / M tokens",
-    eur: "Input: 1.99 / M tokens\nOutput: 7.99 / M tokens",
+    eur: "Input: €1.99 / M tokens\nOutput: €7.99 / M tokens",
     tooltip: "Optimized for Swedish language"
   },
   {
     name: "Mixtral 8x7B Instruct",
-    sek: "Input: 30 / M tokens\nOutput: 90 / M tokens",
-    eur: "Input: 3 / M tokens\nOutput: 9 / M tokens",
+    eur: "Input: €3 / M tokens\nOutput: €9 / M tokens",
     tooltip: "High performance mixture-of-experts model"
   },
   {
     name: "Whisper Large v3",
-    sek: "199 / hour of audio",
-    eur: "19.99 / hour of audio",
+    eur: "€19.99 / hour of audio",
     tooltip: "Speech recognition and translation"
   },
   {
     name: "Stable Diffusion XL",
-    sek: "2.99 / image",
-    eur: "0.29 / image",
+    eur: "€0.29 / image",
     tooltip: "High quality image generation"
   }
 ];
@@ -66,20 +61,17 @@ const networkPricing: PricingRow[] = [
   },
   {
     name: "Dedicated IPv4 address",
-    sek: "499 / month",
-    eur: "49 / month",
+    eur: "€49 / month",
     tooltip: "Static IP for whitelisting"
   },
   {
     name: "VPN Connection",
-    sek: "999 / month",
-    eur: "99 / month",
+    eur: "€99 / month",
     tooltip: "Secure private network connection"
   },
   {
     name: "AWS Direct Connect",
-    sek: "4999 / month",
-    eur: "499 / month",
+    eur: "€499 / month",
     tooltip: "Dedicated connection to AWS"
   },
   {
@@ -90,7 +82,7 @@ const networkPricing: PricingRow[] = [
   },
   {
     name: "Egress traffic",
-    description: "Free up to 1TB/month, then 0.09 SEK/GB",
+    description: "Free up to 1TB/month, then €0.009/GB",
     badge: "Free tier"
   }
 ];
@@ -178,9 +170,8 @@ function PricingSection({ title, rows }: { title: string; rows: PricingRow[] }) 
       <Table>
         <TableHeader>
           <TableRow className="hover:bg-transparent">
-            <TableHead className="w-[300px]">Service</TableHead>
-            <TableHead>SEK</TableHead>
-            <TableHead>EUR</TableHead>
+            <TableHead className="w-[400px]">Service</TableHead>
+            <TableHead>Price (EUR)</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -211,7 +202,6 @@ function PricingSection({ title, rows }: { title: string; rows: PricingRow[] }) 
                   <div className="text-sm text-white/60 mt-1">{row.description}</div>
                 )}
               </TableCell>
-              <TableCell>{row.sek || "—"}</TableCell>
               <TableCell>{row.eur || "—"}</TableCell>
             </TableRow>
           ))}
@@ -223,7 +213,7 @@ function PricingSection({ title, rows }: { title: string; rows: PricingRow[] }) 
 
 export function DetailedPricing() {
   return (
-    <div className="space-y-12">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
       <PricingSection title="Serverless Inference" rows={inferenceModels} />
       <PricingSection title="Network & Connectivity" rows={networkPricing} />
       <PricingSection title="Storage Options" rows={storageOptions} />
