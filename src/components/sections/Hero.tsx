@@ -24,7 +24,7 @@ export function Hero() {
           </h1>
           
           <p className="text-xl text-white/60 mb-8 leading-relaxed">
-            We offer Europe's best and simplest cloud service for AI applications, making compliance effortless while providing modern developer experience and sustainable infrastructure.
+            Berget AI offers Europe's best and simplest cloud service for AI applications, making compliance effortless while providing modern developer experience and sustainable infrastructure.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
