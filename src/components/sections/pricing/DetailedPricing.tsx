@@ -172,8 +172,8 @@ const computeResources: PricingRow[] = [
 const customServices: PricingRow[] = [
   {
     name: "Dedicated GPU Instances",
-    description: "From 9999 SEK/month per A100",
-    tooltip: "Dedicated GPU resources for your models"
+    description: "From 9999 SEK/month per AMD MI300",
+    tooltip: "Dedicated GPU resources with 192GB HBM3 memory"
   },
   {
     name: "Model Fine-tuning",
