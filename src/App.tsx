@@ -11,6 +11,7 @@ import { Pricing } from '@/components/sections/Pricing';
 import { ChatWidget } from '@/components/chat/ChatWidget';
 import { RagRecipes } from './components/sections/RagRecipes';
 import { Success } from './components/sections/Success';
+import { About } from './components/sections/About';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <RagRecipes />
         <Testimonials />
         <Success />
+        <About />
         <Pricing />
       </main>
       <Footer />

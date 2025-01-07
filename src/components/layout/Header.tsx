@@ -12,6 +12,7 @@ export function Header() {
         <nav className="hidden md:flex items-center space-x-8">
           <a href="#features" className="text-sm text-white/60 hover:text-white transition-colors">Features</a>
           <a href="#pricing" className="text-sm text-white/60 hover:text-white transition-colors">Pricing</a>
+          <a href="#about" className="text-sm text-white/60 hover:text-white transition-colors">About</a>
           <a href="#docs" className="text-sm text-white/60 hover:text-white transition-colors">Documentation</a>
           <Button variant="secondary" size="sm">Sign In</Button>
           <Button size="sm">Get Started</Button>
