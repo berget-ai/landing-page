@@ -106,7 +106,11 @@ export function About() {
             We're always looking for talented people who share our vision of 
             making AI infrastructure more secure, sustainable, and accessible.
           </p>
-          <Button size="lg">View Open Positions</Button>
+          <Button size="lg" asChild>
+            <a href="https://odoo.berget.ai/jobs" target="_blank" rel="noopener noreferrer">
+              View Open Positions
+            </a>
+          </Button>
         </div>
       </div>
     </section>
