@@ -140,6 +140,35 @@ const supportTiers: PricingRow[] = [
   }
 ];
 
+const kubernetesResources: PricingRow[] = [
+  {
+    name: "Controller Node",
+    eur: "€0.06 / vCPU / hour + €0.008 / GB RAM / hour",
+    tooltip: "Kubernetes control plane node"
+  },
+  {
+    name: "Worker Node",
+    eur: "€0.04 / vCPU / hour + €0.005 / GB RAM / hour",
+    tooltip: "Kubernetes worker node"
+  },
+  {
+    name: "High Availability Setup",
+    eur: "€199 / month",
+    tooltip: "Multi-controller setup for high availability"
+  },
+  {
+    name: "Cluster Management",
+    eur: "€99 / cluster / month",
+    tooltip: "Includes monitoring, logging, and updates"
+  },
+  {
+    name: "Auto-scaling",
+    description: "Automatic node scaling based on workload",
+    badge: "Included",
+    tooltip: "Horizontal and vertical pod autoscaling"
+  }
+];
+
 const computeResources: PricingRow[] = [
   {
     name: "CPU Allocation",
@@ -245,6 +274,7 @@ export function DetailedPricing() {
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
       <PricingSection title="Serverless Inference" rows={inferenceModels} />
       <PricingSection title="Compute Resources" rows={computeResources} />
+      <PricingSection title="Managed Kubernetes" rows={kubernetesResources} />
       <PricingSection title="Network & Connectivity" rows={networkPricing} />
       <PricingSection title="Storage Options" rows={storageOptions} />
       <PricingSection title="Support Plans" rows={supportTiers} />
