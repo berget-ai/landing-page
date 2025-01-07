@@ -140,6 +140,35 @@ const supportTiers: PricingRow[] = [
   }
 ];
 
+const computeResources: PricingRow[] = [
+  {
+    name: "CPU Allocation",
+    eur: "€0.04 / vCPU / hour",
+    tooltip: "Virtual CPU core allocation"
+  },
+  {
+    name: "Memory Allocation",
+    eur: "€0.005 / GB / hour",
+    tooltip: "RAM allocation"
+  },
+  {
+    name: "AMD MI300 GPU",
+    eur: "€4.99 / hour",
+    tooltip: "192GB HBM3 memory GPU"
+  },
+  {
+    name: "Multi-GPU Instance",
+    eur: "From €18.99 / hour",
+    tooltip: "4x AMD MI300 GPUs with NVLink"
+  },
+  {
+    name: "Reserved GPU Instance",
+    description: "1-year commitment",
+    eur: "From €2.99 / hour",
+    tooltip: "Discounted rate with 1-year commitment"
+  }
+];
+
 const customServices: PricingRow[] = [
   {
     name: "Dedicated GPU Instances",
@@ -215,6 +244,7 @@ export function DetailedPricing() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
       <PricingSection title="Serverless Inference" rows={inferenceModels} />
+      <PricingSection title="Compute Resources" rows={computeResources} />
       <PricingSection title="Network & Connectivity" rows={networkPricing} />
       <PricingSection title="Storage Options" rows={storageOptions} />
       <PricingSection title="Support Plans" rows={supportTiers} />
