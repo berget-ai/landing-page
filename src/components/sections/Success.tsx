@@ -43,7 +43,8 @@ const stats = [
 
 export function Success() {
   return (
-    <section className="py-24 relative">
+    <section className="py-32 relative bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-white/[0.02] via-background to-background">
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:32px_32px] opacity-40" />
       <div className="container mx-auto px-4">
         {/* Testimonials */}
         <div className="mb-24">

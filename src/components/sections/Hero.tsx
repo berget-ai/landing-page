@@ -6,22 +6,8 @@ import { ClientLogos } from './hero/ClientLogos';
 export function Hero() {
   return (
     <div className="relative min-h-screen flex items-center">
-      <div className="bokeh">
-        <div className="bokeh-circle" style={{
-          '--color': '#ffffff',
-          width: '600px',
-          height: '600px',
-          top: '10%',
-          left: '60%',
-        } as React.CSSProperties} />
-        <div className="bokeh-circle" style={{
-          '--color': '#ffffff',
-          width: '400px',
-          height: '400px',
-          top: '60%',
-          left: '20%',
-        } as React.CSSProperties} />
-      </div>
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 opacity-30 blur-[120px]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-500/20 via-transparent to-transparent opacity-20" />
       
       <div className="container mx-auto px-4 py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
