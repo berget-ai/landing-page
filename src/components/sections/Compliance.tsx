@@ -13,7 +13,7 @@ export function Compliance() {
       icon: Shield,
       benefits: t('compliance.regulations.gdpr.benefits', {
         returnObjects: true,
-      }) as string[],
+      }),
     },
     {
       name: t('compliance.regulations.nis2.name'),
@@ -21,7 +21,7 @@ export function Compliance() {
       icon: Lock,
       benefits: t('compliance.regulations.nis2.benefits', {
         returnObjects: true,
-      }) as string[],
+      }),
     },
     {
       name: t('compliance.regulations.schrems2.name'),
@@ -29,7 +29,7 @@ export function Compliance() {
       icon: Scale,
       benefits: t('compliance.regulations.schrems2.benefits', {
         returnObjects: true,
-      }) as string[],
+      }),
     },
     {
       name: t('compliance.regulations.iso27001.name'),
@@ -37,7 +37,7 @@ export function Compliance() {
       icon: FileCheck,
       benefits: t('compliance.regulations.iso27001.benefits', {
         returnObjects: true,
-      }) as string[],
+      }),
     },
     {
       name: t('compliance.regulations.dora.name'),
@@ -45,7 +45,7 @@ export function Compliance() {
       icon: Building,
       benefits: t('compliance.regulations.dora.benefits', {
         returnObjects: true,
-      }) as string[],
+      }),
     },
   ]
   return (
@@ -55,12 +55,16 @@ export function Compliance() {
         <div className="text-center max-w-2xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 text-sm mb-6">
             <Shield className="w-4 h-4" />
-            <span>{t('compliance.tagline')}</span>
+            <span>{t('complianceSection.tagline')}</span>
           </div>
 
-          <h2 className="text-3xl font-medium mb-4">{t('compliance.title')}</h2>
+          <h2 className="text-3xl font-medium mb-4">
+            {t('complianceSection.title')}
+          </h2>
 
-          <p className="text-lg text-white/60">{t('compliance.description')}</p>
+          <p className="text-lg text-white/60">
+            {t('complianceSection.description')}
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
@@ -84,7 +88,7 @@ export function Compliance() {
                 <p className="text-white/60 mb-6">{regulation.description}</p>
 
                 <ul className="space-y-2">
-                  {regulation.benefits.map((benefit) => (
+                  {regulation.benefits?.map((benefit: string) => (
                     <li
                       key={benefit}
                       className="flex items-center gap-2 text-sm text-white/60"

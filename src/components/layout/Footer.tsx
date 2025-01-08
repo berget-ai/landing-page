@@ -50,7 +50,7 @@ export function Footer() {
             <h3 className="font-medium mb-4">{t('footer.product.title')}</h3>
             <ul className="space-y-3">
               {footerLinks.product.map((link) => (
-                <li key={link.name}>
+                <li key={link.key}>
                   <a
                     href={link.href}
                     className="text-sm text-white/60 hover:text-white transition-colors"
@@ -66,7 +66,7 @@ export function Footer() {
             <h3 className="font-medium mb-4">{t('footer.company.title')}</h3>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
-                <li key={link.name}>
+                <li key={link.key}>
                   <a
                     href={link.href}
                     className="text-sm text-white/60 hover:text-white transition-colors"
@@ -82,7 +82,7 @@ export function Footer() {
             <h3 className="font-medium mb-4">{t('footer.legal.title')}</h3>
             <ul className="space-y-3">
               {footerLinks.legal.map((link) => (
-                <li key={link.name}>
+                <li key={link.key}>
                   <a
                     href={link.href}
                     className="text-sm text-white/60 hover:text-white transition-colors"
