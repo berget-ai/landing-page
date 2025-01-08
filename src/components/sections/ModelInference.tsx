@@ -8,22 +8,22 @@ import { ModelChat } from '@/components/modals/ModelChat'
 
 const models = [
   {
-    name: 'Llama 3',
-    description: 'Latest open-source LLM from Meta',
-    specs: '405B parameters',
-    type: 'Text Generation',
+    name: t('modelInference.models.llama3.name'),
+    description: t('modelInference.models.llama3.description'),
+    specs: t('modelInference.models.llama3.specs'),
+    type: t('modelInference.models.llama3.type'),
   },
   {
-    name: 'Mixtral',
-    description: 'High-performance mixture of experts model',
-    specs: '8x7B architecture',
-    type: 'Text Generation',
+    name: t('modelInference.models.mixtral.name'),
+    description: t('modelInference.models.mixtral.description'),
+    specs: t('modelInference.models.mixtral.specs'),
+    type: t('modelInference.models.mixtral.type'),
   },
   {
-    name: 'Whisper',
-    description: 'Speech recognition and translation',
-    specs: 'Multi-language support',
-    type: 'Speech-to-Text',
+    name: t('modelInference.models.whisper.name'),
+    description: t('modelInference.models.whisper.description'),
+    specs: t('modelInference.models.whisper.specs'),
+    type: t('modelInference.models.whisper.type'),
   },
 ]
 
@@ -32,6 +32,8 @@ export function ModelInference() {
   const [selectedModel, setSelectedModel] = useState<(typeof models)[0] | null>(
     null
   )
+
+  const { t } = useTranslation()
 
   return (
     <section className="py-24 relative">

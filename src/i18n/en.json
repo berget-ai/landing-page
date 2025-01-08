@@ -61,5 +61,36 @@
     "description": "Berget AI offers Europe's best and simplest place for your AI applications, making compliance effortless while providing modern developer experience and sustainable infrastructure with no vendor lock-in.",
     "startBuilding": "Start Building",
     "bookDemo": "Book a Demo"
-  }
+  },
+  "hero": {
+    "tagline": "A responsible, compliant and sustainable AI company for Europe",
+    "title": {
+      "part1": "Enable A Symphony of",
+      "part2": "AI Agents Working For You"
+    },
+    "description": "Orchestrate multiple AI agents to work together seamlessly, creating a powerful ecosystem of specialized intelligence.",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More"
+  },
+  "modelInference": {
+    "models": {
+      "llama3": {
+        "name": "Llama 3",
+        "description": "Latest open-source LLM from Meta",
+        "specs": "405B parameters",
+        "type": "Text Generation"
+      },
+      "mixtral": {
+        "name": "Mixtral",
+        "description": "High-performance mixture of experts model",
+        "specs": "8x7B architecture",
+        "type": "Text Generation"
+      },
+      "whisper": {
+        "name": "Whisper",
+        "description": "Speech recognition and translation",
+        "specs": "Multi-language support",
+        "type": "Speech-to-Text"
+      }
+    }
 }

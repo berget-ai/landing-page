@@ -61,5 +61,36 @@
     "description": "Berget AI erbjuder Europas bästa och enklaste plats för dina AI-applikationer, vilket gör efterlevnad enkel samtidigt som det ger en modern utvecklarupplevelse och hållbar infrastruktur utan leverantörslåsning.",
     "startBuilding": "Börja Bygga",
     "bookDemo": "Boka en Demo"
-  }
+  },
+  "hero": {
+    "tagline": "Ett ansvarsfullt, kompatibelt och hållbart AI-företag för Europa",
+    "title": {
+      "part1": "Möjliggör en symfoni av",
+      "part2": "AI-agenter som arbetar för dig"
+    },
+    "description": "Orkestrera flera AI-agenter för att arbeta tillsammans sömlöst och skapa ett kraftfullt ekosystem av specialiserad intelligens.",
+    "getStarted": "Kom igång",
+    "learnMore": "Läs mer"
+  },
+  "modelInference": {
+    "models": {
+      "llama3": {
+        "name": "Llama 3",
+        "description": "Senaste öppen källkod LLM från Meta",
+        "specs": "405B parametrar",
+        "type": "Textgenerering"
+      },
+      "mixtral": {
+        "name": "Mixtral",
+        "description": "Högpresterande blandning av expertmodeller",
+        "specs": "8x7B arkitektur",
+        "type": "Textgenerering"
+      },
+      "whisper": {
+        "name": "Whisper",
+        "description": "Taligenkänning och översättning",
+        "specs": "Stöd för flera språk",
+        "type": "Tal-till-text"
+      }
+    }
 }
