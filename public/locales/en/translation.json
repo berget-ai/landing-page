@@ -65,7 +65,9 @@
     "productionGradePerformance": {
       "title": "Production-grade performance",
       "description": "Run inference at scale with predictable cost. You pay for the dedicated resources that serves your model, ensuring production-grade latency and throughput for your applications."
-    }
+    },
+    "openWeightsTitle": "Open Weights for Transparency",
+    "openWeightsDescription": "We believe in open source and transparency. All our models are available for review and validation."
   },
   "overview": {
     "whatIsGitOps": {
