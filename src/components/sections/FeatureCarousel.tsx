@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
@@ -6,6 +7,7 @@ import { features } from '@/lib/features'
 import { cn } from '@/lib/utils'
 
 export function FeatureCarousel() {
+  const { t } = useTranslation()
   const [activeIndex, setActiveIndex] = useState(0)
   const containerRef = useRef<HTMLDivElement>(null)
 
@@ -32,7 +34,7 @@ export function FeatureCarousel() {
   return (
     <div className="relative container mx-auto px-4">
       <div className="flex items-center justify-between mb-8">
-        <h2 className="text-3xl font-medium">Platform Features</h2>
+        <h2 className="text-3xl font-medium">{t('features.title')}</h2>
         <div className="flex gap-2">
           <Button
             variant="secondary"
@@ -96,7 +98,7 @@ export function FeatureCarousel() {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent rounded-2xl" />
               <div className="relative p-8">
-                <h4 className="text-lg font-medium mb-6">Key Highlights</h4>
+                <h4 className="text-lg font-medium mb-6">{t('features.keyHighlights')}</h4>
                 <ul className="space-y-4">
                   {feature.highlights.map((highlight, index) => (
                     <motion.li
