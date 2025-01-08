@@ -36,23 +36,26 @@ export function NetworkBackground() {
         this.vx = Math.cos(angle) * speed
         this.vy = Math.sin(angle) * speed
         this.maxLife = 10
-        this.life = this.maxLife;
-        
-        triggerSignal() {
-          for (let i = 0; i < 3; i++) {
-            sparks.push(new Spark(this.x, this.y))
+        this.life = this.maxLife
+      }
+
+      triggerSignal() {
+        for (let i = 0; i < 3; i++) {
+          sparks.push(new Spark(this.x, this.y))
+        }
+        // Trigger new signals from the target node
+        targetNode.connections.forEach((connectionIndex) => {
+          const connectedNode = nodes[connectionIndex]
+          if (Math.random() < 0.1) {
+            // 10% chance to trigger a new signal
+            particles.push({
+              nodeIndex: targetIndex,
+              targetIndex: connectionIndex,
+              progress: 0,
+            })
           }
-          // Trigger new signals from the target node
-          targetNode.connections.forEach((connectionIndex) => {
-            const connectedNode = nodes[connectionIndex]
-            if (Math.random() < 0.1) { // 10% chance to trigger a new signal
-              particles.push({
-                nodeIndex: targetIndex,
-                targetIndex: connectionIndex,
-                progress: 0,
-              })
-            }
-          })
+        })
+      }
 
       update() {
         this.x += this.vx
