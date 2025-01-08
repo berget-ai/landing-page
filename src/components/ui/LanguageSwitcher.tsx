@@ -11,7 +11,7 @@ export function LanguageSwitcher() {
           onClick={() => i18n.changeLanguage('sv')}
           className="p-2 rounded-full bg-white/10"
         >
-          <Flag code="SE" />
+          <Flag code="SE" style={{ width: '24px', height: '24px' }} />
         </button>
       ) : (
         <button
