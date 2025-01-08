@@ -1,27 +1,29 @@
 import { Github, Linkedin, Twitter } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { useTranslation } from 'react-i18next'
 
 const footerLinks = {
   product: [
-    { name: 'Features', href: '#features' },
-    { name: 'Pricing', href: '#pricing' },
-    { name: 'Documentation', href: '#docs' },
-    { name: 'Changelog', href: '#changelog' },
+    { key: 'features', href: '#features' },
+    { key: 'pricing', href: '#pricing' },
+    { key: 'documentation', href: '#docs' },
+    { key: 'changelog', href: '#changelog' },
   ],
   company: [
-    { name: 'About', href: '#about' },
-    { name: 'Blog', href: '#blog' },
-    { name: 'Careers', href: '#careers' },
-    { name: 'Contact', href: '#contact' },
+    { key: 'about', href: '#about' },
+    { key: 'blog', href: '#blog' },
+    { key: 'careers', href: '#careers' },
+    { key: 'contact', href: '#contact' },
   ],
   legal: [
-    { name: 'Privacy', href: '#privacy' },
-    { name: 'Terms', href: '#terms' },
-    { name: 'Security', href: '#security' },
+    { key: 'privacy', href: '#privacy' },
+    { key: 'terms', href: '#terms' },
+    { key: 'security', href: '#security' },
   ],
 }
 
 export function Footer() {
+  const { t } = useTranslation()
   return (
     <footer className="border-t border-white/5 bg-background/80 backdrop-blur-lg">
       <div className="container mx-auto px-4 py-12">
@@ -29,8 +31,7 @@ export function Footer() {
           <div>
             <div className="text-xl font-semibold mb-4">Berget AI</div>
             <p className="text-sm text-white/60 mb-4">
-              Enterprise-grade AI model deployment platform built for teams who
-              need reliability and performance.
+              {t('footer.description')}
             </p>
             <div className="flex space-x-4">
               <Button variant="ghost" size="icon" className="hover:bg-white/10">
@@ -46,15 +47,15 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-medium mb-4">Product</h3>
+            <h3 className="font-medium mb-4">{t('footer.product.title')}</h3>
             <ul className="space-y-3">
               {footerLinks.product.map((link) => (
-                <li key={link.name}>
+                <li key={link.key}>
                   <a
                     href={link.href}
                     className="text-sm text-white/60 hover:text-white transition-colors"
                   >
-                    {link.name}
+                    {t(`footer.product.${link.key}`)}
                   </a>
                 </li>
               ))}
@@ -62,15 +63,15 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-medium mb-4">Company</h3>
+            <h3 className="font-medium mb-4">{t('footer.company.title')}</h3>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
-                <li key={link.name}>
+                <li key={link.key}>
                   <a
                     href={link.href}
                     className="text-sm text-white/60 hover:text-white transition-colors"
                   >
-                    {link.name}
+                    {t(`footer.company.${link.key}`)}
                   </a>
                 </li>
               ))}
@@ -78,15 +79,15 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-medium mb-4">Legal</h3>
+            <h3 className="font-medium mb-4">{t('footer.legal.title')}</h3>
             <ul className="space-y-3">
               {footerLinks.legal.map((link) => (
-                <li key={link.name}>
+                <li key={link.key}>
                   <a
                     href={link.href}
                     className="text-sm text-white/60 hover:text-white transition-colors"
                   >
-                    {link.name}
+                    {t(`footer.legal.${link.key}`)}
                   </a>
                 </li>
               ))}
@@ -97,7 +98,7 @@ export function Footer() {
         <div className="mt-12 pt-8 border-t border-white/5">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-white/60">
-              © {new Date().getFullYear()} Berget. All rights reserved.
+              {t('footer.copyright', { year: new Date().getFullYear() })}
             </p>
             <div className="flex items-center gap-4">
               <Button
@@ -105,7 +106,7 @@ export function Footer() {
                 size="sm"
                 className="text-white/60 hover:text-white"
               >
-                Status
+                {t('footer.status')}
               </Button>
               <div className="w-1 h-1 rounded-full bg-white/20" />
               <Button
@@ -113,7 +114,7 @@ export function Footer() {
                 size="sm"
                 className="text-white/60 hover:text-white"
               >
-                Support
+                {t('footer.support')}
               </Button>
             </div>
           </div>

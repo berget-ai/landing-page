@@ -1,9 +1,12 @@
 import { motion } from 'framer-motion'
 import { GitBranch, Database, Shield, Cloud, Link2, Cpu } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 export function Overview() {
+  const { t } = useTranslation()
+
   return (
-    <section className="py-32 relative overflow-hidden bg-black/40">
+    <section className="py-32 relative overflow-hidden ">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background opacity-50" />
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
@@ -11,12 +14,11 @@ export function Overview() {
             <GitBranch className="w-4 h-4 mr-2" />
             <span className="text-sm">GitOps Architecture</span>
           </div>
-          <h2 className="text-4xl font-medium mb-6">What is GitOps?</h2>
+          <h2 className="text-4xl font-medium mb-6">
+            {t('overview.whatIsGitOps.title')}
+          </h2>
           <p className="text-lg text-white/60">
-            GitOps is a modern approach to infrastructure and application
-            management using Git as the single source of truth. It enables
-            developers to manage infrastructure and application configurations
-            using Git repositories.
+            {t('overview.whatIsGitOps.description')}
           </p>
         </div>
 
@@ -34,13 +36,14 @@ export function Overview() {
               <div className="mb-4">
                 <GitBranch className="w-8 h-8 text-blue-400" />
               </div>
-              <h3 className="text-xl font-medium mb-2">Git Repository</h3>
+              <h3 className="text-xl font-medium mb-2">
+                {t('overview.gitRepository.title')}
+              </h3>
               <p className="text-white/60 mb-4">
-                Your infrastructure as code and application configurations are
-                version controlled in Git.
+                {t('overview.gitRepository.description')}
               </p>
               <div className="text-sm text-white/40">
-                Automated sync with your cluster
+                {t('overview.gitRepository.sync')}
               </div>
             </motion.div>
 
@@ -55,13 +58,14 @@ export function Overview() {
               <div className="mb-4">
                 <Cpu className="w-8 h-8 text-purple-400" />
               </div>
-              <h3 className="text-xl font-medium mb-2">Berget Cluster</h3>
+              <h3 className="text-xl font-medium mb-2">
+                {t('overview.bergetCluster.title')}
+              </h3>
               <p className="text-white/60 mb-4">
-                Dedicated GPU resources, isolated network, and encrypted storage
-                for your workloads.
+                {t('overview.bergetCluster.description')}
               </p>
               <div className="text-sm text-white/40">
-                Enterprise-grade security & performance
+                {t('overview.bergetCluster.security')}
               </div>
             </motion.div>
 
@@ -76,12 +80,15 @@ export function Overview() {
               <div className="mb-4">
                 <Link2 className="w-8 h-8 text-green-400" />
               </div>
-              <h3 className="text-xl font-medium mb-2">AI API:s</h3>
+              <h3 className="text-xl font-medium mb-2">
+                {t('overview.aiApis.title')}
+              </h3>
               <p className="text-white/60 mb-4">
-                You can either use our open models or deploy your own. In any
-                case your data is not leaving our data center.
+                {t('overview.aiApis.description')}
               </p>
-              <div className="text-sm text-white/40">Hybrid cloud ready</div>
+              <div className="text-sm text-white/40">
+                {t('overview.aiApis.hybridCloud')}
+              </div>
             </motion.div>
           </div>
 

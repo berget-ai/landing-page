@@ -2,16 +2,19 @@ import { useState } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from '@/components/ui/button'
+import { GradientBackground } from '@/components/common/GradientBackground'
 import { RecipeCard } from './RecipeCard'
 import { recipes } from '@/lib/recipes'
+import { useTranslation } from 'react-i18next'
 
 export function RagRecipes() {
+  const { t } = useTranslation()
   const [activeIndex, setActiveIndex] = useState(0)
   const visibleRecipes = 3
 
   const nextSlide = () => {
     setActiveIndex((current) =>
-      Math.min(current + 1, recipes.length - visibleRecipes),
+      Math.min(current + 1, recipes.length - visibleRecipes)
     )
   }
 
@@ -20,15 +23,15 @@ export function RagRecipes() {
   }
 
   return (
-    <section className="py-24 relative bg-gradient-to-br from-[#2D6A4F] via-[#40916C] to-[#FFB700] text-white">
+    <GradientBackground className="py-24 text-white">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between mb-12">
           <div>
             <h2 className="text-3xl font-medium mb-2 text-white">
-              RAG Recipes
+              {t('ragRecipes.title')}
             </h2>
             <p className="text-lg text-white/80">
-              Ready-to-deploy RAG applications
+              {t('ragRecipes.description')}
             </p>
           </div>
 
@@ -83,6 +86,6 @@ export function RagRecipes() {
           </motion.div>
         </div>
       </div>
-    </section>
+    </GradientBackground>
   )
 }

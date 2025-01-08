@@ -1,14 +1,14 @@
 import { Bot, Lock, Server } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 import { Button } from '@/components/ui/button'
 import { FeatureCard } from './FeatureCard'
 import { FeatureCarousel } from './features/FeatureCarousel'
 
 export function Features() {
+  const { t } = useTranslation()
+
   return (
-    <section
-      className="py-40 relative bg-[linear-gradient(to_right,rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:48px_48px]"
-      id="features"
-    >
+    <section className="py-40 relative" id="features">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background opacity-80" />
       <FeatureCarousel />
 
@@ -17,26 +17,19 @@ export function Features() {
           {/* Serverless Inference */}
           <div className="space-y-12">
             <div className="space-y-6">
-              <h2 className="text-3xl font-medium">Model inference</h2>
-              <p className="text-lg text-white/60">
-                Serverless inference of powerful open-source models. Access our
-                50+ models including Llama 3, Mixtral, through serverless
-                endpoints and start building your AI applications using the Open
-                AI API standard.
-              </p>
-              <p className="text-lg text-white/60">
-                It is simple, you can start immediately and you pay as you go.
-              </p>
+              <h2 className="text-3xl font-medium">{t('features.modelInference.title')}</h2>
+              <p className="text-lg text-white/60">{t('features.modelInference.description1')}</p>
+              <p className="text-lg text-white/60">{t('features.modelInference.description2')}</p>
               <div className="flex gap-4">
-                <Button variant="secondary">View Models</Button>
-                <Button variant="outline">Learn More</Button>
+                <Button variant="secondary">{t('features.modelInference.viewModels')}</Button>
+                <Button variant="outline">{t('features.modelInference.learnMore')}</Button>
               </div>
             </div>
 
             <FeatureCard
               icon={Bot}
-              title="Dedicated inference for your scaling needs"
-              description="Host any model, open-source, fine-tuned or one that you trained yourself on our dedicated infrastructure as you scale. Load any model, select GPU instances and deploy your own dedicated inference service and endpoint in a heartbeat."
+              title={t('features.dedicatedInference.title')}
+              description={t('features.dedicatedInference.description')}
             />
           </div>
 
@@ -44,14 +37,14 @@ export function Features() {
           <div className="space-y-12">
             <FeatureCard
               icon={Lock}
-              title="Safe and compliant AI"
-              description="With our inference services, your data never leaves the EU, or even our data center. No data - such as prompts and responses - is stored and cannot be accessed by anyone but yourself. This greatly simplifies compliance with EU regulations such as EU AI Act, GDPR, Nis-2 and Dora."
+              title={t('features.safeCompliantAI.title')}
+              description={t('features.safeCompliantAI.description')}
             />
 
             <FeatureCard
               icon={Server}
-              title="Production-grade performance"
-              description="Run inference at scale with predictable cost. You pay for the dedicated resources that serves your model, ensuring production-grade latency and throughput for your applications."
+              title={t('features.productionGradePerformance.title')}
+              description={t('features.productionGradePerformance.description')}
             />
           </div>
         </div>
@@ -61,12 +54,10 @@ export function Features() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-medium">
-              Open Weights models are winning the game
+              {t('features.openWeightsTitle')}
             </h2>
             <p className="text-lg text-white/60 mt-4">
-              Open weights models are the future of AI. They are moving faster
-              than the closed ones and you can trust that no one is using your
-              data for training.
+              {t('features.openWeightsDescription')}
             </p>
           </div>
           <div className="flex justify-center">

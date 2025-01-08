@@ -1,0 +1,246 @@
+{
+  "header": {
+    "navigation": {
+      "pricing": "Pricing",
+      "about": "About"
+    },
+    "buttons": {
+      "signIn": "Sign In",
+      "getStarted": "Get Started"
+    }
+  },
+  "compliance": {
+    "regulations": {
+      "gdpr": {
+        "name": "GDPR",
+        "description": "Full compliance with EU data protection regulations",
+        "benefits": [
+          "Data stays within EU borders",
+          "Complete data sovereignty",
+          "Transparent data processing"
+        ]
+      },
+      "nis2": {
+        "name": "NIS2",
+        "description": "Network and Information Systems Security Directive",
+        "benefits": [
+          "Enhanced cybersecurity measures",
+          "Incident reporting framework",
+          "Risk management protocols"
+        ]
+      },
+      "schrems2": {
+        "name": "Schrems II",
+        "description": "Compliant data transfer framework",
+        "benefits": [
+          "No US cloud act exposure",
+          "EU-based data processing",
+          "Legal certainty for transfers"
+        ]
+      },
+      "iso27001": {
+        "name": "ISO 27001",
+        "description": "Information security management certification",
+        "benefits": [
+          "Systematic security approach",
+          "Regular security audits",
+          "Documented security controls"
+        ]
+      },
+      "dora": {
+        "name": "DORA",
+        "description": "Digital Operational Resilience Act compliance",
+        "benefits": [
+          "ICT risk management",
+          "Incident reporting",
+          "Digital resilience testing"
+        ]
+      }
+    }
+  },
+  "complianceSection": {
+    "tagline": "Compliance First",
+    "title": "Simplified Compliance for Your AI Applications",
+    "description": "Much of the complexity around legislation doesn't arise from cloud technology itself, but from foreign ownership and unclear data access. Our cloud runs in Sweden and is owned by Swedish stakeholders.",
+    "callToAction": "Take control of your data and simplify your compliance journey with Berget's comprehensive regulatory framework and EU-based infrastructure.",
+    "learnMore": "Learn More About Compliance"
+  },
+  "pricing": {
+    "title": "Simple to support your scaling needs",
+    "description": "We aim to keep our prices simple and fair, so that you can focus on building awesome stuff instead of trying to figure out your bills.",
+    "detailedPricing": "Detailed Pricing",
+    "tooltip": "All prices are in EUR and exclude VAT",
+    "compareWithAlternatives": "Compare with Alternatives",
+    "comparisonTooltip": "Feature comparison as of March 2024",
+    "moneyBackGuarantee": "30-day money-back guarantee on all plans",
+    "paymentInfo": "Credit card and pre-payment. Invoice possible for large customers.\nAutomatic top-up when your balance reaches a set threshold."
+  },
+  "footer": {
+    "description": "Enterprise-grade AI model deployment platform built for teams who need reliability and performance.",
+    "product": {
+      "title": "Product",
+      "features": "Features",
+      "pricing": "Pricing",
+      "documentation": "Documentation",
+      "changelog": "Changelog"
+    },
+    "company": {
+      "title": "Company",
+      "about": "About",
+      "blog": "Blog",
+      "careers": "Careers",
+      "contact": "Contact"
+    },
+    "legal": {
+      "title": "Legal",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "security": "Security"
+    },
+    "copyright": "© {year} Berget. All rights reserved.",
+    "status": "Status",
+    "support": "Support"
+  },
+  "modelInferenceSection": {
+    "title": "Model Inference",
+    "description": "Access our extensive collection of powerful open-source models through serverless endpoints. Start building AI applications immediately using the OpenAI API standard.",
+    "features": {
+      "preTrainedModels": "50+ pre-trained models available",
+      "pricing": "Pay-as-you-go pricing",
+      "compatibility": "OpenAI API compatibility"
+    },
+    "codeBlockTitle": "By devs for devs",
+    "popularModels": "Popular Models"
+  },
+  "features": {
+    "modelInference": {
+      "title": "Model inference",
+      "description1": "Serverless inference of powerful open-source models. Access our 50+ models including Llama 3, Mixtral, through serverless endpoints and start building your AI applications using the Open AI API standard.",
+      "description2": "It is simple, you can start immediately and you pay as you go.",
+      "viewModels": "View Models",
+      "learnMore": "Learn More"
+    },
+    "dedicatedInference": {
+      "title": "Dedicated inference for your scaling needs",
+      "description": "Host any model, open-source, fine-tuned or one that you trained yourself on our dedicated infrastructure as you scale. Load any model, select GPU instances and deploy your own dedicated inference service and endpoint in a heartbeat."
+    },
+    "safeCompliantAI": {
+      "title": "Safe and compliant AI",
+      "description": "With our inference services, your data never leaves the EU, or even our data center. No data - such as prompts and responses - is stored and cannot be accessed by anyone but yourself. This greatly simplifies compliance with EU regulations such as EU AI Act, GDPR, Nis-2 and Dora."
+    },
+    "productionGradePerformance": {
+      "title": "Production-grade performance",
+      "description": "Run inference at scale with predictable cost. You pay for the dedicated resources that serves your model, ensuring production-grade latency and throughput for your applications."
+    },
+    "openWeightsTitle": "Open Weights for Transparency",
+    "openWeightsDescription": "We believe in open source and transparency. All our models are available for review and validation."
+  },
+  "overview": {
+    "whatIsGitOps": {
+      "title": "What is GitOps?",
+      "description": "GitOps is a modern approach to infrastructure and application management using Git as the single source of truth. It enables developers to manage infrastructure and application configurations using Git repositories."
+    },
+    "gitRepository": {
+      "title": "Git Repository",
+      "description": "Your infrastructure as code and application configurations are version controlled in Git.",
+      "sync": "Automated sync with your cluster"
+    },
+    "bergetCluster": {
+      "title": "Berget Cluster",
+      "description": "Dedicated GPU resources, isolated network, and encrypted storage for your workloads.",
+      "security": "Enterprise-grade security & performance"
+    },
+    "aiApis": {
+      "title": "AI API:s",
+      "description": "You can either use our open models or deploy your own. In any case your data is not leaving our data center.",
+      "hybridCloud": "Hybrid cloud ready"
+    }
+  },
+  "getStarted": {
+    "title": {
+      "part1": "Build AI powered applications with",
+      "part2": "Enterprise-Grade",
+      "part3": "Security"
+    },
+    "description": "Berget AI offers Europe's best and simplest place for your AI applications, making compliance effortless while providing modern developer experience and sustainable infrastructure with no vendor lock-in.",
+    "startBuilding": "Start Building",
+    "bookDemo": "Book a Demo"
+  },
+  "hero": {
+    "tagline": "A responsible, compliant and sustainable AI company for Europe",
+    "title": {
+      "part1": "Enable a Symphony of",
+      "part2": "AI Agents Working for You"
+    },
+    "description": "Orchestrate multiple AI agents to work together seamlessly, creating a powerful ecosystem of specialized intelligence.",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More"
+  },
+  "about": {
+    "title": "About Berget AI",
+    "description": "We're building Europe's most secure and sustainable AI infrastructure. Our team combines deep expertise in cloud computing, AI, and security to help companies deploy AI responsibly.",
+    "joinTeam": {
+      "title": "Join Our Team",
+      "description": "We're always looking for talented people who share our vision of making AI infrastructure more secure, sustainable, and accessible.",
+      "cta": "View Open Positions"
+    },
+    "team": {
+      "members": ["andreas", "christian", "john"],
+      "andreas": {
+        "name": "Andreas Lundmark",
+        "role": "CEO",
+        "bio": "Former Partner and Nordic AI Lead at Boston Consulting Group. Deep expertise in enterprise AI transformation.",
+        "image": "/team/andreas.jpg",
+        "links": {
+          "linkedin": "https://linkedin.com/in/andreaslundmark",
+          "github": "https://github.com/alundmark",
+          "email": "andreas@berget.ai"
+        }
+      },
+      "christian": {
+        "name": "Christian Landgren",
+        "role": "CPTO",
+        "bio": "Serial entrepreneur and tech innovator. Expert in building developer-first platforms and open source solutions.",
+        "image": "/team/christian.jpg",
+        "links": {
+          "linkedin": "https://linkedin.com/in/christianlandgren",
+          "github": "https://github.com/irony",
+          "email": "christian@berget.ai"
+        }
+      },
+      "john": {
+        "name": "John Angelmo",
+        "role": "Infrastructure Lead",
+        "bio": "Former Kubernetes Team Lead at Tele2. Expert in cloud infrastructure and customer support.",
+        "image": "/team/john.jpg",
+        "links": {
+          "linkedin": "https://linkedin.com/in/johnangelmo",
+          "github": "https://github.com/jangelmo",
+          "email": "john@berget.ai"
+        }
+      }
+    }
+  },
+  "modelInference": {
+    "models": {
+      "llama3": {
+        "name": "Llama 3",
+        "description": "Latest open-source LLM from Meta",
+        "specs": "405B parameters",
+        "type": "Text Generation"
+      },
+      "mixtral": {
+        "name": "Mixtral",
+        "description": "High-performance mixture of experts model",
+        "specs": "8x7B architecture",
+        "type": "Text Generation"
+      },
+      "whisper": {
+        "name": "Whisper",
+        "description": "Speech recognition and translation",
+        "specs": "Multi-language support",
+        "type": "Speech-to-Text"
+      }
+    }
+  }
+}
