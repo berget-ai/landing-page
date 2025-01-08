@@ -76,7 +76,7 @@ export function Pricing() {
 
         <div className="mb-24">
           <div className="flex items-center justify-between mb-8">
-            <h3 className="text-2xl font-medium">Detailed Pricing</h3>
+            <h3 className="text-2xl font-medium">{t('pricing.detailedPricing')}</h3>
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
@@ -95,7 +95,7 @@ export function Pricing() {
 
         <div className="mb-24">
           <div className="flex items-center justify-between mb-8">
-            <h3 className="text-2xl font-medium">Compare with Alternatives</h3>
+            <h3 className="text-2xl font-medium">{t('pricing.compareWithAlternatives')}</h3>
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
