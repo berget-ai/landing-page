@@ -70,7 +70,7 @@ export function NetworkBackground() {
     }))
 
     // Create connections between nearby nodes
-    nodes.forEach((node, i) => {
+    nodes.forEach((node) => {
       nodes.forEach((otherNode, j) => {
         if (i !== j) {
           const dx = node.x - otherNode.x
