@@ -88,7 +88,11 @@ export function Compliance() {
                 <p className="text-white/60 mb-6">{regulation.description}</p>
 
                 <ul className="space-y-2">
-                  {t<string[]>('compliance.regulations.gdpr.benefits', { returnObjects: true }).map((benefit: string) => (
+                  {(
+                    t('compliance.regulations.gdpr.benefits', {
+                      returnObjects: true,
+                    }) as Array<string>
+                  ).map((benefit: string) => (
                     <li
                       key={benefit}
                       className="flex items-center gap-2 text-sm text-white/60"
