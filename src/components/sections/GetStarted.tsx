@@ -59,11 +59,10 @@ export function GetStarted() {
               Assigned DNS: ideal-palmtree.berget.cloud
             </div>
             <div className="text-white/60 mt-2">
-              Nu är ditt kluster redo att användas. Nu kan du börja köra dina
-              applikationer.
+              {t('getStarted.clusterReady')}
             </div>
             <div className="text-white/60">
-              Du kan peka ett CNAME till klustret.
+              {t('getStarted.cnameInstruction')}
             </div>
             <div className="mt-2">
               <div className="text-white/60">
@@ -73,8 +72,7 @@ export function GetStarted() {
                 </span>
               </div>
               <div className="text-white/60 mt-2">
-                Tips: använd fluxcd för att automatiskt hålla klustret
-                uppdaterat.
+                {t('getStarted.fluxcdTip')}
               </div>
             </div>
           </CodeBlock>
