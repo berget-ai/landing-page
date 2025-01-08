@@ -17,6 +17,18 @@
       "description2": "Det är enkelt, du kan börja omedelbart och du betalar efter användning.",
       "viewModels": "Visa modeller",
       "learnMore": "Läs mer"
+    },
+    "dedicatedInference": {
+      "title": "Dedikerad inferens för dina skalningsbehov",
+      "description": "Värd för vilken modell som helst, öppen källkod, finjusterad eller en som du själv har tränat på vår dedikerade infrastruktur när du skalar. Ladda vilken modell som helst, välj GPU-instans och distribuera din egen dedikerade inferenstjänst och slutpunkt på ett ögonblick."
+    },
+    "safeCompliantAI": {
+      "title": "Säker och kompatibel AI",
+      "description": "Med våra inferenstjänster lämnar dina data aldrig EU, eller ens vårt datacenter. Ingen data - såsom uppmaningar och svar - lagras och kan inte nås av någon annan än dig själv. Detta förenklar avsevärt efterlevnaden av EU-regler som EU AI Act, GDPR, Nis-2 och Dora."
+    },
+    "productionGradePerformance": {
+      "title": "Produktionsklassad prestanda",
+      "description": "Kör inferens i stor skala med förutsägbara kostnader. Du betalar för de dedikerade resurser som betjänar din modell, vilket säkerställer produktionsklassad latens och genomströmning för dina applikationer."
     }
   }
 }
