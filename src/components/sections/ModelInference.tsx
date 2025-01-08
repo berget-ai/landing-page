@@ -59,10 +59,21 @@ export function ModelInference() {
                 </div>
               </div>
 
-              <div className="mt-6 bg-black/50 backdrop-blur-sm rounded-lg border border-white/10 overflow-hidden max-w-md ml-auto">
-                <div className="p-4 text-sm font-mono text-white/80">
-                  <code>
-                    {`import openai from 'openai'
+              <div className="lg:pl-8">
+                <div className="bg-black/50 backdrop-blur-sm rounded-lg border border-white/10 overflow-hidden">
+                  <div className="flex items-center gap-2 px-4 py-2 border-b border-white/10 bg-white/5">
+                    <div className="flex gap-1.5">
+                      <div className="w-3 h-3 rounded-full bg-red-500/80" />
+                      <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
+                      <div className="w-3 h-3 rounded-full bg-green-500/80" />
+                    </div>
+                    <span className="text-sm text-white/40">
+                      Av utvecklare för utvecklare
+                    </span>
+                  </div>
+                  <div className="p-4 text-sm font-mono">
+                    <pre>
+                      {`import openai from 'openai'
 
 openai.apiKey = 'YOUR_API_KEY'
 openai.endpoint = 'https://api.berget.ai'
@@ -74,11 +85,10 @@ const response = await openai.Completion.create({
 
 console.log(response.data.choices[0].text) // => 'Köttbullar, prinskorv, julskinka, ...'
                     `}
-                  </code>
+                    </pre>
+                  </div>
                 </div>
               </div>
-              <Button variant="default">View Models</Button>
-              <Button variant="secondary">Documentation</Button>
             </div>
           </div>
         </div>
