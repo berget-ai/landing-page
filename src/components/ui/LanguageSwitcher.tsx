@@ -5,7 +5,11 @@ export function LanguageSwitcher() {
   const { t } = useTranslation()
 
   const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng)
+    if (i18n.changeLanguage) {
+      i18n.changeLanguage(lng)
+    } else {
+      console.error("changeLanguage function is not available on i18n")
+    }
   }
 
   return (
