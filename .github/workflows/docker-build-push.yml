@@ -26,6 +26,9 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Update npm version
+        run: npm version patch
+
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
