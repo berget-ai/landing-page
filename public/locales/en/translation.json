@@ -58,7 +58,7 @@
       }
     }
   },
-  "compliance": {
+  "complianceSection": {
     "tagline": "Compliance First",
     "title": "Simplified Compliance for Your AI Applications",
     "description": "Much of the complexity around legislation doesn't arise from cloud technology itself, but from foreign ownership and unclear data access. Our cloud runs in Sweden and is owned by Swedish stakeholders.",
@@ -188,7 +188,7 @@
         }
       },
       "christian": {
-        "name": "Christian Landgren", 
+        "name": "Christian Landgren",
         "role": "CPTO",
         "bio": "Serial entrepreneur and tech innovator. Expert in building developer-first platforms and open source solutions.",
         "image": "/team/christian.jpg",
@@ -200,7 +200,7 @@
       },
       "john": {
         "name": "John Angelmo",
-        "role": "Infrastructure Lead", 
+        "role": "Infrastructure Lead",
         "bio": "Former Kubernetes Team Lead at Tele2. Expert in cloud infrastructure and customer support.",
         "image": "/team/john.jpg",
         "links": {
