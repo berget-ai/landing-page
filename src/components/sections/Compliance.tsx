@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { Shield, Lock, FileCheck, Scale, Building } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 import { Button } from '@/components/ui/button'
 
 const regulations = [
@@ -56,6 +57,8 @@ const regulations = [
 ]
 
 export function Compliance() {
+  const { t } = useTranslation()
+
   return (
     <section className="py-32 relative bg-white/[0.02] border-y border-white/5">
       <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 opacity-10 blur-[100px]" />
@@ -63,18 +66,15 @@ export function Compliance() {
         <div className="text-center max-w-2xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 text-sm mb-6">
             <Shield className="w-4 h-4" />
-            <span>Compliance First</span>
+            <span>{t('compliance.tagline')}</span>
           </div>
 
           <h2 className="text-3xl font-medium mb-4">
-            Simplified Compliance for Your AI Applications
+            {t('compliance.title')}
           </h2>
 
           <p className="text-lg text-white/60">
-            Much of the complexity around legislation doesn't arise from cloud
-            technology itself, but from foreign ownership and unclear data
-            access. Our cloud runs in Sweden and is owned by Swedish
-            stakeholders.
+            {t('compliance.description')}
           </p>
         </div>
 
@@ -117,12 +117,10 @@ export function Compliance() {
         <div className="flex justify-center">
           <div className="max-w-2xl text-center">
             <p className="text-lg text-white/60 mb-6">
-              Take control of your data and simplify your compliance journey
-              with Berget's comprehensive regulatory framework and EU-based
-              infrastructure.
+              {t('compliance.callToAction')}
             </p>
             <Button size="lg" variant="secondary">
-              Learn More About Compliance
+              {t('compliance.learnMore')}
             </Button>
           </div>
         </div>

@@ -9,6 +9,13 @@
       "getStarted": "Get Started"
     }
   },
+  "compliance": {
+    "tagline": "Compliance First",
+    "title": "Simplified Compliance for Your AI Applications",
+    "description": "Much of the complexity around legislation doesn't arise from cloud technology itself, but from foreign ownership and unclear data access. Our cloud runs in Sweden and is owned by Swedish stakeholders.",
+    "callToAction": "Take control of your data and simplify your compliance journey with Berget's comprehensive regulatory framework and EU-based infrastructure.",
+    "learnMore": "Learn More About Compliance"
+  },
   "footer": {
     "description": "Enterprise-grade AI model deployment platform built for teams who need reliability and performance.",
     "product": {

@@ -9,6 +9,13 @@
       "getStarted": "Kom igång"
     }
   },
+  "compliance": {
+    "tagline": "Efterlevnad i fokus",
+    "title": "Förenklad efterlevnad för dina AI-applikationer",
+    "description": "Mycket av komplexiteten kring lagstiftning uppstår inte från molntekniken i sig, utan från utländskt ägande och oklar dataåtkomst. Vårt moln drivs i Sverige och ägs av svenska intressenter.",
+    "callToAction": "Ta kontroll över dina data och förenkla din efterlevnadsresa med Bergets omfattande regelverksramverk och EU-baserade infrastruktur.",
+    "learnMore": "Läs mer om efterlevnad"
+  },
   "footer": {
     "description": "Plattform för AI-modellsdistribution i företagsklass, byggd för team som behöver tillförlitlighet och prestanda.",
     "product": {
