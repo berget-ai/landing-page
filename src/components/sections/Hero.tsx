@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
-import { GetStarted } from './GetStarted'
 
 export function Hero() {
   return (
@@ -47,15 +46,22 @@ export function Hero() {
             </p>
           </div>
           <div className="flex justify-center gap-4">
-            <Button size="lg" variant="accent" className="transition-transform hover:scale-105">
+            <Button
+              size="lg"
+              variant="accent"
+              className="transition-transform hover:scale-105"
+            >
               Learn More
             </Button>
-            <Button size="lg" variant="secondary" className="transition-transform hover:scale-105">
+            <Button
+              size="lg"
+              variant="secondary"
+              className="transition-transform hover:scale-105"
+            >
               Get Started
             </Button>
           </div>
         </motion.div>
-        </div>
       </div>
     </div>
   )
