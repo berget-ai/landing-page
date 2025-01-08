@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import { Bot, Sparkles, Zap, MessageSquare } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -27,6 +28,7 @@ const models = [
 ]
 
 export function ModelInference() {
+  const { t } = useTranslation()
   const [selectedModel, setSelectedModel] = useState<(typeof models)[0] | null>(
     null
   )
@@ -38,30 +40,26 @@ export function ModelInference() {
           {/* Serverless Inference */}
           <div className="space-y-12">
             <div className="space-y-6">
-              <h2 className="text-3xl font-medium">Model Inference</h2>
-              <p className="text-lg text-white/60">
-                Access our extensive collection of powerful open-source models
-                through serverless endpoints. Start building AI applications
-                immediately using the OpenAI API standard.
-              </p>
+              <h2 className="text-3xl font-medium">{t('modelInference.title')}</h2>
+              <p className="text-lg text-white/60">{t('modelInference.description')}</p>
 
               <div className="flex flex-col gap-4">
                 <div className="flex items-center gap-3">
                   <Sparkles className="w-5 h-5 text-white/60" />
-                  <span>50+ pre-trained models available</span>
+                  <span>{t('modelInference.features.preTrainedModels')}</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Zap className="w-5 h-5 text-white/60" />
-                  <span>Pay-as-you-go pricing</span>
+                  <span>{t('modelInference.features.pricing')}</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Bot className="w-5 h-5 text-white/60" />
-                  <span>OpenAI API compatibility</span>
+                  <span>{t('modelInference.features.compatibility')}</span>
                 </div>
               </div>
 
               <div className="float-right lg:pl-8">
-                <CodeBlock title="Av utvecklare för utvecklare">
+                <CodeBlock title={t('modelInference.codeBlockTitle')}>
                   {`import OpenAI from 'openai';
 
 const client = new OpenAI({
@@ -89,7 +87,7 @@ async function main() {
 
       {/* Available Models */}
       <div className="space-y-4">
-        <h3 className="text-xl font-medium">Popular Models</h3>
+        <h3 className="text-xl font-medium">{t('modelInference.popularModels')}</h3>
         <div className="grid gap-4">
           {models.map((model) => (
             <motion.div

@@ -1,0 +1,13 @@
+{
+  "modelInference": {
+    "title": "Model Inference",
+    "description": "Access our extensive collection of powerful open-source models through serverless endpoints. Start building AI applications immediately using the OpenAI API standard.",
+    "features": {
+      "preTrainedModels": "50+ pre-trained models available",
+      "pricing": "Pay-as-you-go pricing",
+      "compatibility": "OpenAI API compatibility"
+    },
+    "codeBlockTitle": "By devs for devs",
+    "popularModels": "Popular Models"
+  }
+}

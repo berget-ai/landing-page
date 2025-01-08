@@ -1,0 +1,13 @@
+{
+  "modelInference": {
+    "title": "Modellinferens",
+    "description": "Få tillgång till vår omfattande samling av kraftfulla öppen källkodsmodeller genom serverlösa slutpunkter. Börja bygga AI-applikationer omedelbart med hjälp av OpenAI API-standarden.",
+    "features": {
+      "preTrainedModels": "50+ förtränade modeller tillgängliga",
+      "pricing": "Betala efter användning",
+      "compatibility": "OpenAI API-kompatibilitet"
+    },
+    "codeBlockTitle": "Av utvecklare för utvecklare",
+    "popularModels": "Populära Modeller"
+  }
+}
