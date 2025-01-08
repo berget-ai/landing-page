@@ -7,11 +7,11 @@ export function NetworkConnectivity() {
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-3xl font-medium mb-4">
-            Secure Network Infrastructure
+            Säker Nätverksinfrastruktur
           </h2>
           <p className="text-lg text-white/60">
-            Enterprise-grade connectivity with built-in security and compliance
-            features.
+            Företagsanpassad uppkoppling med inbyggd säkerhet och 
+            regelefterlevnad.
           </p>
         </div>
 
@@ -25,12 +25,12 @@ export function NetworkConnectivity() {
                 <span>Safe and Compliant AI</span>
               </div>
 
-              <h3 className="text-2xl font-medium">Data Never Leaves the EU</h3>
+              <h3 className="text-2xl font-medium">Data stannar inom EU</h3>
 
               <p className="text-lg text-white/60">
-                With our inference services, your data never leaves the EU, or
-                even our data center. No data - such as prompts and responses -
-                is stored and cannot be accessed by anyone but yourself.
+                Med våra inferenstjänster lämnar din data aldrig EU, eller ens 
+                vårt datacenter. Ingen data - som prompter och svar - lagras 
+                och kan inte nås av någon annan än dig själv.
               </p>
             </div>
 
@@ -38,33 +38,33 @@ export function NetworkConnectivity() {
               <div className="p-6 rounded-xl bg-white/5">
                 <Network className="w-6 h-6 mb-4" />
                 <h4 className="text-lg font-medium mb-2">
-                  Direct Connectivity
+                  Direktanslutning
                 </h4>
                 <p className="text-white/60">
-                  Connect securely via VPN, AWS Direct Connect, or Azure
-                  ExpressRoute for optimal performance.
+                  Anslut säkert via VPN, AWS Direct Connect eller Azure
+                  ExpressRoute för optimal prestanda.
                 </p>
               </div>
 
               <div className="p-6 rounded-xl bg-white/5">
                 <Lock className="w-6 h-6 mb-4" />
                 <h4 className="text-lg font-medium mb-2">
-                  Regulatory Compliance
+                  Regelefterlevnad
                 </h4>
                 <p className="text-white/60">
-                  Simplified compliance with EU regulations such as EU AI Act,
-                  GDPR, Nis-2 and Dora.
+                  Förenklad efterlevnad av EU-förordningar som EU AI Act,
+                  GDPR, Nis-2 och Dora.
                 </p>
               </div>
 
               <div className="p-6 rounded-xl bg-white/5">
                 <Shield className="w-6 h-6 mb-4" />
                 <h4 className="text-lg font-medium mb-2">
-                  Enterprise Security
+                  Företagssäkerhet
                 </h4>
                 <p className="text-white/60">
-                  End-to-end encryption, access controls, and comprehensive
-                  audit logging.
+                  Totalsträckskryptering, åtkomstkontroll och omfattande
+                  granskningsloggning.
                 </p>
               </div>
             </div>
