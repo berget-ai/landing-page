@@ -11,13 +11,8 @@ export function Overview() {
             <GitBranch className="w-4 h-4 mr-2" />
             <span className="text-sm">GitOps Architecture</span>
           </div>
-          <h2 className="text-4xl font-medium mb-6">What is GitOps?</h2>
-          <p className="text-lg text-white/60">
-            GitOps is a modern approach to infrastructure and application
-            management using Git as the single source of truth. It enables
-            developers to manage infrastructure and application configurations
-            using Git repositories.
-          </p>
+          <h2 className="text-4xl font-medium mb-6">{t('overview.whatIsGitOps.title')}</h2>
+          <p className="text-lg text-white/60">{t('overview.whatIsGitOps.description')}</p>
         </div>
 
         <div className="relative">
@@ -34,14 +29,9 @@ export function Overview() {
               <div className="mb-4">
                 <GitBranch className="w-8 h-8 text-blue-400" />
               </div>
-              <h3 className="text-xl font-medium mb-2">Git Repository</h3>
-              <p className="text-white/60 mb-4">
-                Your infrastructure as code and application configurations are
-                version controlled in Git.
-              </p>
-              <div className="text-sm text-white/40">
-                Automated sync with your cluster
-              </div>
+              <h3 className="text-xl font-medium mb-2">{t('overview.gitRepository.title')}</h3>
+              <p className="text-white/60 mb-4">{t('overview.gitRepository.description')}</p>
+              <div className="text-sm text-white/40">{t('overview.gitRepository.sync')}</div>
             </motion.div>
 
             {/* Berget Cluster */}
@@ -55,14 +45,9 @@ export function Overview() {
               <div className="mb-4">
                 <Cpu className="w-8 h-8 text-purple-400" />
               </div>
-              <h3 className="text-xl font-medium mb-2">Berget Cluster</h3>
-              <p className="text-white/60 mb-4">
-                Dedicated GPU resources, isolated network, and encrypted storage
-                for your workloads.
-              </p>
-              <div className="text-sm text-white/40">
-                Enterprise-grade security & performance
-              </div>
+              <h3 className="text-xl font-medium mb-2">{t('overview.bergetCluster.title')}</h3>
+              <p className="text-white/60 mb-4">{t('overview.bergetCluster.description')}</p>
+              <div className="text-sm text-white/40">{t('overview.bergetCluster.security')}</div>
             </motion.div>
 
             {/* External Connections */}
@@ -76,12 +61,9 @@ export function Overview() {
               <div className="mb-4">
                 <Link2 className="w-8 h-8 text-green-400" />
               </div>
-              <h3 className="text-xl font-medium mb-2">AI API:s</h3>
-              <p className="text-white/60 mb-4">
-                You can either use our open models or deploy your own. In any
-                case your data is not leaving our data center.
-              </p>
-              <div className="text-sm text-white/40">Hybrid cloud ready</div>
+              <h3 className="text-xl font-medium mb-2">{t('overview.aiApis.title')}</h3>
+              <p className="text-white/60 mb-4">{t('overview.aiApis.description')}</p>
+              <div className="text-sm text-white/40">{t('overview.aiApis.hybridCloud')}</div>
             </motion.div>
           </div>
 

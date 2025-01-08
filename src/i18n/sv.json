@@ -30,5 +30,36 @@
       "title": "Produktionsklassad prestanda",
       "description": "Kör inferens i stor skala med förutsägbara kostnader. Du betalar för de dedikerade resurser som betjänar din modell, vilket säkerställer produktionsklassad latens och genomströmning för dina applikationer."
     }
+  },
+  "overview": {
+    "whatIsGitOps": {
+      "title": "Vad är GitOps?",
+      "description": "GitOps är ett modernt tillvägagångssätt för infrastruktur- och applikationshantering med Git som den enda sanningskällan. Det gör det möjligt för utvecklare att hantera infrastruktur och applikationskonfigurationer med hjälp av Git-repositorier."
+    },
+    "gitRepository": {
+      "title": "Git Repository",
+      "description": "Din infrastruktur som kod och applikationskonfigurationer är versionskontrollerade i Git.",
+      "sync": "Automatisk synkronisering med ditt kluster"
+    },
+    "bergetCluster": {
+      "title": "Berget Cluster",
+      "description": "Dedikerade GPU-resurser, isolerat nätverk och krypterad lagring för dina arbetsbelastningar.",
+      "security": "Säkerhet och prestanda i företagsklass"
+    },
+    "aiApis": {
+      "title": "AI API:s",
+      "description": "Du kan antingen använda våra öppna modeller eller distribuera dina egna. I vilket fall som helst lämnar dina data inte vårt datacenter.",
+      "hybridCloud": "Hybridmoln redo"
+    }
+  },
+  "getStarted": {
+    "title": {
+      "part1": "Bygg AI-drivna applikationer med",
+      "part2": "Företagsklassad",
+      "part3": "Säkerhet"
+    },
+    "description": "Berget AI erbjuder Europas bästa och enklaste plats för dina AI-applikationer, vilket gör efterlevnad enkel samtidigt som det ger en modern utvecklarupplevelse och hållbar infrastruktur utan leverantörslåsning.",
+    "startBuilding": "Börja Bygga",
+    "bookDemo": "Boka en Demo"
   }
 }

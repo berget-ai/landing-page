@@ -30,5 +30,36 @@
       "title": "Production-grade performance",
       "description": "Run inference at scale with predictable cost. You pay for the dedicated resources that serves your model, ensuring production-grade latency and throughput for your applications."
     }
+  },
+  "overview": {
+    "whatIsGitOps": {
+      "title": "What is GitOps?",
+      "description": "GitOps is a modern approach to infrastructure and application management using Git as the single source of truth. It enables developers to manage infrastructure and application configurations using Git repositories."
+    },
+    "gitRepository": {
+      "title": "Git Repository",
+      "description": "Your infrastructure as code and application configurations are version controlled in Git.",
+      "sync": "Automated sync with your cluster"
+    },
+    "bergetCluster": {
+      "title": "Berget Cluster",
+      "description": "Dedicated GPU resources, isolated network, and encrypted storage for your workloads.",
+      "security": "Enterprise-grade security & performance"
+    },
+    "aiApis": {
+      "title": "AI API:s",
+      "description": "You can either use our open models or deploy your own. In any case your data is not leaving our data center.",
+      "hybridCloud": "Hybrid cloud ready"
+    }
+  },
+  "getStarted": {
+    "title": {
+      "part1": "Build AI powered applications with",
+      "part2": "Enterprise-Grade",
+      "part3": "Security"
+    },
+    "description": "Berget AI offers Europe's best and simplest place for your AI applications, making compliance effortless while providing modern developer experience and sustainable infrastructure with no vendor lock-in.",
+    "startBuilding": "Start Building",
+    "bookDemo": "Book a Demo"
   }
 }

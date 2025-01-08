@@ -10,25 +10,20 @@ export function GetStarted() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
           <h1 className="text-5xl font-medium leading-tight mb-6">
-            Build AI powered applications with
+            {t('getStarted.title.part1')}
             <br />
-            <span className="text-white">Enterprise-Grade</span> Security
+            <span className="text-white">{t('getStarted.title.part2')}</span> {t('getStarted.title.part3')}
           </h1>
 
-          <p className="text-xl text-white/60 mb-8 leading-relaxed">
-            Berget AI offers Europe's best and simplest place for your AI
-            applications, making compliance effortless while providing modern
-            developer experience and sustainable infrastructure with no vendor
-            lock-in.
-          </p>
+          <p className="text-xl text-white/60 mb-8 leading-relaxed">{t('getStarted.description')}</p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
             <Button size="lg" className="group">
-              Start Building
+              {t('getStarted.startBuilding')}
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button size="lg" variant="secondary">
-              Book a Demo
+              {t('getStarted.bookDemo')}
             </Button>
           </div>
 
