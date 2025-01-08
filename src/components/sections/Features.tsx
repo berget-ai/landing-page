@@ -57,9 +57,7 @@ export function Features() {
               Open Weights models are winning the game
             </h2>
             <p className="text-lg text-white/60 mt-4">
-              Open weights models are the future of AI. They are moving faster
-              than the closed ones and you can trust that no one is using your
-              data for training.
+              {t('getStarted.openWeightsDescription')}
             </p>
           </div>
           <div className="flex justify-center">
