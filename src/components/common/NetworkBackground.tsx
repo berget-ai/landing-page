@@ -36,7 +36,7 @@ export function NetworkBackground() {
         this.vx = Math.cos(angle) * speed
         this.vy = Math.sin(angle) * speed
         this.maxLife = 10
-        this.life = this.maxLife
+        this.life = this.maxLife;
         
         triggerSignal() {
           for (let i = 0; i < 3; i++) {
