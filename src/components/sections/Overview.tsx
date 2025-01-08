@@ -3,7 +3,7 @@ import { GitBranch, Database, Shield, Cloud, Link2, Cpu } from 'lucide-react'
 
 export function Overview() {
   return (
-    <section className="py-32 relative overflow-hidden bg-white text-black">
+    <section className="py-32 relative overflow-hidden bg-[#f8f9fa] text-black">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background opacity-50" />
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
