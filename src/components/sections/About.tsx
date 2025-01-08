@@ -3,35 +3,6 @@ import { Github, Linkedin, Mail } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useTranslation } from 'react-i18next'
 
-const team = [
-  {
-    key: 'andreas',
-    image: '/team/andreas.jpg',
-    links: {
-      linkedin: 'https://linkedin.com/in/andreaslundmark',
-      github: 'https://github.com/alundmark',
-      email: 'andreas@berget.ai',
-    },
-  },
-  {
-    key: 'christian',
-    image: '/team/christian.jpg',
-    links: {
-      linkedin: 'https://linkedin.com/in/christianlandgren',
-      github: 'https://github.com/irony',
-      email: 'christian@berget.ai',
-    },
-  },
-  {
-    key: 'john',
-    image: '/team/john.jpg',
-    links: {
-      linkedin: 'https://linkedin.com/in/johnangelmo',
-      github: 'https://github.com/jangelmo',
-      email: 'john@berget.ai',
-    },
-  },
-]
 
 export function About() {
   const { t } = useTranslation()
@@ -46,7 +17,7 @@ export function About() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {team.map((member, index) => (
+          {t('about.team.members', { returnObjects: true }).map((memberKey: string, index: number) => (
             <motion.div
               key={member.name}
               initial={{ opacity: 0, y: 20 }}
@@ -60,26 +31,26 @@ export function About() {
               <div className="relative p-6 rounded-2xl border border-white/10 group-hover:border-white/20 transition-colors">
                 <div className="aspect-square mb-6 rounded-xl overflow-hidden">
                   <img
-                    src={member.image}
-                    alt={member.name}
+                    src={t(`about.team.${memberKey}.image`)}
+                    alt={t(`about.team.${memberKey}.name`)}
                     className="w-full h-full object-cover"
                   />
                 </div>
 
                 <h3 className="text-xl font-medium mb-1">
-                  {t(`about.team.${member.key}.name`)}
+                  {t(`about.team.${memberKey}.name`)}
                 </h3>
                 <p className="text-white/60 mb-4">
-                  {t(`about.team.${member.key}.role`)}
+                  {t(`about.team.${memberKey}.role`)}
                 </p>
                 <p className="text-sm text-white/60 mb-6">
-                  {t(`about.team.${member.key}.bio`)}
+                  {t(`about.team.${memberKey}.bio`)}
                 </p>
 
                 <div className="flex gap-2">
                   <Button variant="ghost" size="icon" asChild>
                     <a
-                      href={member.links.linkedin}
+                      href={t(`about.team.${memberKey}.links.linkedin`)}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -88,7 +59,7 @@ export function About() {
                   </Button>
                   <Button variant="ghost" size="icon" asChild>
                     <a
-                      href={member.links.github}
+                      href={t(`about.team.${memberKey}.links.github`)}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -96,7 +67,7 @@ export function About() {
                     </a>
                   </Button>
                   <Button variant="ghost" size="icon" asChild>
-                    <a href={`mailto:${member.links.email}`}>
+                    <a href={`mailto:${t(`about.team.${memberKey}.links.email`)}`}>
                       <Mail className="w-4 h-4" />
                     </a>
                   </Button>
