@@ -20,12 +20,12 @@ export function RagRecipes() {
   }
 
   return (
-    <section className="py-24 relative">
+    <section className="py-24 relative bg-gradient-to-br from-[#2D6A4F] via-[#40916C] to-[#FFB700] text-white">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between mb-12">
           <div>
-            <h2 className="text-3xl font-medium mb-2">RAG Recipes</h2>
-            <p className="text-lg text-white/60">
+            <h2 className="text-3xl font-medium mb-2 text-white">RAG Recipes</h2>
+            <p className="text-lg text-white/80">
               Ready-to-deploy RAG applications
             </p>
           </div>
@@ -52,7 +52,7 @@ export function RagRecipes() {
           </div>
         </div>
 
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-hidden bg-white/10 rounded-lg p-4">
           <motion.div
             className="flex gap-6"
             animate={{
