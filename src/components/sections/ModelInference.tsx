@@ -73,17 +73,23 @@ export function ModelInference() {
                   </div>
                   <div className="p-3 text-xs font-mono">
                     <pre>
-                      {`import openai from 'openai'
+                      {`import OpenAI from 'openai';
 
-openai.apiKey = 'YOUR_API_KEY'
-openai.endpoint = 'https://api.berget.ai'
+const client = new OpenAI({
+  apiKey: process.env['OPENAI_API_KEY'],
+  endpoint: 'https://api.openai.com', // this is the only change you need to switch to Berget AI
+});
 
-const response = await openai.Completion.create({
-  model: 'llama-3.2-405b',
-  prompt: 'Vad finns på ett traditinoellt svenskt julbord?',
-})
+async function main() {
+  const chatCompletion = await client.chat.completions.create({
+    messages: [{ role: 'user', content: 'Say this is a test' }],
+    model: 'llama-3.2-405b', // and here
+  });
 
-console.log(response.data.choices[0].text) // => 'Köttbullar, prinskorv, julskinka, ...'
+  chatCompletion.data.choices.forEach((choice) => {
+    console.log(choice.message.content);
+  });
+}
                       `}
                     </pre>
                   </div>
