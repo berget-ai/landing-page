@@ -5,44 +5,56 @@ import { ClientLogos } from './hero/ClientLogos';
 
 export function Hero() {
   return (
-    <div className="relative min-h-screen flex items-center">
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 opacity-30 blur-[120px]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-500/20 via-transparent to-transparent opacity-20" />
-      
+    <div className="relative min-h-screen flex items-center bg-gradient-to-br from-[#2D6A4F] via-[#40916C] to-[#FFB700]">
+      <div className="container mx-auto px-4 py-32">
+        <div className="text-center">
+          <h1 className="text-6xl font-bold text-white mb-6">
+            A Symphony of AI Agents
+          </h1>
+          <p className="text-2xl text-white/80 mb-8">
+            Discover how AI agents collaborate to solve complex tasks, providing a seamless and efficient AI experience.
+          </p>
+          <Button size="lg" variant="accent">
+            Learn More
+          </Button>
+        </div>
+      </div>
+    </div>
+
+    <div className="relative min-h-screen flex items-center bg-[#1A1A1A]">
       <div className="container mx-auto px-4 py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8">
-            <Shield className="w-4 h-4 mr-2" />
-            <span className="text-sm">A secure, compliant and sustainable AI-cloud for Europe</span>
-          </div>
-          
-          <h1 className="text-5xl font-medium leading-tight mb-6">
-            Build AI powered applications with
-            <br />
-            <span className="text-white">Enterprise-Grade</span> Security
-          </h1>
-          
-          <p className="text-xl text-white/60 mb-8 leading-relaxed">
-            Berget AI offers Europe's best and simplest cloud service for AI applications, making compliance effortless while providing modern developer experience and sustainable infrastructure.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 mb-12">
-            <Button size="lg" className="group">
-              Start Building
-              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button size="lg" variant="secondary">
-              Book a Demo
-            </Button>
-          </div>
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8">
+              <Shield className="w-4 h-4 mr-2" />
+              <span className="text-sm">A secure, compliant and sustainable AI-cloud for Europe</span>
+            </div>
+            
+            <h1 className="text-5xl font-medium leading-tight mb-6">
+              Build AI powered applications with
+              <br />
+              <span className="text-white">Enterprise-Grade</span> Security
+            </h1>
+            
+            <p className="text-xl text-white/60 mb-8 leading-relaxed">
+              Berget AI offers Europe's best and simplest cloud service for AI applications, making compliance effortless while providing modern developer experience and sustainable infrastructure.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+              <Button size="lg" className="group">
+                Start Building
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </Button>
+              <Button size="lg" variant="secondary">
+                Book a Demo
+              </Button>
+            </div>
 
-
-          <SocialProof />
-          
-          <div className="mt-24 lg:hidden">
-            <ClientLogos />
-          </div>
+            <SocialProof />
+            
+            <div className="mt-24 lg:hidden">
+              <ClientLogos />
+            </div>
           </div>
 
           <div className="lg:pl-8">
