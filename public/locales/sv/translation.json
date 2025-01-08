@@ -8,7 +8,9 @@
       "compatibility": "OpenAI API-kompatibilitet"
     },
     "codeBlockTitle": "Av utvecklare för utvecklare",
-    "popularModels": "Populära Modeller"
+    "popularModels": "Populära Modeller",
+    "clusterReady": "Ditt kluster är redo!",
+    "cnameInstruction": "Konfigurera din CNAME-post för att börja använda tjänsten"
   },
   "features": {
     "modelInference": {
@@ -18,6 +20,8 @@
       "viewModels": "Visa modeller",
       "learnMore": "Läs mer"
     },
+    "openWeightsTitle": "Öppna vikter för transparens",
+    "openWeightsDescription": "Vi tror på öppen källkod och transparens. Alla våra modeller är tillgängliga för granskning och validering.",
     "dedicatedInference": {
       "title": "Dedikerad inferens för dina skalningsbehov",
       "description": "Värd för vilken modell som helst, öppen källkod, finjusterad eller en som du själv har tränat på vår dedikerade infrastruktur när du skalar. Ladda vilken modell som helst, välj GPU-instans och distribuera din egen dedikerade inferenstjänst och slutpunkt på ett ögonblick."
