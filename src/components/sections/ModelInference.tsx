@@ -41,29 +41,33 @@ export function ModelInference() {
           <div className="space-y-12">
             <div className="space-y-6">
               <h2 className="text-3xl font-medium">
-                {t('modelInference.title')}
+                {t('modelInferenceSection.title')}
               </h2>
               <p className="text-lg text-white/60">
-                {t('modelInference.description')}
+                {t('modelInferenceSection.description')}
               </p>
 
               <div className="flex flex-col gap-4">
                 <div className="flex items-center gap-3">
                   <Sparkles className="w-5 h-5 text-white/60" />
-                  <span>{t('modelInference.features.preTrainedModels')}</span>
+                  <span>
+                    {t('modelInferenceSection.features.preTrainedModels')}
+                  </span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Zap className="w-5 h-5 text-white/60" />
-                  <span>{t('modelInference.features.pricing')}</span>
+                  <span>{t('modelInferenceSection.features.pricing')}</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Bot className="w-5 h-5 text-white/60" />
-                  <span>{t('modelInference.features.compatibility')}</span>
+                  <span>
+                    {t('modelInferenceSection.features.compatibility')}
+                  </span>
                 </div>
               </div>
 
               <div className="float-right lg:pl-8">
-                <CodeBlock title={t('modelInference.codeBlockTitle')}>
+                <CodeBlock title={t('modelInferenceSection.codeBlockTitle')}>
                   {`import OpenAI from 'openai';
 
 const client = new OpenAI({

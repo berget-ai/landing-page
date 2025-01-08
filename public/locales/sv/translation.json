@@ -101,7 +101,7 @@
     "status": "Status",
     "support": "Support"
   },
-  "modelInference": {
+  "modelInferenceSection": {
     "title": "Modellinferens",
     "description": "Få tillgång till vår omfattande samling av kraftfulla öppen källkodsmodeller genom serverlösa slutpunkter. Börja bygga AI-applikationer omedelbart med hjälp av OpenAI API-standarden.",
     "features": {
@@ -115,7 +115,7 @@
     "cnameInstruction": "Konfigurera din CNAME-post för att börja använda tjänsten"
   },
   "features": {
-    "modelInference": {
+    "modelInferencSectione": {
       "title": "Modellinferens",
       "description1": "Serverlös inferens av kraftfulla öppen källkodsmodeller. Få tillgång till våra 50+ modeller inklusive Llama 3, Mixtral, genom serverlösa slutpunkter och börja bygga dina AI-applikationer med hjälp av Open AI API-standarden.",
       "description2": "Det är enkelt, du kan börja omedelbart och du betalar efter användning.",
@@ -135,19 +135,7 @@
       "description": "Kör inferens i stor skala med förutsägbara kostnader. Du betalar för de dedikerade resurser som betjänar din modell, vilket säkerställer produktionsklassad latens och genomströmning för dina applikationer."
     },
     "openWeightsTitle": "Öppna vikter för transparens",
-    "openWeightsDescription": "Vi tror på öppen källkod och transparens. Alla våra modeller är tillgängliga för granskning och validering.",
-    "dedicatedInference": {
-      "title": "Dedikerad inferens för dina skalningsbehov",
-      "description": "Värd för vilken modell som helst, öppen källkod, finjusterad eller en som du själv har tränat på vår dedikerade infrastruktur när du skalar. Ladda vilken modell som helst, välj GPU-instans och distribuera din egen dedikerade inferenstjänst och slutpunkt på ett ögonblick."
-    },
-    "safeCompliantAI": {
-      "title": "Säker och kompatibel AI",
-      "description": "Med våra inferenstjänster lämnar dina data aldrig EU, eller ens vårt datacenter. Ingen data - såsom uppmaningar och svar - lagras och kan inte nås av någon annan än dig själv. Detta förenklar avsevärt efterlevnaden av EU-regler som EU AI Act, GDPR, Nis-2 och Dora."
-    },
-    "productionGradePerformance": {
-      "title": "Produktionsklassad prestanda",
-      "description": "Kör inferens i stor skala med förutsägbara kostnader. Du betalar för de dedikerade resurser som betjänar din modell, vilket säkerställer produktionsklassad latens och genomströmning för dina applikationer."
-    }
+    "openWeightsDescription": "Vi tror på öppen källkod och transparens. Alla våra modeller är tillgängliga för granskning och validering."
   },
   "overview": {
     "whatIsGitOps": {
@@ -199,24 +187,43 @@
       "cta": "Se lediga tjänster"
     },
     "team": {
+      "members": ["andreas", "christian", "john"],
       "andreas": {
         "name": "Andreas Lundmark",
-        "role": "VD",
-        "bio": "Tidigare partner och nordisk AI-chef på Boston Consulting Group. Djup expertis inom AI-transformation för företag."
+        "role": "CEO",
+        "bio": "Former Partner and Nordic AI Lead at Boston Consulting Group. Deep expertise in enterprise AI transformation.",
+        "image": "/team/andreas.jpg",
+        "links": {
+          "linkedin": "https://linkedin.com/in/andreaslundmark",
+          "github": "https://github.com/alundmark",
+          "email": "andreas@berget.ai"
+        }
       },
       "christian": {
         "name": "Christian Landgren",
         "role": "CPTO",
-        "bio": "Serieentreprenör och teknikinnovatör. Expert på att bygga utvecklarvänliga plattformar och open source-lösningar."
+        "bio": "Serial entrepreneur and tech innovator. Expert in building developer-first platforms and open source solutions.",
+        "image": "/team/christian.jpg",
+        "links": {
+          "linkedin": "https://linkedin.com/in/christianlandgren",
+          "github": "https://github.com/irony",
+          "email": "christian@berget.ai"
+        }
       },
       "john": {
         "name": "John Angelmo",
-        "role": "Infrastrukturchef",
-        "bio": "Tidigare Kubernetes Team Lead på Tele2. Expert på molninfrastruktur och kundsupport."
+        "role": "Infrastructure Lead",
+        "bio": "Former Kubernetes Team Lead at Tele2. Expert in cloud infrastructure and customer support.",
+        "image": "/team/john.jpg",
+        "links": {
+          "linkedin": "https://linkedin.com/in/johnangelmo",
+          "github": "https://github.com/jangelmo",
+          "email": "john@berget.ai"
+        }
       }
     }
   },
-  "modelInference": {
+  "modelInferencSectione": {
     "models": {
       "llama3": {
         "name": "Llama 3",

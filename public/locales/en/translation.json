@@ -101,7 +101,7 @@
     "status": "Status",
     "support": "Support"
   },
-  "modelInference": {
+  "modelInferenceSection": {
     "title": "Model Inference",
     "description": "Access our extensive collection of powerful open-source models through serverless endpoints. Start building AI applications immediately using the OpenAI API standard.",
     "features": {
