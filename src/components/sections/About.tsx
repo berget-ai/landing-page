@@ -66,8 +66,12 @@ export function About() {
                   />
                 </div>
 
-                <h3 className="text-xl font-medium mb-1">{member.name}</h3>
-                <p className="text-white/60 mb-4">{member.role}</p>
+                <h3 className="text-xl font-medium mb-1">
+                  {t(`about.team.${member.key}.name`)}
+                </h3>
+                <p className="text-white/60 mb-4">
+                  {t(`about.team.${member.key}.role`)}
+                </p>
                 <p className="text-sm text-white/60 mb-6">
                   {t(`about.team.${member.key}.bio`)}
                 </p>
