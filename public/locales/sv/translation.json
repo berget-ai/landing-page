@@ -10,6 +10,55 @@
     }
   },
   "compliance": {
+    "regulations": {
+      "gdpr": {
+        "name": "GDPR",
+        "description": "Fullständig efterlevnad av EU:s dataskyddsregler",
+        "benefits": [
+          "Data stannar inom EU:s gränser",
+          "Fullständig datasuveränitet",
+          "Transparent databehandling"
+        ]
+      },
+      "nis2": {
+        "name": "NIS2",
+        "description": "Direktiv för nätverks- och informationssystemsäkerhet",
+        "benefits": [
+          "Förbättrade cybersäkerhetsåtgärder",
+          "Ramverk för incidentrapportering",
+          "Protokoll för riskhantering"
+        ]
+      },
+      "schrems2": {
+        "name": "Schrems II",
+        "description": "Efterlevnad av ramverk för dataöverföring",
+        "benefits": [
+          "Ingen exponering för US cloud act",
+          "EU-baserad databehandling",
+          "Juridisk säkerhet för överföringar"
+        ]
+      },
+      "iso27001": {
+        "name": "ISO 27001",
+        "description": "Certifiering för informationssäkerhetshantering",
+        "benefits": [
+          "Systematisk säkerhetsstrategi",
+          "Regelbundna säkerhetsrevisioner",
+          "Dokumenterade säkerhetskontroller"
+        ]
+      },
+      "dora": {
+        "name": "DORA",
+        "description": "Efterlevnad av Digital Operational Resilience Act",
+        "benefits": [
+          "Hantering av IKT-risker",
+          "Incidentrapportering",
+          "Testning av digital motståndskraft"
+        ]
+      }
+    }
+  },
+  "compliance": {
     "tagline": "Efterlevnad i fokus",
     "title": "Förenklad efterlevnad för dina AI-applikationer",
     "description": "Mycket av komplexiteten kring lagstiftning uppstår inte från molntekniken i sig, utan från utländskt ägande och oklar dataåtkomst. Vårt moln drivs i Sverige och ägs av svenska intressenter.",

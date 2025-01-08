@@ -3,56 +3,38 @@ import { Shield, Lock, FileCheck, Scale, Building } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Button } from '@/components/ui/button'
 
+const { t } = useTranslation()
+
 const regulations = [
   {
-    name: 'GDPR',
-    description: 'Full compliance with EU data protection regulations',
+    name: t('compliance.regulations.gdpr.name'),
+    description: t('compliance.regulations.gdpr.description'),
     icon: Shield,
-    benefits: [
-      'Data stays within EU borders',
-      'Complete data sovereignty',
-      'Transparent data processing',
-    ],
+    benefits: t('compliance.regulations.gdpr.benefits', { returnObjects: true }),
   },
   {
-    name: 'NIS2',
-    description: 'Network and Information Systems Security Directive',
+    name: t('compliance.regulations.nis2.name'),
+    description: t('compliance.regulations.nis2.description'),
     icon: Lock,
-    benefits: [
-      'Enhanced cybersecurity measures',
-      'Incident reporting framework',
-      'Risk management protocols',
-    ],
+    benefits: t('compliance.regulations.nis2.benefits', { returnObjects: true }),
   },
   {
-    name: 'Schrems II',
-    description: 'Compliant data transfer framework',
+    name: t('compliance.regulations.schrems2.name'),
+    description: t('compliance.regulations.schrems2.description'),
     icon: Scale,
-    benefits: [
-      'No US cloud act exposure',
-      'EU-based data processing',
-      'Legal certainty for transfers',
-    ],
+    benefits: t('compliance.regulations.schrems2.benefits', { returnObjects: true }),
   },
   {
-    name: 'ISO 27001',
-    description: 'Information security management certification',
+    name: t('compliance.regulations.iso27001.name'),
+    description: t('compliance.regulations.iso27001.description'),
     icon: FileCheck,
-    benefits: [
-      'Systematic security approach',
-      'Regular security audits',
-      'Documented security controls',
-    ],
+    benefits: t('compliance.regulations.iso27001.benefits', { returnObjects: true }),
   },
   {
-    name: 'DORA',
-    description: 'Digital Operational Resilience Act compliance',
+    name: t('compliance.regulations.dora.name'),
+    description: t('compliance.regulations.dora.description'),
     icon: Building,
-    benefits: [
-      'ICT risk management',
-      'Incident reporting',
-      'Digital resilience testing',
-    ],
+    benefits: t('compliance.regulations.dora.benefits', { returnObjects: true }),
   },
 ]
 
