@@ -13,7 +13,7 @@ export function Compliance() {
       icon: Shield,
       benefits: t('compliance.regulations.gdpr.benefits', {
         returnObjects: true,
-      }),
+      }) as string[],
     },
     {
       name: t('compliance.regulations.nis2.name'),
@@ -21,7 +21,7 @@ export function Compliance() {
       icon: Lock,
       benefits: t('compliance.regulations.nis2.benefits', {
         returnObjects: true,
-      }),
+      }) as string[],
     },
     {
       name: t('compliance.regulations.schrems2.name'),
@@ -29,7 +29,7 @@ export function Compliance() {
       icon: Scale,
       benefits: t('compliance.regulations.schrems2.benefits', {
         returnObjects: true,
-      }),
+      }) as string[],
     },
     {
       name: t('compliance.regulations.iso27001.name'),
@@ -37,7 +37,7 @@ export function Compliance() {
       icon: FileCheck,
       benefits: t('compliance.regulations.iso27001.benefits', {
         returnObjects: true,
-      }),
+      }) as string[],
     },
     {
       name: t('compliance.regulations.dora.name'),
@@ -45,7 +45,7 @@ export function Compliance() {
       icon: Building,
       benefits: t('compliance.regulations.dora.benefits', {
         returnObjects: true,
-      }),
+      }) as string[],
     },
   ]
   return (
