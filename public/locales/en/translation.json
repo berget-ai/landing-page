@@ -1,0 +1,97 @@
+{
+  "modelInference": {
+    "title": "Model Inference",
+    "description": "Access our extensive collection of powerful open-source models through serverless endpoints. Start building AI applications immediately using the OpenAI API standard.",
+    "features": {
+      "preTrainedModels": "50+ pre-trained models available",
+      "pricing": "Pay-as-you-go pricing",
+      "compatibility": "OpenAI API compatibility"
+    },
+    "codeBlockTitle": "By devs for devs",
+    "popularModels": "Popular Models"
+  },
+  "features": {
+    "modelInference": {
+      "title": "Model inference",
+      "description1": "Serverless inference of powerful open-source models. Access our 50+ models including Llama 3, Mixtral, through serverless endpoints and start building your AI applications using the Open AI API standard.",
+      "description2": "It is simple, you can start immediately and you pay as you go.",
+      "viewModels": "View Models",
+      "learnMore": "Learn More"
+    },
+    "dedicatedInference": {
+      "title": "Dedicated inference for your scaling needs",
+      "description": "Host any model, open-source, fine-tuned or one that you trained yourself on our dedicated infrastructure as you scale. Load any model, select GPU instances and deploy your own dedicated inference service and endpoint in a heartbeat."
+    },
+    "safeCompliantAI": {
+      "title": "Safe and compliant AI",
+      "description": "With our inference services, your data never leaves the EU, or even our data center. No data - such as prompts and responses - is stored and cannot be accessed by anyone but yourself. This greatly simplifies compliance with EU regulations such as EU AI Act, GDPR, Nis-2 and Dora."
+    },
+    "productionGradePerformance": {
+      "title": "Production-grade performance",
+      "description": "Run inference at scale with predictable cost. You pay for the dedicated resources that serves your model, ensuring production-grade latency and throughput for your applications."
+    }
+  },
+  "overview": {
+    "whatIsGitOps": {
+      "title": "What is GitOps?",
+      "description": "GitOps is a modern approach to infrastructure and application management using Git as the single source of truth. It enables developers to manage infrastructure and application configurations using Git repositories."
+    },
+    "gitRepository": {
+      "title": "Git Repository",
+      "description": "Your infrastructure as code and application configurations are version controlled in Git.",
+      "sync": "Automated sync with your cluster"
+    },
+    "bergetCluster": {
+      "title": "Berget Cluster",
+      "description": "Dedicated GPU resources, isolated network, and encrypted storage for your workloads.",
+      "security": "Enterprise-grade security & performance"
+    },
+    "aiApis": {
+      "title": "AI API:s",
+      "description": "You can either use our open models or deploy your own. In any case your data is not leaving our data center.",
+      "hybridCloud": "Hybrid cloud ready"
+    }
+  },
+  "getStarted": {
+    "title": {
+      "part1": "Build AI powered applications with",
+      "part2": "Enterprise-Grade",
+      "part3": "Security"
+    },
+    "description": "Berget AI offers Europe's best and simplest place for your AI applications, making compliance effortless while providing modern developer experience and sustainable infrastructure with no vendor lock-in.",
+    "startBuilding": "Start Building",
+    "bookDemo": "Book a Demo"
+  },
+  "hero": {
+    "tagline": "A responsible, compliant and sustainable AI company for Europe",
+    "title": {
+      "part1": "Enable a Symphony of",
+      "part2": "AI Agents Working for You"
+    },
+    "description": "Orchestrate multiple AI agents to work together seamlessly, creating a powerful ecosystem of specialized intelligence.",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More"
+  },
+  "modelInference": {
+    "models": {
+      "llama3": {
+        "name": "Llama 3",
+        "description": "Latest open-source LLM from Meta",
+        "specs": "405B parameters",
+        "type": "Text Generation"
+      },
+      "mixtral": {
+        "name": "Mixtral",
+        "description": "High-performance mixture of experts model",
+        "specs": "8x7B architecture",
+        "type": "Text Generation"
+      },
+      "whisper": {
+        "name": "Whisper",
+        "description": "Speech recognition and translation",
+        "specs": "Multi-language support",
+        "type": "Speech-to-Text"
+      }
+    }
+  }
+}

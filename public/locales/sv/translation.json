@@ -1,0 +1,97 @@
+{
+  "modelInference": {
+    "title": "Modellinferens",
+    "description": "Få tillgång till vår omfattande samling av kraftfulla öppen källkodsmodeller genom serverlösa slutpunkter. Börja bygga AI-applikationer omedelbart med hjälp av OpenAI API-standarden.",
+    "features": {
+      "preTrainedModels": "50+ förtränade modeller tillgängliga",
+      "pricing": "Betala efter användning",
+      "compatibility": "OpenAI API-kompatibilitet"
+    },
+    "codeBlockTitle": "Av utvecklare för utvecklare",
+    "popularModels": "Populära Modeller"
+  },
+  "features": {
+    "modelInference": {
+      "title": "Modellinferens",
+      "description1": "Serverlös inferens av kraftfulla öppen källkodsmodeller. Få tillgång till våra 50+ modeller inklusive Llama 3, Mixtral, genom serverlösa slutpunkter och börja bygga dina AI-applikationer med hjälp av Open AI API-standarden.",
+      "description2": "Det är enkelt, du kan börja omedelbart och du betalar efter användning.",
+      "viewModels": "Visa modeller",
+      "learnMore": "Läs mer"
+    },
+    "dedicatedInference": {
+      "title": "Dedikerad inferens för dina skalningsbehov",
+      "description": "Värd för vilken modell som helst, öppen källkod, finjusterad eller en som du själv har tränat på vår dedikerade infrastruktur när du skalar. Ladda vilken modell som helst, välj GPU-instans och distribuera din egen dedikerade inferenstjänst och slutpunkt på ett ögonblick."
+    },
+    "safeCompliantAI": {
+      "title": "Säker och kompatibel AI",
+      "description": "Med våra inferenstjänster lämnar dina data aldrig EU, eller ens vårt datacenter. Ingen data - såsom uppmaningar och svar - lagras och kan inte nås av någon annan än dig själv. Detta förenklar avsevärt efterlevnaden av EU-regler som EU AI Act, GDPR, Nis-2 och Dora."
+    },
+    "productionGradePerformance": {
+      "title": "Produktionsklassad prestanda",
+      "description": "Kör inferens i stor skala med förutsägbara kostnader. Du betalar för de dedikerade resurser som betjänar din modell, vilket säkerställer produktionsklassad latens och genomströmning för dina applikationer."
+    }
+  },
+  "overview": {
+    "whatIsGitOps": {
+      "title": "Vad är GitOps?",
+      "description": "GitOps är ett modernt tillvägagångssätt för infrastruktur- och applikationshantering med Git som den enda sanningskällan. Det gör det möjligt för utvecklare att hantera infrastruktur och applikationskonfigurationer med hjälp av Git-repositorier."
+    },
+    "gitRepository": {
+      "title": "Git Repository",
+      "description": "Din infrastruktur som kod och applikationskonfigurationer är versionskontrollerade i Git.",
+      "sync": "Automatisk synkronisering med ditt kluster"
+    },
+    "bergetCluster": {
+      "title": "Berget Cluster",
+      "description": "Dedikerade GPU-resurser, isolerat nätverk och krypterad lagring för dina arbetsbelastningar.",
+      "security": "Säkerhet och prestanda i företagsklass"
+    },
+    "aiApis": {
+      "title": "AI API:s",
+      "description": "Du kan antingen använda våra öppna modeller eller distribuera dina egna. I vilket fall som helst lämnar dina data inte vårt datacenter.",
+      "hybridCloud": "Hybridmoln redo"
+    }
+  },
+  "getStarted": {
+    "title": {
+      "part1": "Bygg AI-drivna applikationer med",
+      "part2": "Företagsklassad",
+      "part3": "Säkerhet"
+    },
+    "description": "Berget AI erbjuder Europas bästa och enklaste plats för dina AI-applikationer, vilket gör efterlevnad enkel samtidigt som det ger en modern utvecklarupplevelse och hållbar infrastruktur utan leverantörslåsning.",
+    "startBuilding": "Börja Bygga",
+    "bookDemo": "Boka en Demo"
+  },
+  "hero": {
+    "tagline": "Ett ansvarsfullt och hållbart AI-företag för Europa",
+    "title": {
+      "part1": "Bygg en symfoni av",
+      "part2": "AI-agenter som arbetar för dig"
+    },
+    "description": "Utveckla egna AI-agenter som arbetar tillsammans för att lösa komplexa problem och skapar ett ekosystem av skräddarsydd intelligens.",
+    "getStarted": "Kom igång",
+    "learnMore": "Läs mer"
+  },
+  "modelInference": {
+    "models": {
+      "llama3": {
+        "name": "Llama 3",
+        "description": "Senaste öppen källkod LLM från Meta",
+        "specs": "405B parametrar",
+        "type": "Textgenerering"
+      },
+      "mixtral": {
+        "name": "Mixtral",
+        "description": "Högpresterande blandning av expertmodeller",
+        "specs": "8x7B arkitektur",
+        "type": "Textgenerering"
+      },
+      "whisper": {
+        "name": "Whisper",
+        "description": "Taligenkänning och översättning",
+        "specs": "Stöd för flera språk",
+        "type": "Tal-till-text"
+      }
+    }
+  }
+}

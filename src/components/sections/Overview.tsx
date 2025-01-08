@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion'
 import { GitBranch, Database, Shield, Cloud, Link2, Cpu } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 export function Overview() {
+  const { t } = useTranslation()
+
   return (
     <section className="py-32 relative overflow-hidden ">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background opacity-50" />
@@ -11,8 +14,12 @@ export function Overview() {
             <GitBranch className="w-4 h-4 mr-2" />
             <span className="text-sm">GitOps Architecture</span>
           </div>
-          <h2 className="text-4xl font-medium mb-6">{t('overview.whatIsGitOps.title')}</h2>
-          <p className="text-lg text-white/60">{t('overview.whatIsGitOps.description')}</p>
+          <h2 className="text-4xl font-medium mb-6">
+            {t('overview.whatIsGitOps.title')}
+          </h2>
+          <p className="text-lg text-white/60">
+            {t('overview.whatIsGitOps.description')}
+          </p>
         </div>
 
         <div className="relative">
@@ -29,9 +36,15 @@ export function Overview() {
               <div className="mb-4">
                 <GitBranch className="w-8 h-8 text-blue-400" />
               </div>
-              <h3 className="text-xl font-medium mb-2">{t('overview.gitRepository.title')}</h3>
-              <p className="text-white/60 mb-4">{t('overview.gitRepository.description')}</p>
-              <div className="text-sm text-white/40">{t('overview.gitRepository.sync')}</div>
+              <h3 className="text-xl font-medium mb-2">
+                {t('overview.gitRepository.title')}
+              </h3>
+              <p className="text-white/60 mb-4">
+                {t('overview.gitRepository.description')}
+              </p>
+              <div className="text-sm text-white/40">
+                {t('overview.gitRepository.sync')}
+              </div>
             </motion.div>
 
             {/* Berget Cluster */}
@@ -45,9 +58,15 @@ export function Overview() {
               <div className="mb-4">
                 <Cpu className="w-8 h-8 text-purple-400" />
               </div>
-              <h3 className="text-xl font-medium mb-2">{t('overview.bergetCluster.title')}</h3>
-              <p className="text-white/60 mb-4">{t('overview.bergetCluster.description')}</p>
-              <div className="text-sm text-white/40">{t('overview.bergetCluster.security')}</div>
+              <h3 className="text-xl font-medium mb-2">
+                {t('overview.bergetCluster.title')}
+              </h3>
+              <p className="text-white/60 mb-4">
+                {t('overview.bergetCluster.description')}
+              </p>
+              <div className="text-sm text-white/40">
+                {t('overview.bergetCluster.security')}
+              </div>
             </motion.div>
 
             {/* External Connections */}
@@ -61,9 +80,15 @@ export function Overview() {
               <div className="mb-4">
                 <Link2 className="w-8 h-8 text-green-400" />
               </div>
-              <h3 className="text-xl font-medium mb-2">{t('overview.aiApis.title')}</h3>
-              <p className="text-white/60 mb-4">{t('overview.aiApis.description')}</p>
-              <div className="text-sm text-white/40">{t('overview.aiApis.hybridCloud')}</div>
+              <h3 className="text-xl font-medium mb-2">
+                {t('overview.aiApis.title')}
+              </h3>
+              <p className="text-white/60 mb-4">
+                {t('overview.aiApis.description')}
+              </p>
+              <div className="text-sm text-white/40">
+                {t('overview.aiApis.hybridCloud')}
+              </div>
             </motion.div>
           </div>
 

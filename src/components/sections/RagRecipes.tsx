@@ -5,14 +5,16 @@ import { Button } from '@/components/ui/button'
 import { GradientBackground } from '@/components/common/GradientBackground'
 import { RecipeCard } from './RecipeCard'
 import { recipes } from '@/lib/recipes'
+import { useTranslation } from 'react-i18next'
 
 export function RagRecipes() {
+  const { t } = useTranslation()
   const [activeIndex, setActiveIndex] = useState(0)
   const visibleRecipes = 3
 
   const nextSlide = () => {
     setActiveIndex((current) =>
-      Math.min(current + 1, recipes.length - visibleRecipes),
+      Math.min(current + 1, recipes.length - visibleRecipes)
     )
   }
 

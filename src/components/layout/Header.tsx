@@ -1,5 +1,6 @@
 import { Menu } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { LanguageSwitcher } from '../ui/LanguageSwitcher'
 
 export function Header() {
   return (
@@ -10,12 +11,6 @@ export function Header() {
         </div>
 
         <nav className="hidden md:flex items-center space-x-8">
-          <a
-            href="#features"
-            className="text-sm text-white/60 hover:text-white transition-colors"
-          >
-            Features
-          </a>
           <a
             href="#pricing"
             className="text-sm text-white/60 hover:text-white transition-colors"
@@ -28,12 +23,8 @@ export function Header() {
           >
             About
           </a>
-          <a
-            href="#docs"
-            className="text-sm text-white/60 hover:text-white transition-colors"
-          >
-            Documentation
-          </a>
+          <LanguageSwitcher />
+
           <Button variant="secondary" size="sm">
             Sign In
           </Button>

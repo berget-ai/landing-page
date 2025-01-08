@@ -6,34 +6,32 @@ import { Button } from '@/components/ui/button'
 import { CodeBlock } from '@/components/common/CodeBlock'
 import { ModelChat } from '@/components/modals/ModelChat'
 
-const models = [
-  {
-    name: t('modelInference.models.llama3.name'),
-    description: t('modelInference.models.llama3.description'),
-    specs: t('modelInference.models.llama3.specs'),
-    type: t('modelInference.models.llama3.type'),
-  },
-  {
-    name: t('modelInference.models.mixtral.name'),
-    description: t('modelInference.models.mixtral.description'),
-    specs: t('modelInference.models.mixtral.specs'),
-    type: t('modelInference.models.mixtral.type'),
-  },
-  {
-    name: t('modelInference.models.whisper.name'),
-    description: t('modelInference.models.whisper.description'),
-    specs: t('modelInference.models.whisper.specs'),
-    type: t('modelInference.models.whisper.type'),
-  },
-]
-
 export function ModelInference() {
   const { t } = useTranslation()
+
+  const models = [
+    {
+      name: t('modelInference.models.llama3.name'),
+      description: t('modelInference.models.llama3.description'),
+      specs: t('modelInference.models.llama3.specs'),
+      type: t('modelInference.models.llama3.type'),
+    },
+    {
+      name: t('modelInference.models.mixtral.name'),
+      description: t('modelInference.models.mixtral.description'),
+      specs: t('modelInference.models.mixtral.specs'),
+      type: t('modelInference.models.mixtral.type'),
+    },
+    {
+      name: t('modelInference.models.whisper.name'),
+      description: t('modelInference.models.whisper.description'),
+      specs: t('modelInference.models.whisper.specs'),
+      type: t('modelInference.models.whisper.type'),
+    },
+  ]
   const [selectedModel, setSelectedModel] = useState<(typeof models)[0] | null>(
     null
   )
-
-  const { t } = useTranslation()
 
   return (
     <section className="py-24 relative">
@@ -42,8 +40,12 @@ export function ModelInference() {
           {/* Serverless Inference */}
           <div className="space-y-12">
             <div className="space-y-6">
-              <h2 className="text-3xl font-medium">{t('modelInference.title')}</h2>
-              <p className="text-lg text-white/60">{t('modelInference.description')}</p>
+              <h2 className="text-3xl font-medium">
+                {t('modelInference.title')}
+              </h2>
+              <p className="text-lg text-white/60">
+                {t('modelInference.description')}
+              </p>
 
               <div className="flex flex-col gap-4">
                 <div className="flex items-center gap-3">
@@ -89,7 +91,9 @@ async function main() {
 
       {/* Available Models */}
       <div className="space-y-4">
-        <h3 className="text-xl font-medium">{t('modelInference.popularModels')}</h3>
+        <h3 className="text-xl font-medium">
+          {t('modelInference.popularModels')}
+        </h3>
         <div className="grid gap-4">
           {models.map((model) => (
             <motion.div
