@@ -59,7 +59,7 @@ export function ModelInference() {
                 </div>
               </div>
 
-              <div className="flex justify-end">
+              <div className="flex justify-end lg:pl-8">
                 <div className="w-full max-w-md bg-black/50 backdrop-blur-sm rounded-lg border border-white/10 overflow-hidden">
                   <div className="flex items-center gap-2 px-3 py-1.5 border-b border-white/10 bg-white/5">
                     <div className="flex gap-1.5">
