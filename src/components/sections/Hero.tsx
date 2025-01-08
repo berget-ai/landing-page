@@ -1,13 +1,6 @@
 import { Button } from '@/components/ui/button'
 import { NetworkBackground } from '../common/NetworkBackground'
-import {
-  ArrowRight,
-  Flag,
-  Leaf,
-  LockIcon,
-  Mountain,
-  Shield,
-} from 'lucide-react'
+import { ArrowRight, Shield } from 'lucide-react'
 
 export function Hero() {
   return (

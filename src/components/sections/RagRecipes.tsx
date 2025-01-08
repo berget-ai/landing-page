@@ -24,7 +24,9 @@ export function RagRecipes() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between mb-12">
           <div>
-            <h2 className="text-3xl font-medium mb-2 text-white">RAG Recipes</h2>
+            <h2 className="text-3xl font-medium mb-2 text-white">
+              RAG Recipes
+            </h2>
             <p className="text-lg text-white/80">
               Ready-to-deploy RAG applications
             </p>

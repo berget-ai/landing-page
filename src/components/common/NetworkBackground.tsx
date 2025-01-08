@@ -39,7 +39,6 @@ export function NetworkBackground() {
         this.life = this.maxLife
       }
 
-
       update() {
         this.x += this.vx
         this.y += this.vy

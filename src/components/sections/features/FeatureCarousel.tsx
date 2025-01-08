@@ -29,7 +29,7 @@ export function FeatureCarousel() {
   const opacity = useTransform(
     springX,
     [-window.innerWidth, 0, window.innerWidth],
-    [0, 1, 0]
+    [0, 1, 0],
   )
 
   const nextSlide = useCallback(() => {
@@ -54,7 +54,7 @@ export function FeatureCarousel() {
         }
       }
     },
-    [nextSlide, prevSlide]
+    [nextSlide, prevSlide],
   )
 
   const handleDragStart = useCallback(
@@ -62,7 +62,7 @@ export function FeatureCarousel() {
       isDragging.current = true
       startX.current = 'touches' in e ? e.touches[0].clientX : e.clientX
     },
-    []
+    [],
   )
 
   const handleDragMove = useCallback(
@@ -74,7 +74,7 @@ export function FeatureCarousel() {
 
       x.set(diff)
     },
-    [x]
+    [x],
   )
 
   const handleDragEnd = useCallback(() => {
@@ -124,7 +124,7 @@ export function FeatureCarousel() {
         className={cn(
           'relative h-[400px] md:h-[300px] overflow-hidden mt-8',
           isDragging.current ? 'cursor-grabbing' : 'cursor-grab',
-          'touch-pan-y'
+          'touch-pan-y',
         )}
       >
         {features.map((feature, index) => (
@@ -133,13 +133,13 @@ export function FeatureCarousel() {
             className={cn(
               'absolute inset-0 w-full',
               'grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12',
-              'px-4 md:px-0'
+              'px-4 md:px-0',
             )}
             style={{
               x: useTransform(
                 springX,
                 [0],
-                [`${(index - activeIndex) * 100}%`]
+                [`${(index - activeIndex) * 100}%`],
               ),
               opacity: index === activeIndex ? opacity : 0,
             }}

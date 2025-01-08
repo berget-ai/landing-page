@@ -27,7 +27,7 @@ const models = [
 
 export function ModelInference() {
   const [selectedModel, setSelectedModel] = useState<(typeof models)[0] | null>(
-    null
+    null,
   )
 
   return (
