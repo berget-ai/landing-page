@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import aiPowerLaws from '@/assets/ai-power-laws.svg'
 import { Button } from '@/components/ui/button'
 
 export function Hero() {
@@ -45,7 +46,7 @@ export function Hero() {
               endpoints to build powerful AI applications.
             </p>
           </div>
-          <div className="flex justify-center gap-4">
+          <div className="flex justify-center gap-4 mb-8">
             <Button
               size="lg"
               variant="accent"
@@ -61,6 +62,7 @@ export function Hero() {
               Get Started
             </Button>
           </div>
+          <img src={aiPowerLaws} alt="AI Power Laws" className="mx-auto mt-8" />
         </motion.div>
       </div>
     </div>
