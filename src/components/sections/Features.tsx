@@ -49,6 +49,22 @@ export function Features() {
             />
           </div>
         </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="py-24 bg-gray-900 text-white">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-medium">AI agents use a symphony of smaller expert AI:s</h2>
+          <p className="text-lg text-white/60 mt-4">
+            AI agents are not about building larger and larger models, but about finding a home for your AI agents. 
+            At Berget AI, we provide the perfect environment for these agents to thrive, working together to solve complex tasks.
+          </p>
+        </div>
+        <div className="flex justify-center">
+          <img src="/images/ai-agents-illustration.png" alt="AI agents illustration" className="max-w-full h-auto" />
+        </div>
       </div>
     </section>
   );
