@@ -1,45 +1,49 @@
-import { motion } from 'framer-motion';
-import { Quote, Shield, Award, CheckCircle } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { motion } from 'framer-motion'
+import { Quote, Shield, Award, CheckCircle } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 
 const testimonials = [
   {
-    quote: "Berget AI has transformed how we handle sensitive medical data. Their EU-compliant infrastructure gives us peace of mind.",
-    author: "Dr. Anna Bergström",
-    role: "CTO, HealthTech Nordic",
-    company: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=128&h=128&fit=crop&auto=format"
+    quote:
+      'Berget AI has transformed how we handle sensitive medical data. Their EU-compliant infrastructure gives us peace of mind.',
+    author: 'Dr. Anna Bergström',
+    role: 'CTO, HealthTech Nordic',
+    company:
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=128&h=128&fit=crop&auto=format',
   },
   {
-    quote: "The performance and reliability of Berget's infrastructure has been crucial for our AI-powered financial services.",
-    author: "Marcus Lindholm",
-    role: "Head of AI, FinanceAI Solutions",
-    company: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=128&h=128&fit=crop&auto=format"
-  }
-];
+    quote:
+      "The performance and reliability of Berget's infrastructure has been crucial for our AI-powered financial services.",
+    author: 'Marcus Lindholm',
+    role: 'Head of AI, FinanceAI Solutions',
+    company:
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=128&h=128&fit=crop&auto=format',
+  },
+]
 
 const certifications = [
   {
-    name: "ISO 27001",
-    description: "Information Security Management",
-    icon: Shield
+    name: 'ISO 27001',
+    description: 'Information Security Management',
+    icon: Shield,
   },
   {
-    name: "GDPR Compliant",
-    description: "EU Data Protection",
-    icon: CheckCircle
+    name: 'GDPR Compliant',
+    description: 'EU Data Protection',
+    icon: CheckCircle,
   },
   {
-    name: "NIS-2 Ready",
-    description: "Network Security",
-    icon: Award
-  }
-];
+    name: 'NIS-2 Ready',
+    description: 'Network Security',
+    icon: Award,
+  },
+]
 
 const stats = [
-  { value: "99.99%", label: "Uptime SLA" },
-  { value: "50ms", label: "Avg. Latency" },
-  { value: "24/7", label: "Monitoring" }
-];
+  { value: '99.99%', label: 'Uptime SLA' },
+  { value: '50ms', label: 'Avg. Latency' },
+  { value: '24/7', label: 'Monitoring' },
+]
 
 export function Success() {
   return (
@@ -49,9 +53,12 @@ export function Success() {
         {/* Testimonials */}
         <div className="mb-24">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl font-medium mb-4">Trusted by Industry Leaders</h2>
+            <h2 className="text-3xl font-medium mb-4">
+              Trusted by Industry Leaders
+            </h2>
             <p className="text-lg text-white/60">
-              See how companies across Europe are building the future with Berget AI
+              See how companies across Europe are building the future with
+              Berget AI
             </p>
           </div>
 
@@ -66,11 +73,13 @@ export function Success() {
                 className="relative group"
               >
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-white/5 to-transparent group-hover:from-white/10 transition-colors" />
-                
+
                 <div className="relative p-8 rounded-2xl border border-white/10 group-hover:border-white/20 transition-colors">
                   <Quote className="w-8 h-8 text-white/20 mb-6" />
-                  <blockquote className="text-lg mb-6">{testimonial.quote}</blockquote>
-                  
+                  <blockquote className="text-lg mb-6">
+                    {testimonial.quote}
+                  </blockquote>
+
                   <div className="flex items-center gap-4">
                     <img
                       src={testimonial.company}
@@ -79,7 +88,9 @@ export function Success() {
                     />
                     <div>
                       <div className="font-medium">{testimonial.author}</div>
-                      <div className="text-sm text-white/60">{testimonial.role}</div>
+                      <div className="text-sm text-white/60">
+                        {testimonial.role}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -105,7 +116,9 @@ export function Success() {
                   <cert.icon className="w-5 h-5 text-white/60" />
                   <div>
                     <div className="font-medium">{cert.name}</div>
-                    <div className="text-sm text-white/60">{cert.description}</div>
+                    <div className="text-sm text-white/60">
+                      {cert.description}
+                    </div>
                   </div>
                 </motion.div>
               ))}
@@ -149,7 +162,8 @@ export function Success() {
             <div className="p-6 rounded-2xl bg-white/5 border border-white/10">
               <h4 className="text-lg font-medium mb-2">Schedule a Demo</h4>
               <p className="text-white/60 mb-6">
-                See how Berget AI can transform your AI infrastructure with a personalized demo.
+                See how Berget AI can transform your AI infrastructure with a
+                personalized demo.
               </p>
               <Button className="w-full">Book a Demo</Button>
             </div>
@@ -157,5 +171,5 @@ export function Success() {
         </div>
       </div>
     </section>
-  );
+  )
 }

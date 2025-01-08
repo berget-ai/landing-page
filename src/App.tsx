@@ -1,17 +1,18 @@
-import { Header } from '@/components/layout/Header';
-import { Footer } from '@/components/layout/Footer';
-import { Hero } from '@/components/sections/Hero';
-import { Overview } from '@/components/sections/Overview';
-import { Features } from '@/components/sections/Features';
-import { ModelInference } from '@/components/sections/ModelInference';
-import { Compliance } from '@/components/sections/Compliance';
-import { Sustainability } from '@/components/sections/Sustainability';
-import { Testimonials } from '@/components/sections/Testimonials';
-import { Pricing } from '@/components/sections/Pricing';
-import { ChatWidget } from '@/components/chat/ChatWidget';
-import { RagRecipes } from './components/sections/RagRecipes';
-import { Success } from './components/sections/Success';
-import { About } from './components/sections/About';
+import { Header } from '@/components/layout/Header'
+import { Footer } from '@/components/layout/Footer'
+import { Hero } from '@/components/sections/Hero'
+import { Overview } from '@/components/sections/Overview'
+import { Features } from '@/components/sections/Features'
+import { ModelInference } from '@/components/sections/ModelInference'
+import { Compliance } from '@/components/sections/Compliance'
+import { Sustainability } from '@/components/sections/Sustainability'
+import { Testimonials } from '@/components/sections/Testimonials'
+import { Pricing } from '@/components/sections/Pricing'
+import { ChatWidget } from '@/components/chat/ChatWidget'
+import { RagRecipes } from './components/sections/RagRecipes'
+import { Success } from './components/sections/Success'
+import { About } from './components/sections/About'
+import { GetStarted } from './components/sections/GetStarted'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Header />
       <main>
         <Hero />
+        <GetStarted />
         <Overview />
         <Features />
         <ModelInference />
@@ -34,7 +36,7 @@ function App() {
       <Footer />
       <ChatWidget />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

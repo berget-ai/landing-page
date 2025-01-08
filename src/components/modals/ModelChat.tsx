@@ -1,56 +1,56 @@
-import { useState } from 'react';
-import { Bot, Send, X, Loader2 } from 'lucide-react';
-import { Dialog, DialogContent, DialogHeader } from '@/components/ui/dialog';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { ScrollArea } from '@/components/ui/scroll-area';
-import { cn } from '@/lib/utils';
+import { useState } from 'react'
+import { Bot, Send, X, Loader2 } from 'lucide-react'
+import { Dialog, DialogContent, DialogHeader } from '@/components/ui/dialog'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { ScrollArea } from '@/components/ui/scroll-area'
+import { cn } from '@/lib/utils'
 
 interface Message {
-  id: string;
-  content: string;
-  role: 'user' | 'assistant';
+  id: string
+  content: string
+  role: 'user' | 'assistant'
 }
 
 interface ModelChatProps {
-  isOpen: boolean;
-  onClose: () => void;
+  isOpen: boolean
+  onClose: () => void
   model: {
-    name: string;
-    description: string;
-  };
+    name: string
+    description: string
+  }
 }
 
 export function ModelChat({ isOpen, onClose, model }: ModelChatProps) {
-  const [messages, setMessages] = useState<Message[]>([]);
-  const [input, setInput] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
+  const [messages, setMessages] = useState<Message[]>([])
+  const [input, setInput] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!input.trim() || isLoading) return;
+    e.preventDefault()
+    if (!input.trim() || isLoading) return
 
     const userMessage: Message = {
       id: Date.now().toString(),
       content: input,
-      role: 'user'
-    };
+      role: 'user',
+    }
 
-    setMessages(prev => [...prev, userMessage]);
-    setInput('');
-    setIsLoading(true);
+    setMessages((prev) => [...prev, userMessage])
+    setInput('')
+    setIsLoading(true)
 
     // Simulate API response
     setTimeout(() => {
       const assistantMessage: Message = {
         id: (Date.now() + 1).toString(),
         content: `This is a simulated response from ${model.name}. In production, this would be connected to the actual model API.`,
-        role: 'assistant'
-      };
-      setMessages(prev => [...prev, assistantMessage]);
-      setIsLoading(false);
-    }, 1000);
-  };
+        role: 'assistant',
+      }
+      setMessages((prev) => [...prev, assistantMessage])
+      setIsLoading(false)
+    }, 1000)
+  }
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
@@ -72,8 +72,8 @@ export function ModelChat({ isOpen, onClose, model }: ModelChatProps) {
                 <div
                   key={message.id}
                   className={cn(
-                    "flex gap-3",
-                    message.role === 'user' && "justify-end"
+                    'flex gap-3',
+                    message.role === 'user' && 'justify-end',
                   )}
                 >
                   {message.role === 'assistant' && (
@@ -83,8 +83,10 @@ export function ModelChat({ isOpen, onClose, model }: ModelChatProps) {
                   )}
                   <div
                     className={cn(
-                      "rounded-2xl px-4 py-2 max-w-[80%]",
-                      message.role === 'assistant' ? "bg-white/5" : "bg-primary text-primary-foreground"
+                      'rounded-2xl px-4 py-2 max-w-[80%]',
+                      message.role === 'assistant'
+                        ? 'bg-white/5'
+                        : 'bg-primary text-primary-foreground',
                     )}
                   >
                     {message.content}
@@ -120,5 +122,5 @@ export function ModelChat({ isOpen, onClose, model }: ModelChatProps) {
         </div>
       </DialogContent>
     </Dialog>
-  );
+  )
 }

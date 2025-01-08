@@ -1,16 +1,16 @@
-import { motion } from 'framer-motion';
-import type { Feature } from '@/types/features';
+import { motion } from 'framer-motion'
+import type { Feature } from '@/types/features'
 
 interface FeatureSlideProps {
-  feature: Feature;
-  isActive: boolean;
+  feature: Feature
+  isActive: boolean
 }
 
 export function FeatureSlide({ feature, isActive }: FeatureSlideProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
-      animate={{ 
+      animate={{
         opacity: isActive ? 1 : 0,
         y: isActive ? 0 : 20,
         pointerEvents: isActive ? 'auto' : 'none',
@@ -27,7 +27,7 @@ export function FeatureSlide({ feature, isActive }: FeatureSlideProps) {
         >
           {feature.category}
         </motion.div>
-        
+
         <motion.h3
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : 20 }}
@@ -36,7 +36,7 @@ export function FeatureSlide({ feature, isActive }: FeatureSlideProps) {
         >
           {feature.title}
         </motion.h3>
-        
+
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : 20 }}
@@ -73,5 +73,5 @@ export function FeatureSlide({ feature, isActive }: FeatureSlideProps) {
         </motion.div>
       </div>
     </motion.div>
-  );
+  )
 }

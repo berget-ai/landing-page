@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import { GitBranch, Database, Shield, Cloud, Link2, Cpu } from 'lucide-react';
+import { motion } from 'framer-motion'
+import { GitBranch, Database, Shield, Cloud, Link2, Cpu } from 'lucide-react'
 
 export function Overview() {
   return (
@@ -13,7 +13,8 @@ export function Overview() {
           </div>
           <h2 className="text-4xl font-medium mb-6">How Berget Works</h2>
           <p className="text-lg text-white/60">
-            A modern cloud platform built for AI workloads, using GitOps for seamless deployment and management of your applications.
+            A modern cloud platform built for AI workloads, using GitOps for
+            seamless deployment and management of your applications.
           </p>
         </div>
 
@@ -22,8 +23,18 @@ export function Overview() {
           <div className="absolute inset-0 hidden lg:block">
             <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
               <defs>
-                <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-                  <polygon points="0 0, 10 3.5, 0 7" fill="rgba(255,255,255,0.2)" />
+                <marker
+                  id="arrowhead"
+                  markerWidth="10"
+                  markerHeight="7"
+                  refX="9"
+                  refY="3.5"
+                  orient="auto"
+                >
+                  <polygon
+                    points="0 0, 10 3.5, 0 7"
+                    fill="rgba(255,255,255,0.2)"
+                  />
                 </marker>
               </defs>
               <path
@@ -56,7 +67,8 @@ export function Overview() {
               </div>
               <h3 className="text-xl font-medium mb-2">Git Repository</h3>
               <p className="text-white/60 mb-4">
-                Your infrastructure as code and application configurations are version controlled in Git.
+                Your infrastructure as code and application configurations are
+                version controlled in Git.
               </p>
               <div className="text-sm text-white/40">
                 Automated sync with your cluster
@@ -76,7 +88,8 @@ export function Overview() {
               </div>
               <h3 className="text-xl font-medium mb-2">Berget Cluster</h3>
               <p className="text-white/60 mb-4">
-                Dedicated GPU resources, isolated network, and encrypted storage for your workloads.
+                Dedicated GPU resources, isolated network, and encrypted storage
+                for your workloads.
               </p>
               <div className="text-sm text-white/40">
                 Enterprise-grade security & performance
@@ -96,11 +109,10 @@ export function Overview() {
               </div>
               <h3 className="text-xl font-medium mb-2">Cloud Connectivity</h3>
               <p className="text-white/60 mb-4">
-                Secure connections to Azure, Google Cloud, or your own infrastructure via IPSec tunnels.
+                Secure connections to Azure, Google Cloud, or your own
+                infrastructure via IPSec tunnels.
               </p>
-              <div className="text-sm text-white/40">
-                Hybrid cloud ready
-              </div>
+              <div className="text-sm text-white/40">Hybrid cloud ready</div>
             </motion.div>
           </div>
 
@@ -121,5 +133,5 @@ export function Overview() {
         </div>
       </div>
     </section>
-  );
+  )
 }

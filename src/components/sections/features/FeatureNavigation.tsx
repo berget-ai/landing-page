@@ -1,23 +1,23 @@
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
+import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
 
 interface FeatureNavigationProps {
-  totalFeatures: number;
-  activeIndex: number;
-  onPrevious: () => void;
-  onNext: () => void;
-  onSelect: (index: number) => void;
-  isMobile?: boolean;
+  totalFeatures: number
+  activeIndex: number
+  onPrevious: () => void
+  onNext: () => void
+  onSelect: (index: number) => void
+  isMobile?: boolean
 }
 
-export function FeatureNavigation({ 
-  totalFeatures, 
-  activeIndex, 
-  onPrevious, 
-  onNext, 
+export function FeatureNavigation({
+  totalFeatures,
+  activeIndex,
+  onPrevious,
+  onNext,
   onSelect,
-  isMobile 
+  isMobile,
 }: FeatureNavigationProps) {
   return (
     <div className="flex flex-col gap-4 md:gap-8">
@@ -54,11 +54,13 @@ export function FeatureNavigation({
             onClick={() => onSelect(index)}
             className={cn(
               'w-2 h-2 rounded-full transition-all duration-300',
-              index === activeIndex ? 'bg-white scale-125' : 'bg-white/20 hover:bg-white/40'
+              index === activeIndex
+                ? 'bg-white scale-125'
+                : 'bg-white/20 hover:bg-white/40',
             )}
           />
         ))}
       </div>
     </div>
-  );
+  )
 }

@@ -1,26 +1,29 @@
-import { Leaf, Recycle, Zap } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { Leaf, Recycle, Zap } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 const sustainabilityPoints = [
   {
     icon: Leaf,
-    title: "100% Clean Energy",
-    description: "Our data centers run on certified renewable energy from Nordic hydropower and wind farms, with real-time energy source tracking.",
-    stats: "100% renewable energy"
+    title: '100% Clean Energy',
+    description:
+      'Our data centers run on certified renewable energy from Nordic hydropower and wind farms, with real-time energy source tracking.',
+    stats: '100% renewable energy',
   },
   {
     icon: Recycle,
-    title: "Circular Hardware",
-    description: "We partner with certified refurbishers to extend server lifecycles by 3-5 years, reducing e-waste while maintaining enterprise-grade performance.",
-    stats: "75% reduced hardware footprint"
+    title: 'Circular Hardware',
+    description:
+      'We partner with certified refurbishers to extend server lifecycles by 3-5 years, reducing e-waste while maintaining enterprise-grade performance.',
+    stats: '75% reduced hardware footprint',
   },
   {
     icon: Zap,
-    title: "Carbon Negative",
-    description: "Beyond zero emissions, we invest in verified carbon removal projects and optimize for the most energy-efficient AI infrastructure.",
-    stats: "-2000 tons CO₂e/year"
-  }
-];
+    title: 'Carbon Negative',
+    description:
+      'Beyond zero emissions, we invest in verified carbon removal projects and optimize for the most energy-efficient AI infrastructure.',
+    stats: '-2000 tons CO₂e/year',
+  },
+]
 
 export function Sustainability() {
   return (
@@ -32,9 +35,13 @@ export function Sustainability() {
             <Leaf className="w-4 h-4 mr-2" />
             <span className="text-sm">Sustainable by Design</span>
           </div>
-          <h2 className="text-4xl font-medium mb-6">Our Sustainability Pledge</h2>
+          <h2 className="text-4xl font-medium mb-6">
+            Our Sustainability Pledge
+          </h2>
           <p className="text-lg dark:text-white/60 light:text-gray-600">
-            We're building Europe's most sustainable AI infrastructure. Our commitment to the environment is fundamental to our operations, not an afterthought.
+            We're building Europe's most sustainable AI infrastructure. Our
+            commitment to the environment is fundamental to our operations, not
+            an afterthought.
           </p>
         </div>
 
@@ -53,12 +60,16 @@ export function Sustainability() {
                 <point.icon className="w-10 h-10 dark:text-emerald-400 light:text-emerald-600" />
               </div>
               <h3 className="text-2xl font-medium mb-3">{point.title}</h3>
-              <p className="dark:text-white/60 light:text-gray-600 mb-4">{point.description}</p>
-              <div className="text-sm font-medium dark:text-emerald-400 light:text-emerald-600">{point.stats}</div>
+              <p className="dark:text-white/60 light:text-gray-600 mb-4">
+                {point.description}
+              </p>
+              <div className="text-sm font-medium dark:text-emerald-400 light:text-emerald-600">
+                {point.stats}
+              </div>
             </motion.div>
           ))}
         </div>
       </div>
     </section>
-  );
+  )
 }

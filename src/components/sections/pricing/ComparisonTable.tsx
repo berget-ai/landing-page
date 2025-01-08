@@ -1,13 +1,13 @@
-import { Check, Minus } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { Check, Minus } from 'lucide-react'
+import { cn } from '@/lib/utils'
 
 interface Feature {
-  name: string;
-  description?: string;
-  berget: boolean;
-  aws: boolean;
-  azure: boolean;
-  gcp: boolean;
+  name: string
+  description?: string
+  berget: boolean
+  aws: boolean
+  azure: boolean
+  gcp: boolean
 }
 
 const features: Feature[] = [
@@ -17,7 +17,7 @@ const features: Feature[] = [
     berget: true,
     aws: true,
     azure: true,
-    gcp: true
+    gcp: true,
   },
   {
     name: 'No US Cloud Act Exposure',
@@ -25,7 +25,7 @@ const features: Feature[] = [
     berget: true,
     aws: false,
     azure: false,
-    gcp: false
+    gcp: false,
   },
   {
     name: 'Serverless Inference',
@@ -33,7 +33,7 @@ const features: Feature[] = [
     berget: true,
     aws: true,
     azure: true,
-    gcp: true
+    gcp: true,
   },
   {
     name: 'Open Source Models',
@@ -41,7 +41,7 @@ const features: Feature[] = [
     berget: true,
     aws: false,
     azure: false,
-    gcp: true
+    gcp: true,
   },
   {
     name: 'Custom Model Deployment',
@@ -49,7 +49,7 @@ const features: Feature[] = [
     berget: true,
     aws: true,
     azure: true,
-    gcp: true
+    gcp: true,
   },
   {
     name: 'Dedicated GPU Resources',
@@ -57,7 +57,7 @@ const features: Feature[] = [
     berget: true,
     aws: true,
     azure: true,
-    gcp: true
+    gcp: true,
   },
   {
     name: 'Green Energy Powered',
@@ -65,7 +65,7 @@ const features: Feature[] = [
     berget: true,
     aws: false,
     azure: true,
-    gcp: true
+    gcp: true,
   },
   {
     name: 'GDPR Compliant',
@@ -73,7 +73,7 @@ const features: Feature[] = [
     berget: true,
     aws: true,
     azure: true,
-    gcp: true
+    gcp: true,
   },
   {
     name: 'NIS-2 Ready',
@@ -81,9 +81,9 @@ const features: Feature[] = [
     berget: true,
     aws: false,
     azure: false,
-    gcp: false
-  }
-];
+    gcp: false,
+  },
+]
 
 export function ComparisonTable() {
   return (
@@ -124,14 +124,16 @@ export function ComparisonTable() {
               <tr
                 key={feature.name}
                 className={cn(
-                  "border-b border-white/5 hover:bg-white/[0.02] transition-colors",
-                  index % 2 === 0 && "bg-white/[0.01]"
+                  'border-b border-white/5 hover:bg-white/[0.02] transition-colors',
+                  index % 2 === 0 && 'bg-white/[0.01]',
                 )}
               >
                 <td className="p-4">
                   <div className="font-medium">{feature.name}</div>
                   {feature.description && (
-                    <div className="text-sm text-white/60">{feature.description}</div>
+                    <div className="text-sm text-white/60">
+                      {feature.description}
+                    </div>
                   )}
                 </td>
                 <td className="p-4">
@@ -176,5 +178,5 @@ export function ComparisonTable() {
         </table>
       </div>
     </div>
-  );
+  )
 }

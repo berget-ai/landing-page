@@ -1,9 +1,9 @@
-import { motion } from 'framer-motion';
-import type { Feature } from '@/types/features';
+import { motion } from 'framer-motion'
+import type { Feature } from '@/types/features'
 
 interface FeatureContentProps {
-  feature: Feature;
-  isActive: boolean;
+  feature: Feature
+  isActive: boolean
 }
 
 export function FeatureContent({ feature, isActive }: FeatureContentProps) {
@@ -17,7 +17,7 @@ export function FeatureContent({ feature, isActive }: FeatureContentProps) {
       >
         {feature.category}
       </motion.div>
-      
+
       <motion.h3
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : 20 }}
@@ -26,7 +26,7 @@ export function FeatureContent({ feature, isActive }: FeatureContentProps) {
       >
         {feature.title}
       </motion.h3>
-      
+
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : 20 }}
@@ -36,5 +36,5 @@ export function FeatureContent({ feature, isActive }: FeatureContentProps) {
         {feature.description}
       </motion.p>
     </div>
-  );
+  )
 }

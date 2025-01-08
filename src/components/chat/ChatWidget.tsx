@@ -1,30 +1,39 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { MessageSquare, X, Send, Bot, Loader2, AlertCircle, RefreshCw } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { cn } from '@/lib/utils';
-import { useChat } from '@/hooks/use-chat';
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import {
+  MessageSquare,
+  X,
+  Send,
+  Bot,
+  Loader2,
+  AlertCircle,
+  RefreshCw,
+} from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { cn } from '@/lib/utils'
+import { useChat } from '@/hooks/use-chat'
 
 const CHAT_CONFIG = {
   apiKey: import.meta.env.VITE_ODOO_API_KEY,
   baseUrl: import.meta.env.VITE_ODOO_BASE_URL,
-  channelId: import.meta.env.VITE_ODOO_CHANNEL_ID
-};
+  channelId: import.meta.env.VITE_ODOO_CHANNEL_ID,
+}
 
 export function ChatWidget() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [input, setInput] = useState('');
-  
-  const { messages, isTyping, error, isConnected, sendMessage } = useChat(CHAT_CONFIG);
+  const [isOpen, setIsOpen] = useState(false)
+  const [input, setInput] = useState('')
+
+  const { messages, isTyping, error, isConnected, sendMessage } =
+    useChat(CHAT_CONFIG)
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!input.trim()) return;
+    e.preventDefault()
+    if (!input.trim()) return
 
-    await sendMessage(input);
-    setInput('');
-  };
+    await sendMessage(input)
+    setInput('')
+  }
 
   const renderErrorState = () => (
     <div className="flex flex-col items-center justify-center h-[400px] p-6 text-center">
@@ -32,7 +41,7 @@ export function ChatWidget() {
       <p className="text-white/60 mb-4">
         {error || 'Unable to connect to chat service'}
       </p>
-      <Button 
+      <Button
         variant="secondary"
         onClick={() => window.location.reload()}
         className="gap-2"
@@ -41,7 +50,7 @@ export function ChatWidget() {
         Try Again
       </Button>
     </div>
-  );
+  )
 
   return (
     <>
@@ -89,29 +98,35 @@ export function ChatWidget() {
                     <div
                       key={message.id}
                       className={cn(
-                        "flex gap-2 items-start",
-                        message.type === 'user' && "flex-row-reverse"
+                        'flex gap-2 items-start',
+                        message.type === 'user' && 'flex-row-reverse',
                       )}
                     >
-                      <div className={cn(
-                        "w-8 h-8 rounded-full flex items-center justify-center shrink-0",
-                        message.type === 'bot' ? "bg-primary" : "bg-white/10"
-                      )}>
+                      <div
+                        className={cn(
+                          'w-8 h-8 rounded-full flex items-center justify-center shrink-0',
+                          message.type === 'bot' ? 'bg-primary' : 'bg-white/10',
+                        )}
+                      >
                         {message.type === 'bot' ? (
                           <Bot className="h-4 w-4 text-primary-foreground" />
                         ) : (
                           <MessageSquare className="h-4 w-4" />
                         )}
                       </div>
-                      <div className={cn(
-                        "rounded-2xl px-4 py-2 max-w-[75%]",
-                        message.type === 'bot' ? "bg-white/5" : "bg-primary text-primary-foreground"
-                      )}>
+                      <div
+                        className={cn(
+                          'rounded-2xl px-4 py-2 max-w-[75%]',
+                          message.type === 'bot'
+                            ? 'bg-white/5'
+                            : 'bg-primary text-primary-foreground',
+                        )}
+                      >
                         {message.content}
                       </div>
                     </div>
                   ))}
-                  
+
                   {isTyping && (
                     <div className="flex gap-2 items-start">
                       <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
@@ -126,7 +141,10 @@ export function ChatWidget() {
               )}
             </div>
 
-            <form onSubmit={handleSubmit} className="p-4 border-t border-white/10">
+            <form
+              onSubmit={handleSubmit}
+              className="p-4 border-t border-white/10"
+            >
               <div className="flex gap-2">
                 <Input
                   value={input}
@@ -135,9 +153,9 @@ export function ChatWidget() {
                   className="flex-1"
                   disabled={!isConnected || !!error}
                 />
-                <Button 
-                  type="submit" 
-                  size="icon" 
+                <Button
+                  type="submit"
+                  size="icon"
                   disabled={!input.trim() || !isConnected || !!error}
                 >
                   <Send className="h-4 w-4" />
@@ -148,5 +166,5 @@ export function ChatWidget() {
         )}
       </AnimatePresence>
     </>
-  );
+  )
 }

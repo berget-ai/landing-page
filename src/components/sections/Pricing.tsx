@@ -1,14 +1,14 @@
-import { Check, Info } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { PricingCard } from './PricingCard';
-import { PricingTable } from './PricingTable';
-import { ComparisonTable } from './pricing/ComparisonTable';
+import { Check, Info } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { PricingCard } from './PricingCard'
+import { PricingTable } from './PricingTable'
+import { ComparisonTable } from './pricing/ComparisonTable'
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from '@/components/ui/tooltip';
+} from '@/components/ui/tooltip'
 
 export function Pricing() {
   const plans = [
@@ -51,15 +51,18 @@ export function Pricing() {
       variant: 'secondary' as const,
       popular: false,
     },
-  ];
+  ]
 
   return (
     <section className="py-24 relative" id="pricing">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl font-medium mb-4">Simple to support your scaling needs</h2>
+          <h2 className="text-3xl font-medium mb-4">
+            Simple to support your scaling needs
+          </h2>
           <p className="text-lg text-white/60">
-            We aim to keep our prices simple and fair, so that you can focus on building awesome stuff instead of trying to figure out your bills.
+            We aim to keep our prices simple and fair, so that you can focus on
+            building awesome stuff instead of trying to figure out your bills.
           </p>
         </div>
 
@@ -110,7 +113,9 @@ export function Pricing() {
         <div className="mt-16 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-4">
             <Check className="w-4 h-4" />
-            <span className="text-sm">30-day money-back guarantee on all plans</span>
+            <span className="text-sm">
+              30-day money-back guarantee on all plans
+            </span>
           </div>
           <p className="text-white/60">
             Credit card and pre-payment. Invoice possible for large customers.
@@ -120,5 +125,5 @@ export function Pricing() {
         </div>
       </div>
     </section>
-  );
+  )
 }

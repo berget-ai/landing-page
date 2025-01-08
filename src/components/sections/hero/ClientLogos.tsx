@@ -1,23 +1,23 @@
-import { motion } from 'framer-motion';
+import { motion } from 'framer-motion'
 
 const logos = [
   {
     name: 'Company 1',
-    url: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=128&h=128&fit=crop&auto=format'
+    url: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=128&h=128&fit=crop&auto=format',
   },
   {
     name: 'Company 2',
-    url: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=128&h=128&fit=crop&auto=format'
+    url: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=128&h=128&fit=crop&auto=format',
   },
   {
     name: 'Company 3',
-    url: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=128&h=128&fit=crop&auto=format'
+    url: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=128&h=128&fit=crop&auto=format',
   },
   {
     name: 'Company 4',
-    url: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=128&h=128&fit=crop&auto=format'
-  }
-];
+    url: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=128&h=128&fit=crop&auto=format',
+  },
+]
 
 export function ClientLogos() {
   return (
@@ -25,7 +25,7 @@ export function ClientLogos() {
       <p className="text-center text-sm text-white/40">
         Trusted by leading companies across Europe
       </p>
-      
+
       <div className="flex justify-center items-center gap-12">
         {logos.map((logo, index) => (
           <motion.div
@@ -45,5 +45,5 @@ export function ClientLogos() {
         ))}
       </div>
     </div>
-  );
+  )
 }

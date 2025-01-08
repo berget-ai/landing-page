@@ -1,6 +1,6 @@
-import { motion } from 'framer-motion';
-import { Shield, Lock, FileCheck, Scale, Building } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { motion } from 'framer-motion'
+import { Shield, Lock, FileCheck, Scale, Building } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 
 const regulations = [
   {
@@ -10,8 +10,8 @@ const regulations = [
     benefits: [
       'Data stays within EU borders',
       'Complete data sovereignty',
-      'Transparent data processing'
-    ]
+      'Transparent data processing',
+    ],
   },
   {
     name: 'NIS2',
@@ -20,8 +20,8 @@ const regulations = [
     benefits: [
       'Enhanced cybersecurity measures',
       'Incident reporting framework',
-      'Risk management protocols'
-    ]
+      'Risk management protocols',
+    ],
   },
   {
     name: 'Schrems II',
@@ -30,8 +30,8 @@ const regulations = [
     benefits: [
       'No US cloud act exposure',
       'EU-based data processing',
-      'Legal certainty for transfers'
-    ]
+      'Legal certainty for transfers',
+    ],
   },
   {
     name: 'ISO 27001',
@@ -40,8 +40,8 @@ const regulations = [
     benefits: [
       'Systematic security approach',
       'Regular security audits',
-      'Documented security controls'
-    ]
+      'Documented security controls',
+    ],
   },
   {
     name: 'DORA',
@@ -50,10 +50,10 @@ const regulations = [
     benefits: [
       'ICT risk management',
       'Incident reporting',
-      'Digital resilience testing'
-    ]
-  }
-];
+      'Digital resilience testing',
+    ],
+  },
+]
 
 export function Compliance() {
   return (
@@ -65,15 +65,16 @@ export function Compliance() {
             <Shield className="w-4 h-4" />
             <span>Compliance First</span>
           </div>
-          
+
           <h2 className="text-3xl font-medium mb-4">
             Simplified Compliance for Your AI Applications
           </h2>
-          
+
           <p className="text-lg text-white/60">
-            Much of the complexity around legislation doesn't arise from cloud technology itself, 
-            but from foreign ownership and unclear data access. Our cloud runs in Sweden and is 
-            owned by Swedish stakeholders.
+            Much of the complexity around legislation doesn't arise from cloud
+            technology itself, but from foreign ownership and unclear data
+            access. Our cloud runs in Sweden and is owned by Swedish
+            stakeholders.
           </p>
         </div>
 
@@ -88,7 +89,7 @@ export function Compliance() {
               className="group relative"
             >
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-white/5 to-transparent group-hover:from-white/10 transition-colors" />
-              
+
               <div className="relative p-6 rounded-2xl border border-white/10 group-hover:border-white/20 transition-colors h-full">
                 <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-6">
                   <regulation.icon className="w-6 h-6" />
@@ -99,7 +100,10 @@ export function Compliance() {
 
                 <ul className="space-y-2">
                   {regulation.benefits.map((benefit) => (
-                    <li key={benefit} className="flex items-center gap-2 text-sm text-white/60">
+                    <li
+                      key={benefit}
+                      className="flex items-center gap-2 text-sm text-white/60"
+                    >
                       <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
                       {benefit}
                     </li>
@@ -113,8 +117,9 @@ export function Compliance() {
         <div className="flex justify-center">
           <div className="max-w-2xl text-center">
             <p className="text-lg text-white/60 mb-6">
-              Take control of your data and simplify your compliance journey with Berget's 
-              comprehensive regulatory framework and EU-based infrastructure.
+              Take control of your data and simplify your compliance journey
+              with Berget's comprehensive regulatory framework and EU-based
+              infrastructure.
             </p>
             <Button size="lg" variant="secondary">
               Learn More About Compliance
@@ -123,5 +128,5 @@ export function Compliance() {
         </div>
       </div>
     </section>
-  );
+  )
 }

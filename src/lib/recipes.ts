@@ -1,5 +1,12 @@
-import { MessageSquare, Workflow, FileSearch, Blocks, Globe, Braces } from 'lucide-react';
-import type { Recipe } from '@/types/recipes';
+import {
+  MessageSquare,
+  Workflow,
+  FileSearch,
+  Blocks,
+  Globe,
+  Braces,
+} from 'lucide-react'
+import type { Recipe } from '@/types/recipes'
 
 export const recipes: Recipe[] = [
   {
@@ -15,8 +22,8 @@ export const recipes: Recipe[] = [
       'Document chunking and embedding',
       'Semantic search',
       'Conversational memory',
-      'Citation support'
-    ]
+      'Citation support',
+    ],
   },
   {
     id: 'n8n-workflow',
@@ -31,8 +38,8 @@ export const recipes: Recipe[] = [
       'Automated document ingestion',
       'Multi-format support',
       'Metadata extraction',
-      'Webhook integration'
-    ]
+      'Webhook integration',
+    ],
   },
   {
     id: 'search-api',
@@ -47,8 +54,8 @@ export const recipes: Recipe[] = [
       'Vector similarity search',
       'Hybrid ranking',
       'Query expansion',
-      'Rate limiting'
-    ]
+      'Rate limiting',
+    ],
   },
   {
     id: 'langchain-agents',
@@ -63,8 +70,8 @@ export const recipes: Recipe[] = [
       'Tool-using agents',
       'Memory management',
       'Parallel processing',
-      'Custom tools'
-    ]
+      'Custom tools',
+    ],
   },
   {
     id: 'multi-modal',
@@ -79,8 +86,8 @@ export const recipes: Recipe[] = [
       'Image understanding',
       'PDF extraction',
       'Cross-modal search',
-      'Format conversion'
-    ]
+      'Format conversion',
+    ],
   },
   {
     id: 'streaming-rag',
@@ -95,7 +102,7 @@ export const recipes: Recipe[] = [
       'Real-time indexing',
       'Stream processing',
       'Live updates',
-      'Scalable architecture'
-    ]
-  }
-];
+      'Scalable architecture',
+    ],
+  },
+]

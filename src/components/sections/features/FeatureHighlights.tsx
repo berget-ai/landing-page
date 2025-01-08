@@ -1,16 +1,21 @@
-import { motion } from 'framer-motion';
+import { motion } from 'framer-motion'
 
 interface FeatureHighlightsProps {
-  highlights: string[];
-  isActive: boolean;
+  highlights: string[]
+  isActive: boolean
 }
 
-export function FeatureHighlights({ highlights, isActive }: FeatureHighlightsProps) {
+export function FeatureHighlights({
+  highlights,
+  isActive,
+}: FeatureHighlightsProps) {
   return (
     <div className="relative">
       <div className="absolute inset-0 bg-gradient-to-r from-white/5 via-white/3 to-transparent rounded-2xl backdrop-blur-sm" />
       <div className="relative p-8">
-        <h4 className="text-2xl font-medium mb-8 tracking-tight">Key Highlights</h4>
+        <h4 className="text-2xl font-medium mb-8 tracking-tight">
+          Key Highlights
+        </h4>
         <ul className="space-y-6">
           {highlights.map((highlight, index) => (
             <motion.li
@@ -27,5 +32,5 @@ export function FeatureHighlights({ highlights, isActive }: FeatureHighlightsPro
         </ul>
       </div>
     </div>
-  );
+  )
 }

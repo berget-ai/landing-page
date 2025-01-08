@@ -1,5 +1,5 @@
-import { Github, Linkedin, Twitter } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Github, Linkedin, Twitter } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 
 const footerLinks = {
   product: [
@@ -19,7 +19,7 @@ const footerLinks = {
     { name: 'Terms', href: '#terms' },
     { name: 'Security', href: '#security' },
   ],
-};
+}
 
 export function Footer() {
   return (
@@ -29,7 +29,8 @@ export function Footer() {
           <div>
             <div className="text-xl font-semibold mb-4">Berget AI</div>
             <p className="text-sm text-white/60 mb-4">
-              Enterprise-grade AI model deployment platform built for teams who need reliability and performance.
+              Enterprise-grade AI model deployment platform built for teams who
+              need reliability and performance.
             </p>
             <div className="flex space-x-4">
               <Button variant="ghost" size="icon" className="hover:bg-white/10">
@@ -99,11 +100,19 @@ export function Footer() {
               © {new Date().getFullYear()} Berget. All rights reserved.
             </p>
             <div className="flex items-center gap-4">
-              <Button variant="ghost" size="sm" className="text-white/60 hover:text-white">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="text-white/60 hover:text-white"
+              >
                 Status
               </Button>
               <div className="w-1 h-1 rounded-full bg-white/20" />
-              <Button variant="ghost" size="sm" className="text-white/60 hover:text-white">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="text-white/60 hover:text-white"
+              >
                 Support
               </Button>
             </div>
@@ -111,5 +120,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  );
+  )
 }

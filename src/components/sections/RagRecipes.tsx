@@ -1,23 +1,23 @@
-import { useState } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { RecipeCard } from './RecipeCard';
-import { recipes } from '@/lib/recipes';
+import { useState } from 'react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Button } from '@/components/ui/button'
+import { RecipeCard } from './RecipeCard'
+import { recipes } from '@/lib/recipes'
 
 export function RagRecipes() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const visibleRecipes = 3;
+  const [activeIndex, setActiveIndex] = useState(0)
+  const visibleRecipes = 3
 
   const nextSlide = () => {
-    setActiveIndex((current) => 
-      Math.min(current + 1, recipes.length - visibleRecipes)
-    );
-  };
+    setActiveIndex((current) =>
+      Math.min(current + 1, recipes.length - visibleRecipes),
+    )
+  }
 
   const prevSlide = () => {
-    setActiveIndex((current) => Math.max(current - 1, 0));
-  };
+    setActiveIndex((current) => Math.max(current - 1, 0))
+  }
 
   return (
     <section className="py-24 relative">
@@ -25,9 +25,11 @@ export function RagRecipes() {
         <div className="flex items-center justify-between mb-12">
           <div>
             <h2 className="text-3xl font-medium mb-2">RAG Recipes</h2>
-            <p className="text-lg text-white/60">Ready-to-deploy RAG applications</p>
+            <p className="text-lg text-white/60">
+              Ready-to-deploy RAG applications
+            </p>
           </div>
-          
+
           <div className="flex gap-2">
             <Button
               variant="secondary"
@@ -57,9 +59,9 @@ export function RagRecipes() {
               x: `${-activeIndex * (100 / visibleRecipes)}%`,
             }}
             transition={{
-              type: "spring",
+              type: 'spring',
               stiffness: 150,
-              damping: 20
+              damping: 20,
             }}
           >
             <AnimatePresence>
@@ -80,5 +82,5 @@ export function RagRecipes() {
         </div>
       </div>
     </section>
-  );
+  )
 }

@@ -1,28 +1,28 @@
-import { Users, Cpu, Database, Shield } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { Users, Cpu, Database, Shield } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 const metrics = [
   {
     icon: Users,
     value: '500+',
-    label: 'Enterprise Clients'
+    label: 'Enterprise Clients',
   },
   {
     icon: Cpu,
     value: '1B+',
-    label: 'Daily Requests'
+    label: 'Daily Requests',
   },
   {
     icon: Database,
     value: '99.99%',
-    label: 'Uptime SLA'
+    label: 'Uptime SLA',
   },
   {
     icon: Shield,
     value: 'ISO 27001',
-    label: 'Certified'
-  }
-];
+    label: 'Certified',
+  },
+]
 
 export function SocialProof() {
   return (
@@ -41,5 +41,5 @@ export function SocialProof() {
         </motion.div>
       ))}
     </div>
-  );
+  )
 }

@@ -1,18 +1,21 @@
-import { Cpu, Database, HardDrive } from 'lucide-react';
-import type { ResourceOption } from '@/types/resources';
+import { Cpu, Database, HardDrive } from 'lucide-react'
+import type { ResourceOption } from '@/types/resources'
 
 interface StepResourcesProps {
-  selectedResource: ResourceOption | null;
-  onSelectResource: (resource: ResourceOption) => void;
+  selectedResource: ResourceOption | null
+  onSelectResource: (resource: ResourceOption) => void
 }
 
 const resourceOptions: ResourceOption[] = [
   { name: 'Development', cpu: 2, memory: 4, storage: 20, price: 20 },
   { name: 'Production', cpu: 4, memory: 8, storage: 50, price: 40 },
-  { name: 'Enterprise', cpu: 8, memory: 16, storage: 100, price: 80 }
-];
+  { name: 'Enterprise', cpu: 8, memory: 16, storage: 100, price: 80 },
+]
 
-export function StepResources({ selectedResource, onSelectResource }: StepResourcesProps) {
+export function StepResources({
+  selectedResource,
+  onSelectResource,
+}: StepResourcesProps) {
   return (
     <div className="space-y-6">
       <h3 className="text-lg font-medium">Resource Configuration</h3>
@@ -47,5 +50,5 @@ export function StepResources({ selectedResource, onSelectResource }: StepResour
         ))}
       </div>
     </div>
-  );
+  )
 }

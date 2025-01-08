@@ -1,21 +1,24 @@
-import { useState } from 'react';
-import { Slider } from '@/components/ui/slider';
-import type { ClusterResources } from '@/types/resources';
+import { useState } from 'react'
+import { Slider } from '@/components/ui/slider'
+import type { ClusterResources } from '@/types/resources'
 
 interface ResourceEstimatorProps {
-  resources: ClusterResources;
-  currentCluster: ClusterResources;
-  onResize: (resources: ClusterResources) => void;
+  resources: ClusterResources
+  currentCluster: ClusterResources
+  onResize: (resources: ClusterResources) => void
 }
 
-export function ResourceEstimator({ currentCluster, onResize }: ResourceEstimatorProps) {
-  const [values, setValues] = useState(currentCluster);
+export function ResourceEstimator({
+  currentCluster,
+  onResize,
+}: ResourceEstimatorProps) {
+  const [values, setValues] = useState(currentCluster)
 
   const handleChange = (key: keyof ClusterResources, value: number[]) => {
-    const newValues = { ...values, [key]: value[0] };
-    setValues(newValues);
-    onResize(newValues);
-  };
+    const newValues = { ...values, [key]: value[0] }
+    setValues(newValues)
+    onResize(newValues)
+  }
 
   return (
     <div className="space-y-8">
@@ -79,5 +82,5 @@ export function ResourceEstimator({ currentCluster, onResize }: ResourceEstimato
         </div>
       </div>
     </div>
-  );
+  )
 }

@@ -1,7 +1,7 @@
-import { ArrowRight, Shield } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { SocialProof } from './hero/SocialProof';
-import { ClientLogos } from './hero/ClientLogos';
+import { ArrowRight, Shield } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { SocialProof } from './hero/SocialProof'
+import { ClientLogos } from './hero/ClientLogos'
 
 export function GetStarted() {
   return (
@@ -10,7 +10,9 @@ export function GetStarted() {
         <div>
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8">
             <Shield className="w-4 h-4 mr-2" />
-            <span className="text-sm">A secure, compliant and sustainable AI-cloud for Europe</span>
+            <span className="text-sm">
+              A secure, compliant and sustainable AI-cloud for Europe
+            </span>
           </div>
 
           <h1 className="text-5xl font-medium leading-tight mb-6">
@@ -20,7 +22,9 @@ export function GetStarted() {
           </h1>
 
           <p className="text-xl text-white/60 mb-8 leading-relaxed">
-            Berget AI offers Europe's best and simplest cloud service for AI applications, making compliance effortless while providing modern developer experience and sustainable infrastructure.
+            Berget AI offers Europe's best and simplest cloud service for AI
+            applications, making compliance effortless while providing modern
+            developer experience and sustainable infrastructure.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
@@ -48,20 +52,45 @@ export function GetStarted() {
                 <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
                 <div className="w-3 h-3 rounded-full bg-green-500/80" />
               </div>
-              <span className="text-sm text-white/40">Av utvecklare för utvecklare</span>
+              <span className="text-sm text-white/40">
+                Av utvecklare för utvecklare
+              </span>
             </div>
             <div className="p-4 text-sm font-mono">
-              <div className="text-white/60">$ <span className="text-white">npm i -g berget</span></div>
-              <div className="text-white/60">$ <span className="text-white">berget login</span></div>
-              <div className="text-emerald-400/80">... loggar in med BankID</div>
-              <div className="text-white/60">$ <span className="text-white">berget create cluster</span></div>
+              <div className="text-white/60">
+                $ <span className="text-white">npm i -g berget</span>
+              </div>
+              <div className="text-white/60">
+                $ <span className="text-white">berget login</span>
+              </div>
+              <div className="text-emerald-400/80">
+                ... loggar in med BankID
+              </div>
+              <div className="text-white/60">
+                $ <span className="text-white">berget create cluster</span>
+              </div>
               <div className="text-emerald-400/80">Done! 5 nodes created.</div>
-              <div className="text-emerald-400/80">Assigned DNS: ideal-palmtree.berget.cloud</div>
-              <div className="text-white/60 mt-2">Nu är ditt kluster redo att användas. Nu kan du börja köra dina applikationer.</div>
-              <div className="text-white/60">Du kan peka ett CNAME till klustret.</div>
+              <div className="text-emerald-400/80">
+                Assigned DNS: ideal-palmtree.berget.cloud
+              </div>
+              <div className="text-white/60 mt-2">
+                Nu är ditt kluster redo att användas. Nu kan du börja köra dina
+                applikationer.
+              </div>
+              <div className="text-white/60">
+                Du kan peka ett CNAME till klustret.
+              </div>
               <div className="mt-2">
-                <div className="text-white/60">$ <span className="text-white">berget apply -f deployment.yaml</span></div>
-                <div className="text-white/60 mt-2">Tips: använd fluxcd för att automatiskt hålla klustret uppdaterat.</div>
+                <div className="text-white/60">
+                  ${' '}
+                  <span className="text-white">
+                    berget apply -f deployment.yaml
+                  </span>
+                </div>
+                <div className="text-white/60 mt-2">
+                  Tips: använd fluxcd för att automatiskt hålla klustret
+                  uppdaterat.
+                </div>
               </div>
             </div>
           </div>
@@ -72,5 +101,5 @@ export function GetStarted() {
         <ClientLogos />
       </div>
     </div>
-  );
+  )
 }

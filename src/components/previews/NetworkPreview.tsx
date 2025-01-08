@@ -1,4 +1,4 @@
-import { Network, Cloud, Server, Lock } from 'lucide-react';
+import { Network, Cloud, Server, Lock } from 'lucide-react'
 
 const mockConnections = [
   {
@@ -9,7 +9,7 @@ const mockConnections = [
     destinationIp: '172.16.0.1',
     bandwidth: '1 Gbps',
     latency: '4.2ms',
-    region: 'eu-north-1'
+    region: 'eu-north-1',
   },
   {
     name: 'Azure ExpressRoute',
@@ -19,7 +19,7 @@ const mockConnections = [
     destinationIp: '192.168.0.1',
     bandwidth: '2 Gbps',
     latency: '3.8ms',
-    region: 'northeurope'
+    region: 'northeurope',
   },
   {
     name: 'IPSec VPN',
@@ -29,9 +29,9 @@ const mockConnections = [
     destinationIp: '198.51.100.1',
     bandwidth: '500 Mbps',
     latency: '8.1ms',
-    region: 'Stockholm'
-  }
-];
+    region: 'Stockholm',
+  },
+]
 
 export function NetworkPreview() {
   return (
@@ -56,8 +56,8 @@ export function NetworkPreview() {
 
           {/* Connection Lines and Remote Nodes */}
           {mockConnections.map((connection, index) => {
-            const spacing = (index + 1) * (100 / (mockConnections.length + 1));
-            const xOffset = spacing * 4;
+            const spacing = (index + 1) * (100 / (mockConnections.length + 1))
+            const xOffset = spacing * 4
 
             return (
               <div
@@ -66,7 +66,7 @@ export function NetworkPreview() {
                   position: 'absolute',
                   left: '50%',
                   top: '50%',
-                  transform: `translate(${xOffset}px, -50%)`
+                  transform: `translate(${xOffset}px, -50%)`,
                 }}
               >
                 {/* Connection Line */}
@@ -76,9 +76,23 @@ export function NetworkPreview() {
                     style={{ width: '200px', height: '2px' }}
                   >
                     <defs>
-                      <linearGradient id={`grad-${index}`} x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor="#E5DDD5" stopOpacity="0.1" />
-                        <stop offset="100%" stopColor="#E5DDD5" stopOpacity="0.3" />
+                      <linearGradient
+                        id={`grad-${index}`}
+                        x1="0%"
+                        y1="0%"
+                        x2="100%"
+                        y2="0%"
+                      >
+                        <stop
+                          offset="0%"
+                          stopColor="#E5DDD5"
+                          stopOpacity="0.1"
+                        />
+                        <stop
+                          offset="100%"
+                          stopColor="#E5DDD5"
+                          stopOpacity="0.3"
+                        />
                       </linearGradient>
                     </defs>
                     <line
@@ -97,9 +111,15 @@ export function NetworkPreview() {
                 <div className="absolute -translate-x-1/2 -translate-y-1/2">
                   <div className="w-24 h-24 rounded-full bg-[#E5DDD5]/5 flex items-center justify-center relative">
                     <div className="w-16 h-16 rounded-full bg-[#E5DDD5]/10 flex items-center justify-center">
-                      {connection.type === 'AWS' && <Cloud className="w-8 h-8" />}
-                      {connection.type === 'Azure' && <Network className="w-8 h-8" />}
-                      {connection.type === 'IPSec' && <Lock className="w-8 h-8" />}
+                      {connection.type === 'AWS' && (
+                        <Cloud className="w-8 h-8" />
+                      )}
+                      {connection.type === 'Azure' && (
+                        <Network className="w-8 h-8" />
+                      )}
+                      {connection.type === 'IPSec' && (
+                        <Lock className="w-8 h-8" />
+                      )}
                     </div>
                   </div>
                   <div className="text-center mt-4">
@@ -108,7 +128,7 @@ export function NetworkPreview() {
                   </div>
                 </div>
               </div>
-            );
+            )
           })}
         </div>
 
@@ -130,7 +150,9 @@ export function NetworkPreview() {
               </div>
               <div className="flex items-center gap-6">
                 <div className="text-right">
-                  <p className="text-sm text-white/60">{connection.bandwidth}</p>
+                  <p className="text-sm text-white/60">
+                    {connection.bandwidth}
+                  </p>
                   <p className="text-sm text-white/40">{connection.latency}</p>
                 </div>
                 <span className="px-3 py-1 rounded-full text-sm bg-white/10">
@@ -154,5 +176,5 @@ export function NetworkPreview() {
         Preview
       </div>
     </div>
-  );
+  )
 }

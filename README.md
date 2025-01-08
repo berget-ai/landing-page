@@ -26,17 +26,20 @@ npm run dev
 ### Installation
 
 1. Klona repot
+
 ```bash
 git clone https://github.com/bergetai/platform
 cd platform
 ```
 
 2. Installera dependencies
+
 ```bash
 npm install
 ```
 
 3. Starta utvecklingsservern
+
 ```bash
 npm run dev
 ```

@@ -1,17 +1,24 @@
-import { Check, Star } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
+import { Check, Star } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
 
 interface PricingCardProps {
-  name: string;
-  price: string;
-  features: string[];
-  cta: string;
-  variant: 'default' | 'outline' | 'secondary';
-  popular?: boolean;
+  name: string
+  price: string
+  features: string[]
+  cta: string
+  variant: 'default' | 'outline' | 'secondary'
+  popular?: boolean
 }
 
-export function PricingCard({ name, price, features, cta, variant, popular }: PricingCardProps) {
+export function PricingCard({
+  name,
+  price,
+  features,
+  cta,
+  variant,
+  popular,
+}: PricingCardProps) {
   return (
     <div className="relative group">
       {popular && (
@@ -24,18 +31,20 @@ export function PricingCard({ name, price, features, cta, variant, popular }: Pr
       )}
 
       <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-white/5 to-transparent group-hover:from-white/10 transition-colors" />
-      
-      <div className={cn(
-        "relative p-8 rounded-2xl border transition-colors",
-        popular ? "border-white" : "border-white/10",
-        "hover:border-white/20"
-      )}>
+
+      <div
+        className={cn(
+          'relative p-8 rounded-2xl border transition-colors',
+          popular ? 'border-white' : 'border-white/10',
+          'hover:border-white/20',
+        )}
+      >
         <h3 className="text-xl font-medium mb-2">{name}</h3>
         <div className="mb-6">
           <div className="text-3xl font-medium">€{price}</div>
           <div className="text-sm text-white/60">per month</div>
         </div>
-        
+
         <ul className="space-y-4 mb-8">
           {features.map((feature) => (
             <li key={feature} className="flex items-start gap-3">
@@ -50,5 +59,5 @@ export function PricingCard({ name, price, features, cta, variant, popular }: Pr
         </Button>
       </div>
     </div>
-  );
+  )
 }

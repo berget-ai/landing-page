@@ -1,32 +1,34 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Bot, Sparkles, Zap, MessageSquare } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { ModelChat } from '@/components/modals/ModelChat';
+import { useState } from 'react'
+import { motion } from 'framer-motion'
+import { Bot, Sparkles, Zap, MessageSquare } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { ModelChat } from '@/components/modals/ModelChat'
 
 const models = [
   {
     name: 'Llama 3',
     description: 'Latest open-source LLM from Meta',
     specs: '405B parameters',
-    type: 'Text Generation'
+    type: 'Text Generation',
   },
   {
     name: 'Mixtral',
     description: 'High-performance mixture of experts model',
     specs: '8x7B architecture',
-    type: 'Text Generation'
+    type: 'Text Generation',
   },
   {
     name: 'Whisper',
     description: 'Speech recognition and translation',
     specs: 'Multi-language support',
-    type: 'Speech-to-Text'
-  }
-];
+    type: 'Speech-to-Text',
+  },
+]
 
 export function ModelInference() {
-  const [selectedModel, setSelectedModel] = useState<typeof models[0] | null>(null);
+  const [selectedModel, setSelectedModel] = useState<(typeof models)[0] | null>(
+    null,
+  )
 
   return (
     <section className="py-24 relative">
@@ -37,9 +39,11 @@ export function ModelInference() {
             <div className="space-y-6">
               <h2 className="text-3xl font-medium">Model Inference</h2>
               <p className="text-lg text-white/60">
-                Access our extensive collection of powerful open-source models through serverless endpoints. Start building AI applications immediately using the OpenAI API standard.
+                Access our extensive collection of powerful open-source models
+                through serverless endpoints. Start building AI applications
+                immediately using the OpenAI API standard.
               </p>
-              
+
               <div className="flex flex-col gap-4">
                 <div className="flex items-center gap-3">
                   <Sparkles className="w-5 h-5 text-white/60" />
@@ -76,15 +80,21 @@ export function ModelInference() {
                     <div className="flex items-start justify-between">
                       <div>
                         <h4 className="font-medium mb-1">{model.name}</h4>
-                        <p className="text-sm text-white/60">{model.description}</p>
+                        <p className="text-sm text-white/60">
+                          {model.description}
+                        </p>
                       </div>
                       <div className="flex items-start gap-4">
                         <div className="text-right">
-                          <div className="text-sm font-medium">{model.specs}</div>
-                          <div className="text-xs text-white/40">{model.type}</div>
+                          <div className="text-sm font-medium">
+                            {model.specs}
+                          </div>
+                          <div className="text-xs text-white/40">
+                            {model.type}
+                          </div>
                         </div>
-                        <Button 
-                          variant="secondary" 
+                        <Button
+                          variant="secondary"
                           size="sm"
                           className="shrink-0"
                           onClick={() => setSelectedModel(model)}
@@ -98,8 +108,6 @@ export function ModelInference() {
               </div>
             </div>
           </div>
-
-          
         </div>
       </div>
 
@@ -112,5 +120,5 @@ export function ModelInference() {
         />
       )}
     </section>
-  );
+  )
 }
