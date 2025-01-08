@@ -6,7 +6,7 @@ import { FeatureCarousel } from './features/FeatureCarousel'
 export function Features() {
   return (
     <section
-      className="py-40 relative bg-[linear-gradient(to_right,rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:48px_48px]"
+      className="py-40 relative bg-white text-black"
       id="features"
     >
       <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background opacity-80" />
