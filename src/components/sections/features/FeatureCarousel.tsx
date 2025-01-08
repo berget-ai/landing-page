@@ -29,7 +29,7 @@ export function FeatureCarousel() {
   const opacity = useTransform(
     springX,
     [-window.innerWidth, 0, window.innerWidth],
-    [0, 1, 0],
+    [0, 1, 0]
   )
 
   const nextSlide = useCallback(() => {
@@ -54,7 +54,7 @@ export function FeatureCarousel() {
         }
       }
     },
-    [nextSlide, prevSlide],
+    [nextSlide, prevSlide]
   )
 
   const handleDragStart = useCallback(
@@ -62,7 +62,7 @@ export function FeatureCarousel() {
       isDragging.current = true
       startX.current = 'touches' in e ? e.touches[0].clientX : e.clientX
     },
-    [],
+    []
   )
 
   const handleDragMove = useCallback(
@@ -74,7 +74,7 @@ export function FeatureCarousel() {
 
       x.set(diff)
     },
-    [x],
+    [x]
   )
 
   const handleDragEnd = useCallback(() => {
@@ -100,7 +100,7 @@ export function FeatureCarousel() {
   })
 
   return (
-    <div className="relative container mx-auto px-4">
+    <div className="relative container mx-auto px-4 h-screen">
       <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-pink-500/5 opacity-30 blur-3xl pointer-events-none" />
       <FeatureNavigation
         totalFeatures={features.length}
@@ -122,9 +122,9 @@ export function FeatureCarousel() {
         onTouchMove={handleDragMove}
         onTouchEnd={handleDragEnd}
         className={cn(
-          'relative h-[400px] md:h-[500px] overflow-hidden mt-8',
+          'relative h-[400px] md:h-[300px] overflow-hidden mt-8',
           isDragging.current ? 'cursor-grabbing' : 'cursor-grab',
-          'touch-pan-y',
+          'touch-pan-y'
         )}
       >
         {features.map((feature, index) => (
@@ -133,13 +133,13 @@ export function FeatureCarousel() {
             className={cn(
               'absolute inset-0 w-full',
               'grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12',
-              'px-4 md:px-0',
+              'px-4 md:px-0'
             )}
             style={{
               x: useTransform(
                 springX,
                 [0],
-                [`${(index - activeIndex) * 100}%`],
+                [`${(index - activeIndex) * 100}%`]
               ),
               opacity: index === activeIndex ? opacity : 0,
             }}
@@ -172,7 +172,7 @@ export function FeatureCarousel() {
       {/* Progress Bar */}
       <div className="mt-8 h-1 bg-white/5 rounded-full overflow-hidden">
         <motion.div
-          className="h-full bg-white"
+          className="h-full bg-emerald-700"
           initial={false}
           animate={{
             width: `${((activeIndex + 1) / features.length) * 100}%`,

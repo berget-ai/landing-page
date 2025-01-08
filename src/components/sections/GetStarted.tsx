@@ -8,13 +8,6 @@ export function GetStarted() {
     <div className="container mx-auto px-4 py-32">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8">
-            <Shield className="w-4 h-4 mr-2" />
-            <span className="text-sm">
-              A secure, compliant and sustainable AI-cloud for Europe
-            </span>
-          </div>
-
           <h1 className="text-5xl font-medium leading-tight mb-6">
             Build AI powered applications with
             <br />
@@ -22,9 +15,10 @@ export function GetStarted() {
           </h1>
 
           <p className="text-xl text-white/60 mb-8 leading-relaxed">
-            Berget AI offers Europe's best and simplest cloud service for AI
+            Berget AI offers Europe's best and simplest place for your AI
             applications, making compliance effortless while providing modern
-            developer experience and sustainable infrastructure.
+            developer experience and sustainable infrastructure with no vendor
+            lock-in.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
@@ -52,9 +46,7 @@ export function GetStarted() {
                 <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
                 <div className="w-3 h-3 rounded-full bg-green-500/80" />
               </div>
-              <span className="text-sm text-white/40">
-                Av utvecklare för utvecklare
-              </span>
+              <span className="text-sm text-white/40">By devs for devs</span>
             </div>
             <div className="p-4 text-sm font-mono">
               <div className="text-white/60">

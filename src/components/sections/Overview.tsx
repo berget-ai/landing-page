@@ -11,49 +11,17 @@ export function Overview() {
             <GitBranch className="w-4 h-4 mr-2" />
             <span className="text-sm">GitOps Architecture</span>
           </div>
-          <h2 className="text-4xl font-medium mb-6">How Berget Works</h2>
+          <h2 className="text-4xl font-medium mb-6">What is GitOps?</h2>
           <p className="text-lg text-white/60">
-            A modern cloud platform built for AI workloads, using GitOps for
-            seamless deployment and management of your applications.
+            GitOps is a modern approach to infrastructure and application
+            management using Git as the single source of truth. It enables
+            developers to manage infrastructure and application configurations
+            using Git repositories.
           </p>
         </div>
 
         <div className="relative">
           {/* GitOps SVG Illustration */}
-          <div className="absolute inset-0 hidden lg:block">
-            <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <marker
-                  id="arrowhead"
-                  markerWidth="10"
-                  markerHeight="7"
-                  refX="9"
-                  refY="3.5"
-                  orient="auto"
-                >
-                  <polygon
-                    points="0 0, 10 3.5, 0 7"
-                    fill="rgba(255,255,255,0.2)"
-                  />
-                </marker>
-              </defs>
-              <rect x="100" y="100" width="200" height="100" fill="#2D6A4F" />
-              <text x="200" y="150" fill="#fff" textAnchor="middle" fontSize="16">
-                Git Repository
-              </text>
-              <path
-                d="M300,150 L500,150"
-                stroke="rgba(255,255,255,0.2)"
-                strokeWidth="2"
-                fill="none"
-                markerEnd="url(#arrowhead)"
-              />
-              <rect x="500" y="100" width="200" height="100" fill="#40916C" />
-              <text x="600" y="150" fill="#fff" textAnchor="middle" fontSize="16">
-                Kubernetes Cluster
-              </text>
-            </svg>
-          </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Git Repository */}
@@ -108,10 +76,10 @@ export function Overview() {
               <div className="mb-4">
                 <Link2 className="w-8 h-8 text-green-400" />
               </div>
-              <h3 className="text-xl font-medium mb-2">Cloud Connectivity</h3>
+              <h3 className="text-xl font-medium mb-2">AI API:s</h3>
               <p className="text-white/60 mb-4">
-                Secure connections to Azure, Google Cloud, or your own
-                infrastructure via IPSec tunnels.
+                You can either use our open models or deploy your own. In any
+                case your data is not leaving our data center.
               </p>
               <div className="text-sm text-white/40">Hybrid cloud ready</div>
             </motion.div>

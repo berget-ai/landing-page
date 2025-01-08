@@ -22,13 +22,13 @@ function App() {
       <main>
         <Hero />
         <GetStarted />
-        <Overview />
         <Features />
         <ModelInference />
         <Compliance />
         <Sustainability />
         <RagRecipes />
         <Testimonials />
+        <Overview />
         <Success />
         <About />
         <Pricing />

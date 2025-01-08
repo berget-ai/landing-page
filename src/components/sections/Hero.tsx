@@ -1,6 +1,13 @@
 import { Button } from '@/components/ui/button'
 import { NetworkBackground } from '../common/NetworkBackground'
-import { ArrowRight } from 'lucide-react'
+import {
+  ArrowRight,
+  Flag,
+  Leaf,
+  LockIcon,
+  Mountain,
+  Shield,
+} from 'lucide-react'
 
 export function Hero() {
   return (
@@ -8,6 +15,13 @@ export function Hero() {
       <NetworkBackground />
       <div className="relative z-10 flex items-center justify-center min-h-screen">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8">
+            <Shield className="w-4 h-4 mr-2" />
+            <span className="text-sm">
+              A responsible, compliant and sustainable AI company for Europe
+            </span>
+          </div>
+
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-ovo">
             Enable A Symphony of
             <br />
@@ -27,7 +41,7 @@ export function Hero() {
             <Button
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white/10"
+              className="border-white bg-transparent text-white hover:bg-white/10"
             >
               Learn More
             </Button>

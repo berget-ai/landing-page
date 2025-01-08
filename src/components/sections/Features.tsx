@@ -61,13 +61,12 @@ export function Features() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-medium">
-              AI agents use a symphony of smaller expert AI:s
+              Open Weights models are winning the game
             </h2>
             <p className="text-lg text-white/60 mt-4">
-              AI agents are not about building larger and larger models, but
-              about finding a home for your AI agents. At Berget AI, we provide
-              the perfect environment for these agents to thrive, working
-              together to solve complex tasks.
+              Open weights models are the future of AI. They are moving faster
+              than the closed ones and you can trust that no one is using your
+              data for training.
             </p>
           </div>
           <div className="flex justify-center">
