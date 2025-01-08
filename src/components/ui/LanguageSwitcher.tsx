@@ -7,18 +7,12 @@ export function LanguageSwitcher() {
   return (
     <div className="flex gap-2 aspect-square">
       {i18n.language === 'en' ? (
-        <button
-          onClick={() => i18n.changeLanguage('sv')}
-          className="flex items-center"
-        >
-          <FlagSE />
+        <button onClick={() => i18n.changeLanguage('sv')} className="gap-2  ">
+          <FlagSE width={24} />
         </button>
       ) : (
-        <button
-          onClick={() => i18n.changeLanguage('en')}
-          className="flex items-center"
-        >
-          <FlagEU />
+        <button onClick={() => i18n.changeLanguage('en')} className="gap-2 ">
+          <FlagEU width={24} />
         </button>
       )}
     </div>
