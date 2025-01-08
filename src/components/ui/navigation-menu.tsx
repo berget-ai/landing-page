@@ -4,6 +4,7 @@ import * as NavigationMenuPrimitive from '@radix-ui/react-navigation-menu'
 import { cva } from 'class-variance-authority'
 
 import { cn } from '@/lib/utils'
+import { LanguageSwitcher } from './LanguageSwitcher'
 
 const NavigationMenu = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Root>,
@@ -18,6 +19,7 @@ const NavigationMenu = React.forwardRef<
     {...props}
   >
     {children}
+    <LanguageSwitcher />
     <NavigationMenuViewport />
   </NavigationMenuPrimitive.Root>
 ))
