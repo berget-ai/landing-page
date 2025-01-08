@@ -9,5 +9,14 @@
     },
     "codeBlockTitle": "Av utvecklare för utvecklare",
     "popularModels": "Populära Modeller"
+  },
+  "features": {
+    "modelInference": {
+      "title": "Modellinferens",
+      "description1": "Serverlös inferens av kraftfulla öppen källkodsmodeller. Få tillgång till våra 50+ modeller inklusive Llama 3, Mixtral, genom serverlösa slutpunkter och börja bygga dina AI-applikationer med hjälp av Open AI API-standarden.",
+      "description2": "Det är enkelt, du kan börja omedelbart och du betalar efter användning.",
+      "viewModels": "Visa modeller",
+      "learnMore": "Läs mer"
+    }
   }
 }

@@ -1,9 +1,12 @@
 import { Bot, Lock, Server } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 import { Button } from '@/components/ui/button'
 import { FeatureCard } from './FeatureCard'
 import { FeatureCarousel } from './features/FeatureCarousel'
 
 export function Features() {
+  const { t } = useTranslation()
+
   return (
     <section className="py-40 relative" id="features">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background opacity-80" />
@@ -14,19 +17,12 @@ export function Features() {
           {/* Serverless Inference */}
           <div className="space-y-12">
             <div className="space-y-6">
-              <h2 className="text-3xl font-medium">Model inference</h2>
-              <p className="text-lg text-white/60">
-                Serverless inference of powerful open-source models. Access our
-                50+ models including Llama 3, Mixtral, through serverless
-                endpoints and start building your AI applications using the Open
-                AI API standard.
-              </p>
-              <p className="text-lg text-white/60">
-                It is simple, you can start immediately and you pay as you go.
-              </p>
+              <h2 className="text-3xl font-medium">{t('features.modelInference.title')}</h2>
+              <p className="text-lg text-white/60">{t('features.modelInference.description1')}</p>
+              <p className="text-lg text-white/60">{t('features.modelInference.description2')}</p>
               <div className="flex gap-4">
-                <Button variant="secondary">View Models</Button>
-                <Button variant="outline">Learn More</Button>
+                <Button variant="secondary">{t('features.modelInference.viewModels')}</Button>
+                <Button variant="outline">{t('features.modelInference.learnMore')}</Button>
               </div>
             </div>
 

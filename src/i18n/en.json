@@ -9,5 +9,14 @@
     },
     "codeBlockTitle": "By devs for devs",
     "popularModels": "Popular Models"
+  },
+  "features": {
+    "modelInference": {
+      "title": "Model inference",
+      "description1": "Serverless inference of powerful open-source models. Access our 50+ models including Llama 3, Mixtral, through serverless endpoints and start building your AI applications using the Open AI API standard.",
+      "description2": "It is simple, you can start immediately and you pay as you go.",
+      "viewModels": "View Models",
+      "learnMore": "Learn More"
+    }
   }
 }
