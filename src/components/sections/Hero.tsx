@@ -19,7 +19,38 @@ export function Hero() {
           </Button>
         </div>
       </div>
-    </div><div className="relative min-h-screen flex items-center bg-[#1A1A1A]">
+    </div>
+    <div className="relative min-h-screen flex items-center bg-[#1A1A1A]">
+      <div className="container mx-auto px-4 py-32">
+        <div className="text-center space-y-8">
+          <h2 className="text-4xl font-bold text-white">Concept Overview</h2>
+          <p className="text-lg text-white/80">
+            The "Symphony of AI Agents" is a revolutionary approach where multiple AI agents work together harmoniously to solve complex tasks, much like musicians in an orchestra.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div className="relative min-h-screen flex items-center bg-[#1A1A1A]">
+      <div className="container mx-auto px-4 py-32">
+        <div className="text-center space-y-8">
+          <h2 className="text-4xl font-bold text-white">Sustainability and Efficiency</h2>
+          <p className="text-lg text-white/80">
+            Instead of building larger AI models for every task, we focus on using a combination of smaller, expert models. This approach is not only more efficient but also more sustainable, reducing the environmental impact and resource consumption.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div className="relative min-h-screen flex items-center bg-[#1A1A1A]">
+      <div className="container mx-auto px-4 py-32">
+        <div className="text-center space-y-8">
+          <h2 className="text-4xl font-bold text-white">Getting Started with Berget AI</h2>
+          <p className="text-lg text-white/80">
+            Start creating your own AI agents at Berget AI. Use our recipes, start a new cluster, or utilize our hosted models via API endpoints to build powerful AI applications.
+          </p>
+        </div>
+      </div>
         <div className="container mx-auto px-4 py-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
