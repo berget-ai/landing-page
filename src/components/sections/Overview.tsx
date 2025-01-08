@@ -19,7 +19,7 @@ export function Overview() {
         </div>
 
         <div className="relative">
-          {/* Connection lines */}
+          {/* GitOps SVG Illustration */}
           <div className="absolute inset-0 hidden lg:block">
             <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
               <defs>
@@ -37,20 +37,21 @@ export function Overview() {
                   />
                 </marker>
               </defs>
+              <rect x="100" y="100" width="200" height="100" fill="#2D6A4F" />
+              <text x="200" y="150" fill="#fff" textAnchor="middle" fontSize="16">
+                Git Repository
+              </text>
               <path
-                d="M400,100 C400,200 600,200 600,300"
+                d="M300,150 L500,150"
                 stroke="rgba(255,255,255,0.2)"
                 strokeWidth="2"
                 fill="none"
                 markerEnd="url(#arrowhead)"
               />
-              <path
-                d="M400,500 C400,400 600,400 600,300"
-                stroke="rgba(255,255,255,0.2)"
-                strokeWidth="2"
-                fill="none"
-                markerEnd="url(#arrowhead)"
-              />
+              <rect x="500" y="100" width="200" height="100" fill="#40916C" />
+              <text x="600" y="150" fill="#fff" textAnchor="middle" fontSize="16">
+                Kubernetes Cluster
+              </text>
             </svg>
           </div>
 
