@@ -59,8 +59,10 @@ export function ModelInference() {
                 </div>
               </div>
 
-              <pre className="mt-6">
-                {`import openai from 'openai'
+              <div className="mt-6 bg-black/50 backdrop-blur-sm rounded-lg border border-white/10 overflow-hidden max-w-md ml-auto">
+                <div className="p-4 text-sm font-mono text-white/80">
+                  <code>
+                    {`import openai from 'openai'
 
 openai.apiKey = 'YOUR_API_KEY'
 openai.endpoint = 'https://api.berget.ai'
@@ -71,8 +73,10 @@ const response = await openai.Completion.create({
 })
 
 console.log(response.data.choices[0].text) // => 'Köttbullar, prinskorv, julskinka, ...'
-`}
-              </pre>
+                    `}
+                  </code>
+                </div>
+              </div>
               <Button variant="default">View Models</Button>
               <Button variant="secondary">Documentation</Button>
             </div>
