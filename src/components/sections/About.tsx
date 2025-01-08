@@ -16,7 +16,7 @@ export function About() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {t('about.team.members', { returnObjects: true }).map(
+          {t<string[]>('about.team.members', { returnObjects: true }).map(
             (memberKey: string, index: number) => (
               <motion.div
                 key={memberKey}
