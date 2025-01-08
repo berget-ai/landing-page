@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Bot, Sparkles, Zap, MessageSquare } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { CodeBlock } from '@radix-ui/react-code-block'
 import { ModelChat } from '@/components/modals/ModelChat'
 
 const models = [
@@ -60,22 +59,20 @@ export function ModelInference() {
                 </div>
               </div>
 
-              <CodeBlock language="javascript" className="mt-6">
-                {`import openai from 'openai';
+              <pre className="mt-6">
+                {`import openai from 'openai'
 
-openai.apiKey = 'YOUR_API_KEY';
+openai.apiKey = 'YOUR_API_KEY'
+openai.endpoint = 'https://api.berget.ai'
 
 const response = await openai.Completion.create({
-  engine: 'text-davinci-003',
-  prompt: 'Translate the following English text to French: "Hello, world!"',
-  maxTokens: 60,
-});
+  model: 'llama-3.2-405b',
+  prompt: 'Vad finns på ett traditinoellt svenskt julbord?',
+})
 
-console.log(response.data.choices[0].text);
-
-// Replace openai.apiKey with your Berget AI API key
-// and point the API to api.berget.ai.`}
-              </CodeBlock>
+console.log(response.data.choices[0].text) // => 'Köttbullar, prinskorv, julskinka, ...'
+`}
+              </pre>
               <Button variant="default">View Models</Button>
               <Button variant="secondary">Documentation</Button>
             </div>
