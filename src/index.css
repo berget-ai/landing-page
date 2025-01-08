@@ -6,8 +6,7 @@
 @tailwind utilities;
 
 @layer base {
-  body,
-  p, a, span, div, button, input, textarea {
+  body{
     font-family: 'DM Sans', sans-serif;
   }
 
