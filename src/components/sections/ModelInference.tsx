@@ -27,7 +27,7 @@ const models = [
 
 export function ModelInference() {
   const [selectedModel, setSelectedModel] = useState<(typeof models)[0] | null>(
-    null,
+    null
   )
 
   return (
@@ -77,57 +77,50 @@ console.log(response.data.choices[0].text);`}
                   </code>
                 </pre>
                 <p className="text-sm text-white/60">
-                  Replace <code>openai.apiKey</code> with your Berget AI API key and point the API to <code>api.berget.ai</code>.
+                  Replace <code>openai.apiKey</code> with your Berget AI API key
+                  and point the API to <code>api.berget.ai</code>.
                 </p>
               </div>
-                <Button variant="default">View Models</Button>
-                <Button variant="secondary">Documentation</Button>
-              </div>
+              <Button variant="default">View Models</Button>
+              <Button variant="secondary">Documentation</Button>
             </div>
           </div>
+        </div>
 
-            {/* Available Models */}
-            <div className="space-y-4">
-              <h3 className="text-xl font-medium">Popular Models</h3>
-              <div className="grid gap-4">
-                {models.map((model) => (
-                  <motion.div
-                    key={model.name}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors"
-                  >
-                    <div className="flex items-start justify-between">
-                      <div>
-                        <h4 className="font-medium mb-1">{model.name}</h4>
-                        <p className="text-sm text-white/60">
-                          {model.description}
-                        </p>
-                      </div>
-                      <div className="flex items-start gap-4">
-                        <div className="text-right">
-                          <div className="text-sm font-medium">
-                            {model.specs}
-                          </div>
-                          <div className="text-xs text-white/40">
-                            {model.type}
-                          </div>
-                        </div>
-                        <Button
-                          variant="secondary"
-                          size="sm"
-                          className="shrink-0"
-                          onClick={() => setSelectedModel(model)}
-                        >
-                          <MessageSquare className="w-4 h-4" />
-                        </Button>
-                      </div>
+        {/* Available Models */}
+        <div className="space-y-4">
+          <h3 className="text-xl font-medium">Popular Models</h3>
+          <div className="grid gap-4">
+            {models.map((model) => (
+              <motion.div
+                key={model.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors"
+              >
+                <div className="flex items-start justify-between">
+                  <div>
+                    <h4 className="font-medium mb-1">{model.name}</h4>
+                    <p className="text-sm text-white/60">{model.description}</p>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="text-right">
+                      <div className="text-sm font-medium">{model.specs}</div>
+                      <div className="text-xs text-white/40">{model.type}</div>
                     </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
+                    <Button
+                      variant="secondary"
+                      size="sm"
+                      className="shrink-0"
+                      onClick={() => setSelectedModel(model)}
+                    >
+                      <MessageSquare className="w-4 h-4" />
+                    </Button>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>
