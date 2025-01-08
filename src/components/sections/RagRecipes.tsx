@@ -20,7 +20,7 @@ export function RagRecipes() {
   }
 
   return (
-    <section className="py-24 relative bg-gradient-to-br from-[#2D6A4F] via-[#40916C] to-[#FFB700] text-white">
+    <GradientBackground className="py-24 text-white">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between mb-12">
           <div>
@@ -83,6 +83,6 @@ export function RagRecipes() {
           </motion.div>
         </div>
       </div>
-    </section>
+    </GradientBackground>
   )
 }

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Bot, Sparkles, Zap, MessageSquare } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { CodeBlock } from '@/components/common/CodeBlock'
 import { ModelChat } from '@/components/modals/ModelChat'
 
 const models = [
@@ -60,20 +61,8 @@ export function ModelInference() {
               </div>
 
               <div className="float-right lg:pl-8">
-                <div className="w-full max-w-md bg-black/50 backdrop-blur-sm rounded-lg border border-white/10 overflow-hidden">
-                  <div className="flex items-center gap-2 px-3 py-1.5 border-b border-white/10 bg-white/5">
-                    <div className="flex gap-1.5">
-                      <div className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
-                      <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
-                      <div className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
-                    </div>
-                    <span className="text-xs text-white/40">
-                      Av utvecklare för utvecklare
-                    </span>
-                  </div>
-                  <div className="p-3 text-xs font-mono">
-                    <pre>
-                      {`import OpenAI from 'openai';
+                <CodeBlock title="Av utvecklare för utvecklare">
+                  {`import OpenAI from 'openai';
 
 const client = new OpenAI({
   apiKey: process.env['OPENAI_API_KEY'],

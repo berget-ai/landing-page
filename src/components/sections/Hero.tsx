@@ -1,10 +1,11 @@
 import { Button } from '@/components/ui/button'
+import { GradientBackground } from '@/components/common/GradientBackground'
 import { NetworkBackground } from '../common/NetworkBackground'
 import { ArrowRight, Shield } from 'lucide-react'
 
 export function Hero() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#2D6A4F] via-[#40916C] to-[#FFB700]">
+    <GradientBackground>
       <NetworkBackground />
       <div className="relative z-10 flex items-center justify-center min-h-screen">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -41,6 +42,6 @@ export function Hero() {
           </div>
         </div>
       </div>
-    </div>
+    </GradientBackground>
   )
 }

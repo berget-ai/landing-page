@@ -1,6 +1,7 @@
 import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { SocialProof } from './hero/SocialProof'
+import { CodeBlock } from '@/components/common/CodeBlock'
 import { ClientLogos } from './hero/ClientLogos'
 
 export function GetStarted() {
@@ -39,53 +40,39 @@ export function GetStarted() {
         </div>
 
         <div className="lg:pl-8">
-          <div className="bg-black/50 backdrop-blur-sm rounded-lg border border-white/10 overflow-hidden">
-            <div className="flex items-center gap-2 px-4 py-2 border-b border-white/10 bg-white/5">
-              <div className="flex gap-1.5">
-                <div className="w-3 h-3 rounded-full bg-red-500/80" />
-                <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                <div className="w-3 h-3 rounded-full bg-green-500/80" />
-              </div>
-              <span className="text-sm text-white/40">By devs for devs</span>
+          <CodeBlock title="By devs for devs">
+            <div className="text-white/60">
+              $ <span className="text-white">npm i -g berget</span>
             </div>
-            <div className="p-4 text-sm font-mono">
+            <div className="text-white/60">
+              $ <span className="text-white">berget login</span>
+            </div>
+            <div className="text-emerald-400/80">... loggar in med BankID</div>
+            <div className="text-white/60">
+              $ <span className="text-white">berget create cluster</span>
+            </div>
+            <div className="text-emerald-400/80">Done! 5 nodes created.</div>
+            <div className="text-emerald-400/80">
+              Assigned DNS: ideal-palmtree.berget.cloud
+            </div>
+            <div className="text-white/60 mt-2">
+              Nu är ditt kluster redo att användas. Nu kan du börja köra dina
+              applikationer.
+            </div>
+            <div className="text-white/60">Du kan peka ett CNAME till klustret.</div>
+            <div className="mt-2">
               <div className="text-white/60">
-                $ <span className="text-white">npm i -g berget</span>
-              </div>
-              <div className="text-white/60">
-                $ <span className="text-white">berget login</span>
-              </div>
-              <div className="text-emerald-400/80">
-                ... loggar in med BankID
-              </div>
-              <div className="text-white/60">
-                $ <span className="text-white">berget create cluster</span>
-              </div>
-              <div className="text-emerald-400/80">Done! 5 nodes created.</div>
-              <div className="text-emerald-400/80">
-                Assigned DNS: ideal-palmtree.berget.cloud
+                ${' '}
+                <span className="text-white">
+                  berget apply -f deployment.yaml
+                </span>
               </div>
               <div className="text-white/60 mt-2">
-                Nu är ditt kluster redo att användas. Nu kan du börja köra dina
-                applikationer.
-              </div>
-              <div className="text-white/60">
-                Du kan peka ett CNAME till klustret.
-              </div>
-              <div className="mt-2">
-                <div className="text-white/60">
-                  ${' '}
-                  <span className="text-white">
-                    berget apply -f deployment.yaml
-                  </span>
-                </div>
-                <div className="text-white/60 mt-2">
-                  Tips: använd fluxcd för att automatiskt hålla klustret
-                  uppdaterat.
-                </div>
+                Tips: använd fluxcd för att automatiskt hålla klustret
+                uppdaterat.
               </div>
             </div>
-          </div>
+          </CodeBlock>
         </div>
       </div>
 
