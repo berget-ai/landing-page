@@ -59,27 +59,46 @@ export function ModelInference() {
                 </div>
               </div>
 
-              <div className="space-y-4 mt-6">
-                <h3 className="text-xl font-medium">Example Code</h3>
-                <pre className="bg-black/50 p-4 rounded-lg text-sm text-white/80 overflow-x-auto">
-                  <code>
-                    {`import openai from 'openai';
-
-openai.apiKey = 'YOUR_API_KEY';
-
-const response = await openai.Completion.create({
-  engine: 'text-davinci-003',
-  prompt: 'Translate the following English text to French: "Hello, world!"',
-  maxTokens: 60,
-});
-
-console.log(response.data.choices[0].text);`}
-                  </code>
-                </pre>
-                <p className="text-sm text-white/60">
-                  Replace <code>openai.apiKey</code> with your Berget AI API key
-                  and point the API to <code>api.berget.ai</code>.
-                </p>
+              <div className="bg-black/50 backdrop-blur-sm rounded-lg border border-white/10 overflow-hidden mt-6">
+                <div className="flex items-center gap-2 px-4 py-2 border-b border-white/10 bg-white/5">
+                  <div className="flex gap-1.5">
+                    <div className="w-3 h-3 rounded-full bg-red-500/80" />
+                    <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
+                    <div className="w-3 h-3 rounded-full bg-green-500/80" />
+                  </div>
+                  <span className="text-sm text-white/40">
+                    Example Code
+                  </span>
+                </div>
+                <div className="p-4 text-sm font-mono">
+                  <div className="text-white/60">
+                    $ <span className="text-white">import openai from 'openai';</span>
+                  </div>
+                  <div className="text-white/60">
+                    $ <span className="text-white">openai.apiKey = 'YOUR_API_KEY';</span>
+                  </div>
+                  <div className="text-white/60">
+                    $ <span className="text-white">const response = await openai.Completion.create({</span>
+                  </div>
+                  <div className="text-white/60 ml-4">
+                    <span className="text-white">engine: 'text-davinci-003',</span>
+                  </div>
+                  <div className="text-white/60 ml-4">
+                    <span className="text-white">prompt: 'Translate the following English text to French: "Hello, world!"',</span>
+                  </div>
+                  <div className="text-white/60 ml-4">
+                    <span className="text-white">maxTokens: 60,</span>
+                  </div>
+                  <div className="text-white/60">
+                    $ <span className="text-white">});</span>
+                  </div>
+                  <div className="text-white/60">
+                    $ <span className="text-white">console.log(response.data.choices[0].text);</span>
+                  </div>
+                  <div className="text-white/60 mt-2">
+                    Replace <code>openai.apiKey</code> with your Berget AI API key and point the API to <code>api.berget.ai</code>.
+                  </div>
+                </div>
               </div>
               <Button variant="default">View Models</Button>
               <Button variant="secondary">Documentation</Button>
