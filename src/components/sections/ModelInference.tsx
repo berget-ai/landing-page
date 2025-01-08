@@ -80,7 +80,7 @@ async function main() {
   });
 }
                       `}
-                    </pre>
+                    </CodeBlock>
                   </div>
                 </div>
               </div>
