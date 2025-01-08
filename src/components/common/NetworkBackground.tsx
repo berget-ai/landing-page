@@ -43,7 +43,7 @@ export function NetworkBackground() {
         for (let i = 0; i < 3; i++) {
           sparks.push(new Spark(this.x, this.y))
         }
-        const targetNode = nodes[targetIndex]
+        const targetNode = nodes[this.targetIndex]
         if (targetNode) {
           // Trigger new signals from the target node
           targetNode.connections.forEach((connectionIndex) => {
@@ -51,7 +51,7 @@ export function NetworkBackground() {
             if (Math.random() < 0.1) {
               // 10% chance to trigger a new signal
               particles.push({
-                nodeIndex: targetIndex,
+                nodeIndex: this.targetIndex,
                 targetIndex: connectionIndex,
                 progress: 0,
               })
