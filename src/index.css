@@ -1,4 +1,5 @@
 @import '@fontsource/dm-sans';
+@import '@fontsource/ovo';
 
 @tailwind base;
 @tailwind components;
@@ -6,9 +7,12 @@
 
 @layer base {
   body,
-  h1, h2, h3, h4, h5, h6,
   p, a, span, div, button, input, textarea {
     font-family: 'DM Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Ovo', serif;
   }
 }
 
