@@ -54,10 +54,10 @@ export function Features() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-medium">
-              Open Weights models are winning the game
+              {t('features.openWeightsTitle')}
             </h2>
             <p className="text-lg text-white/60 mt-4">
-              {t('getStarted.openWeightsDescription')}
+              {t('features.openWeightsDescription')}
             </p>
           </div>
           <div className="flex justify-center">
