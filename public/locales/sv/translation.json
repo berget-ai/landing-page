@@ -1,4 +1,30 @@
 {
+  "footer": {
+    "description": "Plattform för AI-modellsdistribution i företagsklass, byggd för team som behöver tillförlitlighet och prestanda.",
+    "product": {
+      "title": "Produkt",
+      "features": "Funktioner",
+      "pricing": "Priser",
+      "documentation": "Dokumentation",
+      "changelog": "Ändringslogg"
+    },
+    "company": {
+      "title": "Företag",
+      "about": "Om oss",
+      "blog": "Blogg",
+      "careers": "Karriär",
+      "contact": "Kontakt"
+    },
+    "legal": {
+      "title": "Juridiskt",
+      "privacy": "Integritet",
+      "terms": "Villkor",
+      "security": "Säkerhet"
+    },
+    "copyright": "© {year} Berget. Med ensamrätt.",
+    "status": "Status",
+    "support": "Support"
+  },
   "modelInference": {
     "title": "Modellinferens",
     "description": "Få tillgång till vår omfattande samling av kraftfulla öppen källkodsmodeller genom serverlösa slutpunkter. Börja bygga AI-applikationer omedelbart med hjälp av OpenAI API-standarden.",

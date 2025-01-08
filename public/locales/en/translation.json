@@ -1,4 +1,30 @@
 {
+  "footer": {
+    "description": "Enterprise-grade AI model deployment platform built for teams who need reliability and performance.",
+    "product": {
+      "title": "Product",
+      "features": "Features",
+      "pricing": "Pricing",
+      "documentation": "Documentation",
+      "changelog": "Changelog"
+    },
+    "company": {
+      "title": "Company",
+      "about": "About",
+      "blog": "Blog",
+      "careers": "Careers",
+      "contact": "Contact"
+    },
+    "legal": {
+      "title": "Legal",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "security": "Security"
+    },
+    "copyright": "© {year} Berget. All rights reserved.",
+    "status": "Status",
+    "support": "Support"
+  },
   "modelInference": {
     "title": "Model Inference",
     "description": "Access our extensive collection of powerful open-source models through serverless endpoints. Start building AI applications immediately using the OpenAI API standard.",
