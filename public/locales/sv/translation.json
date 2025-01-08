@@ -1,4 +1,14 @@
 {
+  "header": {
+    "navigation": {
+      "pricing": "Priser",
+      "about": "Om oss"
+    },
+    "buttons": {
+      "signIn": "Logga in",
+      "getStarted": "Kom igång"
+    }
+  },
   "footer": {
     "description": "Plattform för AI-modellsdistribution i företagsklass, byggd för team som behöver tillförlitlighet och prestanda.",
     "product": {

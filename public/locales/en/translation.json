@@ -1,4 +1,14 @@
 {
+  "header": {
+    "navigation": {
+      "pricing": "Pricing",
+      "about": "About"
+    },
+    "buttons": {
+      "signIn": "Sign In",
+      "getStarted": "Get Started"
+    }
+  },
   "footer": {
     "description": "Enterprise-grade AI model deployment platform built for teams who need reliability and performance.",
     "product": {
