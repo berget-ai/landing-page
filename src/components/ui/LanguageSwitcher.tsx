@@ -5,7 +5,7 @@ export function LanguageSwitcher() {
   const { i18n } = useTranslation()
 
   return (
-    <div className="flex gap-2">
+    <div className="flex gap-2 aspect-square">
       {i18n.language === 'en' ? (
         <button
           onClick={() => i18n.changeLanguage('sv')}
