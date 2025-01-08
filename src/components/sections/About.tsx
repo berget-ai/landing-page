@@ -1,12 +1,11 @@
 import { motion } from 'framer-motion'
 import { Github, Linkedin, Mail } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { useTranslation } from 'react-i18next'
 
 const team = [
   {
-    name: 'Andreas Lundmark',
-    role: 'CEO',
-    bio: 'Former Partner and Nordic AI Lead at Boston Consulting Group. Deep expertise in enterprise AI transformation.',
+    key: 'andreas',
     image: '/team/andreas.jpg',
     links: {
       linkedin: 'https://linkedin.com/in/andreaslundmark',
@@ -15,9 +14,7 @@ const team = [
     },
   },
   {
-    name: 'Christian Landgren',
-    role: 'CPTO',
-    bio: 'Serial entrepreneur and tech innovator. Expert in building developer-first platforms and open source solutions.',
+    key: 'christian',
     image: '/team/christian.jpg',
     links: {
       linkedin: 'https://linkedin.com/in/christianlandgren',
@@ -26,9 +23,7 @@ const team = [
     },
   },
   {
-    name: 'John Angelmo',
-    role: 'Infrastructure Lead',
-    bio: 'Former Kubernetes Team Lead at Tele2. Expert in cloud infrastructure and customer support.',
+    key: 'john',
     image: '/team/john.jpg',
     links: {
       linkedin: 'https://linkedin.com/in/johnangelmo',
@@ -39,18 +34,15 @@ const team = [
 ]
 
 export function About() {
+  const { t } = useTranslation()
   return (
     <section className="py-24 relative" id="about">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background/50 to-background" />
 
       <div className="container mx-auto px-4 relative">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h1 className="text-4xl font-medium mb-6">About Berget AI</h1>
-          <p className="text-lg text-white/60">
-            We're building Europe's most secure and sustainable AI
-            infrastructure. Our team combines deep expertise in cloud computing,
-            AI, and security to help companies deploy AI responsibly.
-          </p>
+          <h1 className="text-4xl font-medium mb-6">{t('about.title')}</h1>
+          <p className="text-lg text-white/60">{t('about.description')}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
@@ -76,7 +68,9 @@ export function About() {
 
                 <h3 className="text-xl font-medium mb-1">{member.name}</h3>
                 <p className="text-white/60 mb-4">{member.role}</p>
-                <p className="text-sm text-white/60 mb-6">{member.bio}</p>
+                <p className="text-sm text-white/60 mb-6">
+                  {t(`about.team.${member.key}.bio`)}
+                </p>
 
                 <div className="flex gap-2">
                   <Button variant="ghost" size="icon" asChild>
@@ -109,10 +103,11 @@ export function About() {
         </div>
 
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl font-medium mb-4">Join Our Team</h2>
+          <h2 className="text-2xl font-medium mb-4">
+            {t('about.joinTeam.title')}
+          </h2>
           <p className="text-lg text-white/60 mb-8">
-            We're always looking for talented people who share our vision of
-            making AI infrastructure more secure, sustainable, and accessible.
+            {t('about.joinTeam.description')}
           </p>
           <Button size="lg" asChild>
             <a

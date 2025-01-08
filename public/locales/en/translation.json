@@ -108,6 +108,32 @@
     "getStarted": "Get Started",
     "learnMore": "Learn More"
   },
+  "about": {
+    "title": "About Berget AI",
+    "description": "We're building Europe's most secure and sustainable AI infrastructure. Our team combines deep expertise in cloud computing, AI, and security to help companies deploy AI responsibly.",
+    "joinTeam": {
+      "title": "Join Our Team",
+      "description": "We're always looking for talented people who share our vision of making AI infrastructure more secure, sustainable, and accessible.",
+      "cta": "View Open Positions"
+    },
+    "team": {
+      "andreas": {
+        "name": "Andreas Lundmark",
+        "role": "CEO",
+        "bio": "Former Partner and Nordic AI Lead at Boston Consulting Group. Deep expertise in enterprise AI transformation."
+      },
+      "christian": {
+        "name": "Christian Landgren", 
+        "role": "CPTO",
+        "bio": "Serial entrepreneur and tech innovator. Expert in building developer-first platforms and open source solutions."
+      },
+      "john": {
+        "name": "John Angelmo",
+        "role": "Infrastructure Lead", 
+        "bio": "Former Kubernetes Team Lead at Tele2. Expert in cloud infrastructure and customer support."
+      }
+    }
+  },
   "modelInference": {
     "models": {
       "llama3": {

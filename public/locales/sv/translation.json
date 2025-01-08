@@ -112,6 +112,32 @@
     "getStarted": "Kom igång",
     "learnMore": "Läs mer"
   },
+  "about": {
+    "title": "Om Berget AI",
+    "description": "Vi bygger Europas säkraste och mest hållbara AI-infrastruktur. Vårt team kombinerar djup expertis inom molntjänster, AI och säkerhet för att hjälpa företag implementera AI på ett ansvarsfullt sätt.",
+    "joinTeam": {
+      "title": "Bli en del av teamet",
+      "description": "Vi söker alltid efter talangfulla personer som delar vår vision om att göra AI-infrastruktur säkrare, mer hållbar och tillgänglig.",
+      "cta": "Se lediga tjänster"
+    },
+    "team": {
+      "andreas": {
+        "name": "Andreas Lundmark",
+        "role": "VD",
+        "bio": "Tidigare partner och nordisk AI-chef på Boston Consulting Group. Djup expertis inom AI-transformation för företag."
+      },
+      "christian": {
+        "name": "Christian Landgren",
+        "role": "CPTO",
+        "bio": "Serieentreprenör och teknikinnovatör. Expert på att bygga utvecklarvänliga plattformar och open source-lösningar."
+      },
+      "john": {
+        "name": "John Angelmo",
+        "role": "Infrastrukturchef",
+        "bio": "Tidigare Kubernetes Team Lead på Tele2. Expert på molninfrastruktur och kundsupport."
+      }
+    }
+  },
   "modelInference": {
     "models": {
       "llama3": {
