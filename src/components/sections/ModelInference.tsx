@@ -59,7 +59,27 @@ export function ModelInference() {
                 </div>
               </div>
 
-              <div className="flex gap-4">
+              <div className="space-y-4 mt-6">
+                <h3 className="text-xl font-medium">Example Code</h3>
+                <pre className="bg-black/50 p-4 rounded-lg text-sm text-white/80 overflow-x-auto">
+                  <code>
+                    {`import openai from 'openai';
+
+openai.apiKey = 'YOUR_API_KEY';
+
+const response = await openai.Completion.create({
+  engine: 'text-davinci-003',
+  prompt: 'Translate the following English text to French: "Hello, world!"',
+  maxTokens: 60,
+});
+
+console.log(response.data.choices[0].text);`}
+                  </code>
+                </pre>
+                <p className="text-sm text-white/60">
+                  Replace <code>openai.apiKey</code> with your Berget AI API key and point the API to <code>api.berget.ai</code>.
+                </p>
+              </div>
                 <Button variant="default">View Models</Button>
                 <Button variant="secondary">Documentation</Button>
               </div>
