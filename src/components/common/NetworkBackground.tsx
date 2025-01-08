@@ -129,7 +129,7 @@ export function NetworkBackground() {
       // Draw connections
       ctx.strokeStyle = 'rgba(255, 255, 255, 0.12)'
       ctx.lineWidth = 0.5
-      nodes.forEach((node, i) => {
+      nodes.forEach((node) => {
         node.connections.forEach((targetIndex) => {
           const target = nodes[targetIndex]
           ctx.beginPath()
