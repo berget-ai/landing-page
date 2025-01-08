@@ -5,10 +5,7 @@ import { FeatureCarousel } from './features/FeatureCarousel'
 
 export function Features() {
   return (
-    <section
-      className="py-40 relative bg-white text-black"
-      id="features"
-    >
+    <section className="py-40 relative" id="features">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background opacity-80" />
       <FeatureCarousel />
 
