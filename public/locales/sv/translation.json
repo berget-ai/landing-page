@@ -58,7 +58,7 @@
       }
     }
   },
-  "compliance": {
+  "complianceSection": {
     "tagline": "Efterlevnad i fokus",
     "title": "Förenklad efterlevnad för dina AI-applikationer",
     "description": "Mycket av komplexiteten kring lagstiftning uppstår inte från molntekniken i sig, utan från utländskt ägande och oklar dataåtkomst. Vårt moln drivs i Sverige och ägs av svenska intressenter.",
