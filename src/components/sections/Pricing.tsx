@@ -1,4 +1,5 @@
 import { Check, Info } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 import { Button } from '@/components/ui/button'
 import { PricingCard } from './PricingCard'
 import { PricingTable } from './PricingTable'
@@ -53,16 +54,17 @@ export function Pricing() {
     },
   ]
 
+  const { t } = useTranslation()
+
   return (
     <section className="py-24 relative" id="pricing">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-3xl font-medium mb-4">
-            Simple to support your scaling needs
+            {t('pricing.title')}
           </h2>
           <p className="text-lg text-white/60">
-            We aim to keep our prices simple and fair, so that you can focus on
-            building awesome stuff instead of trying to figure out your bills.
+            {t('pricing.description')}
           </p>
         </div>
 
@@ -83,7 +85,7 @@ export function Pricing() {
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>All prices are in EUR and exclude VAT</p>
+                  <p>{t('pricing.tooltip')}</p>
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
@@ -102,7 +104,7 @@ export function Pricing() {
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>Feature comparison as of March 2024</p>
+                  <p>{t('pricing.comparisonTooltip')}</p>
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
@@ -114,13 +116,11 @@ export function Pricing() {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-4">
             <Check className="w-4 h-4" />
             <span className="text-sm">
-              30-day money-back guarantee on all plans
+              {t('pricing.moneyBackGuarantee')}
             </span>
           </div>
           <p className="text-white/60">
-            Credit card and pre-payment. Invoice possible for large customers.
-            <br />
-            Automatic top-up when your balance reaches a set threshold.
+            {t('pricing.paymentInfo')}
           </p>
         </div>
       </div>

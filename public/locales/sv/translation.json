@@ -65,6 +65,16 @@
     "callToAction": "Ta kontroll över dina data och förenkla din efterlevnadsresa med Bergets omfattande regelverksramverk och EU-baserade infrastruktur.",
     "learnMore": "Läs mer om efterlevnad"
   },
+  "pricing": {
+    "title": "Enkel att stödja dina skalningsbehov",
+    "description": "Vi strävar efter att hålla våra priser enkla och rättvisa, så att du kan fokusera på att bygga fantastiska saker istället för att försöka lista ut dina räkningar.",
+    "detailedPricing": "Detaljerad prissättning",
+    "tooltip": "Alla priser är i EUR och exklusive moms",
+    "compareWithAlternatives": "Jämför med alternativ",
+    "comparisonTooltip": "Funktionsjämförelse från och med mars 2024",
+    "moneyBackGuarantee": "30-dagars pengarna-tillbaka-garanti på alla planer",
+    "paymentInfo": "Kreditkort och förskottsbetalning. Faktura möjlig för stora kunder.\nAutomatisk påfyllning när ditt saldo når en viss tröskel."
+  },
   "footer": {
     "description": "Plattform för AI-modellsdistribution i företagsklass, byggd för team som behöver tillförlitlighet och prestanda.",
     "product": {

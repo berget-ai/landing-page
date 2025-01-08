@@ -65,6 +65,16 @@
     "callToAction": "Take control of your data and simplify your compliance journey with Berget's comprehensive regulatory framework and EU-based infrastructure.",
     "learnMore": "Learn More About Compliance"
   },
+  "pricing": {
+    "title": "Simple to support your scaling needs",
+    "description": "We aim to keep our prices simple and fair, so that you can focus on building awesome stuff instead of trying to figure out your bills.",
+    "detailedPricing": "Detailed Pricing",
+    "tooltip": "All prices are in EUR and exclude VAT",
+    "compareWithAlternatives": "Compare with Alternatives",
+    "comparisonTooltip": "Feature comparison as of March 2024",
+    "moneyBackGuarantee": "30-day money-back guarantee on all plans",
+    "paymentInfo": "Credit card and pre-payment. Invoice possible for large customers.\nAutomatic top-up when your balance reaches a set threshold."
+  },
   "footer": {
     "description": "Enterprise-grade AI model deployment platform built for teams who need reliability and performance.",
     "product": {
