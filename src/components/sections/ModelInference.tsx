@@ -66,37 +66,53 @@ export function ModelInference() {
                     <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
                     <div className="w-3 h-3 rounded-full bg-green-500/80" />
                   </div>
-                  <span className="text-sm text-white/40">
-                    Example Code
-                  </span>
+                  <span className="text-sm text-white/40">Example Code</span>
                 </div>
                 <div className="p-4 text-sm font-mono">
                   <div className="text-white/60">
-                    $ <span className="text-white">import openai from 'openai';</span>
+                    ${' '}
+                    <span className="text-white">
+                      import openai from 'openai';
+                    </span>
                   </div>
                   <div className="text-white/60">
-                    $ <span className="text-white">openai.apiKey = 'YOUR_API_KEY';</span>
+                    ${' '}
+                    <span className="text-white">
+                      openai.apiKey = 'YOUR_API_KEY';
+                    </span>
                   </div>
                   <div className="text-white/60">
-                    $ <span className="text-white">const response = await openai.Completion.create({</span>
+                    ${' '}
+                    <span className="text-white">
+                      const response = await openai.Completion.create(
+                    </span>
                   </div>
                   <div className="text-white/60 ml-4">
-                    <span className="text-white">engine: 'text-davinci-003',</span>
+                    <span className="text-white">
+                      engine: 'text-davinci-003',
+                    </span>
                   </div>
                   <div className="text-white/60 ml-4">
-                    <span className="text-white">prompt: 'Translate the following English text to French: "Hello, world!"',</span>
+                    <span className="text-white">
+                      prompt: 'Translate the following English text to French:
+                      "Hello, world!"',
+                    </span>
                   </div>
                   <div className="text-white/60 ml-4">
                     <span className="text-white">maxTokens: 60,</span>
                   </div>
                   <div className="text-white/60">
-                    $ <span className="text-white">});</span>
+                    $ <span className="text-white">);</span>
                   </div>
                   <div className="text-white/60">
-                    $ <span className="text-white">console.log(response.data.choices[0].text);</span>
+                    ${' '}
+                    <span className="text-white">
+                      console.log(response.data.choices[0].text);
+                    </span>
                   </div>
                   <div className="text-white/60 mt-2">
-                    Replace <code>openai.apiKey</code> with your Berget AI API key and point the API to <code>api.berget.ai</code>.
+                    Replace <code>openai.apiKey</code> with your Berget AI API
+                    key and point the API to <code>api.berget.ai</code>.
                   </div>
                 </div>
               </div>
