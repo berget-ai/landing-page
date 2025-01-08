@@ -1,69 +1,38 @@
-import { motion } from 'framer-motion'
-import aiPowerLaws from '@/assets/ai-power-laws.svg'
 import { Button } from '@/components/ui/button'
+import { NetworkBackground } from '../common/NetworkBackground'
+import { ArrowRight } from 'lucide-react'
 
 export function Hero() {
   return (
-    <div className="relative min-h-screen flex items-center bg-gradient-to-br from-[#2D6A4F] via-[#40916C] to-[#FFB700]">
-      <div className="container mx-auto px-4 py-32">
-        <motion.div
-          className="text-center"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <h1 className="text-6xl font-bold text-white mb-6">
-            A <span className="text-yellow-300">Symphony</span> of AI Agents
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#2D6A4F] via-[#40916C] to-[#FFB700]">
+      <NetworkBackground />
+      <div className="relative z-10 flex items-center justify-center min-h-screen">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-ovo">
+            Enable A Symphony of
+            <br />
+            AI Agents Working For You
           </h1>
-          <div className="text-2xl text-white/80 mb-8 space-y-4">
-            <p>
-              Discover how AI agents collaborate to solve complex tasks,
-              providing a seamless and efficient AI experience.
-            </p>
-            <h2 className="text-4xl font-bold text-yellow-300">
-              Revolutionary AI Collaboration
-            </h2>
-            <p>
-              The "Symphony of AI Agents" is a revolutionary approach where
-              multiple AI agents work together harmoniously to solve complex
-              tasks, much like musicians in an orchestra.
-            </p>
-            <h2 className="text-4xl font-bold text-yellow-300">
-              Efficient and Sustainable AI
-            </h2>
-            <p>
-              Instead of building larger AI models for every task, we focus on
-              using a combination of smaller, expert models. This approach is
-              not only more efficient but also more sustainable, reducing the
-              environmental impact and resource consumption.
-            </p>
-            <h2 className="text-4xl font-bold text-yellow-300">
-              Empower Your AI Journey
-            </h2>
-            <p>
-              Start creating your own AI agents at Berget AI. Use our recipes,
-              start a new cluster, or utilize our hosted models via API
-              endpoints to build powerful AI applications.
-            </p>
-          </div>
-          <div className="flex justify-center gap-4 mb-8">
+          <p className="text-xl text-white/80 max-w-3xl mx-auto mb-8 font-sans">
+            Orchestrate multiple AI agents to work together seamlessly, creating
+            a powerful ecosystem of specialized intelligence.
+          </p>
+          <div className="flex gap-4 justify-center">
             <Button
               size="lg"
-              variant="accent"
-              className="transition-transform hover:scale-105"
+              className="bg-white text-[#2D6A4F] hover:bg-white/90"
+            >
+              Get Started <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white/10"
             >
               Learn More
             </Button>
-            <Button
-              size="lg"
-              variant="secondary"
-              className="transition-transform hover:scale-105"
-            >
-              Get Started
-            </Button>
           </div>
-          <img src={aiPowerLaws} alt="AI Power Laws" className="mx-auto mt-8" />
-        </motion.div>
+        </div>
       </div>
     </div>
   )
