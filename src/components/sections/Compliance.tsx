@@ -3,44 +3,51 @@ import { Shield, Lock, FileCheck, Scale, Building } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Button } from '@/components/ui/button'
 
-const { t } = useTranslation()
-
-const regulations = [
-  {
-    name: t('compliance.regulations.gdpr.name'),
-    description: t('compliance.regulations.gdpr.description'),
-    icon: Shield,
-    benefits: t('compliance.regulations.gdpr.benefits', { returnObjects: true }),
-  },
-  {
-    name: t('compliance.regulations.nis2.name'),
-    description: t('compliance.regulations.nis2.description'),
-    icon: Lock,
-    benefits: t('compliance.regulations.nis2.benefits', { returnObjects: true }),
-  },
-  {
-    name: t('compliance.regulations.schrems2.name'),
-    description: t('compliance.regulations.schrems2.description'),
-    icon: Scale,
-    benefits: t('compliance.regulations.schrems2.benefits', { returnObjects: true }),
-  },
-  {
-    name: t('compliance.regulations.iso27001.name'),
-    description: t('compliance.regulations.iso27001.description'),
-    icon: FileCheck,
-    benefits: t('compliance.regulations.iso27001.benefits', { returnObjects: true }),
-  },
-  {
-    name: t('compliance.regulations.dora.name'),
-    description: t('compliance.regulations.dora.description'),
-    icon: Building,
-    benefits: t('compliance.regulations.dora.benefits', { returnObjects: true }),
-  },
-]
-
 export function Compliance() {
   const { t } = useTranslation()
 
+  const regulations = [
+    {
+      name: t('compliance.regulations.gdpr.name'),
+      description: t('compliance.regulations.gdpr.description'),
+      icon: Shield,
+      benefits: t('compliance.regulations.gdpr.benefits', {
+        returnObjects: true,
+      }),
+    },
+    {
+      name: t('compliance.regulations.nis2.name'),
+      description: t('compliance.regulations.nis2.description'),
+      icon: Lock,
+      benefits: t('compliance.regulations.nis2.benefits', {
+        returnObjects: true,
+      }),
+    },
+    {
+      name: t('compliance.regulations.schrems2.name'),
+      description: t('compliance.regulations.schrems2.description'),
+      icon: Scale,
+      benefits: t('compliance.regulations.schrems2.benefits', {
+        returnObjects: true,
+      }),
+    },
+    {
+      name: t('compliance.regulations.iso27001.name'),
+      description: t('compliance.regulations.iso27001.description'),
+      icon: FileCheck,
+      benefits: t('compliance.regulations.iso27001.benefits', {
+        returnObjects: true,
+      }),
+    },
+    {
+      name: t('compliance.regulations.dora.name'),
+      description: t('compliance.regulations.dora.description'),
+      icon: Building,
+      benefits: t('compliance.regulations.dora.benefits', {
+        returnObjects: true,
+      }),
+    },
+  ]
   return (
     <section className="py-32 relative bg-white/[0.02] border-y border-white/5">
       <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 opacity-10 blur-[100px]" />
@@ -51,13 +58,9 @@ export function Compliance() {
             <span>{t('compliance.tagline')}</span>
           </div>
 
-          <h2 className="text-3xl font-medium mb-4">
-            {t('compliance.title')}
-          </h2>
+          <h2 className="text-3xl font-medium mb-4">{t('compliance.title')}</h2>
 
-          <p className="text-lg text-white/60">
-            {t('compliance.description')}
-          </p>
+          <p className="text-lg text-white/60">{t('compliance.description')}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
