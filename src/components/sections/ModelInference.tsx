@@ -84,6 +84,7 @@ console.log(response.data.choices[0].text);`}
                 <Button variant="secondary">Documentation</Button>
               </div>
             </div>
+          </div>
 
             {/* Available Models */}
             <div className="space-y-4">
