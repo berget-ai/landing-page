@@ -39,26 +39,6 @@ export function NetworkBackground() {
         this.life = this.maxLife
       }
 
-      triggerSignal() {
-        for (let i = 0; i < 3; i++) {
-          sparks.push(new Spark(this.x, this.y))
-        }
-        const targetNode = nodes[this.targetIndex]
-        if (targetNode) {
-          // Trigger new signals from the target node
-          targetNode.connections.forEach((connectionIndex) => {
-            const connectedNode = nodes[connectionIndex]
-            if (Math.random() < 0.1) {
-              // 10% chance to trigger a new signal
-              particles.push({
-                nodeIndex: this.targetIndex,
-                targetIndex: connectionIndex,
-                progress: 0,
-              })
-            }
-          })
-        }
-      }
 
       update() {
         this.x += this.vx
