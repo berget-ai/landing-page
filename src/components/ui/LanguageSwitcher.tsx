@@ -1,5 +1,16 @@
 import { useTranslation } from 'react-i18next'
-import { FlagEU, FlagSE } from '@weston/react-world-flags'
+import { FlagEU } from '@weston/react-world-flags'
+import type { FC } from 'react'
+
+interface FlagProps {
+  className?: string
+}
+
+const FlagSE: FC<FlagProps> = ({ className }) => (
+  <div className={className}>
+    {/* SVG or other content for the flag */}
+  </div>
+)
 
 export function LanguageSwitcher() {
   const { i18n } = useTranslation()
