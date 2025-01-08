@@ -3,8 +3,11 @@ import { Button } from '@/components/ui/button'
 import { SocialProof } from './hero/SocialProof'
 import { CodeBlock } from '@/components/common/CodeBlock'
 import { ClientLogos } from './hero/ClientLogos'
+import { useTranslation } from 'react-i18next'
 
 export function GetStarted() {
+  const { t } = useTranslation()
+
   return (
     <div className="container mx-auto px-4 py-32">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -12,10 +15,15 @@ export function GetStarted() {
           <h1 className="text-5xl font-medium leading-tight mb-6">
             {t('getStarted.title.part1')}
             <br />
-            <span className="text-white">{t('getStarted.title.part2')}</span> {t('getStarted.title.part3')}
+            <span className="text-white">
+              {t('getStarted.title.part2')}
+            </span>{' '}
+            {t('getStarted.title.part3')}
           </h1>
 
-          <p className="text-xl text-white/60 mb-8 leading-relaxed">{t('getStarted.description')}</p>
+          <p className="text-xl text-white/60 mb-8 leading-relaxed">
+            {t('getStarted.description')}
+          </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
             <Button size="lg" className="group">
@@ -54,7 +62,9 @@ export function GetStarted() {
               Nu är ditt kluster redo att användas. Nu kan du börja köra dina
               applikationer.
             </div>
-            <div className="text-white/60">Du kan peka ett CNAME till klustret.</div>
+            <div className="text-white/60">
+              Du kan peka ett CNAME till klustret.
+            </div>
             <div className="mt-2">
               <div className="text-white/60">
                 ${' '}
