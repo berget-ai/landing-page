@@ -100,7 +100,7 @@ export function FeatureCarousel() {
   })
 
   return (
-    <div className="relative container mx-auto px-4 h-screen">
+    <div className="relative container mx-auto px-4 min-h-screen md:h-screen">
       <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-pink-500/5 opacity-30 blur-3xl pointer-events-none" />
       <FeatureNavigation
         totalFeatures={features.length}
@@ -122,7 +122,7 @@ export function FeatureCarousel() {
         onTouchMove={handleDragMove}
         onTouchEnd={handleDragEnd}
         className={cn(
-          'relative h-[400px] md:h-[300px] overflow-hidden mt-8',
+          'relative min-h-[500px] md:h-[300px] overflow-hidden mt-8',
           isDragging.current ? 'cursor-grabbing' : 'cursor-grab',
           'touch-pan-y',
         )}

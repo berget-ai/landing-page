@@ -8,7 +8,7 @@ export function Features() {
   const { t } = useTranslation()
 
   return (
-    <section className="py-40 relative" id="features">
+    <section className="py-20 md:py-40 relative" id="features">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background opacity-80" />
       <FeatureCarousel />
 
