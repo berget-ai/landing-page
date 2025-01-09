@@ -18,6 +18,7 @@ export default function HomePage() {
       <Compliance />
       <Sustainability />
       <RagRecipes />
+      <RagRecipes />
       <Testimonials />
       <Success />
       <About />

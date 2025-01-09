@@ -12,6 +12,7 @@ export default function DevelopersPage() {
       <ModelInference />
       <NetworkConnectivity />
       <Overview />
+      <RagRecipes />
     </main>
   )
 }
