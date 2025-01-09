@@ -16,15 +16,15 @@ export function NetworkBackground() {
 
     // Create nodes in a grid pattern
     const gridSize = Math.ceil(Math.sqrt(50)) // For 50 nodes
-    const spacingX = canvas.width / (gridSize + 1)
-    const spacingY = canvas.height / (gridSize + 1)
+    const spacingX = canvas.width / (gridSize - 1)
+    const spacingY = canvas.height / (gridSize - 1)
     
     const nodes = Array.from({ length: 50 }, (_, i) => {
       const row = Math.floor(i / gridSize)
       const col = i % gridSize
       return {
-        x: spacingX * (col + 1), // +1 to add margin from edges
-        y: spacingY * (row + 1),
+        x: spacingX * col,
+        y: spacingY * row,
         radius: Math.random() * 1.5 + 1,
         vx: (Math.random() - 0.5) * 0.2,
         vy: (Math.random() - 0.5) * 0.2,
@@ -40,14 +40,14 @@ export function NetworkBackground() {
 
       // Maintain grid pattern when resizing
       const gridSize = Math.ceil(Math.sqrt(nodes.length))
-      const spacingX = canvas.width / (gridSize + 1)
-      const spacingY = canvas.height / (gridSize + 1)
+      const spacingX = canvas.width / (gridSize - 1)
+      const spacingY = canvas.height / (gridSize - 1)
       
       nodes.forEach((node, i) => {
         const row = Math.floor(i / gridSize)
         const col = i % gridSize
-        node.x = spacingX * (col + 1)
-        node.y = spacingY * (row + 1)
+        node.x = spacingX * col
+        node.y = spacingY * row
       })
 
       // Recalculate connections
