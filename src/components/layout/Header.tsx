@@ -60,7 +60,7 @@ export function Header() {
             <nav className="flex flex-col p-4 space-y-4">
               <a
                 href="#pricing"
-                className="text-sm text-white/60 hover:text-white transition-colors"
+                className="text-2xl text-white/60 hover:text-white transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('header.navigation.pricing')}
@@ -73,10 +73,10 @@ export function Header() {
                 {t('header.navigation.about')}
               </a>
               <LanguageSwitcher />
-              <Button variant="secondary" size="sm" className="w-full">
+              <Button variant="secondary" size="lg" className="w-full text-xl">
                 {t('header.buttons.signIn')}
               </Button>
-              <Button size="sm" className="w-full">
+              <Button size="lg" className="w-full text-xl">
                 {t('header.buttons.getStarted')}
               </Button>
             </nav>
