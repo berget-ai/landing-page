@@ -1,4 +1,4 @@
-import { html } from './terms.md'
+import { html } from '@/pages/terms.md'
 
 export default function TermsPage() {
   return (
