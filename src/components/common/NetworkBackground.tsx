@@ -11,12 +11,40 @@ export function NetworkBackground() {
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
+    const container = canvas.parentElement
+    if (!container) return
+
     const resize = () => {
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
+      const rect = container.getBoundingClientRect()
+      canvas.width = rect.width
+      canvas.height = rect.height
+      
+      // Reset nodes with new positions based on new dimensions
+      nodes.forEach(node => {
+        node.x = Math.random() * canvas.width
+        node.y = Math.random() * canvas.height
+      })
+      
+      // Recalculate connections
+      nodes.forEach((node, i) => {
+        node.connections = []
+        nodes.forEach((otherNode, j) => {
+          if (i !== j) {
+            const dx = node.x - otherNode.x
+            const dy = node.y - otherNode.y
+            const distance = Math.sqrt(dx * dx + dy * dy)
+            if (distance < canvas.width * 0.2) { // Relative to canvas width
+              node.connections.push(j)
+            }
+          }
+        })
+      })
     }
 
-    window.addEventListener('resize', resize)
+    const resizeObserver = new ResizeObserver(() => {
+      resize()
+    })
+    resizeObserver.observe(container)
     resize()
 
     // Spark effect class
@@ -202,7 +230,7 @@ export function NetworkBackground() {
     animationFrameRef.current = requestAnimationFrame(draw)
 
     return () => {
-      window.removeEventListener('resize', resize)
+      resizeObserver.disconnect()
       if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current)
       }
