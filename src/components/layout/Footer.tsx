@@ -7,7 +7,7 @@ const footerLinks = {
     { key: 'features', href: '#features' },
     { key: 'pricing', href: '#pricing' },
     { key: 'documentation', href: '#docs' },
-    { key: 'changelog', href: '#changelog' },
+    { key: 'security', href: '/security' },
   ],
   company: [
     { key: 'about', href: '#about' },

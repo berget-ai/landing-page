@@ -32,7 +32,6 @@ function App() {
           <Route path="/developers" element={<DevelopersPage />} />
           <Route path="/terms" element={<MarkdownPage html={termsHtml} />} />
           <Route path="/privacy" element={<MarkdownPage html={privacyHtml} />} />
-          <Route path="/security" element={<SecurityPage />} />
           <Route path="/acceptable-use" element={<MarkdownPage html={acceptableUseHtml} />} />
           <Route path="/sla" element={<MarkdownPage html={slaHtml} />} />
         </Routes>
