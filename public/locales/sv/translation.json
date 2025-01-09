@@ -97,8 +97,8 @@
       "privacy": "Integritet",
       "terms": "Villkor",
       "security": "Säkerhet",
-      "acceptableUse": "Användningsvillkor",
-      "sla": "SLA"
+      "acceptableUse": "Användningsvillkor", 
+      "sla": "Servicenivåavtal"
     },
     "copyright": "© 2025 Berget AI. Med ensamrätt.",
     "status": "Status",
