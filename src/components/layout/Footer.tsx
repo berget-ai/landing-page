@@ -10,7 +10,7 @@ const footerLinks = {
     { key: 'security', href: '/security' },
   ],
   company: [
-    { key: 'about', href: '#about' },
+    { key: 'about', href: '/about' },
     { key: 'blog', href: '#blog' },
     { key: 'careers', href: '#careers' },
     { key: 'contact', href: '#contact' },

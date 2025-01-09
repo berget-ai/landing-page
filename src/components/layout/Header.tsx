@@ -33,7 +33,7 @@ export function Header() {
             {t('header.navigation.developers')}
           </a>
           <a
-            href="#about"
+            href="/about"
             className="text-sm text-white/60 hover:text-white transition-colors"
           >
             {t('header.navigation.about')}
@@ -75,7 +75,7 @@ export function Header() {
                 {t('header.navigation.pricing')}
               </a>
               <a
-                href="#about"
+                href="/about"
                 className="text-sm text-white/60 hover:text-white transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
