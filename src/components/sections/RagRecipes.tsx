@@ -38,10 +38,10 @@ export function RagRecipes() {
         <div className="flex items-center justify-between mb-12">
           <div>
             <h2 className="text-3xl font-medium mb-2 text-white">
-              {t('ragRecipes.title')}
+              {t('recipes.title')}
             </h2>
             <p className="text-lg text-white/80">
-              {t('ragRecipes.description')}
+              {t('recipes.description')}
             </p>
           </div>
 
