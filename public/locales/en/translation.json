@@ -181,8 +181,14 @@
     "learnMore": "Learn More"
   },
   "about": {
-    "title": "About Berget AI",
-    "description": "We're building Europe's most secure and sustainable AI infrastructure. Our team combines deep expertise in cloud computing, AI, and security to help companies deploy AI responsibly.",
+    "title": "We're Not Just Building Another AI Platform",
+    "subtitle": "We're Redefining Trust in AI",
+    "description": "In a world where data is treated like a commodity and privacy is an afterthought, we dared to imagine something different. A platform where technology serves humanity, not the other way around. Where innovation isn't about bypassing trust - it's about building it.",
+    "manifesto": {
+      "intro": "Berget isn't just a company. We're a declaration—a dedication to a world where trust accelerates innovation, not hinders it.",
+      "european": "We're European. We're built by citizens who understand that regulations can unlock innovation, not limit it. While others see rules as obstacles, we see them as the blueprint for a more intelligent, more human and open future.",
+      "vision": "We unlock pure, adaptable intelligence for all. We're offering a new paradigm where shared trust creates unprecedented possibilities, where AI becomes a trusted partner in human progress."
+    },
     "joinTeam": {
       "title": "Join Our Team",
       "description": "We're always looking for talented people who share our vision of making AI infrastructure more secure, sustainable, and accessible.",

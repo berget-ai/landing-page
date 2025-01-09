@@ -10,12 +10,20 @@ export default function AboutPage() {
       <div className="container mx-auto px-4 py-12">
         <div className="text-center max-w-3xl mx-auto mb-16 relative">
           <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-20 h-20 bg-white/5 rounded-full blur-2xl" />
-          <h1 className="text-5xl font-medium mb-6 bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
-            {t('about.title', 'About Berget AI')}
+          <h1 className="text-5xl font-medium mb-4 bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
+            {t('about.title')}
           </h1>
-          <p className="text-xl text-white/70 leading-relaxed">
-            {t('about.description', 'Building the future of AI infrastructure for Swedish enterprises')}
+          <h2 className="text-3xl font-medium mb-6 text-[#40916C]">
+            {t('about.subtitle')}
+          </h2>
+          <p className="text-xl text-white/70 leading-relaxed mb-8">
+            {t('about.description')}
           </p>
+          <div className="space-y-6 text-lg text-white/80">
+            <p>{t('about.manifesto.intro')}</p>
+            <p>{t('about.manifesto.european')}</p>
+            <p>{t('about.manifesto.vision')}</p>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
