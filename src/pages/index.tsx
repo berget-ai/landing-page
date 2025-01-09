@@ -14,9 +14,7 @@ export default function HomePage() {
   return (
     <main>
       <Hero />
-      <GetStarted />
       <Features />
-      <ModelInference />
       <Compliance />
       <Sustainability />
       <RagRecipes />

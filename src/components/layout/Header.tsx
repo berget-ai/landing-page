@@ -27,6 +27,12 @@ export function Header() {
             {t('header.navigation.pricing')}
           </a>
           <a
+            href="/developers"
+            className="text-sm text-white/60 hover:text-white transition-colors"
+          >
+            {t('header.navigation.developers')}
+          </a>
+          <a
             href="#about"
             className="text-sm text-white/60 hover:text-white transition-colors"
           >

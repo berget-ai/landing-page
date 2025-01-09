@@ -7,6 +7,7 @@ import { ChatWidget } from '@/components/chat/ChatWidget'
 // Pages
 import HomePage from '@/pages/index'
 import PricingPage from '@/pages/pricing'
+import DevelopersPage from '@/pages/developers'
 import TermsPage from '@/pages/terms'
 import PrivacyPage from '@/pages/privacy'
 import SecurityPage from '@/pages/security'
@@ -24,6 +25,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/pricing" element={<PricingPage />} />
+          <Route path="/developers" element={<DevelopersPage />} />
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/security" element={<SecurityPage />} />
