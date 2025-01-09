@@ -21,7 +21,6 @@ export default function HomePage() {
       <RagRecipes />
       <Testimonials />
       <Success />
-      <About />
     </main>
   )
 }
