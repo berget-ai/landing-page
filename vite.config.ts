@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [
     react(),
     markdown({
-      mode: 'html',
+      mode: ['html'],
       markdownIt: {
         html: true,
         linkify: true,
