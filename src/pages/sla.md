@@ -1,14 +1,12 @@
 # Service Level Agreement (SLA)
 
-## Overview
-
+## 1. Overview
 This Service Level Agreement ("SLA") is part of your agreement with Berget AI for the use of our AI infrastructure and services. It describes the levels of service you should expect from us and defines our mutual responsibilities.
 
-## Service Commitment
-
+## 2. Service Commitment
 Berget AI will use commercially reasonable efforts to make our services available with a Monthly Uptime Percentage of at least 99.9% during any monthly billing cycle (the "Service Commitment").
 
-## Definitions
+## 3. Definitions
 
 - **Monthly Uptime Percentage** is calculated by subtracting from 100% the percentage of minutes during the month in which our services were in the state of "Unavailable."
 - **Unavailable** means that all connection requests to the service fail during a one-minute period.
