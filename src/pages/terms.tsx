@@ -12,7 +12,7 @@ export default function TermsPage() {
             className="prose prose-invert 
               max-w-none
               prose-headings:font-medium 
-              prose-h1:text-4xl prose-h1:mb-8
+              prose-h1:text-6xl prose-h1:mb-12 prose-h1:font-bold
               prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4
               prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-4
               prose-p:text-base prose-p:leading-relaxed prose-p:text-white/80
