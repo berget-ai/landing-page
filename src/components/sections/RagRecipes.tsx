@@ -10,7 +10,17 @@ import { useTranslation } from 'react-i18next'
 export function RagRecipes() {
   const { t } = useTranslation()
   const [activeIndex, setActiveIndex] = useState(0)
-  const visibleRecipes = 3
+  const [visibleRecipes, setVisibleRecipes] = useState(3)
+  
+  useEffect(() => {
+    const handleResize = () => {
+      setVisibleRecipes(window.innerWidth < 768 ? 1.5 : 3)
+    }
+    
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   const nextSlide = () => {
     setActiveIndex((current) =>
@@ -77,7 +87,7 @@ export function RagRecipes() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.8 }}
                   transition={{ duration: 0.5 }}
-                  className="min-w-[calc(100%/3-1rem)]"
+                  className="min-w-[calc(100%/1.5-1rem)] md:min-w-[calc(100%/3-1rem)]"
                 >
                   <RecipeCard recipe={recipe} />
                 </motion.div>
