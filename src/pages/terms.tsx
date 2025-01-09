@@ -1,11 +1,8 @@
-import { Header } from '@/components/layout/Header'
-import { Footer } from '@/components/layout/Footer'
-import { html } from '../../content/terms.md'
+import { html } from './terms.md'
 
 export default function TermsPage() {
   return (
     <>
-      <Header />
       <main className="min-h-screen pt-24">
         <div className="container mx-auto px-4 py-12">
           <div
@@ -26,7 +23,6 @@ export default function TermsPage() {
           />
         </div>
       </main>
-      <Footer />
     </>
   )
 }
