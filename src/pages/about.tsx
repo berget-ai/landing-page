@@ -13,7 +13,7 @@ export default function AboutPage() {
           <h1 className="text-5xl font-medium mb-4 bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
             {t('about.title')}
           </h1>
-          <h2 className="text-3xl font-medium mb-6 text-[#40916C]">
+          <h2 className="text-3xl font-medium mb-6 text-white">
             {t('about.subtitle')}
           </h2>
           <p className="text-xl text-white/70 leading-relaxed mb-8 max-w-3xl mx-auto">
