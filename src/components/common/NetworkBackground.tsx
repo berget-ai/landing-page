@@ -14,6 +14,7 @@ export function NetworkBackground() {
     const container = canvas.parentElement
     if (!container) return
 
+
     const resize = () => {
       const rect = container.getBoundingClientRect()
       canvas.width = rect.width
