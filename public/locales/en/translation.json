@@ -98,7 +98,8 @@
       "terms": "Terms",
       "security": "Security",
       "acceptableUse": "Acceptable Use",
-      "sla": "Service Level Agreement"
+      "sla": "Service Level Agreement",
+      "security": "Security"
     },
     "copyright": "© 2025 Berget AI. All rights reserved.",
     "status": "Status",
