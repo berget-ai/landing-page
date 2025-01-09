@@ -212,7 +212,7 @@
       "john": {
         "name": "John Angelmo",
         "role": "Infrastructure Lead",
-        "bio": "Former Kubernetes Team Lead at Tele2. Expert in cloud infrastructure and customer support.",
+        "bio": "Linux/molnspecialist med 25 års erfarenhet. Tidigare Kubernetes Team Lead på Tele2, expert på automatiserad driftsättning, konfigurationshantering och molninfrastruktur. Djup expertis inom Linux, VMware och säkerhet med starkt fokus på regelefterlevnad.",
         "image": "/team/john.jpg",
         "links": {
           "linkedin": "https://linkedin.com/in/johnangelmo",
