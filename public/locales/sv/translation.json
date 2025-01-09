@@ -182,10 +182,16 @@
     "learnMore": "Läs mer"
   },
   "about": {
-    "title": "Om Berget AI",
-    "description": "Vi bygger Europas säkraste och mest hållbara AI-infrastruktur. Vårt team kombinerar djup expertis inom molntjänster, AI och säkerhet för att hjälpa företag implementera AI på ett ansvarsfullt sätt.",
+    "title": "Vi bygger inte bara ännu en AI-plattform",
+    "subtitle": "Vi omdefinerar förtroende inom AI",
+    "description": "I en värld där data behandlas som en handelsvara och integritet är en eftertanke, vågade vi föreställa oss något annorlunda. En plattform där tekniken tjänar mänskligheten, inte tvärtom. Där innovation inte handlar om att kringgå förtroende - det handlar om att bygga det.",
+    "manifesto": {
+      "intro": "Berget är inte bara ett företag. Vi är en deklaration—en dedikation till en värld där förtroende accelererar innovation, inte hindrar den.",
+      "european": "Vi är europeiska. Vi är byggda av medborgare som förstår att regleringar kan frigöra innovation, inte begränsa den. Medan andra ser regler som hinder, ser vi dem som ritningen för en mer intelligent, mer mänsklig och öppen framtid.",
+      "vision": "Vi frigör ren, anpassningsbar intelligens för alla. Vi erbjuder ett nytt paradigm där delat förtroende skapar tidigare osedda möjligheter, där AI blir en betrodd partner i mänsklig utveckling."
+    },
     "joinTeam": {
-      "title": "Bli en del av teamet",
+      "title": "Bli en del av vårt team",
       "description": "Vi söker alltid efter talangfulla personer som delar vår vision om att göra AI-infrastruktur säkrare, mer hållbar och tillgänglig.",
       "cta": "Se lediga tjänster"
     },
@@ -215,7 +221,7 @@
       },
       "john": {
         "name": "John Angelmo",
-        "role": "Infrastructure Lead",
+        "role": "Infrastrukturchef",
         "bio": "Linux/molnspecialist med 25 års erfarenhet. Tidigare Kubernetes Team Lead på Tele2, expert på automatiserad driftsättning, konfigurationshantering och molninfrastruktur. Djup expertis inom Linux, VMware och säkerhet med starkt fokus på regelefterlevnad.",
         "image": "/team/john.jpg",
         "links": {
