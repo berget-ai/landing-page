@@ -5,21 +5,23 @@ export default function AboutPage() {
   const { t } = useTranslation()
 
   return (
-    <main className="min-h-screen pt-24">
+    <main className="min-h-screen pt-24 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-[#2D6A4F]/20 via-transparent to-[#FFB700]/20 pointer-events-none" />
       <div className="container mx-auto px-4 py-12">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h1 className="text-4xl font-medium mb-4">
+        <div className="text-center max-w-3xl mx-auto mb-16 relative">
+          <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-20 h-20 bg-white/5 rounded-full blur-2xl" />
+          <h1 className="text-5xl font-medium mb-6 bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
             {t('about.title', 'About Berget AI')}
           </h1>
-          <p className="text-lg text-white/60">
+          <p className="text-xl text-white/70 leading-relaxed">
             {t('about.description', 'Building the future of AI infrastructure for Swedish enterprises')}
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
-          <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-            <Users className="w-8 h-8 mb-4" />
-            <h3 className="text-xl font-medium mb-2">
+          <div className="p-8 rounded-xl bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors duration-300 group">
+            <Users className="w-10 h-10 mb-6 text-[#40916C] group-hover:scale-110 transition-transform duration-300" />
+            <h3 className="text-2xl font-medium mb-3">
               {t('about.mission.title', 'Our Mission')}
             </h3>
             <p className="text-white/60">
@@ -27,9 +29,9 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-            <Shield className="w-8 h-8 mb-4" />
-            <h3 className="text-xl font-medium mb-2">
+          <div className="p-8 rounded-xl bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors duration-300 group">
+            <Shield className="w-10 h-10 mb-6 text-[#40916C] group-hover:scale-110 transition-transform duration-300" />
+            <h3 className="text-2xl font-medium mb-3">
               {t('about.values.title', 'Our Values')}
             </h3>
             <p className="text-white/60">
@@ -37,9 +39,9 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-            <Globe className="w-8 h-8 mb-4" />
-            <h3 className="text-xl font-medium mb-2">
+          <div className="p-8 rounded-xl bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors duration-300 group">
+            <Globe className="w-10 h-10 mb-6 text-[#40916C] group-hover:scale-110 transition-transform duration-300" />
+            <h3 className="text-2xl font-medium mb-3">
               {t('about.vision.title', 'Our Vision')}
             </h3>
             <p className="text-white/60">
@@ -48,8 +50,9 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="mb-24">
-          <h2 className="text-2xl font-medium mb-8">
+        <div className="mb-24 relative">
+          <div className="absolute -right-40 top-20 w-80 h-80 bg-[#40916C]/20 rounded-full blur-3xl pointer-events-none" />
+          <h2 className="text-3xl font-medium mb-12 relative">
             {t('about.story.title', 'Our Story')}
           </h2>
           <div className="prose prose-invert max-w-none">
@@ -65,8 +68,9 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div>
-          <h2 className="text-2xl font-medium mb-8">
+        <div className="relative">
+          <div className="absolute -left-40 top-20 w-80 h-80 bg-[#FFB700]/10 rounded-full blur-3xl pointer-events-none" />
+          <h2 className="text-3xl font-medium mb-12">
             {t('about.companyInfo')}
           </h2>
 
