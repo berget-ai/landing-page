@@ -60,7 +60,7 @@ export function Pricing() {
     <section className="py-24 relative" id="pricing">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl font-medium mb-4">
+          <h2 className="text-4xl font-medium mb-4">
             {t('pricing.title')}
           </h2>
           <p className="text-lg text-white/60">

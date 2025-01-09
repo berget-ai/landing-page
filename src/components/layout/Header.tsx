@@ -60,7 +60,7 @@ export function Header() {
             <nav className="flex flex-col p-4 space-y-4">
               <a
                 href="#pricing"
-                className="text-2xl text-white/60 hover:text-white transition-colors"
+                className="text-2xl text-white hover:text-white/80 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('header.navigation.pricing')}
