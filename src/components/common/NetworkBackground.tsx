@@ -14,20 +14,28 @@ export function NetworkBackground() {
     const container = canvas.parentElement
     if (!container) return
 
-
-
+    // Create nodes with random positions
+    const nodes = Array.from({ length: 50 }, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      radius: Math.random() * 1.5 + 1,
+      vx: (Math.random() - 0.5) * 0.2,
+      vy: (Math.random() - 0.5) * 0.2,
+      connections: [] as number[],
+      lastSparkTime: 0,
+    }))
 
     const resize = () => {
       const rect = container.getBoundingClientRect()
       canvas.width = rect.width
       canvas.height = rect.height
-      
+
       // Reset nodes with new positions based on new dimensions
-      nodes.forEach(node => {
+      nodes.forEach((node) => {
         node.x = Math.random() * canvas.width
         node.y = Math.random() * canvas.height
       })
-      
+
       // Recalculate connections
       nodes.forEach((node, i) => {
         node.connections = []
@@ -36,7 +44,8 @@ export function NetworkBackground() {
             const dx = node.x - otherNode.x
             const dy = node.y - otherNode.y
             const distance = Math.sqrt(dx * dx + dy * dy)
-            if (distance < canvas.width * 0.2) { // Relative to canvas width
+            if (distance < canvas.width * 0.2) {
+              // Relative to canvas width
               node.connections.push(j)
             }
           }
@@ -88,17 +97,6 @@ export function NetworkBackground() {
     }
 
     const sparks: Spark[] = []
-
-    // Create nodes with random positions
-    const nodes = Array.from({ length: 50 }, () => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      radius: Math.random() * 1.5 + 1,
-      vx: (Math.random() - 0.5) * 0.2,
-      vy: (Math.random() - 0.5) * 0.2,
-      connections: [] as number[],
-      lastSparkTime: 0,
-    }))
 
     // Create connections between nearby nodes
     nodes.forEach((node, i) => {
