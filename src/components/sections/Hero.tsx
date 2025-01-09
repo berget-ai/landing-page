@@ -8,8 +8,9 @@ export function Hero() {
   const { t } = useTranslation()
 
   return (
-    <GradientBackground>
+    <>
       <NetworkBackground />
+      <GradientBackground>
       <div className="relative z-10 flex items-center justify-center min-h-screen">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8">
@@ -42,6 +43,7 @@ export function Hero() {
           </div>
         </div>
       </div>
-    </GradientBackground>
+      </GradientBackground>
+    </>
   )
 }
