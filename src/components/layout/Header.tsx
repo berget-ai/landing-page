@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import { LanguageSwitcher } from '../ui/LanguageSwitcher'
 import { useTranslation } from 'react-i18next'
@@ -13,7 +14,9 @@ export function Header() {
     <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-lg border-b border-white/5">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center space-x-2">
-          <div className="text-xl font-semibold">Berget AI</div>
+          <Link to="/" className="text-xl font-semibold hover:text-white/90 transition-colors">
+            Berget AI
+          </Link>
         </div>
 
         <nav className="hidden md:flex items-center space-x-8">
