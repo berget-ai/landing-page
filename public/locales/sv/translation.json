@@ -172,12 +172,12 @@
     "bookDemo": "Boka en demo"
   },
   "hero": {
-    "tagline": "Ett ansvarsfullt och hållbart AI-företag för Europa",
+    "tagline": "Av utvecklare, för utvecklare - Säker, kompatibel och hållbar AI",
     "title": {
-      "part1": "Bygg en symfoni av",
-      "part2": "AI-agenter som arbetar för dig"
+      "part1": "Öppen källkods-AI",
+      "part2": "Utan att kompromissa med säkerheten"
     },
-    "description": "Utveckla egna AI-agenter som arbetar tillsammans för att lösa komplexa problem och skapar ett ekosystem av skräddarsydd intelligens.",
+    "description": "Värd för öppna LLM:er och Kubernetes på samma fysiska plats. Din känsliga data lämnar aldrig våra lokaler, vilket avsevärt minskar juridiska och regulatoriska efterlevnadsinsatser för Nis-2 och DORA.",
     "getStarted": "Kom igång",
     "learnMore": "Läs mer"
   },

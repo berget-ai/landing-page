@@ -171,12 +171,12 @@
     "bookDemo": "Book a Demo"
   },
   "hero": {
-    "tagline": "A responsible, compliant and sustainable AI company for Europe",
+    "tagline": "By developers, for developers - Secure, compliant and sustainable AI",
     "title": {
-      "part1": "Enable a Symphony of",
-      "part2": "AI Agents Working for You"
+      "part1": "Open Source AI",
+      "part2": "Without Compromising Security"
     },
-    "description": "Orchestrate multiple AI agents to work together seamlessly, creating a powerful ecosystem of specialized intelligence.",
+    "description": "Host open LLMs and Kubernetes in the same physical location. Your sensitive data never leaves our premises, greatly reducing legal and regulatory compliance effort for Nis-2 and DORA.",
     "getStarted": "Get Started",
     "learnMore": "Learn More"
   },
