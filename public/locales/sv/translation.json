@@ -120,7 +120,7 @@
       "privacy": "Integritet",
       "terms": "Villkor",
       "security": "Säkerhet",
-      "acceptableUse": "Användningsvillkor", 
+      "acceptableUse": "Användningsvillkor",
       "sla": "Servicenivåavtal",
       "security": "Säkerhet"
     },
@@ -195,10 +195,10 @@
     "bookDemo": "Boka en demo"
   },
   "hero": {
-    "tagline": "Bygger en framtid där förtroende accelererar innovation",
+    "tagline": "Ingen data lämnar Sverige",
     "title": {
-      "part1": "Omdefinierar förtroende",
-      "part2": "inom artificiell intelligens"
+      "part1": "Omdefinierar förtroendet",
+      "part2": "för Artificiell Intelligens"
     },
     "description": "Vi bygger Europas säkraste och mest regelefterlevande AI-infrastruktur. Genom att kombinera öppen källkods-modeller med företagsanpassad säkerhet möjliggör vi innovation samtidigt som vi säkerställer att din data aldrig lämnar våra svenska datacenter.",
     "getStarted": "Kom igång",
