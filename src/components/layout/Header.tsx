@@ -18,7 +18,7 @@ export function Header() {
 
         <nav className="hidden md:flex items-center space-x-8">
           <a
-            href="#pricing"
+            href="/pricing"
             className="text-sm text-white/60 hover:text-white transition-colors"
           >
             {t('header.navigation.pricing')}

@@ -16,9 +16,10 @@ const footerLinks = {
     { key: 'contact', href: '#contact' },
   ],
   legal: [
-    { key: 'privacy', href: '#privacy' },
-    { key: 'terms', href: '#terms' },
-    { key: 'security', href: '#security' },
+    { key: 'privacy', href: '/privacy' },
+    { key: 'terms', href: '/terms' },
+    { key: 'security', href: '/security' },
+    { key: 'acceptableUse', href: '/acceptable-use' },
   ],
 }
 
