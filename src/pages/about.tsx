@@ -8,7 +8,7 @@ export default function AboutPage() {
     <main className="min-h-screen pt-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-[#2D6A4F]/20 via-transparent to-[#FFB700]/20 pointer-events-none" />
       <div className="container mx-auto px-4 py-12">
-        <div className="text-center max-w-3xl mx-auto mb-16 relative">
+        <div className="max-w-3xl mx-auto mb-16 relative">
           <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-20 h-20 bg-white/5 rounded-full blur-2xl" />
           <h1 className="text-5xl font-medium mb-4 bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
             {t('about.title')}
