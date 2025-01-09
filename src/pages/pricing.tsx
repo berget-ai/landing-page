@@ -1,6 +1,6 @@
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
-import { DetailedPricing } from '@/components/sections/pricing/DetailedPricing'
+import { PricingTiers } from '@/components/sections/pricing/PricingTiers'
 import { ComparisonTable } from '@/components/sections/pricing/ComparisonTable'
 import { Button } from '@/components/ui/button'
 import { Check, Info } from 'lucide-react'
@@ -24,22 +24,7 @@ export default function PricingPage() {
         </div>
 
         <div className="mb-24">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-2xl font-medium">{t('pricing.detailedPricing')}</h2>
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Button variant="ghost" size="icon">
-                    <Info className="w-5 h-5" />
-                  </Button>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>{t('pricing.tooltip')}</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          </div>
-          <DetailedPricing />
+          <PricingTiers />
         </div>
 
         <div className="mb-24">

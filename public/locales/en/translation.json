@@ -67,8 +67,31 @@
     "learnMore": "Learn More About Compliance"
   },
   "pricing": {
-    "title": "Simple to support your scaling needs",
-    "description": "We aim to keep our prices simple and fair, so that you can focus on building awesome stuff instead of trying to figure out your bills.",
+    "title": "Simple, transparent pricing for all",
+    "description": "Choose the plan that best fits your needs. All plans include access to our core AI infrastructure.",
+    "getStarted": "Get Started",
+    "contactSales": "Contact Sales",
+    "computeCosts": "Compute Costs",
+    "perUserMonth": "per user/month",
+    "tiers": {
+      "hobby": {
+        "name": "Hobby",
+        "description": "For hobbyists, students, and indie hackers"
+      },
+      "pro": {
+        "name": "Professional",
+        "description": "For small teams and early-stage startups"
+      },
+      "org": {
+        "name": "Organization",
+        "description": "For larger teams with complex needs"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "description": "For ultimate power and customization",
+        "custom": "Custom pricing"
+      }
+    },
     "detailedPricing": "Detailed Pricing",
     "tooltip": "All prices are in EUR and exclude VAT",
     "compareWithAlternatives": "Compare with Alternatives",

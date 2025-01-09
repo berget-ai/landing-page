@@ -67,8 +67,31 @@
     "learnMore": "Läs mer om efterlevnad"
   },
   "pricing": {
-    "title": "Enkel att stödja dina skalningsbehov",
-    "description": "Vi strävar efter att hålla våra priser enkla och rättvisa, så att du kan fokusera på att bygga fantastiska saker istället för att försöka lista ut dina räkningar.",
+    "title": "Enkel, transparent prissättning för alla",
+    "description": "Välj den plan som passar dina behov bäst. Alla planer inkluderar tillgång till vår AI-infrastruktur.",
+    "getStarted": "Kom igång",
+    "contactSales": "Kontakta försäljning",
+    "computeCosts": "Beräkningskostnader",
+    "perUserMonth": "per användare/månad",
+    "tiers": {
+      "hobby": {
+        "name": "Hobby",
+        "description": "För hobbyprojekt, studenter och indie-utvecklare"
+      },
+      "pro": {
+        "name": "Professional",
+        "description": "För små team och tidiga startups"
+      },
+      "org": {
+        "name": "Organisation",
+        "description": "För större team med komplexa behov"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "description": "För maximal kraft och anpassning",
+        "custom": "Anpassad prissättning"
+      }
+    },
     "detailedPricing": "Detaljerad prissättning",
     "tooltip": "Alla priser är i EUR och exklusive moms",
     "compareWithAlternatives": "Jämför med alternativ",
