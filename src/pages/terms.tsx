@@ -1,6 +1,6 @@
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
-import { attributes, html } from '../../content/terms.md'
+import { html } from '../../content/terms.md'
 
 export default function TermsPage() {
   return (
@@ -10,7 +10,7 @@ export default function TermsPage() {
         <div className="container mx-auto px-4 py-12">
           <div
             className="prose prose-invert 
-              max-w-none
+              max-w-3xl
               prose-headings:font-medium 
               prose-h1:text-4xl prose-h1:mb-8
               prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4
