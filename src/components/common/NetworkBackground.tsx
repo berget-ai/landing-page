@@ -22,9 +22,12 @@ export function NetworkBackground() {
     const nodes = Array.from({ length: 50 }, (_, i) => {
       const row = Math.floor(i / gridSize)
       const col = i % gridSize
+      // Add small random offset to make it look more organic
+      const randomOffsetX = (Math.random() - 0.5) * (spacingX * 0.3)
+      const randomOffsetY = (Math.random() - 0.5) * (spacingY * 0.3)
       return {
-        x: spacingX * col,
-        y: spacingY * row,
+        x: spacingX * col + randomOffsetX,
+        y: spacingY * row + randomOffsetY,
         radius: Math.random() * 1.5 + 1,
         vx: (Math.random() - 0.5) * 0.2,
         vy: (Math.random() - 0.5) * 0.2,
@@ -46,8 +49,10 @@ export function NetworkBackground() {
       nodes.forEach((node, i) => {
         const row = Math.floor(i / gridSize)
         const col = i % gridSize
-        node.x = spacingX * col
-        node.y = spacingY * row
+        const randomOffsetX = (Math.random() - 0.5) * (spacingX * 0.3)
+        const randomOffsetY = (Math.random() - 0.5) * (spacingY * 0.3)
+        node.x = spacingX * col + randomOffsetX
+        node.y = spacingY * row + randomOffsetY
       })
 
       // Recalculate connections
