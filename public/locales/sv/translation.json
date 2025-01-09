@@ -195,12 +195,12 @@
     "bookDemo": "Boka en demo"
   },
   "hero": {
-    "tagline": "Av utvecklare, för utvecklare - Säker, kompatibel och hållbar AI",
+    "tagline": "Bygger en framtid där förtroende accelererar innovation",
     "title": {
-      "part1": "Öppen källkods-AI",
-      "part2": "Utan att kompromissa med säkerheten"
+      "part1": "Omdefinierar förtroende",
+      "part2": "inom artificiell intelligens"
     },
-    "description": "Värd för öppna LLM:er och Kubernetes på samma fysiska plats. Din känsliga data lämnar aldrig våra lokaler, vilket avsevärt minskar juridiska och regulatoriska efterlevnadsinsatser för Nis-2 och DORA.",
+    "description": "Vi bygger inte bara ännu en AI-plattform. Vi skapar ett nytt paradigm där delat förtroende skapar tidigare osedda möjligheter, där AI blir en betrodd partner i mänsklig utveckling.",
     "getStarted": "Kom igång",
     "learnMore": "Läs mer"
   },
