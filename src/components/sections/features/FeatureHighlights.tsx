@@ -23,7 +23,7 @@ export function FeatureHighlights({
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: isActive ? 1 : 0, x: isActive ? 0 : 20 }}
               transition={{ delay: 0.1 * index }}
-              className="flex items-center gap-4 text-white/80 text-lg"
+              className="flex items-center gap-4 text-white/80 text-base md:text-lg"
             >
               <div className="h-3 w-3 rounded-full bg-white/20" />
               {highlight}
