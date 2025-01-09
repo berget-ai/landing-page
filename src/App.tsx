@@ -3,15 +3,18 @@ import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { ChatWidget } from '@/components/chat/ChatWidget'
+import { MarkdownPage } from '@/components/common/MarkdownPage'
 
 // Pages
 import HomePage from '@/pages/index'
 import PricingPage from '@/pages/pricing'
 import DevelopersPage from '@/pages/developers'
-import TermsPage from '@/pages/terms'
-import PrivacyPage from '@/pages/privacy'
 import SecurityPage from '@/pages/security'
-import AcceptableUsePage from '@/pages/acceptable-use'
+
+// Markdown content
+import { html as termsHtml } from '@/content/terms.md'
+import { html as privacyHtml } from '@/content/privacy.md'
+import { html as acceptableUseHtml } from '@/content/acceptable-use.md'
 
 function App() {
   return (
@@ -26,10 +29,10 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/pricing" element={<PricingPage />} />
           <Route path="/developers" element={<DevelopersPage />} />
-          <Route path="/terms" element={<TermsPage />} />
-          <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/terms" element={<MarkdownPage html={termsHtml} />} />
+          <Route path="/privacy" element={<MarkdownPage html={privacyHtml} />} />
           <Route path="/security" element={<SecurityPage />} />
-          <Route path="/acceptable-use" element={<AcceptableUsePage />} />
+          <Route path="/acceptable-use" element={<MarkdownPage html={acceptableUseHtml} />} />
         </Routes>
         <Footer />
         <ChatWidget />
