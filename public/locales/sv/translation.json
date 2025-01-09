@@ -110,21 +110,20 @@
       "compatibility": "OpenAI API-kompatibilitet"
     },
     "codeBlockTitle": "Av utvecklare för utvecklare",
-    "popularModels": "Populära Modeller",
     "clusterReady": "Ditt kluster är redo!",
     "cnameInstruction": "Konfigurera din CNAME-post för att börja använda tjänsten"
   },
   "features": {
-    "modelInferencSectione": {
-      "title": "Modellinferens",
+    "modelInference": {
+      "title": "AI inferens",
       "description1": "Serverlös inferens av kraftfulla öppen källkodsmodeller. Få tillgång till våra 50+ modeller inklusive Llama 3, Mixtral, genom serverlösa slutpunkter och börja bygga dina AI-applikationer med hjälp av Open AI API-standarden.",
-      "description2": "Det är enkelt, du kan börja omedelbart och du betalar efter användning.",
+      "description2": "Det är enkelt, du växlar bara API från t ex OpenAI eller Anthropic.",
       "viewModels": "Visa modeller",
       "learnMore": "Läs mer"
     },
     "dedicatedInference": {
       "title": "Dedikerad inferens för dina skalningsbehov",
-      "description": "Värd för vilken modell som helst, öppen källkod, finjusterad eller en som du själv har tränat på vår dedikerade infrastruktur när du skalar. Ladda vilken modell som helst, välj GPU-instans och distribuera din egen dedikerade inferenstjänst och slutpunkt på ett ögonblick."
+      "description": "Värd för vilken modell som helst, öppen källkod eller en som du själv har tränat - på vår dedikerade infrastruktur när du skalar. Ladda vilken modell som helst, välj GPU-instans och distribuera din egen dedikerade inferenstjänst och endpoint och var igång direkt."
     },
     "safeCompliantAI": {
       "title": "Säker och kompatibel AI",
@@ -160,13 +159,13 @@
   },
   "getStarted": {
     "title": {
-      "part1": "Bygg AI-drivna applikationer med",
-      "part2": "Företagsklassad",
-      "part3": "Säkerhet"
+      "part1": "Bygg dina AI-applikationer",
+      "part2": "utan att riskera din data",
+      "part3": ""
     },
     "description": "Berget AI erbjuder Europas bästa och enklaste plats för dina AI-applikationer, vilket gör efterlevnad enkel samtidigt som det ger en modern utvecklarupplevelse och hållbar infrastruktur utan leverantörslåsning.",
-    "startBuilding": "Börja Bygga",
-    "bookDemo": "Boka en Demo"
+    "startBuilding": "Skapa ett kluster",
+    "bookDemo": "Boka en demo"
   },
   "hero": {
     "tagline": "Ett ansvarsfullt och hållbart AI-företag för Europa",
@@ -223,7 +222,8 @@
       }
     }
   },
-  "modelInferencSectione": {
+  "modelInference": {
+    "popularModels": "Populära modeller",
     "models": {
       "llama3": {
         "name": "Llama 3",

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from '@/components/ui/button'
@@ -11,12 +11,12 @@ export function RagRecipes() {
   const { t } = useTranslation()
   const [activeIndex, setActiveIndex] = useState(0)
   const [visibleRecipes, setVisibleRecipes] = useState(3)
-  
+
   useEffect(() => {
     const handleResize = () => {
       setVisibleRecipes(window.innerWidth < 768 ? 1.5 : 3)
     }
-    
+
     handleResize()
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)

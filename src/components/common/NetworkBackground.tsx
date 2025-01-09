@@ -212,7 +212,7 @@ export function NetworkBackground() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 opacity-40 pointer-events-none -z-10"
+      className="fixed inset-0 opacity-40 pointer-events-none"
     />
   )
 }

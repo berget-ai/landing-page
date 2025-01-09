@@ -222,6 +222,7 @@
     }
   },
   "modelInference": {
+    "popularModels": "Our selection of popular models",
     "models": {
       "llama3": {
         "name": "Llama 3",
