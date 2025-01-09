@@ -1,7 +1,7 @@
 import path from 'path'
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
-import { plugin as markdown } from 'vite-plugin-markdown'
+import markdown from '@vitejs/plugin-markdown'
 
 export default defineConfig({
   plugins: [
