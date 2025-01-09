@@ -14,6 +14,15 @@
 
 6\. **Amount of SLA-compensation.** The amount of the SLA-compensation will be 50 (fifty) times Berget’s service fees charged for the interrupted Service-item allocated for the period of time when the use of that Service-item was interrupted. The maximum SLA-compensation for an individual interruption shall be limited to an amount equal to the service fees charged by Berget for the interrupted Service-item during 30 (thirty) calendar days immediately preceding the interruption. The total sum of aggregated SLA-compensations during any 12-month period shall be limited to an amount equal to the average monthly service fee charged by Berget for the interrupted Service during that 12-month period multiplied by 2,5.
 
+Example:
+
+| Scenario                | Duration | Service Fee/Month | Compensation Calculation | Credit Amount |
+| ----------------------- | -------- | ----------------- | ------------------------ | ------------- |
+| Single server downtime  | 2 hours  | €100              | 50 x (€100/720h) x 2h    | €13.89        |
+| Database cluster outage | 4 hours  | €500              | 50 x (€500/720h) x 4h    | €138.89       |
+| Network interruption    | 1 hour   | €200              | 50 x (€200/720h) x 1h    | €13.89        |
+| Storage service failure | 3 hours  | €300              | 50 x (€300/720h) x 3h    | €62.50        |
+
 7\. **Sole Remedy.** The SLA-compensation set out above will be your sole remedy for any interruptions in the Service. In case of a disagreement over the amount of the SLA-compensation payable to the Customer, Berget’s decision on the issue will be binding on the Parties until and unless a competent court rules otherwise.
 
 8\. **Exemptions from Service Guarantee.** The following situations will be exempt from Berget’s service guarantee and thus not subject to SLA-compensation:
