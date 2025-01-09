@@ -9,7 +9,7 @@ export function GradientBackground({
 }: GradientBackgroundProps) {
   return (
     <div
-      className={`relative min-h-screen overflow-hidden bg-gradient-to-br from-[#1a1a1a] via-[#2a2a2a] to-[#3a3a3a] ${className}`}
+      className={`relative min-h-screen overflow-hidden bg-gradient-to-br from-[#2D6A4F] via-[#40916C] to-[#FFB700] ${className}`}
     >
       {children}
     </div>
