@@ -1,5 +1,7 @@
 # Terms of Service
 
+> Welcome to Berget's Terms of Service - your complete guide to using our enterprise AI infrastructure. This document outlines our commitment to providing reliable, secure, and compliant AI services. Key highlights include: flexible service terms, clear pricing structure, robust data protection, and comprehensive support. We've designed these terms to enable innovation while ensuring legal compliance and protecting both parties' interests.
+
 1. ### Scope
 
 1. These Terms of Service govern the use of Services provided by Berget AI AB, a Swedish limited liability company with Organizational Number 559504-7522 with address Götgatan 18, Stockholm, Sweden (“Berget”, “we”).  

@@ -1,4 +1,8 @@
-## Acceptable Use Policy
+# Acceptable Use Policy
+
+> Welcome to Berget's Acceptable Use Policy. This document outlines how you can use our platform safely and legally. We've designed these guidelines to protect all users while enabling innovation. Key highlights include: permitted uses of our AI infrastructure, security requirements, and specific guidance on high-risk AI applications. We're committed to responsible AI development and provide clear frameworks for both minimal and high-risk use cases.
+
+## Overview
 
 1\. Scope. This acceptable use policy (“AUP”) is an integral part of the Agreement between Berget and the Customer. The Customer must ensure that all Users comply with this AUP.
 

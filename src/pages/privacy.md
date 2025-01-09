@@ -1,5 +1,7 @@
 # Data Processing Agreement
 
+> This Data Processing Agreement (DPA) explains how Berget handles and protects your data with enterprise-grade security. We follow GDPR and international data protection standards to ensure your information is safe. Key features include: comprehensive data processing terms, clear responsibilities for both parties, and detailed security measures. Perfect for businesses that need robust data protection compliance.
+
 ### 1\. Scope
 
 1.1. This Data Processing Agreement (“DPA”) is an integral part of the Agreement between Berget and the Customer.
