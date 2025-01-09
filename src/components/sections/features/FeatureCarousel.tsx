@@ -122,7 +122,7 @@ export function FeatureCarousel() {
         onTouchMove={handleDragMove}
         onTouchEnd={handleDragEnd}
         className={cn(
-          'relative min-h-[500px] md:h-[300px] overflow-hidden mt-8',
+          'relative min-h-[600px] md:h-[300px] overflow-hidden mt-8',
           isDragging.current ? 'cursor-grabbing' : 'cursor-grab',
           'touch-pan-y',
         )}
