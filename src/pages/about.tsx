@@ -16,7 +16,7 @@ export default function AboutPage() {
           <h2 className="text-3xl font-medium mb-6 text-[#40916C]">
             {t('about.subtitle')}
           </h2>
-          <p className="text-xl text-white/70 leading-relaxed mb-8">
+          <p className="text-xl text-white/70 leading-relaxed mb-8 max-w-3xl mx-auto">
             {t('about.description')}
           </p>
           <div className="space-y-6 text-lg text-white/80">
