@@ -6,7 +6,14 @@ import markdown from 'vite-plugin-markdown'
 export default defineConfig({
   plugins: [
     react(),
-    markdown.plugin()
+    markdown.plugin({
+      mode: ['html', 'toc'],
+      markdownIt: {
+        html: true,
+        linkify: true,
+        typographer: true
+      }
+    })
   ],
   resolve: {
     alias: {
