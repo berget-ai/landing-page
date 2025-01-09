@@ -3,6 +3,7 @@ import { CodeBlock } from '@/components/common/CodeBlock'
 import { GetStarted } from '@/components/sections/GetStarted'
 import { ModelInference } from '@/components/sections/ModelInference'
 import { NetworkConnectivity } from '@/components/sections/NetworkConnectivity'
+import { Overview } from '@/components/sections/Overview'
 
 export default function DevelopersPage() {
   return (
@@ -10,6 +11,7 @@ export default function DevelopersPage() {
       <GetStarted />
       <ModelInference />
       <NetworkConnectivity />
+      <Overview />
     </main>
   )
 }
