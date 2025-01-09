@@ -1,5 +1,3 @@
-import { Header } from '@/components/layout/Header'
-import { CodeBlock } from '@/components/common/CodeBlock'
 import { GetStarted } from '@/components/sections/GetStarted'
 import { ModelInference } from '@/components/sections/ModelInference'
 import { NetworkConnectivity } from '@/components/sections/NetworkConnectivity'
