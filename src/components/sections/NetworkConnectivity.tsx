@@ -16,7 +16,7 @@ export function NetworkConnectivity() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          <div className="relative h-[400px] rounded-2xl overflow-hidden bg-black/50">
+          <div className="relative h-[400px] overflow-hidden bg-black/50">
             <NetworkBackground />
           </div>
 
