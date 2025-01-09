@@ -38,10 +38,16 @@ export function NetworkBackground() {
       canvas.width = rect.width
       canvas.height = rect.height
 
-      // Reset nodes with new positions based on new dimensions
-      nodes.forEach((node) => {
-        node.x = Math.random() * canvas.width
-        node.y = Math.random() * canvas.height
+      // Maintain grid pattern when resizing
+      const gridSize = Math.ceil(Math.sqrt(nodes.length))
+      const spacingX = canvas.width / (gridSize + 1)
+      const spacingY = canvas.height / (gridSize + 1)
+      
+      nodes.forEach((node, i) => {
+        const row = Math.floor(i / gridSize)
+        const col = i % gridSize
+        node.x = spacingX * (col + 1)
+        node.y = spacingY * (row + 1)
       })
 
       // Recalculate connections
