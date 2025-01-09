@@ -9,10 +9,11 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip'
 import { useTranslation } from 'react-i18next'
+import { DetailedPricing } from '@/components/sections/pricing/DetailedPricing'
 
 export default function PricingPage() {
   const { t } = useTranslation()
-  
+
   return (
     <main className="min-h-screen pt-24">
       <div className="container mx-auto px-4 py-12">
@@ -27,7 +28,9 @@ export default function PricingPage() {
 
         <div className="mb-24">
           <div className="flex items-center justify-between mb-8">
-            <h2 className="text-2xl font-medium">{t('pricing.compareWithAlternatives')}</h2>
+            <h2 className="text-2xl font-medium">
+              {t('pricing.compareWithAlternatives')}
+            </h2>
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
@@ -42,6 +45,7 @@ export default function PricingPage() {
             </TooltipProvider>
           </div>
           <ComparisonTable />
+          <DetailedPricing />
         </div>
 
         <div className="mt-16 text-center">
