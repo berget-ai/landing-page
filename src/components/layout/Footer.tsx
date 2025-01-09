@@ -20,6 +20,7 @@ const footerLinks = {
     { key: 'terms', href: '/terms' },
     { key: 'security', href: '/security' },
     { key: 'acceptableUse', href: '/acceptable-use' },
+    { key: 'sla', href: '/sla' },
   ],
 }
 
