@@ -12,9 +12,9 @@ import DevelopersPage from '@/pages/developers'
 import SecurityPage from '@/pages/security'
 
 // Markdown content
-import { html as termsHtml } from '@/content/terms.md'
-import { html as privacyHtml } from '@/content/privacy.md'
-import { html as acceptableUseHtml } from '@/content/acceptable-use.md'
+import { html as termsHtml } from '@/pages/terms.md'
+import { html as privacyHtml } from '@/pages/privacy.md'
+import { html as acceptableUseHtml } from '@/pages/acceptable-use.md'
 
 function App() {
   return (
