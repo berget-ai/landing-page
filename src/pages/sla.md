@@ -1,4 +1,6 @@
-## Service Level Agreement
+# Service Level Agreement (SLA)
+
+> Our Service Level Agreement guarantees enterprise-grade reliability for your AI infrastructure. We commit to 99.9% monthly uptime, backed by automatic service credits. Features include: transparent uptime calculations, generous compensation for any service disruptions, and clear incident reporting procedures. Perfect for businesses that need dependable AI infrastructure with strong reliability guarantees.
 
 1\. **Scope.** This service level agreement (“SLA”) is an integral part of the Agreement between Berget and the Customer. This SLA does not apply to: (i) Free Trials; (ii) Berget website; (iii) APIs of the Service; and (iv) the Control Dashboard.
 
