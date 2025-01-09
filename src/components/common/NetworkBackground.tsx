@@ -14,16 +14,24 @@ export function NetworkBackground() {
     const container = canvas.parentElement
     if (!container) return
 
-    // Create nodes with random positions
-    const nodes = Array.from({ length: 50 }, () => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      radius: Math.random() * 1.5 + 1,
-      vx: (Math.random() - 0.5) * 0.2,
-      vy: (Math.random() - 0.5) * 0.2,
-      connections: [] as number[],
-      lastSparkTime: 0,
-    }))
+    // Create nodes in a grid pattern
+    const gridSize = Math.ceil(Math.sqrt(50)) // For 50 nodes
+    const spacingX = canvas.width / (gridSize + 1)
+    const spacingY = canvas.height / (gridSize + 1)
+    
+    const nodes = Array.from({ length: 50 }, (_, i) => {
+      const row = Math.floor(i / gridSize)
+      const col = i % gridSize
+      return {
+        x: spacingX * (col + 1), // +1 to add margin from edges
+        y: spacingY * (row + 1),
+        radius: Math.random() * 1.5 + 1,
+        vx: (Math.random() - 0.5) * 0.2,
+        vy: (Math.random() - 0.5) * 0.2,
+        connections: [] as number[],
+        lastSparkTime: 0,
+      }
+    })
 
     const resize = () => {
       const rect = container.getBoundingClientRect()
