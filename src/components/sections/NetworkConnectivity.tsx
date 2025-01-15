@@ -15,10 +15,10 @@ export function NetworkConnectivity() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="space-y-16">
           <NetworkPreview />
 
-          <div className="space-y-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="space-y-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 text-sm">
                 <Shield className="w-4 h-4" />

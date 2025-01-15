@@ -35,8 +35,8 @@ const mockConnections = [
 
 export function NetworkPreview() {
   return (
-    <div className="relative rounded-2xl overflow-hidden w-full">
-      <div className="text-center mb-8">
+    <div className="relative rounded-2xl overflow-hidden w-full max-w-none">
+      <div className="text-center mb-8 max-w-2xl mx-auto">
         <p className="text-lg text-white/60">
           Sometimes the data we need is stored somewhere else - in the cloud or on premise. 
           In these cases we have secure connectors to connect your cluster to your data.
@@ -118,34 +118,6 @@ export function NetworkPreview() {
           })}
         </div>
 
-        {/* Connection List */}
-        <div className="space-y-4">
-          {mockConnections.map((connection) => (
-            <div
-              key={connection.name}
-              className="flex items-center justify-between p-4 rounded-xl bg-white/5"
-            >
-              <div className="flex items-center gap-4">
-                <div className="w-2 h-2 rounded-full bg-[#E5DDD5]" />
-                <div>
-                  <h3 className="font-medium">{connection.name}</h3>
-                  <p className="text-sm text-white/40">
-                    {connection.type} • {connection.region}
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-center gap-6">
-                <div className="text-right">
-                  <p className="text-sm text-white/60">{connection.bandwidth}</p>
-                  <p className="text-sm text-white/40">{connection.latency}</p>
-                </div>
-                <span className="px-3 py-1 rounded-full text-sm bg-white/10">
-                  {connection.status}
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
 
       {/* Gradient Overlay */}
