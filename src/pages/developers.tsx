@@ -42,6 +42,31 @@ export default function DevelopersPage() {
       title: t('developers.costControl.title'),
       description: t('developers.costControl.description'),
     },
+    {
+      icon: Cloud,
+      title: t('developers.modelInference.title'),
+      description: t('developers.modelInference.description'),
+    },
+    {
+      icon: Cpu,
+      title: t('developers.kubernetes.title'),
+      description: t('developers.kubernetes.description'),
+    },
+    {
+      icon: Lock,
+      title: t('developers.secureInfra.title'),
+      description: t('developers.secureInfra.description'),
+    },
+    {
+      icon: GitBranch,
+      title: t('developers.gitops.title'),
+      description: t('developers.gitops.description'),
+    },
+    {
+      icon: BarChart3,
+      title: t('developers.costControl.title'),
+      description: t('developers.costControl.description'),
+    },
   ]
 
   return (
