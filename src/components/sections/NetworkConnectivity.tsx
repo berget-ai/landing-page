@@ -10,7 +10,7 @@ export function NetworkConnectivity() {
             Säker Nätverksinfrastruktur
           </h2>
           <p className="text-lg text-white/60">
-            Företagsanpassad uppkoppling med inbyggd säkerhet och 
+            Företagsanpassad uppkoppling med inbyggd säkerhet och
             regelefterlevnad.
           </p>
         </div>
@@ -28,18 +28,16 @@ export function NetworkConnectivity() {
               <h3 className="text-2xl font-medium">Data stannar inom EU</h3>
 
               <p className="text-lg text-white/60">
-                Med våra inferenstjänster lämnar din data aldrig EU, eller ens 
-                vårt datacenter. Ingen data - som prompter och svar - lagras 
-                och kan inte nås av någon annan än dig själv.
+                Med våra inferenstjänster lämnar din data aldrig EU, eller ens
+                vårt datacenter. Ingen data - som prompter och våra AI svar -
+                lagras och kan inte nås av någon annan än dig själv.
               </p>
             </div>
 
             <div className="grid gap-6">
               <div className="p-6 rounded-xl bg-white/5">
                 <Network className="w-6 h-6 mb-4" />
-                <h4 className="text-lg font-medium mb-2">
-                  Direktanslutning
-                </h4>
+                <h4 className="text-lg font-medium mb-2">Direktanslutning</h4>
                 <p className="text-white/60">
                   Anslut säkert via VPN, AWS Direct Connect eller Azure
                   ExpressRoute för optimal prestanda.
@@ -48,20 +46,16 @@ export function NetworkConnectivity() {
 
               <div className="p-6 rounded-xl bg-white/5">
                 <Lock className="w-6 h-6 mb-4" />
-                <h4 className="text-lg font-medium mb-2">
-                  Regelefterlevnad
-                </h4>
+                <h4 className="text-lg font-medium mb-2">Regelefterlevnad</h4>
                 <p className="text-white/60">
-                  Förenklad efterlevnad av EU-förordningar som EU AI Act,
-                  GDPR, Nis-2 och Dora.
+                  Förenklad efterlevnad av EU-förordningar som EU AI Act, GDPR,
+                  Nis-2 och Dora.
                 </p>
               </div>
 
               <div className="p-6 rounded-xl bg-white/5">
                 <Shield className="w-6 h-6 mb-4" />
-                <h4 className="text-lg font-medium mb-2">
-                  Företagssäkerhet
-                </h4>
+                <h4 className="text-lg font-medium mb-2">Företagssäkerhet</h4>
                 <p className="text-white/60">
                   Totalsträckskryptering, åtkomstkontroll och omfattande
                   granskningsloggning.
