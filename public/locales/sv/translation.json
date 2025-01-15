@@ -310,6 +310,10 @@
       }
     }
   },
+  "ragRecipes": {
+    "title": "RAG Recept",
+    "description": "Färdiga recept för Retrieval Augmented Generation för att snabbt bygga kraftfulla AI-applikationer"
+  },
   "modelInference": {
     "popularModels": "Populära modeller",
     "models": {

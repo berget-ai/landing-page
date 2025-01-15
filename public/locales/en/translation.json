@@ -309,6 +309,10 @@
       }
     }
   },
+  "ragRecipes": {
+    "title": "RAG Recipes",
+    "description": "Ready-made recipes for Retrieval Augmented Generation to quickly build powerful AI applications"
+  },
   "modelInference": {
     "popularModels": "Our selection of popular models",
     "models": {
