@@ -1,5 +1,5 @@
 import { Network, Shield, Lock } from 'lucide-react'
-import { NetworkBackground } from '@/components/common/NetworkBackground'
+import { NetworkPreview } from '@/components/common/NetworkPreview'
 
 export function NetworkConnectivity() {
   return (
@@ -16,9 +16,7 @@ export function NetworkConnectivity() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          <div className="relative h-[400px] overflow-hidden bg-black/50">
-            <NetworkBackground />
-          </div>
+          <NetworkPreview />
 
           <div className="space-y-8">
             <div className="space-y-6">
