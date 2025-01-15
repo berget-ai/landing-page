@@ -163,9 +163,9 @@
       "title": "Säker och kompatibel AI",
       "description": "Med våra inferenstjänster lämnar dina data aldrig EU, eller ens vårt datacenter. Ingen data - såsom uppmaningar och svar - lagras och kan inte nås av någon annan än dig själv. Detta förenklar avsevärt efterlevnaden av EU-regler som EU AI Act, GDPR, Nis-2 och Dora."
     },
-    "productionGradePerformance": {
-      "title": "Produktionsklassad prestanda",
-      "description": "Kör inferens i stor skala med förutsägbara kostnader. Du betalar för de dedikerade resurser som betjänar din modell, vilket säkerställer produktionsklassad latens och genomströmning för dina applikationer."
+    "serverlessInference": {
+      "title": "Serverlös Inferens",
+      "description": "Distribuera och skala dina AI-modeller utan att hantera infrastruktur. Betala endast för den beräkningstid du använder, med automatisk skalning baserad på efterfrågan."
     },
     "openWeightsTitle": "Öppna vikter för transparens",
     "openWeightsDescription": "Vi tror på öppen källkod och transparens. Alla våra modeller är tillgängliga för granskning och validering."
