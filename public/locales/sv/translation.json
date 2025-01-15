@@ -142,9 +142,9 @@
   },
   "features": {
     "completeAiPlatform": {
-      "title": "Komplett AI-plattform",
-      "description1": "En omfattande plattform för alla dina AI-behov. Från modellträning till driftsättning tillhandahåller vi verktygen och infrastrukturen för att bygga, testa och skala dina AI-applikationer.",
-      "description2": "Företagsklar med inbyggd övervakning, loggning och säkerhetsfunktioner.",
+      "title": "Komplett AI-plattform med full infrastrukturkontroll",
+      "description1": "Ta full kontroll över din AI-infrastruktur med Infrastructure as Code (IaC) och sömlös GitHub-integration. Från modellträning till driftsättning tillhandahåller vi verktygen för att bygga, testa och skala dina AI-applikationer.",
+      "description2": "Företagsklar med inbyggd övervakning, loggning och säkerhetsfunktioner - allt hanterbart genom kod.",
       "viewFeatures": "Visa funktioner",
       "learnMore": "Läs mer"
     },

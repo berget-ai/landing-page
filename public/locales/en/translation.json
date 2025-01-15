@@ -141,9 +141,9 @@
   },
   "features": {
     "completeAiPlatform": {
-      "title": "Complete AI Platform",
-      "description1": "A comprehensive platform for all your AI needs. From model training to deployment, we provide the tools and infrastructure to build, test, and scale your AI applications.",
-      "description2": "Enterprise-ready with built-in monitoring, logging, and security features.",
+      "title": "Complete AI Platform with Full Infrastructure Control",
+      "description1": "Take complete control of your AI infrastructure with Infrastructure as Code (IaC) and seamless GitHub integration. From model training to deployment, we provide the tools to build, test, and scale your AI applications.",
+      "description2": "Enterprise-ready with built-in monitoring, logging, and security features - all manageable through code.",
       "viewFeatures": "View Features",
       "learnMore": "Learn More"
     },
