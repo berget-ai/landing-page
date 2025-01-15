@@ -196,10 +196,10 @@
   "hero": {
     "tagline": "No data leaves Sweden",
     "title": {
-      "part1": "Redefining Trust",
-      "part2": "in Artificial Intelligence"
+      "part1": "Unlocking AI Innovation",
+      "part2": "in Europe"
     },
-    "description": "We're building Europe's most secure and compliant AI infrastructure. By combining open source models with enterprise-grade security, we enable innovation while ensuring your data never leaves our Swedish data centers.",
+    "description": "The European AI cloud built for developers. We provide secure, compliant infrastructure for AI applications, combining enterprise-grade security with developer-first experience - all powered by Swedish data centers.",
     "getStarted": "Get Started",
     "learnMore": "Learn More"
   },

@@ -197,10 +197,10 @@
   "hero": {
     "tagline": "Ingen data lämnar Sverige",
     "title": {
-      "part1": "Omdefinierar förtroendet",
-      "part2": "för Artificiell Intelligens"
+      "part1": "Frigör AI-innovation",
+      "part2": "i Europa"
     },
-    "description": "Vi bygger Europas säkraste och mest regelefterlevande AI-infrastruktur. Genom att kombinera öppen källkods-modeller med företagsanpassad säkerhet möjliggör vi innovation samtidigt som vi säkerställer att din data aldrig lämnar våra svenska datacenter.",
+    "description": "Det europeiska AI-molnet byggt för utvecklare. Vi tillhandahåller säker, regelefterlevande infrastruktur för AI-applikationer, som kombinerar företagsanpassad säkerhet med utvecklarfokuserad upplevelse - allt drivet av svenska datacenter.",
     "getStarted": "Kom igång",
     "learnMore": "Läs mer"
   },
