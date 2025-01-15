@@ -16,18 +16,18 @@
         "name": "GDPR",
         "description": "Fullständig efterlevnad av EU:s dataskyddsregler",
         "benefits": [
-          "Data stannar inom EU:s gränser",
-          "Fullständig datasuveränitet",
-          "Transparent databehandling"
+          "All data lagras säkert inom Europeiska unionens gränser",
+          "Full suveränitet och kontroll över din data och infrastruktur",
+          "Fullständig transparens i hur din data behandlas och hanteras"
         ]
       },
       "nis2": {
         "name": "NIS2",
         "description": "Direktiv för nätverks- och informationssystemsäkerhet",
         "benefits": [
-          "Förbättrade cybersäkerhetsåtgärder",
-          "Ramverk för incidentrapportering",
-          "Protokoll för riskhantering"
+          "Omfattande cybersäkerhetsåtgärder som skyddar din infrastruktur",
+          "Strukturerat ramverk för incidentrapportering och respons",
+          "Avancerade riskhanteringsprotokoll och övervakningssystem"
         ]
       },
       "schrems2": {

@@ -16,18 +16,18 @@
         "name": "GDPR",
         "description": "Full compliance with EU data protection regulations",
         "benefits": [
-          "Data stays within EU borders",
-          "Complete data sovereignty",
-          "Transparent data processing"
+          "All data is securely stored within European Union borders",
+          "Full sovereignty and control over your data and infrastructure",
+          "Complete transparency in how your data is processed and handled"
         ]
       },
       "nis2": {
         "name": "NIS2",
         "description": "Network and Information Systems Security Directive",
         "benefits": [
-          "Enhanced cybersecurity measures",
-          "Incident reporting framework",
-          "Risk management protocols"
+          "Comprehensive cybersecurity measures protecting your infrastructure",
+          "Structured framework for incident reporting and response",
+          "Advanced risk management protocols and monitoring systems"
         ]
       },
       "schrems2": {
