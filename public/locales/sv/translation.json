@@ -128,6 +128,32 @@
     "status": "Status",
     "support": "Support"
   },
+  "developers": {
+    "byDevsForDevs": {
+      "title": "Av utvecklare för utvecklare",
+      "description": "Byggd med utvecklare i åtanke, vår plattform ger dig verktygen och flexibiliteten du behöver för att bygga kraftfulla AI-applikationer"
+    },
+    "modelInference": {
+      "title": "Modellinferens",
+      "description": "Få tillgång till vår omfattande samling av kraftfulla öppen källkodsmodeller genom serverlösa slutpunkter"
+    },
+    "kubernetes": {
+      "title": "Kubernetes",
+      "description": "Företagsanpassade Kubernetes-kluster med inbyggt GPU-stöd och automatisk skalning"
+    },
+    "secureInfra": {
+      "title": "Säker infrastruktur",
+      "description": "Helkrypterad infrastruktur med omfattande granskningsloggning och åtkomstkontroller"
+    },
+    "gitops": {
+      "title": "GitOps",
+      "description": "Hantera hela din infrastruktur som kod med vårt GitOps-första tillvägagångssätt"
+    },
+    "costControl": {
+      "title": "Fullständig kostnadskontroll",
+      "description": "Full insyn och kontroll över din resursanvändning och kostnader med detaljerad övervakning"
+    }
+  },
   "modelInferenceSection": {
     "title": "Modellinferens",
     "description": "Få tillgång till vår omfattande samling av kraftfulla öppen källkodsmodeller genom serverlösa slutpunkter. Börja bygga AI-applikationer omedelbart med hjälp av OpenAI API-standarden.",

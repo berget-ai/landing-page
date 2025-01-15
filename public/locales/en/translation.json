@@ -128,6 +128,32 @@
     "status": "Status",
     "support": "Support"
   },
+  "developers": {
+    "byDevsForDevs": {
+      "title": "By Developers For Developers",
+      "description": "Built with developers in mind, our platform provides the tools and flexibility you need to build powerful AI applications"
+    },
+    "modelInference": {
+      "title": "Model Inference",
+      "description": "Access our extensive collection of powerful open-source models through serverless endpoints. Start building AI applications immediately using the OpenAI API standard"
+    },
+    "kubernetes": {
+      "title": "Kubernetes",
+      "description": "Enterprise-grade Kubernetes clusters with built-in GPU support and automated scaling"
+    },
+    "secureInfra": {
+      "title": "Secure Infrastructure",
+      "description": "End-to-end encrypted infrastructure with comprehensive audit logging and access controls"
+    },
+    "gitops": {
+      "title": "GitOps",
+      "description": "Manage your entire infrastructure as code with our GitOps-first approach"
+    },
+    "costControl": {
+      "title": "Complete Cost Control",
+      "description": "Full visibility and control over your resource usage and costs with detailed monitoring"
+    }
+  },
   "modelInferenceSection": {
     "title": "Model Inference",
     "description": "Access our extensive collection of powerful open-source models through serverless endpoints. Start building AI applications immediately using the OpenAI API standard.",
