@@ -187,7 +187,7 @@
     },
     "safeCompliantAI": {
       "title": "Säker och kompatibel AI",
-      "description": "Med våra inferenstjänster lämnar dina data aldrig EU, eller ens vårt datacenter. Ingen data - såsom uppmaningar och svar - lagras och kan inte nås av någon annan än dig själv. Detta förenklar avsevärt efterlevnaden av EU-regler som EU AI Act, GDPR, Nis-2 och Dora."
+      "description": "Med våra inferenstjänster lämnar dina data aldrig EU, eller ens vårt datacenter. Ingen data - såsom dina användares AI-prompter och våra svar - lagras och kan inte nås av någon annan än din applikation. Detta förenklar avsevärt efterlevnaden av EU-regler som EU AI Act, GDPR, Nis-2 och Dora."
     },
     "serverlessInference": {
       "title": "Serverlös Inferens",
