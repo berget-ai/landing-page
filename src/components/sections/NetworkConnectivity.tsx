@@ -1,17 +1,18 @@
 import { Network, Shield, Lock } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 import { NetworkPreview } from '@/components/common/NetworkPreview'
 
 export function NetworkConnectivity() {
+  const { t } = useTranslation()
   return (
     <section className="py-24 bg-white/[0.02]">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-3xl font-medium mb-4">
-            Säker Nätverksinfrastruktur
+            {t('networkConnectivity.title')}
           </h2>
           <p className="text-lg text-white/60">
-            Företagsanpassad uppkoppling med inbyggd säkerhet och
-            regelefterlevnad.
+            {t('networkConnectivity.description')}
           </p>
         </div>
 
@@ -25,40 +26,43 @@ export function NetworkConnectivity() {
                 <span>Safe and Compliant AI</span>
               </div>
 
-              <h3 className="text-2xl font-medium">Data stannar inom EU</h3>
+              <h3 className="text-2xl font-medium">
+                {t('networkConnectivity.dataLocation.title')}
+              </h3>
 
               <p className="text-lg text-white/60">
-                Med våra inferenstjänster lämnar din data aldrig EU, eller ens
-                vårt datacenter. Ingen data - som prompter och våra AI svar -
-                lagras och kan inte nås av någon annan än dig själv.
+                {t('networkConnectivity.dataLocation.description')}
               </p>
             </div>
 
             <div className="grid gap-6">
               <div className="p-6 rounded-xl bg-white/5">
                 <Network className="w-6 h-6 mb-4" />
-                <h4 className="text-lg font-medium mb-2">Direktanslutning</h4>
+                <h4 className="text-lg font-medium mb-2">
+                  {t('networkConnectivity.features.directConnect.title')}
+                </h4>
                 <p className="text-white/60">
-                  Anslut säkert via VPN, AWS Direct Connect eller Azure
-                  ExpressRoute för optimal prestanda.
+                  {t('networkConnectivity.features.directConnect.description')}
                 </p>
               </div>
 
               <div className="p-6 rounded-xl bg-white/5">
                 <Lock className="w-6 h-6 mb-4" />
-                <h4 className="text-lg font-medium mb-2">Regelefterlevnad</h4>
+                <h4 className="text-lg font-medium mb-2">
+                  {t('networkConnectivity.features.compliance.title')}
+                </h4>
                 <p className="text-white/60">
-                  Förenklad efterlevnad av EU-förordningar som EU AI Act, GDPR,
-                  Nis-2 och Dora.
+                  {t('networkConnectivity.features.compliance.description')}
                 </p>
               </div>
 
               <div className="p-6 rounded-xl bg-white/5">
                 <Shield className="w-6 h-6 mb-4" />
-                <h4 className="text-lg font-medium mb-2">Företagssäkerhet</h4>
+                <h4 className="text-lg font-medium mb-2">
+                  {t('networkConnectivity.features.security.title')}
+                </h4>
                 <p className="text-white/60">
-                  Totalsträckskryptering, åtkomstkontroll och omfattande
-                  granskningsloggning.
+                  {t('networkConnectivity.features.security.description')}
                 </p>
               </div>
             </div>
