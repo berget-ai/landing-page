@@ -292,7 +292,7 @@
     "title": "Säker Nätverksinfrastruktur",
     "description": "Företagsanpassad uppkoppling med inbyggd säkerhet och regelefterlevnad.",
     "dataLocation": {
-      "title": "Data stannar inom EU",
+      "title": "All data stannar inom EU",
       "description": "Med våra inferenstjänster lämnar din data aldrig EU, eller ens vårt datacenter. Ingen data - som prompter och våra AI svar - lagras och kan inte nås av någon annan än dig själv."
     },
     "features": {
@@ -305,7 +305,7 @@
         "description": "Förenklad efterlevnad av EU-förordningar som EU AI Act, GDPR, Nis-2 och Dora."
       },
       "security": {
-        "title": "Företagssäkerhet", 
+        "title": "Företagssäkerhet",
         "description": "Totalsträckskryptering, åtkomstkontroll och omfattande granskningsloggning."
       }
     }
