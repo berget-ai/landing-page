@@ -35,10 +35,16 @@ const mockConnections = [
 
 export function NetworkPreview() {
   return (
-    <div className="relative rounded-2xl overflow-hidden">
+    <div className="relative rounded-2xl overflow-hidden w-full">
+      <div className="text-center mb-8">
+        <p className="text-lg text-white/60">
+          Sometimes the data we need is stored somewhere else - in the cloud or on premise. 
+          In these cases we have secure connectors to connect your cluster to your data.
+        </p>
+      </div>
       {/* Network Topology Visualization */}
       <div className="relative bg-[#1A1A1A] p-8">
-        <div className="relative h-[400px]">
+        <div className="relative h-[600px]">
           {/* Center AI Cluster Node */}
           <div className="absolute left-1/4 top-1/2 -translate-x-1/2 -translate-y-1/2">
             <div className="w-32 h-32 rounded-full bg-[#E5DDD5]/10 flex items-center justify-center relative">
