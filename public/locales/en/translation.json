@@ -287,6 +287,28 @@
       }
     }
   },
+  "networkConnectivity": {
+    "title": "Secure Network Infrastructure",
+    "description": "Enterprise-grade connectivity with built-in security and compliance.",
+    "dataLocation": {
+      "title": "Data Stays Within EU",
+      "description": "With our inference services, your data never leaves the EU, or even our data center. No data - such as prompts and our AI responses - is stored and cannot be accessed by anyone but yourself."
+    },
+    "features": {
+      "directConnect": {
+        "title": "Direct Connection",
+        "description": "Connect securely via VPN, AWS Direct Connect or Azure ExpressRoute for optimal performance."
+      },
+      "compliance": {
+        "title": "Compliance",
+        "description": "Simplified compliance with EU regulations like EU AI Act, GDPR, Nis-2 and Dora."
+      },
+      "security": {
+        "title": "Enterprise Security",
+        "description": "End-to-end encryption, access control and comprehensive audit logging."
+      }
+    }
+  },
   "modelInference": {
     "popularModels": "Our selection of popular models",
     "models": {

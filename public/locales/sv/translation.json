@@ -288,6 +288,28 @@
       }
     }
   },
+  "networkConnectivity": {
+    "title": "Säker Nätverksinfrastruktur",
+    "description": "Företagsanpassad uppkoppling med inbyggd säkerhet och regelefterlevnad.",
+    "dataLocation": {
+      "title": "Data stannar inom EU",
+      "description": "Med våra inferenstjänster lämnar din data aldrig EU, eller ens vårt datacenter. Ingen data - som prompter och våra AI svar - lagras och kan inte nås av någon annan än dig själv."
+    },
+    "features": {
+      "directConnect": {
+        "title": "Direktanslutning",
+        "description": "Anslut säkert via VPN, AWS Direct Connect eller Azure ExpressRoute för optimal prestanda."
+      },
+      "compliance": {
+        "title": "Regelefterlevnad",
+        "description": "Förenklad efterlevnad av EU-förordningar som EU AI Act, GDPR, Nis-2 och Dora."
+      },
+      "security": {
+        "title": "Företagssäkerhet", 
+        "description": "Totalsträckskryptering, åtkomstkontroll och omfattande granskningsloggning."
+      }
+    }
+  },
   "modelInference": {
     "popularModels": "Populära modeller",
     "models": {
