@@ -141,6 +141,13 @@
     "cnameInstruction": "Konfigurera din CNAME-post för att börja använda tjänsten"
   },
   "features": {
+    "completeAiPlatform": {
+      "title": "Komplett AI-plattform",
+      "description1": "En omfattande plattform för alla dina AI-behov. Från modellträning till driftsättning tillhandahåller vi verktygen och infrastrukturen för att bygga, testa och skala dina AI-applikationer.",
+      "description2": "Företagsklar med inbyggd övervakning, loggning och säkerhetsfunktioner.",
+      "viewFeatures": "Visa funktioner",
+      "learnMore": "Läs mer"
+    },
     "modelInference": {
       "title": "AI inferens",
       "description1": "Serverlös inferens av kraftfulla öppen källkodsmodeller. Få tillgång till våra 50+ modeller inklusive Llama 3, Mixtral, genom serverlösa slutpunkter och börja bygga dina AI-applikationer med hjälp av Open AI API-standarden.",

@@ -140,6 +140,13 @@
     "popularModels": "Popular Models"
   },
   "features": {
+    "completeAiPlatform": {
+      "title": "Complete AI Platform",
+      "description1": "A comprehensive platform for all your AI needs. From model training to deployment, we provide the tools and infrastructure to build, test, and scale your AI applications.",
+      "description2": "Enterprise-ready with built-in monitoring, logging, and security features.",
+      "viewFeatures": "View Features",
+      "learnMore": "Learn More"
+    },
     "modelInference": {
       "title": "Model inference",
       "description1": "Serverless inference of powerful open-source models. Access our 50+ models including Llama 3, Mixtral, through serverless endpoints and start building your AI applications using the Open AI API standard.",
