@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { Code, Cloud, Lock, Git, BarChart3, Cpu } from 'lucide-react'
+import { Code, Cloud, Lock, GitBranch, BarChart3, Cpu } from 'lucide-react'
 import { Typewriter } from '@/components/ui/typewriter'
 
 export default function DevelopersPage() {
@@ -33,7 +33,7 @@ export default function DevelopersPage() {
       description: t('developers.secureInfra.description'),
     },
     {
-      icon: Git,
+      icon: GitBranch,
       title: t('developers.gitops.title'),
       description: t('developers.gitops.description'),
     },
