@@ -1,12 +1,19 @@
 # Sveriges AI-revolution: En strategi för framtiden
 
-> **"Open Source revolutionerar AI-utvecklingen"**
+> **"AI-utvecklingen tar en oväntad vändning"**
 >
-> Januari 2024 markerar ett historiskt skifte inom AI: För första gången presterar öppna AI-modeller bättre än de stängda. DeepSeek och liknande open source-projekt visar att distribuerad innovation nu överträffar enskilda företags resurser. Detta är en fundamental förändring som öppnar nya möjligheter för Sverige och andra länder att delta i AI-utvecklingen på lika villkor.
+> Januari 2024 markerar ett historiskt skifte inom AI: För första gången presterar öppna AI-modeller bättre än de stängda. DeepSeek visar att smarta algoritmer och effektiv resursanvändning kan överträffa råstyrkan i storskaliga träningsmodeller. Detta paradigmskifte öppnar nya möjligheter för länder som Sverige att delta i och forma AI-utvecklingen.
 
-## Open Source förändrar spelplanen
+## Två parallella spår i AI-utvecklingen
 
-Den verkliga revolutionen handlar inte om geopolitisk konkurrens mellan USA och Kina, utan om hur open source-communityn nu leder AI-utvecklingen. När tusentals utvecklare världen över kan experimentera med och förbättra modellerna parallellt, överträffar resultaten vad även de mest välfinansierade företagen kan åstadkomma på egen hand.
+AI-utvecklingen går både långsammare och snabbare än vad många tror. OpenAIs strategi att bygga bättre AI genom exponentiellt större datamängder och beräkningskraft möter fundamentala begränsningar. Denna väg kräver tiotals gånger mer data, datorkraft och energi för varje marginell förbättring - en ohållbar utveckling som kommer att sakta ner.
+
+Samtidigt ser vi en alternativ väg framåt genom projekt som DeepSeek. När chipbegränsningar tvingade fram innovation i algoritmer istället för råstyrka, upptäckte man att smartare resursanvändning kan ge bättre resultat än storskalig träning. Genom att dela dessa innovationer öppet accelererar nu utvecklingen på ett distribuerat sätt.
+
+Detta skifte från centraliserad till distribuerad innovation betyder att:
+- Fler länder och aktörer kan delta i utvecklingen
+- Nischade databaser och specifika problem blir värdefulla tillgångar
+- Framtidens AGI kan växa fram genom samverkande specialiserade AI-agenter
 
 Ett konkret exempel på denna förändring hittar vi i Sveriges största manliga yrkesgrupp: programmerare. Svenska utvecklare har inte bara anammat AI-verktyg som GitHub Copilot, utan bidrar också aktivt till open source-projekt som förbättrar dessa verktyg. Detta visar vägen för hur mindre länder kan vara med och forma AI-utvecklingen.
 
