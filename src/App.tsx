@@ -9,6 +9,7 @@ import { MarkdownPage } from '@/components/common/MarkdownPage'
 import HomePage from '@/pages/index'
 import PricingPage from '@/pages/pricing'
 import DevelopersPage from '@/pages/developers'
+import BlogPage from '@/pages/blog'
 
 // Markdown content
 import { html as termsHtml } from '@/pages/terms.md'
@@ -41,6 +42,7 @@ function App() {
             element={<MarkdownPage html={acceptableUseHtml} />}
           />
           <Route path="/sla" element={<MarkdownPage html={slaHtml} />} />
+          <Route path="/blog" element={<BlogPage />} />
         </Routes>
         <Footer />
         <ChatWidget />

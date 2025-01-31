@@ -1,0 +1,70 @@
+import { useTranslation } from 'react-i18next'
+import { BlogPost } from '@/types/blog'
+
+// This would typically come from an API or CMS
+const posts: BlogPost[] = [
+  {
+    id: '1',
+    title: 'Introducing Berget AI',
+    description: 'The next generation of AI infrastructure for European enterprises',
+    date: '2024-01-30',
+    author: 'Berget Team',
+    content: '...',
+    tags: ['announcement', 'product']
+  },
+  {
+    id: '2', 
+    title: 'AI Security Best Practices',
+    description: 'How to keep your AI applications secure and compliant',
+    date: '2024-01-25',
+    author: 'Security Team',
+    content: '...',
+    tags: ['security', 'compliance']
+  }
+]
+
+export default function BlogPage() {
+  const { t } = useTranslation()
+
+  return (
+    <main className="min-h-screen pt-24">
+      <div className="container mx-auto px-4 py-12">
+        <div className="max-w-2xl mx-auto mb-16">
+          <h1 className="text-4xl font-medium mb-4">{t('blog.title', 'Blog')}</h1>
+          <p className="text-lg text-white/60">
+            {t('blog.description', 'Latest news and insights from the Berget team')}
+          </p>
+        </div>
+
+        <div className="grid gap-8 max-w-3xl mx-auto">
+          {posts.map((post) => (
+            <article 
+              key={post.id}
+              className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors"
+            >
+              <div className="flex items-center gap-4 text-sm text-white/60 mb-3">
+                <time dateTime={post.date}>
+                  {new Date(post.date).toLocaleDateString()}
+                </time>
+                <span>•</span>
+                <span>{post.author}</span>
+              </div>
+              <h2 className="text-2xl font-medium mb-2">{post.title}</h2>
+              <p className="text-white/80 mb-4">{post.description}</p>
+              <div className="flex gap-2">
+                {post.tags.map((tag) => (
+                  <span 
+                    key={tag}
+                    className="px-2 py-1 rounded-full bg-white/10 text-sm"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </main>
+  )
+}
