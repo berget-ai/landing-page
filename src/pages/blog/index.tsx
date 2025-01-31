@@ -3,9 +3,19 @@ import { BlogPost } from '@/types/blog'
 import { html as introducingBergetAI } from './posts/introducing-berget-ai.md'
 import { html as sverigesAIRevolution } from './posts/sveriges-ai-revolution.md'
 import { html as openSourceRevolution } from './posts/open-source-revolution.md'
+import { html as swedishDevelopers } from './posts/swedish-developers-ai-era.md'
 
 // This would typically come from an API or CMS
 const posts: BlogPost[] = [
+  {
+    id: '4',
+    title: 'Svenska utvecklare i AI-eran: Utmaningar och möjligheter',
+    description: 'Hur Sveriges största yrkesgrupp kan dra nytta av AI-revolutionen',
+    date: '2024-02-02',
+    author: 'Berget Team',
+    content: swedishDevelopers,
+    tags: ['developers', 'ai-impact', 'future-of-work']
+  },
   {
     id: '3',
     title: 'Open Source revolutionerar AI-utvecklingen',
