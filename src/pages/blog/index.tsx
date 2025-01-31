@@ -104,6 +104,15 @@ export default function BlogPage() {
               key={post.id}
               className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors"
             >
+              {post.image && (
+                <div className="relative w-full h-48 mb-6 rounded-lg overflow-hidden">
+                  <img 
+                    src={post.image} 
+                    alt={post.imageAlt || post.title}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </div>
+              )}
               <div className="flex items-center gap-4 text-sm text-white/60 mb-3">
                 <time dateTime={post.date}>
                   {new Date(post.date).toLocaleDateString()}
@@ -113,7 +122,7 @@ export default function BlogPage() {
               </div>
               <h2 className="text-2xl font-medium mb-2">{post.title}</h2>
               <p className="text-white/80 mb-4">{post.description}</p>
-              <div className="flex gap-2">
+              <div className="flex flex-wrap gap-2">
                 {post.tags.map((tag) => (
                   <span
                     key={tag}

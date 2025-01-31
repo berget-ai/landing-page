@@ -6,4 +6,6 @@ export interface BlogPost {
   author: string
   content: string
   tags: string[]
+  image?: string
+  imageAlt?: string
 }
