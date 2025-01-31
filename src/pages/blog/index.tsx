@@ -4,9 +4,19 @@ import { html as introducingBergetAI } from './posts/introducing-berget-ai.md'
 import { html as sverigesAIRevolution } from './posts/sveriges-ai-revolution.md'
 import { html as openSourceRevolution } from './posts/open-source-revolution.md'
 import { html as swedishDevelopers } from './posts/swedish-developers-ai-era.md'
+import { html as fineTuningSweden } from './posts/fine-tuning-swedish-way.md'
 
 // This would typically come from an API or CMS
 const posts: BlogPost[] = [
+  {
+    id: '5',
+    title: 'Fine-tuning: Sveriges väg till AI-framgång',
+    description: 'Hur KB och AI Sweden kan samarbeta för att skapa världsledande AI-modeller',
+    date: '2024-02-03',
+    author: 'Berget Team',
+    content: fineTuningSweden,
+    tags: ['fine-tuning', 'kb', 'ai-sweden', 'strategy']
+  },
   {
     id: '4',
     title: 'Svenska utvecklare i AI-eran: Utmaningar och möjligheter',
