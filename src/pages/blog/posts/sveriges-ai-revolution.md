@@ -1,12 +1,14 @@
 # Sveriges AI-revolution: En strategi för framtiden
 
-> **"Sverige 2024: Öppna AI-modeller utmanar Silicon Valley-monopolet"**
+> **"Open Source revolutionerar AI-utvecklingen"**
 >
-> De senaste månadernas utveckling inom artificiell intelligens har förändrat spelplanen. Efter år av dominans från Silicon Valley-jättar som OpenAI, ser vi nu hur öppna AI-modeller som Llama 2 och Mistral presterar i nivå med GPT-4. Detta skapar konkreta möjligheter för Sverige att bygga egen AI-kapacitet utan att vara beroende av amerikanska tech-jättar.
+> Januari 2024 markerar ett historiskt skifte inom AI: För första gången presterar öppna AI-modeller bättre än de stängda. DeepSeek och liknande open source-projekt visar att distribuerad innovation nu överträffar enskilda företags resurser. Detta är en fundamental förändring som öppnar nya möjligheter för Sverige och andra länder att delta i AI-utvecklingen på lika villkor.
 
-## Svenska utvecklare visar vägen
+## Open Source förändrar spelplanen
 
-Ett konkret exempel på den disruption vi står inför hittar vi i Sveriges största manliga yrkesgrupp: programmerare. Svenska utvecklare har snabbt anammat AI-verktyg som GitHub Copilot och liknande för att öka sin produktivitet. Men detta är bara början på en fundamental förändring av hur mjukvara utvecklas.
+Den verkliga revolutionen handlar inte om geopolitisk konkurrens mellan USA och Kina, utan om hur open source-communityn nu leder AI-utvecklingen. När tusentals utvecklare världen över kan experimentera med och förbättra modellerna parallellt, överträffar resultaten vad även de mest välfinansierade företagen kan åstadkomma på egen hand.
+
+Ett konkret exempel på denna förändring hittar vi i Sveriges största manliga yrkesgrupp: programmerare. Svenska utvecklare har inte bara anammat AI-verktyg som GitHub Copilot, utan bidrar också aktivt till open source-projekt som förbättrar dessa verktyg. Detta visar vägen för hur mindre länder kan vara med och forma AI-utvecklingen.
 
 ### Utmaning och möjlighet för utvecklare
 
