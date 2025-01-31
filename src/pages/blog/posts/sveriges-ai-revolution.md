@@ -75,7 +75,15 @@ En amerikansk AI-modell kan verka neutral när den diskuterar politik, men dess 
 
 ## En smart väg framåt
 
-Sverige behöver inte – och bör inte – försöka konkurrera med tech-jättarna om att utveckla nya grundmodeller från scratch. Istället kan vi utnyttja den växande tillgången på kraftfulla öppna AI-modeller och göra dem "svenska" genom finjustering (fine-tuning). Det är som att bjuda in en begåvad gästforskare och ge hen djup förståelse för svensk kultur, värderingar och samhällsmodell.
+Sverige behöver inte – och bör inte – försöka konkurrera med tech-jättarna om att utveckla nya grundmodeller från scratch. AI Sweden har redan visat hur resurskrävande och utmanande detta är. Trots betydande investeringar i att bygga en svensk språkmodell från grunden, har resultaten hamnat långt efter de öppna modeller som nu finns tillgängliga.
+
+Istället bör vi fokusera på att bygga en effektiv fine-tuning och alignment pipeline som kan anpassa dessa öppna modeller till svenska förhållanden. Detta är en uppgift som passar perfekt för institutioner som Kungliga Biblioteket, som redan förvaltar en unik skatt av svensk text och bildmaterial. Genom att träna modeller på kvalitativt innehåll från svenska författare som Astrid Lindgren, Ivar Lo-Johansson och Fritiof Nilsson Piraten, snarare än innehåll från Flashback och Familjeliv, kan vi säkerställa att AI-modellerna reflekterar svenska värderingar och kulturarv.
+
+AI Sweden bör omorientera sitt uppdrag från grundmodellsutveckling till att:
+1. Bygga automatiserade fine-tuning pipelines
+2. Utveckla alignment-metoder för svenska värderingar
+3. Samordna datainsamling från kulturarvsinstitutioner
+4. Standardisera utvärderingsmetoder för svenska AI-modeller
 
 ### Praktiska exempel på fine-tuning i Sverige
 
