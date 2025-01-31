@@ -33,6 +33,8 @@ export default function BlogPage() {
             author: metadata.author || 'Berget Team',
             content: content.replace(/^---\n[\s\S]*?\n---\n/, ''), // Remove frontmatter
             tags: metadata.tags || [],
+            image: metadata.image || '',
+            imageAlt: metadata.imageAlt || ''
           }
         })
 
