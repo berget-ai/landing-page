@@ -1,3 +1,11 @@
+---
+title: "Introducing Berget AI: The Next Generation of European AI Infrastructure"
+description: "Berget AI launches to provide secure, compliant, and sustainable AI infrastructure for European enterprises"
+date: "2024-01-30"
+author: "Berget Team"
+tags: ["announcement", "product", "launch"]
+---
+
 # Introducing Berget AI: The Next Generation of European AI Infrastructure
 
 > Berget AI launches to provide secure, compliant, and sustainable AI infrastructure for European enterprises. Built from the ground up with European values and regulations in mind, Berget AI offers a complete platform for building and deploying AI applications.
