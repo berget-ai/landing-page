@@ -1,14 +1,27 @@
 # Sveriges AI-revolution: En strategi för framtiden
 
-> **"AI-utvecklingen tar en oväntad vändning"**
+> **"Sveriges väg till ledande AI-nation"**
 >
-> Januari 2024 markerar ett historiskt skifte inom AI: För första gången presterar öppna AI-modeller bättre än de stängda. DeepSeek visar att smarta algoritmer och effektiv resursanvändning kan överträffa råstyrkan i storskaliga träningsmodeller. Detta paradigmskifte öppnar nya möjligheter för länder som Sverige att delta i och forma AI-utvecklingen.
+> Sverige står inför en unik möjlighet att ta täten i utvecklingen av nästa generations AI-infrastruktur. Genom att kombinera våra styrkor inom regelefterlevnad, hållbarhet och innovation kan vi bygga en ledande position i den europeiska AI-ekonomin.
 
-## Två parallella spår i AI-utvecklingen
+## Varför Sverige behöver agera nu
 
-AI-utvecklingen går både långsammare och snabbare än vad många tror. OpenAIs strategi att bygga bättre AI genom exponentiellt större datamängder och beräkningskraft möter fundamentala begränsningar. Denna väg kräver tiotals gånger mer data, datorkraft och energi för varje marginell förbättring - en ohållbar utveckling som kommer att sakta ner.
+Den globala AI-utvecklingen står vid ett vägskäl. Medan stora tech-företag fortsätter att investera miljarder i storskaliga modeller, ser vi nu hur öppna AI-lösningar med smartare resursanvändning tar täten. Detta skapar en unik möjlighet för Sverige att:
 
-Samtidigt ser vi en alternativ väg framåt genom projekt som DeepSeek. När chipbegränsningar tvingade fram innovation i algoritmer istället för råstyrka, upptäckte man att smartare resursanvändning kan ge bättre resultat än storskalig träning. Genom att dela dessa innovationer öppet accelererar nu utvecklingen på ett distribuerat sätt.
+1. **Bygga hållbar AI-infrastruktur**
+   - Optimerad för nordiskt klimat
+   - 100% förnybar energi
+   - Resurseffektiv arkitektur
+
+2. **Säkra regelefterlevnad**
+   - Inbyggd GDPR-kompatibilitet
+   - Alignment med EU AI Act
+   - Transparent utvecklingsprocess
+
+3. **Utveckla svensk AI-kompetens**
+   - Fokus på praktisk implementation
+   - Specialisering inom nyckelområden
+   - Internationellt samarbete
 
 Detta skifte från centraliserad till distribuerad innovation betyder att:
 - Fler länder och aktörer kan delta i utvecklingen
