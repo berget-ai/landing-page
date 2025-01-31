@@ -2,9 +2,19 @@ import { useTranslation } from 'react-i18next'
 import { BlogPost } from '@/types/blog'
 import { html as introducingBergetAI } from './posts/introducing-berget-ai.md'
 import { html as sverigesAIRevolution } from './posts/sveriges-ai-revolution.md'
+import { html as openSourceRevolution } from './posts/open-source-revolution.md'
 
 // This would typically come from an API or CMS
 const posts: BlogPost[] = [
+  {
+    id: '3',
+    title: 'Open Source revolutionerar AI-utvecklingen',
+    description: 'Hur öppna AI-modeller förändrar spelplanen och skapar nya möjligheter',
+    date: '2024-02-01',
+    author: 'Berget Team',
+    content: openSourceRevolution,
+    tags: ['open-source', 'ai-development', 'innovation']
+  },
   {
     id: '2',
     title: 'Sveriges AI-revolution: En strategi för framtiden',
