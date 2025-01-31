@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { BlogPost } from '@/types/blog'
+import { html as introducingBergetAI } from './posts/introducing-berget-ai.md'
 
 // This would typically come from an API or CMS
 const posts: BlogPost[] = [
@@ -9,17 +10,8 @@ const posts: BlogPost[] = [
     description: 'The next generation of AI infrastructure for European enterprises',
     date: '2024-01-30',
     author: 'Berget Team',
-    content: '...',
+    content: introducingBergetAI,
     tags: ['announcement', 'product']
-  },
-  {
-    id: '2', 
-    title: 'AI Security Best Practices',
-    description: 'How to keep your AI applications secure and compliant',
-    date: '2024-01-25',
-    author: 'Security Team',
-    content: '...',
-    tags: ['security', 'compliance']
   }
 ]
 
