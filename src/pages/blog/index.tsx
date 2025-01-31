@@ -34,8 +34,8 @@ export default function BlogPage() {
           }
         })
 
-      // Load arguments for reference/linking
-      const arguments = Object.entries(postModules)
+      // Load argument files for reference/linking
+      const argumentFiles = Object.entries(postModules)
         .filter(([path]) => path.includes('/arguments/'))
         .reduce((acc, [path, module]: [string, any]) => {
           const fileName = path.split('/').pop()?.replace('.md', '') || ''
