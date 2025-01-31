@@ -40,16 +40,23 @@ export default function BlogPage() {
     loadPosts()
   }, [])
 
-  // Helper function to extract date from filename or content
-  const getDateFromFileName = (fileName: string) => {
-    // Default to recent date if not found
-    return '2024-02-01'
-  }
-
-  // Helper function to extract tags from content
-  const getTagsFromContent = (content: string) => {
-    // Extract tags from content or return defaults
-    return ['ai', 'technology']
+  const parseYamlMetadata = (yaml: string) => {
+    const metadata: Record<string, any> = {}
+    const lines = yaml.split('\n')
+    
+    lines.forEach(line => {
+      const match = line.match(/^(\w+):\s*"?([^"]*)"?$/)
+      if (match) {
+        const [_, key, value] = match
+        if (key === 'tags') {
+          metadata[key] = value.replace(/[\[\]]/g, '').split(',').map(t => t.trim())
+        } else {
+          metadata[key] = value
+        }
+      }
+    })
+    
+    return metadata
   }
   {
     id: '5',

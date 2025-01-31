@@ -1,3 +1,11 @@
+---
+title: "Fine-tuning: Sveriges väg till AI-framgång"
+description: "Hur KB och AI Sweden kan samarbeta för att skapa världsledande AI-modeller"
+date: "2024-02-03"
+author: "Berget Team"
+tags: ["fine-tuning", "kb", "ai-sweden", "strategy"]
+---
+
 # Fine-tuning: Sveriges väg till AI-framgång
 
 > **"Kvalitet framför kvantitet i svensk AI-utveckling"**
