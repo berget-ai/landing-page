@@ -75,53 +75,6 @@ export default function BlogPage() {
     
     return metadata
   }
-  const posts: BlogPost[] = [
-    {
-      id: '5',
-      title: 'Fine-tuning: Sveriges väg till AI-framgång',
-      description: 'Hur KB och AI Sweden kan samarbeta för att skapa världsledande AI-modeller',
-      date: '2024-02-03',
-      author: 'Berget Team',
-      content: fineTuningSweden,
-      tags: ['fine-tuning', 'kb', 'ai-sweden', 'strategy']
-    },
-  {
-    id: '4',
-    title: 'Svenska utvecklare i AI-eran: Utmaningar och möjligheter',
-    description: 'Hur Sveriges största yrkesgrupp kan dra nytta av AI-revolutionen',
-    date: '2024-02-02',
-    author: 'Berget Team',
-    content: swedishDevelopers,
-    tags: ['developers', 'ai-impact', 'future-of-work']
-  },
-  {
-    id: '3',
-    title: 'Open Source revolutionerar AI-utvecklingen',
-    description: 'Hur öppna AI-modeller förändrar spelplanen och skapar nya möjligheter',
-    date: '2024-02-01',
-    author: 'Berget Team',
-    content: openSourceRevolution,
-    tags: ['open-source', 'ai-development', 'innovation']
-  },
-  {
-    id: '2',
-    title: 'Sveriges AI-revolution: En strategi för framtiden',
-    description: 'Hur Sverige kan leda utvecklingen av ansvarsfull AI i Europa',
-    date: '2024-01-31',
-    author: 'Berget Team',
-    content: sverigesAIRevolution,
-    tags: ['strategy', 'sweden', 'ai-policy']
-  },
-  {
-    id: '1',
-    title: 'Introducing Berget AI',
-    description: 'The next generation of AI infrastructure for European enterprises',
-    date: '2024-01-30',
-    author: 'Berget Team',
-    content: introducingBergetAI,
-    tags: ['announcement', 'product']
-  }
-]
 
 export default function BlogPage() {
   const { t } = useTranslation()
