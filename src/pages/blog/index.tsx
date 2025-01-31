@@ -1,13 +1,56 @@
 import { useTranslation } from 'react-i18next'
 import { BlogPost } from '@/types/blog'
-import { html as introducingBergetAI } from './posts/introducing-berget-ai.md'
-import { html as sverigesAIRevolution } from './posts/sveriges-ai-revolution.md'
-import { html as openSourceRevolution } from './posts/open-source-revolution.md'
-import { html as swedishDevelopers } from './posts/swedish-developers-ai-era.md'
-import { html as fineTuningSweden } from './posts/fine-tuning-swedish-way.md'
+import { useEffect, useState } from 'react'
 
-// This would typically come from an API or CMS
-const posts: BlogPost[] = [
+export default function BlogPage() {
+  const { t } = useTranslation()
+  const [posts, setPosts] = useState<BlogPost[]>([])
+
+  useEffect(() => {
+    // This would typically be an API call
+    const loadPosts = async () => {
+      const postModules = import.meta.glob('./posts/*.md', { eager: true })
+      
+      const loadedPosts = Object.entries(postModules).map(([path, module]: [string, any]) => {
+        const fileName = path.split('/').pop()?.replace('.md', '') || ''
+        const id = fileName
+        
+        // Extract metadata from the first few lines of the content
+        const lines = module.html.split('\n')
+        const title = lines[0].replace('# ', '')
+        const description = lines[2].replace('> ', '')
+        
+        return {
+          id,
+          title,
+          description,
+          date: getDateFromFileName(fileName),
+          author: 'Berget Team',
+          content: module.html,
+          tags: getTagsFromContent(module.html)
+        }
+      })
+
+      // Sort by date descending
+      setPosts(loadedPosts.sort((a, b) => 
+        new Date(b.date).getTime() - new Date(a.date).getTime()
+      ))
+    }
+
+    loadPosts()
+  }, [])
+
+  // Helper function to extract date from filename or content
+  const getDateFromFileName = (fileName: string) => {
+    // Default to recent date if not found
+    return '2024-02-01'
+  }
+
+  // Helper function to extract tags from content
+  const getTagsFromContent = (content: string) => {
+    // Extract tags from content or return defaults
+    return ['ai', 'technology']
+  }
   {
     id: '5',
     title: 'Fine-tuning: Sveriges väg till AI-framgång',
