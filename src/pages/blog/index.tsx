@@ -1,9 +1,19 @@
 import { useTranslation } from 'react-i18next'
 import { BlogPost } from '@/types/blog'
 import { html as introducingBergetAI } from './posts/introducing-berget-ai.md'
+import { html as sverigesAIRevolution } from './posts/sveriges-ai-revolution.md'
 
 // This would typically come from an API or CMS
 const posts: BlogPost[] = [
+  {
+    id: '2',
+    title: 'Sveriges AI-revolution: En strategi för framtiden',
+    description: 'Hur Sverige kan leda utvecklingen av ansvarsfull AI i Europa',
+    date: '2024-01-31',
+    author: 'Berget Team',
+    content: sverigesAIRevolution,
+    tags: ['strategy', 'sweden', 'ai-policy']
+  },
   {
     id: '1',
     title: 'Introducing Berget AI',
