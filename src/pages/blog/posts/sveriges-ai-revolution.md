@@ -28,6 +28,25 @@ Vi har ett försprång: EU:s AI Act träder i kraft 2025 och ger svenska företa
 
 - **Fordonsindustrin**: Volvo och Scania leder utvecklingen av AI-system för autonoma fordon som följer EU:s säkerhetskrav. När dessa krav blir global standard har svenska företag redan färdiga lösningar.
 
+## Svenska utvecklare vid ett vägskäl
+
+Ett konkret exempel på den disruption vi står inför hittar vi i Sveriges största manliga yrkesgrupp: programmerare. Svenska utvecklare har snabbt anammat AI-verktyg som GitHub Copilot och liknande för att öka sin produktivitet. Men detta är bara början på en fundamental förändring av hur mjukvara utvecklas.
+
+### Utmaning och möjlighet
+
+Paradoxen är slående: Samma AI-teknologi som gör svenska utvecklare mer produktiva kan också hota deras jobb på sikt. Men som litet land med hög teknisk kompetens har vi en unik möjlighet:
+
+- **Konkurrenskraft**: Med AI-förstärkta utvecklingsverktyg kan svenska team nu konkurrera med mycket större organisationer
+- **Specialisering**: Genom att fokusera på AI-förstärkt utveckling för specifika branscher (fintech, healthtech, industritech) där Sverige är starka
+- **Exportpotential**: Svenska utvecklare kan skapa AI-verktyg och tjänster för en global marknad
+
+### Risken om vi inte agerar
+
+Utan en tydlig strategi riskerar vi att:
+- Förlora tusentals utvecklarjobb till AI-automatisering
+- Se en kompetensflykt när svenska utvecklare söker sig till ledande AI-miljöer utomlands
+- Missa möjligheten att bygga nästa generations utvecklingsverktyg
+
 ## Den kulturella dimensionen
 
 Ett ofta förbisett men avgörande problem med dagens AI-modeller är deras kulturella och värderingsmässiga bias. När vi använder AI-modeller från USA eller Kina importerar vi inte bara teknik – vi importerar också deras världsbild och värderingar, ofta utan att märka det.
