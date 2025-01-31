@@ -9,25 +9,25 @@ export default function BlogPage() {
   useEffect(() => {
     // This would typically be an API call
     const loadPosts = async () => {
-      const postModules = import.meta.glob('./posts/*.md', { eager: true })
+      const postModules = import.meta.glob('./posts/**/*.md', { eager: true })
       
       const loadedPosts = Object.entries(postModules).map(([path, module]: [string, any]) => {
         const fileName = path.split('/').pop()?.replace('.md', '') || ''
         const id = fileName
         
-        // Extract metadata from the first few lines of the content
-        const lines = module.html.split('\n')
-        const title = lines[0].replace('# ', '')
-        const description = lines[2].replace('> ', '')
+        // Extract metadata from frontmatter
+        const content = module.html
+        const metadataMatch = content.match(/^---\n([\s\S]*?)\n---\n/)
+        const metadata = metadataMatch ? parseYamlMetadata(metadataMatch[1]) : {}
         
         return {
           id,
-          title,
-          description,
-          date: getDateFromFileName(fileName),
-          author: 'Berget Team',
-          content: module.html,
-          tags: getTagsFromContent(module.html)
+          title: metadata.title || '',
+          description: metadata.description || '',
+          date: metadata.date || '',
+          author: metadata.author || 'Berget Team',
+          content: content.replace(/^---\n[\s\S]*?\n---\n/, ''), // Remove frontmatter
+          tags: metadata.tags || []
         }
       })
 
