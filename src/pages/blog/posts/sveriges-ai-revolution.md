@@ -1,3 +1,13 @@
+---
+title: "Sveriges AI-revolution: En strategi för framtiden"
+description: "Hur Sverige kan leda utvecklingen av ansvarsfull AI i Europa"
+date: "2024-01-31"
+author: "Berget Team"
+tags: ["strategy", "sweden", "ai-policy"]
+image: "https://images.unsplash.com/photo-1526666923127-b2970f64b422?q=80"
+imageAlt: "Stockholm cityscape at dusk reflecting technology and innovation"
+---
+
 # Sveriges AI-revolution: En strategi för framtiden
 
 > **"Sveriges väg till ledande AI-nation"**

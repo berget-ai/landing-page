@@ -4,6 +4,8 @@ description: "Berget AI launches to provide secure, compliant, and sustainable A
 date: "2024-01-30"
 author: "Berget Team"
 tags: ["announcement", "product", "launch"]
+image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80"
+imageAlt: "Modern data center with blue lighting"
 ---
 
 # Introducing Berget AI: The Next Generation of European AI Infrastructure
