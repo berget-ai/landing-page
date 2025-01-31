@@ -10,19 +10,21 @@ export default function BlogPage() {
     // This would typically be an API call
     const loadPosts = async () => {
       const postModules = import.meta.glob('./posts/**/*.md', { eager: true })
-      
+
       // Filter out argument files
       const blogPosts = Object.entries(postModules)
         .filter(([path]) => !path.includes('/arguments/'))
         .map(([path, module]: [string, any]) => {
           const fileName = path.split('/').pop()?.replace('.md', '') || ''
           const id = fileName
-          
+
           // Extract metadata from frontmatter
           const content = module.html
           const metadataMatch = content.match(/^---\n([\s\S]*?)\n---\n/)
-          const metadata = metadataMatch ? parseYamlMetadata(metadataMatch[1]) : {}
-          
+          const metadata = metadataMatch
+            ? parseYamlMetadata(metadataMatch[1])
+            : {}
+
           return {
             id,
             title: metadata.title || '',
@@ -30,7 +32,7 @@ export default function BlogPage() {
             date: metadata.date || '',
             author: metadata.author || 'Berget Team',
             content: content.replace(/^---\n[\s\S]*?\n---\n/, ''), // Remove frontmatter
-            tags: metadata.tags || []
+            tags: metadata.tags || [],
           }
         })
 
@@ -41,17 +43,19 @@ export default function BlogPage() {
           const fileName = path.split('/').pop()?.replace('.md', '') || ''
           acc[fileName] = {
             content: module.html,
-            path
+            path,
           }
           return acc
-        }, {} as Record<string, { content: string, path: string }>)
+        }, {} as Record<string, { content: string; path: string }>)
 
       const loadedPosts = blogPosts
 
       // Sort by date descending
-      setPosts(loadedPosts.sort((a, b) => 
-        new Date(b.date).getTime() - new Date(a.date).getTime()
-      ))
+      setPosts(
+        loadedPosts.sort(
+          (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+        )
+      )
     }
 
     loadPosts()
@@ -60,38 +64,43 @@ export default function BlogPage() {
   const parseYamlMetadata = (yaml: string) => {
     const metadata: Record<string, any> = {}
     const lines = yaml.split('\n')
-    
-    lines.forEach(line => {
+
+    lines.forEach((line) => {
       const match = line.match(/^(\w+):\s*"?([^"]*)"?$/)
       if (match) {
         const [_, key, value] = match
         if (key === 'tags') {
-          metadata[key] = value.replace(/[\[\]]/g, '').split(',').map(t => t.trim())
+          metadata[key] = value
+            .replace(/[\[\]]/g, '')
+            .split(',')
+            .map((t) => t.trim())
         } else {
           metadata[key] = value
         }
       }
     })
-    
+
     return metadata
   }
-
-export default function BlogPage() {
-  const { t } = useTranslation()
 
   return (
     <main className="min-h-screen pt-24">
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-2xl mx-auto mb-16">
-          <h1 className="text-4xl font-medium mb-4">{t('blog.title', 'Blog')}</h1>
+          <h1 className="text-4xl font-medium mb-4">
+            {t('blog.title', 'Blog')}
+          </h1>
           <p className="text-lg text-white/60">
-            {t('blog.description', 'Latest news and insights from the Berget team')}
+            {t(
+              'blog.description',
+              'Latest news and insights from the Berget team'
+            )}
           </p>
         </div>
 
         <div className="grid gap-8 max-w-3xl mx-auto">
           {posts.map((post) => (
-            <article 
+            <article
               key={post.id}
               className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors"
             >
@@ -106,7 +115,7 @@ export default function BlogPage() {
               <p className="text-white/80 mb-4">{post.description}</p>
               <div className="flex gap-2">
                 {post.tags.map((tag) => (
-                  <span 
+                  <span
                     key={tag}
                     className="px-2 py-1 rounded-full bg-white/10 text-sm"
                   >
