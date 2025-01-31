@@ -58,15 +58,16 @@ export default function BlogPage() {
     
     return metadata
   }
-  {
-    id: '5',
-    title: 'Fine-tuning: Sveriges väg till AI-framgång',
-    description: 'Hur KB och AI Sweden kan samarbeta för att skapa världsledande AI-modeller',
-    date: '2024-02-03',
-    author: 'Berget Team',
-    content: fineTuningSweden,
-    tags: ['fine-tuning', 'kb', 'ai-sweden', 'strategy']
-  },
+  const posts: BlogPost[] = [
+    {
+      id: '5',
+      title: 'Fine-tuning: Sveriges väg till AI-framgång',
+      description: 'Hur KB och AI Sweden kan samarbeta för att skapa världsledande AI-modeller',
+      date: '2024-02-03',
+      author: 'Berget Team',
+      content: fineTuningSweden,
+      tags: ['fine-tuning', 'kb', 'ai-sweden', 'strategy']
+    },
   {
     id: '4',
     title: 'Svenska utvecklare i AI-eran: Utmaningar och möjligheter',
