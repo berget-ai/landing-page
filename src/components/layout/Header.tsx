@@ -20,6 +20,49 @@ export function Header() {
         </div>
 
         <nav className="hidden md:flex items-center space-x-8">
+          <div className="relative group">
+            <a
+              href="/blog"
+              className="text-sm text-white/60 hover:text-white transition-colors inline-flex items-center"
+            >
+              {t('header.navigation.blog')}
+            </a>
+            <div className="absolute left-0 top-full mt-2 w-64 bg-background/95 backdrop-blur-lg border border-white/10 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              <div className="p-4 space-y-2">
+                <a
+                  href="/blog"
+                  className="block text-sm text-white/60 hover:text-white transition-colors"
+                >
+                  All Posts
+                </a>
+                <hr className="border-white/10 my-2" />
+                <a
+                  href="/blog#ai-revolution"
+                  className="block text-sm text-white/60 hover:text-white transition-colors"
+                >
+                  Sveriges AI-revolution
+                </a>
+                <a
+                  href="/blog#open-source"
+                  className="block text-sm text-white/60 hover:text-white transition-colors"
+                >
+                  Open Source AI
+                </a>
+                <a
+                  href="/blog#developers"
+                  className="block text-sm text-white/60 hover:text-white transition-colors"
+                >
+                  Svenska utvecklare
+                </a>
+                <a
+                  href="/blog#fine-tuning"
+                  className="block text-sm text-white/60 hover:text-white transition-colors"
+                >
+                  Fine-tuning
+                </a>
+              </div>
+            </div>
+          </div>
           <a
             href="/pricing"
             className="text-sm text-white/60 hover:text-white transition-colors"
@@ -68,6 +111,46 @@ export function Header() {
           >
             <nav className="flex flex-col p-6 space-y-6">
               <div className="space-y-6">
+                <div className="space-y-4">
+                  <h3 className="text-sm font-medium text-white/40 uppercase tracking-wider">Blog</h3>
+                  <div className="flex flex-col space-y-4">
+                    <a
+                      href="/blog"
+                      className="text-2xl text-white hover:text-white/80 transition-colors"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      All Posts
+                    </a>
+                    <a
+                      href="/blog#ai-revolution"
+                      className="text-2xl text-white hover:text-white/80 transition-colors"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Sveriges AI-revolution
+                    </a>
+                    <a
+                      href="/blog#open-source"
+                      className="text-2xl text-white hover:text-white/80 transition-colors"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Open Source AI
+                    </a>
+                    <a
+                      href="/blog#developers"
+                      className="text-2xl text-white hover:text-white/80 transition-colors"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Svenska utvecklare
+                    </a>
+                    <a
+                      href="/blog#fine-tuning"
+                      className="text-2xl text-white hover:text-white/80 transition-colors"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Fine-tuning
+                    </a>
+                  </div>
+                </div>
                 <div className="space-y-4">
                   <h3 className="text-sm font-medium text-white/40 uppercase tracking-wider">Product</h3>
                   <div className="flex flex-col space-y-4">
