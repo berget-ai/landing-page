@@ -48,24 +48,6 @@ Vi har ett försprång: EU:s AI Act träder i kraft 2025 och ger svenska företa
 
 - **Fordonsindustrin**: Volvo och Scania leder utvecklingen av AI-system för autonoma fordon som följer EU:s säkerhetskrav. När dessa krav blir global standard har svenska företag redan färdiga lösningar.
 
-## Svenska utvecklare vid ett vägskäl
-
-Ett konkret exempel på den disruption vi står inför hittar vi i Sveriges största manliga yrkesgrupp: programmerare. Svenska utvecklare har snabbt anammat AI-verktyg som GitHub Copilot och liknande för att öka sin produktivitet. Men detta är bara början på en fundamental förändring av hur mjukvara utvecklas.
-
-### Utmaning och möjlighet
-
-Paradoxen är slående: Samma AI-teknologi som gör svenska utvecklare mer produktiva kan också hota deras jobb på sikt. Men som litet land med hög teknisk kompetens har vi en unik möjlighet:
-
-- **Konkurrenskraft**: Med AI-förstärkta utvecklingsverktyg kan svenska team nu konkurrera med mycket större organisationer
-- **Specialisering**: Genom att fokusera på AI-förstärkt utveckling för specifika branscher (fintech, healthtech, industritech) där Sverige är starka
-- **Exportpotential**: Svenska utvecklare kan skapa AI-verktyg och tjänster för en global marknad
-
-### Risken om vi inte agerar
-
-Utan en tydlig strategi riskerar vi att:
-- Förlora tusentals utvecklarjobb till AI-automatisering
-- Se en kompetensflykt när svenska utvecklare söker sig till ledande AI-miljöer utomlands
-- Missa möjligheten att bygga nästa generations utvecklingsverktyg
 
 ## Den kulturella dimensionen
 
@@ -77,9 +59,15 @@ En amerikansk AI-modell kan verka neutral när den diskuterar politik, men dess 
 
 Sverige behöver inte – och bör inte – försöka konkurrera med tech-jättarna om att utveckla nya grundmodeller från scratch. AI Sweden har redan visat hur resurskrävande och utmanande detta är. Trots betydande investeringar i att bygga en svensk språkmodell från grunden, har resultaten hamnat långt efter de öppna modeller som nu finns tillgängliga.
 
-Istället bör vi fokusera på att bygga en effektiv fine-tuning och alignment pipeline som kan anpassa dessa öppna modeller till svenska förhållanden. Detta är en uppgift som passar perfekt för institutioner som Kungliga Biblioteket, som redan förvaltar en unik skatt av svensk text och bildmaterial. Genom att träna modeller på kvalitativt innehåll från svenska författare som Astrid Lindgren, Ivar Lo-Johansson och Fritiof Nilsson Piraten, snarare än innehåll från Flashback och Familjeliv, kan vi säkerställa att AI-modellerna reflekterar svenska värderingar och kulturarv.
+Istället bör vi fokusera på att bygga en effektiv fine-tuning och alignment pipeline som kan anpassa dessa öppna modeller till svenska förhållanden. Här finns en naturlig arbetsfördelning:
 
-AI Sweden bör omorientera sitt uppdrag från grundmodellsutveckling till att:
+**Kungliga Biblioteket**:
+- Tillhandahålla högkvalitativt svenskt textmaterial för träning
+- Säkerställa att upphovsrättsskyddat material hanteras korrekt
+- Kvalitetssäkra träningsdata ur ett kulturellt perspektiv
+- Bygga upp en "svensk kanon" för AI-träning
+
+**AI Sweden**:
 1. Bygga automatiserade fine-tuning pipelines
 2. Utveckla alignment-metoder för svenska värderingar
 3. Samordna datainsamling från kulturarvsinstitutioner
@@ -111,7 +99,7 @@ Med vår långa tradition av neutralitet, stabilitet och teknisk kompetens har S
 
 ### Investeringsbehov och förväntade resultat
 
-För att realisera Sveriges AI-potential krävs riktade investeringar med tydliga mål:
+För att realisera Sveriges AI-potential krävs riktade investeringar med tydliga mål. Baserat på de framgångsrika pilotprojekten inom vård, rättsväsende och industri kan vi förvänta oss följande avkastning på investeringarna:
 
 **Infrastruktur**: 5-7 miljarder kr över 3 år
 - Tre högpresterande datacenter (nord, mitt, syd)
