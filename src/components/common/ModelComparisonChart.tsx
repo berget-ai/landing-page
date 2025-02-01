@@ -65,32 +65,47 @@ export function ModelComparisonChart({ className }: ModelComparisonChartProps) {
             bottom: 20,
           }}
         >
-          <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
+          <CartesianGrid 
+            strokeDasharray="3 3" 
+            stroke="rgba(255,255,255,0.05)"
+            vertical={false}
+          />
           <XAxis
             dataKey="year"
-            stroke="rgba(255,255,255,0.6)"
+            stroke="rgba(255,255,255,0.5)"
+            tickLine={false}
+            axisLine={{ stroke: 'rgba(255,255,255,0.1)' }}
+            tick={{ fontSize: 12 }}
             label={{
               value: 'Release Date',
               position: 'bottom',
-              style: { fill: 'rgba(255,255,255,0.6)' },
+              offset: 0,
+              style: { fill: 'rgba(255,255,255,0.6)', fontSize: 12, marginTop: 12 },
             }}
           />
           <YAxis
-            stroke="rgba(255,255,255,0.6)"
+            stroke="rgba(255,255,255,0.5)"
+            tickLine={false}
+            axisLine={{ stroke: 'rgba(255,255,255,0.1)' }}
+            tick={{ fontSize: 12 }}
             label={{
               value: 'Accuracy (%)',
               angle: -90,
               position: 'left',
-              style: { fill: 'rgba(255,255,255,0.6)' },
+              offset: 12,
+              style: { fill: 'rgba(255,255,255,0.6)', fontSize: 12 },
             }}
           />
           <Tooltip
             contentStyle={{
-              backgroundColor: 'rgba(0,0,0,0.8)',
+              backgroundColor: 'rgba(0,0,0,0.9)',
               border: '1px solid rgba(255,255,255,0.1)',
-              borderRadius: '6px',
+              borderRadius: '8px',
+              boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06)',
+              padding: '12px',
             }}
-            labelStyle={{ color: 'rgba(255,255,255,0.8)' }}
+            labelStyle={{ color: 'rgba(255,255,255,0.6)', marginBottom: '8px', fontSize: '12px' }}
+            itemStyle={{ color: 'rgba(255,255,255,0.9)', fontSize: '12px' }}
             formatter={(value: number, name: string, props: any) => {
               const modelKey = name === 'open' ? 'openModel' : 'closedModel'
               const model = props.payload[modelKey]
@@ -101,20 +116,26 @@ export function ModelComparisonChart({ className }: ModelComparisonChartProps) {
             formatter={(value) =>
               value === 'open' ? 'Open Source Models' : 'Closed Source Models'
             }
+            wrapperStyle={{
+              fontSize: '12px',
+              paddingTop: '20px'
+            }}
           />
           <Line
             type="monotone"
             dataKey="open"
-            stroke="rgb(59, 130, 246)"
+            stroke="#3B82F6"
             strokeWidth={2}
-            dot={{ fill: 'rgb(59, 130, 246)' }}
+            dot={{ fill: '#3B82F6', r: 4 }}
+            activeDot={{ r: 6, strokeWidth: 0 }}
           />
           <Line
             type="monotone"
-            dataKey="closed"
-            stroke="rgb(239, 68, 68)"
+            dataKey="closed" 
+            stroke="#EF4444"
             strokeWidth={2}
-            dot={{ fill: 'rgb(239, 68, 68)' }}
+            dot={{ fill: '#EF4444', r: 4 }}
+            activeDot={{ r: 6, strokeWidth: 0 }}
           />
         </LineChart>
       </ResponsiveContainer>
