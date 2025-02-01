@@ -3,7 +3,8 @@
     "navigation": {
       "pricing": "Pricing",
       "developers": "Developers",
-      "about": "About"
+      "about": "About",
+      "blog": "Blog"
     },
     "buttons": {
       "signIn": "Sign In",

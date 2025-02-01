@@ -3,7 +3,8 @@
     "navigation": {
       "pricing": "Priser",
       "developers": "Utvecklare",
-      "about": "Om oss"
+      "about": "Om oss",
+      "blog": "Blogg"
     },
     "buttons": {
       "signIn": "Logga in",
