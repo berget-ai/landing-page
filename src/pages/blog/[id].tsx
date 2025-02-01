@@ -1,12 +1,11 @@
-import { useRouter } from 'next/router'
+import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { BlogPost } from '@/types/blog'
 import { MarkdownPage } from '@/components/common/MarkdownPage'
 
 export default function BlogPostPage() {
-  const router = useRouter()
-  const { id } = router.query
+  const { id } = useParams()
   const { t } = useTranslation()
   const [post, setPost] = useState<BlogPost | null>(null)
 
@@ -38,7 +37,7 @@ export default function BlogPostPage() {
         })
       } catch (error) {
         console.error('Failed to load blog post:', error)
-        router.push('/blog')
+        window.location.href = '/blog'
       }
     }
 
