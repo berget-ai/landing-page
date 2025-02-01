@@ -108,10 +108,12 @@ export default function BlogPage() {
 
         <div className="grid gap-8 max-w-3xl mx-auto">
           {posts.map((post) => (
-            <article
+            <a
+              href={`/blog/${post.id}`}
               key={post.id}
-              className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors"
+              className="block"
             >
+              <article className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors">
               {post.image && (
                 <div className="relative w-full h-48 mb-6 rounded-lg overflow-hidden">
                   <img 
@@ -140,7 +142,8 @@ export default function BlogPage() {
                   </span>
                 ))}
               </div>
-            </article>
+              </article>
+            </a>
           ))}
         </div>
       </div>
