@@ -42,7 +42,7 @@ export default function BlogPostPage() {
     }
 
     loadPost()
-  }, [id, router])
+  }, [id])
 
   const parseYamlMetadata = (yaml: string) => {
     const metadata: Record<string, any> = {}
