@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { ModelComparisonChart } from '@/components/common/ModelComparisonChart'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import { Bot, Sparkles, Zap, MessageSquare } from 'lucide-react'
@@ -37,6 +38,17 @@ export function ModelInference() {
     <section className="py-24 relative">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-1 gap-16">
+          {/* Model Comparison Chart */}
+          <div className="mb-16">
+            <h2 className="text-3xl font-medium mb-6">
+              Model Performance Comparison
+            </h2>
+            <p className="text-lg text-white/60 mb-8">
+              Open source models are now matching or exceeding the performance of closed source alternatives
+            </p>
+            <ModelComparisonChart className="w-full aspect-[2/1] max-w-4xl mx-auto" />
+          </div>
+
           {/* Serverless Inference */}
           <div className="space-y-12">
             <div className="space-y-6">
