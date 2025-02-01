@@ -105,7 +105,7 @@ export default function BlogPostPage() {
 
   return (
     <main className="min-h-screen pt-24">
-      <article className="container mx-auto px-4 py-12 max-w-4xl">
+      <article className="container mx-auto px-4 py-8 max-w-3xl">
         {post.image && (
           <div className="relative w-full h-64 md:h-96 mb-8 rounded-xl overflow-hidden">
             <img
