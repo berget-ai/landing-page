@@ -128,3 +128,89 @@ export default function BlogPostPage() {
     </main>
   )
 }
+import { useParams } from 'react-router-dom'
+import { BlogPostContent } from '@/components/blog/BlogPostContent'
+import { useEffect, useState } from 'react'
+import { BlogPost } from '@/types/blog'
+
+// Import all blog posts
+const postModules = import.meta.glob('./**/*.md', {
+  eager: true,
+  as: 'raw'
+})
+
+export default function BlogPostPage() {
+  const { id } = useParams()
+  const [post, setPost] = useState<BlogPost | null>(null)
+
+  useEffect(() => {
+    const loadPost = async () => {
+      // Find the post content by ID
+      const postPath = Object.keys(postModules).find(path => 
+        path.includes(`/${id}.md`)
+      )
+
+      if (!postPath || !postModules[postPath]) {
+        return
+      }
+
+      const content = postModules[postPath]
+
+      // Extract metadata from frontmatter
+      const metadataMatch = content.match(/^---\n([\s\S]*?)\n---\n/)
+      const metadata = metadataMatch
+        ? parseYamlMetadata(metadataMatch[1])
+        : {}
+
+      setPost({
+        id: id || '',
+        title: metadata.title || '',
+        description: metadata.description || '',
+        date: metadata.date || '',
+        author: metadata.author || 'Berget Team',
+        content: content.replace(/^---\n[\s\S]*?\n---\n/, ''), // Remove frontmatter
+        tags: metadata.tags || [],
+        image: metadata.image || '',
+        imageAlt: metadata.imageAlt || ''
+      })
+    }
+
+    loadPost()
+  }, [id])
+
+  if (!post) {
+    return <div>Loading...</div>
+  }
+
+  return (
+    <main className="min-h-screen pt-24">
+      <div className="container mx-auto px-4 py-12">
+        <BlogPostContent post={post} />
+      </div>
+    </main>
+  )
+}
+
+function parseYamlMetadata(yaml: string) {
+  const metadata: Record<string, any> = {}
+  const lines = yaml.split('\n')
+
+  lines.forEach((line) => {
+    const match = line.match(/^(\w+):\s*(.+)$/)
+    if (match) {
+      const [_, key, value] = match
+      if (key === 'tags') {
+        metadata[key] = value
+          .trim()
+          .replace(/^\[|\]$/g, '')
+          .split(',')
+          .map(t => t.trim())
+          .filter(Boolean)
+      } else {
+        metadata[key] = value.trim().replace(/^["']|["']$/g, '')
+      }
+    }
+  })
+
+  return metadata
+}

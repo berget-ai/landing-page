@@ -2,17 +2,18 @@ import { useTranslation } from 'react-i18next'
 import { BlogPost } from '@/types/blog'
 import { useEffect, useState } from 'react'
 
+// Import all blog posts
+const postModules = import.meta.glob('./posts/**/*.md', { 
+  eager: true,
+  as: 'raw'
+})
+
 export default function BlogPage() {
   const { t } = useTranslation()
   const [posts, setPosts] = useState<BlogPost[]>([])
 
   useEffect(() => {
-    // This would typically be an API call
     const loadPosts = async () => {
-      const postModules = import.meta.glob('./posts/**/*.md', { 
-        eager: true,
-        as: 'raw'
-      })
 
       // Filter out argument files
       const blogPosts = Object.entries(postModules)
