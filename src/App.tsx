@@ -10,6 +10,7 @@ import HomePage from '@/pages/index'
 import PricingPage from '@/pages/pricing'
 import DevelopersPage from '@/pages/developers'
 import BlogPage from '@/pages/blog'
+import BlogPostPage from '@/pages/blog/[id]'
 
 // Markdown content
 import { html as termsHtml } from '@/pages/terms.md'
@@ -43,7 +44,7 @@ function App() {
           />
           <Route path="/sla" element={<MarkdownPage html={slaHtml} />} />
           <Route path="/blog" element={<BlogPage />} />
-          <Route path="/blog/:id" element={<BlogPage />} />
+          <Route path="/blog/:id" element={<BlogPostPage />} />
         </Routes>
         <Footer />
         <ChatWidget />
