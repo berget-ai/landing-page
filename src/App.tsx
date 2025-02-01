@@ -43,6 +43,7 @@ function App() {
           />
           <Route path="/sla" element={<MarkdownPage html={slaHtml} />} />
           <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:id" element={<BlogPage />} />
         </Routes>
         <Footer />
         <ChatWidget />
