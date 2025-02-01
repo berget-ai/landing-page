@@ -54,7 +54,7 @@ const data = [
 
 export function ModelComparisonChart({ className }: ModelComparisonChartProps) {
   return (
-    <Card className={className}>
+    <div className={className}>
       <ResponsiveContainer width="100%" height="100%">
         <LineChart
           data={data}
@@ -139,6 +139,6 @@ export function ModelComparisonChart({ className }: ModelComparisonChartProps) {
           />
         </LineChart>
       </ResponsiveContainer>
-    </Card>
+    </div>
   )
 }
