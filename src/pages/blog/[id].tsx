@@ -16,8 +16,8 @@ export default function BlogPostPage() {
 
       try {
         // Import the specific post markdown file
-        const postModule = await import(`./posts/${id}.md`)
-        const content = postModule.default
+        const response = await fetch(`/blog/posts/${id}.md`)
+        const content = await response.text()
 
         // Extract metadata from frontmatter
         const metadataMatch = content.match(/^---\n([\s\S]*?)\n---\n/)
@@ -122,7 +122,10 @@ export default function BlogPostPage() {
             ))}
           </div>
 
-          <MarkdownPage html={post.content} />
+          <div 
+            className="prose prose-invert max-w-none"
+            dangerouslySetInnerHTML={{ __html: post.content }}
+          />
         </div>
       </article>
     </main>
