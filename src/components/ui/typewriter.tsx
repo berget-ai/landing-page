@@ -1,51 +1,133 @@
-import * as React from 'react';
-import { cn } from '@/lib/utils';
+import { useEffect, useState } from "react"
+import { motion, Variants } from "framer-motion"
 
-interface TypewriterProps extends React.HTMLAttributes<HTMLDivElement> {
-  words: string[];
-  className?: string;
-  speed?: number;
-  delay?: number;
+import { cn } from "@/lib/utils"
+
+interface TypewriterProps {
+  text: string | string[]
+  speed?: number
+  initialDelay?: number
+  waitTime?: number
+  deleteSpeed?: number
+  loop?: boolean
+  className?: string
+  showCursor?: boolean
+  hideCursorOnType?: boolean
+  cursorChar?: string | React.ReactNode
+  cursorAnimationVariants?: {
+    initial: Variants["initial"]
+    animate: Variants["animate"]
+  }
+  cursorClassName?: string
 }
 
-export function Typewriter({
-  words,
+const Typewriter = ({
+  text,
+  speed = 50,
+  initialDelay = 0,
+  waitTime = 2000,
+  deleteSpeed = 30,
+  loop = true,
   className,
-  speed = 100,
-  delay = 2000,
-  ...props
-}: TypewriterProps) {
-  const [currentWordIndex, setCurrentWordIndex] = React.useState(0);
-  const [currentText, setCurrentText] = React.useState('');
-  const [isDeleting, setIsDeleting] = React.useState(false);
+  showCursor = true,
+  hideCursorOnType = false,
+  cursorChar = "|",
+  cursorClassName = "ml-1",
+  cursorAnimationVariants = {
+    initial: { opacity: 0 },
+    animate: {
+      opacity: 1,
+      transition: {
+        duration: 0.01,
+        repeat: Infinity,
+        repeatDelay: 0.4,
+        repeatType: "reverse",
+      },
+    },
+  },
+}: TypewriterProps) => {
+  const [displayText, setDisplayText] = useState("")
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isDeleting, setIsDeleting] = useState(false)
+  const [currentTextIndex, setCurrentTextIndex] = useState(0)
 
-  React.useEffect(() => {
-    const timeout = setTimeout(() => {
-      const currentWord = words[currentWordIndex];
-      
+  const texts = Array.isArray(text) ? text : [text]
+
+  useEffect(() => {
+    let timeout: NodeJS.Timeout
+
+    const currentText = texts[currentTextIndex]
+
+    const startTyping = () => {
       if (isDeleting) {
-        setCurrentText(currentWord.substring(0, currentText.length - 1));
-        if (currentText === '') {
-          setIsDeleting(false);
-          setCurrentWordIndex((prev) => (prev + 1) % words.length);
+        if (displayText === "") {
+          setIsDeleting(false)
+          if (currentTextIndex === texts.length - 1 && !loop) {
+            return
+          }
+          setCurrentTextIndex((prev) => (prev + 1) % texts.length)
+          setCurrentIndex(0)
+          timeout = setTimeout(() => {}, waitTime)
+        } else {
+          timeout = setTimeout(() => {
+            setDisplayText((prev) => prev.slice(0, -1))
+          }, deleteSpeed)
         }
       } else {
-        setCurrentText(currentWord.substring(0, currentText.length + 1));
-        if (currentText === currentWord) {
-          setTimeout(() => setIsDeleting(true), delay);
+        if (currentIndex < currentText.length) {
+          timeout = setTimeout(() => {
+            setDisplayText((prev) => prev + currentText[currentIndex])
+            setCurrentIndex((prev) => prev + 1)
+          }, speed)
+        } else if (texts.length > 1) {
+          timeout = setTimeout(() => {
+            setIsDeleting(true)
+          }, waitTime)
         }
       }
-    }, isDeleting ? speed / 2 : speed);
+    }
 
-    return () => clearTimeout(timeout);
-  }, [currentText, currentWordIndex, isDeleting, words, speed, delay]);
+    // Apply initial delay only at the start
+    if (currentIndex === 0 && !isDeleting && displayText === "") {
+      timeout = setTimeout(startTyping, initialDelay)
+    } else {
+      startTyping()
+    }
+
+    return () => clearTimeout(timeout)
+  }, [
+    currentIndex,
+    displayText,
+    isDeleting,
+    speed,
+    deleteSpeed,
+    waitTime,
+    texts,
+    currentTextIndex,
+    loop,
+  ])
 
   return (
-    <div className={cn("relative inline-flex", className)} {...props}>
-      <span className="relative">
-        {currentText}
-        <span className="absolute right-[-4px] top-0 h-full w-[2px] animate-blink bg-current" />
-      </span>
+    <div className={`inline whitespace-pre-wrap tracking-tight ${className}`}>
+      <span>{displayText}</span>
+      {showCursor && (
+        <motion.span
+          variants={cursorAnimationVariants}
+          className={cn(
+            cursorClassName,
+            hideCursorOnType &&
+              (currentIndex < texts[currentTextIndex].length || isDeleting)
+              ? "hidden"
+              : ""
+          )}
+          initial="initial"
+          animate="animate"
+        >
+          {cursorChar}
+        </motion.span>
+      )}
     </div>
-  );
+  )
 }
+
+export { Typewriter }

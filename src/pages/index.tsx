@@ -5,6 +5,7 @@ import { Sustainability } from '@/components/sections/Sustainability'
 import { Testimonials } from '@/components/sections/Testimonials'
 import { RagRecipes } from '@/components/sections/RagRecipes'
 import { Success } from '@/components/sections/Success'
+import { InfrastructureShowcase } from '@/components/sections/InfrastructureShowcase'
 
 export default function HomePage() {
   return (
@@ -15,6 +16,7 @@ export default function HomePage() {
       <Sustainability />
       <RagRecipes />
       <RagRecipes />
+      <InfrastructureShowcase />
       <Testimonials />
       <Success />
     </main>

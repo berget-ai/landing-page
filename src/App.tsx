@@ -10,7 +10,7 @@ import HomePage from '@/pages/index'
 import PricingPage from '@/pages/pricing'
 import DevelopersPage from '@/pages/developers'
 import BlogPage from '@/pages/blog'
-import BlogPostPage from '@/pages/blog/[id]'
+import BlogPostPage from '@/pages/blog/posts/[id]'
 
 // Markdown content
 import { html as termsHtml } from '@/pages/terms.md'
