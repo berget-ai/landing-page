@@ -9,17 +9,19 @@ export default function BlogPage() {
   useEffect(() => {
     // This would typically be an API call
     const loadPosts = async () => {
-      const postModules = import.meta.glob('./posts/**/*.md', { eager: true })
+      const postModules = import.meta.glob('./posts/**/*.md', { 
+        eager: true,
+        as: 'raw'
+      })
 
       // Filter out argument files
       const blogPosts = Object.entries(postModules)
         .filter(([path]) => !path.includes('/arguments/'))
-        .map(([path, module]: [string, any]) => {
+        .map(([path, content]: [string, string]) => {
           const fileName = path.split('/').pop()?.replace('.md', '') || ''
           const id = fileName
 
           // Extract metadata from frontmatter
-          const content = module.html
           const metadataMatch = content.match(/^---\n([\s\S]*?)\n---\n/)
           const metadata = metadataMatch
             ? parseYamlMetadata(metadataMatch[1])
@@ -68,16 +70,20 @@ export default function BlogPage() {
     const lines = yaml.split('\n')
 
     lines.forEach((line) => {
-      const match = line.match(/^(\w+):\s*"?([^"]*)"?$/)
+      const match = line.match(/^(\w+):\s*(.+)$/)
       if (match) {
         const [_, key, value] = match
         if (key === 'tags') {
+          // Handle array format: [tag1, tag2, tag3]
           metadata[key] = value
-            .replace(/[\[\]]/g, '')
+            .trim()
+            .replace(/^\[|\]$/g, '')
             .split(',')
-            .map((t) => t.trim())
+            .map(t => t.trim())
+            .filter(Boolean)
         } else {
-          metadata[key] = value
+          // Remove quotes if present
+          metadata[key] = value.trim().replace(/^["']|["']$/g, '')
         }
       }
     })
