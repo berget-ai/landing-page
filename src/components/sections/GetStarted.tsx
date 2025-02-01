@@ -4,6 +4,7 @@ import { SocialProof } from './hero/SocialProof'
 import { CodeBlock } from '@/components/common/CodeBlock'
 import { ClientLogos } from './hero/ClientLogos'
 import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
 
 export function GetStarted() {
   const { t } = useTranslation()
