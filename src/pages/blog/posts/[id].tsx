@@ -8,13 +8,13 @@ import MarkdownIt from 'markdown-it'
 const md = new MarkdownIt({
   html: true,
   linkify: true,
-  typographer: true
+  typographer: true,
 })
 
 // Import all blog posts at build time
 const postModules = import.meta.glob('./**/*.md', {
   eager: true,
-  as: 'raw'
+  as: 'raw',
 })
 
 // Helper function to parse YAML frontmatter
@@ -31,7 +31,7 @@ function parseYamlMetadata(yaml: string) {
           .trim()
           .replace(/^\[|\]$/g, '')
           .split(',')
-          .map(t => t.trim())
+          .map((t) => t.trim())
           .filter(Boolean)
       } else {
         metadata[key] = value.trim().replace(/^["']|["']$/g, '')
@@ -68,7 +68,7 @@ export default function BlogPostPage() {
   useEffect(() => {
     const loadPost = async () => {
       // Find the post content by ID
-      const postPath = Object.keys(postModules).find(path => 
+      const postPath = Object.keys(postModules).find((path) =>
         path.includes(`/${id}.md`)
       )
 
@@ -80,9 +80,7 @@ export default function BlogPostPage() {
 
       // Extract metadata from frontmatter
       const metadataMatch = content.match(/^---\n([\s\S]*?)\n---\n/)
-      const metadata = metadataMatch
-        ? parseYamlMetadata(metadataMatch[1])
-        : {}
+      const metadata = metadataMatch ? parseYamlMetadata(metadataMatch[1]) : {}
 
       const markdownContent = content.replace(/^---\n[\s\S]*?\n---\n/, '') // Remove frontmatter
       const htmlContent = md.render(markdownContent)
@@ -96,7 +94,7 @@ export default function BlogPostPage() {
         content: htmlContent,
         tags: metadata.tags || [],
         image: metadata.image || '',
-        imageAlt: metadata.imageAlt || ''
+        imageAlt: metadata.imageAlt || '',
       })
     }
 
@@ -145,28 +143,4 @@ export default function BlogPostPage() {
       </article>
     </main>
   )
-}
-
-function parseYamlMetadata(yaml: string) {
-  const metadata: Record<string, any> = {}
-  const lines = yaml.split('\n')
-
-  lines.forEach((line) => {
-    const match = line.match(/^(\w+):\s*(.+)$/)
-    if (match) {
-      const [_, key, value] = match
-      if (key === 'tags') {
-        metadata[key] = value
-          .trim()
-          .replace(/^\[|\]$/g, '')
-          .split(',')
-          .map(t => t.trim())
-          .filter(Boolean)
-      } else {
-        metadata[key] = value.trim().replace(/^["']|["']$/g, '')
-      }
-    }
-  })
-
-  return metadata
 }
