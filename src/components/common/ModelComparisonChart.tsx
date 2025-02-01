@@ -124,17 +124,17 @@ export function ModelComparisonChart({ className }: ModelComparisonChartProps) {
           <Line
             type="monotone"
             dataKey="open"
-            stroke="#3B82F6"
+            stroke="hsl(var(--chart-1))"
             strokeWidth={2}
-            dot={{ fill: '#3B82F6', r: 4 }}
+            dot={{ fill: 'hsl(var(--chart-1))', r: 4 }}
             activeDot={{ r: 6, strokeWidth: 0 }}
           />
           <Line
             type="monotone"
             dataKey="closed" 
-            stroke="#EF4444"
+            stroke="hsl(var(--chart-2))"
             strokeWidth={2}
-            dot={{ fill: '#EF4444', r: 4 }}
+            dot={{ fill: 'hsl(var(--chart-2))', r: 4 }}
             activeDot={{ r: 6, strokeWidth: 0 }}
           />
         </LineChart>
