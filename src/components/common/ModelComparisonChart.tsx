@@ -1,118 +1,123 @@
-import { useEffect, useRef } from 'react'
-import { Chart, ChartConfiguration } from 'chart.js/auto'
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from 'recharts'
+import { Card } from '@/components/ui/card'
 
 interface ModelComparisonChartProps {
   className?: string
 }
 
+const data = [
+  {
+    year: '2020',
+    open: 27,
+    closed: 40,
+    openModel: 'BLOOM-176B',
+    closedModel: 'text-davinci-001',
+  },
+  {
+    year: '2021',
+    open: 27,
+    closed: 40,
+    openModel: 'BLOOM-176B',
+    closedModel: 'text-davinci-001',
+  },
+  {
+    year: '2022',
+    open: 34,
+    closed: 60,
+    openModel: 'LLaMa-1 65B',
+    closedModel: 'GPT-4',
+  },
+  {
+    year: '2023',
+    open: 64,
+    closed: 86,
+    openModel: 'LLaMa-2 70B',
+    closedModel: 'Claude 3 Opus',
+  },
+  {
+    year: '2024',
+    open: 86,
+    closed: 88,
+    openModel: 'Llama 3 70B',
+    closedModel: 'Claude 3 Opus',
+  },
+]
+
 export function ModelComparisonChart({ className }: ModelComparisonChartProps) {
-  const canvasRef = useRef<HTMLCanvasElement>(null)
-  const chartRef = useRef<Chart>()
-
-  useEffect(() => {
-    if (!canvasRef.current) return
-
-    const ctx = canvasRef.current.getContext('2d')
-    if (!ctx) return
-
-    const config: ChartConfiguration = {
-      type: 'line',
-      data: {
-        labels: ['2020', '2021', '2022', '2023', '2024'],
-        datasets: [
-          {
-            label: 'Open Source Models',
-            data: [27, 27, 34, 64, 86],
-            borderColor: 'rgb(59, 130, 246)',
-            backgroundColor: 'rgba(59, 130, 246, 0.1)',
-            tension: 0.4,
-          },
-          {
-            label: 'Closed Source Models',
-            data: [40, 40, 60, 86, 88],
-            borderColor: 'rgb(239, 68, 68)',
-            backgroundColor: 'rgba(239, 68, 68, 0.1)',
-            tension: 0.4,
-          },
-        ],
-      },
-      options: {
-        responsive: true,
-        interaction: {
-          intersect: false,
-          mode: 'index',
-        },
-        scales: {
-          y: {
-            beginAtZero: true,
-            max: 100,
-            title: {
-              display: true,
-              text: 'Accuracy (%)',
-              color: 'rgb(255, 255, 255, 0.6)',
-            },
-            grid: {
-              color: 'rgba(255, 255, 255, 0.1)',
-            },
-            ticks: {
-              color: 'rgba(255, 255, 255, 0.6)',
-            },
-          },
-          x: {
-            title: {
-              display: true,
-              text: 'Release Date',
-              color: 'rgb(255, 255, 255, 0.6)',
-            },
-            grid: {
-              color: 'rgba(255, 255, 255, 0.1)',
-            },
-            ticks: {
-              color: 'rgba(255, 255, 255, 0.6)',
-            },
-          },
-        },
-        plugins: {
-          legend: {
-            labels: {
-              color: 'rgba(255, 255, 255, 0.6)',
-            },
-          },
-          tooltip: {
-            callbacks: {
-              label: (context) => {
-                const models: Record<string, string> = {
-                  '2020': context.datasetIndex === 0 ? 'BLOOM-176B' : 'text-davinci-001',
-                  '2022': context.datasetIndex === 0 ? 'LLaMa-1 65B' : 'GPT-4',
-                  '2023': context.datasetIndex === 0 ? 'LLaMa-2 70B' : 'Claude 3 Opus',
-                  '2024': context.datasetIndex === 0 ? 'Llama 3 70B' : 'Claude 3 Opus',
-                }
-                const year = context.label
-                const model = models[year]
-                return `${context.dataset.label}: ${context.parsed.y}% (${model || 'N/A'})`
-              },
-            },
-          },
-        },
-      },
-    }
-
-    if (chartRef.current) {
-      chartRef.current.destroy()
-    }
-
-    chartRef.current = new Chart(ctx, config)
-
-    return () => {
-      if (chartRef.current) {
-        chartRef.current.destroy()
-      }
-    }
-  }, [])
-
   return (
-    <div className={className}>
-      <canvas ref={canvasRef} />
-    </div>
+    <Card className={className}>
+      <ResponsiveContainer width="100%" height="100%">
+        <LineChart
+          data={data}
+          margin={{
+            top: 20,
+            right: 30,
+            left: 20,
+            bottom: 20,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
+          <XAxis
+            dataKey="year"
+            stroke="rgba(255,255,255,0.6)"
+            label={{
+              value: 'Release Date',
+              position: 'bottom',
+              style: { fill: 'rgba(255,255,255,0.6)' },
+            }}
+          />
+          <YAxis
+            stroke="rgba(255,255,255,0.6)"
+            label={{
+              value: 'Accuracy (%)',
+              angle: -90,
+              position: 'left',
+              style: { fill: 'rgba(255,255,255,0.6)' },
+            }}
+          />
+          <Tooltip
+            contentStyle={{
+              backgroundColor: 'rgba(0,0,0,0.8)',
+              border: '1px solid rgba(255,255,255,0.1)',
+              borderRadius: '6px',
+            }}
+            labelStyle={{ color: 'rgba(255,255,255,0.8)' }}
+            formatter={(value: number, name: string, props: any) => {
+              const modelKey = name === 'open' ? 'openModel' : 'closedModel'
+              const model = props.payload[modelKey]
+              return [`${value}% (${model})`, name === 'open' ? 'Open Source Models' : 'Closed Source Models']
+            }}
+          />
+          <Legend
+            formatter={(value) =>
+              value === 'open' ? 'Open Source Models' : 'Closed Source Models'
+            }
+          />
+          <Line
+            type="monotone"
+            dataKey="open"
+            stroke="rgb(59, 130, 246)"
+            strokeWidth={2}
+            dot={{ fill: 'rgb(59, 130, 246)' }}
+          />
+          <Line
+            type="monotone"
+            dataKey="closed"
+            stroke="rgb(239, 68, 68)"
+            strokeWidth={2}
+            dot={{ fill: 'rgb(239, 68, 68)' }}
+          />
+        </LineChart>
+      </ResponsiveContainer>
+    </Card>
   )
 }
