@@ -310,6 +310,15 @@
       }
     }
   },
+  "blog": {
+    "title": "Blogg",
+    "description": "Senaste nytt och insikter från Berget-teamet",
+    "readMore": "Läs mer",
+    "backToBlog": "Tillbaka till bloggen",
+    "publishedOn": "Publicerad",
+    "by": "av",
+    "tags": "Taggar"
+  },
   "ragRecipes": {
     "title": "RAG Recept",
     "description": "Färdiga recept för Retrieval Augmented Generation för att snabbt bygga kraftfulla AI-applikationer"

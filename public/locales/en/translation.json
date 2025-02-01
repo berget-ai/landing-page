@@ -309,6 +309,15 @@
       }
     }
   },
+  "blog": {
+    "title": "Blog",
+    "description": "Latest news and insights from the Berget team",
+    "readMore": "Read more",
+    "backToBlog": "Back to blog",
+    "publishedOn": "Published on",
+    "by": "by",
+    "tags": "Tags"
+  },
   "ragRecipes": {
     "title": "RAG Recipes",
     "description": "Ready-made recipes for Retrieval Augmented Generation to quickly build powerful AI applications"
