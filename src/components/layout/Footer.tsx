@@ -1,17 +1,18 @@
 import { Github, Linkedin, Twitter } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
 
 const footerLinks = {
   product: [
     { key: 'features', href: '#features' },
-    { key: 'pricing', href: '#pricing' },
-    { key: 'documentation', href: '#docs' },
+    { key: 'pricing', href: '/pricing' },
+    { key: 'documentation', href: '/docs' },
     { key: 'security', href: '/security' },
   ],
   company: [
     { key: 'about', href: '/about' },
-    { key: 'blog', href: '#blog' },
+    { key: 'blog', href: '/blog' },
     { key: 'careers', href: '#careers' },
     { key: 'contact', href: '#contact' },
   ],
@@ -52,12 +53,12 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.product.map((link) => (
                 <li key={link.key}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-sm text-white/60 hover:text-white transition-colors"
                   >
                     {t(`footer.product.${link.key}`)}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -68,12 +69,12 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.key}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-sm text-white/60 hover:text-white transition-colors"
                   >
                     {t(`footer.company.${link.key}`)}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -84,12 +85,12 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.key}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-sm text-white/60 hover:text-white transition-colors"
                   >
                     {t(`footer.legal.${link.key}`)}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -99,7 +100,7 @@ export function Footer() {
         <div className="mt-12 pt-8 border-t border-white/5">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-white/60">
-              {t('footer.copyright', { year: new Date().getFullYear() })}
+              {t('footer.copyright')}
             </p>
             <div className="flex items-center gap-4">
               <Button

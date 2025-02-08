@@ -20,37 +20,44 @@ export function Header() {
         </div>
 
         <nav className="hidden md:flex items-center space-x-8">
-          <a
-            href="/blog"
-            className="text-sm text-white/60 hover:text-white transition-colors"
-          >
-            {t('header.navigation.blog')}
-          </a>
-          <a
-            href="/pricing"
-            className="text-sm text-white/60 hover:text-white transition-colors"
-          >
-            {t('header.navigation.pricing')}
-          </a>
-          <a
-            href="/developers"
-            className="text-sm text-white/60 hover:text-white transition-colors"
-          >
-            {t('header.navigation.developers')}
-          </a>
-          <a
-            href="/about"
-            className="text-sm text-white/60 hover:text-white transition-colors"
-          >
-            {t('header.navigation.about')}
-          </a>
+          {/* Products */}
+          <Link to="/products" className="text-sm text-white/60 hover:text-white transition-colors">
+            Products
+          </Link>
+
+          {/* Why Berget */}
+          <Link to="/why-berget" className="text-sm text-white/60 hover:text-white transition-colors">
+            Why Berget
+          </Link>
+
+          {/* For Developers */}
+          <Link to="/developers" className="text-sm text-white/60 hover:text-white transition-colors">
+            For Developers
+          </Link>
+
+          {/* Pricing */}
+          <Link to="/pricing" className="text-sm text-white/60 hover:text-white transition-colors">
+            Pricing
+          </Link>
+
+          {/* Documentation */}
+          <Link to="/docs" className="text-sm text-white/60 hover:text-white transition-colors">
+            Documentation
+          </Link>
+
+          {/* Blog */}
+          <Link to="/blog" className="text-sm text-white/60 hover:text-white transition-colors">
+            Blog
+          </Link>
+
           <LanguageSwitcher />
 
-          <Button variant="secondary" size="sm">
-            {t('header.buttons.signIn')}
+          <Button variant="secondary" size="sm" asChild>
+            <Link to="/login">Log in</Link>
           </Button>
-          <Button size="sm">
-            {t('header.buttons.getStarted')}
+
+          <Button size="sm" asChild>
+            <Link to="/signup">Sign up</Link>
           </Button>
         </nav>
 
@@ -74,95 +81,64 @@ export function Header() {
           >
             <nav className="flex flex-col p-6 space-y-6">
               <div className="space-y-6">
-                <a
-                  href="/blog"
-                  className="text-2xl text-white hover:text-white/80 transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {t('header.navigation.blog')}
-                </a>
-                <div className="space-y-4">
-                  <h3 className="text-sm font-medium text-white/40 uppercase tracking-wider">Product</h3>
-                  <div className="flex flex-col space-y-4">
-                    <a
-                      href="/pricing"
-                      className="text-2xl text-white hover:text-white/80 transition-colors"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {t('footer.product.pricing')}
-                    </a>
-                    <a
-                      href="/security"
-                      className="text-2xl text-white hover:text-white/80 transition-colors"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {t('footer.product.security')}
-                    </a>
-                    <a
-                      href="/docs"
-                      className="text-2xl text-white hover:text-white/80 transition-colors"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {t('footer.product.documentation')}
-                    </a>
-                  </div>
-                </div>
-
-                <div className="space-y-4">
-                  <h3 className="text-sm font-medium text-white/40 uppercase tracking-wider">Company</h3>
-                  <div className="flex flex-col space-y-4">
-                    <a
-                      href="/about"
-                      className="text-2xl text-white hover:text-white/80 transition-colors"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {t('footer.company.about')}
-                    </a>
-                    <a
-                      href="/blog"
-                      className="text-2xl text-white hover:text-white/80 transition-colors"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {t('footer.company.blog')}
-                    </a>
-                    <a
-                      href="/careers"
-                      className="text-2xl text-white hover:text-white/80 transition-colors"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {t('footer.company.careers')}
-                    </a>
-                  </div>
-                </div>
-
-                <div className="space-y-4">
-                  <h3 className="text-sm font-medium text-white/40 uppercase tracking-wider">Legal</h3>
-                  <div className="flex flex-col space-y-4">
-                    <a
-                      href="/privacy"
-                      className="text-2xl text-white hover:text-white/80 transition-colors"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {t('footer.legal.privacy')}
-                    </a>
-                    <a
-                      href="/terms"
-                      className="text-2xl text-white hover:text-white/80 transition-colors"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {t('footer.legal.terms')}
-                    </a>
-                  </div>
+                {/* Mobile Navigation Links */}
+                <div className="flex flex-col space-y-4">
+                  <Link 
+                    to="/products" 
+                    className="text-2xl text-white hover:text-white/80 transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Products
+                  </Link>
+                  <Link 
+                    to="/why-berget" 
+                    className="text-2xl text-white hover:text-white/80 transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Why Berget
+                  </Link>
+                  <Link 
+                    to="/developers" 
+                    className="text-2xl text-white hover:text-white/80 transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    For Developers
+                  </Link>
+                  <Link 
+                    to="/pricing" 
+                    className="text-2xl text-white hover:text-white/80 transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Pricing
+                  </Link>
+                  <Link 
+                    to="/docs" 
+                    className="text-2xl text-white hover:text-white/80 transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Documentation
+                  </Link>
+                  <Link 
+                    to="/blog" 
+                    className="text-2xl text-white hover:text-white/80 transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Blog
+                  </Link>
                 </div>
               </div>
 
               <div className="pt-4 space-y-4">
                 <LanguageSwitcher />
-                <Button variant="secondary" size="lg" className="w-full text-xl" onClick={() => setIsMenuOpen(false)}>
-                  {t('header.buttons.signIn')}
+                <Button variant="secondary" size="lg" className="w-full text-xl" asChild>
+                  <Link to="/login" onClick={() => setIsMenuOpen(false)}>
+                    Log in
+                  </Link>
                 </Button>
-                <Button size="lg" className="w-full text-xl" onClick={() => setIsMenuOpen(false)}>
-                  {t('header.buttons.getStarted')}
+                <Button size="lg" className="w-full text-xl" asChild>
+                  <Link to="/signup" onClick={() => setIsMenuOpen(false)}>
+                    Sign up
+                  </Link>
                 </Button>
               </div>
             </nav>

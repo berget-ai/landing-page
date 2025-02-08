@@ -19,39 +19,46 @@ const features: PricingFeature[] = [
     enterprise: true,
   },
   {
-    name: 'Free Pipeline Minutes',
-    hobby: '500/month',
-    pro: '500/user/month',
-    org: '500/user/month',
+    name: 'Inference',
+    hobby: 'Pay as you go',
+    pro: '€100 Token Credits',
+    org: '€200 Token Credits',
     enterprise: 'Custom',
   },
   {
-    name: 'Free Bandwidth',
-    hobby: '100 GB',
-    pro: '500 GB',
-    org: '1 TB',
+    name: 'Rate Limit',
+    hobby: 'Some',
+    pro: 'None',
+    org: 'None',
+    enterprise: 'None',
+  },
+  {
+    name: 'Compute',
+    hobby: 'PAYG',
+    pro: '1 Controller, 3 Workers',
+    org: '3 Controllers, 6 Workers',
     enterprise: 'Custom',
   },
   {
     name: 'Team Members',
-    hobby: 'Up to 10',
-    pro: 'Unlimited',
+    hobby: 'Up to 3',
+    pro: 'Up to 5',
     org: 'Unlimited',
-    enterprise: 'Custom',
-  },
-  {
-    name: 'Log Retention',
-    hobby: '7 days',
-    pro: '14 days',
-    org: '30 days',
-    enterprise: '30 days',
+    enterprise: 'Unlimited',
   },
   {
     name: 'Support',
     hobby: 'Community',
-    pro: 'Email',
-    org: 'Chat',
+    pro: 'Community',
+    org: 'Email',
     enterprise: 'Dedicated',
+  },
+  {
+    name: 'Pricing',
+    hobby: 'List price',
+    pro: '10% Discount',
+    org: '12% Discount',
+    enterprise: '14% Discount',
   },
 ]
 
@@ -60,13 +67,12 @@ export function PricingTiers() {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      {/* Hobby Plan */}
+      {/* Pay as you Go Plan */}
       <div className="rounded-xl border border-white/10 bg-white/5 p-8">
-        <h3 className="text-xl font-medium mb-2">{t('pricing.tiers.hobby.name')}</h3>
-        <p className="text-sm text-white/60 mb-4">{t('pricing.tiers.hobby.description')}</p>
+        <h3 className="text-xl font-medium mb-2">Pay as you Go</h3>
+        <p className="text-sm text-white/60 mb-4">LLM Inference and small compute needs</p>
         <div className="mb-8">
-          <p className="text-3xl font-medium">$0</p>
-          <p className="text-sm text-white/60">+ {t('pricing.computeCosts')}</p>
+          <p className="text-3xl font-medium">€0</p>
         </div>
         <Button className="w-full mb-8">{t('pricing.getStarted')}</Button>
         <div className="space-y-4">
@@ -84,13 +90,12 @@ export function PricingTiers() {
         </div>
       </div>
 
-      {/* Professional Plan */}
+      {/* Starter Plan */}
       <div className="rounded-xl border border-white/10 bg-white/5 p-8">
-        <h3 className="text-xl font-medium mb-2">{t('pricing.tiers.pro.name')}</h3>
-        <p className="text-sm text-white/60 mb-4">{t('pricing.tiers.pro.description')}</p>
+        <h3 className="text-xl font-medium mb-2">Starter</h3>
+        <p className="text-sm text-white/60 mb-4">For small teams</p>
         <div className="mb-8">
-          <p className="text-3xl font-medium">$19</p>
-          <p className="text-sm text-white/60">{t('pricing.perUserMonth')} + {t('pricing.computeCosts')}</p>
+          <p className="text-3xl font-medium">€250</p>
         </div>
         <Button className="w-full mb-8">{t('pricing.getStarted')}</Button>
         <div className="space-y-4">
@@ -108,13 +113,12 @@ export function PricingTiers() {
         </div>
       </div>
 
-      {/* Organization Plan */}
+      {/* Developer Plan */}
       <div className="rounded-xl border border-white/10 bg-white/5 p-8">
-        <h3 className="text-xl font-medium mb-2">{t('pricing.tiers.org.name')}</h3>
-        <p className="text-sm text-white/60 mb-4">{t('pricing.tiers.org.description')}</p>
+        <h3 className="text-xl font-medium mb-2">Developer</h3>
+        <p className="text-sm text-white/60 mb-4">For development teams</p>
         <div className="mb-8">
-          <p className="text-3xl font-medium">$29</p>
-          <p className="text-sm text-white/60">{t('pricing.perUserMonth')} + {t('pricing.computeCosts')}</p>
+          <p className="text-3xl font-medium">€890</p>
         </div>
         <Button className="w-full mb-8">{t('pricing.getStarted')}</Button>
         <div className="space-y-4">
@@ -134,11 +138,10 @@ export function PricingTiers() {
 
       {/* Enterprise Plan */}
       <div className="rounded-xl border border-white/10 bg-white/5 p-8">
-        <h3 className="text-xl font-medium mb-2">{t('pricing.tiers.enterprise.name')}</h3>
-        <p className="text-sm text-white/60 mb-4">{t('pricing.tiers.enterprise.description')}</p>
+        <h3 className="text-xl font-medium mb-2">Enterprise</h3>
+        <p className="text-sm text-white/60 mb-4">For large organizations</p>
         <div className="mb-8">
-          <p className="text-3xl font-medium">{t('pricing.tiers.enterprise.custom')}</p>
-          <p className="text-sm text-white/60">+ {t('pricing.computeCosts')}</p>
+          <p className="text-3xl font-medium">Custom</p>
         </div>
         <Button variant="secondary" className="w-full mb-8">{t('pricing.contactSales')}</Button>
         <div className="space-y-4">

@@ -56,6 +56,9 @@ export function ModelInference() {
                 {t('modelInferenceSection.title')}
               </h2>
               <p className="text-lg text-white/60">
+                We aim to provide access to the most powerful and popular open models you need to power your AI applications and provide a broad selection of model types - instruct, embeddings, re-rerank, moderation as well as across modalities.
+              </p>
+              <p className="text-lg text-white/60">
                 {t('modelInferenceSection.description')}
               </p>
 
