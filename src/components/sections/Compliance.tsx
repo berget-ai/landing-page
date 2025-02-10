@@ -55,15 +55,15 @@ export function Compliance() {
         <div className="text-center max-w-2xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 text-sm mb-6">
             <Shield className="w-4 h-4" />
-            <span>{t('complianceSection.tagline')}</span>
+            <span>{t('compliance.tagline')}</span>
           </div>
 
           <h2 className="text-3xl font-medium mb-4">
-            {t('complianceSection.title')}
+            {t('compliance.title')}
           </h2>
 
           <p className="text-lg text-white/60">
-            {t('complianceSection.description')}
+            {t('compliance.description')}
           </p>
         </div>
 
@@ -88,11 +88,7 @@ export function Compliance() {
                 <p className="text-white/60 mb-6">{regulation.description}</p>
 
                 <ul className="space-y-2">
-                  {(
-                    t('compliance.regulations.gdpr.benefits', {
-                      returnObjects: true,
-                    }) as Array<string>
-                  ).map((benefit: string) => (
+                  {Array.isArray(regulation.benefits) && regulation.benefits.map((benefit: string) => (
                     <li
                       key={benefit}
                       className="flex items-center gap-2 text-sm text-white/60"
