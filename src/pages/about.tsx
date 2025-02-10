@@ -1,157 +1,159 @@
 import { motion } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
-import { Button } from '@/components/ui/button'
 import { useTranslation } from 'react-i18next'
+import { ArrowRight } from 'lucide-react'
 
 export default function AboutPage() {
   const { t } = useTranslation()
 
   return (
     <main className="min-h-screen pt-24">
-      {/* Main Content */}
-      <div className="container mx-auto px-4 py-24">
-        <div className="max-w-3xl mx-auto space-y-16">
-          {/* Our Story */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="space-y-4"
-          >
-            <h1 className="text-5xl font-medium text-center mb-12">{t('about.story.title')}</h1>
-            <p className="text-lg text-white/60 leading-relaxed">
-              {t('about.story.description1')}
-            </p>
-            <p className="text-lg text-white/60 leading-relaxed">
-              {t('about.story.description2')}
-            </p>
-          </motion.div>
-
-          {/* Open Source */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="space-y-4"
-          >
-            <h2 className="text-2xl font-medium">{t('about.openSource.title')}</h2>
-            <p className="text-white/60 leading-relaxed">
-              {t('about.openSource.description')}
-            </p>
-          </motion.div>
-
-          {/* European Innovation */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="space-y-4"
-          >
-            <h2 className="text-2xl font-medium">{t('about.european.title')}</h2>
-            <p className="text-white/60 leading-relaxed">
-              {t('about.european.description')}
-            </p>
-          </motion.div>
-
-          {/* Integrity & Privacy */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="space-y-4"
-          >
-            <h2 className="text-2xl font-medium">{t('about.integrity.title')}</h2>
-            <p className="text-white/60 leading-relaxed">
-              {t('about.integrity.description')}
-            </p>
-          </motion.div>
-
-          {/* Customer Promises */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="space-y-4"
-          >
-            <h2 className="text-2xl font-medium">{t('about.promises.title')}</h2>
-            <p className="text-white/60 mb-6">{t('about.promises.intro')}</p>
-            <ul className="space-y-4">
-              {(t('about.promises.list', { returnObjects: true }) as string[]).map((promise, index) => (
-                <li key={index} className="flex items-center gap-3">
-                  <ArrowRight className="w-5 h-5 text-violet-400" />
-                  <span>{promise}</span>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
+      {/* Hero Section */}
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/50 to-background" />
+        <div className="container mx-auto px-4 relative">
+          <div className="max-w-3xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <h1 className="text-5xl font-medium mb-6">{t('about.hero.title')}</h1>
+              <p className="text-xl text-white/80">{t('about.hero.description')}</p>
+            </motion.div>
+          </div>
         </div>
+      </section>
 
-        {/* Team Section */}
-        <div className="container mx-auto px-4 py-24">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-3xl mx-auto"
-          >
-            <h2 className="text-3xl font-medium mb-12 text-center">
-              {t('about.team.title')}
-            </h2>
-            <p className="text-lg text-white/60 mb-12 text-center">
-              {t('about.team.description')}
-            </p>
-
-            {/* Team Members Grid */}
-            <div className="space-y-8">
-              {/* Team member components remain unchanged as they use data from translation files */}
-              {(t('about.team.members', { returnObjects: true }) as string[]).map((memberKey) => {
-                const member = {
-                  name: t(`about.team.${memberKey}.name`),
-                  role: t(`about.team.${memberKey}.role`),
-                  bio: t(`about.team.${memberKey}.bio`),
-                  image: t(`about.team.${memberKey}.image`),
-                  links: {
-                    linkedin: t(`about.team.${memberKey}.links.linkedin`),
-                    github: t(`about.team.${memberKey}.links.github`),
-                    email: t(`about.team.${memberKey}.links.email`),
-                  },
-                }
-
-                return (
-                  <div key={memberKey} className="flex flex-col md:flex-row gap-8 items-center md:items-start">
-                    <div className="w-32 h-32 rounded-full overflow-hidden bg-white/5 flex-shrink-0">
-                      <img
-                        src={member.image}
-                        alt={member.name}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="flex-1 text-center md:text-left">
-                      <h3 className="text-xl font-medium mb-2">{member.name}</h3>
-                      <p className="text-white/60 text-sm leading-relaxed">
-                        {member.bio}
-                      </p>
-                    </div>
-                  </div>
-                )
-              })}
-            </div>
-
-            {/* Call to Action */}
-            <div className="max-w-3xl mx-auto text-center mt-16">
-              <h2 className="text-3xl font-medium mb-6">
-                {t('about.team.joinTeam.title')}
-              </h2>
-              <p className="text-lg text-white/60 mb-8">
-                {t('about.team.joinTeam.description')}
+      {/* Origin Story */}
+      <section className="py-24 relative">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <h2 className="text-3xl font-medium">{t('about.origin.title')}</h2>
+              <p className="text-lg text-white/60 leading-relaxed">
+                {t('about.origin.description')}
               </p>
-              <div className="flex gap-4 justify-center">
-                <Button size="lg">{t('about.team.joinTeam.cta')}</Button>
-                <Button size="lg" variant="secondary">{t('about.team.joinTeam.contact')}</Button>
-              </div>
-            </div>
-          </motion.div>
+              <p className="text-lg text-white/60 leading-relaxed">
+                {t('about.origin.nameOrigin')}
+              </p>
+            </motion.div>
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* Values */}
+      <section className="py-24 relative bg-white/[0.02] border-y border-white/5">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-medium mb-12 text-center">{t('about.values.title')}</h2>
+            <div className="space-y-16">
+              {['openSource', 'european', 'integrity'].map((value, index) => (
+                <motion.div
+                  key={value}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="space-y-4"
+                >
+                  <h3 className="text-2xl font-medium">{t(`about.values.${value}.title`)}</h3>
+                  <p className="text-lg text-white/60 leading-relaxed">
+                    {t(`about.values.${value}.description`)}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Customer Promises */}
+      <section className="py-24 relative">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="space-y-8"
+            >
+              <h2 className="text-3xl font-medium text-center">{t('about.promises.title')}</h2>
+              <p className="text-lg text-white/60 text-center">
+                {t('about.promises.description')}
+              </p>
+              <div className="grid gap-4">
+                {(t('about.promises.list', { returnObjects: true }) as string[]).map((promise, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10"
+                  >
+                    <ArrowRight className="w-5 h-5 text-emerald-400 shrink-0" />
+                    <p className="text-white/80">{promise}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="py-24 relative bg-white/[0.02] border-y border-white/5">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl font-medium mb-4">{t('about.team.title')}</h2>
+              <p className="text-lg text-white/60">{t('about.team.description')}</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {['christian', 'andreas', 'john', 'johan'].map((member, index) => (
+                <motion.div
+                  key={member}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="relative group"
+                >
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-white/5 to-transparent group-hover:from-white/10 transition-colors" />
+                  <div className="relative p-6 rounded-2xl border border-white/10 group-hover:border-white/20 transition-colors">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-16 h-16 rounded-full overflow-hidden bg-white/10">
+                        <img
+                          src={t(`about.team.members.${member}.image`)}
+                          alt={t(`about.team.members.${member}.name`)}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-medium">
+                          {t(`about.team.members.${member}.name`)}
+                        </h3>
+                        <p className="text-white/60">
+                          {t(`about.team.members.${member}.role`)}
+                        </p>
+                      </div>
+                    </div>
+                    <p className="text-white/80 text-sm leading-relaxed">
+                      {t(`about.team.members.${member}.bio`)}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   )
 }

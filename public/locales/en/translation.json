@@ -9,6 +9,74 @@
     "getStarted": "Get Started",
     "learnMore": "Learn More"
   },
+  "about": {
+    "hero": {
+      "title": "About Berget AI",
+      "description": "Building the future of European AI infrastructure"
+    },
+    "origin": {
+      "title": "Our Story",
+      "description": "Berget AI was born out of the realization that many organizations are hindered in their pursuit of AI driven innovation - be it legal and regulatory concerns, not having the skills or capital to run train and host your own AI models, not wanting to invest upfront in GPUs, or simply not having access to relevant local language capable LLMs.",
+      "nameOrigin": "The name is Swedish for \"mountain\", which we have plenty of in Sweden, many of which host underground Data Centers. So why have your data in the cloud when you can have in \"Berget\"?"
+    },
+    "values": {
+      "title": "Our Values",
+      "openSource": {
+        "title": "Open Source & Community",
+        "description": "We are passionate about Open Source and Community Driven Innovation and are true believers that open source is key for safe, transparent and cost efficient AI in the future. History has plenty of examples where a determined community can overcome seemingly impossible obstacles, innovate new tools and create worldwide standards, that are open, interoperable and accessible and affordable for all."
+      },
+      "european": {
+        "title": "European Innovation",
+        "description": "We are passionate about European competitiveness overall, and in particular in the field of AI. Europe needs to have its own AI agenda, innovation system and sovereignty, especially in an increasingly volatile geopolitical context. It needs to be enabled by EU and its members states, and driven by businesses, organizations and communities."
+      },
+      "integrity": {
+        "title": "Integrity & Privacy",
+        "description": "We think integrity, data privacy and regulations are good as long as it ensures a level playing field, fosters simplicity over complexity and ensures openness and broad participation. We want to be a key enabler for European organizations and unlock AI innovations in a safe and responsible way."
+      }
+    },
+    "promises": {
+      "title": "Our Customer Promises",
+      "description": "What you can expect when working with us",
+      "list": [
+        "An easy way to build AI applications",
+        "Affordable and fair, no lock-ins, no hidden fees",
+        "A simple way to be compliant to key regulatory frameworks",
+        "Developer friendly, built by developers for developers",
+        "In constant state of innovation and listen to what our customers need",
+        "Contributing to positive and sustainable societal progress"
+      ]
+    },
+    "team": {
+      "title": "Our Team",
+      "description": "We are entrepreneurs and founders with decades of experience in technology and AI",
+      "members": {
+        "christian": {
+          "name": "Christian",
+          "role": "Co-founder & CEO",
+          "bio": "30 years of experience helping organizations with digitalization and AI, passionate about AI and software development, deeply engaged in open source and open innovations, trusted advisor to government and public sector, challenger and technology optimist",
+          "image": "/team/christian.jpg"
+        },
+        "andreas": {
+          "name": "Andreas",
+          "role": "Co-founder & CTO",
+          "bio": "Was an integral part of building the AI capabilities at Boston Consulting Group (BCG Gamma) where he led the Nordic team and was globally responsible for the \"AI at Scale\" topic, and led multiple large scale data and AI transformations at leading global companies",
+          "image": "/team/andreas.jpg"
+        },
+        "john": {
+          "name": "John",
+          "role": "Head of Infrastructure",
+          "bio": "A networking and kubernetes wizard with extensive experience in building and managing large-scale infrastructure",
+          "image": "/team/john.jpg"
+        },
+        "johan": {
+          "name": "Johan",
+          "role": "Head of Network Architecture",
+          "bio": "A leading Data Center network designer and builder who has helped leading enterprises and scale-ups build global multi-site compute and storage platforms",
+          "image": "/team/johan.jpg"
+        }
+      }
+    }
+  },
   "header": {
     "navigation": {
       "products": "Products",
@@ -22,6 +90,161 @@
       "signIn": "Sign In",
       "getStarted": "Get Started"
     }
+  },
+  "products": {
+    "title": "Build with Confidence",
+    "description": "Enterprise-grade AI infrastructure designed for European businesses",
+    "serverless": {
+      "title": "Serverless Inference",
+      "description": "Access powerful AI models through our simple API",
+      "features": {
+        "openLLMs": "Use popular Open LLMs",
+        "compatibility": "OpenAI-compatible API",
+        "pricing": "Pay as you go pricing"
+      }
+    },
+    "dedicated": {
+      "title": "Dedicated Inference",
+      "description": "Run your own models on dedicated hardware",
+      "features": {
+        "ownModels": "Deploy custom models",
+        "capacity": "Dedicated resources",
+        "scaling": "Production-grade scaling"
+      }
+    },
+    "platform": {
+      "title": "Complete Platform",
+      "description": "Everything you need to build AI applications",
+      "features": {
+        "gitops": "GitOps workflows",
+        "monitoring": "Advanced monitoring",
+        "databases": "Managed databases"
+      }
+    },
+    "exploreMore": "Explore All Products"
+  },
+  "whyBerget": {
+    "title": "Why Choose Berget",
+    "description": "Built for European businesses who need secure, compliant AI infrastructure",
+    "features": {
+      "european": {
+        "title": "European Innovation",
+        "description": "Built and operated in Europe, for European businesses"
+      },
+      "security": {
+        "title": "Enterprise Security",
+        "description": "Bank-grade security and compliance built-in"
+      },
+      "sustainability": {
+        "title": "Sustainable Infrastructure",
+        "description": "100% renewable energy and circular hardware"
+      }
+    },
+    "discoverMore": "Discover More"
+  },
+  "developers": {
+    "hero": {
+      "title": "Built by Developers for Developers",
+      "description": "A flexible and developer-friendly platform designed for efficiency, scalability, and control"
+    },
+    "features": {
+      "flexibility": {
+        "title": "Full Flexibility and Control",
+        "description": "Everything you need, nothing you don't",
+        "items": [
+          "Simple user experience",
+          "No lock-in with GitHub sync",
+          "Choose only what you need",
+          "Seamless infrastructure management"
+        ]
+      },
+      "security": {
+        "title": "Security & Privacy Built In",
+        "description": "Enterprise-grade security by default",
+        "items": [
+          "OWASP standards compliance",
+          "Secure network inference",
+          "Zero data retention"
+        ]
+      },
+      "resources": {
+        "title": "Resource Control",
+        "description": "Complete control over your infrastructure",
+        "items": [
+          "Infrastructure as code",
+          "Persistent environments",
+          "Full resource management"
+        ]
+      }
+    },
+    "cta": {
+      "title": "Ready to Start Building?",
+      "description": "Join the growing community of developers building the future of AI with Berget",
+      "getStarted": "Get Started",
+      "viewDocs": "View Documentation"
+    }
+  },
+  "pricing": {
+    "title": "Simple, Transparent Pricing",
+    "description": "Start small and scale as you grow",
+    "section": {
+      "title": "Plans for Every Need",
+      "description": "Choose the plan that works best for you",
+      "viewPricing": "View Full Pricing"
+    },
+    "tiers": {
+      "payg": {
+        "name": "Pay as you Go",
+        "description": "API access",
+        "price": "€0",
+        "features": [
+          "Pay per use",
+          "Serverless inference",
+          "Community support",
+          "Basic monitoring"
+        ]
+      },
+      "starter": {
+        "name": "Starter",
+        "description": "Start building",
+        "price": "€250",
+        "features": [
+          "1 Controller, 3 Workers",
+          "Vector database included",
+          "Email support",
+          "Advanced monitoring"
+        ]
+      },
+      "developer": {
+        "name": "Developer",
+        "description": "Grow your business",
+        "price": "€890",
+        "features": [
+          "3 Controllers, 6 Workers",
+          "All databases included",
+          "Priority support",
+          "Custom domain"
+        ]
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "description": "Custom solutions",
+        "price": "Custom",
+        "features": [
+          "Custom infrastructure",
+          "Dedicated support",
+          "SLA guarantees",
+          "Training & onboarding"
+        ]
+      }
+    },
+    "getStarted": "Get Started",
+    "contactSales": "Contact Sales",
+    "moneyBackGuarantee": "30-day money-back guarantee",
+    "detailedPricing": "Detailed Pricing",
+    "tooltip": "All prices exclude VAT",
+    "compareWithAlternatives": "Compare with Alternatives",
+    "comparisonTooltip": "Based on public pricing"
   },
   "footer": {
     "description": "Our mission is to provide the most trustworthy, valuable and sustainable AI-cloud services in Europe.",

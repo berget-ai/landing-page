@@ -9,19 +9,242 @@
     "getStarted": "Kom igång",
     "learnMore": "Läs mer"
   },
+  "about": {
+    "hero": {
+      "title": "Om Berget AI",
+      "description": "Bygger framtidens europeiska AI-infrastruktur"
+    },
+    "origin": {
+      "title": "Vår Historia",
+      "description": "Berget AI föddes ur insikten att många organisationer hindras i sin strävan efter AI-driven innovation - vare sig det handlar om juridiska och regulatoriska bekymmer, brist på kompetens eller kapital för att köra och drifta egna AI-modeller, ovilja att investera i GPUs i förväg, eller helt enkelt brist på tillgång till relevanta språkmodeller för lokala språk.",
+      "nameOrigin": "Namnet är svenska för \"berg\", som vi har gott om i Sverige, och många av dem huserar underjordiska datacenter. Så varför ha din data i molnet när du kan ha den i \"Berget\"?"
+    },
+    "values": {
+      "title": "Våra Värderingar",
+      "openSource": {
+        "title": "Open Source & Community",
+        "description": "Vi brinner för Open Source och Community-driven Innovation och är övertygade om att öppen källkod är nyckeln till säker, transparent och kostnadseffektiv AI i framtiden. Historien har många exempel där en målmedveten community kan övervinna till synes omöjliga hinder, innovera nya verktyg och skapa globala standarder som är öppna, interoperabla och tillgängliga för alla."
+      },
+      "european": {
+        "title": "Europeisk Innovation",
+        "description": "Vi är passionerade kring europeisk konkurrenskraft överlag, och särskilt inom AI. Europa behöver ha sin egen AI-agenda, innovationssystem och suveränitet, särskilt i en alltmer volatil geopolitisk kontext. Det behöver möjliggöras av EU och dess medlemsstater, och drivas av företag, organisationer och communities."
+      },
+      "integrity": {
+        "title": "Integritet & Sekretess",
+        "description": "Vi anser att integritet, dataskydd och regleringar är bra så länge de säkerställer lika villkor, främjar enkelhet framför komplexitet och säkerställer öppenhet och bred delaktighet. Vi vill vara en nyckelaktör för europeiska organisationer och låsa upp AI-innovationer på ett säkert och ansvarsfullt sätt."
+      }
+    },
+    "promises": {
+      "title": "Våra Kundlöften",
+      "description": "Vad du kan förvänta dig när du arbetar med oss",
+      "list": [
+        "Ett enkelt sätt att bygga AI-applikationer",
+        "Prisvärt och rättvist, inga inlåsningar, inga dolda avgifter",
+        "Ett enkelt sätt att följa viktiga regelverk",
+        "Utvecklarvänligt, byggt av utvecklare för utvecklare",
+        "I konstant innovation och lyssnar på vad våra kunder behöver",
+        "Bidrar till positiv och hållbar samhällsutveckling"
+      ]
+    },
+    "team": {
+      "title": "Vårt Team",
+      "description": "Vi är entreprenörer och grundare med decenniers erfarenhet inom teknik och AI",
+      "members": {
+        "christian": {
+          "name": "Christian",
+          "role": "Medgrundare & VD",
+          "bio": "30 års erfarenhet av att hjälpa organisationer med digitalisering och AI, passionerad för AI och mjukvaruutveckling, djupt engagerad i open source och öppen innovation, betrodd rådgivare till regering och offentlig sektor, utmanare och teknikoptimist",
+          "image": "/team/christian.jpg"
+        },
+        "andreas": {
+          "name": "Andreas",
+          "role": "Medgrundare & CTO",
+          "bio": "Var en integrerad del i uppbyggnaden av AI-kapaciteten på Boston Consulting Group (BCG Gamma) där han ledde det nordiska teamet och var globalt ansvarig för \"AI at Scale\"-området, och ledde flera storskaliga data- och AI-transformationer på ledande globala företag",
+          "image": "/team/andreas.jpg"
+        },
+        "john": {
+          "name": "John",
+          "role": "Infrastrukturchef",
+          "bio": "En nätverks- och kubernetes-trollkarl med omfattande erfarenhet av att bygga och hantera storskalig infrastruktur",
+          "image": "/team/john.jpg"
+        },
+        "johan": {
+          "name": "Johan",
+          "role": "Nätverksarkitekturchef",
+          "bio": "En ledande datacenter-nätverksdesigner och byggare som har hjälpt ledande företag och scale-ups att bygga globala multi-site beräknings- och lagringsplattformar",
+          "image": "/team/johan.jpg"
+        }
+      }
+    }
+  },
   "header": {
     "navigation": {
       "products": "Produkter",
       "whyBerget": "Varför Berget",
       "developers": "För Utvecklare",
       "pricing": "Priser",
-      "documentation": "Dokumentation", 
+      "documentation": "Dokumentation",
       "blog": "Blogg"
     },
     "buttons": {
       "signIn": "Logga in",
       "getStarted": "Kom igång"
     }
+  },
+  "products": {
+    "title": "Bygg med Tillförsikt",
+    "description": "Enterprise-anpassad AI-infrastruktur designad för europeiska företag",
+    "serverless": {
+      "title": "Serverless Inference",
+      "description": "Få tillgång till kraftfulla AI-modeller genom vårt enkla API",
+      "features": {
+        "openLLMs": "Använd populära Open LLMs",
+        "compatibility": "OpenAI-kompatibelt API",
+        "pricing": "Betala per användning"
+      }
+    },
+    "dedicated": {
+      "title": "Dedikerad Inference",
+      "description": "Kör dina egna modeller på dedikerad hårdvara",
+      "features": {
+        "ownModels": "Driftsätt anpassade modeller",
+        "capacity": "Dedikerade resurser",
+        "scaling": "Produktionsanpassad skalning"
+      }
+    },
+    "platform": {
+      "title": "Komplett Plattform",
+      "description": "Allt du behöver för att bygga AI-applikationer",
+      "features": {
+        "gitops": "GitOps-arbetsflöden",
+        "monitoring": "Avancerad övervakning",
+        "databases": "Hanterade databaser"
+      }
+    },
+    "exploreMore": "Utforska Alla Produkter"
+  },
+  "whyBerget": {
+    "title": "Varför Välja Berget",
+    "description": "Byggt för europeiska företag som behöver säker, compliant AI-infrastruktur",
+    "features": {
+      "european": {
+        "title": "Europeisk Innovation",
+        "description": "Byggt och drivet i Europa, för europeiska företag"
+      },
+      "security": {
+        "title": "Enterprise-säkerhet",
+        "description": "Banksäkerhet och compliance inbyggt"
+      },
+      "sustainability": {
+        "title": "Hållbar Infrastruktur",
+        "description": "100% förnybar energi och cirkulär hårdvara"
+      }
+    },
+    "discoverMore": "Upptäck Mer"
+  },
+  "developers": {
+    "hero": {
+      "title": "Byggt av Utvecklare för Utvecklare",
+      "description": "En flexibel och utvecklarvänlig plattform designad för effektivitet, skalbarhet och kontroll"
+    },
+    "features": {
+      "flexibility": {
+        "title": "Full Flexibilitet och Kontroll",
+        "description": "Allt du behöver, inget du inte behöver",
+        "items": [
+          "Enkel användarupplevelse",
+          "Ingen inlåsning med GitHub-synk",
+          "Välj bara det du behöver",
+          "Sömlös infrastrukturhantering"
+        ]
+      },
+      "security": {
+        "title": "Inbyggd Säkerhet & Integritet",
+        "description": "Enterprise-säkerhet som standard",
+        "items": [
+          "OWASP-standarder",
+          "Säker nätverksinferens",
+          "Ingen datalagring"
+        ]
+      },
+      "resources": {
+        "title": "Resurskontroll",
+        "description": "Fullständig kontroll över din infrastruktur",
+        "items": [
+          "Infrastruktur som kod",
+          "Persistenta miljöer",
+          "Full resurshantering"
+        ]
+      }
+    },
+    "cta": {
+      "title": "Redo att Börja Bygga?",
+      "description": "Gå med i den växande gemenskapen av utvecklare som bygger framtidens AI med Berget",
+      "getStarted": "Kom Igång",
+      "viewDocs": "Se Dokumentation"
+    }
+  },
+  "pricing": {
+    "title": "Enkla, Transparenta Priser",
+    "description": "Börja smått och väx med dina behov",
+    "section": {
+      "title": "Planer för Alla Behov",
+      "description": "Välj den plan som passar dig bäst",
+      "viewPricing": "Se Fullständig Prissättning"
+    },
+    "tiers": {
+      "payg": {
+        "name": "Betala per Användning",
+        "description": "API-åtkomst",
+        "price": "€0",
+        "features": [
+          "Betala per användning",
+          "Serverless inference",
+          "Community-support",
+          "Grundläggande övervakning"
+        ]
+      },
+      "starter": {
+        "name": "Starter",
+        "description": "Börja bygga",
+        "price": "€250",
+        "features": [
+          "1 Controller, 3 Workers",
+          "Vektordatabas ingår",
+          "E-postsupport",
+          "Avancerad övervakning"
+        ]
+      },
+      "developer": {
+        "name": "Developer",
+        "description": "Väx din verksamhet",
+        "price": "€890",
+        "features": [
+          "3 Controllers, 6 Workers",
+          "Alla databaser ingår",
+          "Prioriterad support",
+          "Egen domän"
+        ]
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "description": "Anpassade lösningar",
+        "price": "Kontakta oss",
+        "features": [
+          "Anpassad infrastruktur",
+          "Dedikerad support",
+          "SLA-garantier",
+          "Utbildning & onboarding"
+        ]
+      }
+    },
+    "getStarted": "Kom Igång",
+    "contactSales": "Kontakta Försäljning",
+    "moneyBackGuarantee": "30 dagars pengarna-tillbaka-garanti",
+    "detailedPricing": "Detaljerad Prissättning",
+    "tooltip": "Alla priser exkl. moms",
+    "compareWithAlternatives": "Jämför med Alternativ",
+    "comparisonTooltip": "Baserat på offentlig prissättning"
   },
   "footer": {
     "description": "Vårt uppdrag är att tillhandahålla de mest pålitliga, värdefulla och hållbara AI-molntjänsterna i Europa.",
