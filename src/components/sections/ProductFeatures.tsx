@@ -11,9 +11,9 @@ export function ProductFeatures() {
     <section className="py-24 relative">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl font-medium mb-4">{t('products.title')}</h2>
+          <h2 className="text-3xl font-medium mb-4">{t('products.hero.title')}</h2>
           <p className="text-lg text-white/60">
-            {t('products.description')}
+            {t('products.hero.description')}
           </p>
         </div>
 
@@ -31,9 +31,9 @@ export function ProductFeatures() {
               {t('products.serverless.description')}
             </p>
             <ul className="space-y-2 mb-6">
-              <li className="text-sm text-white/60">• {t('products.serverless.features.openLLMs')}</li>
-              <li className="text-sm text-white/60">• {t('products.serverless.features.compatibility')}</li>
-              <li className="text-sm text-white/60">• {t('products.serverless.features.pricing')}</li>
+              <li className="text-sm text-white/60">• {t('products.serverless.features.integration.title')}</li>
+              <li className="text-sm text-white/60">• {t('products.serverless.features.usage.title')}</li>
+              <li className="text-sm text-white/60">• {t('products.serverless.features.infrastructure.title')}</li>
             </ul>
           </motion.div>
 
@@ -51,9 +51,9 @@ export function ProductFeatures() {
               {t('products.dedicated.description')}
             </p>
             <ul className="space-y-2 mb-6">
-              <li className="text-sm text-white/60">• {t('products.dedicated.features.ownModels')}</li>
-              <li className="text-sm text-white/60">• {t('products.dedicated.features.capacity')}</li>
-              <li className="text-sm text-white/60">• {t('products.dedicated.features.scaling')}</li>
+              <li className="text-sm text-white/60">• {t('products.dedicated.features.deployment.title')}</li>
+              <li className="text-sm text-white/60">• {t('products.dedicated.features.control.title')}</li>
+              <li className="text-sm text-white/60">• {t('products.dedicated.features.performance.title')}</li>
             </ul>
           </motion.div>
 
@@ -71,9 +71,9 @@ export function ProductFeatures() {
               {t('products.platform.description')}
             </p>
             <ul className="space-y-2 mb-6">
-              <li className="text-sm text-white/60">• {t('products.platform.features.gitops')}</li>
-              <li className="text-sm text-white/60">• {t('products.platform.features.monitoring')}</li>
-              <li className="text-sm text-white/60">• {t('products.platform.features.databases')}</li>
+              <li className="text-sm text-white/60">• {t('products.platform.features.toolset.title')}</li>
+              <li className="text-sm text-white/60">• {t('products.platform.features.services.title')}</li>
+              <li className="text-sm text-white/60">• {t('products.platform.features.infrastructure.title')}</li>
             </ul>
           </motion.div>
         </div>
@@ -81,7 +81,7 @@ export function ProductFeatures() {
         <div className="text-center">
           <Button asChild size="lg">
             <Link to="/products">
-              {t('products.exploreMore')}
+              {t('products.hero.exploreMore')}
               <Cloud className="ml-2 h-4 w-4" />
             </Link>
           </Button>

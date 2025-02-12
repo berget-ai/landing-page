@@ -94,7 +94,8 @@
   "products": {
     "hero": {
       "title": "Build the Future with Berget AI",
-      "description": "Enterprise-grade AI infrastructure designed for European businesses. Secure, compliant, and ready to scale."
+      "description": "Enterprise-grade AI infrastructure designed for European businesses. Secure, compliant, and ready to scale.",
+      "exploreMore": "Learn more"
     },
     "serverless": {
       "title": "Serverless Inference",
