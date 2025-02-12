@@ -206,6 +206,7 @@
         "price": "€890",
         "features": [
           "200€ token credits",
+          "No rate limits",
           "3 Controllers, 6 Workers",
           "Priority support",
           "12% discount"
@@ -217,6 +218,7 @@
         "price": "Custom",
         "features": [
           "Custom infrastructure",
+          "No rate limits",
           "Dedicated support",
           "SLA guarantees",
           "Training & onboarding"
