@@ -13,12 +13,12 @@ const serviceComponents = [
   {
     category: 'Compute & Inference',
     icon: Cpu,
-    items: ['Model Hosting', 'CPU Compute', 'GPU Compute', 'Inference Endpoints']
+    items: ['Inference Endpoints', 'Model Hosting', 'CPU Compute', 'GPU Compute']
   },
   {
     category: 'Management',
     icon: GitBranch,
-    items: ['Management Console', 'User & Team Management', 'Networking', 'Hybrid Cloud']
+    items: ['Management Console', 'User & Team Management', 'Service Management', 'Resource & Cost Management']
   }
 ]
 
@@ -27,7 +27,7 @@ const platformStack = [
     name: 'Tools & Marketplace',
     icon: Box,
     color: 'from-blue-500 to-purple-500',
-    items: ['DB', 'Vector', 'DevOps', 'Frameworks'],
+    items: ['Database', 'Vector DB', 'DevOps', 'Agentic Frameworks'],
   },
   {
     name: 'LLM',
@@ -53,7 +53,7 @@ const managementStack = {
   name: 'Management',
   icon: Users,
   color: 'from-rose-500 to-orange-500',
-  items: ['Management Console', 'User and Team Management'],
+  items: ['Management Console', 'User & Team Management', 'Service Management', 'Resource & Cost Management'],
 }
 
 export default function ProductsPage() {
