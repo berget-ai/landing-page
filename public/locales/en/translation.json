@@ -5,7 +5,7 @@
       "part1": "Unlocking AI Innovation",
       "part2": "in Europe"
     },
-    "description": "The European AI cloud built for developers. We provide secure, compliant infrastructure for AI applications, combining enterprise-grade security with modern developer experience - featuring simple service management, AI/DevOps marketplace, team autonomy, and full GitHub integration - all powered by Swedish data centers.",
+    "description": "The European AI cloud built for developers. We provide secure, compliant infrastructure for AI applications, combining enterprise-grade security with modern developer experience - featuring simple service management, AI/DevOps marketplace, team autonomy, Infra-as-Code and full GitHub integration - all powered by Swedish data centers.",
     "getStarted": "Get Started",
     "learnMore": "Learn More"
   },
@@ -51,27 +51,27 @@
       "description": "We are entrepreneurs and founders with decades of experience in technology and AI",
       "members": {
         "christian": {
-          "name": "Christian",
-          "role": "Co-founder & CEO",
+          "name": "Christian Landgren",
+          "role": "Co-founder & CPTO",
           "bio": "30 years of experience helping organizations with digitalization and AI, passionate about AI and software development, deeply engaged in open source and open innovations, trusted advisor to government and public sector, challenger and technology optimist",
           "image": "/team/christian.jpg"
         },
         "andreas": {
-          "name": "Andreas",
-          "role": "Co-founder & CTO",
-          "bio": "Was an integral part of building the AI capabilities at Boston Consulting Group (BCG Gamma) where he led the Nordic team and was globally responsible for the \"AI at Scale\" topic, and led multiple large scale data and AI transformations at leading global companies",
+          "name": "Andreas Lundmark",
+          "role": "Co-founder & CEO",
+          "bio": "Andreas was an integral part of building the AI capabilities at Boston Consulting Group (BCG Gamma) where he led the Nordic team and was globally responsible for the \"AI at Scale\" topic, and led multiple large scale data and AI transformations at leading global brands",
           "image": "/team/andreas.jpg"
         },
         "john": {
-          "name": "John",
-          "role": "Head of Infrastructure",
-          "bio": "A networking and kubernetes wizard with extensive experience in building and managing large-scale infrastructure",
+          "name": "John Angelmo",
+          "role": "Server Infrastructure",
+          "bio": "A networking and kubernetes wizard with extensive experience in building and managing large-scale Kubernetes based infrastructure",
           "image": "/team/john.jpg"
         },
         "johan": {
-          "name": "Johan",
-          "role": "Head of Network Architecture",
-          "bio": "A leading Data Center network designer and builder who has helped leading enterprises and scale-ups build global multi-site compute and storage platforms",
+          "name": "Johan Lahti",
+          "role": "Datacenter Networking",
+          "bio": "A leading Data Center network designer and builder who has helped leading enterprises and scale-ups build global multi-site datacenter deployments",
           "image": "/team/johan.jpg"
         }
       }
@@ -96,29 +96,29 @@
     "description": "Enterprise-grade AI infrastructure designed for European businesses",
     "serverless": {
       "title": "Serverless Inference",
-      "description": "Access powerful AI models through our simple API",
+      "description": "Power your applications with powerful Open Sources AI models",
       "features": {
-        "openLLMs": "Use popular Open LLMs",
-        "compatibility": "OpenAI-compatible API",
-        "pricing": "Pay as you go pricing"
+        "openLLMs": "Most popular Open LLMs for your agentic applications",
+        "compatibility": "Serverless OpenAI-compatible API",
+        "pricing": "Pay as you go with no upfront fees"
       }
     },
     "dedicated": {
       "title": "Dedicated Inference",
       "description": "Run your own models on dedicated hardware",
       "features": {
-        "ownModels": "Deploy custom models",
-        "capacity": "Dedicated resources",
+        "ownModels": "Deploy custom or finetuned models",
+        "capacity": "Dedicated inference resources",
         "scaling": "Production-grade scaling"
       }
     },
     "platform": {
-      "title": "Complete Platform",
+      "title": "Berget AI platform",
       "description": "Everything you need to build AI applications",
       "features": {
         "gitops": "GitOps workflows",
-        "monitoring": "Advanced monitoring",
-        "databases": "Managed databases"
+        "monitoring": "Easy management of resources",
+        "databases": "Pre-integrated Open Source tooling"
       }
     },
     "exploreMore": "Explore All Products"
@@ -129,11 +129,11 @@
     "features": {
       "european": {
         "title": "European Innovation",
-        "description": "Built and operated in Europe, for European businesses"
+        "description": "Built and operated in Europe"
       },
       "security": {
         "title": "Enterprise Security",
-        "description": "Bank-grade security and compliance built-in"
+        "description": "Security and compliance built-in"
       },
       "sustainability": {
         "title": "Sustainable Infrastructure",
@@ -163,8 +163,9 @@
         "description": "Enterprise-grade security by default",
         "items": [
           "OWASP standards compliance",
-          "Secure network inference",
-          "Zero data retention"
+          "Internal inference APIs",
+          "Zero data retention",
+          "Network separation"
         ]
       },
       "resources": {
@@ -173,7 +174,8 @@
         "items": [
           "Infrastructure as code",
           "Persistent environments",
-          "Full resource management"
+          "Full resource management",
+          "Pay only for resources"
         ]
       }
     },
@@ -198,10 +200,11 @@
         "description": "API access",
         "price": "€0",
         "features": [
-          "Pay per use",
-          "Serverless inference",
+          "Pay per token",
+          "Some Rate limit",
+          "Payg compute",
           "Community support",
-          "Basic monitoring"
+          "List prices"
         ]
       },
       "starter": {
@@ -209,10 +212,11 @@
         "description": "Start building",
         "price": "€250",
         "features": [
+          "100€ token credits",
+          "Less rate limits",
           "1 Controller, 3 Workers",
-          "Vector database included",
           "Email support",
-          "Advanced monitoring"
+          "10% Discount"
         ]
       },
       "developer": {
@@ -220,10 +224,10 @@
         "description": "Grow your business",
         "price": "€890",
         "features": [
+          "200€ token credits",
           "3 Controllers, 6 Workers",
-          "All databases included",
           "Priority support",
-          "Custom domain"
+          "12% discount"
         ]
       },
       "enterprise": {
@@ -280,5 +284,43 @@
     "copyright": "© 2025 Berget AI. All rights reserved.",
     "status": "Status",
     "support": "Support"
+  },
+  "compliance": {
+    "tagline": "Built for European Regulations",
+    "title": "Compliance Made Simple",
+    "description": "Navigate complex regulations with confidence. Our infrastructure is designed to meet European standards from the ground up.",
+    "regulations": {
+      "gdpr": {
+        "name": "GDPR Compliance",
+        "description": "Built-in data protection and privacy controls",
+        "benefits": [
+          "Data stays in EU",
+          "Complete audit trails",
+          "Data minimization by design",
+          "Automated compliance reporting"
+        ]
+      },
+      "nis2": {
+        "name": "NIS2 Ready",
+        "description": "Meeting cybersecurity requirements for critical infrastructure",
+        "benefits": [
+          "24/7 security monitoring",
+          "Incident response plans",
+          "Regular security assessments",
+          "Supply chain security"
+        ]
+      },
+      "schrems2": {
+        "name": "Schrems II Risks",
+        "description": "No exposure to US Cloud Act",
+        "benefits": [
+          "EU-only infrastructure",
+          "No US entity involvement",
+          "Transparent data flows",
+          "Legal certainty"
+        ]
+      }
+    },
+    "learnMore": "Learn More About Compliance"
   }
 }
