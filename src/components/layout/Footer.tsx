@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const footerLinks = {
   product: [
-    { key: 'features', href: '#features' },
+    { key: 'features', href: '/products' },
     { key: 'pricing', href: '/pricing' },
     { key: 'documentation', href: '/docs' },
     { key: 'security', href: '/security' },

@@ -322,5 +322,26 @@
       }
     },
     "learnMore": "Learn More About Compliance"
+  },
+  "overview": {
+    "whatIsGitOps": {
+      "title": "Manage Your Infrastructure with GitOps",
+      "description": "GitOps brings the best practices of software development to infrastructure management. Version control, collaboration, and automated deployments - all through Git."
+    },
+    "gitRepository": {
+      "title": "Git Repository",
+      "description": "Your infrastructure defined as code, version controlled and collaborative",
+      "sync": "Automatic sync with your infrastructure"
+    },
+    "bergetCluster": {
+      "title": "Berget Cluster",
+      "description": "Secure and scalable Kubernetes cluster for your AI workloads",
+      "security": "Enterprise-grade security and monitoring"
+    },
+    "aiApis": {
+      "title": "AI APIs & Services",
+      "description": "Connect to any AI service or model you need",
+      "hybridCloud": "Hybrid cloud ready"
+    }
   }
 }
