@@ -92,36 +92,142 @@
     }
   },
   "products": {
-    "title": "Bygg med Tillförsikt",
-    "description": "Enterprise-anpassad AI-infrastruktur designad för europeiska företag",
+    "hero": {
+      "title": "Bygg framtiden med Berget AI",
+      "description": "Enterprise-anpassad AI-infrastruktur designad för europeiska företag. Säker, regelefterlevande och redo att skala."
+    },
     "serverless": {
-      "title": "Serverless Inference",
-      "description": "Få tillgång till kraftfulla AI-modeller genom vårt enkla API",
+      "title": "Serverlös Inferens",
+      "description": "Utnyttja kraften i världens ledande öppna språkmodeller utan att hantera infrastruktur.",
       "features": {
-        "openLLMs": "Använd populära Open LLMs",
-        "compatibility": "OpenAI-kompatibelt API",
-        "pricing": "Betala per användning"
+        "integration": {
+          "title": "Enkel Integration",
+          "items": [
+            "OpenAI-kompatibelt API",
+            "Enkel implementation",
+            "Sömlös skalning"
+          ]
+        },
+        "usage": {
+          "title": "Flexibel Användning",
+          "items": [
+            "Betala per användning",
+            "Inferens på begäran",
+            "Stöd för batch-bearbetning"
+          ]
+        },
+        "infrastructure": {
+          "title": "Robust Infrastruktur",
+          "items": [
+            "Dedikerade GPU-kluster",
+            "Europeiska datacenter",
+            "Hög tillgänglighet"
+          ]
+        }
       }
     },
     "dedicated": {
-      "title": "Dedikerad Inference",
-      "description": "Kör dina egna modeller på dedikerad hårdvara",
+      "title": "Dedikerad Inferens",
+      "description": "Kör och skala valfri modell, inklusive dina egna finjusterade modeller på dedikerad kapacitet.",
       "features": {
-        "ownModels": "Driftsätt anpassade modeller",
-        "capacity": "Dedikerade resurser",
-        "scaling": "Produktionsanpassad skalning"
+        "deployment": {
+          "title": "Anpassad Driftsättning",
+          "items": [
+            "Anpassningsbara instanser",
+            "Högbelastade arbetsflöden",
+            "Dedikerade resurser"
+          ]
+        },
+        "control": {
+          "title": "Modellkontroll",
+          "items": [
+            "Driftsätt finjusterade modeller",
+            "Versionskontroll",
+            "Säker miljö"
+          ]
+        },
+        "performance": {
+          "title": "Optimerad Prestanda",
+          "items": [
+            "Resursoptimering",
+            "Flexibel skalning",
+            "Kostnadshantering"
+          ]
+        }
       }
     },
     "platform": {
-      "title": "Komplett Plattform",
-      "description": "Allt du behöver för att bygga AI-applikationer",
+      "title": "Berget AI-plattform",
+      "description": "Ta full kontroll med en intuitiv plattform designad för utveckling och driftsättning av AI-applikationer.",
       "features": {
-        "gitops": "GitOps-arbetsflöden",
-        "monitoring": "Avancerad övervakning",
-        "databases": "Hanterade databaser"
+        "toolset": {
+          "title": "Komplett Verktygssats",
+          "items": [
+            "Kraftfull dashboard",
+            "Resurshantering",
+            "Kostnadstransparens"
+          ]
+        },
+        "services": {
+          "title": "Färdiga Tjänster",
+          "items": [
+            "Förkonfigurerade recept",
+            "App-marknad",
+            "Populära AI-verktyg"
+          ]
+        },
+        "infrastructure": {
+          "title": "Flexibel Infrastruktur",
+          "items": [
+            "Persistenta kluster",
+            "Enkel uppsättning",
+            "Skalbara resurser"
+          ]
+        }
       }
     },
-    "exploreMore": "Utforska Alla Produkter"
+    "architecture": {
+      "title": "Plattformsarkitektur",
+      "description": "En omfattande stack designad för enterprise AI-utveckling och driftsättning",
+      "layers": {
+        "tools": {
+          "title": "Verktyg & Marknad",
+          "items": ["Databas", "Vektor-DB", "DevOps", "Agent-ramverk"]
+        },
+        "llm": {
+          "title": "LLM",
+          "items": ["Inferens", "Modellhantering"]
+        },
+        "compute": {
+          "title": "Beräkning",
+          "items": ["CPU", "GPU"]
+        },
+        "connectivity": {
+          "title": "Anslutning",
+          "items": ["Isolerat Nätverk", "VPN & Hybridmoln"]
+        },
+        "management": {
+          "title": "Hantering",
+          "items": [
+            "Hanteringskonsol",
+            "Användar- och Teamhantering",
+            "Tjänstehantering", 
+            "Resurs- och Kostnadshantering"
+          ]
+        }
+      }
+    },
+    "models": {
+      "title": "Våra Modeller",
+      "description": "Få tillgång till ett brett urval av kraftfulla öppna modeller för att bygga olika AI-lösningar.",
+      "requestModel": "Begär en Modell"
+    },
+    "cta": {
+      "title": "Redo att Börja Bygga?",
+      "description": "Gå med i den växande gemenskapen av utvecklare som bygger framtidens AI med Berget.",
+      "getStarted": "Kom Igång",
+      "contactSales": "Kontakta Försäljning"
+    }
   },
   "developers": {
     "hero": {

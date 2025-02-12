@@ -92,36 +92,142 @@
     }
   },
   "products": {
-    "title": "Build with Confidence",
-    "description": "Enterprise-grade AI infrastructure designed for European businesses",
+    "hero": {
+      "title": "Build the Future with Berget AI",
+      "description": "Enterprise-grade AI infrastructure designed for European businesses. Secure, compliant, and ready to scale."
+    },
     "serverless": {
       "title": "Serverless Inference",
-      "description": "Power your applications with powerful Open Sources AI models",
+      "description": "Leverage the power of the world's leading Open LLMs without managing infrastructure.",
       "features": {
-        "openLLMs": "Most popular Open LLMs for your agentic applications",
-        "compatibility": "Serverless OpenAI-compatible API",
-        "pricing": "Pay as you go with no upfront fees"
+        "integration": {
+          "title": "Get going in minutes",
+          "items": [
+            "OpenAI-compatible API",
+            "Get started in minutes",
+            "Scale as you go"
+          ]
+        },
+        "usage": {
+          "title": "Flexible Usage",
+          "items": [
+            "Pay-as-you-go pricing",
+            "Rich selection of models",
+            "On-demand and Batch"
+          ]
+        },
+        "infrastructure": {
+          "title": "In-house GPU clusters",
+          "items": [
+            "Dedicated GPU clusters",
+            "European data centers",
+            "No data retention"
+          ]
+        }
       }
     },
     "dedicated": {
       "title": "Dedicated Inference",
-      "description": "Run your own models on dedicated hardware",
+      "description": "Run and scale any model, including your own fine-tuned models on dedicated capacity.",
       "features": {
-        "ownModels": "Deploy custom or finetuned models",
-        "capacity": "Dedicated inference resources",
-        "scaling": "Production-grade scaling"
+        "deployment": {
+          "title": "Custom Deployment",
+          "items": [
+            "Customizable instances",
+            "High-demand workloads",
+            "Dedicated resources"
+          ]
+        },
+        "control": {
+          "title": "Model Control",
+          "items": [
+            "Host finetuned models",
+            "Version control",
+            "Secure environment"
+          ]
+        },
+        "performance": {
+          "title": "Optimized Performance",
+          "items": [
+            "Resource optimization",
+            "Flexible scaling",
+            "Cost management"
+          ]
+        }
       }
     },
     "platform": {
-      "title": "Berget AI platform",
-      "description": "Everything you need to build AI applications",
+      "title": "Berget AI Platform",
+      "description": "Take full control with an intuitive platform designed for development and deployment of AI Applications.",
       "features": {
-        "gitops": "GitOps workflows",
-        "monitoring": "Easy management of resources",
-        "databases": "Pre-integrated Open Source tooling"
+        "toolset": {
+          "title": "Full Flexibility and Control",
+          "items": [
+            "Powerful dashboard",
+            "Resource management",
+            "Cost transparency"
+          ]
+        },
+        "services": {
+          "title": "Ready-to-Use Services",
+          "items": [
+            "Pre-configured recipes",
+            "App marketplace",
+            "Popular AI tools"
+          ]
+        },
+        "infrastructure": {
+          "title": "All infra as Code",
+          "items": [
+            "Persistent clusters",
+            "Simple setup",
+            "GitHub integration"
+          ]
+        }
       }
     },
-    "exploreMore": "Explore All Products"
+    "architecture": {
+      "title": "Platform Architecture",
+      "description": "A comprehensive stack designed for enterprise AI development and deployment",
+      "layers": {
+        "tools": {
+          "title": "Tools & Marketplace",
+          "items": ["Database", "Vector DB", "DevOps", "Agentic Frameworks"]
+        },
+        "llm": {
+          "title": "LLM",
+          "items": ["Inference", "Model Hosting"]
+        },
+        "compute": {
+          "title": "Compute",
+          "items": ["CPU", "GPU"]
+        },
+        "connectivity": {
+          "title": "Connectivity",
+          "items": ["Isolated Network", "VPN & Hybrid Cloud"]
+        },
+        "management": {
+          "title": "Management",
+          "items": [
+            "Management Console",
+            "User & Team Management",
+            "Service Management",
+            "Resource & Cost Management"
+          ]
+        }
+      }
+    },
+    "models": {
+      "title": "Our Models",
+      "description": "Access a broad selection of powerful open models to build diverse AI solutions.",
+      "requestModel": "Request a Model"
+    },
+    "cta": {
+      "title": "Ready to Start Building?",
+      "description": "Join the growing community of developers building the future of AI with Berget.",
+      "getStarted": "Get Started",
+      "contactSales": "Contact Sales"
+    }
   },
   "developers": {
     "hero": {
