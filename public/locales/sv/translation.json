@@ -280,5 +280,43 @@
     "copyright": "© 2025 Berget AI. Med ensamrätt.",
     "status": "Status",
     "support": "Support"
+  },
+  "compliance": {
+    "tagline": "Byggd för europeiska regelverk",
+    "title": "Regelefterlevnad på ett enkelt sätt",
+    "description": "Navigera komplexa regelverk med självförtroende. Vår infrastruktur är designad för att möta europeiska standarder från grunden.",
+    "regulations": {
+      "gdpr": {
+        "name": "GDPR-efterlevnad",
+        "description": "Inbyggda dataskydds- och integritetskontroller",
+        "benefits": [
+          "Data stannar inom EU",
+          "Fullständiga granskningsspår",
+          "Dataminimering by design",
+          "Automatiserad efterlevnadsrapportering"
+        ]
+      },
+      "nis2": {
+        "name": "NIS2-redo",
+        "description": "Uppfyller cybersäkerhetskrav för kritisk infrastruktur",
+        "benefits": [
+          "24/7 säkerhetsövervakning",
+          "Incidenthanteringsplaner",
+          "Regelbundna säkerhetsbedömningar",
+          "Säker leverantörskedja"
+        ]
+      },
+      "schrems2": {
+        "name": "Schrems II-kompatibel",
+        "description": "Ingen exponering för US Cloud Act",
+        "benefits": [
+          "EU-endast infrastruktur",
+          "Ingen US-entitetsinblandning",
+          "Transparenta dataflöden",
+          "Juridisk säkerhet"
+        ]
+      }
+    },
+    "learnMore": "Läs mer om regelefterlevnad"
   }
 }
