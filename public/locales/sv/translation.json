@@ -123,25 +123,6 @@
     },
     "exploreMore": "Utforska Alla Produkter"
   },
-  "whyBerget": {
-    "title": "Varför Välja Berget",
-    "description": "Byggt för europeiska företag som behöver säker, compliant AI-infrastruktur",
-    "features": {
-      "european": {
-        "title": "Europeisk Innovation",
-        "description": "Byggt och drivet i Europa, för europeiska företag"
-      },
-      "security": {
-        "title": "Enterprise-säkerhet",
-        "description": "Banksäkerhet och compliance inbyggt"
-      },
-      "sustainability": {
-        "title": "Hållbar Infrastruktur",
-        "description": "100% förnybar energi och cirkulär hårdvara"
-      }
-    },
-    "discoverMore": "Upptäck Mer"
-  },
   "developers": {
     "hero": {
       "title": "Byggt av Utvecklare för Utvecklare",
@@ -339,5 +320,28 @@
       "description": "Anslut till alla AI-tjänster eller modeller du behöver",
       "hybridCloud": "Redo för hybridmoln"
     }
+  },
+  "whyBerget": {
+    "title": "Varför Välja Berget",
+    "description": "Byggt för europeiska företag som behöver säker, regelefterlevande AI-infrastruktur",
+    "features": {
+      "european": {
+        "title": "Europeisk Innovation & Suveränitet",
+        "description": "Byggt och drivet i Europa, ger företag äkta digital suveränitet"
+      },
+      "security": {
+        "title": "Enterprise-anpassad Säkerhet",
+        "description": "Banksäkerhet med omfattande regelefterlevnad inbyggd i varje lager"
+      },
+      "alternative": {
+        "title": "Bortom Publika Moln",
+        "description": "Det säkra alternativet när publika moln inte är ett alternativ för känsliga arbetsbelastningar"
+      },
+      "privacy": {
+        "title": "Fullständig Dataintegritet",
+        "description": "Din data lämnar aldrig vår säkra EU-infrastruktur med noll-retention policy"
+      }
+    },
+    "discoverMore": "Upptäck Mer"
   }
 }

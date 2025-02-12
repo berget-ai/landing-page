@@ -123,25 +123,6 @@
     },
     "exploreMore": "Explore All Products"
   },
-  "whyBerget": {
-    "title": "Why Choose Berget",
-    "description": "Built for European businesses who need secure, compliant AI infrastructure",
-    "features": {
-      "european": {
-        "title": "European Innovation",
-        "description": "Built and operated in Europe"
-      },
-      "security": {
-        "title": "Enterprise Security",
-        "description": "Security and compliance built-in"
-      },
-      "sustainability": {
-        "title": "Sustainable Infrastructure",
-        "description": "100% renewable energy and circular hardware"
-      }
-    },
-    "discoverMore": "Discover More"
-  },
   "developers": {
     "hero": {
       "title": "Built by Developers for Developers",
@@ -343,5 +324,28 @@
       "description": "Connect to any AI service or model you need",
       "hybridCloud": "Hybrid cloud ready"
     }
+  },
+  "whyBerget": {
+    "title": "Why Choose Berget",
+    "description": "Built for European businesses who need secure, compliant AI infrastructure",
+    "features": {
+      "european": {
+        "title": "European Innovation & Sovereignty",
+        "description": "Built and operated in Europe, empowering businesses with true digital sovereignty"
+      },
+      "security": {
+        "title": "Enterprise-Grade Security",
+        "description": "Bank-grade security with comprehensive compliance built into every layer"
+      },
+      "alternative": {
+        "title": "Beyond Public Cloud",
+        "description": "The secure alternative when public cloud isn't an option for sensitive workloads"
+      },
+      "privacy": {
+        "title": "Complete Data Privacy",
+        "description": "Your data never leaves our secure EU infrastructure with zero retention policy"
+      }
+    },
+    "discoverMore": "Discover More"
   }
 }
