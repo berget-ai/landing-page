@@ -318,5 +318,26 @@
       }
     },
     "learnMore": "Läs mer om regelefterlevnad"
+  },
+  "overview": {
+    "whatIsGitOps": {
+      "title": "Hantera Din Infrastruktur med GitOps",
+      "description": "GitOps för med sig bästa praxis från mjukvaruutveckling till infrastrukturhantering. Versionskontroll, samarbete och automatiserade driftsättningar - allt genom Git."
+    },
+    "gitRepository": {
+      "title": "Git-repository",
+      "description": "Din infrastruktur definierad som kod, versionshanterad och samarbetsvänlig",
+      "sync": "Automatisk synkronisering med din infrastruktur"
+    },
+    "bergetCluster": {
+      "title": "Berget-kluster",
+      "description": "Säkert och skalbart Kubernetes-kluster för dina AI-arbetsbelastningar",
+      "security": "Enterprise-anpassad säkerhet och övervakning"
+    },
+    "aiApis": {
+      "title": "AI-APIer & Tjänster",
+      "description": "Anslut till alla AI-tjänster eller modeller du behöver",
+      "hybridCloud": "Redo för hybridmoln"
+    }
   }
 }
