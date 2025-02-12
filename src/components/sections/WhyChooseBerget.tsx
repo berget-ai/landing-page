@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Link } from 'react-router-dom'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Globe, Shield, Server, Lock } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
 export function WhyChooseBerget() {
@@ -17,7 +17,7 @@ export function WhyChooseBerget() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* European Innovation */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -25,6 +25,7 @@ export function WhyChooseBerget() {
             viewport={{ once: true }}
             className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors"
           >
+            <Globe className="w-6 h-6 mb-4 text-blue-400" />
             <h3 className="text-xl font-medium mb-3">{t('whyBerget.features.european.title')}</h3>
             <p className="text-white/60">
               {t('whyBerget.features.european.description')}
@@ -39,13 +40,14 @@ export function WhyChooseBerget() {
             transition={{ delay: 0.1 }}
             className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors"
           >
+            <Shield className="w-6 h-6 mb-4 text-emerald-400" />
             <h3 className="text-xl font-medium mb-3">{t('whyBerget.features.security.title')}</h3>
             <p className="text-white/60">
               {t('whyBerget.features.security.description')}
             </p>
           </motion.div>
 
-          {/* Sustainability */}
+          {/* Alternative to Public Cloud */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -53,9 +55,25 @@ export function WhyChooseBerget() {
             transition={{ delay: 0.2 }}
             className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors"
           >
-            <h3 className="text-xl font-medium mb-3">{t('whyBerget.features.sustainability.title')}</h3>
+            <Server className="w-6 h-6 mb-4 text-purple-400" />
+            <h3 className="text-xl font-medium mb-3">{t('whyBerget.features.alternative.title')}</h3>
             <p className="text-white/60">
-              {t('whyBerget.features.sustainability.description')}
+              {t('whyBerget.features.alternative.description')}
+            </p>
+          </motion.div>
+
+          {/* Data Privacy */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors"
+          >
+            <Lock className="w-6 h-6 mb-4 text-rose-400" />
+            <h3 className="text-xl font-medium mb-3">{t('whyBerget.features.privacy.title')}</h3>
+            <p className="text-white/60">
+              {t('whyBerget.features.privacy.description')}
             </p>
           </motion.div>
         </div>
