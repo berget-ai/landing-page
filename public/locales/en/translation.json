@@ -197,15 +197,15 @@
         },
         "llm": {
           "title": "LLM",
-          "items": ["Inference", "Model Hosting"]
+          "items": ["Serverless Inference", "Dedicated", "Model hosting", "Finetuning"]
         },
         "compute": {
-          "title": "Compute",
-          "items": ["CPU", "GPU"]
+          "title": "Storage & Compute",
+          "items": ["CPU", "GPU", "Local Storage", "Block Storage"]
         },
         "connectivity": {
           "title": "Connectivity",
-          "items": ["Isolated Network", "VPN & Hybrid Cloud"]
+          "items": ["Isolated Network", "VPN", "Cloud Connectors"]
         },
         "management": {
           "title": "Management",
