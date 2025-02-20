@@ -57,7 +57,7 @@ export function GetStarted() {
             </div>
             <div className="text-emerald-400/80">Done! 5 nodes created.</div>
             <div className="text-emerald-400/80">
-              Assigned DNS: ideal-palmtree.berget.cloud
+              Assigned DNS: ideal-palmtree.berget.host
             </div>
             <div className="text-white/60 mt-2">
               {t('getStarted.clusterReady')}

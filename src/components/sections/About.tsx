@@ -13,7 +13,9 @@ export function About() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h1 className="text-3xl font-medium mb-6">{t('about.title')}</h1>
           <p className="text-lg text-white/60">{t('about.description')}</p>
-          <p className="text-lg text-white/60 mt-4">{t('about.subDescription')}</p>
+          <p className="text-lg text-white/60 mt-4">
+            {t('about.subDescription')}
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
@@ -92,7 +94,7 @@ export function About() {
           </p>
           <Button size="lg" asChild>
             <a
-              href="https://odoo.berget.cloud/jobs"
+              href="https://odoo.berget.ai/jobs"
               target="_blank"
               rel="noopener noreferrer"
             >
