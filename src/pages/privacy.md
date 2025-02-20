@@ -40,7 +40,7 @@ e) Type of personal data: The Customer controls which types of personal data the
 
 f) Categories of data subjects: The categories of data subjects may include the Customer’s, or, if applicable, End-Customers’ employees, job applicants, directors, agents, contractors, suppliers, customers, clients, and/or end-users.
 
-3.2. Berget processes certain personal data also as data controller. Such personal data may include, inter alia, data of the Customer’s contact persons, users of the Services, credit card information, and other personal data of the Customer’s personnel which Berget processes in order to provide the Services, collect payments, and maintain and develop the customer relationship. Processing of this type of personal data is outside the scope of this DPA. For more information on how Berget processes personal data as data controller, please see Berget’s Privacy Policy available on Berget’s website at https://www.berget.cloud
+3.2. Berget processes certain personal data also as data controller. Such personal data may include, inter alia, data of the Customer’s contact persons, users of the Services, credit card information, and other personal data of the Customer’s personnel which Berget processes in order to provide the Services, collect payments, and maintain and develop the customer relationship. Processing of this type of personal data is outside the scope of this DPA. For more information on how Berget processes personal data as data controller, please see Berget’s Privacy Policy available on Berget’s website at https://www.berget.ai
 
 ### 4\. General Obligations of the Customer
 
@@ -142,6 +142,6 @@ Therefore Berget considers some of its Affiliates as subprocessors regardless of
 
 The following list describes in which cases Berget Affiliates will be utilised in the provision of the Services:
 
-- GetGeek AB (Org nr: 559073-1039), provides services to Berget AI AB with regards to network and server design and operations and support  
+- GetGeek AB (Org nr: 559073-1039), provides services to Berget AI AB with regards to network and server design and operations and support
 
 - Acebit AB (Org nr: 559265-3538), provides services to Berget AI AB with regards to network and server design and operations and support
