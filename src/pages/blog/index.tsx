@@ -41,12 +41,11 @@ export default function BlogPage() {
           }
         })
 
-      // Filter out argument files
-      const argumentPaths = Object.entries(postModules)
-        .filter(([path]) => path.includes('/arguments/'))
-        .map(([path]) => path)
-      
-      // We're not using these files now, but keeping track of them for future reference
+      // We could filter out argument files here if needed in the future
+      // Example:
+      // const argumentPaths = Object.entries(postModules)
+      //   .filter(([path]) => path.includes('/arguments/'))
+      //   .map(([path]) => path)
 
       const loadedPosts = blogPosts
 
