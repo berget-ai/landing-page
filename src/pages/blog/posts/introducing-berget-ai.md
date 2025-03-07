@@ -1,11 +1,11 @@
 ---
-title: "Introducing Berget AI: The Next Generation of European AI Infrastructure"
-description: "Berget AI launches to provide secure, compliant, and sustainable AI infrastructure for European enterprises"
-date: "2024-01-30"
-author: "Berget Team"
-tags: ["announcement", "product", "launch"]
-image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80"
-imageAlt: "Modern data center with blue lighting"
+title: 'Introducing Berget AI: The Next Generation of European AI Infrastructure'
+description: 'Berget AI launches to provide secure, compliant, and sustainable AI infrastructure for European enterprises'
+date: '2024-01-30'
+author: 'Berget Team'
+tags: ['announcement', 'product', 'launch']
+image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80'
+imageAlt: 'Modern data center with blue lighting'
 ---
 
 > Berget AI launches to provide secure, compliant, and sustainable AI infrastructure for European enterprises. Built from the ground up with European values and regulations in mind, Berget AI offers a complete platform for building and deploying AI applications.
@@ -26,11 +26,13 @@ The AI landscape is rapidly evolving, and European businesses need infrastructur
 Berget AI provides a comprehensive suite of tools and services:
 
 1. **Compute Infrastructure**
+
    - High-performance GPU clusters
    - Optimized for AI/ML workloads
    - Flexible scaling options
 
 2. **Security Features**
+
    - End-to-end encryption
    - Advanced access controls
    - Regular security audits
@@ -46,7 +48,7 @@ Berget AI provides a comprehensive suite of tools and services:
 
 Getting started with Berget AI is straightforward:
 
-1. Create an account at [dashboard.berget.cloud](https://dashboard.berget.cloud)
+1. Create an account at [dashboard.berget.ai](https://dashboard.berget.ai)
 2. Choose your compute resources
 3. Deploy your first AI application
 

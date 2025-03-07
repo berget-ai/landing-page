@@ -41,17 +41,11 @@ export default function BlogPage() {
           }
         })
 
-      // Load argument files for reference/linking
-      const argumentFiles = Object.entries(postModules)
-        .filter(([path]) => path.includes('/arguments/'))
-        .reduce((acc, [path, module]: [string, any]) => {
-          const fileName = path.split('/').pop()?.replace('.md', '') || ''
-          acc[fileName] = {
-            content: module.html,
-            path,
-          }
-          return acc
-        }, {} as Record<string, { content: string; path: string }>)
+      // We could filter out argument files here if needed in the future
+      // Example:
+      // const argumentPaths = Object.entries(postModules)
+      //   .filter(([path]) => path.includes('/arguments/'))
+      //   .map(([path]) => path)
 
       const loadedPosts = blogPosts
 

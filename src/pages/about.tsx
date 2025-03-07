@@ -1,113 +1,159 @@
-import { Building2, Mail, MapPin, Users, Shield, Globe } from 'lucide-react'
+import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
+import { ArrowRight } from 'lucide-react'
 
 export default function AboutPage() {
   const { t } = useTranslation()
 
   return (
-    <main className="min-h-screen pt-24 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-[#2D6A4F]/20 via-transparent to-[#FFB700]/20 pointer-events-none" />
-      <div className="container mx-auto px-4 py-12">
-        <div className="max-w-3xl mx-auto mb-16 relative">
-          <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-20 h-20 bg-white/5 rounded-full blur-2xl" />
-          <h1 className="text-5xl font-medium mb-4 bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
-            {t('about.title')}
-          </h1>
-          <h2 className="text-3xl font-medium mb-6 text-white">
-            {t('about.subtitle')}
-          </h2>
-          <p className="text-xl text-white/70 leading-relaxed mb-8 max-w-3xl mx-auto">
-            {t('about.description')}
-          </p>
-          <div className="space-y-6 text-lg text-white/80">
-            <p>{t('about.manifesto.intro')}</p>
-            <p>{t('about.manifesto.european')}</p>
-            <p>{t('about.manifesto.vision')}</p>
+    <main className="min-h-screen pt-24">
+      {/* Hero Section */}
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/50 to-background" />
+        <div className="container mx-auto px-4 relative">
+          <div className="max-w-3xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <h1 className="text-5xl font-medium mb-6">{t('about.hero.title')}</h1>
+              <p className="text-xl text-white/80">{t('about.hero.description')}</p>
+            </motion.div>
           </div>
         </div>
+      </section>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
-          <div className="p-8 rounded-xl bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors duration-300 group">
-            <Users className="w-10 h-10 mb-6 text-[#40916C] group-hover:scale-110 transition-transform duration-300" />
-            <h3 className="text-2xl font-medium mb-3">
-              {t('about.mission.title', 'Our Mission')}
-            </h3>
-            <p className="text-white/60">
-              {t('about.mission.description', 'Making AI accessible, secure and efficient for Swedish enterprises through local infrastructure and expertise')}
-            </p>
-          </div>
-
-          <div className="p-8 rounded-xl bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors duration-300 group">
-            <Shield className="w-10 h-10 mb-6 text-[#40916C] group-hover:scale-110 transition-transform duration-300" />
-            <h3 className="text-2xl font-medium mb-3">
-              {t('about.values.title', 'Our Values')}
-            </h3>
-            <p className="text-white/60">
-              {t('about.values.description', 'Integrity, innovation and sustainability are at the core of everything we do')}
-            </p>
-          </div>
-
-          <div className="p-8 rounded-xl bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors duration-300 group">
-            <Globe className="w-10 h-10 mb-6 text-[#40916C] group-hover:scale-110 transition-transform duration-300" />
-            <h3 className="text-2xl font-medium mb-3">
-              {t('about.vision.title', 'Our Vision')}
-            </h3>
-            <p className="text-white/60">
-              {t('about.vision.description', 'To be the leading AI infrastructure provider in the Nordics')}
-            </p>
+      {/* Origin Story */}
+      <section className="py-24 relative">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <h2 className="text-3xl font-medium">{t('about.origin.title')}</h2>
+              <p className="text-lg text-white/60 leading-relaxed">
+                {t('about.origin.description')}
+              </p>
+              <p className="text-lg text-white/60 leading-relaxed">
+                {t('about.origin.nameOrigin')}
+              </p>
+            </motion.div>
           </div>
         </div>
+      </section>
 
-        <div className="mb-24 relative">
-          <div className="absolute -right-40 top-20 w-80 h-80 bg-[#40916C]/20 rounded-full blur-3xl pointer-events-none" />
-          <h2 className="text-3xl font-medium mb-12 relative">
-            {t('about.story.title', 'Our Story')}
-          </h2>
-          <div className="prose prose-invert max-w-none">
-            <p>
-              {t('about.story.p1', 'Berget AI was founded in 2023 with a clear vision: to make AI accessible to Swedish enterprises in a secure and efficient way.')}
-            </p>
-            <p>
-              {t('about.story.p2', 'We saw a growing need for local AI infrastructure that meets Swedish and European requirements for data security and integrity.')}
-            </p>
-            <p>
-              {t('about.story.p3', "Today, we work with leading Swedish companies to build tomorrow's AI solutions with a focus on security, performance and sustainability.")}
-            </p>
-          </div>
-        </div>
-
-        <div className="relative">
-          <div className="absolute -left-40 top-20 w-80 h-80 bg-[#FFB700]/10 rounded-full blur-3xl pointer-events-none" />
-          <h2 className="text-3xl font-medium mb-12">
-            {t('about.companyInfo')}
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-              <Building2 className="w-8 h-8 mb-4" />
-              <h3 className="text-xl font-medium mb-2">
-                {t('about.legalInfo')}
-              </h3>
-              <p className="text-white/60">Berget AI AB</p>
-              <p className="text-white/60">Org. Nr: 559504-7522</p>
-            </div>
-
-            <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-              <MapPin className="w-8 h-8 mb-4" />
-              <h3 className="text-xl font-medium mb-2">{t('about.address')}</h3>
-              <p className="text-white/60">Götgatan 18</p>
-              <p className="text-white/60">Stockholm, Sweden</p>
-            </div>
-
-            <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-              <Mail className="w-8 h-8 mb-4" />
-              <h3 className="text-xl font-medium mb-2">{t('about.contact')}</h3>
-              <p className="text-white/60">support@berget.ai</p>
-              <p className="text-white/60">legal@berget.ai</p>
+      {/* Values */}
+      <section className="py-24 relative bg-white/[0.02] border-y border-white/5">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-medium mb-12 text-center">{t('about.values.title')}</h2>
+            <div className="space-y-16">
+              {['openSource', 'european', 'integrity'].map((value, index) => (
+                <motion.div
+                  key={value}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="space-y-4"
+                >
+                  <h3 className="text-2xl font-medium">{t(`about.values.${value}.title`)}</h3>
+                  <p className="text-lg text-white/60 leading-relaxed">
+                    {t(`about.values.${value}.description`)}
+                  </p>
+                </motion.div>
+              ))}
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Customer Promises */}
+      <section className="py-24 relative">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="space-y-8"
+            >
+              <h2 className="text-3xl font-medium text-center">{t('about.promises.title')}</h2>
+              <p className="text-lg text-white/60 text-center">
+                {t('about.promises.description')}
+              </p>
+              <div className="grid gap-4">
+                {(t('about.promises.list', { returnObjects: true }) as string[]).map((promise, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10"
+                  >
+                    <ArrowRight className="w-5 h-5 text-emerald-400 shrink-0" />
+                    <p className="text-white/80">{promise}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="py-24 relative bg-white/[0.02] border-y border-white/5">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl font-medium mb-4">{t('about.team.title')}</h2>
+              <p className="text-lg text-white/60">{t('about.team.description')}</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {['christian', 'andreas', 'john', 'johan'].map((member, index) => (
+                <motion.div
+                  key={member}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="relative group"
+                >
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-white/5 to-transparent group-hover:from-white/10 transition-colors" />
+                  <div className="relative p-6 rounded-2xl border border-white/10 group-hover:border-white/20 transition-colors">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-16 h-16 rounded-full overflow-hidden bg-white/10">
+                        <img
+                          src={t(`about.team.members.${member}.image`)}
+                          alt={t(`about.team.members.${member}.name`)}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-medium">
+                          {t(`about.team.members.${member}.name`)}
+                        </h3>
+                        <p className="text-white/60">
+                          {t(`about.team.members.${member}.role`)}
+                        </p>
+                      </div>
+                    </div>
+                    <p className="text-white/80 text-sm leading-relaxed">
+                      {t(`about.team.members.${member}.bio`)}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   )
 }

@@ -1,24 +1,27 @@
 import { useTranslation } from 'react-i18next'
-import { FlagEU, FlagSE } from '@weston/react-world-flags'
+import { Button } from '@/components/ui/button'
+import Flag from '@weston/react-world-flags'
 
 export function LanguageSwitcher() {
   const { i18n } = useTranslation()
 
+  const toggleLanguage = () => {
+    const newLang = i18n.language === 'en' ? 'sv' : 'en'
+    i18n.changeLanguage(newLang)
+  }
+
   return (
-    <div className="flex gap-2 aspect-square">
+    <Button
+      variant="ghost"
+      size="icon"
+      onClick={toggleLanguage}
+      className="w-10 h-10 rounded-full overflow-hidden"
+    >
       {i18n.language === 'en' ? (
-        <button onClick={() => i18n.changeLanguage('sv')} className="gap-2  ">
-          {/* 
-            // @ts-expect-error: FlagSE type issue */}
-          <FlagSE width={24} />
-        </button>
+        <Flag code="se" height="24" />
       ) : (
-        <button onClick={() => i18n.changeLanguage('en')} className="gap-2 ">
-          {/* 
-            // @ts-expect-error: FlagSE type issue */}
-          <FlagEU width={24} />
-        </button>
+        <Flag code="eu" height="24" />
       )}
-    </div>
+    </Button>
   )
 }

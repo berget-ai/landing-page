@@ -4,9 +4,9 @@
 
 1. ### Scope
 
-1. These Terms of Service govern the use of Services provided by Berget AI AB, a Swedish limited liability company with Organizational Number 559504-7522 with address Götgatan 18, Stockholm, Sweden (“Berget”, “we”).  
+1. These Terms of Service govern the use of Services provided by Berget AI AB, a Swedish limited liability company with Organizational Number 559504-7522 with address Götgatan 18, Stockholm, Sweden (“Berget”, “we”).
 
-1. The Service is intended for purchase and use by entities, organisations and private entrepreneurs for their business and professional purposes. The Service is not fit or intended for use by, and Berget is not obliged to provide it for, consumers or private persons for their personal use.  
+1. The Service is intended for purchase and use by entities, organisations and private entrepreneurs for their business and professional purposes. The Service is not fit or intended for use by, and Berget is not obliged to provide it for, consumers or private persons for their personal use.
 
 1. If you are accepting these Terms of Service on behalf of your employer or another entity, you represent and warrant that: (i) you have full legal authority to bind your employer or such entity to these Terms of Service; (ii) you have read and understand these Terms of Service; and (iii) you agree to these Terms of Service on behalf of the party that you represent.
 
@@ -18,7 +18,7 @@ When used in these Terms of Service, the definitions below have the following me
 
 **“Control”** for purposes of this definition, means direct or indirect ownership or control of more than 50% of the voting interests of the subject entity.
 
-**“Control Dashboard”** means the control dashboard through which you can manage your subscription and the features of the Service, available at: [https://](https://hub.upcloud.com/)dashboard.berget.cloud  
+**“Control Dashboard”** means the control dashboard through which you can manage your subscription and the features of the Service, available at: [https://](https://hub.upcloud.com/)dashboard.berget.ai  
 **“Customer”** and **“you”** means the person or entity that subscribes to the Service.
 
 **“Customer Data”** means all data, material and content that you or a User or another party acting on your behalf uploads to or generates or stores in the Service.
@@ -35,7 +35,7 @@ When used in these Terms of Service, the definitions below have the following me
 
 **“Service(s)”** means all services, software and content provided by Berget, including Berget’s cloud infrastructure services (such as compute, storage, networking), support services, the Control Dashboard, and Berget AI website.
 
-**“Service Descriptions”** means the documents that describe the Service in detail, available at: www.berget.cloud  
+**“Service Descriptions”** means the documents that describe the Service in detail, available at: www.berget.ai  
 **“Order”** means an order submitted by the Customer to Berget specifying the Service that the Customer orders. Orders can be submitted by the Customer or Users manually via the Control Dashboard or by contacting Berget’s customer support, or automatically through the Application Programming Interfaces (APIs) of the Service or by other automated means to manage the Service.
 
 **“User”** means any person or entity whose access to the Service is attributable to the Customer, including the Customer and its Affiliates (and their employees, consultants, contractors and agents) and possible End-Customers.
@@ -56,7 +56,7 @@ When used in these Terms of Service, the definitions below have the following me
 
 (5) the Service Descriptions
 
-1–5 together are the “Terms”. All agreement documents are available on Berget’s website www.berget.cloud
+1–5 together are the “Terms”. All agreement documents are available on Berget’s website www.berget.ai
 
 3.2. In case of a conflict or ambiguity between the agreement documents, the order of precedence shall be: (1.) DPA, (2.) the main body of Terms of Service, (3.) SLA, (4.) AUP, (5.) Service Descriptions.
 
@@ -108,7 +108,7 @@ We will provide technical support for your dedicated administrative Users, as de
 
 ### 10\. Prices
 
-10.1. The rates applicable to the Service are available on Berget’s website at https://www.berget.cloud and shown in the Control Panel when ordering the Service. The actual service fee will be determined based on your use of the Service. Unless otherwise agreed, we will charge the Service on an hourly basis, meaning you will pay a service fee in advance for each 60-minute period that you use the Service.
+10.1. The rates applicable to the Service are available on Berget’s website at https://www.berget.ai and shown in the Control Panel when ordering the Service. The actual service fee will be determined based on your use of the Service. Unless otherwise agreed, we will charge the Service on an hourly basis, meaning you will pay a service fee in advance for each 60-minute period that you use the Service.
 
 10.2. Applicable value added tax (VAT) and other applicable duties and taxes will be added to the prices, unless the prices are specified “VAT inclusive”.
 

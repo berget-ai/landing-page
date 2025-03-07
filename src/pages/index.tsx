@@ -1,24 +1,26 @@
 import { Hero } from '@/components/sections/Hero'
-import { Features } from '@/components/sections/Features'
-import { Compliance } from '@/components/sections/Compliance'
-import { Sustainability } from '@/components/sections/Sustainability'
-import { Testimonials } from '@/components/sections/Testimonials'
-import { RagRecipes } from '@/components/sections/RagRecipes'
-import { Success } from '@/components/sections/Success'
-import { InfrastructureShowcase } from '@/components/sections/InfrastructureShowcase'
+import { ComplianceSection } from '@/components/sections/ComplianceSection'
+import { ProductFeatures } from '@/components/sections/ProductFeatures'
+import { WhyChooseBerget } from '@/components/sections/WhyChooseBerget'
+import { PricingSection } from '@/components/sections/PricingSection'
 
 export default function HomePage() {
   return (
     <main>
+      {/* Hero Section */}
       <Hero />
-      <Features />
-      <Compliance />
-      <Sustainability />
-      <RagRecipes />
-      <RagRecipes />
-      <InfrastructureShowcase />
-      <Testimonials />
-      <Success />
+
+      {/* Products Overview */}
+      <ProductFeatures />
+
+      {/* Why Choose Berget */}
+      <WhyChooseBerget />
+
+      {/* Compliance Section */}
+      <ComplianceSection />
+
+      {/* Pricing Section */}
+      <PricingSection />
     </main>
   )
 }

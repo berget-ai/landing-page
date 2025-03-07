@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button'
 import { GradientBackground } from '@/components/common/GradientBackground'
 import { NetworkBackground } from '../common/NetworkBackground'
 import { ArrowRight, Shield } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 export function Hero() {
   const { t } = useTranslation()
@@ -30,8 +31,11 @@ export function Hero() {
               <Button
                 size="lg"
                 className="bg-white text-[#2D6A4F] hover:bg-white/90"
+                asChild
               >
-                {t('hero.getStarted')} <ArrowRight className="ml-2 h-5 w-5" />
+                <Link to="/signup">
+                  {t('hero.getStarted')} <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
               </Button>
               <Button
                 size="lg"
