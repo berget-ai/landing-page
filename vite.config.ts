@@ -69,13 +69,10 @@ export default defineConfig({
     },
     // Enable source maps for production (optional, remove if not needed)
     sourcemap: true,
-    // Minify output
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-      },
+    // Minify output with esbuild (built-in)
+    minify: 'esbuild',
+    esbuildOptions: {
+      drop: ['console', 'debugger'],
     },
   },
   optimizeDeps: {},
