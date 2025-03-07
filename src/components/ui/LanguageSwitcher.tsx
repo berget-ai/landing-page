@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { Button } from '@/components/ui/button'
-import Flag from '@weston/react-world-flags'
+import { CountryFlag } from '@/components/ui/country-flag'
 
 export function LanguageSwitcher() {
   const { i18n } = useTranslation()
@@ -15,12 +15,12 @@ export function LanguageSwitcher() {
       variant="ghost"
       size="icon"
       onClick={toggleLanguage}
-      className="w-10 h-10 rounded-full overflow-hidden"
+      className="w-10 h-10 rounded-full"
     >
       {i18n.language === 'en' ? (
-        <Flag code="se" height="24" />
+        <CountryFlag code="se" size="md" />
       ) : (
-        <Flag code="eu" height="24" />
+        <CountryFlag code="gb" size="md" />
       )}
     </Button>
   )
