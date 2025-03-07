@@ -23,23 +23,38 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
+        manualChunks: (id) => {
           // Vendor chunks
-          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
-          'vendor-ui': ['@radix-ui/react-icons', '@radix-ui/react-slot'],
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom')) {
+              return 'vendor-react';
+            }
+            if (id.includes('@radix-ui/react-icons') || id.includes('@radix-ui/react-slot')) {
+              return 'vendor-ui';
+            }
+            return 'vendor';
+          }
           
           // Feature chunks
-          'feature-components': [/src\/components\/ui/],
-          'feature-common': [/src\/components\/common/],
-          'feature-sections': [/src\/components\/sections/],
-          
-          // Dynamically split chunks for larger modules
-          'feature-wizards': [/src\/components\/wizards/],
+          if (id.includes('src/components/ui')) {
+            return 'feature-components';
+          }
+          if (id.includes('src/components/common')) {
+            return 'feature-common';
+          }
+          if (id.includes('src/components/sections')) {
+            return 'feature-sections';
+          }
+          if (id.includes('src/components/wizards')) {
+            return 'feature-wizards';
+          }
         },
         // Optimize chunk size
         chunkSizeWarningLimit: 800,
         // Ensure CSS is extracted properly
         assetFileNames: (assetInfo) => {
+          if (!assetInfo.name) return 'assets/[name]-[hash][extname]';
+          
           const info = assetInfo.name.split('.');
           const ext = info[info.length - 1];
           if (ext === 'css') {
