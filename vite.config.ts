@@ -28,13 +28,45 @@ export default defineConfig({
         manualChunks: (id) => {
           // Vendor chunks
           if (id.includes('node_modules')) {
-            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom')) {
-              return 'vendor-react';
+            // React och relaterade bibliotek
+            if (id.includes('react-dom')) {
+              return 'vendor-react-dom';
             }
-            if (id.includes('@radix-ui/react-icons') || id.includes('@radix-ui/react-slot')) {
-              return 'vendor-ui';
+            if (id.includes('react-router')) {
+              return 'vendor-react-router';
             }
-            return 'vendor';
+            if (id.includes('react')) {
+              return 'vendor-react-core';
+            }
+            
+            // UI-bibliotek
+            if (id.includes('@radix-ui')) {
+              return 'vendor-radix';
+            }
+            if (id.includes('lucide-react')) {
+              return 'vendor-icons';
+            }
+            
+            // Animationsbibliotek
+            if (id.includes('framer-motion')) {
+              return 'vendor-animations';
+            }
+            
+            // Formulärbibliotek
+            if (id.includes('react-hook-form') || id.includes('zod')) {
+              return 'vendor-forms';
+            }
+            
+            // Övriga stora bibliotek
+            if (id.includes('i18next') || id.includes('react-i18next')) {
+              return 'vendor-i18n';
+            }
+            if (id.includes('recharts') || id.includes('d3')) {
+              return 'vendor-charts';
+            }
+            
+            // Övriga mindre bibliotek
+            return 'vendor-misc';
           }
           
           // Feature chunks
