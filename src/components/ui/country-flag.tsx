@@ -3,9 +3,12 @@ import Image from 'next/image';
 import React from 'react';
 
 interface CountryFlagProps extends React.HTMLAttributes<HTMLDivElement> {
-  /** ISO 3166-1 alpha-2 country code */
+  /** 
+   * ISO 3166-1 alpha-2 country code, or special codes like 'eu' for European Union
+   */
   code: string;
-  size?: 'sm' | 'md' | 'lg';
+  size?: 'sm' | 'md' | 'lg' | number;
+  fallbackText?: string;
 }
 
 /**
@@ -15,6 +18,7 @@ interface CountryFlagProps extends React.HTMLAttributes<HTMLDivElement> {
 export function CountryFlag({ 
   code, 
   size = 'md', 
+  fallbackText,
   className,
   ...props 
 }: CountryFlagProps) {
@@ -28,25 +32,35 @@ export function CountryFlag({
     lg: 32,
   };
   
-  const pixelSize = sizeMap[size];
+  // Handle both string sizes and custom numeric sizes
+  const pixelSize = typeof size === 'number' ? size : sizeMap[size as keyof typeof sizeMap];
+  
+  // Handle error state
+  const [hasError, setHasError] = React.useState(false);
   
   return (
     <div 
-      className={cn('relative inline-block overflow-hidden', className)}
-      style={{ width: pixelSize, height: pixelSize }}
+      className={cn('relative inline-block overflow-hidden rounded-sm', className)}
+      style={{ width: pixelSize, height: pixelSize * 0.75 }}
       {...props}
     >
-      <Image
-        src={`/flags/${countryCode}.svg`}
-        alt={`Flag of ${code}`}
-        width={pixelSize}
-        height={pixelSize}
-        className="object-cover"
-        onError={(e) => {
-          // Fallback to a placeholder if the flag image doesn't exist
-          (e.target as HTMLImageElement).src = '/flags/placeholder.svg';
-        }}
-      />
+      {hasError ? (
+        <div 
+          className="w-full h-full flex items-center justify-center bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 text-[8px] font-mono"
+          style={{ fontSize: Math.max(8, pixelSize / 3) }}
+        >
+          {fallbackText || code.toUpperCase()}
+        </div>
+      ) : (
+        <Image
+          src={`/flags/${countryCode}.svg`}
+          alt={`Flag of ${code}`}
+          width={pixelSize}
+          height={pixelSize * 0.75}
+          className="object-cover"
+          onError={() => setHasError(true)}
+        />
+      )}
     </div>
   );
 }
