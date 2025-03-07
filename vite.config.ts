@@ -46,8 +46,19 @@ export default defineConfig({
             if (id.includes('react-hook-form')) {
               return 'vendor-react-forms';
             }
-            if (id.includes('react-world-flags')) {
-              return 'vendor-react-flags';
+            // Dela upp flaggorna i mindre paket
+            if (id.includes('react-world-flags') && id.includes('/svg/')) {
+              // Gruppera flaggor efter första bokstaven i filnamnet
+              const fileName = id.split('/').pop() || '';
+              const firstChar = fileName.charAt(0).toLowerCase();
+              if (/[a-m]/.test(firstChar)) {
+                return 'vendor-flags-a-m';
+              } else {
+                return 'vendor-flags-n-z';
+              }
+            }
+            if (id.includes('react-world-flags') && !id.includes('/svg/')) {
+              return 'vendor-react-flags-core';
             }
             if (id.includes('react-markdown')) {
               return 'vendor-react-markdown';
@@ -64,9 +75,15 @@ export default defineConfig({
               return 'vendor-icons';
             }
             
-            // Animationsbibliotek
+            // Animationsbibliotek - dela upp i mindre delar
+            if (id.includes('framer-motion/dist/es/animation')) {
+              return 'vendor-animations-core';
+            }
+            if (id.includes('framer-motion/dist/es/motion')) {
+              return 'vendor-animations-motion';
+            }
             if (id.includes('framer-motion')) {
-              return 'vendor-animations';
+              return 'vendor-animations-utils';
             }
             
             // Formulärbibliotek
@@ -80,6 +97,17 @@ export default defineConfig({
             }
             if (id.includes('recharts') || id.includes('d3')) {
               return 'vendor-charts';
+            }
+            
+            // Dela upp misc i mindre delar
+            if (id.includes('markdown-it') || id.includes('mdast') || id.includes('remark')) {
+              return 'vendor-markdown';
+            }
+            if (id.includes('date-fns') || id.includes('dayjs')) {
+              return 'vendor-date';
+            }
+            if (id.includes('clsx') || id.includes('class-variance-authority') || id.includes('tailwind')) {
+              return 'vendor-styling';
             }
             
             // Övriga mindre bibliotek
