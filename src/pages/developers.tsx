@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Github, Lock, Database, Server, Bot, Cpu, Code, GitBranch, Cloud, Link2 } from 'lucide-react'
+import { Github, Lock, Database, Server, Cpu, GitBranch, Cloud, Link2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { ModelsSection } from '@/components/sections/ModelsSection'
 import { useTranslation } from 'react-i18next'
