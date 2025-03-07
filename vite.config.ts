@@ -35,8 +35,25 @@ export default defineConfig({
             if (id.includes('react-router')) {
               return 'vendor-react-router';
             }
-            if (id.includes('react')) {
-              return 'vendor-react-core';
+            
+            // Dela upp React-core i mindre delar
+            if (id.includes('node_modules/react/')) {
+              return 'vendor-react-base';
+            }
+            if (id.includes('node_modules/@types/react')) {
+              return 'vendor-react-types';
+            }
+            if (id.includes('react-hook-form')) {
+              return 'vendor-react-forms';
+            }
+            if (id.includes('react-world-flags')) {
+              return 'vendor-react-flags';
+            }
+            if (id.includes('react-markdown')) {
+              return 'vendor-react-markdown';
+            }
+            if (id.includes('react-')) {
+              return 'vendor-react-misc';
             }
             
             // UI-bibliotek
