@@ -26,7 +26,7 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: (id) => {
-          // Vendor chunks
+          // Vendor chunks - förenklade kategorier
           if (id.includes('node_modules')) {
             // React och relaterade bibliotek
             if (id.includes('react-dom')) {
@@ -35,104 +35,58 @@ export default defineConfig({
             if (id.includes('react-router')) {
               return 'vendor-react-router';
             }
-            
-            // Dela upp React-core i mindre delar
-            if (id.includes('node_modules/react/')) {
-              return 'vendor-react-base';
-            }
-            if (id.includes('node_modules/@types/react')) {
-              return 'vendor-react-types';
-            }
-            if (id.includes('react-hook-form')) {
-              return 'vendor-react-forms';
-            }
-            // Exkludera react-world-flags helt från bygget
-            // Vi använder statiska bilder istället
-            if (id.includes('react-world-flags')) {
-              return 'vendor-excluded';
-            }
-            if (id.includes('react-markdown')) {
-              return 'vendor-react-markdown';
-            }
-            if (id.includes('react-')) {
-              return 'vendor-react-misc';
+            if (id.includes('react')) {
+              return 'vendor-react';
             }
             
-            // UI-bibliotek
-            if (id.includes('@radix-ui')) {
-              return 'vendor-radix';
-            }
-            if (id.includes('lucide-react')) {
-              return 'vendor-icons';
-            }
-            
-            // Animationsbibliotek - dela upp i mindre delar
-            if (id.includes('framer-motion/dist/es/animation')) {
-              return 'vendor-animations-core';
-            }
-            if (id.includes('framer-motion/dist/es/motion')) {
-              return 'vendor-animations-motion';
+            // UI och design
+            if (id.includes('@radix-ui') || id.includes('lucide-react')) {
+              return 'vendor-ui';
             }
             if (id.includes('framer-motion')) {
-              return 'vendor-animations-utils';
+              return 'vendor-animations';
             }
             
-            // Formulärbibliotek
-            if (id.includes('react-hook-form') || id.includes('zod')) {
-              return 'vendor-forms';
-            }
-            
-            // Övriga stora bibliotek
-            if (id.includes('i18next') || id.includes('react-i18next')) {
+            // Funktionalitet
+            if (id.includes('i18next')) {
               return 'vendor-i18n';
             }
-            if (id.includes('recharts') || id.includes('d3')) {
-              return 'vendor-charts';
-            }
-            
-            // Dela upp misc i mindre delar
             if (id.includes('markdown-it') || id.includes('mdast') || id.includes('remark')) {
               return 'vendor-markdown';
             }
-            if (id.includes('date-fns') || id.includes('dayjs')) {
-              return 'vendor-date';
-            }
-            if (id.includes('clsx') || id.includes('class-variance-authority') || id.includes('tailwind')) {
-              return 'vendor-styling';
-            }
             
-            // Övriga mindre bibliotek
+            // Övriga bibliotek
             return 'vendor-misc';
           }
           
-          // Feature chunks
-          if (id.includes('src/components/ui')) {
-            return 'feature-components';
+          // Applikationskod
+          if (id.includes('src/components')) {
+            if (id.includes('/ui/')) {
+              return 'app-ui';
+            }
+            if (id.includes('/common/') || id.includes('/sections/')) {
+              return 'app-components';
+            }
+            return 'app-features';
           }
-          if (id.includes('src/components/common')) {
-            return 'feature-common';
-          }
-          if (id.includes('src/components/sections')) {
-            return 'feature-sections';
-          }
-          if (id.includes('src/components/wizards')) {
-            return 'feature-wizards';
-          }
+          
+          // Standardchunk för övrig kod
+          return 'app-core';
         },
-        // Ensure CSS is extracted properly
+        // Förenklade filnamn och struktur
         assetFileNames: (assetInfo) => {
-          if (!assetInfo.name) return 'assets/[name]-[hash][extname]';
+          if (!assetInfo.name) return 'assets/[name].[hash][extname]';
           
           const info = assetInfo.name.split('.');
           const ext = info[info.length - 1];
           if (ext === 'css') {
-            return `assets/css/[name]-[hash][extname]`;
+            return `assets/css/[name].[hash][extname]`;
           }
-          return `assets/[name]-[hash][extname]`;
+          return `assets/[name].[hash][extname]`;
         },
-        // Optimize JS output
-        entryFileNames: 'assets/js/[name]-[hash].js',
-        chunkFileNames: 'assets/js/[name]-[hash].js',
+        // Konsekvent namngivning
+        entryFileNames: 'assets/js/[name].[hash].js',
+        chunkFileNames: 'assets/js/[name].[hash].js',
       }
     },
     // Enable source maps for production (optional, remove if not needed)
