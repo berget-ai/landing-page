@@ -46,19 +46,10 @@ export default defineConfig({
             if (id.includes('react-hook-form')) {
               return 'vendor-react-forms';
             }
-            // Dela upp flaggorna i mindre paket
-            if (id.includes('react-world-flags') && id.includes('/svg/')) {
-              // Gruppera flaggor efter första bokstaven i filnamnet
-              const fileName = id.split('/').pop() || '';
-              const firstChar = fileName.charAt(0).toLowerCase();
-              if (/[a-m]/.test(firstChar)) {
-                return 'vendor-flags-a-m';
-              } else {
-                return 'vendor-flags-n-z';
-              }
-            }
-            if (id.includes('react-world-flags') && !id.includes('/svg/')) {
-              return 'vendor-react-flags-core';
+            // Exkludera react-world-flags helt från bygget
+            // Vi använder statiska bilder istället
+            if (id.includes('react-world-flags')) {
+              return 'vendor-excluded';
             }
             if (id.includes('react-markdown')) {
               return 'vendor-react-markdown';
