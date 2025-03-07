@@ -21,6 +21,8 @@ export default defineConfig({
     },
   },
   build: {
+    // Optimize chunk size
+    chunkSizeWarningLimit: 800,
     rollupOptions: {
       output: {
         manualChunks: (id) => {
@@ -49,8 +51,6 @@ export default defineConfig({
             return 'feature-wizards';
           }
         },
-        // Optimize chunk size
-        chunkSizeWarningLimit: 800,
         // Ensure CSS is extracted properly
         assetFileNames: (assetInfo) => {
           if (!assetInfo.name) return 'assets/[name]-[hash][extname]';
