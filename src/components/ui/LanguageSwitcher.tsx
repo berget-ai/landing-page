@@ -20,7 +20,7 @@ export function LanguageSwitcher() {
       {i18n.language === 'en' ? (
         <CountryFlag code="se" size="md" />
       ) : (
-        <CountryFlag code="gb" size="md" />
+        <CountryFlag code="eu" size="md" />
       )}
     </Button>
   )
