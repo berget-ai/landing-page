@@ -81,7 +81,7 @@
     "navigation": {
       "products": "Products",
       "whyBerget": "Why Berget",
-      "developers": "For Developers", 
+      "developers": "For Developers",
       "pricing": "Pricing",
       "documentation": "Documentation",
       "blog": "Blog"
@@ -179,11 +179,7 @@
         },
         "infrastructure": {
           "title": "All infra as Code",
-          "items": [
-            "Persistent clusters",
-            "Simple setup",
-            "GitHub integration"
-          ]
+          "items": ["Persistent clusters", "Simple setup", "GitHub integration"]
         }
       }
     },
@@ -197,7 +193,12 @@
         },
         "llm": {
           "title": "LLM",
-          "items": ["Serverless Inference", "Dedicated", "Model hosting", "Finetuning"]
+          "items": [
+            "Serverless Inference",
+            "Dedicated",
+            "Model hosting",
+            "Finetuning"
+          ]
         },
         "compute": {
           "title": "Storage & Compute",

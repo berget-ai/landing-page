@@ -128,23 +128,19 @@
     },
     "dedicated": {
       "title": "Dedikerad Inferens",
-      "description": "Kör och skala valfri modell, inklusive dina egna finjusterade modeller på dedikerad kapacitet.",
+      "description": "Kör valfri modell, inklusive dina egna finetunade modeller på dedikerad kapacitet.",
       "features": {
         "deployment": {
           "title": "Anpassad Driftsättning",
           "items": [
-            "Anpassningsbara instanser",
-            "Högbelastade arbetsflöden",
+            "Privata instanser",
+            "Skalbara lösningar",
             "Dedikerade resurser"
           ]
         },
         "control": {
           "title": "Modellkontroll",
-          "items": [
-            "Driftsätt finjusterade modeller",
-            "Versionskontroll",
-            "Säker miljö"
-          ]
+          "items": ["Fintunade modeller", "Versionskontroll", "Säker miljö"]
         },
         "performance": {
           "title": "Optimerad Prestanda",
@@ -196,22 +192,27 @@
         },
         "llm": {
           "title": "LLM",
-          "items": ["Inferens", "Modellhantering"]
+          "items": [
+            "Inferens",
+            "Modellhantering",
+            "Dedikerad Inferens",
+            "Finetuning"
+          ]
         },
         "compute": {
-          "title": "Beräkning",
-          "items": ["CPU", "GPU"]
+          "title": "Lagring och Compute",
+          "items": ["CPU", "GPU", "Lokal lagring", "Block lagring"]
         },
         "connectivity": {
-          "title": "Anslutning",
-          "items": ["Isolerat Nätverk", "VPN & Hybridmoln"]
+          "title": "Nätverk",
+          "items": ["Isolerade Nätverk", "VPN", "Hybridmoln"]
         },
         "management": {
           "title": "Hantering",
           "items": [
             "Hanteringskonsol",
             "Användar- och Teamhantering",
-            "Tjänstehantering", 
+            "Tjänstehantering",
             "Resurs- och Kostnadshantering"
           ]
         }
