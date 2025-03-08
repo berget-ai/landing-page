@@ -28,14 +28,9 @@ export default defineConfig({
         manualChunks: (id) => {
           // Vendor chunks - förenklade kategorier
           if (id.includes('node_modules')) {
-            // React och relaterade bibliotek
-            if (id.includes('react-dom')) {
-              return 'vendor-react-dom';
-            }
-            if (id.includes('react-router')) {
-              return 'vendor-react-router';
-            }
-            if (id.includes('react')) {
+            // React och relaterade bibliotek - håll dessa tillsammans för att undvika interna API-konflikter
+            if (id.includes('react') || id.includes('scheduler')) {
+              // Gruppera React-core och React-DOM tillsammans för att undvika interna API-konflikter
               return 'vendor-react';
             }
             
@@ -91,12 +86,20 @@ export default defineConfig({
     },
     // Enable source maps for production (optional, remove if not needed)
     sourcemap: true,
-    // Minify output with terser
+    // Minify output with terser, men var försiktig med React
     minify: 'terser',
     terserOptions: {
       compress: {
         drop_console: true,
-        drop_debugger: true
+        drop_debugger: true,
+        // Undvik att optimera bort React's interna API
+        keep_fnames: /^React|react/,
+        keep_classnames: /^React|react/
+      },
+      mangle: {
+        // Undvik att förvränga React's interna API
+        keep_fnames: /^React|react/,
+        keep_classnames: /^React|react/
       }
     },
   },
