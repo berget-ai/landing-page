@@ -3,6 +3,7 @@ import { Github, Lock, Database, Server, Cpu, GitBranch, Cloud, Link2 } from 'lu
 import { Button } from '@/components/ui/button'
 import { ModelsSection } from '@/components/sections/ModelsSection'
 import { useTranslation } from 'react-i18next'
+import { TerminalCarousel } from '@/components/terminal/TerminalCarousel'
 
 export default function DevelopersPage() {
   const { t } = useTranslation()
@@ -22,28 +23,8 @@ export default function DevelopersPage() {
             </p>
           </div>
           
-          <div className="max-w-2xl mx-auto mt-16 bg-[#2D6A4F]/10 border border-[#40916C]/20 rounded-xl p-6">
-            <div className="font-mono text-sm">
-              <div className="mb-4">
-                <span className="text-[#52B788]">$</span> <span className="text-white">npm i -g berget</span>
-              </div>
-              <div className="mb-4">
-                <span className="text-[#52B788]">$</span> <span className="text-white">berget login</span>
-                <div className="text-white/60 pl-4">... loggar in med BankID</div>
-              </div>
-              <div className="mb-4">
-                <span className="text-[#52B788]">$</span> <span className="text-white">berget create cluster</span>
-                <div className="text-white/60 pl-4">Done! 5 nodes created.</div>
-                <div className="text-white/60 pl-4">Assigned DNS: ideal-palmtree.berget.cloud</div>
-                <div className="text-white/60 pl-4">Nu är ditt kluster redo att användas. Nu kan du börja köra dina applikationer. Du kan peka ett CNAME till klustret.</div>
-              </div>
-              <div className="mb-4">
-                <span className="text-[#52B788]">$</span> <span className="text-white">berget apply -f deployment.yaml</span>
-              </div>
-              <div className="text-white/60 mt-4">
-                Tips: använd fluxcd för att automatiskt hålla klustret uppdaterat.
-              </div>
-            </div>
+          <div className="mt-16">
+            <TerminalCarousel />
           </div>
         </div>
       </div>
