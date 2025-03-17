@@ -96,7 +96,7 @@ export default function AboutPage() {
                     transition={{ delay: index * 0.1 }}
                     className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10"
                   >
-                    <ArrowRight className="w-5 h-5 text-emerald-400 shrink-0" />
+                    <ArrowRight className="w-5 h-5 text-[#FFB700] shrink-0" />
                     <p className="text-white/80">{promise}</p>
                   </motion.div>
                 ))}
@@ -125,10 +125,10 @@ export default function AboutPage() {
                   transition={{ delay: index * 0.1 }}
                   className="relative group"
                 >
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-white/5 to-transparent group-hover:from-white/10 transition-colors" />
-                  <div className="relative p-6 rounded-2xl border border-white/10 group-hover:border-white/20 transition-colors">
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-[#2D6A4F]/5 to-transparent group-hover:from-[#2D6A4F]/10 transition-colors" />
+                  <div className="relative p-6 rounded-2xl border border-[#40916C]/20 group-hover:border-[#40916C]/30 transition-colors">
                     <div className="flex items-center gap-4 mb-4">
-                      <div className="w-16 h-16 rounded-full overflow-hidden bg-white/10">
+                      <div className="w-16 h-16 rounded-full overflow-hidden bg-[#2D6A4F]/10">
                         <img
                           src={t(`about.team.members.${member}.image`)}
                           alt={t(`about.team.members.${member}.name`)}

@@ -76,9 +76,9 @@ export default function ProductsPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors"
+                className="p-6 rounded-xl bg-[#2D6A4F]/5 border border-[#40916C]/20 hover:bg-[#2D6A4F]/10 transition-colors"
               >
-                <Cloud className="w-8 h-8 mb-4 text-blue-400" />
+                <Cloud className="w-8 h-8 mb-4 text-[#2D6A4F]" />
                 <h3 className="text-xl font-medium mb-3">{t('products.serverless.features.integration.title')}</h3>
                 <ul className="space-y-3 text-white/60">
                   {(t('products.serverless.features.integration.items', { returnObjects: true }) as string[]).map((item: string) => (
@@ -92,9 +92,9 @@ export default function ProductsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors"
+                className="p-6 rounded-xl bg-[#2D6A4F]/5 border border-[#40916C]/20 hover:bg-[#2D6A4F]/10 transition-colors"
               >
-                <Zap className="w-8 h-8 mb-4 text-purple-400" />
+                <Zap className="w-8 h-8 mb-4 text-[#40916C]" />
                 <h3 className="text-xl font-medium mb-3">{t('products.serverless.features.usage.title')}</h3>
                 <ul className="space-y-3 text-white/60">
                   {(t('products.serverless.features.usage.items', { returnObjects: true }) as string[]).map((item: string) => (
@@ -108,9 +108,9 @@ export default function ProductsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors"
+                className="p-6 rounded-xl bg-[#2D6A4F]/5 border border-[#40916C]/20 hover:bg-[#2D6A4F]/10 transition-colors"
               >
-                <Server className="w-8 h-8 mb-4 text-emerald-400" />
+                <Server className="w-8 h-8 mb-4 text-[#FFB700]" />
                 <h3 className="text-xl font-medium mb-3">{t('products.serverless.features.infrastructure.title')}</h3>
                 <ul className="space-y-3 text-white/60">
                   {(t('products.serverless.features.infrastructure.items', { returnObjects: true }) as string[]).map((item: string) => (
@@ -140,9 +140,9 @@ export default function ProductsPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors"
+                className="p-6 rounded-xl bg-[#2D6A4F]/5 border border-[#40916C]/20 hover:bg-[#2D6A4F]/10 transition-colors"
               >
-                <Cpu className="w-8 h-8 mb-4 text-blue-400" />
+                <Cpu className="w-8 h-8 mb-4 text-[#2D6A4F]" />
                 <h3 className="text-xl font-medium mb-3">{t('products.dedicated.features.deployment.title')}</h3>
                 <ul className="space-y-3 text-white/60">
                   {(t('products.dedicated.features.deployment.items', { returnObjects: true }) as string[]).map((item: string) => (
@@ -156,9 +156,9 @@ export default function ProductsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors"
+                className="p-6 rounded-xl bg-[#2D6A4F]/5 border border-[#40916C]/20 hover:bg-[#2D6A4F]/10 transition-colors"
               >
-                <Bot className="w-8 h-8 mb-4 text-purple-400" />
+                <Bot className="w-8 h-8 mb-4 text-[#40916C]" />
                 <h3 className="text-xl font-medium mb-3">{t('products.dedicated.features.control.title')}</h3>
                 <ul className="space-y-3 text-white/60">
                   {(t('products.dedicated.features.control.items', { returnObjects: true }) as string[]).map((item: string) => (
@@ -172,9 +172,9 @@ export default function ProductsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors"
+                className="p-6 rounded-xl bg-[#2D6A4F]/5 border border-[#40916C]/20 hover:bg-[#2D6A4F]/10 transition-colors"
               >
-                <Sparkles className="w-8 h-8 mb-4 text-emerald-400" />
+                <Sparkles className="w-8 h-8 mb-4 text-[#FFB700]" />
                 <h3 className="text-xl font-medium mb-3">{t('products.dedicated.features.performance.title')}</h3>
                 <ul className="space-y-3 text-white/60">
                   {(t('products.dedicated.features.performance.items', { returnObjects: true }) as string[]).map((item: string) => (
@@ -204,9 +204,9 @@ export default function ProductsPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors"
+                className="p-6 rounded-xl bg-[#2D6A4F]/5 border border-[#40916C]/20 hover:bg-[#2D6A4F]/10 transition-colors"
               >
-                <Database className="w-8 h-8 mb-4 text-blue-400" />
+                <Database className="w-8 h-8 mb-4 text-[#2D6A4F]" />
                 <h3 className="text-xl font-medium mb-3">{t('products.platform.features.toolset.title')}</h3>
                 <ul className="space-y-3 text-white/60">
                   {(t('products.platform.features.toolset.items', { returnObjects: true }) as string[]).map((item: string) => (
@@ -220,9 +220,9 @@ export default function ProductsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors"
+                className="p-6 rounded-xl bg-[#2D6A4F]/5 border border-[#40916C]/20 hover:bg-[#2D6A4F]/10 transition-colors"
               >
-                <Box className="w-8 h-8 mb-4 text-purple-400" />
+                <Box className="w-8 h-8 mb-4 text-[#40916C]" />
                 <h3 className="text-xl font-medium mb-3">{t('products.platform.features.services.title')}</h3>
                 <ul className="space-y-3 text-white/60">
                   {(t('products.platform.features.services.items', { returnObjects: true }) as string[]).map((item: string) => (
@@ -236,9 +236,9 @@ export default function ProductsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors"
+                className="p-6 rounded-xl bg-[#2D6A4F]/5 border border-[#40916C]/20 hover:bg-[#2D6A4F]/10 transition-colors"
               >
-                <Layers className="w-8 h-8 mb-4 text-emerald-400" />
+                <Layers className="w-8 h-8 mb-4 text-[#FFB700]" />
                 <h3 className="text-xl font-medium mb-3">{t('products.platform.features.infrastructure.title')}</h3>
                 <ul className="space-y-3 text-white/60">
                   {(t('products.platform.features.infrastructure.items', { returnObjects: true }) as string[]).map((item: string) => (
@@ -285,10 +285,10 @@ export default function ProductsPage() {
                             transition={{ delay: index * 0.1 }}
                             className="relative group"
                           >
-                            <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${platformStack[index].color} opacity-5 group-hover:opacity-10 transition-opacity duration-300`} />
-                            <div className="relative p-6 rounded-2xl border border-white/10 bg-white/5">
+                            <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r from-[#2D6A4F]/5 via-[#40916C]/5 to-[#FFB700]/5 opacity-5 group-hover:opacity-10 transition-opacity duration-300`} />
+                            <div className="relative p-6 rounded-2xl border border-[#40916C]/20 bg-[#2D6A4F]/5">
                               <div className="flex items-center gap-4 mb-6">
-                                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${platformStack[index].color} flex items-center justify-center`}>
+                                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br from-[#2D6A4F] to-[#40916C] flex items-center justify-center`}>
                                   <IconComponent className="w-6 h-6 text-white" />
                                 </div>
                                 <div>
@@ -299,7 +299,7 @@ export default function ProductsPage() {
                                 {layer.items.map((item: string) => (
                                   <div
                                     key={item}
-                                    className="px-4 py-3 rounded-lg bg-white/5 text-sm text-center border border-white/10 hover:bg-white/10 transition-colors"
+                                    className="px-4 py-3 rounded-lg bg-[#2D6A4F]/5 text-sm text-center border border-[#40916C]/20 hover:bg-[#2D6A4F]/10 transition-colors"
                                   >
                                     {item}
                                   </div>
@@ -320,11 +320,11 @@ export default function ProductsPage() {
                     className="col-span-3"
                   >
                     <div className={`relative h-full group`}>
-                      <div className={`absolute inset-0 rounded-2xl bg-gradient-to-b ${managementStack.color} opacity-5 group-hover:opacity-10 transition-opacity duration-300`} />
-                      <div className="relative h-full p-6 rounded-2xl border border-white/10 bg-white/5 flex flex-col">
+                      <div className={`absolute inset-0 rounded-2xl bg-gradient-to-b from-[#FFB700]/5 to-[#2D6A4F]/5 opacity-5 group-hover:opacity-10 transition-opacity duration-300`} />
+                      <div className="relative h-full p-6 rounded-2xl border border-[#40916C]/20 bg-[#2D6A4F]/5 flex flex-col">
                         <div className="flex items-center gap-4 mb-8">
-                          <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${managementStack.color} flex items-center justify-center`}>
-                            <managementStack.icon className="w-6 h-6 text-white" />
+                          <div className={`w-12 h-12 rounded-xl bg-gradient-to-br from-[#FFB700] to-[#FFB700]/80 flex items-center justify-center`}>
+                            <managementStack.icon className="w-6 h-6 text-[#1A1A1A]" />
                           </div>
                           <div>
                             <h3 className="text-xl font-medium">{t('products.architecture.layers.management.title')}</h3>
@@ -334,7 +334,7 @@ export default function ProductsPage() {
                           {(t('products.architecture.layers.management.items', { returnObjects: true }) as string[]).map((item: string) => (
                             <div
                               key={item}
-                              className="p-4 rounded-lg bg-white/5 text-sm text-center border border-white/10 hover:bg-white/10 transition-colors"
+                              className="p-4 rounded-lg bg-[#2D6A4F]/5 text-sm text-center border border-[#40916C]/20 hover:bg-[#2D6A4F]/10 transition-colors"
                             >
                               {item}
                             </div>

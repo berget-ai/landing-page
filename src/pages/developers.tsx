@@ -34,9 +34,9 @@ export default function DevelopersPage() {
             viewport={{ once: true }}
             className="relative group"
           >
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-blue-500/5 via-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="relative p-8 rounded-3xl border border-white/10">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center mb-6">
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-[#2D6A4F]/5 via-[#40916C]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="relative p-8 rounded-3xl border border-[#40916C]/20">
+              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#2D6A4F] to-[#40916C] flex items-center justify-center mb-6">
                 <Github className="w-6 h-6 text-white" />
               </div>
               <h2 className="text-2xl font-medium mb-4">Full Flexibility and Control</h2>
@@ -69,9 +69,9 @@ export default function DevelopersPage() {
             transition={{ delay: 0.2 }}
             className="relative group"
           >
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-emerald-500/5 via-teal-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="relative p-8 rounded-3xl border border-white/10">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center mb-6">
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-[#2D6A4F]/5 via-[#40916C]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="relative p-8 rounded-3xl border border-[#40916C]/20">
+              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#2D6A4F] to-[#40916C] flex items-center justify-center mb-6">
                 <Lock className="w-6 h-6 text-white" />
               </div>
               <h2 className="text-2xl font-medium mb-4">Security & Privacy Built In</h2>
@@ -100,10 +100,10 @@ export default function DevelopersPage() {
             transition={{ delay: 0.3 }}
             className="relative group"
           >
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-orange-500/5 via-amber-500/5 to-yellow-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="relative p-8 rounded-3xl border border-white/10">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center mb-6">
-                <Server className="w-6 h-6 text-white" />
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-[#2D6A4F]/5 via-[#40916C]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="relative p-8 rounded-3xl border border-[#40916C]/20">
+              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#FFB700] to-[#FFB700]/80 flex items-center justify-center mb-6">
+                <Server className="w-6 h-6 text-[#1A1A1A]" />
               </div>
               <h2 className="text-2xl font-medium mb-4">Resource Control and Persistence</h2>
               <ul className="space-y-4">
@@ -131,9 +131,9 @@ export default function DevelopersPage() {
             transition={{ delay: 0.4 }}
             className="relative group"
           >
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-green-500/5 via-emerald-500/5 to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="relative p-8 rounded-3xl border border-white/10">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center mb-6">
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-[#2D6A4F]/5 via-[#40916C]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="relative p-8 rounded-3xl border border-[#40916C]/20">
+              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#40916C] to-[#2D6A4F] flex items-center justify-center mb-6">
                 <Database className="w-6 h-6 text-white" />
               </div>
               <h2 className="text-2xl font-medium mb-4">Transparent Pricing</h2>
@@ -162,7 +162,7 @@ export default function DevelopersPage() {
             <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background opacity-50" />
             <div className="container mx-auto px-4">
               <div className="max-w-3xl mx-auto text-center mb-16">
-                <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/5 mb-6">
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#2D6A4F]/10 mb-6">
                   <GitBranch className="w-4 h-4 mr-2" />
                   <span className="text-sm">GitOps</span>
                 </div>
@@ -182,10 +182,10 @@ export default function DevelopersPage() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+                    className="p-6 rounded-xl bg-[#2D6A4F]/5 border border-[#40916C]/20 hover:bg-[#2D6A4F]/10 transition-colors"
                   >
                     <div className="mb-4">
-                      <GitBranch className="w-8 h-8 text-blue-400" />
+                      <GitBranch className="w-8 h-8 text-[#2D6A4F]" />
                     </div>
                     <h3 className="text-xl font-medium mb-2">
                       {t('overview.gitRepository.title')}
@@ -204,10 +204,10 @@ export default function DevelopersPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.2 }}
-                    className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+                    className="p-6 rounded-xl bg-[#2D6A4F]/5 border border-[#40916C]/20 hover:bg-[#2D6A4F]/10 transition-colors"
                   >
                     <div className="mb-4">
-                      <Cpu className="w-8 h-8 text-purple-400" />
+                      <Cpu className="w-8 h-8 text-[#40916C]" />
                     </div>
                     <h3 className="text-xl font-medium mb-2">
                       {t('overview.bergetCluster.title')}
@@ -226,10 +226,10 @@ export default function DevelopersPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.4 }}
-                    className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+                    className="p-6 rounded-xl bg-[#2D6A4F]/5 border border-[#40916C]/20 hover:bg-[#2D6A4F]/10 transition-colors"
                   >
                     <div className="mb-4">
-                      <Link2 className="w-8 h-8 text-green-400" />
+                      <Link2 className="w-8 h-8 text-[#FFB700]" />
                     </div>
                     <h3 className="text-xl font-medium mb-2">
                       {t('overview.aiApis.title')}
@@ -244,16 +244,16 @@ export default function DevelopersPage() {
                 </div>
 
                 <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="flex items-center gap-3 p-4 rounded-lg bg-white/5">
-                    <Database className="w-5 h-5 text-white/60" />
+                  <div className="flex items-center gap-3 p-4 rounded-lg bg-[#2D6A4F]/5">
+                    <Database className="w-5 h-5 text-[#2D6A4F]/80" />
                     <span className="text-sm text-white/60">Dedicated Databases</span>
                   </div>
-                  <div className="flex items-center gap-3 p-4 rounded-lg bg-white/5">
-                    <Lock className="w-5 h-5 text-white/60" />
+                  <div className="flex items-center gap-3 p-4 rounded-lg bg-[#2D6A4F]/5">
+                    <Lock className="w-5 h-5 text-[#40916C]/80" />
                     <span className="text-sm text-white/60">Encrypted Storage</span>
                   </div>
-                  <div className="flex items-center gap-3 p-4 rounded-lg bg-white/5">
-                    <Cloud className="w-5 h-5 text-white/60" />
+                  <div className="flex items-center gap-3 p-4 rounded-lg bg-[#2D6A4F]/5">
+                    <Cloud className="w-5 h-5 text-[#FFB700]/80" />
                     <span className="text-sm text-white/60">Multi-Cloud Support</span>
                   </div>
                 </div>

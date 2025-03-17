@@ -108,7 +108,7 @@ export default function BlogPage() {
               key={post.id}
               className="block"
             >
-              <article className="p-6 rounded-xl bg-card/10 border border-border hover:bg-card/20 transition-colors">
+              <article className="p-6 rounded-xl bg-[#2D6A4F]/5 border border-[#40916C]/20 hover:bg-[#2D6A4F]/10 transition-colors">
               {post.image && (
                 <div className="relative w-full h-48 mb-6 rounded-lg overflow-hidden">
                   <img 
@@ -131,7 +131,7 @@ export default function BlogPage() {
                 {post.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-2 py-1 rounded-full bg-white/10 text-sm"
+                    className="px-2 py-1 rounded-full bg-[#2D6A4F]/20 text-sm"
                   >
                     {tag}
                   </span>

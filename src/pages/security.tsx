@@ -11,20 +11,20 @@ export default function SecurityPage() {
           <h1 className="text-4xl font-medium mb-8">Security</h1>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-              <Shield className="w-8 h-8 mb-4" />
+            <div className="p-6 rounded-xl bg-[#2D6A4F]/5 border border-[#40916C]/20">
+              <Shield className="w-8 h-8 mb-4 text-[#2D6A4F]" />
               <h3 className="text-xl font-medium mb-2">Infrastructure Security</h3>
               <p className="text-white/60">Physical and network security measures protecting our infrastructure.</p>
             </div>
 
-            <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-              <Lock className="w-8 h-8 mb-4" />
+            <div className="p-6 rounded-xl bg-[#2D6A4F]/5 border border-[#40916C]/20">
+              <Lock className="w-8 h-8 mb-4 text-[#40916C]" />
               <h3 className="text-xl font-medium mb-2">Data Protection</h3>
               <p className="text-white/60">Encryption and access control measures safeguarding your data.</p>
             </div>
 
-            <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-              <Server className="w-8 h-8 mb-4" />
+            <div className="p-6 rounded-xl bg-[#2D6A4F]/5 border border-[#40916C]/20">
+              <Server className="w-8 h-8 mb-4 text-[#FFB700]" />
               <h3 className="text-xl font-medium mb-2">Compliance</h3>
               <p className="text-white/60">Our certifications and compliance with security standards.</p>
             </div>

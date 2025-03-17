@@ -32,9 +32,9 @@ function WhyBergetPage() {
             viewport={{ once: true }}
             className="relative group"
           >
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-blue-500/5 via-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="relative p-8 rounded-3xl border border-white/10 h-full">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center mb-6">
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-[#2D6A4F]/5 via-[#40916C]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="relative p-8 rounded-3xl border border-[#40916C]/20 h-full">
+              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#2D6A4F] to-[#40916C] flex items-center justify-center mb-6">
                 <Globe className="w-6 h-6 text-white" />
               </div>
               <h2 className="text-2xl font-medium mb-4">Unlocking European Innovation & Sovereignty</h2>
@@ -66,9 +66,9 @@ function WhyBergetPage() {
             transition={{ delay: 0.2 }}
             className="relative group"
           >
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-emerald-500/5 via-teal-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="relative p-8 rounded-3xl border border-white/10 h-full">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center mb-6">
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-[#2D6A4F]/5 via-[#40916C]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="relative p-8 rounded-3xl border border-[#40916C]/20 h-full">
+              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#2D6A4F] to-[#40916C] flex items-center justify-center mb-6">
                 <Shield className="w-6 h-6 text-white" />
               </div>
               <h2 className="text-2xl font-medium mb-4">Effortless Data Privacy & Regulatory Compliance</h2>
@@ -100,10 +100,10 @@ function WhyBergetPage() {
             transition={{ delay: 0.3 }}
             className="relative group"
           >
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-orange-500/5 via-amber-500/5 to-yellow-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="relative p-8 rounded-3xl border border-white/10 h-full">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center mb-6">
-                <Server className="w-6 h-6 text-white" />
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-[#2D6A4F]/5 via-[#40916C]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="relative p-8 rounded-3xl border border-[#40916C]/20 h-full">
+              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#FFB700] to-[#FFB700]/80 flex items-center justify-center mb-6">
+                <Server className="w-6 h-6 text-[#1A1A1A]" />
               </div>
               <h2 className="text-2xl font-medium mb-4">The Alternative to On-Prem and Public Cloud</h2>
               <p className="text-white/60 mb-6">
@@ -134,9 +134,9 @@ function WhyBergetPage() {
             transition={{ delay: 0.4 }}
             className="relative group"
           >
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-violet-500/5 via-purple-500/5 to-fuchsia-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="relative p-8 rounded-3xl border border-white/10 h-full">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-violet-500 to-purple-500 flex items-center justify-center mb-6">
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-[#2D6A4F]/5 via-[#40916C]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="relative p-8 rounded-3xl border border-[#40916C]/20 h-full">
+              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#40916C] to-[#2D6A4F] flex items-center justify-center mb-6">
                 <Lock className="w-6 h-6 text-white" />
               </div>
               <h2 className="text-2xl font-medium mb-4">Security & Privacy Built In</h2>

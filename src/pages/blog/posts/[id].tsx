@@ -48,12 +48,12 @@ function LoadingPlaceholder() {
     <main className="min-h-screen pt-24">
       <div className="container mx-auto px-4 py-12">
         <div className="animate-pulse">
-          <div className="h-8 bg-white/10 rounded w-2/3 mb-4"></div>
-          <div className="h-4 bg-white/10 rounded w-1/3 mb-8"></div>
+          <div className="h-8 bg-[#2D6A4F]/10 rounded w-2/3 mb-4"></div>
+          <div className="h-4 bg-[#2D6A4F]/10 rounded w-1/3 mb-8"></div>
           <div className="space-y-3">
-            <div className="h-4 bg-white/10 rounded"></div>
-            <div className="h-4 bg-white/10 rounded"></div>
-            <div className="h-4 bg-white/10 rounded"></div>
+            <div className="h-4 bg-[#2D6A4F]/10 rounded"></div>
+            <div className="h-4 bg-[#2D6A4F]/10 rounded"></div>
+            <div className="h-4 bg-[#2D6A4F]/10 rounded"></div>
           </div>
         </div>
       </div>
@@ -131,7 +131,7 @@ export default function BlogPostPage() {
             {post.tags.map((tag) => (
               <span
                 key={tag}
-                className="px-2 py-1 rounded-full bg-white/10 text-sm"
+                className="px-2 py-1 rounded-full bg-[#2D6A4F]/20 text-sm"
               >
                 {tag}
               </span>

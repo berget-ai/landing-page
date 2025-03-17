@@ -39,7 +39,7 @@ export default function SignupPage() {
             <div className="relative p-8 rounded-2xl border border-white/10 bg-black/20 backdrop-blur-sm space-y-6">
               {/* Security Notice */}
               <div className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 mb-6">
-                <Shield className="w-5 h-5 text-emerald-400" />
+                <Shield className="w-5 h-5 text-[#2D6A4F]" />
                 <span className="text-sm text-white/80">
                   Your data never leaves our EU-based infrastructure
                 </span>
@@ -107,11 +107,11 @@ export default function SignupPage() {
                   />
                   <Label htmlFor="terms" className="text-sm leading-relaxed">
                     I agree to Berget's{' '}
-                    <Link to="/terms" className="text-blue-400 hover:underline">
+                    <Link to="/terms" className="text-[#2D6A4F] hover:underline">
                       Terms of Service
                     </Link>{' '}
                     and{' '}
-                    <Link to="/privacy" className="text-blue-400 hover:underline">
+                    <Link to="/privacy" className="text-[#2D6A4F] hover:underline">
                       Privacy Policy
                     </Link>
                   </Label>
@@ -127,7 +127,7 @@ export default function SignupPage() {
               {/* Sign In Link */}
               <div className="text-center text-sm text-white/60">
                 Already have an account?{' '}
-                <Link to="/login" className="text-blue-400 hover:underline">
+                <Link to="/login" className="text-[#2D6A4F] hover:underline">
                   Sign in
                 </Link>
               </div>
