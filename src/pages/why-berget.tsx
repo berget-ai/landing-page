@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import { ComplianceSection } from '@/components/sections/ComplianceSection'
 import { SustainabilitySection } from '@/components/sections/SustainabilitySection'
 import { ComparisonTable } from '@/components/sections/ComparisonTable'
+import { PartnerQuotes } from '@/components/sections/PartnerQuotes'
 
 function WhyBergetPage() {
   return (
@@ -321,6 +322,9 @@ function WhyBergetPage() {
           </motion.div>
         </div>
       </div>
+
+      {/* Partner Quotes */}
+      <PartnerQuotes />
 
       {/* Customer Testimonials */}
       <section className="py-24 relative bg-[#2D6A4F]/5 border-y border-[#40916C]/20">

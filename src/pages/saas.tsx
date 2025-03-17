@@ -6,6 +6,7 @@ import { ComplianceSection } from '@/components/sections/ComplianceSection'
 import { PricingTiers } from '@/components/sections/pricing/PricingTiers'
 import { ProductFeatures } from '@/components/sections/ProductFeatures'
 import { NetworkBackground } from '@/components/common/NetworkBackground'
+import { PartnerQuotes } from '@/components/sections/PartnerQuotes'
 import { useTranslation } from 'react-i18next'
 
 export default function SaaSPage() {
@@ -140,6 +141,9 @@ export default function SaaSPage() {
           </div>
         </div>
       </section>
+
+      {/* Expert Opinions */}
+      <PartnerQuotes />
 
       {/* Benefits Section */}
       <section className="py-24 relative">
