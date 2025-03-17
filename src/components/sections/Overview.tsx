@@ -34,7 +34,7 @@ export function Overview() {
               className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
             >
               <div className="mb-4">
-                <GitBranch className="w-8 h-8 text-blue-400" />
+                <GitBranch className="w-8 h-8" />
               </div>
               <h3 className="text-xl font-medium mb-2">
                 {t('overview.gitRepository.title')}
@@ -56,7 +56,7 @@ export function Overview() {
               className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
             >
               <div className="mb-4">
-                <Cpu className="w-8 h-8 text-purple-400" />
+                <Cpu className="w-8 h-8" />
               </div>
               <h3 className="text-xl font-medium mb-2">
                 {t('overview.bergetCluster.title')}
@@ -78,7 +78,7 @@ export function Overview() {
               className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
             >
               <div className="mb-4">
-                <Link2 className="w-8 h-8 text-green-400" />
+                <Link2 className="w-8 h-8" />
               </div>
               <h3 className="text-xl font-medium mb-2">
                 {t('overview.aiApis.title')}
@@ -94,15 +94,15 @@ export function Overview() {
 
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="flex items-center gap-3 p-4 rounded-lg bg-white/5">
-              <Database className="w-5 h-5 text-white/60" />
+              <Database className="w-5 h-5" />
               <span className="text-sm text-white/60">Dedicated Databases</span>
             </div>
             <div className="flex items-center gap-3 p-4 rounded-lg bg-white/5">
-              <Shield className="w-5 h-5 text-white/60" />
+              <Shield className="w-5 h-5" />
               <span className="text-sm text-white/60">Encrypted Storage</span>
             </div>
             <div className="flex items-center gap-3 p-4 rounded-lg bg-white/5">
-              <Cloud className="w-5 h-5 text-white/60" />
+              <Cloud className="w-5 h-5" />
               <span className="text-sm text-white/60">Multi-Cloud Support</span>
             </div>
           </div>

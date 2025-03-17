@@ -35,7 +35,7 @@ export function SocialProof() {
           transition={{ delay: 0.1 * index }}
           className="flex flex-col items-center p-4 rounded-xl bg-white/5 backdrop-blur-sm"
         >
-          <metric.icon className="w-5 h-5 mb-2 text-white/60" />
+          <metric.icon className="w-5 h-5 mb-2" />
           <div className="text-2xl font-medium mb-1">{metric.value}</div>
           <div className="text-sm text-white/60">{metric.label}</div>
         </motion.div>

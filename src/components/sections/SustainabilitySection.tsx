@@ -28,7 +28,7 @@ export function SustainabilitySection() {
             className="p-8 rounded-xl bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors relative group"
           >
             <div className="mb-6">
-              <Zap className="w-10 h-10 text-emerald-400" />
+              <Zap className="w-10 h-10" />
             </div>
             <h3 className="text-2xl font-medium mb-3">100% Clean Energy</h3>
             <p className="text-white/60 mb-4">
@@ -48,7 +48,7 @@ export function SustainabilitySection() {
             className="p-8 rounded-xl bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors relative group"
           >
             <div className="mb-6">
-              <Recycle className="w-10 h-10 text-emerald-400" />
+              <Recycle className="w-10 h-10" />
             </div>
             <h3 className="text-2xl font-medium mb-3">Circular Hardware</h3>
             <p className="text-white/60 mb-4">
@@ -68,7 +68,7 @@ export function SustainabilitySection() {
             className="p-8 rounded-xl bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors relative group"
           >
             <div className="mb-6">
-              <Leaf className="w-10 h-10 text-emerald-400" />
+              <Leaf className="w-10 h-10" />
             </div>
             <h3 className="text-2xl font-medium mb-3">Carbon Negative</h3>
             <p className="text-white/60 mb-4">

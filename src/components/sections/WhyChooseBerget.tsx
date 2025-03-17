@@ -25,7 +25,7 @@ export function WhyChooseBerget() {
             viewport={{ once: true }}
             className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors"
           >
-            <Globe className="w-6 h-6 mb-4 text-blue-400" />
+            <Globe className="w-6 h-6 mb-4" />
             <h3 className="text-xl font-medium mb-3">{t('whyBerget.features.european.title')}</h3>
             <p className="text-white/60">
               {t('whyBerget.features.european.description')}
@@ -40,7 +40,7 @@ export function WhyChooseBerget() {
             transition={{ delay: 0.1 }}
             className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors"
           >
-            <Shield className="w-6 h-6 mb-4 text-emerald-400" />
+            <Shield className="w-6 h-6 mb-4" />
             <h3 className="text-xl font-medium mb-3">{t('whyBerget.features.security.title')}</h3>
             <p className="text-white/60">
               {t('whyBerget.features.security.description')}
@@ -55,7 +55,7 @@ export function WhyChooseBerget() {
             transition={{ delay: 0.2 }}
             className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors"
           >
-            <Server className="w-6 h-6 mb-4 text-purple-400" />
+            <Server className="w-6 h-6 mb-4" />
             <h3 className="text-xl font-medium mb-3">{t('whyBerget.features.alternative.title')}</h3>
             <p className="text-white/60">
               {t('whyBerget.features.alternative.description')}
@@ -70,7 +70,7 @@ export function WhyChooseBerget() {
             transition={{ delay: 0.3 }}
             className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors"
           >
-            <Lock className="w-6 h-6 mb-4 text-rose-400" />
+            <Lock className="w-6 h-6 mb-4" />
             <h3 className="text-xl font-medium mb-3">{t('whyBerget.features.privacy.title')}</h3>
             <p className="text-white/60">
               {t('whyBerget.features.privacy.description')}

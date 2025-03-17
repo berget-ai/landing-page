@@ -73,15 +73,15 @@ export function ModelsSection() {
             <h3 className="text-lg font-medium">Comprehensive Model Selection</h3>
             <ul className="space-y-2">
               <li className="flex items-center gap-3">
-                <div className="w-1.5 h-1.5 rounded-full bg-violet-400" />
+                <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
                 <span>Broad selection of model types including instruct, re-rerank, and moderation models</span>
               </li>
               <li className="flex items-center gap-3">
-                <div className="w-1.5 h-1.5 rounded-full bg-purple-400" />
+                <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
                 <span>Optimized for agentic applications and complex AI workflows</span>
               </li>
               <li className="flex items-center gap-3">
-                <div className="w-1.5 h-1.5 rounded-full bg-fuchsia-400" />
+                <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
                 <span>Support for multiple modalities: text, image, speech-to-text, and text-to-speech</span>
               </li>
             </ul>

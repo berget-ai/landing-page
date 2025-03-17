@@ -149,18 +149,18 @@ export function ComparisonTable() {
                     <td className="p-4">
                       <div className="flex justify-center">
                         {feature.berget ? (
-                          <Check className="w-5 h-5 text-[#22C55E]" />
+                          <Check className="w-5 h-5 text-primary" />
                         ) : (
-                          <Minus className="w-5 h-5 text-white/20" />
+                          <Minus className="w-5 h-5 text-muted-foreground/50" />
                         )}
                       </div>
                     </td>
                     <td className="p-4">
                       <div className="flex justify-center">
                         {feature.aws ? (
-                          <Check className="w-5 h-5 text-white/60" />
+                          <Check className="w-5 h-5 text-muted-foreground" />
                         ) : (
-                          <Minus className="w-5 h-5 text-white/20" />
+                          <Minus className="w-5 h-5 text-muted-foreground/50" />
                         )}
                       </div>
                     </td>

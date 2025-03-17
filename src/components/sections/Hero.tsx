@@ -30,7 +30,7 @@ export function Hero() {
             <div className="flex gap-4 justify-center">
               <Button
                 size="lg"
-                className="bg-white text-[#2D6A4F] hover:bg-white/90"
+                variant="default"
                 asChild
               >
                 <Link to="/signup">
@@ -40,7 +40,6 @@ export function Hero() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white bg-transparent text-white hover:bg-white/10"
               >
                 {t('hero.learnMore')}
               </Button>

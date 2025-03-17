@@ -57,7 +57,7 @@ export function Sustainability() {
             >
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500/0 via-emerald-500/50 to-emerald-500/0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
               <div className="mb-6">
-                <point.icon className="w-10 h-10 dark:text-emerald-400 light:text-emerald-600" />
+                <point.icon className="w-10 h-10" />
               </div>
               <h3 className="text-2xl font-medium mb-3">{point.title}</h3>
               <p className="dark:text-white/60 light:text-gray-600 mb-4">

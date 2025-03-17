@@ -55,7 +55,7 @@ export function ProductFeatures() {
             transition={{ delay: 0.1 }}
             className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors"
           >
-            <Server className="w-8 h-8 mb-4 text-purple-400" />
+            <Server className="w-8 h-8 mb-4" />
             <h3 className="text-xl font-medium mb-3">
               {t('products.dedicated.title')}
             </h3>
@@ -83,7 +83,7 @@ export function ProductFeatures() {
             transition={{ delay: 0.2 }}
             className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors"
           >
-            <Cpu className="w-8 h-8 mb-4 text-emerald-400" />
+            <Cpu className="w-8 h-8 mb-4" />
             <h3 className="text-xl font-medium mb-3">
               {t('products.platform.title')}
             </h3>

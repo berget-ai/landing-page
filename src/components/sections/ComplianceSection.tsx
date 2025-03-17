@@ -56,7 +56,7 @@ export function ComplianceSection() {
               transition={{ delay: index * 0.1 }}
               className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors"
             >
-              <regulation.icon className="w-8 h-8 mb-4 text-blue-400" />
+              <regulation.icon className="w-8 h-8 mb-4" />
               <h3 className="text-xl font-medium mb-2">{regulation.name}</h3>
               <p className="text-white/60 mb-4">{regulation.description}</p>
               <ul className="space-y-2">
