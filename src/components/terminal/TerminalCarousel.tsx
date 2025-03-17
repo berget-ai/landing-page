@@ -35,33 +35,33 @@ const examples: TerminalExample[] = [
     title: 'Automatisk klusterväxling',
     description: 'Enkel klusterväxling med berget autocomplete',
     commands: [
-      { 
-        command: 'berget autocomplete install', 
+      {
+        command: 'berget autocomplete install',
         output: [
           '✓ Berget autocomplete installed in your shell',
           '✓ Shell completion for kubectl also installed',
           '',
           'Restart your shell or run:',
-          '  source ~/.bashrc'
-        ] 
+          '  source ~/.bashrc',
+        ],
       },
-      { 
-        command: 'source ~/.bashrc', 
-        output: ['# Laddar om bashrc'] 
+      {
+        command: 'source ~/.bashrc',
+        output: ['# Laddar om bashrc'],
       },
-      { 
-        command: 'echo "cluster: ideal-palmtree" > .bergetconfig', 
-        output: ['# Skapar .bergetconfig fil i ditt projekt'] 
+      {
+        command: 'echo "cluster: ideal-palmtree" > .bergetconfig',
+        output: ['# Skapar .bergetconfig fil i ditt projekt'],
       },
-      { 
-        command: 'cd .', 
+      {
+        command: 'cd .',
         output: [
           '🔄 Berget: Switched to cluster "ideal-palmtree"',
           '✓ kubectl config updated',
           '',
-          '# Nu kommer du automatiskt byta till rätt kluster när du går in i projektmappen'
-        ] 
-      }
+          '# Nu kommer du automatiskt byta till rätt kluster när du går in i projektmappen',
+        ],
+      },
     ],
   },
   {
@@ -69,24 +69,25 @@ const examples: TerminalExample[] = [
     description: 'Automatisera deployment med FluxCD och GitOps-workflow',
     commands: [
       { command: 'berget login', output: ['... loggar in med BankID'] },
-      { 
-        command: 'berget cluster list', 
+      {
+        command: 'berget cluster list',
         output: [
           'NAME                   STATUS    NODES    CREATED',
-          'ideal-palmtree         Running   5        2 days ago'
-        ] 
+          'ideal-palmtree         Running   5        2 days ago',
+        ],
       },
-      { 
-        command: 'berget flux install --cluster ideal-palmtree', 
+      {
+        command: 'berget flux install --cluster ideal-palmtree',
         output: [
           'Installing Flux components...',
           '✓ Flux components installed successfully',
           '',
-          'Now you can bootstrap Flux with your Git repository:'
-        ] 
+          'Now you can bootstrap Flux with your Git repository:',
+        ],
       },
-      { 
-        command: 'berget flux bootstrap github --owner=myorg --repository=k8s-config --path=clusters/ideal-palmtree --personal', 
+      {
+        command:
+          'berget flux bootstrap github --owner=myorg --repository=infra --path=clusters/ideal-palmtree --personal',
         output: [
           '► connecting to github.com',
           '► cloning repository',
@@ -95,26 +96,28 @@ const examples: TerminalExample[] = [
           '✓ bootstrap completed',
           '',
           'Now Flux will automatically sync your repository with your cluster.',
-          'Any changes you push to the repository will be applied to your cluster.'
-        ] 
-      }
+          'Any changes you push to the repository will be applied to your cluster.',
+        ],
+      },
     ],
   },
   {
     title: 'Bjud in kollegor till klustret',
-    description: 'Samarbeta med ditt team genom att bjuda in dem till ditt kluster',
+    description:
+      'Samarbeta med ditt team genom att bjuda in dem till ditt kluster',
     commands: [
       { command: 'berget login', output: ['... loggar in med BankID'] },
-      { 
-        command: 'berget cluster list', 
+      {
+        command: 'berget cluster list',
         output: [
           'NAME                   STATUS    NODES    CREATED',
           'ideal-palmtree         Running   5        2 days ago',
-          'curious-elephant       Running   3        1 week ago'
-        ] 
+          'curious-elephant       Running   3        1 week ago',
+        ],
       },
-      { 
-        command: 'berget collaborator add --cluster ideal-palmtree --github-username kollega123', 
+      {
+        command:
+          'berget collaborator add --cluster ideal-palmtree --github-username kollega123',
         output: [
           'Invitation sent to kollega123',
           'They will receive an email with instructions to accept the invitation',
@@ -122,17 +125,17 @@ const examples: TerminalExample[] = [
           'Current collaborators on ideal-palmtree:',
           'USERNAME      ROLE       STATUS',
           'you           Owner      Active',
-          'kollega123    Editor     Pending'
-        ] 
+          'kollega123    Editor     Pending',
+        ],
       },
-      { 
-        command: 'berget collaborator list --cluster ideal-palmtree', 
+      {
+        command: 'berget collaborator list --cluster ideal-palmtree',
         output: [
           'USERNAME      ROLE       STATUS',
           'you           Owner      Active',
-          'kollega123    Editor     Pending'
-        ] 
-      }
+          'kollega123    Editor     Pending',
+        ],
+      },
     ],
   },
   {
