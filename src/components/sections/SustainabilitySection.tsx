@@ -32,7 +32,7 @@ export function SustainabilitySection() {
             </div>
             <h3 className="text-2xl font-medium mb-3 text-[#74C69D]">100% Fossilfri el</h3>
             <p className="text-white/80 mb-4">
-              Våra datacenter drivs uteslutande med certifierad fossilfri energi från Sveriges unika energimix av vattenkraft, vindkraft och kärnkraft, med realtidsspårning av energikällor.
+              Våra datacenter drivs uteslutande med certifierad fossilfri energi från Sveriges unika energimix av vattenkraft, vindkraft och kärnkraft, samt solceller på taket av våra anläggningar.
             </p>
             <div className="text-sm font-medium text-[#52B788]">
               100% fossilfri energi

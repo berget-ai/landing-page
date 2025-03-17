@@ -6,7 +6,7 @@ const sustainabilityPoints = [
     icon: Zap,
     title: '100% Fossilfri el',
     description:
-      'Våra datacenter drivs uteslutande med certifierad fossilfri energi från Sveriges unika energimix av vattenkraft, vindkraft och kärnkraft, med realtidsspårning av energikällor.',
+      'Våra datacenter drivs uteslutande med certifierad fossilfri energi från Sveriges unika energimix av vattenkraft, vindkraft och kärnkraft, samt solceller på taket av våra anläggningar.',
     stats: '100% fossilfri energi',
   },
   {
