@@ -11,7 +11,7 @@ export default function SecurityPage() {
           <h1 className="text-4xl font-medium mb-8">Security</h1>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <div className="p-6 rounded-xl bg-white/5 border border-white/10">
+            <div className="p-6 rounded-xl bg-card/10 border border-border">
               <Shield className="w-8 h-8 mb-4" />
               <h3 className="text-xl font-medium mb-2">Infrastructure Security</h3>
               <p className="text-white/60">Physical and network security measures protecting our infrastructure.</p>

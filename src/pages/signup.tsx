@@ -39,7 +39,7 @@ export default function SignupPage() {
             <div className="relative p-8 rounded-2xl border border-white/10 bg-black/20 backdrop-blur-sm space-y-6">
               {/* Security Notice */}
               <div className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 mb-6">
-                <Shield className="w-5 h-5 text-emerald-400" />
+                <Shield className="w-5 h-5 text-primary" />
                 <span className="text-sm text-white/80">
                   Your data never leaves our EU-based infrastructure
                 </span>
