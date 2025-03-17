@@ -30,12 +30,12 @@ export function SustainabilitySection() {
             <div className="mb-6">
               <Zap className="w-10 h-10 text-[#52B788]" />
             </div>
-            <h3 className="text-2xl font-medium mb-3 text-[#74C69D]">100% Koldioxidfri el</h3>
+            <h3 className="text-2xl font-medium mb-3 text-[#74C69D]">100% Fossilfri el</h3>
             <p className="text-white/80 mb-4">
-              Våra datacenter drivs uteslutande med certifierad förnybar energi från nordisk vattenkraft och vindkraft, med realtidsspårning av energikällor.
+              Våra datacenter drivs uteslutande med certifierad fossilfri energi från Sveriges unika energimix av vattenkraft, vindkraft och kärnkraft, med realtidsspårning av energikällor.
             </p>
             <div className="text-sm font-medium text-[#52B788]">
-              100% förnybar energi
+              100% fossilfri energi
             </div>
           </motion.div>
 

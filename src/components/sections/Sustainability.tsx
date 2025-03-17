@@ -4,10 +4,10 @@ import { motion } from 'framer-motion'
 const sustainabilityPoints = [
   {
     icon: Zap,
-    title: '100% Koldioxidfri el',
+    title: '100% Fossilfri el',
     description:
-      'Våra datacenter drivs uteslutande med certifierad förnybar energi från nordisk vattenkraft och vindkraft, med realtidsspårning av energikällor.',
-    stats: '100% förnybar energi',
+      'Våra datacenter drivs uteslutande med certifierad fossilfri energi från Sveriges unika energimix av vattenkraft, vindkraft och kärnkraft, med realtidsspårning av energikällor.',
+    stats: '100% fossilfri energi',
   },
   {
     icon: Droplets,
