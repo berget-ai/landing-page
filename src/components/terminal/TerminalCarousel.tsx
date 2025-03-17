@@ -32,6 +32,42 @@ const examples: TerminalExample[] = [
     ],
   },
   {
+    title: 'Installera FluxCD för GitOps',
+    description: 'Automatisera deployment med FluxCD och GitOps-workflow',
+    commands: [
+      { command: 'berget login', output: ['... loggar in med BankID'] },
+      { 
+        command: 'berget cluster list', 
+        output: [
+          'NAME                   STATUS    NODES    CREATED',
+          'ideal-palmtree         Running   5        2 days ago'
+        ] 
+      },
+      { 
+        command: 'berget flux install --cluster ideal-palmtree', 
+        output: [
+          'Installing Flux components...',
+          '✓ Flux components installed successfully',
+          '',
+          'Now you can bootstrap Flux with your Git repository:'
+        ] 
+      },
+      { 
+        command: 'berget flux bootstrap github --owner=myorg --repository=k8s-config --path=clusters/ideal-palmtree --personal', 
+        output: [
+          '► connecting to github.com',
+          '► cloning repository',
+          '► generating manifests',
+          '► committing changes',
+          '✓ bootstrap completed',
+          '',
+          'Now Flux will automatically sync your repository with your cluster.',
+          'Any changes you push to the repository will be applied to your cluster.'
+        ] 
+      }
+    ],
+  },
+  {
     title: 'Bjud in kollegor till klustret',
     description: 'Samarbeta med ditt team genom att bjuda in dem till ditt kluster',
     commands: [
