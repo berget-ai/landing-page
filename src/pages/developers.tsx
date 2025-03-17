@@ -15,11 +15,35 @@ export default function DevelopersPage() {
         <div className="container mx-auto px-4 py-24">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-5xl font-medium mb-6">
-              Built by Developers for Developers
+              Av utvecklare för utvecklare
             </h1>
             <p className="text-xl text-white/60 mb-8">
-              A flexible and developer-friendly platform designed for efficiency, scalability, and control.
+              En flexibel och utvecklarvänlig plattform designad för effektivitet, skalbarhet och kontroll.
             </p>
+          </div>
+          
+          <div className="max-w-2xl mx-auto mt-16 bg-[#2D6A4F]/10 border border-[#40916C]/20 rounded-xl p-6">
+            <div className="font-mono text-sm">
+              <div className="mb-4">
+                <span className="text-[#52B788]">$</span> <span className="text-white">npm i -g berget</span>
+              </div>
+              <div className="mb-4">
+                <span className="text-[#52B788]">$</span> <span className="text-white">berget login</span>
+                <div className="text-white/60 pl-4">... loggar in med BankID</div>
+              </div>
+              <div className="mb-4">
+                <span className="text-[#52B788]">$</span> <span className="text-white">berget create cluster</span>
+                <div className="text-white/60 pl-4">Done! 5 nodes created.</div>
+                <div className="text-white/60 pl-4">Assigned DNS: ideal-palmtree.berget.cloud</div>
+                <div className="text-white/60 pl-4">Nu är ditt kluster redo att användas. Nu kan du börja köra dina applikationer. Du kan peka ett CNAME till klustret.</div>
+              </div>
+              <div className="mb-4">
+                <span className="text-[#52B788]">$</span> <span className="text-white">berget apply -f deployment.yaml</span>
+              </div>
+              <div className="text-white/60 mt-4">
+                Tips: använd fluxcd för att automatiskt hålla klustret uppdaterat.
+              </div>
+            </div>
           </div>
         </div>
       </div>
