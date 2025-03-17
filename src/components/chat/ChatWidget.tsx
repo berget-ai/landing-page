@@ -76,7 +76,7 @@ export function ChatWidget() {
                 <Bot className="h-5 w-5" />
                 <span className="font-medium">Berget Support</span>
                 {isConnected && (
-                  <span className="w-2 h-2 rounded-full bg-primary" />
+                  <span className="w-2 h-2 rounded-full bg-foreground/50" />
                 )}
               </div>
               <Button
@@ -105,11 +105,11 @@ export function ChatWidget() {
                       <div
                         className={cn(
                           'w-8 h-8 rounded-full flex items-center justify-center shrink-0',
-                          message.type === 'bot' ? 'bg-primary' : 'bg-accent',
+                          message.type === 'bot' ? 'bg-muted' : 'bg-muted',
                         )}
                       >
                         {message.type === 'bot' ? (
-                          <Bot className="h-4 w-4 text-primary-foreground" />
+                          <Bot className="h-4 w-4 text-foreground/70" />
                         ) : (
                           <MessageSquare className="h-4 w-4" />
                         )}
@@ -118,7 +118,7 @@ export function ChatWidget() {
                         className={cn(
                           'rounded-2xl px-4 py-2 max-w-[75%]',
                           message.type === 'bot'
-                            ? 'bg-accent'
+                            ? 'bg-muted'
                             : 'bg-primary text-primary-foreground',
                         )}
                       >
@@ -129,10 +129,10 @@ export function ChatWidget() {
 
                   {isTyping && (
                     <div className="flex gap-2 items-start">
-                      <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-                        <Bot className="h-4 w-4 text-primary-foreground" />
+                      <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center">
+                        <Bot className="h-4 w-4 text-foreground/70" />
                       </div>
-                      <div className="rounded-2xl px-4 py-2 bg-accent">
+                      <div className="rounded-2xl px-4 py-2 bg-muted">
                         <Loader2 className="h-4 w-4 animate-spin" />
                       </div>
                     </div>

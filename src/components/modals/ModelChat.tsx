@@ -77,15 +77,15 @@ export function ModelChat({ isOpen, onClose, model }: ModelChatProps) {
                   )}
                 >
                   {message.role === 'assistant' && (
-                    <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-                      <Bot className="w-4 h-4 text-primary-foreground" />
+                    <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center">
+                      <Bot className="w-4 h-4 text-foreground/70" />
                     </div>
                   )}
                   <div
                     className={cn(
                       'rounded-2xl px-4 py-2 max-w-[80%]',
                       message.role === 'assistant'
-                        ? 'bg-accent'
+                        ? 'bg-muted'
                         : 'bg-primary text-primary-foreground',
                     )}
                   >
@@ -95,10 +95,10 @@ export function ModelChat({ isOpen, onClose, model }: ModelChatProps) {
               ))}
               {isLoading && (
                 <div className="flex gap-3">
-                  <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-                    <Bot className="w-4 h-4 text-primary-foreground" />
+                  <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center">
+                    <Bot className="w-4 h-4 text-foreground/70" />
                   </div>
-                  <div className="rounded-2xl px-4 py-2 bg-accent">
+                  <div className="rounded-2xl px-4 py-2 bg-muted">
                     <Loader2 className="w-4 h-4 animate-spin" />
                   </div>
                 </div>

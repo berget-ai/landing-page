@@ -27,7 +27,7 @@ export function RecipeCard({ recipe }: RecipeCardProps) {
         />
 
         <div className="relative z-10">
-          <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+          <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
             <recipe.icon className="w-6 h-6" />
           </div>
           <h3 className="text-2xl font-medium mb-2">{recipe.title}</h3>
@@ -40,7 +40,7 @@ export function RecipeCard({ recipe }: RecipeCardProps) {
           {recipe.stack.map((tech) => (
             <span
               key={tech}
-              className="px-3 py-1 rounded-full text-sm bg-accent/50"
+              className="px-3 py-1 rounded-full text-sm bg-muted"
             >
               {tech}
             </span>
