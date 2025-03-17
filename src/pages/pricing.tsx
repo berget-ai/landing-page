@@ -28,7 +28,7 @@ export default function PricingPage() {
         {/* Money Back Guarantee Section - Moved here */}
         <div className="mb-24 max-w-3xl mx-auto">
           <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-4 w-fit">
-            <Check className="w-4 h-4" />
+            <Check className="w-4 h-4 text-emerald-400" />
             <span className="text-sm">{t('pricing.moneyBackGuarantee')}</span>
           </div>
           <p className="text-white/60 mb-4">

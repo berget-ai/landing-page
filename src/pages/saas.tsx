@@ -166,7 +166,7 @@ export default function SaaSPage() {
                 <ul className="space-y-3">
                   {benefit.features.map((feature) => (
                     <li key={feature} className="flex items-center gap-3">
-                      <Check className="w-5 h-5 text-primary" />
+                      <Check className="w-5 h-5 text-emerald-400" />
                       <span className="text-sm">{feature}</span>
                     </li>
                   ))}

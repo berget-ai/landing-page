@@ -18,13 +18,13 @@ export default function SecurityPage() {
             </div>
 
             <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-              <Lock className="w-8 h-8 mb-4 text-primary/80" />
+              <Lock className="w-8 h-8 mb-4" />
               <h3 className="text-xl font-medium mb-2">Data Protection</h3>
               <p className="text-white/60">Encryption and access control measures safeguarding your data.</p>
             </div>
 
             <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-              <Server className="w-8 h-8 mb-4 text-primary/80" />
+              <Server className="w-8 h-8 mb-4" />
               <h3 className="text-xl font-medium mb-2">Compliance</h3>
               <p className="text-white/60">Our certifications and compliance with security standards.</p>
             </div>

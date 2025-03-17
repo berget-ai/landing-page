@@ -33,9 +33,9 @@ function WhyBergetPage() {
             className="relative group"
           >
             <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-blue-500/5 via-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="relative p-8 rounded-3xl border border-border h-full">
-              <div className="w-12 h-12 rounded-2xl bg-muted flex items-center justify-center mb-6">
-                <Globe className="w-6 h-6" />
+            <div className="relative p-8 rounded-3xl border border-white/10 h-full">
+              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center mb-6">
+                <Globe className="w-6 h-6 text-white" />
               </div>
               <h2 className="text-2xl font-medium mb-4">Unlocking European Innovation & Sovereignty</h2>
               <p className="text-white/60 mb-6">
@@ -67,9 +67,9 @@ function WhyBergetPage() {
             className="relative group"
           >
             <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-emerald-500/5 via-teal-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="relative p-8 rounded-3xl border border-border h-full">
-              <div className="w-12 h-12 rounded-2xl bg-muted flex items-center justify-center mb-6">
-                <Shield className="w-6 h-6" />
+            <div className="relative p-8 rounded-3xl border border-white/10 h-full">
+              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center mb-6">
+                <Shield className="w-6 h-6 text-white" />
               </div>
               <h2 className="text-2xl font-medium mb-4">Effortless Data Privacy & Regulatory Compliance</h2>
               <p className="text-white/60 mb-6">
@@ -101,9 +101,9 @@ function WhyBergetPage() {
             className="relative group"
           >
             <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-orange-500/5 via-amber-500/5 to-yellow-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="relative p-8 rounded-3xl border border-border h-full">
-              <div className="w-12 h-12 rounded-2xl bg-muted flex items-center justify-center mb-6">
-                <Server className="w-6 h-6" />
+            <div className="relative p-8 rounded-3xl border border-white/10 h-full">
+              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center mb-6">
+                <Server className="w-6 h-6 text-white" />
               </div>
               <h2 className="text-2xl font-medium mb-4">The Alternative to On-Prem and Public Cloud</h2>
               <p className="text-white/60 mb-6">
@@ -135,9 +135,9 @@ function WhyBergetPage() {
             className="relative group"
           >
             <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-violet-500/5 via-purple-500/5 to-fuchsia-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="relative p-8 rounded-3xl border border-border h-full">
-              <div className="w-12 h-12 rounded-2xl bg-muted flex items-center justify-center mb-6">
-                <Lock className="w-6 h-6" />
+            <div className="relative p-8 rounded-3xl border border-white/10 h-full">
+              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-violet-500 to-purple-500 flex items-center justify-center mb-6">
+                <Lock className="w-6 h-6 text-white" />
               </div>
               <h2 className="text-2xl font-medium mb-4">Security & Privacy Built In</h2>
               <p className="text-white/60 mb-6">
