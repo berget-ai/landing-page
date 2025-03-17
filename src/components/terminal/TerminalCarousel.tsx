@@ -40,7 +40,7 @@ const examples: TerminalExample[] = [
         output: ["# Din API-nyckel från Berget Dashboard"] 
       },
       { 
-        command: "curl -X POST https://api.berget.cloud/v1/chat/completions \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer $OPENAI_API_KEY\" \\\n  -d '{\"model\": \"berget-7b\", \"messages\": [{\"role\": \"user\", \"content\": \"Vad är Sveriges högsta berg?\"}]}'", 
+        command: "curl -s -X POST https://api.berget.ai/v1/chat/completions \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer $OPENAI_API_KEY\" \\\n  -d '{\"model\": \"berget-7b\", \"messages\": [{\"role\": \"user\", \"content\": \"Vad är Sveriges högsta berg?\"}]}' | jq", 
         output: [
           "{",
           "  \"id\": \"chatcmpl-123\",",
@@ -68,11 +68,11 @@ const examples: TerminalExample[] = [
         ] 
       },
       { 
-        command: "# Extrahera bara svaret med jq", 
+        command: "# Extrahera bara svaret", 
         output: [] 
       },
       { 
-        command: "curl -s -X POST https://api.berget.cloud/v1/chat/completions \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer $OPENAI_API_KEY\" \\\n  -d '{\"model\": \"berget-7b\", \"messages\": [{\"role\": \"user\", \"content\": \"Vad är Sveriges högsta berg?\"}]}' | jq -r '.choices[0].message.content'", 
+        command: "curl -s -X POST https://api.berget.ai/v1/chat/completions \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer $OPENAI_API_KEY\" \\\n  -d '{\"model\": \"berget-7b\", \"messages\": [{\"role\": \"user\", \"content\": \"Vad är Sveriges högsta berg?\"}]}' | jq -r '.choices[0].message.content'", 
         output: [
           "Sveriges högsta berg är Kebnekaise med en höjd på 2096 meter över havet."
         ] 
