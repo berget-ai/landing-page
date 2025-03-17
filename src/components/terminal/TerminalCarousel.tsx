@@ -205,7 +205,7 @@ export function TerminalCarousel() {
             setTypedText("");
             setShowOutput(false);
             setIsTyping(true);
-          }, 3000); // Wait before restarting the example
+          }, 6000); // Longer pause (6 seconds) before restarting the example
           
           return () => clearTimeout(resetTimeout);
         }
