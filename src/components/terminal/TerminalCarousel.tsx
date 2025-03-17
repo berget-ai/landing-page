@@ -133,8 +133,8 @@ export function TerminalCarousel() {
   const [outputIndex, setOutputIndex] = useState(0)
   const [isTyping, setIsTyping] = useState(true)
 
-  const currentExample = examples[currentIndex]
-  const currentCommand = currentExample.commands[commandIndex]
+  const currentExample = examples[currentIndex];
+  const currentCommand = currentExample.commands[commandIndex] || examples[0].commands[0];
 
   useEffect(() => {
     // Reset state when changing examples
@@ -147,52 +147,56 @@ export function TerminalCarousel() {
   }, [currentIndex])
 
   useEffect(() => {
-    if (!isTyping) return
-
-    if (typingIndex < currentCommand.command.length) {
-      // Type the command character by character
-      const timeout = setTimeout(() => {
-        setTypedText(prev => prev + currentCommand.command[typingIndex])
-        setTypingIndex(prev => prev + 1)
-      }, 30) // Typing speed
-      return () => clearTimeout(timeout)
-    } else {
-      // Command fully typed
-      setIsTyping(false)
+    let timeoutId: ReturnType<typeof setTimeout>;
+    
+    const runTyping = () => {
+      if (!isTyping) return;
       
-      // Show output after a delay
-      const outputDelay = setTimeout(() => {
-        setShowOutput(true)
+      if (typingIndex < currentCommand.command.length) {
+        // Type the command character by character
+        timeoutId = setTimeout(() => {
+          setTypedText(prev => prev + currentCommand.command[typingIndex]);
+          setTypingIndex(prev => prev + 1);
+        }, 30); // Typing speed
+      } else {
+        // Command fully typed
+        setIsTyping(false);
         
-        // Move to next command after showing output
-        const nextCommandDelay = setTimeout(() => {
-          if (commandIndex < currentExample.commands.length - 1) {
-            setCommandIndex(prev => prev + 1)
-            setTypingIndex(0)
-            setTypedText("")
-            setShowOutput(false)
-            setOutputIndex(0)
-            setIsTyping(true)
-          } else {
-            // All commands completed, wait before looping
-            const resetDelay = setTimeout(() => {
-              setCommandIndex(0)
-              setTypingIndex(0)
-              setTypedText("")
-              setShowOutput(false)
-              setOutputIndex(0)
-              setIsTyping(true)
-            }, 3000) // Wait before restarting the example
-            return () => clearTimeout(resetDelay)
-          }
-        }, currentCommand.output ? 2000 : 1000) // Wait longer if there's output
-        
-        return () => clearTimeout(nextCommandDelay)
-      }, 500) // Delay before showing output
-      
-      return () => clearTimeout(outputDelay)
-    }
-  }, [typingIndex, isTyping, commandIndex, currentCommand, currentExample.commands.length])
+        // Show output after a delay
+        timeoutId = setTimeout(() => {
+          setShowOutput(true);
+          
+          // Move to next command after showing output
+          timeoutId = setTimeout(() => {
+            if (commandIndex < currentExample.commands.length - 1) {
+              setCommandIndex(prev => prev + 1);
+              setTypingIndex(0);
+              setTypedText("");
+              setShowOutput(false);
+              setOutputIndex(0);
+              setIsTyping(true);
+            } else {
+              // All commands completed, wait before looping
+              timeoutId = setTimeout(() => {
+                setCommandIndex(0);
+                setTypingIndex(0);
+                setTypedText("");
+                setShowOutput(false);
+                setOutputIndex(0);
+                setIsTyping(true);
+              }, 3000); // Wait before restarting the example
+            }
+          }, currentCommand.output ? 2000 : 1000); // Wait longer if there's output
+        }, 500); // Delay before showing output
+      }
+    };
+    
+    runTyping();
+    
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [typingIndex, isTyping, commandIndex, currentCommand, currentExample.commands.length]);
 
   const nextExample = () => {
     setCurrentIndex((prev) => (prev + 1) % examples.length)
