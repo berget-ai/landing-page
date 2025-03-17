@@ -34,7 +34,7 @@ export default function SignupPage() {
             animate={{ opacity: 1, y: 0 }}
             className="relative"
           >
-            <div className="absolute inset-0 rounded-2xl bg-muted/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-blue-500/5 via-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             
             <div className="relative p-8 rounded-2xl border border-border bg-background/20 backdrop-blur-sm space-y-6">
               {/* Security Notice */}

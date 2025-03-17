@@ -108,7 +108,7 @@ export default function BlogPage() {
               key={post.id}
               className="block"
             >
-              <article className="p-6 rounded-xl bg-card/10 border border-border hover:bg-card/20 transition-colors">
+              <article className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors">
               {post.image && (
                 <div className="relative w-full h-48 mb-6 rounded-lg overflow-hidden">
                   <img 

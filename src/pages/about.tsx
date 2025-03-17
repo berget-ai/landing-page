@@ -125,7 +125,7 @@ export default function AboutPage() {
                   transition={{ delay: index * 0.1 }}
                   className="relative group"
                 >
-                  <div className="absolute inset-0 rounded-2xl bg-muted/20 group-hover:bg-muted/30 transition-colors" />
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-white/5 to-transparent group-hover:from-white/10 transition-colors" />
                   <div className="relative p-6 rounded-2xl border border-border group-hover:border-border/80 transition-colors">
                     <div className="flex items-center gap-4 mb-4">
                       <div className="w-16 h-16 rounded-full overflow-hidden bg-muted/50">

@@ -32,7 +32,7 @@ function WhyBergetPage() {
             viewport={{ once: true }}
             className="relative group"
           >
-            <div className="absolute inset-0 rounded-3xl bg-muted/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-blue-500/5 via-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative p-8 rounded-3xl border border-border h-full">
               <div className="w-12 h-12 rounded-2xl bg-muted flex items-center justify-center mb-6">
                 <Globe className="w-6 h-6" />
@@ -66,7 +66,7 @@ function WhyBergetPage() {
             transition={{ delay: 0.2 }}
             className="relative group"
           >
-            <div className="absolute inset-0 rounded-3xl bg-muted/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-emerald-500/5 via-teal-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative p-8 rounded-3xl border border-border h-full">
               <div className="w-12 h-12 rounded-2xl bg-muted flex items-center justify-center mb-6">
                 <Shield className="w-6 h-6" />
@@ -100,7 +100,7 @@ function WhyBergetPage() {
             transition={{ delay: 0.3 }}
             className="relative group"
           >
-            <div className="absolute inset-0 rounded-3xl bg-muted/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-orange-500/5 via-amber-500/5 to-yellow-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative p-8 rounded-3xl border border-border h-full">
               <div className="w-12 h-12 rounded-2xl bg-muted flex items-center justify-center mb-6">
                 <Server className="w-6 h-6" />
@@ -134,7 +134,7 @@ function WhyBergetPage() {
             transition={{ delay: 0.4 }}
             className="relative group"
           >
-            <div className="absolute inset-0 rounded-3xl bg-muted/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-violet-500/5 via-purple-500/5 to-fuchsia-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative p-8 rounded-3xl border border-border h-full">
               <div className="w-12 h-12 rounded-2xl bg-muted flex items-center justify-center mb-6">
                 <Lock className="w-6 h-6" />

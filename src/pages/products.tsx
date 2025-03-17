@@ -285,7 +285,7 @@ export default function ProductsPage() {
                             transition={{ delay: index * 0.1 }}
                             className="relative group"
                           >
-                            <div className={`absolute inset-0 rounded-2xl bg-muted/20 opacity-5 group-hover:opacity-10 transition-opacity duration-300`} />
+                            <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-pink-500/5 opacity-5 group-hover:opacity-10 transition-opacity duration-300`} />
                             <div className="relative p-6 rounded-2xl border border-border bg-card/10">
                               <div className="flex items-center gap-4 mb-6">
                                 <div className={`w-12 h-12 rounded-xl bg-muted flex items-center justify-center`}>
@@ -320,7 +320,7 @@ export default function ProductsPage() {
                     className="col-span-3"
                   >
                     <div className={`relative h-full group`}>
-                      <div className={`absolute inset-0 rounded-2xl bg-muted/20 opacity-5 group-hover:opacity-10 transition-opacity duration-300`} />
+                      <div className={`absolute inset-0 rounded-2xl bg-gradient-to-b from-rose-500/5 to-orange-500/5 opacity-5 group-hover:opacity-10 transition-opacity duration-300`} />
                       <div className="relative h-full p-6 rounded-2xl border border-border bg-card/10 flex flex-col">
                         <div className="flex items-center gap-4 mb-8">
                           <div className={`w-12 h-12 rounded-xl bg-muted flex items-center justify-center`}>
