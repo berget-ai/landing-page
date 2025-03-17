@@ -13,8 +13,8 @@ export function RecipeCard({ recipe }: RecipeCardProps) {
     <motion.div
       whileHover={{ y: -4 }}
       className={cn(
-        'group rounded-2xl border border-white/10 overflow-hidden bg-white/[0.02] backdrop-blur-xl',
-        'hover:border-white/20 transition-all duration-300',
+        'group rounded-2xl border border-border overflow-hidden bg-card/10 backdrop-blur-xl',
+        'hover:border-border/80 transition-all duration-300',
       )}
     >
       <div className="relative h-48 p-8">
@@ -27,20 +27,20 @@ export function RecipeCard({ recipe }: RecipeCardProps) {
         />
 
         <div className="relative z-10">
-          <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+          <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
             <recipe.icon className="w-6 h-6" />
           </div>
           <h3 className="text-2xl font-medium mb-2">{recipe.title}</h3>
-          <p className="text-white/60">{recipe.description}</p>
+          <p className="text-muted-foreground">{recipe.description}</p>
         </div>
       </div>
 
-      <div className="p-6 bg-white/[0.02]">
+      <div className="p-6 bg-card/5">
         <div className="flex flex-wrap gap-2 mb-4">
           {recipe.stack.map((tech) => (
             <span
               key={tech}
-              className="px-3 py-1 rounded-full text-sm bg-white/5"
+              className="px-3 py-1 rounded-full text-sm bg-accent/50"
             >
               {tech}
             </span>
@@ -48,11 +48,11 @@ export function RecipeCard({ recipe }: RecipeCardProps) {
         </div>
 
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2 text-white/40">
+          <div className="flex items-center gap-2 text-muted-foreground">
             <Sparkles className="w-4 h-4" />
             <span className="text-sm">{recipe.estimate}</span>
           </div>
-          <Button variant="secondary" className="hover:bg-white/15">
+          <Button variant="secondary">
             Configure
           </Button>
         </div>

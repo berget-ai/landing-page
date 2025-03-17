@@ -58,7 +58,7 @@ export function ModelChat({ isOpen, onClose, model }: ModelChatProps) {
         <DialogHeader className="flex flex-row items-center justify-between">
           <div className="space-y-1">
             <h2 className="text-2xl font-medium">{model.name}</h2>
-            <p className="text-sm text-white/60">{model.description}</p>
+            <p className="text-sm text-muted-foreground">{model.description}</p>
           </div>
           <Button variant="ghost" size="icon" onClick={onClose}>
             <X className="h-4 w-4" />
@@ -85,7 +85,7 @@ export function ModelChat({ isOpen, onClose, model }: ModelChatProps) {
                     className={cn(
                       'rounded-2xl px-4 py-2 max-w-[80%]',
                       message.role === 'assistant'
-                        ? 'bg-white/5'
+                        ? 'bg-accent'
                         : 'bg-primary text-primary-foreground',
                     )}
                   >
@@ -98,7 +98,7 @@ export function ModelChat({ isOpen, onClose, model }: ModelChatProps) {
                   <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
                     <Bot className="w-4 h-4 text-primary-foreground" />
                   </div>
-                  <div className="rounded-2xl px-4 py-2 bg-white/5">
+                  <div className="rounded-2xl px-4 py-2 bg-accent">
                     <Loader2 className="w-4 h-4 animate-spin" />
                   </div>
                 </div>
