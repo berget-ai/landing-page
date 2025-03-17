@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 
 interface TerminalExample {
@@ -231,7 +230,6 @@ export function TerminalCarousel() {
   const [commandIndex, setCommandIndex] = useState(0)
   const [typedText, setTypedText] = useState('')
   const [showOutput, setShowOutput] = useState(false)
-  const [outputIndex, setOutputIndex] = useState(0)
   const [isTyping, setIsTyping] = useState(true)
 
   const currentExample = examples[currentIndex]
