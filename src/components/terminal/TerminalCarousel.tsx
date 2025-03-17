@@ -35,25 +35,46 @@ const examples: TerminalExample[] = [
     title: "AI-anrop med OpenAI-kompatibelt API",
     description: "Använd vårt API precis som du skulle använda OpenAI",
     commands: [
-      { command: "npm install openai" },
       { 
         command: "export OPENAI_API_KEY=berget_sk_xxxx", 
         output: ["# Din API-nyckel från Berget Dashboard"] 
       },
       { 
-        command: "export OPENAI_API_BASE=https://api.berget.cloud/v1", 
-        output: ["# Berget OpenAI-kompatibelt API"] 
-      },
-      { 
-        command: "cat > ai-demo.js << EOF\nconst OpenAI = require('openai');\n\nconst openai = new OpenAI();\n\nasync function main() {\n  const completion = await openai.chat.completions.create({\n    model: 'berget-7b',\n    messages: [{ role: 'user', content: 'Vad är Sveriges högsta berg?' }],\n  });\n  console.log(completion.choices[0].message.content);\n}\n\nmain();\nEOF", 
-        output: ["# Skapar en enkel demo-fil"] 
-      },
-      { 
-        command: "node ai-demo.js", 
+        command: "curl -X POST https://api.berget.cloud/v1/chat/completions \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer $OPENAI_API_KEY\" \\\n  -d '{\"model\": \"berget-7b\", \"messages\": [{\"role\": \"user\", \"content\": \"Vad är Sveriges högsta berg?\"}]}'", 
         output: [
-          "Sveriges högsta berg är Kebnekaise med en höjd på 2096 meter över havet.",
-          "",
-          "CO₂e: 0.0023g (73% lägre än GPT-4)"
+          "{",
+          "  \"id\": \"chatcmpl-123\",",
+          "  \"object\": \"chat.completion\",",
+          "  \"created\": 1677858242,",
+          "  \"model\": \"berget-7b\",",
+          "  \"usage\": {",
+          "    \"prompt_tokens\": 13,",
+          "    \"completion_tokens\": 15,",
+          "    \"total_tokens\": 28",
+          "  },",
+          "  \"choices\": [{",
+          "    \"message\": {",
+          "      \"role\": \"assistant\",",
+          "      \"content\": \"Sveriges högsta berg är Kebnekaise med en höjd på 2096 meter över havet.\"",
+          "    },",
+          "    \"finish_reason\": \"stop\",",
+          "    \"index\": 0",
+          "  }],",
+          "  \"carbon_footprint\": {",
+          "    \"co2e_grams\": 0.0023,",
+          "    \"comparison\": \"73% lägre än GPT-4\"",
+          "  }",
+          "}"
+        ] 
+      },
+      { 
+        command: "# Extrahera bara svaret med jq", 
+        output: [] 
+      },
+      { 
+        command: "curl -s -X POST https://api.berget.cloud/v1/chat/completions \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer $OPENAI_API_KEY\" \\\n  -d '{\"model\": \"berget-7b\", \"messages\": [{\"role\": \"user\", \"content\": \"Vad är Sveriges högsta berg?\"}]}' | jq -r '.choices[0].message.content'", 
+        output: [
+          "Sveriges högsta berg är Kebnekaise med en höjd på 2096 meter över havet."
         ] 
       }
     ]
