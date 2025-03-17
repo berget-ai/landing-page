@@ -5,14 +5,14 @@
       "part1": "Frigör AI-innovation",
       "part2": "i Europa"
     },
-    "description": "Det europeiska AI-molnet byggt för utvecklare. Vi tillhandahåller säker, regelefterlevande infrastruktur för AI-applikationer, som kombinerar företagsanpassad säkerhet med modern utvecklarupplevelse - med enkel tjänstehantering, AI/DevOps-marknad, teamautonomi och full GitHub-integration - allt drivet av svenska datacenter.",
+    "description": "Den första svenska AI tjänsten byggd för utvecklare. Vi tillhandahåller öppen, modern infrastruktur för AI-applikationer som kombinerar öppen arkitektur med enkel utvecklarupplevelse.",
     "getStarted": "Kom igång",
     "learnMore": "Läs mer"
   },
   "about": {
     "hero": {
       "title": "Om Berget AI",
-      "description": "Bygger framtidens europeiska AI-infrastruktur"
+      "description": "Bygger framtidens svenska AI-infrastruktur"
     },
     "origin": {
       "title": "Vår Historia",
@@ -31,7 +31,7 @@
       },
       "integrity": {
         "title": "Integritet & Sekretess",
-        "description": "Vi anser att integritet, dataskydd och regleringar är bra så länge de säkerställer lika villkor, främjar enkelhet framför komplexitet och säkerställer öppenhet och bred delaktighet. Vi vill vara en nyckelaktör för europeiska organisationer och låsa upp AI-innovationer på ett säkert och ansvarsfullt sätt."
+        "description": "Vi anser att integritet, dataskydd och regleringar är bra så länge de säkerställer lika villkor, främjar enkelhet framför komplexitet och säkerställer öppenhet och bred delaktighet. Vi vill vara en nyckelaktör för svenska organisationer och låsa upp AI-innovationer på ett säkert och ansvarsfullt sätt."
       }
     },
     "promises": {
@@ -94,7 +94,7 @@
   "products": {
     "hero": {
       "title": "Bygg framtiden med Berget AI",
-      "description": "Enterprise-anpassad AI-infrastruktur designad för europeiska företag. Säker, regelefterlevande och redo att skala."
+      "description": "Enterprise-anpassad AI-infrastruktur designad för svenska företag. Säker, regelefterlevande och redo att skala."
     },
     "serverless": {
       "title": "Serverlös Inferens",
@@ -120,7 +120,7 @@
           "title": "Robust Infrastruktur",
           "items": [
             "Dedikerade GPU-kluster",
-            "Europeiska datacenter",
+            "svenska datacenter",
             "Hög tillgänglighet"
           ]
         }
@@ -370,9 +370,9 @@
     "support": "Support"
   },
   "compliance": {
-    "tagline": "Byggd för europeiska regelverk",
+    "tagline": "Byggd för svenska regelverk",
     "title": "Regelefterlevnad på ett enkelt sätt",
-    "description": "Navigera komplexa regelverk med självförtroende. Vår infrastruktur är designad för att möta europeiska standarder från grunden.",
+    "description": "Navigera komplexa regelverk med självförtroende. Vår infrastruktur är designad för att möta svenska standarder från grunden.",
     "regulations": {
       "gdpr": {
         "name": "GDPR-efterlevnad",
@@ -430,7 +430,7 @@
   },
   "whyBerget": {
     "title": "Varför Välja Berget",
-    "description": "Byggt för europeiska företag som behöver säker, regelefterlevande AI-infrastruktur",
+    "description": "Byggt för svenska företag som behöver säker, regelefterlevande AI-infrastruktur",
     "features": {
       "european": {
         "title": "Europeisk Innovation & Suveränitet",

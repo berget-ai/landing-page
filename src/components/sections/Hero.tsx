@@ -19,7 +19,7 @@ export function Hero() {
               <span className="text-sm">{t('hero.tagline')}</span>
             </div>
 
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-ovo">
+            <h1 className="text-4xl md:text-6xl text-white mb-6 font-ovo">
               {t('hero.title.part1')}
               <br />
               {t('hero.title.part2')}
@@ -28,19 +28,12 @@ export function Hero() {
               {t('hero.description')}
             </p>
             <div className="flex gap-4 justify-center">
-              <Button
-                size="lg"
-                variant="default"
-                asChild
-              >
+              <Button size="lg" variant="default" asChild>
                 <Link to="/signup">
                   {t('hero.getStarted')} <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-              >
+              <Button size="lg" variant="outline">
                 {t('hero.learnMore')}
               </Button>
             </div>
