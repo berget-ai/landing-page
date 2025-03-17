@@ -29,10 +29,10 @@ export function ComplianceSection() {
 
   return (
     <section className="py-32 relative bg-white/[0.02] border-y border-white/5">
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 opacity-10 blur-[100px]" />
+      <div className="absolute inset-0 bg-muted/10 opacity-10 blur-[100px]" />
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 text-sm mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-muted text-sm mb-6">
             <Shield className="w-4 h-4" />
             <span>{t('compliance.tagline')}</span>
           </div>

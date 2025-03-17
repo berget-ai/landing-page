@@ -50,10 +50,10 @@ export function ModelsSection() {
       viewport={{ once: true }}
       className="relative group"
     >
-      <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-violet-500/10 via-purple-500/10 to-fuchsia-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute inset-0 rounded-3xl bg-muted/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       <div className="relative p-8 rounded-3xl border border-white/10 h-full">
-        <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-violet-500 to-purple-500 flex items-center justify-center mb-6">
-          <Bot className="w-6 h-6 text-white" />
+        <div className="w-12 h-12 rounded-2xl bg-muted flex items-center justify-center mb-6">
+          <Bot className="w-6 h-6" />
         </div>
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-2xl font-medium">Our Models</h2>
@@ -107,8 +107,8 @@ export function ModelsSection() {
                   <TableCell>
                     <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs ${
                       model.status === 'Available' 
-                        ? 'bg-emerald-500/10 text-emerald-400'
-                        : 'bg-amber-500/10 text-amber-400'
+                        ? 'bg-primary/20 text-primary'
+                        : 'bg-muted text-muted-foreground'
                     }`}>
                       {model.status}
                     </span>

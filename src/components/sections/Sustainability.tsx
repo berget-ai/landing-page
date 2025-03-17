@@ -28,10 +28,10 @@ const sustainabilityPoints = [
 export function Sustainability() {
   return (
     <section className="py-24 relative overflow-hidden dark:text-white light:text-gray-900">
-      <div className="absolute inset-0 bg-gradient-to-b from-emerald-500/10 to-transparent opacity-30 dark:opacity-30 light:opacity-10" />
+      <div className="absolute inset-0 bg-muted/20 opacity-30 dark:opacity-30 light:opacity-10" />
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-emerald-500/10 dark:text-emerald-400 light:text-emerald-600 mb-6">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-muted dark:text-foreground light:text-foreground mb-6">
             <Leaf className="w-4 h-4 mr-2" />
             <span className="text-sm">Sustainable by Design</span>
           </div>
@@ -55,7 +55,7 @@ export function Sustainability() {
               viewport={{ once: true }}
               className="p-8 rounded-xl dark:bg-white/5 light:bg-white dark:border-white/10 light:border-gray-200 dark:hover:bg-white/10 light:hover:bg-gray-50 transition-colors relative group shadow-sm"
             >
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500/0 via-emerald-500/50 to-emerald-500/0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-muted/0 via-muted/50 to-muted/0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
               <div className="mb-6">
                 <point.icon className="w-10 h-10" />
               </div>
@@ -63,7 +63,7 @@ export function Sustainability() {
               <p className="dark:text-white/60 light:text-gray-600 mb-4">
                 {point.description}
               </p>
-              <div className="text-sm font-medium dark:text-emerald-400 light:text-emerald-600">
+              <div className="text-sm font-medium dark:text-primary light:text-primary">
                 {point.stats}
               </div>
             </motion.div>

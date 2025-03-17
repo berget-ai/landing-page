@@ -21,7 +21,7 @@ export function NetworkConnectivity() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 text-sm">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-muted text-sm">
                 <Shield className="w-4 h-4" />
                 <span>Safe and Compliant AI</span>
               </div>

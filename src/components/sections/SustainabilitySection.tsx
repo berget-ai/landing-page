@@ -4,10 +4,10 @@ import { Leaf, Recycle, Zap } from 'lucide-react'
 export function SustainabilitySection() {
   return (
     <section className="py-24 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-emerald-500/10 to-transparent opacity-30" />
+      <div className="absolute inset-0 bg-muted/20 opacity-30" />
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-emerald-500/10 text-emerald-400 mb-6">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-muted text-foreground mb-6">
             <Leaf className="w-4 h-4 mr-2" />
             <span className="text-sm">Sustainable by Design</span>
           </div>
@@ -34,7 +34,7 @@ export function SustainabilitySection() {
             <p className="text-white/60 mb-4">
               Our data centers run on certified renewable energy from Nordic hydropower and wind farms, with real-time energy source tracking.
             </p>
-            <div className="text-sm font-medium text-emerald-400">
+            <div className="text-sm font-medium text-primary">
               100% renewable energy
             </div>
           </motion.div>
@@ -54,7 +54,7 @@ export function SustainabilitySection() {
             <p className="text-white/60 mb-4">
               We partner with certified refurbishers to extend server lifecycles by 3-5 years, reducing e-waste while maintaining enterprise-grade performance.
             </p>
-            <div className="text-sm font-medium text-emerald-400">
+            <div className="text-sm font-medium text-primary">
               75% reduced hardware footprint
             </div>
           </motion.div>
@@ -74,7 +74,7 @@ export function SustainabilitySection() {
             <p className="text-white/60 mb-4">
               Beyond zero emissions, we invest in verified carbon removal projects and optimize for the most energy-efficient AI infrastructure.
             </p>
-            <div className="text-sm font-medium text-emerald-400">
+            <div className="text-sm font-medium text-primary">
               -2000 tons CO₂e/year
             </div>
           </motion.div>

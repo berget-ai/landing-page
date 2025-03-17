@@ -23,7 +23,7 @@ export function FeatureSlide({ feature, isActive }: FeatureSlideProps) {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: isActive ? 1 : 0, scale: isActive ? 1 : 0.9 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="inline-flex px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm"
+          className="inline-flex px-3 py-1 rounded-full bg-muted border border-border text-sm"
         >
           {feature.category}
         </motion.div>
@@ -48,7 +48,7 @@ export function FeatureSlide({ feature, isActive }: FeatureSlideProps) {
       </div>
 
       <div className="relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent rounded-2xl" />
+        <div className="absolute inset-0 bg-muted/20 rounded-2xl" />
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: isActive ? 1 : 0, x: isActive ? 0 : 20 }}
@@ -65,7 +65,7 @@ export function FeatureSlide({ feature, isActive }: FeatureSlideProps) {
                 transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
                 className="flex items-center gap-4 text-white/80"
               >
-                <div className="h-2 w-2 rounded-full bg-white/20" />
+                <div className="h-2 w-2 rounded-full bg-muted" />
                 {highlight}
               </motion.li>
             ))}
