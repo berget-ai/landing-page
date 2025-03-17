@@ -32,6 +32,41 @@ const examples: TerminalExample[] = [
     ],
   },
   {
+    title: 'Bjud in kollegor till klustret',
+    description: 'Samarbeta med ditt team genom att bjuda in dem till ditt kluster',
+    commands: [
+      { command: 'berget login', output: ['... loggar in med BankID'] },
+      { 
+        command: 'berget cluster list', 
+        output: [
+          'NAME                   STATUS    NODES    CREATED',
+          'ideal-palmtree         Running   5        2 days ago',
+          'curious-elephant       Running   3        1 week ago'
+        ] 
+      },
+      { 
+        command: 'berget collaborator add --cluster ideal-palmtree --github-username kollega123', 
+        output: [
+          'Invitation sent to kollega123',
+          'They will receive an email with instructions to accept the invitation',
+          '',
+          'Current collaborators on ideal-palmtree:',
+          'USERNAME      ROLE       STATUS',
+          'you           Owner      Active',
+          'kollega123    Editor     Pending'
+        ] 
+      },
+      { 
+        command: 'berget collaborator list --cluster ideal-palmtree', 
+        output: [
+          'USERNAME      ROLE       STATUS',
+          'you           Owner      Active',
+          'kollega123    Editor     Pending'
+        ] 
+      }
+    ],
+  },
+  {
     title: 'AI-anrop med OpenAI-kompatibelt API',
     description: 'Använd vårt API precis som du skulle använda OpenAI',
     commands: [
