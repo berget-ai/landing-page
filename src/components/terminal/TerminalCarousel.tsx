@@ -32,6 +32,32 @@ const examples: TerminalExample[] = [
     ],
   },
   {
+    title: 'Automatisk klusterväxling',
+    description: 'Lägg till Berget i din bashrc för automatisk klusterväxling',
+    commands: [
+      { 
+        command: 'cat >> ~/.bashrc << EOF\n\n# Berget auto-switch\nberget_autoswitch() {\n  if [ -f .berget ]; then\n    CLUSTER=$(cat .berget | grep cluster | cut -d= -f2)\n    if [ ! -z "$CLUSTER" ]; then\n      berget use $CLUSTER > /dev/null\n      echo "Switched to Berget cluster: $CLUSTER"\n    fi\n  fi\n}\n\ncd() {\n  builtin cd "$@"\n  berget_autoswitch\n}\n\n# Initialize in current directory\nberget_autoswitch\nEOF', 
+        output: ['# Lägger till Berget autoswitch i din bashrc'] 
+      },
+      { 
+        command: 'source ~/.bashrc', 
+        output: ['# Laddar om bashrc'] 
+      },
+      { 
+        command: 'echo "cluster=ideal-palmtree" > .berget', 
+        output: ['# Skapar .berget fil i ditt projekt'] 
+      },
+      { 
+        command: 'cd .', 
+        output: [
+          'Switched to Berget cluster: ideal-palmtree',
+          '',
+          '# Nu kommer du automatiskt byta till rätt kluster när du går in i projektmappen'
+        ] 
+      }
+    ],
+  },
+  {
     title: 'Installera FluxCD för GitOps',
     description: 'Automatisera deployment med FluxCD och GitOps-workflow',
     commands: [
