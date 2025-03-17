@@ -16,10 +16,10 @@ export default function DevelopersPage() {
         <div className="container mx-auto px-4 py-24">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-5xl font-medium mb-6">
-              Av utvecklare för utvecklare
+              Infrastruktur för AI-utvecklare
             </h1>
             <p className="text-xl text-white/60 mb-8">
-              En flexibel och utvecklarvänlig plattform designad för effektivitet, skalbarhet och kontroll.
+              Kör dina AI-modeller och applikationer i en säker, EU-baserad miljö med full kontroll över din kod och data.
             </p>
           </div>
           
@@ -32,7 +32,7 @@ export default function DevelopersPage() {
       {/* Main Content */}
       <div className="container mx-auto px-4 py-24">
         <div className="max-w-3xl mx-auto space-y-24">
-          {/* Full Flexibility and Control */}
+          {/* GitOps Workflow */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -44,29 +44,32 @@ export default function DevelopersPage() {
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#2D6A4F] to-[#40916C] flex items-center justify-center mb-6">
                 <Github className="w-6 h-6 text-white" />
               </div>
-              <h2 className="text-2xl font-medium mb-4">Full Flexibility and Control</h2>
+              <h2 className="text-2xl font-medium mb-4">GitOps-baserad infrastruktur</h2>
+              <p className="text-white/80 mb-4">
+                Slipp komplexa Terraform-skript och AWS-konsolen. Definiera din infrastruktur med enkla YAML-filer i ditt Git-repo.
+              </p>
               <ul className="space-y-4">
                 <li className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
-                  <span>Simple user experience</span>
+                  <span><strong>Automatisk synkronisering</strong> - ändringar i ditt repo appliceras automatiskt på din infrastruktur</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
-                  <span>No-lock-in, everything is synched with GitHub so you can move at any time</span>
+                  <span><strong>Versionskontroll</strong> - full historik och möjlighet att rulla tillbaka ändringar</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
-                  <span>No forced PaaS —choose the services you need and pay only for the resources they use</span>
+                  <span><strong>Portabilitet</strong> - din infrastruktur är definierad i kod som kan flyttas mellan miljöer</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
-                  <span>Empower your workflow with seamless infrastructure management</span>
+                  <span><strong>CI/CD-integration</strong> - koppla ihop med dina befintliga CI/CD-pipelines</span>
                 </li>
               </ul>
             </div>
           </motion.div>
 
-          {/* Security & Privacy */}
+          {/* OpenAI-kompatibelt API */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -79,25 +82,32 @@ export default function DevelopersPage() {
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#2D6A4F] to-[#40916C] flex items-center justify-center mb-6">
                 <Lock className="w-6 h-6 text-white" />
               </div>
-              <h2 className="text-2xl font-medium mb-4">Security & Privacy Built In</h2>
+              <h2 className="text-2xl font-medium mb-4">OpenAI-kompatibelt API</h2>
+              <p className="text-white/80 mb-4">
+                Använd samma kod och bibliotek som du redan använder med OpenAI, men med full kontroll över dina data.
+              </p>
               <ul className="space-y-4">
                 <li className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
-                  <span>Developed with OWASP standards to ensure top-tier security</span>
+                  <span><strong>Minimal kodändring</strong> - byt bara API-nyckel och endpoint för att migrera från OpenAI</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
-                  <span>Inference runs entirely within our secure network—your data never traverses the internet</span>
+                  <span><strong>Stöd för populära bibliotek</strong> - fungerar med LangChain, LlamaIndex och andra ramverk</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
-                  <span>Zero retention—your data is never stored or retained</span>
+                  <span><strong>GDPR-kompatibelt</strong> - all data stannar inom EU och lagras aldrig</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
+                  <span><strong>CO₂-spårning</strong> - få information om koldioxidavtryck för varje API-anrop</span>
                 </li>
               </ul>
             </div>
           </motion.div>
 
-          {/* Resource Control */}
+          {/* Kubernetes-kluster */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -110,25 +120,32 @@ export default function DevelopersPage() {
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#FFB700] to-[#FFB700]/80 flex items-center justify-center mb-6">
                 <Server className="w-6 h-6 text-[#1A1A1A]" />
               </div>
-              <h2 className="text-2xl font-medium mb-4">Resource Control and Persistence</h2>
+              <h2 className="text-2xl font-medium mb-4">Kubernetes utan komplexitet</h2>
+              <p className="text-white/80 mb-4">
+                Få fördelarna med Kubernetes utan att behöva hantera infrastrukturen själv.
+              </p>
               <ul className="space-y-4">
                 <li className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
-                  <span>Define your entire infrastructure as code, synced to GitHub for full back-up and fallback</span>
+                  <span><strong>Förkonfigurerade kluster</strong> - kom igång på minuter istället för dagar</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
-                  <span>Persistent environments, while you only incur charges for consumed resources</span>
+                  <span><strong>Standardiserade Helm charts</strong> - installera databaser, caching och andra tjänster med ett kommando</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
-                  <span>Manage your organization's resources with ease—role-based access, organization-wide quotas, and full cost transparency</span>
+                  <span><strong>GPU-stöd</strong> - kör dina egna modeller på dedikerade GPU:er när du behöver</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
+                  <span><strong>Autoskalning</strong> - skala automatiskt upp och ner baserat på belastning</span>
                 </li>
               </ul>
             </div>
           </motion.div>
 
-          {/* Transparent Pricing */}
+          {/* Utvecklarverktyg */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -141,19 +158,26 @@ export default function DevelopersPage() {
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#40916C] to-[#2D6A4F] flex items-center justify-center mb-6">
                 <Database className="w-6 h-6 text-white" />
               </div>
-              <h2 className="text-2xl font-medium mb-4">Transparent Pricing</h2>
+              <h2 className="text-2xl font-medium mb-4">Utvecklarverktyg som förenklar</h2>
+              <p className="text-white/80 mb-4">
+                Verktyg som hjälper dig att bygga, testa och driftsätta dina AI-applikationer snabbare.
+              </p>
               <ul className="space-y-4">
                 <li className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
-                  <span>Pay only for the resources you consume—no hidden service fees</span>
+                  <span><strong>CLI-verktyg</strong> - hantera dina resurser direkt från terminalen</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
-                  <span>Full visibility and control over resource allocation and costs</span>
+                  <span><strong>Loggning och övervakning</strong> - inbyggd integration med Prometheus och Grafana</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
-                  <span>Start small and scale effortlessly as your needs grow</span>
+                  <span><strong>Kostnadsövervakning</strong> - se exakt vad som kostar och optimera dina resurser</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
+                  <span><strong>Utvecklarmiljöer</strong> - förkonfigurerade miljöer för snabb utveckling</span>
                 </li>
               </ul>
             </div>
@@ -274,13 +298,13 @@ export default function DevelopersPage() {
             transition={{ delay: 0.6 }}
             className="container mx-auto px-4 py-24 text-center"
           >
-            <h2 className="text-3xl font-medium mb-6">Ready to Start Building?</h2>
+            <h2 className="text-3xl font-medium mb-6">Redo att börja bygga?</h2>
             <p className="text-xl text-white/60 mb-8 max-w-2xl mx-auto">
-              Join the growing community of developers building the future of AI with Berget.
+              Kom igång på under 5 minuter med vårt CLI-verktyg och bygg din första AI-applikation.
             </p>
             <div className="flex gap-4 justify-center">
-              <Button size="lg">Get Started</Button>
-              <Button size="lg" variant="secondary">View Documentation</Button>
+              <Button size="lg">Skapa konto</Button>
+              <Button size="lg" variant="secondary">Läs dokumentationen</Button>
             </div>
           </motion.div>
         </div>
