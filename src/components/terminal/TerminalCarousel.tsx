@@ -147,56 +147,52 @@ export function TerminalCarousel() {
   }, [currentIndex])
 
   useEffect(() => {
-    let timeoutId: ReturnType<typeof setTimeout>;
-    
-    const runTyping = () => {
-      if (!isTyping) return;
+    if (isTyping && typingIndex < currentCommand.command.length) {
+      // Type the command character by character
+      const typingTimeout = setTimeout(() => {
+        setTypedText(prev => prev + currentCommand.command[typingIndex]);
+        setTypingIndex(prev => prev + 1);
+      }, 30); // Typing speed
       
-      if (typingIndex < currentCommand.command.length) {
-        // Type the command character by character
-        timeoutId = setTimeout(() => {
-          setTypedText(prev => prev + currentCommand.command[typingIndex]);
-          setTypingIndex(prev => prev + 1);
-        }, 30); // Typing speed
-      } else {
-        // Command fully typed
+      return () => clearTimeout(typingTimeout);
+    } 
+    
+    if (typingIndex >= currentCommand.command.length && isTyping) {
+      // Command fully typed
+      const finishTypingTimeout = setTimeout(() => {
         setIsTyping(false);
-        
-        // Show output after a delay
-        timeoutId = setTimeout(() => {
-          setShowOutput(true);
+        setShowOutput(true);
+      }, 300);
+      
+      return () => clearTimeout(finishTypingTimeout);
+    }
+    
+    if (showOutput && !isTyping) {
+      // After showing output, move to next command
+      const nextCommandTimeout = setTimeout(() => {
+        if (commandIndex < currentExample.commands.length - 1) {
+          setCommandIndex(prev => prev + 1);
+          setTypingIndex(0);
+          setTypedText("");
+          setShowOutput(false);
+          setIsTyping(true);
+        } else {
+          // All commands completed, wait before looping
+          const resetTimeout = setTimeout(() => {
+            setCommandIndex(0);
+            setTypingIndex(0);
+            setTypedText("");
+            setShowOutput(false);
+            setIsTyping(true);
+          }, 3000); // Wait before restarting the example
           
-          // Move to next command after showing output
-          timeoutId = setTimeout(() => {
-            if (commandIndex < currentExample.commands.length - 1) {
-              setCommandIndex(prev => prev + 1);
-              setTypingIndex(0);
-              setTypedText("");
-              setShowOutput(false);
-              setOutputIndex(0);
-              setIsTyping(true);
-            } else {
-              // All commands completed, wait before looping
-              timeoutId = setTimeout(() => {
-                setCommandIndex(0);
-                setTypingIndex(0);
-                setTypedText("");
-                setShowOutput(false);
-                setOutputIndex(0);
-                setIsTyping(true);
-              }, 3000); // Wait before restarting the example
-            }
-          }, currentCommand.output ? 2000 : 1000); // Wait longer if there's output
-        }, 500); // Delay before showing output
-      }
-    };
-    
-    runTyping();
-    
-    return () => {
-      clearTimeout(timeoutId);
-    };
-  }, [typingIndex, isTyping, commandIndex, currentCommand, currentExample.commands.length]);
+          return () => clearTimeout(resetTimeout);
+        }
+      }, currentCommand.output ? 2000 : 1000); // Wait longer if there's output
+      
+      return () => clearTimeout(nextCommandTimeout);
+    }
+  }, [typingIndex, isTyping, showOutput, commandIndex, currentCommand, currentExample.commands.length]);
 
   const nextExample = () => {
     setCurrentIndex((prev) => (prev + 1) % examples.length)
@@ -228,29 +224,21 @@ export function TerminalCarousel() {
             {currentExample.description}
           </div>
           
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={`${currentIndex}-${commandIndex}`}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-            >
-              <div className="flex items-start">
-                <span className="text-[#52B788] mr-2">$</span>
-                <span className="text-white">{typedText}</span>
-                {isTyping && <span className="inline-block w-2 h-4 bg-white/70 ml-0.5 animate-pulse"></span>}
+          <div className="space-y-4">
+            <div className="flex items-start">
+              <span className="text-[#52B788] mr-2">$</span>
+              <span className="text-white">{typedText}</span>
+              {isTyping && <span className="inline-block w-2 h-4 bg-white/70 ml-0.5 animate-pulse"></span>}
+            </div>
+            
+            {showOutput && currentCommand.output && (
+              <div className="pl-4 text-white/70">
+                {currentCommand.output.map((line, idx) => (
+                  <div key={idx} className="whitespace-pre-wrap">{line}</div>
+                ))}
               </div>
-              
-              {showOutput && currentCommand.output && (
-                <div className="pl-4 mt-1 text-white/70">
-                  {currentCommand.output.map((line, idx) => (
-                    <div key={idx} className="whitespace-pre-wrap">{line}</div>
-                  ))}
-                </div>
-              )}
-            </motion.div>
-          </AnimatePresence>
+            )}
+          </div>
         </div>
       </div>
       
