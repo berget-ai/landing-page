@@ -76,9 +76,9 @@ export default function ProductsPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="p-6 rounded-xl bg-[#2D6A4F]/5 border border-[#40916C]/20 hover:bg-[#2D6A4F]/10 transition-colors"
+                className="p-6 rounded-xl bg-[#52B788]/5 border border-[#74C69D]/20 hover:bg-[#52B788]/10 transition-colors"
               >
-                <Cloud className="w-8 h-8 mb-4 text-[#2D6A4F]" />
+                <Cloud className="w-8 h-8 mb-4 text-[#52B788]" />
                 <h3 className="text-xl font-medium mb-3">{t('products.serverless.features.integration.title')}</h3>
                 <ul className="space-y-3 text-white/60">
                   {(t('products.serverless.features.integration.items', { returnObjects: true }) as string[]).map((item: string) => (
@@ -92,9 +92,9 @@ export default function ProductsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="p-6 rounded-xl bg-[#2D6A4F]/5 border border-[#40916C]/20 hover:bg-[#2D6A4F]/10 transition-colors"
+                className="p-6 rounded-xl bg-[#52B788]/5 border border-[#74C69D]/20 hover:bg-[#52B788]/10 transition-colors"
               >
-                <Zap className="w-8 h-8 mb-4 text-[#40916C]" />
+                <Zap className="w-8 h-8 mb-4 text-[#74C69D]" />
                 <h3 className="text-xl font-medium mb-3">{t('products.serverless.features.usage.title')}</h3>
                 <ul className="space-y-3 text-white/60">
                   {(t('products.serverless.features.usage.items', { returnObjects: true }) as string[]).map((item: string) => (
@@ -140,9 +140,9 @@ export default function ProductsPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="p-6 rounded-xl bg-[#2D6A4F]/5 border border-[#40916C]/20 hover:bg-[#2D6A4F]/10 transition-colors"
+                className="p-6 rounded-xl bg-[#52B788]/5 border border-[#74C69D]/20 hover:bg-[#52B788]/10 transition-colors"
               >
-                <Cpu className="w-8 h-8 mb-4 text-[#2D6A4F]" />
+                <Cpu className="w-8 h-8 mb-4 text-[#52B788]" />
                 <h3 className="text-xl font-medium mb-3">{t('products.dedicated.features.deployment.title')}</h3>
                 <ul className="space-y-3 text-white/60">
                   {(t('products.dedicated.features.deployment.items', { returnObjects: true }) as string[]).map((item: string) => (
@@ -156,9 +156,9 @@ export default function ProductsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="p-6 rounded-xl bg-[#2D6A4F]/5 border border-[#40916C]/20 hover:bg-[#2D6A4F]/10 transition-colors"
+                className="p-6 rounded-xl bg-[#52B788]/5 border border-[#74C69D]/20 hover:bg-[#52B788]/10 transition-colors"
               >
-                <Bot className="w-8 h-8 mb-4 text-[#40916C]" />
+                <Bot className="w-8 h-8 mb-4 text-[#74C69D]" />
                 <h3 className="text-xl font-medium mb-3">{t('products.dedicated.features.control.title')}</h3>
                 <ul className="space-y-3 text-white/60">
                   {(t('products.dedicated.features.control.items', { returnObjects: true }) as string[]).map((item: string) => (
@@ -204,9 +204,9 @@ export default function ProductsPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="p-6 rounded-xl bg-[#2D6A4F]/5 border border-[#40916C]/20 hover:bg-[#2D6A4F]/10 transition-colors"
+                className="p-6 rounded-xl bg-[#52B788]/5 border border-[#74C69D]/20 hover:bg-[#52B788]/10 transition-colors"
               >
-                <Database className="w-8 h-8 mb-4 text-[#2D6A4F]" />
+                <Database className="w-8 h-8 mb-4 text-[#52B788]" />
                 <h3 className="text-xl font-medium mb-3">{t('products.platform.features.toolset.title')}</h3>
                 <ul className="space-y-3 text-white/60">
                   {(t('products.platform.features.toolset.items', { returnObjects: true }) as string[]).map((item: string) => (
@@ -220,9 +220,9 @@ export default function ProductsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="p-6 rounded-xl bg-[#2D6A4F]/5 border border-[#40916C]/20 hover:bg-[#2D6A4F]/10 transition-colors"
+                className="p-6 rounded-xl bg-[#52B788]/5 border border-[#74C69D]/20 hover:bg-[#52B788]/10 transition-colors"
               >
-                <Box className="w-8 h-8 mb-4 text-[#40916C]" />
+                <Box className="w-8 h-8 mb-4 text-[#74C69D]" />
                 <h3 className="text-xl font-medium mb-3">{t('products.platform.features.services.title')}</h3>
                 <ul className="space-y-3 text-white/60">
                   {(t('products.platform.features.services.items', { returnObjects: true }) as string[]).map((item: string) => (

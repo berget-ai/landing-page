@@ -52,11 +52,11 @@ export function Sustainability() {
       <div className="absolute inset-0 bg-[#2D6A4F]/10 opacity-30 dark:opacity-30 light:opacity-10" />
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#2D6A4F]/20 text-[#2D6A4F] mb-6">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#40916C]/15 text-[#52B788] mb-6">
             <Leaf className="w-4 h-4 mr-2" />
             <span className="text-sm font-medium">Hållbarhet i centrum</span>
           </div>
-          <h2 className="text-4xl font-medium mb-6 text-[#2D6A4F]">
+          <h2 className="text-4xl font-medium mb-6 text-[#52B788]">
             Vårt hållbarhetslöfte
           </h2>
           <p className="text-lg dark:text-white/80 light:text-gray-700">
@@ -74,15 +74,15 @@ export function Sustainability() {
               viewport={{ once: true }}
               className="p-8 rounded-xl bg-[#2D6A4F]/5 border border-[#40916C]/20 hover:bg-[#2D6A4F]/10 transition-colors relative group shadow-sm"
             >
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#2D6A4F]/0 via-[#2D6A4F]/50 to-[#2D6A4F]/0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#52B788]/0 via-[#52B788]/50 to-[#52B788]/0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
               <div className="mb-6">
-                <point.icon className="w-10 h-10 text-[#2D6A4F]" />
+                <point.icon className="w-10 h-10 text-[#52B788]" />
               </div>
-              <h3 className="text-2xl font-medium mb-3 text-[#40916C]">{point.title}</h3>
+              <h3 className="text-2xl font-medium mb-3 text-[#74C69D]">{point.title}</h3>
               <p className="dark:text-white/80 light:text-gray-700 mb-4">
                 {point.description}
               </p>
-              <div className="text-sm font-medium text-[#2D6A4F]">
+              <div className="text-sm font-medium text-[#52B788]">
                 {point.stats}
               </div>
             </motion.div>

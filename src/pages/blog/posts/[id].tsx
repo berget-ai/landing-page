@@ -131,7 +131,7 @@ export default function BlogPostPage() {
             {post.tags.map((tag) => (
               <span
                 key={tag}
-                className="px-2 py-1 rounded-full bg-[#2D6A4F]/20 text-sm"
+                className="px-2 py-1 rounded-full bg-[#52B788]/20 text-sm"
               >
                 {tag}
               </span>
