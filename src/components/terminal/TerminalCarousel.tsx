@@ -242,7 +242,6 @@ export function TerminalCarousel() {
     setCommandIndex(0)
     setTypedText('')
     setShowOutput(false)
-    setOutputIndex(0)
     setIsTyping(true)
   }, [currentIndex])
 
