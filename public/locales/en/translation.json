@@ -94,7 +94,7 @@
   "products": {
     "hero": {
       "title": "Build the Future with Berget AI",
-      "description": "Enterprise-grade AI infrastructure designed for European businesses. Secure, compliant, and ready to scale.",
+      "description": "AI infrastructure designed for Europoe. Secure, compliant, and ready to scale.",
       "exploreMore": "Learn more"
     },
     "serverless": {
@@ -122,7 +122,7 @@
           "items": [
             "Dedicated GPU clusters",
             "European data centers",
-            "No data retention"
+            "Data never leaves our premises"
           ]
         }
       }
@@ -143,16 +143,16 @@
           "title": "Model Control",
           "items": [
             "Host finetuned models",
-            "Version control",
-            "Secure environment"
+            "Control and own your models",
+            "Models reside with your data and apps"
           ]
         },
         "performance": {
           "title": "Optimized Performance",
           "items": [
-            "Resource optimization",
+            "Optimize cost and performance",
             "Flexible scaling",
-            "Cost management"
+            "Easy cost management"
           ]
         }
       }
@@ -173,7 +173,7 @@
           "title": "Ready-to-Use Services",
           "items": [
             "Pre-configured recipes",
-            "App marketplace",
+            "AI tool marketplace",
             "Popular AI tools"
           ]
         },

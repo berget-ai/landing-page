@@ -74,11 +74,11 @@ export function ComplianceSection() {
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        {/*<div className="text-center mt-12">
           <Button size="lg" variant="secondary">
             {t('compliance.learnMore')}
           </Button>
-        </div>
+        </div> */}
       </div>
     </section>
   )
