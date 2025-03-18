@@ -393,7 +393,7 @@
       },
       "nis2": {
         "name": "NIS2 Ready",
-        "description": "Meeting cybersecurity requirements for critical infrastructure",
+        "description": "Meeting requirements for critical infrastructure",
         "benefits": [
           "24/7 security monitoring",
           "Incident response plans",
@@ -440,12 +440,12 @@
     "description": "Built for European businesses who need secure, compliant AI infrastructure",
     "features": {
       "european": {
-        "title": "European Innovation & Sovereignty",
+        "title": "European Sovereignty",
         "description": "Built and operated in Europe, empowering businesses with true digital sovereignty"
       },
       "security": {
-        "title": "Enterprise-Grade Security",
-        "description": "Bank-grade security with comprehensive compliance built into every layer"
+        "title": "Designed for Security",
+        "description": "Security and comprehensive compliance built into every layer"
       },
       "alternative": {
         "title": "Beyond Public Cloud",
