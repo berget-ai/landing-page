@@ -32,7 +32,7 @@ export default function DevelopersPage() {
 
       {/* Main Content */}
       <div className="container mx-auto px-4 py-24">
-        <div className="max-w-3xl mx-auto space-y-24">
+        <div className="max-w-7xl mx-auto space-y-24">
           {/* GitOps Workflow */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -41,7 +41,7 @@ export default function DevelopersPage() {
             className="relative group"
           >
             <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-[#52B788]/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="relative p-8 rounded-3xl border border-[#74C69D]/20">
+            <div className="relative p-8 rounded-3xl border border-[#74C69D]/20 bg-white/[0.02] backdrop-blur-sm">
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#2D6A4F] to-[#40916C] flex items-center justify-center mb-6">
                 <Github className="w-6 h-6 text-white" />
               </div>
@@ -79,7 +79,7 @@ export default function DevelopersPage() {
             className="relative group"
           >
             <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-[#52B788]/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="relative p-8 rounded-3xl border border-[#74C69D]/20">
+            <div className="relative p-8 rounded-3xl border border-[#74C69D]/20 bg-white/[0.02] backdrop-blur-sm">
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#2D6A4F] to-[#40916C] flex items-center justify-center mb-6">
                 <Lock className="w-6 h-6 text-white" />
               </div>
@@ -117,7 +117,7 @@ export default function DevelopersPage() {
             className="relative group"
           >
             <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-[#52B788]/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="relative p-8 rounded-3xl border border-[#74C69D]/20">
+            <div className="relative p-8 rounded-3xl border border-[#74C69D]/20 bg-white/[0.02] backdrop-blur-sm">
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#FFB700] to-[#FFB700]/80 flex items-center justify-center mb-6">
                 <Server className="w-6 h-6 text-[#1A1A1A]" />
               </div>
@@ -155,7 +155,7 @@ export default function DevelopersPage() {
             className="relative group"
           >
             <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-[#52B788]/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="relative p-8 rounded-3xl border border-[#74C69D]/20">
+            <div className="relative p-8 rounded-3xl border border-[#74C69D]/20 bg-white/[0.02] backdrop-blur-sm">
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#40916C] to-[#2D6A4F] flex items-center justify-center mb-6">
                 <Database className="w-6 h-6 text-white" />
               </div>
@@ -297,7 +297,7 @@ export default function DevelopersPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.6 }}
-            className="container mx-auto px-4 py-24 text-center"
+            className="text-center"
           >
             <h2 className="text-3xl font-medium mb-6">Redo att börja bygga?</h2>
             <p className="text-xl text-white/60 mb-8 max-w-2xl mx-auto">
