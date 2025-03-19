@@ -13,7 +13,7 @@ const footerLinks = {
     { key: 'about', href: '/about' },
     { key: 'blog', href: '/blog' },
     { key: 'careers', href: '#careers' },
-    { key: 'contact', href: '#contact' },
+    { key: 'contact', href: '/contact' },
   ],
   legal: [
     { key: 'privacy', href: '/privacy' },
