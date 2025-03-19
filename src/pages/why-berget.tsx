@@ -5,6 +5,7 @@ import { ComplianceSection } from '@/components/sections/ComplianceSection'
 import { SustainabilitySection } from '@/components/sections/SustainabilitySection'
 import { ComparisonTable } from '@/components/sections/ComparisonTable'
 import { PartnerQuotes } from '@/components/sections/PartnerQuotes'
+import { Link } from 'react-router-dom'
 
 function WhyBergetPage() {
   return (
@@ -33,12 +34,14 @@ function WhyBergetPage() {
               Säker, regelefterlevande och hållbar AI-infrastruktur byggd för europeisk innovation och datasuveränitet.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button size="lg" className="px-8 py-6 text-lg">
-                Kom igång
-                <ArrowRight className="ml-2 h-5 w-5" />
+              <Button size="lg" className="px-8 py-6 text-lg" asChild>
+                <Link to="/signup">
+                  Kom igång
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
               </Button>
-              <Button size="lg" variant="outline" className="px-8 py-6 text-lg">
-                Boka demo
+              <Button size="lg" variant="outline" className="px-8 py-6 text-lg" asChild>
+                <Link to="/contact">Boka demo</Link>
               </Button>
             </div>
           </motion.div>
@@ -354,90 +357,11 @@ function WhyBergetPage() {
       {/* Partner Quotes */}
       <PartnerQuotes />
 
-      {/* Customer Testimonials - Commented Out */}
-      {/* <section className="py-24 relative bg-[#2D6A4F]/5 border-y border-[#40916C]/20">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-medium mb-6">Vad våra kunder säger</h2>
-            <p className="text-lg text-white/60">
-              Företag i hela Europa litar på Berget AI för sina mest kritiska AI-applikationer.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="p-8 rounded-xl bg-[#2D6A4F]/10 border border-[#40916C]/20"
-            >
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 rounded-full bg-[#2D6A4F]/20 flex items-center justify-center">
-                  <Users className="w-6 h-6 text-[#52B788]" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-medium">HealthTech AB</h3>
-                  <p className="text-sm text-white/60">Medicinsk AI-lösning</p>
-                </div>
-              </div>
-              <p className="text-white/80 italic">
-                "Med Berget AI kunde vi bygga vår medicinska AI-lösning med full GDPR-efterlevnad. Deras infrastruktur gav oss den säkerhet och regelefterlevnad vi behövde för att hantera känslig patientdata."
-              </p>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="p-8 rounded-xl bg-[#2D6A4F]/10 border border-[#40916C]/20"
-            >
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 rounded-full bg-[#2D6A4F]/20 flex items-center justify-center">
-                  <Building className="w-6 h-6 text-[#52B788]" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-medium">FinSecure GmbH</h3>
-                  <p className="text-sm text-white/60">Finansiell säkerhet</p>
-                </div>
-              </div>
-              <p className="text-white/80 italic">
-                "Som ett finansiellt institut behövde vi en AI-infrastruktur som uppfyllde de strängaste säkerhetskraven. Berget AI levererade inte bara det, utan också en flexibilitet som gjorde att vi kunde skala snabbt."
-              </p>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="p-8 rounded-xl bg-[#2D6A4F]/10 border border-[#40916C]/20"
-            >
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 rounded-full bg-[#2D6A4F]/20 flex items-center justify-center">
-                  <Leaf className="w-6 h-6 text-[#52B788]" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-medium">EcoSmart Solutions</h3>
-                  <p className="text-sm text-white/60">Hållbara energilösningar</p>
-                </div>
-              </div>
-              <p className="text-white/80 italic">
-                "Bergets fokus på hållbarhet matchade perfekt med våra företagsvärderingar. Att kunna spåra CO₂-avtrycket för varje AI-anrop har hjälpt oss att nå våra hållbarhetsmål samtidigt som vi levererar innovativa lösningar."
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </section> */}
-
       {/* Compliance Section */}
       <ComplianceSection />
 
       {/* Sustainability Section */}
       <SustainabilitySection />
-
-      {/* Comparison Table - Commented Out */}
-      {/* <ComparisonTable /> */}
       
       {/* Call to Action */}
       <section className="py-24 relative">
@@ -453,12 +377,14 @@ function WhyBergetPage() {
               Kom igång idag och upptäck fördelarna med en säker, regelefterlevande och hållbar AI-infrastruktur.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button size="lg" className="px-8 py-6 text-lg">
-                Skapa konto
-                <ArrowRight className="ml-2 h-5 w-5" />
+              <Button size="lg" className="px-8 py-6 text-lg" asChild>
+                <Link to="/signup">
+                  Skapa konto
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
               </Button>
-              <Button size="lg" variant="outline" className="px-8 py-6 text-lg">
-                Kontakta försäljning
+              <Button size="lg" variant="outline" className="px-8 py-6 text-lg" asChild>
+                <Link to="/contact">Kontakta försäljning</Link>
               </Button>
             </div>
           </motion.div>

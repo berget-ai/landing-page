@@ -9,13 +9,13 @@ const sustainabilityPoints = [
       'Våra datacenter drivs uteslutande med certifierad fossilfri energi från Sveriges unika energimix av vattenkraft, vindkraft och kärnkraft, samt solceller på taket av våra anläggningar.',
     stats: '100% fossilfri energi',
   },
-  {
-    icon: Droplets,
-    title: 'Vattenfri kylning',
-    description:
-      'Inget vatten går åt i kylningen av våra serverhallar. Vi använder innovativa luftkylningssystem som drastiskt minskar vattenförbrukningen jämfört med traditionella datacenter.',
-    stats: '0 liter vattenförbrukning',
-  },
+  // {
+  //   icon: Droplets,
+  //   title: 'Vattenfri kylning',
+  //   description:
+  //     'Inget vatten går åt i kylningen av våra serverhallar. Vi använder innovativa luftkylningssystem som drastiskt minskar vattenförbrukningen jämfört med traditionella datacenter.',
+  //   stats: '0 liter vattenförbrukning',
+  // },
   {
     icon: Recycle,
     title: 'Cirkulär hårdvara',
@@ -23,20 +23,20 @@ const sustainabilityPoints = [
       'Vi använder cirkulär hårdvara i största möjliga utsträckning, vilket minskar en av de största utsläppskällorna - produktionen. Våra servrar får förlängd livscykel genom certifierade återanvändningsprocesser.',
     stats: '75% minskad hårdvaruproduktion',
   },
-  {
-    icon: Leaf,
-    title: 'Träbaserade datacenter',
-    description:
-      'Vi bygger serverhallar med trä istället för metall, vilket minskar koldioxidavtrycket från byggprocessen och binder koldioxid i konstruktionen under hela dess livslängd.',
-    stats: '-45% CO₂e i byggfasen',
-  },
-  {
-    icon: Thermometer,
-    title: 'Värmeåtervinning',
-    description:
-      'Vi återanvänder värmen som genereras av servrarna till fjärrvärme, vilket skapar ett cirkulärt energisystem där spillvärme blir en resurs istället för ett problem.',
-    stats: '100% värmeåtervinning',
-  },
+  // {
+  //   icon: Leaf,
+  //   title: 'Träbaserade datacenter',
+  //   description:
+  //     'Vi bygger serverhallar med trä istället för metall, vilket minskar koldioxidavtrycket från byggprocessen och binder koldioxid i konstruktionen under hela dess livslängd.',
+  //   stats: '-45% CO₂e i byggfasen',
+  // },
+  // {
+  //   icon: Thermometer,
+  //   title: 'Värmeåtervinning',
+  //   description:
+  //     'Vi återanvänder värmen som genereras av servrarna till fjärrvärme, vilket skapar ett cirkulärt energisystem där spillvärme blir en resurs istället för ett problem.',
+  //   stats: '100% värmeåtervinning',
+  // },
   {
     icon: BarChart,
     title: 'CO₂e-spårning',
