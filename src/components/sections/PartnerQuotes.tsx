@@ -27,16 +27,23 @@ const partnerQuotes: PartnerQuote[] = [
 
 export function PartnerQuotes() {
   return (
-    <section className="py-24 relative bg-white/[0.02] border-y border-white/5">
+    <section className="py-32 relative bg-[#2D6A4F]/5 border-y border-[#40916C]/20">
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/50 to-background opacity-30" />
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl font-medium mb-6">Varför behövs Berget?</h2>
-          <p className="text-lg text-white/60">
-            Vi har frågat några av Sveriges främsta experter inom juridik och datasäkerhet om varför det behövs en svensk molntjänst för AI och hantering av känslig data.
-          </p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-medium mb-6">Varför behövs Berget?</h2>
+            <p className="text-lg text-white/60">
+              Vi har frågat några av Sveriges främsta experter inom juridik och datasäkerhet om varför det behövs en svensk molntjänst för AI och hantering av känslig data.
+            </p>
+          </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {partnerQuotes.map((quote, index) => (
             <motion.div
               key={quote.name}
@@ -46,8 +53,8 @@ export function PartnerQuotes() {
               transition={{ delay: index * 0.1 }}
               className="relative group"
             >
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-[#2D6A4F]/5 to-transparent group-hover:from-[#2D6A4F]/10 transition-colors" />
-              <div className="relative p-8 rounded-2xl border border-[#40916C]/20 h-full">
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-[#52B788]/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative p-8 rounded-2xl bg-white/[0.02] backdrop-blur-sm border border-[#74C69D]/20 h-full">
                 <Quote className="w-10 h-10 text-[#52B788]/30 mb-6" />
                 <p className="text-white/80 mb-8 text-sm leading-relaxed">
                   "{quote.quote}"
