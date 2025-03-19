@@ -54,19 +54,19 @@
           "name": "Christian Landgren",
           "role": "Co-founder & CPTO",
           "bio": "30 years of experience helping organizations with digitalization and AI, passionate about AI and software development, deeply engaged in open source and open innovations, trusted advisor to government and public sector, challenger and technology optimist",
-          "image": "/team/christian.jpg"
+          "image": "/team/christian.png"
         },
         "andreas": {
           "name": "Andreas Lundmark",
           "role": "Co-founder & CEO",
           "bio": "Andreas was an integral part of building the AI capabilities at Boston Consulting Group (BCG Gamma) where he led the Nordic team and was globally responsible for the \"AI at Scale\" topic, and led multiple large scale data and AI transformations at leading global brands",
-          "image": "/team/andreas.jpg"
+          "image": "/team/andreas.png"
         },
         "john": {
           "name": "John Angelmo",
           "role": "Server Infrastructure",
           "bio": "A networking and kubernetes wizard with extensive experience in building and managing large-scale Kubernetes based infrastructure",
-          "image": "/team/john.jpg"
+          "image": "/team/john.png"
         },
         "johan": {
           "name": "Johan Lahti",
@@ -342,7 +342,7 @@
     "comparisonTooltip": "Based on public pricing"
   },
   "footer": {
-    "description": "Our mission is to provide the most trustworthy, valuable and sustainable AI-cloud services in Europe.",
+    "description": "We provide open, EU-compliant infrastructure for AI applications, combining open architecture security with a simple developer experience",
     "product": {
       "title": "Product",
       "features": "Features",
@@ -366,7 +366,7 @@
     },
     "legal": {
       "title": "Legal",
-      "privacy": "Privacy",
+      "privacy": "DPA",
       "terms": "Terms",
       "security": "Security",
       "acceptableUse": "Acceptable Use",
