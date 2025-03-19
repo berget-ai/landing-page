@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Github, Lock, Database, Server, Cpu, GitBranch, Cloud, Link2 } from 'lucide-react'
+import { Github, Lock, Database, Server, Cpu, GitBranch, Cloud, Link2, Network } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { ModelsSection } from '@/components/sections/ModelsSection'
 import { useTranslation } from 'react-i18next'
@@ -274,8 +274,8 @@ export default function DevelopersPage() {
 
                 <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
                   <div className="flex items-center gap-3 p-4 rounded-lg bg-[#2D6A4F]/5">
-                    <Database className="w-5 h-5 text-[#2D6A4F]/80" />
-                    <span className="text-sm text-white/60">Dedicated Databases</span>
+                    <Network className="w-5 h-5 text-[#2D6A4F]/80" />
+                    <span className="text-sm text-white/60">Network Isolation</span>
                   </div>
                   <div className="flex items-center gap-3 p-4 rounded-lg bg-[#2D6A4F]/5">
                     <Lock className="w-5 h-5 text-[#40916C]/80" />
