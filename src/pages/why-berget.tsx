@@ -16,7 +16,7 @@ function WhyBergetPage() {
           <div className="absolute inset-0 bg-grid-white/5 bg-[size:32px_32px] pointer-events-none" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(45,106,79,0.15)_0%,transparent_70%)]" />
         </div>
-        <div className="container mx-auto px-4 py-24 relative z-10">
+        <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -65,7 +65,7 @@ function WhyBergetPage() {
             </motion.div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-32">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto mb-32">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -175,7 +175,7 @@ function WhyBergetPage() {
           </div>
           
           {/* Detailed Features */}
-          <div className="max-w-4xl mx-auto space-y-24">
+          <div className="max-w-7xl mx-auto space-y-24">
             {/* European Innovation & Sovereignty */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
