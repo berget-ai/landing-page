@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { GitBranch, Database, Shield, Cloud, Link2, Cpu } from 'lucide-react'
+import { GitBranch, Database, Shield, Cloud, Link2, Cpu, Network } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
 export function Overview() {
@@ -94,8 +94,8 @@ export function Overview() {
 
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="flex items-center gap-3 p-4 rounded-lg bg-white/5">
-              <Database className="w-5 h-5" />
-              <span className="text-sm text-white/60">Dedicated Databases</span>
+              <Network className="w-5 h-5" />
+              <span className="text-sm text-white/60">Network Isolation</span>
             </div>
             <div className="flex items-center gap-3 p-4 rounded-lg bg-white/5">
               <Shield className="w-5 h-5" />
