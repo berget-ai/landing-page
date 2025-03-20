@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion'
-import { useState } from 'react'
+import { Mail, Send } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
-import { Mail, Send } from 'lucide-react'
 import { useToast } from '@/hooks/use-toast'
+import { useState } from 'react'
 
 export default function ContactPage() {
   const [name, setName] = useState('')
@@ -19,8 +19,6 @@ export default function ContactPage() {
     setIsSubmitting(true)
 
     try {
-      // In a real implementation, you would send this to your backend
-      // For now, we'll just simulate sending an email
       const mailtoLink = `mailto:info@berget.ai?subject=Contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(message)}%0A%0AFrom: ${encodeURIComponent(email)}`
       window.location.href = mailtoLink
 
@@ -29,7 +27,6 @@ export default function ContactPage() {
         description: "We'll get back to you as soon as possible.",
       })
 
-      // Clear form
       setName('')
       setEmail('')
       setMessage('')
@@ -47,7 +44,7 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen pt-24">
       <div className="container mx-auto px-4 py-12">
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -59,14 +56,81 @@ export default function ContactPage() {
             </div>
             <h1 className="text-4xl font-medium mb-4">Contact Us</h1>
             <p className="text-lg text-white/60">
-              Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+              Have questions about Berget AI? Our team is here to help.
             </p>
           </motion.div>
 
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            {/* Christian */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="relative group"
+            >
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-[#52B788]/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative p-6 rounded-2xl border border-[#74C69D]/20 bg-black/20 backdrop-blur-sm">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-24 h-24 rounded-full overflow-hidden">
+                    <img
+                      src="/team/christian.png"
+                      alt="Christian Landgren"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-medium">Christian Landgren</h3>
+                    <p className="text-white/60">Co-founder & CPTO</p>
+                  </div>
+                </div>
+                <a
+                  href="mailto:christian@berget.ai"
+                  className="inline-flex items-center gap-2 text-[#52B788] hover:text-[#74C69D] transition-colors"
+                >
+                  <Mail className="w-4 h-4" />
+                  christian@berget.ai
+                </a>
+              </div>
+            </motion.div>
+
+            {/* Andreas */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="relative group"
+            >
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-[#52B788]/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative p-6 rounded-2xl border border-[#74C69D]/20 bg-black/20 backdrop-blur-sm">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-24 h-24 rounded-full overflow-hidden">
+                    <img
+                      src="/team/andreas.png"
+                      alt="Andreas Lundmark"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-medium">Andreas Lundmark</h3>
+                    <p className="text-white/60">Co-founder & CEO</p>
+                  </div>
+                </div>
+                <a
+                  href="mailto:andreas@berget.ai"
+                  className="inline-flex items-center gap-2 text-[#52B788] hover:text-[#74C69D] transition-colors"
+                >
+                  <Mail className="w-4 h-4" />
+                  andreas@berget.ai
+                </a>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.3 }}
             className="relative"
           >
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-[#52B788]/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -123,19 +187,6 @@ export default function ContactPage() {
                   <Send className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </form>
-
-              {/* Contact Info */}
-              <div className="mt-8 pt-8 border-t border-white/10">
-                <div className="text-center text-sm text-white/60">
-                  <p>You can also reach us at:</p>
-                  <a 
-                    href="mailto:info@berget.ai" 
-                    className="text-[#52B788] hover:underline"
-                  >
-                    info@berget.ai
-                  </a>
-                </div>
-              </div>
             </div>
           </motion.div>
         </div>
