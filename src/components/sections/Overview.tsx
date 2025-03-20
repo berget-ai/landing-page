@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { GitBranch, Database, Shield, Cloud, Link2, Cpu, Network } from 'lucide-react'
+import { GitBranch, Cloud, Link2, Cpu, Network, Shield } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
 export function Overview() {

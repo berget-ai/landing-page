@@ -1,9 +1,8 @@
 import { motion } from 'framer-motion'
-import { Globe, Shield, Server, Lock, ArrowRight, Check, Users, Building, Leaf } from 'lucide-react'
+import { Globe, Shield, Server, Lock, ArrowRight, Check, Leaf } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { ComplianceSection } from '@/components/sections/ComplianceSection'
 import { SustainabilitySection } from '@/components/sections/SustainabilitySection'
-import { ComparisonTable } from '@/components/sections/ComparisonTable'
 import { PartnerQuotes } from '@/components/sections/PartnerQuotes'
 import { Link } from 'react-router-dom'
 

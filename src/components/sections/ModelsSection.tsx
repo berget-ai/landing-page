@@ -84,7 +84,7 @@ export function ModelsSection() {
           <Bot className="w-6 h-6" />
         </div>
         <div className="flex items-center justify-between mb-4">
-          <h2 cla ssName="text-2xl font-medium">Our Models</h2>
+          <h2 className="text-2xl font-medium">Our Models</h2>
           <Button asChild variant="ghost" size="sm" className="group">
             <Link to="/docs/models">
               View Model Documentation

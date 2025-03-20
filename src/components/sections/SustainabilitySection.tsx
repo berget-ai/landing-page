@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Leaf, Recycle, Zap, Droplets, Thermometer, BarChart } from 'lucide-react'
+import { Leaf, Recycle, Zap, BarChart } from 'lucide-react'
 
 const sustainabilityPoints = [
   {
