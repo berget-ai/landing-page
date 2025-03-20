@@ -7,7 +7,7 @@ const footerLinks = {
   product: [
     { key: 'features', href: '/products' },
     { key: 'pricing', href: '/pricing' },
-    { key: 'documentation', href: '/docs' },
+    { key: 'api', href: 'https://api.berget.ai' },
   ],
   company: [
     { key: 'about', href: '/about' },

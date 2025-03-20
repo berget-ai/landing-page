@@ -83,7 +83,7 @@
       "whyBerget": "Why Berget",
       "developers": "For Developers",
       "pricing": "Pricing",
-      "documentation": "Documentation",
+      "api": "API",
       "blog": "Blog"
     },
     "buttons": {
@@ -347,7 +347,7 @@
       "title": "Product",
       "features": "Features",
       "pricing": "Pricing",
-      "documentation": "Documentation",
+      "api": "API",
       "security": "Security"
     },
     "solutions": {
