@@ -45,10 +45,10 @@ export function Header() {
             {t('header.navigation.api')}
           </Link>
 
-          {/* Blog */}
+          {/* Blog 
           <Link to="/blog" className="text-sm text-white/60 hover:text-white transition-colors">
             {t('header.navigation.blog')}
-          </Link>
+          </Link>*/}
 
           <LanguageSwitcher />
 
