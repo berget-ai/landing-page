@@ -1,6 +1,12 @@
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 
+interface Quote {
+  name: string;
+  title: string;
+  quote: string;
+}
+
 export function PartnerQuotes() {
   const { t } = useTranslation()
 
@@ -22,7 +28,7 @@ export function PartnerQuotes() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {(t('partnerQuotes.quotes', { returnObjects: true }) || []).map((quote, index) => (
+          {(t<Quote[]>('partnerQuotes.quotes', { returnObjects: true }) || []).map((quote: Quote, index: number) => (
             <motion.div
               key={quote.name}
               initial={{ opacity: 0, y: 20 }}
