@@ -8,9 +8,9 @@ import { Link } from 'react-router-dom'
 
 export default function DevelopersPage() {
   const { t } = useTranslation()
-  
+
   return (
-    <main className="min-h-screen pt-24">
+    <main className="min-h-screen">
       {/* Hero Section */}
       <div className="relative overflow-hidden bg-gradient-to-b from-background to-background/50">
         <div className="absolute inset-0 bg-grid-white/5 bg-[size:32px_32px] pointer-events-none" />
@@ -20,10 +20,11 @@ export default function DevelopersPage() {
               Infrastruktur för AI-utvecklare
             </h1>
             <p className="text-xl text-white/60 mb-8">
-              Kör dina AI-modeller och applikationer i en säker, EU-baserad miljö med full kontroll över din kod och data.
+              Kör dina AI-modeller och applikationer i en säker, EU-baserad
+              miljö med full kontroll över din kod och data.
             </p>
           </div>
-          
+
           <div className="mt-16">
             <TerminalCarousel />
           </div>
@@ -45,26 +46,41 @@ export default function DevelopersPage() {
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#2D6A4F] to-[#40916C] flex items-center justify-center mb-6">
                 <Github className="w-6 h-6 text-white" />
               </div>
-              <h2 className="text-2xl font-medium mb-4">GitOps-baserad infrastruktur</h2>
+              <h2 className="text-2xl font-medium mb-4">
+                GitOps-baserad infrastruktur
+              </h2>
               <p className="text-white/80 mb-4">
-                Slipp komplexa Terraform-skript och AWS-konsolen. Definiera din infrastruktur med enkla YAML-filer i ditt Git-repo.
+                Slipp komplexa Terraform-skript och AWS-konsolen. Definiera din
+                infrastruktur med enkla YAML-filer i ditt Git-repo.
               </p>
               <ul className="space-y-4">
                 <li className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
-                  <span><strong>Automatisk synkronisering</strong> - ändringar i ditt repo appliceras automatiskt på din infrastruktur</span>
+                  <span>
+                    <strong>Automatisk synkronisering</strong> - ändringar i
+                    ditt repo appliceras automatiskt på din infrastruktur
+                  </span>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
-                  <span><strong>Versionskontroll</strong> - full historik och möjlighet att rulla tillbaka ändringar</span>
+                  <span>
+                    <strong>Versionskontroll</strong> - full historik och
+                    möjlighet att rulla tillbaka ändringar
+                  </span>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
-                  <span><strong>Portabilitet</strong> - din infrastruktur är definierad i kod som kan flyttas mellan miljöer</span>
+                  <span>
+                    <strong>Portabilitet</strong> - din infrastruktur är
+                    definierad i kod som kan flyttas mellan miljöer
+                  </span>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
-                  <span><strong>CI/CD-integration</strong> - koppla ihop med dina befintliga CI/CD-pipelines</span>
+                  <span>
+                    <strong>CI/CD-integration</strong> - koppla ihop med dina
+                    befintliga CI/CD-pipelines
+                  </span>
                 </li>
               </ul>
             </div>
@@ -83,26 +99,41 @@ export default function DevelopersPage() {
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#2D6A4F] to-[#40916C] flex items-center justify-center mb-6">
                 <Lock className="w-6 h-6 text-white" />
               </div>
-              <h2 className="text-2xl font-medium mb-4">OpenAI-kompatibelt API</h2>
+              <h2 className="text-2xl font-medium mb-4">
+                OpenAI-kompatibelt API
+              </h2>
               <p className="text-white/80 mb-4">
-                Använd samma kod och bibliotek som du redan använder med OpenAI, men med full kontroll över dina data.
+                Använd samma kod och bibliotek som du redan använder med OpenAI,
+                men med full kontroll över dina data.
               </p>
               <ul className="space-y-4">
                 <li className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
-                  <span><strong>Minimal kodändring</strong> - byt bara API-nyckel och endpoint för att migrera från OpenAI</span>
+                  <span>
+                    <strong>Minimal kodändring</strong> - byt bara API-nyckel
+                    och endpoint för att migrera från OpenAI
+                  </span>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
-                  <span><strong>Stöd för populära bibliotek</strong> - fungerar med LangChain, LlamaIndex och andra ramverk</span>
+                  <span>
+                    <strong>Stöd för populära bibliotek</strong> - fungerar med
+                    LangChain, LlamaIndex och andra ramverk
+                  </span>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
-                  <span><strong>GDPR-kompatibelt</strong> - all data stannar inom EU och lagras aldrig</span>
+                  <span>
+                    <strong>GDPR-kompatibelt</strong> - all data stannar inom EU
+                    och lagras aldrig
+                  </span>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
-                  <span><strong>CO₂-spårning</strong> - få information om koldioxidavtryck för varje API-anrop</span>
+                  <span>
+                    <strong>CO₂-spårning</strong> - få information om
+                    koldioxidavtryck för varje API-anrop
+                  </span>
                 </li>
               </ul>
             </div>
@@ -121,26 +152,41 @@ export default function DevelopersPage() {
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#FFB700] to-[#FFB700]/80 flex items-center justify-center mb-6">
                 <Server className="w-6 h-6 text-[#1A1A1A]" />
               </div>
-              <h2 className="text-2xl font-medium mb-4">Kubernetes utan komplexitet</h2>
+              <h2 className="text-2xl font-medium mb-4">
+                Kubernetes utan komplexitet
+              </h2>
               <p className="text-white/80 mb-4">
-                Få fördelarna med Kubernetes utan att behöva hantera infrastrukturen själv.
+                Få fördelarna med Kubernetes utan att behöva hantera
+                infrastrukturen själv.
               </p>
               <ul className="space-y-4">
                 <li className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
-                  <span><strong>Förkonfigurerade kluster</strong> - kom igång på minuter istället för dagar</span>
+                  <span>
+                    <strong>Förkonfigurerade kluster</strong> - kom igång på
+                    minuter istället för dagar
+                  </span>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
-                  <span><strong>Standardiserade Helm charts</strong> - installera databaser, caching och andra tjänster med ett kommando</span>
+                  <span>
+                    <strong>Standardiserade Helm charts</strong> - installera
+                    databaser, caching och andra tjänster med ett kommando
+                  </span>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
-                  <span><strong>GPU-stöd</strong> - kör dina egna modeller på dedikerade GPU:er när du behöver</span>
+                  <span>
+                    <strong>GPU-stöd</strong> - kör dina egna modeller på
+                    dedikerade GPU:er när du behöver
+                  </span>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
-                  <span><strong>Autoskalning</strong> - skala automatiskt upp och ner baserat på belastning</span>
+                  <span>
+                    <strong>Autoskalning</strong> - skala automatiskt upp och
+                    ner baserat på belastning
+                  </span>
                 </li>
               </ul>
             </div>
@@ -159,26 +205,41 @@ export default function DevelopersPage() {
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#40916C] to-[#2D6A4F] flex items-center justify-center mb-6">
                 <Database className="w-6 h-6 text-white" />
               </div>
-              <h2 className="text-2xl font-medium mb-4">Utvecklarverktyg som förenklar</h2>
+              <h2 className="text-2xl font-medium mb-4">
+                Utvecklarverktyg som förenklar
+              </h2>
               <p className="text-white/80 mb-4">
-                Verktyg som hjälper dig att bygga, testa och driftsätta dina AI-applikationer snabbare.
+                Verktyg som hjälper dig att bygga, testa och driftsätta dina
+                AI-applikationer snabbare.
               </p>
               <ul className="space-y-4">
                 <li className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
-                  <span><strong>CLI-verktyg</strong> - hantera dina resurser direkt från terminalen</span>
+                  <span>
+                    <strong>CLI-verktyg</strong> - hantera dina resurser direkt
+                    från terminalen
+                  </span>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
-                  <span><strong>Loggning och övervakning</strong> - inbyggd integration med Prometheus och Grafana</span>
+                  <span>
+                    <strong>Loggning och övervakning</strong> - inbyggd
+                    integration med Prometheus och Grafana
+                  </span>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
-                  <span><strong>Kostnadsövervakning</strong> - se exakt vad som kostar och optimera dina resurser</span>
+                  <span>
+                    <strong>Kostnadsövervakning</strong> - se exakt vad som
+                    kostar och optimera dina resurser
+                  </span>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
-                  <span><strong>Utvecklarmiljöer</strong> - förkonfigurerade miljöer för snabb utveckling</span>
+                  <span>
+                    <strong>Utvecklarmiljöer</strong> - förkonfigurerade miljöer
+                    för snabb utveckling
+                  </span>
                 </li>
               </ul>
             </div>
@@ -186,7 +247,7 @@ export default function DevelopersPage() {
 
           {/* Models Section */}
           <ModelsSection />
-      
+
           {/* GitOps Section */}
           <section className="py-32 relative overflow-hidden bg-white/[0.02] border-y border-white/5">
             <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background opacity-50" />
@@ -280,11 +341,15 @@ export default function DevelopersPage() {
                   </div>
                   <div className="flex items-center gap-3 p-4 rounded-lg bg-[#2D6A4F]/5">
                     <Lock className="w-5 h-5 text-[#40916C]/80" />
-                    <span className="text-sm text-white/60">Encrypted Storage</span>
+                    <span className="text-sm text-white/60">
+                      Encrypted Storage
+                    </span>
                   </div>
                   <div className="flex items-center gap-3 p-4 rounded-lg bg-[#2D6A4F]/5">
                     <Cloud className="w-5 h-5 text-[#FFB700]/80" />
-                    <span className="text-sm text-white/60">Multi-Cloud Support</span>
+                    <span className="text-sm text-white/60">
+                      Multi-Cloud Support
+                    </span>
                   </div>
                 </div>
               </div>
@@ -301,7 +366,8 @@ export default function DevelopersPage() {
           >
             <h2 className="text-3xl font-medium mb-6">Redo att börja bygga?</h2>
             <p className="text-xl text-white/60 mb-8 max-w-2xl mx-auto">
-              Kom igång på under 5 minuter med vårt CLI-verktyg och bygg din första AI-applikation.
+              Kom igång på under 5 minuter med vårt CLI-verktyg och bygg din
+              första AI-applikation.
             </p>
             <div className="flex gap-4 justify-center">
               <Button size="lg" asChild>

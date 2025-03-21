@@ -403,7 +403,7 @@
         ]
       },
       "schrems2": {
-        "name": "Schrems II Risks",
+        "name": "Schrems II Exposure",
         "description": "No exposure to US Cloud Act",
         "benefits": [
           "EU-only infrastructure",
