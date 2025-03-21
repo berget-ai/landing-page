@@ -1,18 +1,10 @@
 import { motion } from 'framer-motion'
-import {
-  Github,
-  Lock,
-  Database,
-  Server,
-  Cpu,
-  GitBranch,
-  Cloud,
-  Link2,
-} from 'lucide-react'
+import { Github, Lock, Database, Server, Cpu, GitBranch, Cloud, Link2, Network } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { ModelsSection } from '@/components/sections/ModelsSection'
 import { useTranslation } from 'react-i18next'
 import { TerminalCarousel } from '@/components/terminal/TerminalCarousel'
+import { Link } from 'react-router-dom'
 
 export default function DevelopersPage() {
   const { t } = useTranslation()
@@ -41,7 +33,7 @@ export default function DevelopersPage() {
 
       {/* Main Content */}
       <div className="container mx-auto px-4 py-24">
-        <div className="max-w-3xl mx-auto space-y-24">
+        <div className="max-w-7xl mx-auto space-y-24">
           {/* GitOps Workflow */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -49,8 +41,8 @@ export default function DevelopersPage() {
             viewport={{ once: true }}
             className="relative group"
           >
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-[#2D6A4F]/5 via-[#40916C]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="relative p-8 rounded-3xl border border-[#40916C]/20">
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-[#52B788]/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="relative p-8 rounded-3xl border border-[#74C69D]/20 bg-white/[0.02] backdrop-blur-sm">
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#2D6A4F] to-[#40916C] flex items-center justify-center mb-6">
                 <Github className="w-6 h-6 text-white" />
               </div>
@@ -102,8 +94,8 @@ export default function DevelopersPage() {
             transition={{ delay: 0.2 }}
             className="relative group"
           >
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-[#2D6A4F]/5 via-[#40916C]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="relative p-8 rounded-3xl border border-[#40916C]/20">
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-[#52B788]/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="relative p-8 rounded-3xl border border-[#74C69D]/20 bg-white/[0.02] backdrop-blur-sm">
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#2D6A4F] to-[#40916C] flex items-center justify-center mb-6">
                 <Lock className="w-6 h-6 text-white" />
               </div>
@@ -155,8 +147,8 @@ export default function DevelopersPage() {
             transition={{ delay: 0.3 }}
             className="relative group"
           >
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-[#2D6A4F]/5 via-[#40916C]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="relative p-8 rounded-3xl border border-[#40916C]/20">
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-[#52B788]/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="relative p-8 rounded-3xl border border-[#74C69D]/20 bg-white/[0.02] backdrop-blur-sm">
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#FFB700] to-[#FFB700]/80 flex items-center justify-center mb-6">
                 <Server className="w-6 h-6 text-[#1A1A1A]" />
               </div>
@@ -208,8 +200,8 @@ export default function DevelopersPage() {
             transition={{ delay: 0.4 }}
             className="relative group"
           >
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-[#2D6A4F]/5 via-[#40916C]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="relative p-8 rounded-3xl border border-[#40916C]/20">
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-[#52B788]/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="relative p-8 rounded-3xl border border-[#74C69D]/20 bg-white/[0.02] backdrop-blur-sm">
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#40916C] to-[#2D6A4F] flex items-center justify-center mb-6">
                 <Database className="w-6 h-6 text-white" />
               </div>
@@ -344,10 +336,8 @@ export default function DevelopersPage() {
 
                 <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
                   <div className="flex items-center gap-3 p-4 rounded-lg bg-[#2D6A4F]/5">
-                    <Database className="w-5 h-5 text-[#2D6A4F]/80" />
-                    <span className="text-sm text-white/60">
-                      Dedicated Databases
-                    </span>
+                    <Network className="w-5 h-5 text-[#2D6A4F]/80" />
+                    <span className="text-sm text-white/60">Network Isolation</span>
                   </div>
                   <div className="flex items-center gap-3 p-4 rounded-lg bg-[#2D6A4F]/5">
                     <Lock className="w-5 h-5 text-[#40916C]/80" />
@@ -372,7 +362,7 @@ export default function DevelopersPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.6 }}
-            className="container mx-auto px-4 py-24 text-center"
+            className="text-center"
           >
             <h2 className="text-3xl font-medium mb-6">Redo att börja bygga?</h2>
             <p className="text-xl text-white/60 mb-8 max-w-2xl mx-auto">
@@ -380,9 +370,11 @@ export default function DevelopersPage() {
               första AI-applikation.
             </p>
             <div className="flex gap-4 justify-center">
-              <Button size="lg">Skapa konto</Button>
-              <Button size="lg" variant="secondary">
-                Läs dokumentationen
+              <Button size="lg" asChild>
+                <Link to="/signup">Skapa konto</Link>
+              </Button>
+              <Button size="lg" variant="secondary" asChild>
+                <Link to="/docs">Läs dokumentationen</Link>
               </Button>
             </div>
           </motion.div>

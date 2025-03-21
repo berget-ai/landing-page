@@ -1,6 +1,10 @@
-import { useTranslation } from 'react-i18next'
-import { BlogPost } from '@/types/blog'
 import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
+import { BlogList } from '@/components/blog/BlogList'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Search } from 'lucide-react'
+import type { BlogPost } from '@/types/blog'
 
 // Import all blog posts
 const postModules = import.meta.glob('./posts/**/*.md', { 
@@ -9,12 +13,11 @@ const postModules = import.meta.glob('./posts/**/*.md', {
 })
 
 export default function BlogPage() {
-  const { t } = useTranslation()
   const [posts, setPosts] = useState<BlogPost[]>([])
+  const [searchTerm, setSearchTerm] = useState('')
 
   useEffect(() => {
     const loadPosts = async () => {
-
       // Filter out argument files
       const blogPosts = Object.entries(postModules)
         .filter(([path]) => !path.includes('/arguments/'))
@@ -41,20 +44,12 @@ export default function BlogPage() {
           }
         })
 
-      // We could filter out argument files here if needed in the future
-      // Example:
-      // const argumentPaths = Object.entries(postModules)
-      //   .filter(([path]) => path.includes('/arguments/'))
-      //   .map(([path]) => path)
-
-      const loadedPosts = blogPosts
-
       // Sort by date descending
-      setPosts(
-        loadedPosts.sort(
-          (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-        )
+      const sortedPosts = blogPosts.sort(
+        (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
       )
+
+      setPosts(sortedPosts)
     }
 
     loadPosts()
@@ -69,7 +64,6 @@ export default function BlogPage() {
       if (match) {
         const [_, key, value] = match
         if (key === 'tags') {
-          // Handle array format: [tag1, tag2, tag3]
           metadata[key] = value
             .trim()
             .replace(/^\[|\]$/g, '')
@@ -77,7 +71,6 @@ export default function BlogPage() {
             .map(t => t.trim())
             .filter(Boolean)
         } else {
-          // Remove quotes if present
           metadata[key] = value.trim().replace(/^["']|["']$/g, '')
         }
       }
@@ -86,60 +79,48 @@ export default function BlogPage() {
     return metadata
   }
 
+  const filteredPosts = posts.filter(post => {
+    const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         post.description.toLowerCase().includes(searchTerm.toLowerCase())
+    return matchesSearch
+  })
+
   return (
     <main className="min-h-screen pt-24">
       <div className="container mx-auto px-4 py-12">
-        <div className="max-w-2xl mx-auto mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="max-w-2xl mx-auto text-center mb-16"
+        >
           <h1 className="text-4xl font-medium mb-4">
-            {t('blog.title', 'Blog')}
+            Berget AI Blog
           </h1>
           <p className="text-lg text-white/60">
-            {t(
-              'blog.description',
-              'Latest news and insights from the Berget team'
-            )}
+            Insights and updates about AI infrastructure, European tech innovation, and industry best practices
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid gap-8 max-w-3xl mx-auto">
-          {posts.map((post) => (
-            <a
-              href={`/blog/${post.id}`}
-              key={post.id}
-              className="block"
-            >
-              <article className="p-6 rounded-xl bg-[#2D6A4F]/5 border border-[#40916C]/20 hover:bg-[#2D6A4F]/10 transition-colors">
-              {post.image && (
-                <div className="relative w-full h-48 mb-6 rounded-lg overflow-hidden">
-                  <img 
-                    src={post.image} 
-                    alt={post.imageAlt || post.title}
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
-                </div>
-              )}
-              <div className="flex items-center gap-4 text-sm text-white/60 mb-3">
-                <time dateTime={post.date}>
-                  {new Date(post.date).toLocaleDateString()}
-                </time>
-                <span>•</span>
-                <span>{post.author}</span>
-              </div>
-              <h2 className="text-2xl font-medium mb-2">{post.title}</h2>
-              <p className="text-white/80 mb-4">{post.description}</p>
-              <div className="flex flex-wrap gap-2">
-                {post.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-2 py-1 rounded-full bg-[#52B788]/20 text-sm"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              </article>
-            </a>
-          ))}
+        <div className="max-w-5xl mx-auto mb-12">
+          <div className="flex flex-col md:flex-row gap-4 mb-8">
+            <div className="relative flex-1">
+              <Search className="absolute left-3 top-2.5 h-5 w-5 text-white/40" />
+              <Input
+                placeholder="Search articles..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="pl-10"
+              />
+            </div>
+          </div>
+
+          {filteredPosts.length > 0 ? (
+            <BlogList posts={filteredPosts} />
+          ) : (
+            <div className="text-center py-12">
+              <p className="text-white/60">No posts found matching your criteria.</p>
+            </div>
+          )}
         </div>
       </div>
     </main>

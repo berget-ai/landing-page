@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Cloud, Server, Cpu } from 'lucide-react'
+import { Cloud, Server, Cpu, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
@@ -8,43 +8,48 @@ export function ProductFeatures() {
   const { t } = useTranslation()
 
   return (
-    <section className="py-24 relative">
+    <section className="py-32 relative bg-[#2D6A4F]/5 border-y border-[#40916C]/20">
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/50 to-background opacity-30" />
       <div className="container mx-auto px-4">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl font-medium mb-4">
-            {t('products.hero.title')}
-          </h2>
-          <p className="text-lg text-white/60">
-            {t('products.hero.description')}
-          </p>
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-medium mb-6">{t('products.hero.title')}</h2>
+            <p className="text-lg text-white/60">
+              {t('products.hero.description')}
+            </p>
+          </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {/* Serverless Inference */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors"
+            className="relative group"
           >
-            <Cloud className="w-8 h-8 mb-4" />
-            <h3 className="text-xl font-medium mb-3">
-              {t('products.serverless.title')}
-            </h3>
-            <p className="text-white/60 mb-4">
-              {t('products.serverless.description')}
-            </p>
-            <ul className="space-y-2 mb-6">
-              <li className="text-sm text-white/60">
-                • {t('products.serverless.features.integration.title')}
-              </li>
-              <li className="text-sm text-white/60">
-                • {t('products.serverless.features.usage.title')}
-              </li>
-              <li className="text-sm text-white/60">
-                • {t('products.serverless.features.infrastructure.title')}
-              </li>
-            </ul>
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-[#52B788]/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="relative p-8 rounded-2xl bg-white/[0.02] backdrop-blur-sm border border-[#74C69D]/20 h-full">
+              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#52B788] to-[#74C69D] flex items-center justify-center mb-8">
+                <Cloud className="w-7 h-7 text-white" />
+              </div>
+              <h3 className="text-xl font-medium mb-4">{t('products.serverless.title')}</h3>
+              <p className="text-white/60 mb-6">{t('products.serverless.description')}</p>
+              <ul className="space-y-3">
+                {(t('products.serverless.features.integration.items', { returnObjects: true }) as string[]).map((item) => (
+                  <li key={item} className="flex items-center gap-3">
+                    <div className="w-6 h-6 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#52B788]" />
+                    </div>
+                    <span className="text-sm text-white/80">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </motion.div>
 
           {/* Dedicated Inference */}
@@ -53,26 +58,26 @@ export function ProductFeatures() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors"
+            className="relative group"
           >
-            <Server className="w-8 h-8 mb-4" />
-            <h3 className="text-xl font-medium mb-3">
-              {t('products.dedicated.title')}
-            </h3>
-            <p className="text-white/60 mb-4">
-              {t('products.dedicated.description')}
-            </p>
-            <ul className="space-y-2 mb-6">
-              <li className="text-sm text-white/60">
-                • {t('products.dedicated.features.deployment.title')}
-              </li>
-              <li className="text-sm text-white/60">
-                • {t('products.dedicated.features.control.title')}
-              </li>
-              <li className="text-sm text-white/60">
-                • {t('products.dedicated.features.performance.title')}
-              </li>
-            </ul>
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-[#52B788]/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="relative p-8 rounded-2xl bg-white/[0.02] backdrop-blur-sm border border-[#74C69D]/20 h-full">
+              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#FFB700] to-[#FFB700]/80 flex items-center justify-center mb-8">
+                <Server className="w-7 h-7 text-[#1A1A1A]" />
+              </div>
+              <h3 className="text-xl font-medium mb-4">{t('products.dedicated.title')}</h3>
+              <p className="text-white/60 mb-6">{t('products.dedicated.description')}</p>
+              <ul className="space-y-3">
+                {(t('products.dedicated.features.deployment.items', { returnObjects: true }) as string[]).map((item) => (
+                  <li key={item} className="flex items-center gap-3">
+                    <div className="w-6 h-6 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#52B788]" />
+                    </div>
+                    <span className="text-sm text-white/80">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </motion.div>
 
           {/* Complete Platform */}
@@ -81,34 +86,34 @@ export function ProductFeatures() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors"
+            className="relative group"
           >
-            <Cpu className="w-8 h-8 mb-4" />
-            <h3 className="text-xl font-medium mb-3">
-              {t('products.platform.title')}
-            </h3>
-            <p className="text-white/60 mb-4">
-              {t('products.platform.description')}
-            </p>
-            <ul className="space-y-2 mb-6">
-              <li className="text-sm text-white/60">
-                • {t('products.platform.features.toolset.title')}
-              </li>
-              <li className="text-sm text-white/60">
-                • {t('products.platform.features.services.title')}
-              </li>
-              <li className="text-sm text-white/60">
-                • {t('products.platform.features.infrastructure.title')}
-              </li>
-            </ul>
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-[#52B788]/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="relative p-8 rounded-2xl bg-white/[0.02] backdrop-blur-sm border border-[#74C69D]/20 h-full">
+              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#74C69D] to-[#52B788] flex items-center justify-center mb-8">
+                <Cpu className="w-7 h-7 text-white" />
+              </div>
+              <h3 className="text-xl font-medium mb-4">{t('products.platform.title')}</h3>
+              <p className="text-white/60 mb-6">{t('products.platform.description')}</p>
+              <ul className="space-y-3">
+                {(t('products.platform.features.toolset.items', { returnObjects: true }) as string[]).map((item) => (
+                  <li key={item} className="flex items-center gap-3">
+                    <div className="w-6 h-6 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#52B788]" />
+                    </div>
+                    <span className="text-sm text-white/80">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </motion.div>
         </div>
 
-        <div className="text-center">
+        <div className="text-center mt-12">
           <Button asChild size="lg">
             <Link to="/products">
               {t('products.hero.exploreMore')}
-              <Cloud className="ml-2 h-4 w-4" />
+              <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
         </div>

@@ -88,7 +88,7 @@ export function WhyChooseBerget() {
         </div>
 
         <div className="text-center">
-          <Button asChild size="lg" variant="secondary" className="px-8 py-6 text-lg">
+          <Button asChild size="lg">
             <Link to="/why-berget">
               {t('whyBerget.discoverMore')}
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />

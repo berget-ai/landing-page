@@ -54,19 +54,19 @@
           "name": "Christian Landgren",
           "role": "Co-founder & CPTO",
           "bio": "30 years of experience helping organizations with digitalization and AI, passionate about AI and software development, deeply engaged in open source and open innovations, trusted advisor to government and public sector, challenger and technology optimist",
-          "image": "/team/christian.jpg"
+          "image": "/team/christian.png"
         },
         "andreas": {
           "name": "Andreas Lundmark",
           "role": "Co-founder & CEO",
           "bio": "Andreas was an integral part of building the AI capabilities at Boston Consulting Group (BCG Gamma) where he led the Nordic team and was globally responsible for the \"AI at Scale\" topic, and led multiple large scale data and AI transformations at leading global brands",
-          "image": "/team/andreas.jpg"
+          "image": "/team/andreas.png"
         },
         "john": {
           "name": "John Angelmo",
           "role": "Server Infrastructure",
           "bio": "A networking and kubernetes wizard with extensive experience in building and managing large-scale Kubernetes based infrastructure",
-          "image": "/team/john.jpg"
+          "image": "/team/john.png"
         },
         "johan": {
           "name": "Johan Lahti",
@@ -83,7 +83,7 @@
       "whyBerget": "Why Berget",
       "developers": "For Developers",
       "pricing": "Pricing",
-      "documentation": "Documentation",
+      "api": "API",
       "blog": "Blog"
     },
     "buttons": {
@@ -94,7 +94,7 @@
   "products": {
     "hero": {
       "title": "Build the Future with Berget AI",
-      "description": "Enterprise-grade AI infrastructure designed for European businesses. Secure, compliant, and ready to scale.",
+      "description": "AI infrastructure designed for Europoe. Secure, compliant, and ready to scale.",
       "exploreMore": "Learn more"
     },
     "serverless": {
@@ -122,7 +122,7 @@
           "items": [
             "Dedicated GPU clusters",
             "European data centers",
-            "No data retention"
+            "Data never leaves our premises"
           ]
         }
       }
@@ -143,16 +143,16 @@
           "title": "Model Control",
           "items": [
             "Host finetuned models",
-            "Version control",
-            "Secure environment"
+            "Control and own your models",
+            "Models reside with your data and apps"
           ]
         },
         "performance": {
           "title": "Optimized Performance",
           "items": [
-            "Resource optimization",
+            "Optimize cost and performance",
             "Flexible scaling",
-            "Cost management"
+            "Easy cost management"
           ]
         }
       }
@@ -173,7 +173,7 @@
           "title": "Ready-to-Use Services",
           "items": [
             "Pre-configured recipes",
-            "App marketplace",
+            "AI tool marketplace",
             "Popular AI tools"
           ]
         },
@@ -342,12 +342,12 @@
     "comparisonTooltip": "Based on public pricing"
   },
   "footer": {
-    "description": "Our mission is to provide the most trustworthy, valuable and sustainable AI-cloud services in Europe.",
+    "description": "We provide open, EU-compliant infrastructure for AI applications, combining open architecture security with a simple developer experience",
     "product": {
       "title": "Product",
       "features": "Features",
       "pricing": "Pricing",
-      "documentation": "Documentation",
+      "api": "API",
       "security": "Security"
     },
     "solutions": {
@@ -366,7 +366,8 @@
     },
     "legal": {
       "title": "Legal",
-      "privacy": "Privacy",
+      "privacy": "Data Privacy",
+      "dpa" : "DPA",
       "terms": "Terms",
       "security": "Security",
       "acceptableUse": "Acceptable Use",
@@ -393,7 +394,7 @@
       },
       "nis2": {
         "name": "NIS2 Ready",
-        "description": "Meeting cybersecurity requirements for critical infrastructure",
+        "description": "Meeting requirements for critical infrastructure",
         "benefits": [
           "24/7 security monitoring",
           "Incident response plans",
@@ -440,12 +441,12 @@
     "description": "Built for European businesses who need secure, compliant AI infrastructure",
     "features": {
       "european": {
-        "title": "European Innovation & Sovereignty",
+        "title": "European Sovereignty",
         "description": "Built and operated in Europe, empowering businesses with true digital sovereignty"
       },
       "security": {
-        "title": "Enterprise-Grade Security",
-        "description": "Bank-grade security with comprehensive compliance built into every layer"
+        "title": "Designed for Security",
+        "description": "Security and comprehensive compliance built into every layer"
       },
       "alternative": {
         "title": "Beyond Public Cloud",

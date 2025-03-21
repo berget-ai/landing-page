@@ -33,9 +33,7 @@ export function Hero() {
                   {t('hero.getStarted')} <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline">
-                {t('hero.learnMore')}
-              </Button>
+              
             </div>
           </div>
         </div>

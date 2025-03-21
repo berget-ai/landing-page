@@ -2,8 +2,8 @@
   "hero": {
     "tagline": "Ingen data lämnar Sverige",
     "title": {
-      "part1": "Frigör AI-innovation",
-      "part2": "i Europa"
+      "part1": "Frigör kraften i AI-innovation",
+      "part2": "för Europa"
     },
     "description": "Den första svenska AI tjänsten byggd för utvecklare. Vi tillhandahåller öppen, modern infrastruktur för AI-applikationer som kombinerar öppen arkitektur med enkel utvecklarupplevelse.",
     "getStarted": "Kom igång",
@@ -54,25 +54,25 @@
           "name": "Christian",
           "role": "Medgrundare & CPTO",
           "bio": "30 års erfarenhet av att hjälpa organisationer med digitalisering och AI, passionerad för AI och mjukvaruutveckling, djupt engagerad i open source och öppen innovation, betrodd rådgivare till regering och offentlig sektor, utmanare och teknikoptimist",
-          "image": "/team/christian.jpg"
+          "image": "/team/christian.png"
         },
         "andreas": {
           "name": "Andreas",
           "role": "Medgrundare & VD",
           "bio": "Var en integrerad del i uppbyggnaden av AI-kapaciteten på Boston Consulting Group (BCG Gamma) där han ledde det nordiska teamet och var globalt ansvarig för \"AI at Scale\"-området, och ledde flera storskaliga data- och AI-transformationer på ledande globala företag",
-          "image": "/team/andreas.jpg"
+          "image": "/team/andreas.png"
         },
         "john": {
           "name": "John",
           "role": "Infrastrukturchef",
           "bio": "En nätverks- och kubernetes-trollkarl med omfattande erfarenhet av att bygga och hantera storskalig infrastruktur",
-          "image": "/team/john.jpg"
+          "image": "/team/john.png"
         },
         "johan": {
           "name": "Johan",
           "role": "Nätverksarkitekturchef",
           "bio": "En ledande datacenter-nätverksdesigner och byggare som har hjälpt ledande företag och scale-ups att bygga globala multi-site beräknings- och lagringsplattformar",
-          "image": "/team/johan.jpg"
+          "image": "/team/johan.png"
         }
       }
     }
@@ -158,18 +158,18 @@
       "description": "Ta full kontroll med en intuitiv plattform designad för utveckling och driftsättning av AI-applikationer.",
       "features": {
         "toolset": {
-          "title": "Komplett Verktygssats",
+          "title": "Komplett Verktygslåda",
           "items": [
-            "Kraftfull dashboard",
-            "Resurshantering",
-            "Kostnadstransparens"
+            "Enkel användarupplevelse",
+            "Transparent resurshantering",
+            "Kostnadskontroll"
           ]
         },
         "services": {
-          "title": "Färdiga Tjänster",
+          "title": "Färdiga moduler",
           "items": [
             "Förkonfigurerade recept",
-            "App-marknad",
+            "App-marketplace",
             "Populära AI-verktyg"
           ]
         },
@@ -185,14 +185,14 @@
     },
     "architecture": {
       "title": "Plattformsarkitektur",
-      "description": "En omfattande stack designad för enterprise AI-utveckling och driftsättning",
+      "description": "En komplett stack designad för enterprise AI-utveckling och driftsättning",
       "layers": {
         "tools": {
-          "title": "Verktyg & Marknad",
+          "title": "Verktyg",
           "items": ["Databas", "Vektor-DB", "DevOps", "Agent-ramverk"]
         },
         "llm": {
-          "title": "LLM",
+          "title": "Språkmodeller",
           "items": [
             "Inferens",
             "Modellhantering",
@@ -202,7 +202,7 @@
         },
         "compute": {
           "title": "Lagring och Compute",
-          "items": ["CPU", "GPU", "Lokal lagring", "Block lagring"]
+          "items": ["CPU", "GPU", "Lokal lagring", "Blocklagring"]
         },
         "connectivity": {
           "title": "Nätverk",
@@ -211,7 +211,7 @@
         "management": {
           "title": "Hantering",
           "items": [
-            "Hanteringskonsol",
+            "Managementkonsoll",
             "Användar- och Teamhantering",
             "Tjänstehantering",
             "Resurs- och Kostnadshantering"
@@ -222,13 +222,13 @@
     "models": {
       "title": "Våra Modeller",
       "description": "Få tillgång till ett brett urval av kraftfulla öppna modeller för att bygga olika AI-lösningar.",
-      "requestModel": "Begär en Modell"
+      "requestModel": "Önska en Modell"
     },
     "cta": {
       "title": "Redo att Börja Bygga?",
-      "description": "Gå med i den växande gemenskapen av utvecklare som bygger framtidens AI med Berget.",
+      "description": "Gå med i communityn av utvecklare som bygger framtidens AI med Berget.",
       "getStarted": "Kom Igång",
-      "contactSales": "Kontakta Försäljning"
+      "contactSales": "Kontakta oss"
     }
   },
   "developers": {
@@ -242,9 +242,9 @@
         "description": "Allt du behöver, inget du inte behöver",
         "items": [
           "Enkel användarupplevelse",
-          "Ingen inlåsning med GitHub-synk",
-          "Välj bara det du behöver",
-          "Sömlös infrastrukturhantering"
+          "Ingen inlåsning",
+          "Välj det du behöver",
+          "Infra som kod med GitHub-synk"
         ]
       },
       "security": {
@@ -252,7 +252,7 @@
         "description": "Enterprise-säkerhet som standard",
         "items": [
           "OWASP-standarder",
-          "Säker nätverksinferens",
+          "Säker lokal inferens",
           "Ingen datalagring"
         ]
       },
@@ -268,18 +268,18 @@
     },
     "cta": {
       "title": "Redo att Börja Bygga?",
-      "description": "Gå med i den växande gemenskapen av utvecklare som bygger framtidens AI med Berget",
-      "getStarted": "Kom Igång",
+      "description": "Gå med i communityn av utvecklare som bygger framtidens AI med Berget.",
+      "getStarted": "Kom igång",
       "viewDocs": "Se Dokumentation"
     }
   },
   "pricing": {
     "title": "Enkla, Transparenta Priser",
-    "description": "Börja smått och väx med dina behov",
+    "description": "Börja litet och väx med dina behov",
     "section": {
       "title": "Planer för Alla Behov",
       "description": "Välj den plan som passar dig bäst",
-      "viewPricing": "Se Fullständig Prissättning"
+      "viewPricing": "Se fullständig prislista"
     },
     "tiers": {
       "payg": {
@@ -308,7 +308,7 @@
       },
       "developer": {
         "name": "Developer",
-        "description": "Väx din verksamhet",
+        "description": "Väx med behov",
         "price": "€890",
         "features": [
           "200€ token-krediter",
@@ -326,8 +326,8 @@
           "Anpassad infrastruktur",
           "Inga hastighetsbegränsningar",
           "Dedikerad support",
-          "SLA-garantier",
-          "Utbildning & onboarding"
+          "SLA garanti",
+          "Utbilding & onboarding"
         ]
       }
     },
@@ -340,10 +340,10 @@
     "comparisonTooltip": "Baserat på offentlig prissättning"
   },
   "footer": {
-    "description": "Vårt uppdrag är att tillhandahålla de mest pålitliga, värdefulla och hållbara AI-molntjänsterna i Europa.",
+    "description": "Vårt mision är att tillhandahålla de mest pålitliga, smidigaste och hållbara AI-molntjänsterna i Europa.",
     "product": {
       "title": "Produkt",
-      "features": "Funktioner",
+      "features": "Funktionalitet",
       "pricing": "Priser",
       "documentation": "Dokumentation",
       "security": "Säkerhet"
@@ -363,12 +363,12 @@
       "contact": "Kontakt"
     },
     "legal": {
-      "title": "Juridiskt",
+      "title": "Juridik",
       "privacy": "Integritet",
-      "terms": "Villkor",
-      "security": "Säkerhet",
+      "terms": "Allmäna villkor",
+      "security": "DPA",
       "acceptableUse": "Användningsvillkor",
-      "sla": "Servicenivåavtal"
+      "sla": "SLA"
     },
     "copyright": "© 2025 Berget AI. Med ensamrätt.",
     "status": "Status",

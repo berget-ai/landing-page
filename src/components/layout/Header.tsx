@@ -41,14 +41,14 @@ export function Header() {
           </Link>
 
           {/* Documentation */}
-          <Link to="/docs" className="text-sm text-white/60 hover:text-white transition-colors">
-            {t('header.navigation.documentation')}
+          <Link to="https://api.berget.ai" className="text-sm text-white/60 hover:text-white transition-colors">
+            {t('header.navigation.api')}
           </Link>
 
-          {/* Blog */}
+          {/* Blog 
           <Link to="/blog" className="text-sm text-white/60 hover:text-white transition-colors">
             {t('header.navigation.blog')}
-          </Link>
+          </Link>*/}
 
           <LanguageSwitcher />
 
@@ -112,11 +112,11 @@ export function Header() {
                     {t('header.navigation.pricing')}
                   </Link>
                   <Link 
-                    to="/docs" 
+                    to="https://api.berget.ai" 
                     className="text-2xl text-white hover:text-white/80 transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    {t('header.navigation.documentation')}
+                    {t('header.navigation.api')}
                   </Link>
                   <Link 
                     to="/blog" 
