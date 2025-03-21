@@ -278,7 +278,7 @@
     "section": {
       "title": "Planer för Alla Behov",
       "description": "Välj den plan som passar dig bäst",
-      "viewPricing": "Se Fullständig Prissättning"
+      "viewPricing": "Se fullständig prislista"
     },
     "tiers": {
       "payg": {
@@ -286,11 +286,11 @@
         "description": "API-åtkomst",
         "price": "€0",
         "features": [
-          "Pay per token",
-          "Some Rate limit",
-          "Payg compute",
+          "Betala Pay per token",
+          "Rate limit",
+          "PAYG CPU och minne",
           "Community support",
-          "List prices"
+          "Listpriser"
         ]
       },
       "starter": {
@@ -298,11 +298,11 @@
         "description": "Börja bygga",
         "price": "€250",
         "features": [
-          "100€ token credits",
-          "Less rate limits",
+          "100€ i token credits",
+          "Mindre rate limits",
           "1 Controller, 3 Workers",
-          "Email support",
-          "10% Discount"
+          "Email-support",
+          "10% Paketrabatt"
         ]
       },
       "developer": {
@@ -310,11 +310,11 @@
         "description": "Väx med behov",
         "price": "€890",
         "features": [
-          "200€ token credits",
-          "No rate limits",
+          "200€ i token credits",
+          "Ingen rate limits",
           "3 Controllers, 6 Workers",
-          "Priority support",
-          "12% discount"
+          "VIP support",
+          "12% Paketrabatt"
         ]
       },
       "enterprise": {
@@ -322,11 +322,11 @@
         "description": "Anpassade lösningar",
         "price": "Kontakta oss",
         "features": [
-          "Custom infrastructure",
-          "No rate limits",
-          "Dedicated support",
-          "SLA guarantees",
-          "Training & onboarding"
+          "Anpassad setup",
+          "Inga rate limits",
+          "Dedikerad support",
+          "SLA garanti",
+          "Utbilding & onboarding"
         ]
       }
     },
@@ -342,7 +342,7 @@
     "description": "Vårt mision är att tillhandahålla de mest pålitliga, smidigaste och hållbara AI-molntjänsterna i Europa.",
     "product": {
       "title": "Produkt",
-      "features": "Funktioner",
+      "features": "Funktionalitet",
       "pricing": "Priser",
       "documentation": "Dokumentation",
       "security": "Säkerhet"
@@ -362,12 +362,12 @@
       "contact": "Kontakt"
     },
     "legal": {
-      "title": "Juridiskt",
+      "title": "Juridik",
       "privacy": "Integritet",
-      "terms": "Villkor",
-      "security": "Säkerhet",
+      "terms": "Allmäna villkor",
+      "security": "DPA",
       "acceptableUse": "Användningsvillkor",
-      "sla": "Servicenivåavtal"
+      "sla": "SLA"
     },
     "copyright": "© 2025 Berget AI. Med ensamrätt.",
     "status": "Status",
