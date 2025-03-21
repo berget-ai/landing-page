@@ -1,62 +1,76 @@
 # Acceptable Use Policy
 
-> Welcome to Berget's Acceptable Use Policy. This document outlines how you can use our platform safely and legally. We've designed these guidelines to protect all users while enabling innovation. Key highlights include: permitted uses of our AI infrastructure, security requirements, and specific guidance on high-risk AI applications. We're committed to responsible AI development and provide clear frameworks for both minimal and high-risk use cases.
+**Acceptable Use Policy for Berget AI AB**
 
-## Overview
+**Introduction** This Acceptable Use Policy ("Policy") sets forth the standards of use for the Services ("Service") provided by Berget AI AB (“Berget”). By accessing or using the Service, you agree to comply with this Policy. Failure to adhere to this Policy may result in suspension or termination of access to the Service, as well as other actions deemed appropriate by Berget. The Customer must ensure that all Users comply with this Policy.
 
-1\. Scope. This acceptable use policy (“AUP”) is an integral part of the Agreement between Berget and the Customer. The Customer must ensure that all Users comply with this AUP.
-
-2\. User Instructions. The Customer and the Users must follow all user instructions concerning the use of the Service made available to them by Berget.
-
-3\. Customer’s Legal Compliance. You must comply with all laws and regulations applicable to you and your use of the Service. Moreover, you undertake to fulfil your contractual obligations towards third parties to the extent such obligations relate to your use of the Service (for example, you have to comply with the licence terms of any third-party software you use within the Service).
-
-4\. Illegal, Harmful, Offensive or Disruptive Use of Services. You are not allowed to use the Service for any illegal, harmful, offensive or disruptive purposes (which will be deemed by Berget in its sole discretion). If you are uncertain whether or not your intended use of the Service could be deemed illegal, offensive or disruptive, you can contact Berget in advance and request permission for your intended use.
+**1\. Prohibited Activities** You are not allowed to use the Service for any illegal, harmful, offensive or disruptive purposes (which will be deemed by Berget in its sole discretion). If you are uncertain whether or not your intended use of the Service could be deemed illegal, offensive or disruptive, you can contact Berget in advance and request permission for your intended use.
 
 Below are examples of actions and content which Berget considers to be illegal, harmful, offensive or disruptive (the list is not exhaustive):
 
-A. Illegal, Harmful or Fraudulent Activities
+1.1 **Engage in Illegal Activity**: Perform or promote any activity that violates applicable laws, regulations, or legal rights of others.
 
-- Use of Service to engage in, promote or encourage any illegal or fraudulent conduct or activities.
-- Use of Service to store or disseminate terrorist content.
-- Sale or promotion of illegal material, substances or products.
-- Unauthorised access to, or attempting to access, systems, networks or data.
-- Use of a third-party’s user account or computing power without the owner’s authorisation.
-- Collection of user information such as email addresses without the consent of the person identified (phishing).
-- Monitoring of network traffic or data without authorisation.
-- Content or technology that may damage, interfere with, intercept, or expropriate any system, program or data, including viruses, trojan horses, ransomware, spyware, malware, etc.
+1.2 **Distribute Harmful Content**: Transmit or store content that is harmful, abusive, defamatory, fraudulent, or deceptive.
 
-B. Infringing Content or Use
+1.3 **Violate Intellectual Property Rights**: Upload, transmit, or store content that infringes on the intellectual property rights of any individual or entity without proper authorization.
 
-- Use of Service in a manner that violates, infringes or misappropriates trade secrets, copyrights, trademarks, patents, or any other intellectual property rights, or contributes to the said violations, including storage or transfer of, or linking to, such infringing content or sale or promotion of such infringing products or materials.
+1.4 **Conduct Malicious Activities**: Deploy malware, viruses, or other harmful software or attempt to gain unauthorized access to networks, systems, or data.
 
-C. Offensive Content
+1.5 **Engage in Spam or Phishing**: Distribute unsolicited bulk messages or engage in phishing, fraud, or other deceptive practices.
 
-- Storage or transfer of, or linking to, content that is harassing or excessively violent, threatening with violence, or inciting to hate, discrimination or violence.
-- Storage or transfer of, or linking to child pornography or content containing non-consensual sexual acts.
+1.6 **Exploit the Service**: Use the Service to build or deploy applications that facilitate illegal activities or violate the rights of others.
 
-D. Disruptive Use of Services
+1.7 **Undermine System Integrity**: Conduct activities that compromise the security, performance, or availability of the Service or related infrastructure. This includes intentional or careless use of the Service in excess of a typically expected server load, such as continuously high CPU or I/O use rate,
 
-- You may use, investigate, and modify the operating environment of the Service only within the limits allowed by the user instructions.
-- You may not use the Service in any way that causes security risks to the Service or interferes with the operation of the Service, including
-- intentional or careless use of the Service in excess of a typically expected server load, such as continuously high CPU or I/O use rate,
-  - intentional or careless configuration of servers that enables unauthorised third-party access or otherwise lacks adequate security requirements,
-  - measures aimed to circumvent, or interfere with the limitations or restrictions in the Service, or monitoring, controlling or charging of the Service by Berget.
-- You are not permitted to mine any cryptocurrencies without obtaining prior written approval from Berget.
+* intentional or careless configuration of servers that enables unauthorised third-party access or otherwise lacks adequate security requirements,  
+* measures aimed to circumvent, or interfere with the limitations or restrictions in the Service, or monitoring, controlling or charging of the Service by Berget.
 
-E. Mass Emailing or Spamming
+1.8 **Harmful use of AI:** Development or deployment of AI applications that break the EU AI act regulations
 
-- Sending, distributing, publishing or facilitating the sending of unsolicited mass email or other messages.
-- If you wish to use the Service for sending of bulk e-mail or other mass communications, you may do so only after receiving Berget’s written approval for the planned activity.
+* “Unacceptable” risk level Use Cases are not allowed on Berget   
+* “High” risk level use cases require specific controls (security, transparency, data, logging) to be in place \- you are welcome to contact Berget for guidance on how to set this up  
+* “Limited” and “Minimal” risk levels are permitted as long as you comply with what is stipulated in regulations on transparency towards end users, GDPR and other items
 
-F. Harmful use of AI
+## 2\. User Responsibilities
 
-- Development or deployment of AI applications that break the EU AI act regulations
-  - “Unacceptable” risk level Use Cases are not allowed on Berget
-  - “High” risk level use cases require specific controls (security, transparency, data, logging) to be in place \- you are welcome to contact Berget for guidance on how to set this up
-  - “Limited” and “Minimal” risk levels are permitted as long as you comply with what is stipulated in regulations on transparency towards end users, GDPR and other items
+2.1 **Compliance with Laws**: You are responsible for ensuring that your use of the Service complies with all applicable laws and regulations. Moreover, you undertake to fulfil your contractual obligations towards third parties to the extent such obligations relate to your use of the Service (for example, you have to comply with the licence terms of any third-party software you use within the Service).
 
-5\. Enforcement
+2.2 **Content Ownership and Permissions**: Ensure that you own or have obtained all necessary rights and permissions for any content you use with the Service.
 
-5.1. We reserve the right to investigate any violations of these Terms and the AUP and to take legal action to enforce our rights. We may report any suspected criminal activity to the law enforcement officials. If you, a User, or anyone else – with or without your authorisation – uses the Service in violation of this AUP, we have the right to suspend your Account, terminate the Agreement, or remove or disable access to the Customer Data in accordance with Section 13 of the main body of the Terms of Service.
+2.3 **Account Security**: Maintain the confidentiality of your account credentials and promptly notify Berget of any unauthorized access or suspicious activity.
 
-5.2. Berget investigates all alleged violations of the AUP and enforcing these Terms where necessary. If we take action against you pursuant to Section 13 of the main body of the Terms of Service (e.g. suspended your Account), you have the right to lodge a complaint to our internal complaint handling system via email to DSA-complaints@Berget.ai. If, despite your complaint, our internal complaint handling function upholds the restrictive measures taken against you, then you will have the right to commence arbitration proceedings against us in accordance with Section 30 of the main body of the Terms of Service.
+2.4 **Resource Usage**: Use the Service in a manner consistent with its intended purpose and refrain from excessive use that could disrupt service for others.
+
+## 3\. Monitoring and Enforcement
+
+3.1 **Monitoring**: Berget reserves the right to monitor usage of the Service to ensure compliance with this Policy.
+
+3.2 **Investigation**: In cases of suspected violations, Berget may investigate and take appropriate action, including suspending or terminating your access to the Service.
+
+3.3 **Cooperation**: You agree to cooperate with Berget during investigations into potential violations of this Policy.
+
+## 4\. Consequences of Violations
+
+4.1 **Suspension or Termination**: Violations of this Policy may result in the suspension or termination of your access to the Service without prior notice. Berget investigates all alleged violations of the AUP and enforcing these Terms where necessary. If we take action against you pursuant to Section 13 of the main body of the Terms of Service (e.g. suspended your Account), you have the right to lodge a complaint to our internal complaint handling system via email to complaints@berget.ai. If, despite your complaint, our internal complaint handling function upholds the restrictive measures taken against you, then you will have the right to commence arbitration proceedings against us in accordance with Section 30 of the main body of the Terms of Service.
+
+4.2 **Legal Action**: Berget reserves the right to seek legal remedies for any harm caused by violations of this Policy.
+
+4.3 **Liability for Damages**: You may be held liable for any damages incurred by Berget or its users due to your violation of this Policy.
+
+The Customer is responsible for ensuring that all users of the service, including end-users, comply with this policy. In the event of a violation of this policy that results in harm or disruptions to other customers, the Customer shall indemnify Berget for reasonable costs and damages
+
+## 5\. Reporting Violations
+
+If you become aware of any violations of this Policy, please report them promptly to abuse@berget.ai. Berget will take reasonable steps to investigate and address reported violations.
+
+## 6\. Amendments to the Policy
+
+Berget reserves the right to modify this Policy at any time. Changes will be effective upon posting to www.berget.ai. Continued use of the Service after such changes constitutes your acceptance of the revised Policy.
+
+## 7\. Contact Information
+
+If you have any questions or concerns about this Policy, please contact us at: abuse@berget.ai
+
+**Acknowledgment**
+
+By using the Service, you acknowledge that you have read, understood, and agree to comply with this Acceptable Use Policy.
