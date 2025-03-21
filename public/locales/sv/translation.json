@@ -472,6 +472,27 @@
       }
     },
     "discoverMore": "Upptäck Mer"
+  },
+  "partnerQuotes": {
+    "title": "Why do we need Berget?",
+    "description": "We asked some of Sweden's leading experts in law and data security about why a Swedish cloud service for AI and sensitive data handling is needed.",
+    "quotes": [
+      {
+        "name": "Jim Runsten",
+        "title": "CEO Synch Law Firm",
+        "quote": "With a Swedish cloud provider, administrative work and regulatory risk decrease as there is no third-country transfer, eliminating the need to stay updated with third-country transfer regulations, adequacy decisions, or conduct impact assessments. Furthermore, you get a provider that must comply with the same legislation that applies to you, meaning much of the documentation will be prepared by the provider in a way that's already adapted to Swedish conditions."
+      },
+      {
+        "name": "Ann-Marie Eklund Löwinder",
+        "title": "one of Sweden's leading IT security experts",
+        "quote": "Berget's approach with reused hardware is smart from both a sustainability and security perspective. By building the system with the assumption that things can break, vulnerability is reduced. Many of today's cyber attacks exploit the fact that many servers remain untouched for too long without important security updates."
+      },
+      {
+        "name": "André Catry",
+        "title": "Senior Advisor in IT/Information Security and Cyber Risk, Kahn Pedersen Law Firm",
+        "quote": "Data is today one of the most valuable assets that exists. It's a reasonable business decision to train AI models in services that don't use your data to train someone else's models."
+      }
+    ]
   }
 }
 }
