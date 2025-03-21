@@ -22,6 +22,7 @@ import ContactPage from './pages/contact'
 import { html as termsHtml } from '@/pages/terms.md'
 import { html as privacyHtml } from '@/pages/privacy.md'
 import { html as acceptableUseHtml } from '@/pages/acceptable-use.md'
+import { html as dpaHtml } from '@/pages/dpa.md'
 import { html as slaHtml } from '@/pages/sla.md'
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
           <Route path="/privacy" element={<MarkdownPage html={privacyHtml} />} />
           <Route path="/acceptable-use" element={<MarkdownPage html={acceptableUseHtml} />} />
           <Route path="/sla" element={<MarkdownPage html={slaHtml} />} />
+          <Route path="/dpa" element={<MarkdownPage html={dpaHtml} />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:id" element={<BlogPostPage />} />
         </Routes>

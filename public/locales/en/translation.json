@@ -366,7 +366,8 @@
     },
     "legal": {
       "title": "Legal",
-      "privacy": "DPA",
+      "privacy": "Data Privacy",
+      "dpa" : "DPA",
       "terms": "Terms",
       "security": "Security",
       "acceptableUse": "Acceptable Use",

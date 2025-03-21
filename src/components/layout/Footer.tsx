@@ -15,6 +15,7 @@ const footerLinks = {
   ],
   legal: [
     { key: 'privacy', href: '/privacy' },
+    { key: 'dpa', href: '/dpa' },
     { key: 'terms', href: '/terms' },
     { key: 'acceptableUse', href: '/acceptable-use' },
     { key: 'sla', href: '/sla' },
