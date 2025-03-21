@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button'
 import { LanguageSwitcher } from '../ui/LanguageSwitcher'
 import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'framer-motion'
+import logo from '@/assets/logo.svg'
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -14,8 +15,9 @@ export function Header() {
     <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-lg border-b border-white/5">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center space-x-2">
-          <Link to="/" className="text-xl font-semibold hover:text-white/90 transition-colors">
-            Berget AI
+          <Link to="/" className="flex items-center gap-2 hover:text-white/90 transition-colors">
+            <img src={logo} alt="Berget AI Logo" className="h-8 w-auto" />
+            <span className="text-xl font-semibold">Berget AI</span>
           </Link>
         </div>
 
