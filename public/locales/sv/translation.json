@@ -52,13 +52,13 @@
       "members": {
         "christian": {
           "name": "Christian",
-          "role": "Medgrundare & VD",
+          "role": "Medgrundare & CPTO",
           "bio": "30 års erfarenhet av att hjälpa organisationer med digitalisering och AI, passionerad för AI och mjukvaruutveckling, djupt engagerad i open source och öppen innovation, betrodd rådgivare till regering och offentlig sektor, utmanare och teknikoptimist",
           "image": "/team/christian.jpg"
         },
         "andreas": {
           "name": "Andreas",
-          "role": "Medgrundare & CTO",
+          "role": "Medgrundare & VD",
           "bio": "Var en integrerad del i uppbyggnaden av AI-kapaciteten på Boston Consulting Group (BCG Gamma) där han ledde det nordiska teamet och var globalt ansvarig för \"AI at Scale\"-området, och ledde flera storskaliga data- och AI-transformationer på ledande globala företag",
           "image": "/team/andreas.jpg"
         },
@@ -94,7 +94,8 @@
   "products": {
     "hero": {
       "title": "Bygg framtiden med Berget AI",
-      "description": "Enterprise-anpassad AI-infrastruktur designad för svenska företag. Säker, regelefterlevande och redo att skala."
+      "description": "Enterprise-anpassad AI-infrastruktur designad för svenska företag. Säker, regelefterlevande och redo att skala.",
+      "exploreMore": "Läs mer"
     },
     "serverless": {
       "title": "Serverlös Inferens",
@@ -286,10 +287,11 @@
         "description": "API-åtkomst",
         "price": "€0",
         "features": [
+          "Betala per token",
+          "Vissa hastighetsbegränsningar",
           "Betala per användning",
-          "Serverless inference",
           "Community-support",
-          "Grundläggande övervakning"
+          "Listpriser"
         ]
       },
       "starter": {
@@ -297,10 +299,11 @@
         "description": "Börja bygga",
         "price": "€250",
         "features": [
+          "100€ token-krediter",
+          "Färre hastighetsbegränsningar",
           "1 Controller, 3 Workers",
-          "Vektordatabas ingår",
           "E-postsupport",
-          "Avancerad övervakning"
+          "10% rabatt"
         ]
       },
       "developer": {
@@ -308,10 +311,11 @@
         "description": "Väx din verksamhet",
         "price": "€890",
         "features": [
+          "200€ token-krediter",
+          "Inga hastighetsbegränsningar",
           "3 Controllers, 6 Workers",
-          "Alla databaser ingår",
           "Prioriterad support",
-          "Egen domän"
+          "12% rabatt"
         ]
       },
       "enterprise": {
@@ -320,6 +324,7 @@
         "price": "Kontakta oss",
         "features": [
           "Anpassad infrastruktur",
+          "Inga hastighetsbegränsningar",
           "Dedikerad support",
           "SLA-garantier",
           "Utbildning & onboarding"
