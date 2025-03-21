@@ -40,7 +40,7 @@ export function PartnerQuotes() {
               transition={{ delay: index * 0.1 }}
               className="relative group"
             >
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-[#52B788]/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-green/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative p-8 rounded-2xl bg-white/[0.02] backdrop-blur-sm border border-[#74C69D]/20 h-full flex flex-col">
                 <p className="text-white/80 text-sm leading-relaxed flex-grow">
                   "{quote.quote}"
