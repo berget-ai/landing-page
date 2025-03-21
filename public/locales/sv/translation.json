@@ -222,14 +222,31 @@
     "models": {
       "title": "Våra Modeller",
       "description": "Få tillgång till ett brett urval av kraftfulla öppna modeller för att bygga olika AI-lösningar.",
-      "requestModel": "Önska en Modell"
-    },
-    "cta": {
-      "title": "Redo att Börja Bygga?",
-      "description": "Gå med i communityn av utvecklare som bygger framtidens AI med Berget.",
-      "getStarted": "Kom Igång",
-      "contactSales": "Kontakta oss"
-    }
+      "requestModel": "Önska en Modell",
+      "viewDocs": "Se Modelldokumentation",
+      "comprehensive": {
+        "title": "Omfattande Modellutbud",
+        "point1": "Brett urval av modelltyper inklusive instruct, re-rerank och moderationsmodeller",
+        "point2": "Optimerade för agentbaserade applikationer och komplexa AI-arbetsflöden",
+        "point3": "Stöd för flera modaliteter: text, bild, tal-till-text och text-till-tal"
+      },
+      "table": {
+        "model": "Modell",
+        "type": "Typ",
+        "context": "Kontext",
+        "status": "Status"
+      },
+      "types": {
+        "text-generation": "Textgenerering",
+        "speech-to-text": "Tal till Text",
+        "image-generation": "Bildgenerering",
+        "embedding": "Inbäddning",
+        "rerank": "Omrangering"
+      },
+      "status": {
+        "available": "Tillgänglig",
+        "coming-soon": "Kommer Snart"
+      }
   },
   "developers": {
     "hero": {
@@ -456,4 +473,5 @@
     },
     "discoverMore": "Upptäck Mer"
   }
+}
 }

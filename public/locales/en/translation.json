@@ -222,15 +222,32 @@
     "models": {
       "title": "Our Models",
       "description": "Access a broad selection of powerful open models to build diverse AI solutions.",
-      "requestModel": "Request a Model"
+      "requestModel": "Request a Model",
+      "viewDocs": "View Model Documentation",
+      "comprehensive": {
+        "title": "Comprehensive Model Selection",
+        "point1": "Broad selection of model types including instruct, re-rerank, and moderation models",
+        "point2": "Optimized for agentic applications and complex AI workflows",
+        "point3": "Support for multiple modalities: text, image, speech-to-text, and text-to-speech"
+      },
+      "table": {
+        "model": "Model",
+        "type": "Type",
+        "context": "Context",
+        "status": "Status"
+      },
+      "types": {
+        "text-generation": "Text Generation",
+        "speech-to-text": "Speech to Text",
+        "image-generation": "Image Generation",
+        "embedding": "Embedding",
+        "rerank": "Rerank"
+      },
+      "status": {
+        "available": "Available",
+        "coming-soon": "Coming Soon"
+      }
     },
-    "cta": {
-      "title": "Ready to Start Building?",
-      "description": "Join the growing community of developers building the future of AI with Berget.",
-      "getStarted": "Get Started",
-      "contactSales": "Contact Sales"
-    }
-  },
   "developers": {
     "hero": {
       "title": "Built by Developers for Developers",
@@ -480,4 +497,5 @@
       }
     ]
   }
+}
 }
