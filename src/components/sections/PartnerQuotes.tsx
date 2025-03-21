@@ -28,7 +28,10 @@ export function PartnerQuotes() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {(t<Quote[]>('partnerQuotes.quotes', { returnObjects: true }) || []).map((quote: Quote, index: number) => (
+          {(Array.isArray(t('partnerQuotes.quotes', { returnObjects: true })) 
+            ? t('partnerQuotes.quotes', { returnObjects: true }) as Quote[]
+            : [] as Quote[]
+          ).map((quote: Quote, index: number) => (
             <motion.div
               key={quote.name}
               initial={{ opacity: 0, y: 20 }}
