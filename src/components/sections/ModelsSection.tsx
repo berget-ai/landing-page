@@ -10,6 +10,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
+import { useTranslation } from 'react-i18next'
 
 const models = [
   {
@@ -71,6 +72,8 @@ const models = [
 ]
 
 export function ModelsSection() {
+  const { t } = useTranslation()
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -78,39 +81,39 @@ export function ModelsSection() {
       viewport={{ once: true }}
       className="relative group"
     >
-      <div className="absolute inset-0 rounded-3xl bg-muted/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      <div className="relative p-8 rounded-3xl border border-white/10 h-full">
+      <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-[#52B788]/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="relative p-8 rounded-3xl border border-[#74C69D]/20 h-full">
         <div className="w-12 h-12 rounded-2xl bg-muted flex items-center justify-center mb-6">
           <Bot className="w-6 h-6" />
         </div>
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-2xl font-medium">Our Models</h2>
+          <h2 className="text-2xl font-medium">{t('models.title')}</h2>
           <Button asChild variant="ghost" size="sm" className="group">
             <Link to="/docs/models">
-              View Model Documentation
+              {t('models.viewDocs')}
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </Button>
         </div>
         <p className="text-white/60 mb-6">
-          We aim to provide access to the most powerful and popular open models you need to power your AI applications.
+          {t('models.description')}
         </p>
 
         <div className="space-y-6">
           <div className="space-y-2">
-            <h3 className="text-lg font-medium">Comprehensive Model Selection</h3>
+            <h3 className="text-lg font-medium">{t('models.comprehensive.title')}</h3>
             <ul className="space-y-2">
               <li className="flex items-center gap-3">
                 <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
-                <span>Broad selection of model types including instruct, re-rerank, and moderation models</span>
+                <span>{t('models.comprehensive.point1')}</span>
               </li>
               <li className="flex items-center gap-3">
                 <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
-                <span>Optimized for agentic applications and complex AI workflows</span>
+                <span>{t('models.comprehensive.point2')}</span>
               </li>
               <li className="flex items-center gap-3">
                 <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
-                <span>Support for multiple modalities: text, image, speech-to-text, and text-to-speech</span>
+                <span>{t('models.comprehensive.point3')}</span>
               </li>
             </ul>
           </div>
@@ -120,17 +123,17 @@ export function ModelsSection() {
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>Model</TableHead>
-                <TableHead>Type</TableHead>
-                <TableHead>Context</TableHead>
-                <TableHead>Status</TableHead>
+                <TableHead>{t('models.table.model')}</TableHead>
+                <TableHead>{t('models.table.type')}</TableHead>
+                <TableHead>{t('models.table.context')}</TableHead>
+                <TableHead>{t('models.table.status')}</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {models.map((model) => (
                 <TableRow key={model.name}>
                   <TableCell className="font-medium">{model.name}</TableCell>
-                  <TableCell>{model.type}</TableCell>
+                  <TableCell>{t(`models.types.${model.type.toLowerCase().replace(/\s+/g, '-')}`)}</TableCell>
                   <TableCell>{model.context}</TableCell>
                   <TableCell>
                     <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs ${
@@ -138,7 +141,7 @@ export function ModelsSection() {
                         ? 'bg-primary/20 text-primary'
                         : 'bg-muted text-muted-foreground'
                     }`}>
-                      {model.status}
+                      {t(`models.status.${model.status.toLowerCase().replace(/\s+/g, '-')}`)}
                     </span>
                   </TableCell>
                 </TableRow>

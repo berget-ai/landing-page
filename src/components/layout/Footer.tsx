@@ -2,6 +2,7 @@ import { Github, Linkedin, Twitter } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
+import logo from '@/assets/logo.svg'
 
 const footerLinks = {
   product: [
@@ -29,7 +30,10 @@ export function Footer() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           <div>
-            <div className="text-xl font-semibold mb-4">Berget AI</div>
+            <div className="flex items-center gap-2 mb-4">
+              <img src={logo} alt="Berget AI Logo" className="h-8 w-auto" />
+              <span className="text-xl font-semibold">Berget AI</span>
+            </div>
             <p className="text-sm text-white/60 mb-4">
               {t('footer.description')}
             </p>

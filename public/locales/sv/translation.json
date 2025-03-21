@@ -222,13 +222,31 @@
     "models": {
       "title": "Våra Modeller",
       "description": "Få tillgång till ett brett urval av kraftfulla öppna modeller för att bygga olika AI-lösningar.",
-      "requestModel": "Önska en Modell"
-    },
-    "cta": {
-      "title": "Redo att Börja Bygga?",
-      "description": "Gå med i communityn av utvecklare som bygger framtidens AI med Berget.",
-      "getStarted": "Kom Igång",
-      "contactSales": "Kontakta oss"
+      "requestModel": "Önska en Modell",
+      "viewDocs": "Se Modelldokumentation",
+      "comprehensive": {
+        "title": "Omfattande Modellutbud",
+        "point1": "Brett urval av modelltyper inklusive instruct, re-rerank och moderationsmodeller",
+        "point2": "Optimerade för agentbaserade applikationer och komplexa AI-arbetsflöden",
+        "point3": "Stöd för flera modaliteter: text, bild, tal-till-text och text-till-tal"
+      },
+      "table": {
+        "model": "Modell",
+        "type": "Typ",
+        "context": "Kontext",
+        "status": "Status"
+      },
+      "types": {
+        "text-generation": "Textgenerering",
+        "speech-to-text": "Tal till Text",
+        "image-generation": "Bildgenerering",
+        "embedding": "Inbäddning",
+        "rerank": "Omrangering"
+      },
+      "status": {
+        "available": "Tillgänglig",
+        "coming-soon": "Kommer Snart"
+      }
     }
   },
   "developers": {
@@ -455,5 +473,26 @@
       }
     },
     "discoverMore": "Upptäck Mer"
+  },
+  "partnerQuotes": {
+    "title": "Varför behöver vi Berget?",
+    "description": "Vi frågade några av Sveriges ledande experter inom juridik och datasäkerhet om varför en svensk molntjänst för AI och hantering av känslig data behövs.",
+    "quotes": [
+      {
+        "name": "Jim Runsten",
+        "title": "VD Synch Advokatbyrå",
+        "quote": "Med en svensk molnleverantör minskar administrativt arbete och regulatorisk risk eftersom det inte finns någon tredjelandsöverföring, vilket eliminerar behovet av att hålla sig uppdaterad med regler för tredjelandsöverföring, adekvansbeslutet eller genomföra konsekvensbedömningar. Dessutom får du en leverantör som måste följa samma lagstiftning som gäller för dig, vilket innebär att mycket av dokumentationen kommer att förberedas av leverantören på ett sätt som redan är anpassat till svenska förhållanden."
+      },
+      {
+        "name": "Ann-Marie Eklund Löwinder",
+        "title": "en av Sveriges ledande IT-säkerhetsexperter",
+        "quote": "Bergets tillvägagångssätt med återanvänd hårdvara är smart ur både hållbarhets- och säkerhetsperspektiv. Genom att bygga systemet med antagandet att saker kan gå sönder minskas sårbarheten. Många av dagens cyberattacker utnyttjar det faktum att många servrar förblir orörda för länge utan viktiga säkerhetsuppdateringar."
+      },
+      {
+        "name": "André Catry",
+        "title": "Senior rådgivare inom IT/informationssäkerhet och cyberrisk, Kahn Pedersen Advokatbyrå",
+        "quote": "Data är idag en av de mest värdefulla tillgångarna som finns. Det är ett rimligt affärsbeslut att träna AI-modeller i tjänster som inte använder din data för att träna någon annans modeller."
+      }
+    ]
   }
 }
