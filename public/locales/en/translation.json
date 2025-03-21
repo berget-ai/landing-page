@@ -247,7 +247,8 @@
         "available": "Available",
         "coming-soon": "Coming Soon"
       }
-    },
+    }
+  },
   "developers": {
     "hero": {
       "title": "Built by Developers for Developers",
