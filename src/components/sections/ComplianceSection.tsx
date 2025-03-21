@@ -46,7 +46,10 @@ export function ComplianceSection() {
               <h3 className="text-xl font-medium mb-4">{t('compliance.regulations.gdpr.name')}</h3>
               <p className="text-white/60 mb-6">{t('compliance.regulations.gdpr.description')}</p>
               <ul className="space-y-3">
-                {(t('compliance.regulations.gdpr.benefits', { returnObjects: true }) as string[]).map((benefit) => (
+                {(Array.isArray(t('compliance.regulations.gdpr.benefits', { returnObjects: true }))
+                  ? t('compliance.regulations.gdpr.benefits', { returnObjects: true }) as string[]
+                  : [] as string[]
+                ).map((benefit) => (
                   <li key={benefit} className="flex items-center gap-3">
                     <div className="w-6 h-6 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center">
                       <div className="w-1.5 h-1.5 rounded-full bg-[#52B788]" />
@@ -74,7 +77,10 @@ export function ComplianceSection() {
               <h3 className="text-xl font-medium mb-4">{t('compliance.regulations.nis2.name')}</h3>
               <p className="text-white/60 mb-6">{t('compliance.regulations.nis2.description')}</p>
               <ul className="space-y-3">
-                {(t('compliance.regulations.nis2.benefits', { returnObjects: true }) as string[]).map((benefit) => (
+                {(Array.isArray(t('compliance.regulations.nis2.benefits', { returnObjects: true }))
+                  ? t('compliance.regulations.nis2.benefits', { returnObjects: true }) as string[]
+                  : [] as string[]
+                ).map((benefit) => (
                   <li key={benefit} className="flex items-center gap-3">
                     <div className="w-6 h-6 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center">
                       <div className="w-1.5 h-1.5 rounded-full bg-[#52B788]" />
@@ -102,7 +108,10 @@ export function ComplianceSection() {
               <h3 className="text-xl font-medium mb-4">{t('compliance.regulations.schrems2.name')}</h3>
               <p className="text-white/60 mb-6">{t('compliance.regulations.schrems2.description')}</p>
               <ul className="space-y-3">
-                {(t('compliance.regulations.schrems2.benefits', { returnObjects: true }) as string[]).map((benefit) => (
+                {(Array.isArray(t('compliance.regulations.schrems2.benefits', { returnObjects: true }))
+                  ? t('compliance.regulations.schrems2.benefits', { returnObjects: true }) as string[]
+                  : [] as string[]
+                ).map((benefit) => (
                   <li key={benefit} className="flex items-center gap-3">
                     <div className="w-6 h-6 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center">
                       <div className="w-1.5 h-1.5 rounded-full bg-[#52B788]" />
