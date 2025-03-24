@@ -33,39 +33,40 @@
         "title": "Integrity & Privacy",
         "description": "We think integrity, data privacy and regulations are good as long as it ensures a level playing field, fosters simplicity over complexity and ensures openness and broad participation. We want to be a key enabler for European organizations and unlock AI innovations in a safe and responsible way."
       }
-    },
-    "promises": {
-      "title": "Our Customer Promises",
-      "description": "What you can expect when working with us",
-      "list": [
-        "An easy way to build AI applications",
-        "Affordable and fair, no lock-ins, no hidden fees",
-        "A simple way to be compliant to key regulatory frameworks",
-        "Developer friendly, built by developers for developers",
-        "In constant state of innovation and listen to what our customers need",
-        "Contributing to positive and sustainable societal progress"
-      ]
-    },
-    "team": {
-      "title": "Our Team",
-      "description": "We are entrepreneurs and founders with decades of experience in technology and AI",
-      "members": {
-        "christian": {
-          "name": "Christian Landgren",
-          "role": "Co-founder & CPTO",
-          "bio": "30 years of experience helping organizations with digitalization and AI, passionate about AI and software development, deeply engaged in open source and open innovations, trusted advisor to government and public sector, challenger and technology optimist",
-          "image": "/team/christian.png"
+    }
+  },
+  "promises": {
+    "title": "Our Customer Promises",
+    "description": "What you can expect when working with us",
+    "list": [
+      "An easy way to build AI applications",
+      "Affordable and fair, no lock-ins, no hidden fees",
+      "A simple way to be compliant to key regulatory frameworks",
+      "Developer friendly, built by developers for developers",
+      "In constant state of innovation and listen to what our customers need",
+      "Contributing to positive and sustainable societal progress"
+    ]
+  },
+  "team": {
+    "title": "Our Team",
+    "description": "We are entrepreneurs and founders with decades of experience in technology and AI",
+    "members": {
+      "christian": {
+        "name": "Christian Landgren",
+        "role": "Co-founder & CPTO",
+        "bio": "30 years of experience helping organizations with digitalization and AI, passionate about AI and software development, deeply engaged in open source and open innovations, trusted advisor to government and public sector, challenger and technology optimist",
+        "image": "/team/christian.png"
         },
-        "andreas": {
-          "name": "Andreas Lundmark",
-          "role": "Co-founder & CEO",
-          "bio": "Andreas was an integral part of building the AI capabilities at Boston Consulting Group (BCG Gamma) where he led the Nordic team and was globally responsible for the \"AI at Scale\" topic, and led multiple large scale data and AI transformations at leading global brands",
-          "image": "/team/andreas.png"
+      "andreas": {
+        "name": "Andreas Lundmark",
+        "role": "Co-founder & CEO",
+        "bio": "Andreas was an integral part of building the AI capabilities at Boston Consulting Group (BCG Gamma) where he led the Nordic team and was globally responsible for the \"AI at Scale\" topic, and led multiple large scale data and AI transformations at leading global brands",
+        "image": "/team/andreas.png"
         },
-        "john": {
-          "name": "John Angelmo",
-          "role": "Server Infrastructure",
-          "bio": "A networking and kubernetes wizard with extensive experience in building and managing large-scale Kubernetes based infrastructure",
+      "john": {
+        "name": "John Angelmo",
+        "role": "Server Infrastructure",
+        "bio": "A networking and kubernetes wizard with extensive experience in building and managing large-scale Kubernetes based infrastructure",
           "image": "/team/john.png"
         },
         "johan": {
@@ -75,8 +76,7 @@
           "image": "/team/johan.jpg"
         }
       }
-    }
-  },
+    },
   "header": {
     "navigation": {
       "products": "Products",
@@ -218,7 +218,8 @@
           ]
         }
       }
-    },
+    }
+  },
     "models": {
       "title": "Our Models",
       "description": "Access a broad selection of powerful open models to build diverse AI solutions.",
@@ -247,8 +248,7 @@
         "available": "Available",
         "coming-soon": "Coming Soon"
       }
-    }
-  },
+    },
   "developers": {
     "hero": {
       "title": "Built by Developers for Developers",
@@ -497,5 +497,37 @@
         "quote": "Data is today one of the most valuable assets that exists. It's a reasonable business decision to train AI models in services that don't use your data to train someone else's models."
       }
     ]
+  },
+  "contact": {
+    "hero": {
+      "title": "Contact Us",
+      "description": "Have questions about Berget AI? Our team is here to help.",
+      "getInTouch": "Get in touch"
+    },
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "namePlaceholder": "Your name",
+      "emailPlaceholder": "you@company.com",
+      "messagePlaceholder": "Your message...",
+      "submit": "Send Message",
+      "sending": "Sending..."
+    },
+    "team": {
+      "title": "Leadership Team",
+      "cpto": "Co-founder & CPTO",
+      "ceo": "Co-founder & CEO",
+      "emailCpto": "christian@berget.ai",
+      "emailCeo": "andreas@berget.ai"
+    },
+    "success": {
+      "title": "Message sent!",
+      "description": "We'll get back to you as soon as possible."
+    },
+    "error": {
+      "title": "Error sending message",
+      "description": "Please try again later."
+    }
   }
 }

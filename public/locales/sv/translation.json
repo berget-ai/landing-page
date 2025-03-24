@@ -218,7 +218,8 @@
           ]
         }
       }
-    },
+    }
+  },
     "models": {
       "title": "Våra Modeller",
       "description": "Få tillgång till ett brett urval av kraftfulla öppna modeller för att bygga olika AI-lösningar.",
@@ -247,8 +248,7 @@
         "available": "Tillgänglig",
         "coming-soon": "Kommer Snart"
       }
-    }
-  },
+    },
   "developers": {
     "hero": {
       "title": "Byggt av Utvecklare för Utvecklare",
@@ -494,5 +494,37 @@
         "quote": "Data är idag en av de mest värdefulla tillgångarna som finns. Det är ett rimligt affärsbeslut att träna AI-modeller i tjänster som inte använder din data för att träna någon annans modeller."
       }
     ]
+  },
+  "contact": {
+    "hero": {
+      "title": "Kontakta oss",
+      "description": "Har du frågor om Berget AI? Vårt team finns här för att hjälpa.",
+      "getInTouch": "Kontakta oss"
+    },
+    "form": {
+      "name": "Namn",
+      "email": "E-post",
+      "message": "Meddelande",
+      "namePlaceholder": "Ditt namn",
+      "emailPlaceholder": "du@företag.se",
+      "messagePlaceholder": "Ditt meddelande...",
+      "submit": "Skicka meddelande",
+      "sending": "Skickar..."
+    },
+    "team": {
+      "title": "Ledningsgrupp",
+      "cpto": "Medgrundare & CPTO",
+      "ceo": "Medgrundare & VD",
+      "emailCpto": "christian@berget.ai",
+      "emailCeo": "andreas@berget.ai"
+    },
+    "success": {
+      "title": "Meddelande skickat!",
+      "description": "Vi återkommer så snart som möjligt."
+    },
+    "error": {
+      "title": "Fel vid sändning av meddelande",
+      "description": "Vänligen försök igen senare."
+    }
   }
 }

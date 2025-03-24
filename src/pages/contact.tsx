@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Mail, Send } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -5,7 +6,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import { useToast } from '@/hooks/use-toast'
-import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 export default function ContactPage() {
   const [name, setName] = useState('')
@@ -13,6 +14,7 @@ export default function ContactPage() {
   const [message, setMessage] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const { toast } = useToast()
+  const { t } = useTranslation()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -23,8 +25,8 @@ export default function ContactPage() {
       window.location.href = mailtoLink
 
       toast({
-        title: "Message sent!",
-        description: "We'll get back to you as soon as possible.",
+        title: t('contact.success.title'),
+        description: t('contact.success.description'),
       })
 
       setName('')
@@ -32,8 +34,8 @@ export default function ContactPage() {
       setMessage('')
     } catch (error) {
       toast({
-        title: "Error sending message",
-        description: "Please try again later.",
+        title: t('contact.error.title'),
+        description: t('contact.error.description'),
         variant: "destructive",
       })
     } finally {
@@ -52,11 +54,11 @@ export default function ContactPage() {
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-muted text-sm mb-6">
               <Mail className="w-4 h-4" />
-              <span>Get in touch</span>
+              <span>{t('contact.hero.getInTouch')}</span>
             </div>
-            <h1 className="text-4xl font-medium mb-4">Contact Us</h1>
+            <h1 className="text-4xl font-medium mb-4">{t('contact.hero.title')}</h1>
             <p className="text-lg text-white/60">
-              Have questions about Berget AI? Our team is here to help.
+              {t('contact.hero.description')}
             </p>
           </motion.div>
 
@@ -80,7 +82,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="text-xl font-medium">Christian Landgren</h3>
-                    <p className="text-white/60">Co-founder & CPTO</p>
+                    <p className="text-white/60">{t('contact.team.cpto')}</p>
                   </div>
                 </div>
                 <a
@@ -88,7 +90,7 @@ export default function ContactPage() {
                   className="inline-flex items-center gap-2 text-[#52B788] hover:text-[#74C69D] transition-colors"
                 >
                   <Mail className="w-4 h-4" />
-                  christian@berget.ai
+                  {t('contact.team.emailCpto')}
                 </a>
               </div>
             </motion.div>
@@ -112,7 +114,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="text-xl font-medium">Andreas Lundmark</h3>
-                    <p className="text-white/60">Co-founder & CEO</p>
+                    <p className="text-white/60">{t('contact.team.ceo')}</p>
                   </div>
                 </div>
                 <a
@@ -120,7 +122,7 @@ export default function ContactPage() {
                   className="inline-flex items-center gap-2 text-[#52B788] hover:text-[#74C69D] transition-colors"
                 >
                   <Mail className="w-4 h-4" />
-                  andreas@berget.ai
+                  {t('contact.team.emailCeo')}
                 </a>
               </div>
             </motion.div>
@@ -139,11 +141,11 @@ export default function ContactPage() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Name */}
                 <div className="space-y-2">
-                  <Label htmlFor="name">Name</Label>
+                  <Label htmlFor="name">{t('contact.form.name')}</Label>
                   <Input
                     id="name"
                     type="text"
-                    placeholder="Your name"
+                    placeholder={t('contact.form.namePlaceholder')}
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     required
@@ -152,11 +154,11 @@ export default function ContactPage() {
 
                 {/* Email */}
                 <div className="space-y-2">
-                  <Label htmlFor="email">Email</Label>
+                  <Label htmlFor="email">{t('contact.form.email')}</Label>
                   <Input
                     id="email"
                     type="email"
-                    placeholder="you@company.com"
+                    placeholder={t('contact.form.emailPlaceholder')}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
@@ -165,10 +167,10 @@ export default function ContactPage() {
 
                 {/* Message */}
                 <div className="space-y-2">
-                  <Label htmlFor="message">Message</Label>
+                  <Label htmlFor="message">{t('contact.form.message')}</Label>
                   <Textarea
                     id="message"
-                    placeholder="Your message..."
+                    placeholder={t('contact.form.messagePlaceholder')}
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     className="min-h-[150px]"
@@ -183,7 +185,7 @@ export default function ContactPage() {
                   size="lg"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  {isSubmitting ? t('contact.form.sending') : t('contact.form.submit')}
                   <Send className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </form>
