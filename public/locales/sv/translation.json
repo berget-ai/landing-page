@@ -218,7 +218,17 @@
           ]
         }
       }
-    }
+    },
+    "models": {
+      "title": "De mest kraftfulla öppna modellerna",
+      "description": "Modeller för att driva dina agent-baserade applikationer",
+      "requestModel" : "Önska en modell!"
+    },
+    "cta": {
+      "title": "Redo att börja?",
+      "description": "Kom igång och börja bygga med våra APIer redan idag",
+      "getStarted" : "Kom igång"
+    }  
   },
     "models": {
       "title": "Våra Modeller",

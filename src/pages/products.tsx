@@ -395,9 +395,6 @@ export default function ProductsPage() {
               <Button size="lg" asChild>
                 <Link to="/signup">{t('products.cta.getStarted')}</Link>
               </Button>
-              <Button size="lg" variant="secondary" asChild>
-                <Link to="/contact">{t('products.cta.contactSales')}</Link>
-              </Button>
             </div>
           </motion.div>
         </div>

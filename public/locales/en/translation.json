@@ -218,7 +218,12 @@
           ]
         }
       }
-    }
+    },
+    "models": {
+      "title": "The most powerful open models",
+      "description": "Power your Agents with our range of models",
+      "requestModel" : "Request a model"
+    } 
   },
     "models": {
       "title": "Our Models",
