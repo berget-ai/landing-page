@@ -642,5 +642,63 @@
       "title": "Fel vid sändning av meddelande",
       "description": "Vänligen försök igen senare."
     }
+},
+"DevelopersPage": {
+  "hero": {
+    "title": "Infrastruktur för AI-utvecklare",
+    "description": "Kör dina AI-modeller och applikationer i en säker, EU-baserad miljö med full kontroll över din kod och data."
+  },
+  "sections": [
+    {
+      "icon": "github",
+      "title": "GitOps-baserad infrastruktur",
+      "description": "Slipp komplexa Terraform-skript och AWS-konsolen. Definiera din infrastruktur med enkla YAML-filer i ditt Git-repo.",
+      "bullets": [
+        "Automatisk synkronisering - ändringar i ditt repo appliceras automatiskt på din infrastruktur",
+        "Versionskontroll - full historik och möjlighet att rulla tillbaka ändringar",
+        "Portabilitet - din infrastruktur är definierad i kod som kan flyttas mellan miljöer",
+        "CI/CD-integration - koppla ihop med dina befintliga CI/CD-pipelines"
+      ]
+    },
+    {
+      "icon": "lock",
+      "title": "OpenAI-kompatibelt API",
+      "description": "Använd samma kod och bibliotek som du redan använder med OpenAI, men med full kontroll över dina data.",
+      "bullets": [
+        "Minimal kodändring - byt bara API-nyckel och endpoint för att migrera från OpenAI",
+        "Stöd för populära bibliotek - fungerar med LangChain, LlamaIndex och andra ramverk",
+        "GDPR-kompatibelt - all data stannar inom EU och lagras aldrig",
+        "CO₂-spårning - få information om koldioxidavtryck för varje API-anrop"
+      ]
+    },
+    {
+      "icon": "server",
+      "title": "Kubernetes utan komplexitet",
+      "description": "Få fördelarna med Kubernetes utan att behöva hantera infrastrukturen själv.",
+      "bullets": [
+        "Förkonfigurerade kluster - kom igång på minuter istället för dagar",
+        "Standardiserade Helm charts - installera databaser, caching och andra tjänster med ett kommando",
+        "GPU-stöd - kör dina egna modeller på dedikerade GPU:er när du behöver",
+        "Autoskalning - skala automatiskt upp och ner baserat på belastning"
+      ]
+    },
+    {
+      "icon": "database",
+      "title": "Utvecklarverktyg som förenklar",
+      "description": "Verktyg som hjälper dig att bygga, testa och driftsätta dina AI-applikationer snabbare.",
+      "bullets": [
+        "CLI-verktyg - hantera dina resurser direkt från terminalen",
+        "Loggning och övervakning - inbyggd integration med Prometheus och Grafana",
+        "Kostnadsövervakning - se exakt vad som kostar och optimera dina resurser",
+        "Utvecklarmiljöer - förkonfigurerade miljöer för snabb utveckling"
+      ]
+    }
+  ],
+    "cta": {
+      "title": "Redo att börja bygga?",
+      "description": "Kom igång på under 5 minuter med vårt CLI-verktyg och bygg din första AI-applikation.",
+      "signup": "Skapa konto",
+      "docs": "Läs dokumentationen"
   }
+ }
 }

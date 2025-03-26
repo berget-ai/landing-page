@@ -724,5 +724,63 @@
       "title": "Error sending message",
       "description": "Please try again later."
     }
+  },
+"DevelopersPage": {
+  "hero": {
+    "title": "Infrastructure for AI Developers",
+    "description": "Run your AI models and applications in a secure, EU-based environment with full control over your code and data."
+  },
+  "sections": [
+    {
+      "icon": "github",
+      "title": "GitOps-Based Infrastructure",
+      "description": "Skip complex Terraform scripts and the AWS console. Define your infrastructure using simple YAML files in your Git repo.",
+      "bullets": [
+        "Automatic sync – changes in your repo are automatically applied to your infrastructure",
+        "Version control – full history and ability to roll back changes",
+        "Portability – your infrastructure is defined as code and can be moved between environments",
+        "CI/CD integration – connect with your existing CI/CD pipelines"
+      ]
+    },
+    {
+      "icon": "lock",
+      "title": "OpenAI-Compatible API",
+      "description": "Use the same code and libraries you're already using with OpenAI, but with full control over your data.",
+      "bullets": [
+        "Minimal code change – just switch your API key and endpoint to migrate from OpenAI",
+        "Support for popular libraries – works with LangChain, LlamaIndex and other frameworks",
+        "GDPR-compliant – all data stays within the EU and is never stored",
+        "CO₂ tracking – get carbon emission data for every API call"
+      ]
+    },
+    {
+      "icon": "server",
+      "title": "Kubernetes Without the Complexity",
+      "description": "Get the benefits of Kubernetes without having to manage the infrastructure yourself.",
+      "bullets": [
+        "Preconfigured clusters – get started in minutes instead of days",
+        "Standardized Helm charts – install databases, caching and services with a single command",
+        "GPU support – run your own models on dedicated GPUs when needed",
+        "Autoscaling – automatically scale up and down based on demand"
+      ]
+    },
+    {
+      "icon": "database",
+      "title": "Developer Tools That Simplify",
+      "description": "Tools to help you build, test, and deploy your AI applications faster.",
+      "bullets": [
+        "CLI tools – manage your resources directly from the terminal",
+        "Logging and monitoring – built-in integration with Prometheus and Grafana",
+        "Cost tracking – see exactly what costs and optimize your resources",
+        "Developer environments – preconfigured environments for rapid development"
+      ]
+    }
+  ],
+    "cta": {
+    "title": "Ready to start building?",
+    "description": "Get started in under 5 minutes with our CLI tool and build your first AI application.",
+    "signup": "Create account",
+    "docs": "Read the documentation"
   }
+}
 }
