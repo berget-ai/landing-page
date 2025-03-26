@@ -227,17 +227,17 @@
     "cta": {
       "title": "Redo att börja?",
       "description": "Kom igång och börja bygga med våra APIer redan idag",
-      "getStarted" : "Kom igång"
+      "getStarted" : "Skaffa konto!"
     }  
   },
     "models": {
       "title": "Våra Modeller",
-      "description": "Få tillgång till ett brett urval av kraftfulla öppna modeller för att bygga olika AI-lösningar.",
+      "description": "Få tillgång till ett brett urval av kraftfulla öppna modeller för att bygga AI-lösningar.",
       "requestModel": "Önska en Modell",
       "viewDocs": "Se Modelldokumentation",
       "comprehensive": {
         "title": "Omfattande Modellutbud",
-        "point1": "Brett urval av modelltyper inklusive instruct, re-rerank och moderationsmodeller",
+        "point1": "Brett urval av modelltyper inklusive instruct, embedding, re-rerank och moderationsmodeller",
         "point2": "Optimerade för agentbaserade applikationer och komplexa AI-arbetsflöden",
         "point3": "Stöd för flera modaliteter: text, bild, tal-till-text och text-till-tal"
       },
@@ -251,8 +251,8 @@
         "text-generation": "Textgenerering",
         "speech-to-text": "Tal till Text",
         "image-generation": "Bildgenerering",
-        "embedding": "Inbäddning",
-        "rerank": "Omrangering"
+        "embedding": "Embedding",
+        "rerank": "Rerank"
       },
       "status": {
         "available": "Tillgänglig",
@@ -290,34 +290,34 @@
         "items": [
           "Infrastruktur som kod",
           "Persistenta miljöer",
-          "Full resurshantering"
+          "Enkel användarupplevelse"
         ]
       }
     },
     "cta": {
       "title": "Redo att Börja Bygga?",
-      "description": "Gå med i communityn av utvecklare som bygger framtidens AI med Berget.",
+      "description": "Gå med och börja bygga framtidens AI med Berget.",
       "getStarted": "Kom igång",
       "viewDocs": "Se Dokumentation"
     }
   },
   "pricing": {
-    "title": "Enkla, Transparenta Priser",
+    "title": "Transparenta Priser",
     "description": "Börja litet och väx med dina behov",
     "section": {
-      "title": "Planer för Alla Behov",
+      "title": "Prisplaner för Alla Behov",
       "description": "Välj den plan som passar dig bäst",
       "viewPricing": "Se fullständig prislista"
     },
     "tiers": {
       "payg": {
-        "name": "Betala per Användning",
+        "name": "Flexibel",
         "description": "API-åtkomst",
         "price": "€0",
         "features": [
           "Betala per token",
           "Vissa hastighetsbegränsningar",
-          "Betala per användning",
+          "Betala per CPU användning",
           "Community-support",
           "Listpriser"
         ]
@@ -359,7 +359,7 @@
         ]
       }
     },
-    "getStarted": "Kom Igång",
+    "getStarted": "Kom igång",
     "contactSales": "Kontakta Försäljning",
     "moneyBackGuarantee": "30 dagars pengarna-tillbaka-garanti",
     "detailedPricing": "Detaljerad Prissättning",
@@ -368,7 +368,7 @@
     "comparisonTooltip": "Baserat på offentlig prissättning"
   },
   "footer": {
-    "description": "Vårt mision är att tillhandahålla de mest pålitliga, smidigaste och hållbara AI-molntjänsterna i Europa.",
+    "description": "Vårt mission är att tillhandahålla de mest pålitliga, smidigaste och hållbara AI-molntjänsterna i Europa.",
     "product": {
       "title": "Produkt",
       "features": "Funktionalitet",
