@@ -5,8 +5,11 @@ import { ComplianceSection } from '@/components/sections/ComplianceSection'
 import { SustainabilitySection } from '@/components/sections/SustainabilitySection'
 import { PartnerQuotes } from '@/components/sections/PartnerQuotes'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 function WhyBergetPage() {
+  const { t } = useTranslation()
+
   return (
     <main className="min-h-screen pt-24">
       {/* Hero Section */}
@@ -24,23 +27,23 @@ function WhyBergetPage() {
           >
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#40916C]/15 text-[#52B788] mb-6">
               <Shield className="w-4 h-4 mr-2" />
-              <span className="text-sm font-medium">EU-baserad AI-infrastruktur</span>
+              <span className="text-sm font-medium">{t('whyBerget.hero.tagline')}</span>
             </div>
             <h1 className="text-5xl md:text-6xl font-medium mb-6 leading-tight">
-              Varför välja <span className="text-[#52B788]">Berget AI</span>?
+              {t('whyBerget.hero.title')}
             </h1>
             <p className="text-xl text-white/80 mb-8 leading-relaxed">
-              Säker, regelefterlevande och hållbar AI-infrastruktur byggd för europeisk innovation och datasuveränitet.
+              {t('whyBerget.hero.description')}
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Button size="lg" className="px-8 py-6 text-lg" asChild>
                 <Link to="/signup">
-                  Kom igång
+                  {t('whyBerget.hero.getStarted')}
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
               <Button size="lg" variant="outline" className="px-8 py-6 text-lg" asChild>
-                <Link to="/contact">Boka demo</Link>
+                <Link to="/contact">{t('whyBerget.hero.bookDemo')}</Link>
               </Button>
             </div>
           </motion.div>
@@ -57,14 +60,15 @@ function WhyBergetPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-medium mb-6">Fördelar med Berget AI</h2>
+              <h2 className="text-3xl md:text-4xl font-medium mb-6">{t('whyBerget.benefits.title')}</h2>
               <p className="text-lg text-white/60">
-                Vi erbjuder en unik kombination av säkerhet, regelefterlevnad och flexibilitet för europeiska företag.
+                {t('whyBerget.benefits.description')}
               </p>
             </motion.div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto mb-32">
+            {/* EU Based */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -74,32 +78,21 @@ function WhyBergetPage() {
               <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#52B788] to-[#74C69D] flex items-center justify-center mb-8">
                 <Shield className="w-7 h-7 text-white" />
               </div>
-              <h3 className="text-xl font-medium mb-4">100% EU-baserad</h3>
-              <p className="text-white/60 mb-6">
-                All data stannar inom EU:s gränser. Vår infrastruktur är byggd i Europa, för Europa, med full efterlevnad av EU:s regelverk.
-              </p>
+              <h3 className="text-xl font-medium mb-4">{t('whyBerget.benefits.euBased.title')}</h3>
+              <p className="text-white/60 mb-6">{t('whyBerget.benefits.euBased.description')}</p>
               <ul className="space-y-3">
-                <li className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center">
-                    <Check className="w-4 h-4 text-[#52B788]" />
-                  </div>
-                  <span className="text-sm text-white/80">GDPR-kompatibel</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center">
-                    <Check className="w-4 h-4 text-[#52B788]" />
-                  </div>
-                  <span className="text-sm text-white/80">NIS2-förberedd</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center">
-                    <Check className="w-4 h-4 text-[#52B788]" />
-                  </div>
-                  <span className="text-sm text-white/80">EU AI Act-anpassad</span>
-                </li>
+                {(t('whyBerget.benefits.euBased.features', { returnObjects: true }) as string[]).map((feature, index) => (
+                  <li key={index} className="flex items-center gap-3">
+                    <div className="w-6 h-6 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center">
+                      <Check className="w-4 h-4 text-[#52B788]" />
+                    </div>
+                    <span className="text-sm text-white/80">{feature}</span>
+                  </li>
+                ))}
               </ul>
             </motion.div>
-            
+
+            {/* Sustainable AI */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -110,32 +103,21 @@ function WhyBergetPage() {
               <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#FFB700] to-[#FFB700]/80 flex items-center justify-center mb-8">
                 <Leaf className="w-7 h-7 text-[#1A1A1A]" />
               </div>
-              <h3 className="text-xl font-medium mb-4">Hållbar AI</h3>
-              <p className="text-white/60 mb-6">
-                Vår infrastruktur är byggd med hållbarhet i fokus, från fossilfri el till värmeåtervinning och cirkulär hårdvara.
-              </p>
+              <h3 className="text-xl font-medium mb-4">{t('whyBerget.benefits.sustainable.title')}</h3>
+              <p className="text-white/60 mb-6">{t('whyBerget.benefits.sustainable.description')}</p>
               <ul className="space-y-3">
-                <li className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center">
-                    <Check className="w-4 h-4 text-[#52B788]" />
-                  </div>
-                  <span className="text-sm text-white/80">100% fossilfri energi</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center">
-                    <Check className="w-4 h-4 text-[#52B788]" />
-                  </div>
-                  <span className="text-sm text-white/80">CO₂-spårning per API-anrop</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center">
-                    <Check className="w-4 h-4 text-[#52B788]" />
-                  </div>
-                  <span className="text-sm text-white/80">Cirkulär hårdvara</span>
-                </li>
+                {(t('whyBerget.benefits.sustainable.features', { returnObjects: true }) as string[]).map((feature, index) => (
+                  <li key={index} className="flex items-center gap-3">
+                    <div className="w-6 h-6 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center">
+                      <Check className="w-4 h-4 text-[#52B788]" />
+                    </div>
+                    <span className="text-sm text-white/80">{feature}</span>
+                  </li>
+                ))}
               </ul>
             </motion.div>
-            
+
+            {/* Flexible Infrastructure */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -146,33 +128,21 @@ function WhyBergetPage() {
               <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#74C69D] to-[#52B788] flex items-center justify-center mb-8">
                 <Server className="w-7 h-7 text-white" />
               </div>
-              <h3 className="text-xl font-medium mb-4">Flexibel infrastruktur</h3>
-              <p className="text-white/60 mb-6">
-                Från serverless till dedikerade GPU:er, vi erbjuder den flexibilitet du behöver för att bygga och skala dina AI-applikationer.
-              </p>
+              <h3 className="text-xl font-medium mb-4">{t('whyBerget.benefits.flexible.title')}</h3>
+              <p className="text-white/60 mb-6">{t('whyBerget.benefits.flexible.description')}</p>
               <ul className="space-y-3">
-                <li className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center">
-                    <Check className="w-4 h-4 text-[#52B788]" />
-                  </div>
-                  <span className="text-sm text-white/80">Kubernetes-baserad</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center">
-                    <Check className="w-4 h-4 text-[#52B788]" />
-                  </div>
-                  <span className="text-sm text-white/80">GitOps-workflow</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center">
-                    <Check className="w-4 h-4 text-[#52B788]" />
-                  </div>
-                  <span className="text-sm text-white/80">Skalbar beräkningskraft</span>
-                </li>
+                {(t('whyBerget.benefits.flexible.features', { returnObjects: true }) as string[]).map((feature, index) => (
+                  <li key={index} className="flex items-center gap-3">
+                    <div className="w-6 h-6 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center">
+                      <Check className="w-4 h-4 text-[#52B788]" />
+                    </div>
+                    <span className="text-sm text-white/80">{feature}</span>
+                  </li>
+                ))}
               </ul>
             </motion.div>
           </div>
-          
+
           {/* Detailed Features */}
           <div className="max-w-7xl mx-auto space-y-24">
             {/* European Innovation & Sovereignty */}
@@ -189,29 +159,19 @@ function WhyBergetPage() {
                     <Globe className="w-8 h-8 text-white" />
                   </div>
                   <div>
-                    <h2 className="text-2xl font-medium mb-6">Europeisk innovation och datasuveränitet</h2>
+                    <h2 className="text-2xl font-medium mb-6">{t('whyBerget.features.european.title')}</h2>
                     <p className="text-white/80 mb-8 leading-relaxed text-lg">
-                      På Berget AI ger vi europeiska företag möjlighet att innovera utan kompromisser. Vi bygger en framtid där Europa leder inom säkra och etiska AI-lösningar.
+                      {t('whyBerget.features.european.description')}
                     </p>
                     <ul className="space-y-6">
-                      <li className="flex items-start gap-4">
-                        <div className="w-8 h-8 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center mt-0.5">
-                          <Check className="w-5 h-5 text-[#52B788]" />
-                        </div>
-                        <span className="text-lg text-white/80">Din data, dina modeller, din infrastruktur—allt på en säker, regelefterlevande plats</span>
-                      </li>
-                      <li className="flex items-start gap-4">
-                        <div className="w-8 h-8 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center mt-0.5">
-                          <Check className="w-5 h-5 text-[#52B788]" />
-                        </div>
-                        <span className="text-lg text-white/80">Vi främjar öppen innovation inom EU och driver fram AI- och datasuveränitet</span>
-                      </li>
-                      <li className="flex items-start gap-4">
-                        <div className="w-8 h-8 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center mt-0.5">
-                          <Check className="w-5 h-5 text-[#52B788]" />
-                        </div>
-                        <span className="text-lg text-white/80">Anslut dig till oss för att forma en framtid där Europa leder inom säkra, etiska AI-lösningar</span>
-                      </li>
+                      {(t('whyBerget.features.european.points', { returnObjects: true }) as string[]).map((point, index) => (
+                        <li key={index} className="flex items-start gap-4">
+                          <div className="w-8 h-8 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center mt-0.5">
+                            <Check className="w-5 h-5 text-[#52B788]" />
+                          </div>
+                          <span className="text-lg text-white/80">{point}</span>
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 </div>
@@ -233,29 +193,19 @@ function WhyBergetPage() {
                     <Shield className="w-8 h-8 text-white" />
                   </div>
                   <div>
-                    <h2 className="text-2xl font-medium mb-6">Enkel dataintegritet och regelefterlevnad</h2>
+                    <h2 className="text-2xl font-medium mb-6">{t('whyBerget.features.privacy.title')}</h2>
                     <p className="text-white/80 mb-8 leading-relaxed text-lg">
-                      Att navigera genom dataskyddslagar är komplext—vi gör det enkelt. Vår infrastruktur är byggd för att uppfylla de strängaste europeiska regelverken.
+                      {t('whyBerget.features.privacy.description')}
                     </p>
                     <ul className="space-y-6">
-                      <li className="flex items-start gap-4">
-                        <div className="w-8 h-8 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center mt-0.5">
-                          <Check className="w-5 h-5 text-[#52B788]" />
-                        </div>
-                        <span className="text-lg text-white/80">Lagra din data, hosta dina applikationer och kör din inferens - allt på ett ställe!</span>
-                      </li>
-                      <li className="flex items-start gap-4">
-                        <div className="w-8 h-8 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center mt-0.5">
-                          <Check className="w-5 h-5 text-[#52B788]" />
-                        </div>
-                        <span className="text-lg text-white/80">All data stannar inom våra EU-baserade servrar och lämnar aldrig vår infrastruktur</span>
-                      </li>
-                      <li className="flex items-start gap-4">
-                        <div className="w-8 h-8 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center mt-0.5">
-                          <Check className="w-5 h-5 text-[#52B788]" />
-                        </div>
-                        <span className="text-lg text-white/80">Säkerställ efterlevnad av GDPR och andra regulatoriska ramverk genom design</span>
-                      </li>
+                      {(t('whyBerget.features.privacy.points', { returnObjects: true }) as string[]).map((point, index) => (
+                        <li key={index} className="flex items-start gap-4">
+                          <div className="w-8 h-8 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center mt-0.5">
+                            <Check className="w-5 h-5 text-[#52B788]" />
+                          </div>
+                          <span className="text-lg text-white/80">{point}</span>
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 </div>
@@ -277,29 +227,19 @@ function WhyBergetPage() {
                     <Server className="w-8 h-8 text-[#1A1A1A]" />
                   </div>
                   <div>
-                    <h2 className="text-2xl font-medium mb-6">Alternativet till on-prem och publik molntjänst</h2>
+                    <h2 className="text-2xl font-medium mb-6">{t('whyBerget.features.alternative.title')}</h2>
                     <p className="text-white/80 mb-8 leading-relaxed text-lg">
-                      När publik molntjänst inte är ett alternativ är Berget AI ditt säkra och skalbara alternativ. Vi kombinerar fördelarna med molntjänster och on-prem-lösningar.
+                      {t('whyBerget.features.alternative.description')}
                     </p>
                     <ul className="space-y-6">
-                      <li className="flex items-start gap-4">
-                        <div className="w-8 h-8 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center mt-0.5">
-                          <Check className="w-5 h-5 text-[#52B788]" />
-                        </div>
-                        <span className="text-lg text-white/80">Perfekt för företag med känslig data som inte kan lagras på publik molninfrastruktur</span>
-                      </li>
-                      <li className="flex items-start gap-4">
-                        <div className="w-8 h-8 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center mt-0.5">
-                          <Check className="w-5 h-5 text-[#52B788]" />
-                        </div>
-                        <span className="text-lg text-white/80">Inga begränsningar—bearbeta all data fritt med våra LLMs</span>
-                      </li>
-                      <li className="flex items-start gap-4">
-                        <div className="w-8 h-8 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center mt-0.5">
-                          <Check className="w-5 h-5 text-[#52B788]" />
-                        </div>
-                        <span className="text-lg text-white/80">Inga initiala investeringar—börja smått och skala upp när dina behov växer</span>
-                      </li>
+                      {(t('whyBerget.features.alternative.points', { returnObjects: true }) as string[]).map((point, index) => (
+                        <li key={index} className="flex items-start gap-4">
+                          <div className="w-8 h-8 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center mt-0.5">
+                            <Check className="w-5 h-5 text-[#52B788]" />
+                          </div>
+                          <span className="text-lg text-white/80">{point}</span>
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 </div>
@@ -321,29 +261,19 @@ function WhyBergetPage() {
                     <Lock className="w-8 h-8 text-white" />
                   </div>
                   <div>
-                    <h2 className="text-2xl font-medium mb-6">Inbyggd säkerhet och integritet</h2>
+                    <h2 className="text-2xl font-medium mb-6">{t('whyBerget.features.security.title')}</h2>
                     <p className="text-white/80 mb-8 leading-relaxed text-lg">
-                      Vår infrastruktur är designad för att skydda din data i varje steg. Vi har byggt säkerhet från grunden, inte som ett tillägg.
+                      {t('whyBerget.features.security.description')}
                     </p>
                     <ul className="space-y-6">
-                      <li className="flex items-start gap-4">
-                        <div className="w-8 h-8 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center mt-0.5">
-                          <Check className="w-5 h-5 text-[#52B788]" />
-                        </div>
-                        <span className="text-lg text-white/80">Utvecklad med OWASP-standarder för att säkerställa säkerhet på högsta nivå</span>
-                      </li>
-                      <li className="flex items-start gap-4">
-                        <div className="w-8 h-8 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center mt-0.5">
-                          <Check className="w-5 h-5 text-[#52B788]" />
-                        </div>
-                        <span className="text-lg text-white/80">Inferens körs helt inom vårt säkra nätverk—din data passerar aldrig internet</span>
-                      </li>
-                      <li className="flex items-start gap-4">
-                        <div className="w-8 h-8 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center mt-0.5">
-                          <Check className="w-5 h-5 text-[#52B788]" />
-                        </div>
-                        <span className="text-lg text-white/80">Noll lagring—din data sparas eller behålls aldrig</span>
-                      </li>
+                      {(t('whyBerget.features.security.points', { returnObjects: true }) as string[]).map((point, index) => (
+                        <li key={index} className="flex items-start gap-4">
+                          <div className="w-8 h-8 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center mt-0.5">
+                            <Check className="w-5 h-5 text-[#52B788]" />
+                          </div>
+                          <span className="text-lg text-white/80">{point}</span>
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 </div>
@@ -371,19 +301,19 @@ function WhyBergetPage() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto text-center"
           >
-            <h2 className="text-3xl md:text-4xl font-medium mb-6">Redo att börja bygga med Berget AI?</h2>
+            <h2 className="text-3xl md:text-4xl font-medium mb-6">{t('whyBerget.cta.title')}</h2>
             <p className="text-lg text-white/60 mb-8">
-              Kom igång idag och upptäck fördelarna med en säker, regelefterlevande och hållbar AI-infrastruktur.
+              {t('whyBerget.cta.description')}
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Button size="lg" className="px-8 py-6 text-lg" asChild>
                 <Link to="/signup">
-                  Skapa konto
+                  {t('whyBerget.cta.createAccount')}
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
               <Button size="lg" variant="outline" className="px-8 py-6 text-lg" asChild>
-                <Link to="/contact">Kontakta försäljning</Link>
+                <Link to="/contact">{t('whyBerget.cta.contactSales')}</Link>
               </Button>
             </div>
           </motion.div>

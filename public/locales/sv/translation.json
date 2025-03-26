@@ -301,6 +301,90 @@
       "viewDocs": "Se Dokumentation"
     }
   },
+"whyBerget": {
+  "hero": {
+    "tagline": "EU-baserad AI-infrastruktur",
+    "title": "Varför välja Berget AI?",
+    "description": "Säker, efterlevande och hållbar AI-infrastruktur byggd för europeisk innovation och datasuveränitet.",
+    "getStarted": "Kom igång",
+    "bookDemo": "Boka demo"
+  },
+  "benefits": {
+    "title": "Fördelar med Berget AI",
+    "description": "Vi erbjuder en unik kombination av säkerhet, efterlevnad och flexibilitet för europeiska företag.",
+    "euBased": {
+      "title": "100 % EU-baserad",
+      "description": "All data stannar inom EU:s gränser. Vår infrastruktur är byggd i Europa, för Europa, med full efterlevnad av EU:s regelverk.",
+      "features": [
+        "GDPR-kompatibel",
+        "Redo för NIS2",
+        "I linje med EU:s AI-förordning"
+      ]
+    },
+    "sustainable": {
+      "title": "Hållbar AI",
+      "description": "Vår infrastruktur är byggd med hållbarhet i fokus – från fossilfri el till värmeåtervinning och cirkulär hårdvara.",
+      "features": [
+        "100 % förnybar energi",
+        "CO₂-spårning per API-anrop",
+        "Cirkulär hårdvara"
+      ]
+    },
+    "flexible": {
+      "title": "Flexibel infrastruktur",
+      "description": "Från serverlösa lösningar till dedikerade GPU:er – vi erbjuder den flexibilitet du behöver för att bygga och skala dina AI-applikationer.",
+      "features": [
+        "Kubernetes-baserad",
+        "GitOps-arbetsflöde",
+        "Skalbar datorkraft"
+      ]
+    }
+  },
+  "features": {
+    "european": {
+      "title": "Europeisk innovation och datasuveränitet",
+      "description": "På Berget AI ger vi europeiska företag möjlighet att innovera utan kompromisser. Vi bygger en framtid där Europa leder inom säker och etisk AI.",
+      "points": [
+        "Din data, dina modeller, din infrastruktur – allt på ett säkert och efterlevande ställe",
+        "Vi främjar öppen innovation inom EU och driver AI- och datasuveränitet",
+        "Var med och forma en framtid där Europa leder inom säker och etisk AI"
+      ]
+    },
+    "privacy": {
+      "title": "Enkel dataskydd och efterlevnad",
+      "description": "Att navigera i dataskyddslagar är komplext – vi gör det enkelt. Vår infrastruktur är byggd för att uppfylla de striktaste europeiska reglerna.",
+      "points": [
+        "Lagra din data, hosta dina applikationer och kör inferenser – allt på ett och samma ställe!",
+        "All data stannar på våra EU-baserade servrar och lämnar aldrig vår infrastruktur",
+        "Säkerställ efterlevnad av GDPR och andra regelverk redan från grunden"
+      ]
+    },
+    "alternative": {
+      "title": "Ett alternativ till on-prem och publik moln",
+      "description": "När publik moln inte är ett alternativ är Berget AI ditt säkra och skalbara val. Vi kombinerar fördelarna med molntjänster och lokala lösningar.",
+      "points": [
+        "Perfekt för företag med känslig data som inte kan lagras i publika molntjänster",
+        "Inga begränsningar – bearbeta all data fritt med våra LLM:er",
+        "Inga initiala investeringar – börja litet och skala upp efter behov"
+      ]
+    },
+    "security": {
+      "title": "Inbyggd säkerhet och integritet",
+      "description": "Vår infrastruktur är designad för att skydda din data i varje steg. Vi har byggt säkerheten från grunden – inte som en eftertanke.",
+      "points": [
+        "Utvecklad enligt OWASP-standarder för högsta möjliga säkerhet",
+        "Inferenser körs helt inom vårt säkra nätverk – din data lämnar aldrig internet",
+        "Ingen lagring – din data sparas aldrig"
+      ]
+    }
+  },
+  "cta": {
+    "title": "Redo att bygga med Berget AI?",
+    "description": "Kom igång idag och upptäck fördelarna med en säker, efterlevande och hållbar AI-infrastruktur.",
+    "createAccount": "Skapa konto",
+    "contactSales": "Kontakta säljteamet"
+  }
+},
   "pricing": {
     "title": "Transparenta Priser",
     "description": "Börja litet och väx med dina behov",
@@ -461,7 +545,7 @@
       "hybridCloud": "Redo för hybridmoln"
     }
   },
-  "whyBerget": {
+  "whyBergetSection": {
     "title": "Varför Välja Berget",
     "description": "Byggt för svenska företag som behöver säker, regelefterlevande AI-infrastruktur",
     "features": {
@@ -505,6 +589,28 @@
       }
     ]
   },
+  "SustainabilitySection": {
+    "badge": "Hållbarhet i centrum",
+    "title": "Vårt hållbarhetslöfte",
+    "description": "Vi bygger Europas mest hållbara AI-infrastruktur. Vårt miljöengagemang är grundläggande för vår verksamhet, inte en eftertanke.",
+  "points": [
+    {
+      "title": "100% Fossilfri el",
+      "description": "Våra datacenter drivs uteslutande med certifierad fossilfri energi från Sveriges unika energimix av vattenkraft, vindkraft och kärnkraft, samt solceller på taket av våra anläggningar.",
+      "stats": "100% fossilfri energi"
+    },
+    {
+      "title": "Cirkulär hårdvara",
+      "description": "Vi använder cirkulär hårdvara i största möjliga utsträckning, vilket minskar en av de största utsläppskällorna - produktionen. Våra servrar får förlängd livscykel genom certifierade återanvändningsprocesser.",
+      "stats": "75% minskad hårdvaruproduktion"
+    },
+    {
+      "title": "CO₂e-spårning",
+      "description": "I våra AI-anrop inkluderar vi CO₂e-utsläpp per varje svar från våra API och sammanställning, vilket hjälper våra kunders utvecklare att välja den mest energieffektiva modellen.",
+      "stats": "Transparent utsläppsspårning"
+    }
+  ]
+},
   "contact": {
     "hero": {
       "title": "Kontakta oss",

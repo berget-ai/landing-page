@@ -219,6 +219,90 @@
         }
       }
     },
+      "whyBerget": {
+    "hero": {
+      "tagline": "EU-based AI Infrastructure",
+      "title": "Why choose Berget AI?",
+      "description": "Secure, compliant, and sustainable AI infrastructure built for European innovation and data sovereignty.",
+      "getStarted": "Get Started",
+      "bookDemo": "Book Demo"
+    },
+    "benefits": {
+      "title": "Benefits of Berget AI",
+      "description": "We offer a unique combination of security, compliance, and flexibility for European companies.",
+      "euBased": {
+        "title": "100% EU Based",
+        "description": "All data stays within EU borders. Our infrastructure is built in Europe, for Europe, with full compliance with EU regulations.",
+        "features": [
+          "GDPR Compliant",
+          "NIS2 Ready",
+          "EU AI Act Aligned"
+        ]
+      },
+      "sustainable": {
+        "title": "Sustainable AI",
+        "description": "Our infrastructure is built with sustainability in focus, from fossil-free electricity to heat recovery and circular hardware.",
+        "features": [
+          "100% Renewable Energy",
+          "CO₂ Tracking per API Call",
+          "Circular Hardware"
+        ]
+      },
+      "flexible": {
+        "title": "Flexible Infrastructure",
+        "description": "From serverless to dedicated GPUs, we offer the flexibility you need to build and scale your AI applications.",
+        "features": [
+          "Kubernetes Based",
+          "GitOps Workflow",
+          "Scalable Computing"
+        ]
+      }
+    },
+    "features": {
+      "european": {
+        "title": "European Innovation and Data Sovereignty",
+        "description": "At Berget AI, we empower European companies to innovate without compromises. We're building a future where Europe leads in secure and ethical AI solutions.",
+        "points": [
+          "Your data, your models, your infrastructure—all in one secure, compliant place",
+          "We promote open innovation within the EU and drive AI and data sovereignty",
+          "Join us in shaping a future where Europe leads in secure, ethical AI solutions"
+        ]
+      },
+      "privacy": {
+        "title": "Simple Data Privacy and Compliance",
+        "description": "Navigating data protection laws is complex—we make it simple. Our infrastructure is built to meet the strictest European regulations.",
+        "points": [
+          "Store your data, host your applications, and run your inference - all in one place!",
+          "All data stays within our EU-based servers and never leaves our infrastructure",
+          "Ensure compliance with GDPR and other regulatory frameworks by design"
+        ]
+      },
+      "alternative": {
+        "title": "Alternative to On-Prem and Public Cloud",
+        "description": "When public cloud isn't an option, Berget AI is your secure and scalable alternative. We combine the benefits of cloud services and on-premises solutions.",
+        "points": [
+          "Perfect for companies with sensitive data that can't be stored on public cloud infrastructure",
+          "No limitations—process all data freely with our LLMs",
+          "No upfront investments—start small and scale as your needs grow"
+        ]
+      },
+      "security": {
+        "title": "Built-in Security and Privacy",
+        "description": "Our infrastructure is designed to protect your data at every step. We've built security from the ground up, not as an afterthought.",
+        "points": [
+          "Developed with OWASP standards to ensure highest level security",
+          "Inference runs entirely within our secure network—your data never traverses the internet",
+          "Zero retention—your data is never stored or retained"
+        ]
+      }
+    },
+    "cta": {
+      "title": "Ready to Build with Berget AI?",
+      "description": "Get started today and discover the benefits of a secure, compliant, and sustainable AI infrastructure.",
+      "createAccount": "Create Account",
+      "contactSales": "Contact Sales"
+    }
+  },
     "models": {
       "title": "The most powerful open models",
       "description": "Power your Agents with our range of models",
@@ -296,6 +380,90 @@
       "description": "Join the growing community of developers building the future of AI with Berget",
       "getStarted": "Get Started",
       "viewDocs": "View Documentation"
+    }
+  },
+  "whyBerget": {
+    "hero": {
+      "tagline": "EU-based AI Infrastructure",
+      "title": "Why choose Berget AI?",
+      "description": "Secure, compliant, and sustainable AI infrastructure built for European innovation and data sovereignty.",
+      "getStarted": "Get Started",
+      "bookDemo": "Book Demo"
+    },
+    "benefits": {
+      "title": "Benefits of Berget AI",
+      "description": "We offer a unique combination of security, compliance, and flexibility for European companies.",
+      "euBased": {
+        "title": "100% EU Based",
+        "description": "All data stays within EU borders. Our infrastructure is built in Europe, for Europe, with full compliance with EU regulations.",
+        "features": [
+          "GDPR Compliant",
+          "NIS2 Ready",
+          "EU AI Act Aligned"
+        ]
+      },
+      "sustainable": {
+        "title": "Sustainable AI",
+        "description": "Our infrastructure is built with sustainability in focus, from fossil-free electricity to heat recovery and circular hardware.",
+        "features": [
+          "100% Renewable Energy",
+          "CO₂ Tracking per API Call",
+          "Circular Hardware"
+        ]
+      },
+      "flexible": {
+        "title": "Flexible Infrastructure",
+        "description": "From serverless to dedicated GPUs, we offer the flexibility you need to build and scale your AI applications.",
+        "features": [
+          "Kubernetes Based",
+          "GitOps Workflow",
+          "Scalable Computing"
+        ]
+      }
+    },
+    "features": {
+      "european": {
+        "title": "European Innovation and Data Sovereignty",
+        "description": "At Berget AI, we empower European companies to innovate without compromises. We're building a future where Europe leads in secure and ethical AI solutions.",
+        "points": [
+          "Your data, your models, your infrastructure—all in one secure, compliant place",
+          "We promote open innovation within the EU and drive AI and data sovereignty",
+          "Join us in shaping a future where Europe leads in secure, ethical AI solutions"
+        ]
+      },
+      "privacy": {
+        "title": "Simple Data Privacy and Compliance",
+        "description": "Navigating data protection laws is complex—we make it simple. Our infrastructure is built to meet the strictest European regulations.",
+        "points": [
+          "Store your data, host your applications, and run your inference - all in one place!",
+          "All data stays within our EU-based servers and never leaves our infrastructure",
+          "Ensure compliance with GDPR and other regulatory frameworks by design"
+        ]
+      },
+      "alternative": {
+        "title": "Alternative to On-Prem and Public Cloud",
+        "description": "When public cloud isn't an option, Berget AI is your secure and scalable alternative. We combine the benefits of cloud services and on-premises solutions.",
+        "points": [
+          "Perfect for companies with sensitive data that can't be stored on public cloud infrastructure",
+          "No limitations—process all data freely with our LLMs",
+          "No upfront investments—start small and scale as your needs grow"
+        ]
+      },
+      "security": {
+        "title": "Built-in Security and Privacy",
+        "description": "Our infrastructure is designed to protect your data at every step. We've built security from the ground up, not as an afterthought.",
+        "points": [
+          "Developed with OWASP standards to ensure highest level security",
+          "Inference runs entirely within our secure network—your data never traverses the internet",
+          "Zero retention—your data is never stored or retained"
+        ]
+      }
+    },
+    "cta": {
+      "title": "Ready to Build with Berget AI?",
+      "description": "Get started today and discover the benefits of a secure, compliant, and sustainable AI infrastructure.",
+      "createAccount": "Create Account",
+      "contactSales": "Contact Sales"
     }
   },
   "pricing": {
@@ -459,7 +627,7 @@
       "hybridCloud": "Hybrid cloud ready"
     }
   },
-  "whyBerget": {
+  "whyBergetSection": {
     "title": "Why Choose Berget",
     "description": "Built for European businesses who need secure, compliant AI infrastructure",
     "features": {
@@ -500,6 +668,28 @@
         "name": "André Catry",
         "title": "Senior Advisor in IT/Information Security and Cyber Risk, Kahn Pedersen Law Firm",
         "quote": "Data is today one of the most valuable assets that exists. It's a reasonable business decision to train AI models in services that don't use your data to train someone else's models."
+      }
+    ]
+  },
+  "SustainabilitySection": {
+      "badge": "Sustainability at the Core",
+      "title": "Our Sustainability Promise",
+      "description": "We are building Europe’s most sustainable AI infrastructure. Our environmental commitment is foundational to our operations, not an afterthought.",
+    "points": [
+      {
+        "title": "100% Fossil-Free Electricity",
+        "description": "Our data centers run exclusively on certified fossil-free energy from Sweden’s unique energy mix of hydropower, wind power, nuclear, and rooftop solar.",
+        "stats": "100% fossil-free energy"
+      },
+      {
+        "title": "Circular Hardware",
+        "description": "We use circular hardware as much as possible to reduce emissions from production. Our servers have extended lifecycles through certified reuse processes.",
+        "stats": "75% reduced hardware production"
+      },
+      {
+        "title": "CO₂e Tracking",
+        "description": "Each AI request includes CO₂e emission data per response from our APIs and summaries, helping developers choose the most energy-efficient model.",
+        "stats": "Transparent emission tracking"
       }
     ]
   },
