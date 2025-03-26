@@ -75,8 +75,7 @@ export default function DevelopersPage() {
               </motion.div>
             )
           })}
-        </div>
-
+        
         <Overview />
 
         {/* CTA */}
@@ -104,6 +103,7 @@ export default function DevelopersPage() {
 
       {/* Models Section (already localized?) */}
       <ModelsSection />
+      </div>
     </main>
   )
 }

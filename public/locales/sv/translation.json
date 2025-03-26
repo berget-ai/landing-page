@@ -386,8 +386,18 @@
   }
 },
   "pricing": {
-    "title": "Transparenta Priser",
+  
     "description": "Börja litet och väx med dina behov",
+    "title": "Flexibel och transparent prissättning",
+    "moneyBackDescription": "Priserna ovan inkluderar förbetald beräkningskraft och tokens till rabatterat pris. Användning utöver det som ingår debiteras separat, och eventuell kvarvarande balans förs över till nästa månad.",
+    "moneyBackBullets": [
+      "Förskottsbetalning med kreditkort för alla planer",
+      "Faktura är möjligt för företagskunder",
+      "Automatisk påfyllning av plånbok vid en viss balans"
+    ],
+    "moneyBackNote": "Priserna ovan gäller för månatliga förskottsbetalningar. Årsbetalningar ger 10% extra rabatt på ovanstående prisplaner.",
+    "detailedPricing": "Detaljerad prissättning",
+    "tooltip": "Prissättningen baseras på användning utöver inkluderade kvoter. Du kan alltid övervaka din användning i realtid.",
     "section": {
       "title": "Prisplaner för Alla Behov",
       "description": "Välj den plan som passar dig bäst",
@@ -446,8 +456,6 @@
     "getStarted": "Kom igång",
     "contactSales": "Kontakta Försäljning",
     "moneyBackGuarantee": "30 dagars pengarna-tillbaka-garanti",
-    "detailedPricing": "Detaljerad Prissättning",
-    "tooltip": "Alla priser exkl. moms",
     "compareWithAlternatives": "Jämför med Alternativ",
     "comparisonTooltip": "Baserat på offentlig prissättning"
   },
