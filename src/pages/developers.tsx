@@ -1,8 +1,5 @@
 import { motion } from 'framer-motion'
-import {
-  Github, Lock, Server, Database,
-  GitBranch, Cpu, Cloud, Link2, Network
-} from 'lucide-react'
+import { Github, Lock, Server, Database } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useTranslation } from 'react-i18next'
 import { TerminalCarousel } from '@/components/terminal/TerminalCarousel'
@@ -14,7 +11,7 @@ const iconMap = {
   github: Github,
   lock: Lock,
   server: Server,
-  database: Database
+  database: Database,
 }
 
 export default function DevelopersPage() {
@@ -75,34 +72,36 @@ export default function DevelopersPage() {
               </motion.div>
             )
           })}
-        
-        <Overview />
 
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
-          className="text-center mt-32"
-        >
-          <h2 className="text-3xl font-medium mb-6">{t('DevelopersPage.cta.title')}</h2>
-          <p className="text-xl text-white/60 mb-8 max-w-2xl mx-auto">
-            {t('DevelopersPage.cta.description')}
-          </p>
-          <div className="flex gap-4 justify-center">
-            <Button size="lg" asChild>
-              <Link to="/signup">{t('DevelopersPage.cta.signup')}</Link>
-            </Button>
-            <Button size="lg" variant="secondary" asChild>
-              <Link to="/docs">{t('DevelopersPage.cta.docs')}</Link>
-            </Button>
-          </div>
-        </motion.div>
-      </div>
+          <Overview />
 
-      {/* Models Section (already localized?) */}
-      <ModelsSection />
+          {/* CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5 }}
+            className="text-center mt-32"
+          >
+            <h2 className="text-3xl font-medium mb-6">
+              {t('DevelopersPage.cta.title')}
+            </h2>
+            <p className="text-xl text-white/60 mb-8 max-w-2xl mx-auto">
+              {t('DevelopersPage.cta.description')}
+            </p>
+            <div className="flex gap-4 justify-center">
+              <Button size="lg" asChild>
+                <Link to="/signup">{t('DevelopersPage.cta.signup')}</Link>
+              </Button>
+              <Button size="lg" variant="secondary" asChild>
+                <Link to="/docs">{t('DevelopersPage.cta.docs')}</Link>
+              </Button>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Models Section (already localized?) */}
+        <ModelsSection />
       </div>
     </main>
   )
