@@ -5,7 +5,7 @@
       "part1": "Unlocking AI Innovation",
       "part2": "in Europe"
     },
-    "description": "The first Swedish AI service built for developers. We provide open, EU-compliant infrastructure for AI applications, combining open architecture security with a simple developer experience.",
+    "description": "The first Swedish AI service built for developers. We provide EU-compliant infrastructure for AI applications, combining open architecture security with a simple developer experience.",
     "getStarted": "Get Started",
     "learnMore": "Learn More"
   },
@@ -99,7 +99,7 @@
     },
     "serverless": {
       "title": "Serverless Inference",
-      "description": "Leverage the power of the world's leading Open LLMs without managing infrastructure.",
+      "description": "USe the power of the world's leading LLMs without managing infrastructure.",
       "features": {
         "integration": {
           "title": "Get going in minutes",
@@ -142,16 +142,15 @@
         "control": {
           "title": "Model Control",
           "items": [
-            "Host finetuned models",
             "Control and own your models",
-            "Models reside with your data and apps"
+            "Models, data and apps in one place"
           ]
         },
         "performance": {
           "title": "Optimized Performance",
           "items": [
             "Optimize cost and performance",
-            "Flexible scaling",
+            "Scale as you go",
             "Easy cost management"
           ]
         }
@@ -159,7 +158,7 @@
     },
     "platform": {
       "title": "Berget AI Platform",
-      "description": "Take full control with an intuitive platform designed for development and deployment of AI Applications.",
+      "description": "Unlock your developer team with our intuitive platform designed for development and deployment of AI Applications.",
       "features": {
         "toolset": {
           "title": "Full Flexibility and Control",
@@ -173,8 +172,8 @@
           "title": "Ready-to-Use Services",
           "items": [
             "Pre-configured recipes",
-            "AI tool marketplace",
-            "Popular AI tools"
+            "Most popular AI buildign tools",
+            "Easy deployment"
           ]
         },
         "infrastructure": {
@@ -189,15 +188,15 @@
       "layers": {
         "tools": {
           "title": "Tools & Marketplace",
-          "items": ["Database", "Vector DB", "DevOps", "Agentic Frameworks"]
+          "items": ["Databases", "Vector DB", "DevOps", "Agentic Frameworks"]
         },
         "llm": {
           "title": "LLM",
           "items": [
             "Serverless Inference",
-            "Dedicated",
+            "Dedicated Inference",
             "Model hosting",
-            "Finetuning"
+            "Model finetuning"
           ]
         },
         "compute": {
@@ -254,7 +253,7 @@
         "features": [
           "Kubernetes Based",
           "GitOps Workflow",
-          "Scalable Computing"
+          "Scalable Compute"
         ]
       }
     },
@@ -282,7 +281,7 @@
         "description": "When public cloud isn't an option, Berget AI is your secure and scalable alternative. We combine the benefits of cloud services and on-premises solutions.",
         "points": [
           "Perfect for companies with sensitive data that can't be stored on public cloud infrastructure",
-          "No limitations—process all data freely with our LLMs",
+          "No limitations — process even sensitive data freely with our LLMs",
           "No upfront investments—start small and scale as your needs grow"
         ]
       },
@@ -291,7 +290,7 @@
         "description": "Our infrastructure is designed to protect your data at every step. We've built security from the ground up, not as an afterthought.",
         "points": [
           "Developed with OWASP standards to ensure highest level security",
-          "Inference runs entirely within our secure network—your data never traverses the internet",
+          "Inference runs entirely within our secure network — your data never traverses the internet",
           "Zero retention—your data is never stored or retained"
         ]
       }
@@ -377,7 +376,7 @@
     },
     "cta": {
       "title": "Ready to Start Building?",
-      "description": "Join the growing community of developers building the future of AI with Berget",
+      "description": "Join other developers building the future of AI with Berget",
       "getStarted": "Get Started",
       "viewDocs": "View Documentation"
     }
@@ -426,7 +425,7 @@
         "title": "European Innovation and Data Sovereignty",
         "description": "At Berget AI, we empower European companies to innovate without compromises. We're building a future where Europe leads in secure and ethical AI solutions.",
         "points": [
-          "Your data, your models, your infrastructure—all in one secure, compliant place",
+          "Your data, your models, your infrastructure — all in one secure, compliant place",
           "We promote open innovation within the EU and drive AI and data sovereignty",
           "Join us in shaping a future where Europe leads in secure, ethical AI solutions"
         ]
@@ -445,7 +444,7 @@
         "description": "When public cloud isn't an option, Berget AI is your secure and scalable alternative. We combine the benefits of cloud services and on-premises solutions.",
         "points": [
           "Perfect for companies with sensitive data that can't be stored on public cloud infrastructure",
-          "No limitations—process all data freely with our LLMs",
+          "No limitations — process even sensitive data freely with our LLMs",
           "No upfront investments—start small and scale as your needs grow"
         ]
       },
@@ -455,7 +454,7 @@
         "points": [
           "Developed with OWASP standards to ensure highest level security",
           "Inference runs entirely within our secure network—your data never traverses the internet",
-          "Zero retention—your data is never stored or retained"
+          "Zero retention — your data is never stored or retained"
         ]
       }
     },
@@ -483,7 +482,7 @@
     },
     "tiers": {
       "payg": {
-        "name": "Pay as you Go",
+        "name": "Flex",
         "description": "API access",
         "price": "€0",
         "features": [
@@ -587,7 +586,6 @@
           "Data stays in EU",
           "Complete audit trails",
           "Data minimization by design",
-          "Automated compliance reporting"
         ]
       },
       "nis2": {
@@ -601,7 +599,7 @@
         ]
       },
       "schrems2": {
-        "name": "Schrems II Exposure",
+        "name": "Limit Schrems II Exposure",
         "description": "No exposure to US Cloud Act",
         "benefits": [
           "EU-only infrastructure",
