@@ -22,7 +22,7 @@ export default function DevelopersPage() {
     title: string
     description: string
     bullets: string[]
-  }[]
+  }[] || []
 
   return (
     <main className="min-h-screen">
@@ -62,7 +62,7 @@ export default function DevelopersPage() {
       {/* Features */}
       <div className="container mx-auto px-4 py-24">
         <div className="max-w-7xl mx-auto space-y-24">
-          {sections.map((section, index) => {
+          {Array.isArray(sections) ? sections.map((section, index) => {
             const Icon = iconMap[section.icon]
             return (
               <motion.div
@@ -91,7 +91,11 @@ export default function DevelopersPage() {
                 </div>
               </motion.div>
             )
-          })}
+          }) : (
+            <div className="p-8 rounded-3xl border border-[#74C69D]/20 bg-white/[0.02] backdrop-blur-sm text-center">
+              <p className="text-white/80">Developer sections will appear here.</p>
+            </div>
+          )}
 
           <Overview />
 
