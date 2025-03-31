@@ -6,6 +6,7 @@ import { TerminalCarousel } from '@/components/terminal/TerminalCarousel'
 import { Link } from 'react-router-dom'
 import { ModelsSection } from '@/components/sections/ModelsSection'
 import { Overview } from '@/components/sections/Overview'
+import developerImage from '/public/developers.png?w=320;640;960;1280;1920&format=webp&as=picture'
 
 const iconMap = {
   github: Github,
@@ -28,14 +29,35 @@ export default function DevelopersPage() {
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-b from-background to-background/50">
         <div className="absolute inset-0 bg-grid-white/5 bg-[size:32px_32px] pointer-events-none" />
-        <div className="container mx-auto px-4 py-24 text-center max-w-3xl">
-          <h1 className="text-5xl font-medium mb-6">
-            {t('DevelopersPage.hero.title')}
-          </h1>
-          <p className="text-xl text-white/60 mb-8">
-            {t('DevelopersPage.hero.description')}
-          </p>
-          <TerminalCarousel />
+        <div className="container mx-auto px-4 py-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div className="text-center lg:text-left">
+              <h1 className="text-5xl font-medium mb-6">
+                {t('DevelopersPage.hero.title')}
+              </h1>
+              <p className="text-xl text-white/60 mb-8">
+                {t('DevelopersPage.hero.description')}
+              </p>
+            </div>
+            <div className="flex justify-center">
+              <div className="relative w-full max-w-md lg:max-w-none">
+                {developerImage && (
+                  <div className="aspect-square lg:aspect-[16/9] overflow-hidden rounded-2xl">
+                    <img
+                      src={developerImage.src}
+                      srcSet={developerImage.srcset}
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      alt="Developer illustration"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+          <div className="mt-12">
+            <TerminalCarousel />
+          </div>
         </div>
       </section>
 
