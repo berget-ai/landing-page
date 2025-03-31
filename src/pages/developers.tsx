@@ -27,32 +27,37 @@ export default function DevelopersPage() {
   return (
     <main className="min-h-screen">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-background to-background/50">
-        <div className="absolute inset-0 bg-grid-white/5 bg-[size:32px_32px] pointer-events-none" />
-        <div className="container mx-auto px-4 py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <div className="text-center lg:text-left">
+      <section className="relative overflow-hidden min-h-[80vh] flex items-center">
+        {/* Background image */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src={developerImage}
+            alt="Developer illustration"
+            className="w-full h-full object-cover object-center"
+          />
+          {/* Gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/20" />
+          <div className="absolute inset-0 bg-grid-white/5 bg-[size:32px_32px] pointer-events-none" />
+        </div>
+        
+        {/* Content */}
+        <div className="container relative z-10 mx-auto px-4 py-24">
+          <div className="max-w-3xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+            >
               <h1 className="text-5xl font-medium mb-6">
                 {t('DevelopersPage.hero.title')}
               </h1>
-              <p className="text-xl text-white/60 mb-8">
+              <p className="text-xl text-white/80 mb-8 max-w-2xl">
                 {t('DevelopersPage.hero.description')}
               </p>
-            </div>
-            <div className="flex justify-center">
-              <div className="relative w-full max-w-md lg:max-w-none">
-                <div className="aspect-square lg:aspect-[16/9] overflow-hidden rounded-2xl">
-                  <img
-                    src={developerImage}
-                    alt="Developer illustration"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+              <div className="mt-8">
+                <TerminalCarousel />
               </div>
-            </div>
-          </div>
-          <div className="mt-12">
-            <TerminalCarousel />
+            </motion.div>
           </div>
         </div>
       </section>
