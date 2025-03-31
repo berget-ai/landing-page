@@ -6,7 +6,7 @@ import { TerminalCarousel } from '@/components/terminal/TerminalCarousel'
 import { Link } from 'react-router-dom'
 import { ModelsSection } from '@/components/sections/ModelsSection'
 import { Overview } from '@/components/sections/Overview'
-import developerImage from '/public/developers.png?w=320;640;960;1280;1920&format=webp&as=picture'
+import developerImage from '/developers.png?url&w=320;640;960;1280;1920&format=webp&as=picture'
 
 const iconMap = {
   github: Github,
@@ -41,17 +41,14 @@ export default function DevelopersPage() {
             </div>
             <div className="flex justify-center">
               <div className="relative w-full max-w-md lg:max-w-none">
-                {developerImage && (
-                  <div className="aspect-square lg:aspect-[16/9] overflow-hidden rounded-2xl">
-                    <img
-                      src={developerImage.src}
-                      srcSet={developerImage.srcset}
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      alt="Developer illustration"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                )}
+                <div className="aspect-square lg:aspect-[16/9] overflow-hidden rounded-2xl">
+                  <img
+                    src={developerImage}
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    alt="Developer illustration"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>
