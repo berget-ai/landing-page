@@ -2,10 +2,20 @@ import path from 'path'
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 import { plugin, Mode } from 'vite-plugin-markdown'
+import { imagetools } from 'vite-imagetools'
 
 export default defineConfig({
   plugins: [
     react(),
+    imagetools({
+      defaultDirectives: new URLSearchParams([
+        ['format', 'webp'],
+        ['quality', '80'],
+        ['progressive', 'true'],
+        ['as', 'picture'],
+        ['srcset', '320;640;960;1280;1920'],
+      ]),
+    }),
     plugin({
       mode: [Mode.HTML],
       markdownIt: {
@@ -103,5 +113,7 @@ export default defineConfig({
       }
     },
   },
-  optimizeDeps: {},
+  optimizeDeps: {
+    include: ['vite-imagetools'],
+  },
 })
