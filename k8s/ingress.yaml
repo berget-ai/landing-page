@@ -11,9 +11,20 @@ spec:
   tls:
     - hosts:
         - berget.ai
+        - berget.cloud
       secretName: berget-ai-tls
   rules:
     - host: berget.ai
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: berget-website
+                port:
+                  number: 80
+    - host: berget.cloud
       http:
         paths:
           - path: /
