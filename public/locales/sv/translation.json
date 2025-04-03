@@ -5,7 +5,7 @@
       "part1": "Frigör kraften i AI-innovation",
       "part2": "för Europa"
     },
-    "description": "Den första svenska AI tjänsten byggd för utvecklare. Vi tillhandahåller öppen, modern infrastruktur för AI-applikationer som kombinerar öppen arkitektur med enkel utvecklarupplevelse.",
+    "description": "Den första svenska tjänsten med AI-infrastruktur byggd för utvecklare. Vi tillhandahåller öppen, modern infrastruktur för AI-applikationer som kombinerar säker användning av språkmodeller med en enkel utvecklarupplevelse.",
     "getStarted": "Kom igång",
     "learnMore": "Läs mer"
   },
@@ -16,7 +16,7 @@
     },
     "origin": {
       "title": "Vår Historia",
-      "description": "Berget AI föddes ur insikten att många organisationer hindras i sin strävan efter AI-driven innovation - vare sig det handlar om juridiska och regulatoriska bekymmer, brist på kompetens eller kapital för att köra och drifta egna AI-modeller, ovilja att investera i GPUs i förväg, eller helt enkelt brist på tillgång till relevanta språkmodeller för lokala språk.",
+      "description": "Berget AI föddes ur insikten att många organisationer hindras i sitt arbete med AI-driven innovation - vare sig det handlar om juridiska och regulatoriska bekymmer, brist på kompetens eller kapital för att köra och drifta egna AI-modeller, ovilja att investera i GPUs i förväg, eller helt enkelt brist på tillgång till relevanta språkmodeller för lokala språk.",
       "nameOrigin": "Namnet är svenska för \"berg\", som vi har gott om i Sverige, och många av dem huserar underjordiska datacenter. Så varför ha din data i molnet när du kan ha den i \"Berget\"?"
     },
     "values": {
@@ -64,15 +64,15 @@
         },
         "john": {
           "name": "John",
-          "role": "Infrastrukturchef",
+          "role": "Infrastruktur",
           "bio": "En nätverks- och kubernetes-trollkarl med omfattande erfarenhet av att bygga och hantera storskalig infrastruktur",
           "image": "/team/john.png"
         },
         "johan": {
           "name": "Johan",
-          "role": "Nätverksarkitekturchef",
+          "role": "Nätverk och Datacenter",
           "bio": "En ledande datacenter-nätverksdesigner och byggare som har hjälpt ledande företag och scale-ups att bygga globala multi-site beräknings- och lagringsplattformar",
-          "image": "/team/johan.png"
+          "image": "/team/johan-profil.jpg"
         }
       }
     }

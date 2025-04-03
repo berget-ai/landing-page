@@ -53,7 +53,6 @@ function App() {
           <Route path="/blog/:id" element={<BlogPostPage />} />
         </Routes>
         <Footer />
-        <ChatWidget />
       </div>
     </Router>
   )
