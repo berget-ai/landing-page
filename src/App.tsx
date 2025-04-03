@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
-import { ChatWidget } from '@/components/chat/ChatWidget'
 import { MarkdownPage } from '@/components/common/MarkdownPage'
 import { ScrollToTop } from '@/components/common/ScrollToTop'
 
