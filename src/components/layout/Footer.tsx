@@ -46,8 +46,10 @@ export function Footer() {
               >
                 <Twitter className="h-5 w-5" />
               </Button>
-              <Button variant="ghost" size="icon" className="hover:bg-white/10">
-                <Github className="h-5 w-5" />
+              <Button variant="ghost" size="icon" className="hover:bg-white/10"
+              onClick={() => window.open('https://www.github.com/berget-ai/', '_blank')}
+              >
+              <Github className="h-5 w-5" />
               </Button>
               <Button
                 variant="ghost"
