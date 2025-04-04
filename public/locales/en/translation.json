@@ -224,6 +224,11 @@
       "title": "Ready to Start Building?",
       "description": "Get started today and discover the benefits of a secure, compliant, and sustainable AI infrastructure.",
       "getStarted" : "Sign up!"
+    },
+    "models" : {
+      "title" : "Access the latest and most powerful open LLMs",
+      "description" : "Use our range of models to power your agentic workflows",
+      "requestModel" : "Request a Model"
     }
   }, 
    

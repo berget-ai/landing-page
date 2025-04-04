@@ -104,7 +104,7 @@
         "integration": {
           "title": "Enkelt att kommaigång",
           "items": [
-            "Skapa konto på minuter"
+            "Skapa konto på minuter",
             "OpenAI-kompatibelt API",
             "Skalar med dina behov"
           ]
