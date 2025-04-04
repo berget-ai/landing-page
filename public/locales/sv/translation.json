@@ -5,7 +5,7 @@
       "part1": "Frigör kraften i AI-innovation",
       "part2": "för Europa"
     },
-    "description": "Den första svenska tjänsten med AI-infrastruktur byggd för utvecklare. Vi tillhandahåller öppen, modern infrastruktur för AI-applikationer som kombinerar säker användning av språkmodeller med en enkel utvecklarupplevelse.",
+    "description": "Den första svenska tjänsten för AI-infrastruktur byggd för utvecklare. Vi tillhandahåller öppen, modern infrastruktur för AI-applikationer som kombinerar säker användning av språkmodeller med en enkel utvecklarupplevelse.",
     "getStarted": "Kom igång",
     "learnMore": "Läs mer"
   },
@@ -39,10 +39,10 @@
       "description": "Vad du kan förvänta dig när du arbetar med oss",
       "list": [
         "Ett enkelt sätt att bygga AI-applikationer",
-        "Prisvärt och rättvist, inga inlåsningar, inga dolda avgifter",
+        "Prisvärt och lätt att förstå, inga inlåsningar, inga dolda avgifter",
         "Ett enkelt sätt att följa viktiga regelverk",
         "Utvecklarvänligt, byggt av utvecklare för utvecklare",
-        "I konstant innovation och lyssnar på vad våra kunder behöver",
+        "I ständig innovation och lyssnar på vad våra kunder behöver",
         "Bidrar till positiv och hållbar samhällsutveckling"
       ]
     },
@@ -94,7 +94,7 @@
   "products": {
     "hero": {
       "title": "Bygg framtiden med Berget AI",
-      "description": "Enterprise-anpassad AI-infrastruktur designad för svenska företag. Säker, regelefterlevande och redo att skala.",
+      "description": "Kraftfull och användarvänlig AI-infrastruktur designad för europeiska företag och organisationer. Säker, regelefterlevande och redo att skala.",
       "exploreMore": "Läs mer"
     },
     "serverless": {
@@ -102,26 +102,26 @@
       "description": "Utnyttja kraften i världens ledande öppna språkmodeller utan att hantera infrastruktur.",
       "features": {
         "integration": {
-          "title": "Enkel Integration",
+          "title": "Enkelt att kommaigång",
           "items": [
+            "Skapa konto på minuter"
             "OpenAI-kompatibelt API",
-            "Enkel implementation",
-            "Sömlös skalning"
+            "Skalar med dina behov"
           ]
         },
         "usage": {
-          "title": "Flexibel Användning",
+          "title": "Kostnadseffektivt",
           "items": [
-            "Betala per användning",
-            "Inferens på begäran",
-            "Stöd för batch-bearbetning"
+            "Betala per token",
+            "Prisvärda modeller",
+            "Stöd för batch"
           ]
         },
         "infrastructure": {
           "title": "Robust Infrastruktur",
           "items": [
             "Dedikerade GPU-kluster",
-            "svenska datacenter",
+            "Svenska datacenter",
             "Hög tillgänglighet"
           ]
         }
@@ -132,23 +132,23 @@
       "description": "Kör valfri modell, inklusive dina egna finetunade modeller på dedikerad kapacitet.",
       "features": {
         "deployment": {
-          "title": "Anpassad Driftsättning",
+          "title": "Anpassad setup",
           "items": [
             "Privata instanser",
-            "Skalbara lösningar",
+            "Skala med din applikation",
             "Dedikerade resurser"
           ]
         },
         "control": {
-          "title": "Modellkontroll",
-          "items": ["Fintunade modeller", "Versionskontroll", "Säker miljö"]
+          "title": "Kontroll",
+          "items": ["Dina egna modeller", "Full versionskontroll", "Säker miljö"]
         },
         "performance": {
           "title": "Optimerad Prestanda",
           "items": [
-            "Resursoptimering",
+            "Kraftfulla GPUer",
             "Flexibel skalning",
-            "Kostnadshantering"
+            "Förutsägbar kostnad"
           ]
         }
       }
@@ -162,15 +162,15 @@
           "items": [
             "Enkel användarupplevelse",
             "Transparent resurshantering",
-            "Kostnadskontroll"
+            "Total kostnadskontroll"
           ]
         },
         "services": {
-          "title": "Färdiga moduler",
+          "title": "Färdiga att använda",
           "items": [
             "Förkonfigurerade recept",
-            "App-marketplace",
-            "Populära AI-verktyg"
+            "Lägg tjänster med ett klick",
+            "Välj bland populära AI-verktyg"
           ]
         },
         "infrastructure": {
@@ -185,7 +185,7 @@
     },
     "architecture": {
       "title": "Plattformsarkitektur",
-      "description": "En komplett stack designad för enterprise AI-utveckling och driftsättning",
+      "description": "En komplett stack designad för enterprise AI och agentiska applikationer",
       "layers": {
         "tools": {
           "title": "Verktyg",
@@ -262,7 +262,7 @@
   "developers": {
     "hero": {
       "title": "Byggt av Utvecklare för Utvecklare",
-      "description": "En flexibel och utvecklarvänlig plattform designad för effektivitet, skalbarhet och kontroll"
+      "description": "En enkel och utvecklarvänlig plattform designad för effektivitet, skalbarhet och kontroll"
     },
     "features": {
       "flexibility": {
@@ -271,7 +271,7 @@
         "items": [
           "Enkel användarupplevelse",
           "Ingen inlåsning",
-          "Välj det du behöver",
+          "Betala för det du behöver",
           "Infra som kod med GitHub-synk"
         ]
       },
@@ -279,9 +279,9 @@
         "title": "Inbyggd Säkerhet & Integritet",
         "description": "Enterprise-säkerhet som standard",
         "items": [
-          "OWASP-standarder",
-          "Säker lokal inferens",
-          "Ingen datalagring"
+          "OWASP-standard",
+          "Säker lokal inferens, där ingen data lagras",
+          "All data är krypterad och har backup"
         ]
       },
       "resources": {
@@ -305,13 +305,13 @@
   "hero": {
     "tagline": "EU-baserad AI-infrastruktur",
     "title": "Varför välja Berget AI?",
-    "description": "Säker, efterlevande och hållbar AI-infrastruktur byggd för europeisk innovation och datasuveränitet.",
+    "description": "Säker, compliant och hållbar AI-infrastruktur byggd för europeisk innovation och suveränitet.",
     "getStarted": "Kom igång",
     "bookDemo": "Boka demo"
   },
   "benefits": {
     "title": "Fördelar med Berget AI",
-    "description": "Vi erbjuder en unik kombination av säkerhet, efterlevnad och flexibilitet för europeiska företag.",
+    "description": "Vi erbjuder en unik kombination av säkerhet, efterlevnad och flexibilitet för europeiska företag och organisationer.",
     "euBased": {
       "title": "100 % EU-baserad",
       "description": "All data stannar inom EU:s gränser. Vår infrastruktur är byggd i Europa, för Europa, med full efterlevnad av EU:s regelverk.",
@@ -335,8 +335,8 @@
       "description": "Från serverlösa lösningar till dedikerade GPU:er – vi erbjuder den flexibilitet du behöver för att bygga och skala dina AI-applikationer.",
       "features": [
         "Kubernetes-baserad",
-        "GitOps-arbetsflöde",
-        "Skalbar datorkraft"
+        "GitOps-arbetsflöden",
+        "Skalbar compute för alla behov"
       ]
     }
   },
@@ -374,13 +374,13 @@
       "points": [
         "Utvecklad enligt OWASP-standarder för högsta möjliga säkerhet",
         "Inferenser körs helt inom vårt säkra nätverk – din data lämnar aldrig internet",
-        "Ingen lagring – din data sparas aldrig"
+        "Ingen lagring – vi sparar aldrig data som skickas till våra APIer"
       ]
     }
   },
   "cta": {
     "title": "Redo att bygga med Berget AI?",
-    "description": "Kom igång idag och upptäck fördelarna med en säker, efterlevande och hållbar AI-infrastruktur.",
+    "description": "Kom igång idag och upptäck fördelarna med en säker, compliant och hållbar AI-infrastruktur.",
     "createAccount": "Skapa konto",
     "contactSales": "Kontakta säljteamet"
   }
@@ -388,18 +388,18 @@
   "pricing": {
   
     "description": "Börja litet och väx med dina behov",
-    "title": "Flexibel och transparent prissättning",
-    "moneyBackDescription": "Priserna ovan inkluderar förbetald beräkningskraft och tokens till rabatterat pris. Användning utöver det som ingår debiteras separat, och eventuell kvarvarande balans förs över till nästa månad.",
+    "title": "Enkel och transparent prissättning",
+    "moneyBackDescription": "Priserna ovan inkluderar förbetald compute och tokens till rabatterat pris. Användning utöver det som ingår debiteras separat, och eventuell kvarvarande balans förs över till nästa månad.",
     "moneyBackBullets": [
       "Förskottsbetalning med kreditkort för alla planer",
       "Faktura är möjligt för företagskunder",
-      "Automatisk påfyllning av plånbok vid en viss balans"
+      "Automatisk påfyllning av balans vid en viss balans"
     ],
     "moneyBackNote": "Priserna ovan gäller för månatliga förskottsbetalningar. Årsbetalningar ger 10% extra rabatt på ovanstående prisplaner.",
     "detailedPricing": "Detaljerad prissättning",
     "tooltip": "Prissättningen baseras på användning utöver inkluderade kvoter. Du kan alltid övervaka din användning i realtid.",
     "section": {
-      "title": "Prisplaner för Alla Behov",
+      "title": "Prisplaner för dina behov",
       "description": "Välj den plan som passar dig bäst",
       "viewPricing": "Se fullständig prislista"
     },
@@ -504,10 +504,8 @@
         "description": "Inbyggda dataskydds- och integritetskontroller",
         "benefits": [
           "Data stannar inom EU",
-          "Fullständiga granskningsspår",
-          "Dataminimering by design",
-          "Automatiserad efterlevnadsrapportering"
-        ]
+          "Fullständiga loggar för audits",
+          "Dataminimering by design"        ]
       },
       "nis2": {
         "name": "NIS2-redo",
@@ -520,12 +518,12 @@
         ]
       },
       "schrems2": {
-        "name": "Schrems II-kompatibel",
+        "name": "Schrems kompatibel",
         "description": "Ingen exponering för US Cloud Act",
         "benefits": [
-          "EU-endast infrastruktur",
+          "Endast Infrastruktur i EU",
           "Ingen US-entitetsinblandning",
-          "Transparenta dataflöden",
+          "Du vet alltid var ding data är",
           "Juridisk säkerhet"
         ]
       }
@@ -535,39 +533,39 @@
   "overview": {
     "whatIsGitOps": {
       "title": "Hantera Din Infrastruktur med GitOps",
-      "description": "GitOps för med sig bästa praxis från mjukvaruutveckling till infrastrukturhantering. Versionskontroll, samarbete och automatiserade driftsättningar - allt genom Git."
+      "description": "GitOps för med sig best-practice från mjukvaruutveckling till infrastrukturhantering. Versionskontroll, enkelt samarbete och automatiserad driftsättning - allt genom Git."
     },
     "gitRepository": {
       "title": "Git-repository",
-      "description": "Din infrastruktur definierad som kod, versionshanterad och samarbetsvänlig",
+      "description": "Din infrastruktur definierad som kod, versionshanterad och kollaborativ",
       "sync": "Automatisk synkronisering med din infrastruktur"
     },
     "bergetCluster": {
       "title": "Berget-kluster",
-      "description": "Säkert och skalbart Kubernetes-kluster för dina AI-arbetsbelastningar",
+      "description": "Säkert och skalbart Kubernetes-kluster för dina AI-laster",
       "security": "Enterprise-anpassad säkerhet och övervakning"
     },
     "aiApis": {
       "title": "AI-APIer & Tjänster",
-      "description": "Anslut till alla AI-tjänster eller modeller du behöver",
+      "description": "Anslut till de AI-tjänster eller modeller du behöver",
       "hybridCloud": "Redo för hybridmoln"
     }
   },
   "whyBergetSection": {
     "title": "Varför Välja Berget",
-    "description": "Byggt för svenska företag som behöver säker, regelefterlevande AI-infrastruktur",
+    "description": "Byggt för europeiska företag och organisationer som behöver säker, compliant AI-infrastruktur",
     "features": {
       "european": {
         "title": "Europeisk Innovation & Suveränitet",
-        "description": "Byggt och drivet i Europa, ger företag äkta digital suveränitet"
+        "description": "Byggt och drivet i Europa, ger företag och företag äkta AI & Data-suveränitet"
       },
       "security": {
-        "title": "Enterprise-anpassad Säkerhet",
-        "description": "Banksäkerhet med omfattande regelefterlevnad inbyggd i varje lager"
+        "title": "Enterprise-anpassad säkerhet",
+        "description": "Säkerhet inbyggd i varje lager"
       },
       "alternative": {
         "title": "Bortom Publika Moln",
-        "description": "Det säkra alternativet när publika moln inte är ett alternativ för känsliga arbetsbelastningar"
+        "description": "Det säkra alternativet när publika moln inte är ett alternativ för känsliga laster"
       },
       "privacy": {
         "title": "Fullständig Dataintegritet",
@@ -622,7 +620,7 @@
   "contact": {
     "hero": {
       "title": "Kontakta oss",
-      "description": "Har du frågor om Berget AI? Vårt team finns här för att hjälpa.",
+      "description": "Har du frågor om Berget AI? Vårt team finns här för att hjälpa er.",
       "getInTouch": "Kontakta oss"
     },
     "form": {
