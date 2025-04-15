@@ -27,6 +27,11 @@ export function Header() {
             {t('header.navigation.products')}
           </Link>
 
+          {/* Models */}
+          <Link to="/models" className="text-sm text-white/60 hover:text-white transition-colors">
+            Models
+          </Link>
+
           {/* Why Berget */}
           <Link to="/why-berget" className="text-sm text-white/60 hover:text-white transition-colors">
             {t('header.navigation.whyBerget')}
@@ -46,11 +51,6 @@ export function Header() {
           <Link to="https://api.berget.ai" className="text-sm text-white/60 hover:text-white transition-colors">
             {t('header.navigation.api')}
           </Link>
-
-          {/* Blog 
-          <Link to="/blog" className="text-sm text-white/60 hover:text-white transition-colors">
-            {t('header.navigation.blog')}
-          </Link>*/}
 
           <LanguageSwitcher />
 
@@ -93,6 +93,13 @@ export function Header() {
                     {t('header.navigation.products')}
                   </Link>
                   <Link 
+                    to="/models" 
+                    className="text-2xl text-white hover:text-white/80 transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Models
+                  </Link>
+                  <Link 
                     to="/why-berget" 
                     className="text-2xl text-white hover:text-white/80 transition-colors"
                     onClick={() => setIsMenuOpen(false)}
@@ -119,13 +126,6 @@ export function Header() {
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {t('header.navigation.api')}
-                  </Link>
-                  <Link 
-                    to="/blog" 
-                    className="text-2xl text-white hover:text-white/80 transition-colors"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {t('header.navigation.blog')}
                   </Link>
                 </div>
               </div>

@@ -8,6 +8,7 @@ const footerLinks = {
   product: [
     { key: 'features', href: '/products' },
     { key: 'pricing', href: '/pricing' },
+    { key: 'models', href: '/models' },
     { key: 'api', href: 'https://api.berget.ai' },
   ],
   company: [
@@ -71,7 +72,7 @@ export function Footer() {
                     to={link.href}
                     className="text-sm text-white/60 hover:text-white transition-colors"
                   >
-                    {t(`footer.product.${link.key}`)}
+                    {link.key === 'models' ? 'Models' : t(`footer.product.${link.key}`)}
                   </Link>
                 </li>
               ))}
@@ -116,23 +117,6 @@ export function Footer() {
             <p className="text-sm text-white/60">
               {t('footer.copyright')}
             </p>
-            {/*<div className="flex items-center gap-4">
-              <Button
-                variant="ghost"
-                size="sm"
-                className="text-white/60 hover:text-white"
-              >
-                {t('footer.status')}
-              </Button>
-              <div className="w-1 h-1 rounded-full bg-white/20" />
-              <Button
-                variant="ghost"
-                size="sm"
-                className="text-white/60 hover:text-white"
-              >
-                {t('footer.support')}
-              </Button>
-            </div> */}
           </div>
         </div>
       </div>
