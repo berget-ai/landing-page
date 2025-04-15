@@ -244,7 +244,7 @@ export default function ModelsPage() {
         <h1 className="text-4xl font-medium mb-6">Model Library</h1>
         <div className="prose prose-invert max-w-none">
           <p className="text-lg text-white/80 leading-relaxed mb-6">
-            At Berget AI, we're committed to providing the most powerful open models available, carefully selected to enable our customers to build and deploy sophisticated AI applications. Our model library is designed with three key principles in mind:
+            At Berget AI, we're committed to providing the most powerful open models available, carefully selected to enable our customers to build and deploy sophisticated AI applications. Our model library is designed with the following principles in mind:
           </p>
           <ul className="space-y-4 mb-8">
             <li className="flex items-start gap-3">
@@ -260,6 +260,15 @@ export default function ModelsPage() {
                 <div className="w-1.5 h-1.5 rounded-full bg-[#52B788]" />
               </div>
               <span className="text-white/80">
+                In supporting AI Sovereignty for Europe - we especially want to provide models that are multilingual and support European languages and values 
+              </span>
+            </li>
+            
+            <li className="flex items-start gap-3">
+              <div className="w-6 h-6 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center mt-1">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#52B788]" />
+              </div>
+              <span className="text-white/80">
                 Our carefully curated selection balances performance, speed, and cost across different model types and sizes, helping you find the perfect fit for your needs.
               </span>
             </li>
@@ -268,12 +277,12 @@ export default function ModelsPage() {
                 <div className="w-1.5 h-1.5 rounded-full bg-[#52B788]" />
               </div>
               <span className="text-white/80">
-                Our comprehensive range of models is specifically chosen to support the development of sophisticated agentic applications on our platform.
+                Our comprehensive range of models is specifically chosen to support the development and deployment of sophisticated agentic applications on our platform.
               </span>
             </li>
           </ul>
           <p className="text-white/80 mb-4">
-            We're continuously evaluating and adding new models to our library, ensuring you always have access to the latest advancements in AI technology. We actively encourage our customers to help shape our model selection - your feedback and requirements drive our decisions about which models to add next.
+            We're continuously evaluating and adding new models to our library, ensuring you always have access to the latest advancements in Opensource models. We actively encourage our customers to help shape our model selection - your feedback and requirements drive our decisions about which models to add next.
           </p>
           <p className="text-white/60 italic">
             Have a specific model in mind? We'd love to hear your suggestions and work together to expand our offerings in line with your needs.
