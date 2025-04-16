@@ -97,7 +97,7 @@ export function Header() {
                     className="text-2xl text-white hover:text-white/80 transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    Models
+                    {t('header.navigation.models')}
                   </Link>
                   <Link 
                     to="/why-berget" 

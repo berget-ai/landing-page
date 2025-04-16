@@ -84,7 +84,8 @@
       "developers": "För Utvecklare",
       "pricing": "Priser",
       "documentation": "Dokumentation",
-      "blog": "Blogg"
+      "blog": "Blogg",
+      "models" : "Våra modeller"
     },
     "buttons": {
       "signIn": "Logga in",
