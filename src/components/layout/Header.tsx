@@ -29,7 +29,7 @@ export function Header() {
 
           {/* Models */}
           <Link to="/models" className="text-sm text-white/60 hover:text-white transition-colors">
-            Models
+          {t('header.navigation.models')}
           </Link>
 
           {/* Why Berget */}
