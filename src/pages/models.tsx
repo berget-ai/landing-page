@@ -252,7 +252,7 @@ export default function ModelsPage() {
                 <div className="w-1.5 h-1.5 rounded-full bg-[#52B788]" />
               </div>
               <span className="text-white/80">
-                We provide access to the most powerful open source models, ensuring you have the tools needed for advanced AI development.
+                We provide access to the most powerful open source models, ensuring you have the power, speed and cost-efficiency needed for advanced AI development.
               </span>
             </li>
             <li className="flex items-start gap-3">
@@ -260,10 +260,9 @@ export default function ModelsPage() {
                 <div className="w-1.5 h-1.5 rounded-full bg-[#52B788]" />
               </div>
               <span className="text-white/80">
-                In supporting AI Sovereignty for Europe - we especially want to provide models that are multilingual and support European languages and values 
+                In supporting AI Sovereignty for Europe - we especially want to provide models that are multilingual and support European languages and "understanding" of our values 
               </span>
             </li>
-            
             <li className="flex items-start gap-3">
               <div className="w-6 h-6 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center mt-1">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#52B788]" />
