@@ -133,12 +133,12 @@ export function Header() {
               <div className="pt-4 space-y-4">
                 <LanguageSwitcher />
                 <Button variant="secondary" size="lg" className="w-full text-xl" asChild>
-                  <Link to="/login" onClick={() => setIsMenuOpen(false)}>
+                  <Link to="https://console.berget.ai" onClick={() => setIsMenuOpen(false)}>
                     {t('header.buttons.signIn')}
                   </Link>
                 </Button>
                 <Button size="lg" className="w-full text-xl" asChild>
-                  <Link to="/signup" onClick={() => setIsMenuOpen(false)}>
+                  <Link to="https://console.berget.ai" onClick={() => setIsMenuOpen(false)}>
                     {t('header.buttons.getStarted')}
                   </Link>
                 </Button>
