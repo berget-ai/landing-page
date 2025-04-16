@@ -55,11 +55,11 @@ export function Header() {
           <LanguageSwitcher />
 
           <Button variant="secondary" size="sm" asChild>
-            <Link to="https://chat.berget.ai">{t('header.buttons.signIn')}</Link>
+            <Link to="https://console.berget.ai">{t('header.buttons.signIn')}</Link>
           </Button>
 
           <Button size="sm" asChild>
-            <Link to="https://chat.berget.ai">{t('header.buttons.getStarted')}</Link>
+            <Link to="https://console.berget.ai">{t('header.buttons.getStarted')}</Link>
           </Button>
         </nav>
 
