@@ -17,6 +17,7 @@ import AboutPage from './pages/about'
 import SignupPage from './pages/signup'
 import ContactPage from './pages/contact'
 import ModelsPage from './pages/models'
+import VisualIdentityGuide from './pages/VisualIdentityGuide'
 
 // Markdown content
 import { html as termsHtml } from '@/pages/terms.md'
@@ -46,12 +47,19 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/models" element={<ModelsPage />} />
           <Route path="/terms" element={<MarkdownPage html={termsHtml} />} />
-          <Route path="/privacy" element={<MarkdownPage html={privacyHtml} />} />
-          <Route path="/acceptable-use" element={<MarkdownPage html={acceptableUseHtml} />} />
+          <Route
+            path="/privacy"
+            element={<MarkdownPage html={privacyHtml} />}
+          />
+          <Route
+            path="/acceptable-use"
+            element={<MarkdownPage html={acceptableUseHtml} />}
+          />
           <Route path="/sla" element={<MarkdownPage html={slaHtml} />} />
           <Route path="/dpa" element={<MarkdownPage html={dpaHtml} />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:id" element={<BlogPostPage />} />
+          <Route path="/vig" element={<VisualIdentityGuide />} />
         </Routes>
         <Footer />
       </div>
