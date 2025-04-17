@@ -6,7 +6,6 @@ import { TerminalCarousel } from '@/components/terminal/TerminalCarousel'
 import { Link } from 'react-router-dom'
 import { ModelsSection } from '@/components/sections/ModelsSection'
 import { Overview } from '@/components/sections/Overview'
-import developerImage from '@/assets/images/developers.png'
 
 const iconMap = {
   github: Github,
@@ -17,12 +16,13 @@ const iconMap = {
 
 export default function DevelopersPage() {
   const { t } = useTranslation()
-  const sections = t('DevelopersPage.sections', { returnObjects: true }) as {
-    icon: keyof typeof iconMap
-    title: string
-    description: string
-    bullets: string[]
-  }[] || []
+  const sections =
+    (t('DevelopersPage.sections', { returnObjects: true }) as {
+      icon: keyof typeof iconMap
+      title: string
+      description: string
+      bullets: string[]
+    }[]) || []
 
   return (
     <main className="min-h-screen">
@@ -30,16 +30,11 @@ export default function DevelopersPage() {
       <section className="relative overflow-hidden min-h-[80vh] flex items-center">
         {/* Background image */}
         <div className="absolute inset-0 z-0">
-          <img
-            src={developerImage}
-            alt="Developer illustration"
-            className="w-full h-full object-cover object-center"
-          />
           {/* Gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/20" />
           <div className="absolute inset-0 bg-grid-white/5 bg-[size:32px_32px] pointer-events-none" />
         </div>
-        
+
         {/* Content */}
         <div className="container relative z-10 mx-auto px-4 py-24">
           <div className="max-w-3xl">
@@ -65,38 +60,44 @@ export default function DevelopersPage() {
       {/* Features */}
       <div className="container mx-auto px-4 py-24">
         <div className="max-w-7xl mx-auto space-y-24">
-          {Array.isArray(sections) ? sections.map((section, index) => {
-            const Icon = iconMap[section.icon]
-            return (
-              <motion.div
-                key={section.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="relative group"
-              >
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-[#52B788]/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="relative p-8 rounded-3xl border border-[#74C69D]/20 bg-white/[0.02] backdrop-blur-sm">
-                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#2D6A4F] to-[#40916C] flex items-center justify-center mb-6">
-                    <Icon className="w-6 h-6 text-white" />
+          {Array.isArray(sections) ? (
+            sections.map((section, index) => {
+              const Icon = iconMap[section.icon]
+              return (
+                <motion.div
+                  key={section.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="relative group"
+                >
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-[#52B788]/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="relative p-8 rounded-3xl border border-[#74C69D]/20 bg-white/[0.02] backdrop-blur-sm">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#2D6A4F] to-[#40916C] flex items-center justify-center mb-6">
+                      <Icon className="w-6 h-6 text-white" />
+                    </div>
+                    <h2 className="text-2xl font-medium mb-4">
+                      {section.title}
+                    </h2>
+                    <p className="text-white/80 mb-4">{section.description}</p>
+                    <ul className="space-y-4">
+                      {section.bullets.map((bullet, i) => (
+                        <li key={i} className="flex items-center gap-3">
+                          <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
+                          <span dangerouslySetInnerHTML={{ __html: bullet }} />
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <h2 className="text-2xl font-medium mb-4">{section.title}</h2>
-                  <p className="text-white/80 mb-4">{section.description}</p>
-                  <ul className="space-y-4">
-                    {section.bullets.map((bullet, i) => (
-                      <li key={i} className="flex items-center gap-3">
-                        <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
-                        <span dangerouslySetInnerHTML={{ __html: bullet }} />
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.div>
-            )
-          }) : (
+                </motion.div>
+              )
+            })
+          ) : (
             <div className="p-8 rounded-3xl border border-[#74C69D]/20 bg-white/[0.02] backdrop-blur-sm text-center">
-              <p className="text-white/80">Developer sections will appear here.</p>
+              <p className="text-white/80">
+                Developer sections will appear here.
+              </p>
             </div>
           )}
 

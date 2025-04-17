@@ -1,15 +1,8 @@
-import React, { useState, useMemo } from 'react';
-import { Filter } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { useState, useMemo } from 'react'
+import { Filter } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 
 // Helper function to extract size from model name
-const getModelSize = (name: string): number => {
-  const sizeMatch = name.match(/(\d+\.?\d*)([BM])/);
-  if (!sizeMatch) return Infinity;
-  const [, size, unit] = sizeMatch;
-  const numericSize = parseFloat(size);
-  return unit === 'B' ? numericSize * 1000 : numericSize;
-};
 
 const models = [
   // Text Models (sorted by size)
@@ -18,7 +11,8 @@ const models = [
     type: 'Text Models',
     provider: 'Meta',
     license: 'Llama 2 License',
-    description: 'Compact instruction-tuned language model for high speed and low cost for agentic workflows and simpler tasks',
+    description:
+      'Compact instruction-tuned language model for high speed and low cost for agentic workflows and simpler tasks',
     status: 'available',
   },
   {
@@ -26,7 +20,8 @@ const models = [
     type: 'Text Models',
     provider: 'Meta',
     license: 'Llama 2 License',
-    description: 'Instruction-tuned variant of Llama 3 optimized for task completion, small and fast.',
+    description:
+      'Instruction-tuned variant of Llama 3 optimized for task completion, small and fast.',
     status: 'available',
   },
   {
@@ -34,7 +29,8 @@ const models = [
     type: 'Text Models',
     provider: 'Meta',
     license: 'Llama 2 License',
-    description: 'Mid-sized instruction-tuned language model with balanced performance and cost.',
+    description:
+      'Mid-sized instruction-tuned language model with balanced performance and cost.',
     status: 'available',
   },
   {
@@ -42,7 +38,8 @@ const models = [
     type: 'Text Models',
     provider: 'Google',
     license: 'Gemma License',
-    description: 'Advanced language model with strong reasoning capabilities. Workhorse for agentic applications',
+    description:
+      'Advanced language model with strong reasoning capabilities. Workhorse for agentic applications',
     status: 'available',
   },
   {
@@ -50,7 +47,8 @@ const models = [
     type: 'Text Models',
     provider: 'Google',
     license: 'Gemma License',
-    description: 'Advanced language model with strong performance across various tasks.',
+    description:
+      'Advanced language model with strong performance across various tasks.',
     status: 'available',
   },
   {
@@ -58,7 +56,8 @@ const models = [
     type: 'Text Models',
     provider: 'Alibaba',
     license: 'Qwen License',
-    description: 'Large-scale language model with advanced reasoning capabilities.',
+    description:
+      'Large-scale language model with advanced reasoning capabilities.',
     status: 'available',
   },
   {
@@ -66,7 +65,8 @@ const models = [
     type: 'Text Models',
     provider: 'Meta',
     license: 'Llama 2 License',
-    description: 'Large-scale instruction-tuned model with state-of-the-art performance.',
+    description:
+      'Large-scale instruction-tuned model with state-of-the-art performance.',
     status: 'available',
   },
   {
@@ -74,7 +74,8 @@ const models = [
     type: 'Text Models',
     provider: 'Unsloth',
     license: 'Apache 2.0',
-    description: 'The premier Open Source Reasoning model. This variant is optimized dynamic quantization allowing for smaller footprint, higher speed and lower cost, while retaining performance in reasoning and multi-step problem solving.',
+    description:
+      'The premier Open Source Reasoning model. This variant is optimized dynamic quantization allowing for smaller footprint, higher speed and lower cost, while retaining performance in reasoning and multi-step problem solving.',
     status: 'available',
   },
   // Other model types
@@ -83,7 +84,8 @@ const models = [
     type: 'Text Embedding',
     provider: 'Intfloat',
     license: 'MIT',
-    description: 'Large multilingual embedding model based on E5 Mistral 7B instruct. With enhanced multilingual capabilities and good performance on Scandinavian languages.',
+    description:
+      'Large multilingual embedding model based on E5 Mistral 7B instruct. With enhanced multilingual capabilities and good performance on Scandinavian languages.',
     status: 'available',
   },
   {
@@ -91,7 +93,8 @@ const models = [
     type: 'Text Embedding',
     provider: 'Intfloat',
     license: 'MIT',
-    description: 'Compact but powerful text embedding model developed for semantic similarity tasks and information retrieval.',
+    description:
+      'Compact but powerful text embedding model developed for semantic similarity tasks and information retrieval.',
     status: 'available',
   },
   {
@@ -99,7 +102,8 @@ const models = [
     type: 'Image Generation',
     provider: 'AMD',
     license: 'CreativeML Open RAIL-M',
-    description: 'High-performance image generation model optimized for AMD hardware.',
+    description:
+      'High-performance image generation model optimized for AMD hardware.',
     status: 'available',
   },
   {
@@ -107,7 +111,8 @@ const models = [
     type: 'Image Generation',
     provider: 'Black Forest Labs',
     license: 'Apache 2.0',
-    description: 'Fast and efficient image generation model, great output quality and competitive prompt following, matching the performance of closed source alternatives. Can generate a high quality picture in only 1 to 4 steps',
+    description:
+      'Fast and efficient image generation model, great output quality and competitive prompt following, matching the performance of closed source alternatives. Can generate a high quality picture in only 1 to 4 steps',
     status: 'available',
   },
   {
@@ -115,7 +120,8 @@ const models = [
     type: 'Image Generation',
     provider: 'Black Forest Labs',
     license: 'flux-1-dev-non-commercial-license',
-    description: 'Developer-focused variant of Flux.1 with enhanced image generation capabilities.',
+    description:
+      'Developer-focused variant of Flux.1 with enhanced image generation capabilities.',
     status: 'available',
   },
   {
@@ -123,7 +129,8 @@ const models = [
     type: 'Moderation',
     provider: 'Meta',
     license: 'Llama 2 License',
-    description: 'Advanced content moderation model for detecting and filtering harmful content.',
+    description:
+      'Advanced content moderation model for detecting and filtering harmful content.',
     status: 'available',
   },
   {
@@ -131,7 +138,8 @@ const models = [
     type: 'Moderation',
     provider: 'Google',
     license: 'Gemma License',
-    description: 'Specialized model for content moderation and safety enforcement.',
+    description:
+      'Specialized model for content moderation and safety enforcement.',
     status: 'available',
   },
   {
@@ -139,7 +147,8 @@ const models = [
     type: 'Multimodal',
     provider: 'Alibaba',
     license: 'Qwen License',
-    description: 'Large-scale vision-language model with advanced multimodal capabilities. Perfect for advanced agentic and RAG workflows',
+    description:
+      'Large-scale vision-language model with advanced multimodal capabilities. Perfect for advanced agentic and RAG workflows',
     status: 'available',
   },
   {
@@ -147,7 +156,8 @@ const models = [
     type: 'Multimodal',
     provider: 'Alibaba',
     license: 'Qwen License',
-    description: 'Efficient vision-language model optimized for real-time applications.',
+    description:
+      'Efficient vision-language model optimized for real-time applications.',
     status: 'available',
   },
   {
@@ -155,7 +165,8 @@ const models = [
     type: 'Reranking',
     provider: 'mxbai',
     license: 'Apache 2.0',
-    description: 'Reranking model for search result optimization in RAG applications. State-of-the-art performance and strong efficiency ith multilingual support (100+ languages) code and long context support',
+    description:
+      'Reranking model for search result optimization in RAG applications. State-of-the-art performance and strong efficiency ith multilingual support (100+ languages) code and long context support',
     status: 'available',
   },
   {
@@ -163,7 +174,8 @@ const models = [
     type: 'Reranking',
     provider: 'BAAI',
     license: 'Apache 2.0',
-    description: 'Lightweight reranker model, possesses strong multilingual capabilities.',
+    description:
+      'Lightweight reranker model, possesses strong multilingual capabilities.',
     status: 'available',
   },
   {
@@ -171,7 +183,8 @@ const models = [
     type: 'Speech-to-Text',
     provider: 'OpenAI',
     license: 'Apache 2.0',
-    description: 'Large speech recognition and transcription model with multilingual capabilities.',
+    description:
+      'Large speech recognition and transcription model with multilingual capabilities.',
     status: 'available',
   },
   {
@@ -179,7 +192,8 @@ const models = [
     type: 'Speech-to-Text',
     provider: 'KB',
     license: 'Apache 2.0',
-    description: 'Customized Whisper model optimized for Swedish language. Trained by the National Library of Sweden on over 50,000 hours of Swedish speech ',
+    description:
+      'Customized Whisper model optimized for Swedish language. Trained by the National Library of Sweden on over 50,000 hours of Swedish speech ',
     status: 'available',
   },
   {
@@ -187,7 +201,8 @@ const models = [
     type: 'Speech-to-Text',
     provider: 'OpenAI',
     license: 'Apache 2.0',
-    description: 'Optimized version of Whisper with improved speed and efficiency.',
+    description:
+      'Optimized version of Whisper with improved speed and efficiency.',
     status: 'available',
   },
   {
@@ -211,7 +226,8 @@ const models = [
     type: 'Code Generation',
     provider: 'Alibaba',
     license: 'Qwen License',
-    description: 'Specialized model for code generation and software development.',
+    description:
+      'Specialized model for code generation and software development.',
     status: 'available',
   },
   {
@@ -222,21 +238,24 @@ const models = [
     description: 'Preview version of advanced code generation model.',
     status: 'available',
   },
-];
+]
 
 export default function ModelsPage() {
-  const [selectedType, setSelectedType] = useState<string | null>(null);
+  const [selectedType, setSelectedType] = useState<string | null>(null)
 
   const modelTypes = useMemo(() => {
-    const types = Array.from(new Set(models.map(model => model.type)));
+    const types = Array.from(new Set(models.map((model) => model.type)))
     // Ensure "Text Models" appears first, then sort the rest alphabetically
-    return ['Text Models', ...types.filter(type => type !== 'Text Models').sort()];
-  }, []);
+    return [
+      'Text Models',
+      ...types.filter((type) => type !== 'Text Models').sort(),
+    ]
+  }, [])
 
   const filteredModels = useMemo(() => {
-    if (!selectedType) return models;
-    return models.filter(model => model.type === selectedType);
-  }, [selectedType]);
+    if (!selectedType) return models
+    return models.filter((model) => model.type === selectedType)
+  }, [selectedType])
 
   return (
     <div className="container mx-auto py-24">
@@ -244,7 +263,10 @@ export default function ModelsPage() {
         <h1 className="text-4xl font-medium mb-6">Model Library</h1>
         <div className="prose prose-invert max-w-none">
           <p className="text-lg text-white/80 leading-relaxed mb-6">
-            At Berget AI, we're committed to providing the most powerful open models available, carefully selected to enable our customers to build and deploy sophisticated AI applications. Our model library is designed with the following principles in mind:
+            At Berget AI, we're committed to providing the most powerful open
+            models available, carefully selected to enable our customers to
+            build and deploy sophisticated AI applications. Our model library is
+            designed with the following principles in mind:
           </p>
           <ul className="space-y-4 mb-8">
             <li className="flex items-start gap-3">
@@ -252,7 +274,9 @@ export default function ModelsPage() {
                 <div className="w-1.5 h-1.5 rounded-full bg-[#52B788]" />
               </div>
               <span className="text-white/80">
-                We provide access to the most powerful open source models, ensuring you have the power, speed and cost-efficiency needed for advanced AI development.
+                We provide access to the most powerful open source models,
+                ensuring you have the power, speed and cost-efficiency needed
+                for advanced AI development.
               </span>
             </li>
             <li className="flex items-start gap-3">
@@ -260,7 +284,9 @@ export default function ModelsPage() {
                 <div className="w-1.5 h-1.5 rounded-full bg-[#52B788]" />
               </div>
               <span className="text-white/80">
-                In supporting AI Sovereignty for Europe - we especially want to provide models that are multilingual and support European languages and "understanding" of our values 
+                In supporting AI Sovereignty for Europe - we especially want to
+                provide models that are multilingual and support European
+                languages and "understanding" of our values
               </span>
             </li>
             <li className="flex items-start gap-3">
@@ -268,7 +294,9 @@ export default function ModelsPage() {
                 <div className="w-1.5 h-1.5 rounded-full bg-[#52B788]" />
               </div>
               <span className="text-white/80">
-                Our carefully curated selection balances performance, speed, and cost across different model types and sizes, helping you find the perfect fit for your needs.
+                Our carefully curated selection balances performance, speed, and
+                cost across different model types and sizes, helping you find
+                the perfect fit for your needs.
               </span>
             </li>
             <li className="flex items-start gap-3">
@@ -276,15 +304,22 @@ export default function ModelsPage() {
                 <div className="w-1.5 h-1.5 rounded-full bg-[#52B788]" />
               </div>
               <span className="text-white/80">
-                Our comprehensive range of models is specifically chosen to support the development and deployment of sophisticated agentic applications on our platform.
+                Our comprehensive range of models is specifically chosen to
+                support the development and deployment of sophisticated agentic
+                applications on our platform.
               </span>
             </li>
           </ul>
           <p className="text-white/80 mb-4">
-            We're continuously evaluating and adding new models to our library, ensuring you always have access to the latest advancements in Opensource models. We actively encourage our customers to help shape our model selection - your feedback and requirements drive our decisions about which models to add next.
+            We're continuously evaluating and adding new models to our library,
+            ensuring you always have access to the latest advancements in
+            Opensource models. We actively encourage our customers to help shape
+            our model selection - your feedback and requirements drive our
+            decisions about which models to add next.
           </p>
           <p className="text-white/60 italic">
-            Have a specific model in mind? We'd love to hear your suggestions and work together to expand our offerings in line with your needs.
+            Have a specific model in mind? We'd love to hear your suggestions
+            and work together to expand our offerings in line with your needs.
           </p>
         </div>
       </div>
@@ -295,20 +330,20 @@ export default function ModelsPage() {
             <Filter className="w-4 h-4 text-[#52B788]" />
             <span className="text-sm text-white/60">Filter by type</span>
           </div>
-          
+
           <div className="flex flex-wrap gap-2">
             <Button
-              variant={selectedType === null ? "default" : "secondary"}
+              variant={selectedType === null ? 'default' : 'secondary'}
               size="sm"
               onClick={() => setSelectedType(null)}
               className="rounded-full"
             >
               All
             </Button>
-            {modelTypes.map(type => (
+            {modelTypes.map((type) => (
               <Button
                 key={type}
-                variant={selectedType === type ? "default" : "secondary"}
+                variant={selectedType === type ? 'default' : 'secondary'}
                 size="sm"
                 onClick={() => setSelectedType(type)}
                 className="rounded-full"
@@ -322,10 +357,15 @@ export default function ModelsPage() {
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {filteredModels.map((model) => (
-          <div key={model.name} className="p-6 rounded-xl bg-white/[0.02] backdrop-blur-sm border border-white/10 hover:bg-white/[0.04] transition-colors">
+          <div
+            key={model.name}
+            className="p-6 rounded-xl bg-white/[0.02] backdrop-blur-sm border border-white/10 hover:bg-white/[0.04] transition-colors"
+          >
             <h3 className="text-xl font-medium mb-2">{model.name}</h3>
             <div className="flex items-center gap-2 mb-2">
-              <span className="text-sm font-medium text-[#52B788]">{model.type}</span>
+              <span className="text-sm font-medium text-[#52B788]">
+                {model.type}
+              </span>
               <span className="text-sm text-white/60">• {model.provider}</span>
             </div>
             <p className="text-sm text-white/60 mb-4">{model.description}</p>
@@ -339,5 +379,5 @@ export default function ModelsPage() {
         ))}
       </div>
     </div>
-  );
+  )
 }
