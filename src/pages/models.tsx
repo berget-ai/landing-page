@@ -52,7 +52,7 @@ const models = [
     status: 'available',
   },
   {
-    name: 'QwQ32B',
+    name: 'QwQ-32B',
     type: 'Text Models',
     provider: 'Alibaba',
     license: 'Qwen License',
@@ -355,7 +355,7 @@ export default function ModelsPage() {
         </div>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
         {filteredModels.map((model) => (
           <div
             key={model.name}
