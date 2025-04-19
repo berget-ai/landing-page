@@ -5,8 +5,8 @@ export interface PricingRow {
   eur?: string
   badge?: string
   tooltip?: string
-  flavour?: string
-  price?: string
+  inputprice?: string
+  outputprice?: string
 }
 
 export interface PricingSectionProps {

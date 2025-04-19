@@ -28,11 +28,8 @@ export default function PricingPage() {
         </div>
 
         {/* Money Back Guarantee Section */}
-        <div className="mb-24 max-w-3xl mx-auto">
-          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-4 w-fit">
-            <Check className="w-4 h-4 text-[#FFB700]" />
-            <span className="text-sm">{t('pricing.moneyBackGuarantee')}</span>
-          </div>
+        <div className="mb-24 max-w-6xl mx-auto">
+
           <p className="text-white/60 mb-4">{t('pricing.moneyBackDescription')}</p>
           <ul className="text-white/60 space-y-2 list-disc list-inside mb-4">
             {bullets.map((item) => (
@@ -42,7 +39,7 @@ export default function PricingPage() {
           <p className="text-white/60">{t('pricing.moneyBackNote')}</p>
         </div>
 
-        <div className="mb-24">
+        <div className="mb-24 max-w-6xl mx-auto">
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-2xl font-medium">{t('pricing.detailedPricing')}</h2>
             <TooltipProvider>

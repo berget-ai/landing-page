@@ -209,7 +209,7 @@
         },
         "compute": {
           "title": "Storage & Compute",
-          "items": ["CPU", "GPU", "Local Storage", "Block Storage"]
+          "items": ["CPU", "GPU", "Local Storage", "Premium Storage"]
         },
         "connectivity": {
           "title": "Connectivity",
@@ -431,7 +431,6 @@
         "features": [
           "50€ token credits",
           "Less rate limits",
-          "TDB",
           "Email support",
           "List prices"
         ]
@@ -441,10 +440,10 @@
         "description": "For developer teams",
         "price": "€500 / month",
         "features": [
+          "10% Extra Credits",
           "550€ token credits",
           "No rate limits",
-          "Priority support",
-          "10% Extra Credits"
+          "Priority support"
         ]
       },
       "enterprise": {
@@ -455,7 +454,7 @@
           "Custom models",
           "No rate limits",
           "Dedicated support",
-          "SLA guarantees"
+          "API SLA guarantees"
         ]
       }
     },

@@ -204,7 +204,7 @@
         },
         "compute": {
           "title": "Lagring och Compute",
-          "items": ["CPU", "GPU", "Lokal lagring", "Blocklagring"]
+          "items": ["CPU", "GPU", "Lokal lagring", "Premium lagring"]
         },
         "connectivity": {
           "title": "Nätverk",
@@ -407,51 +407,48 @@
     },
     "tiers": {
       "payg": {
-        "name": "Flexibel",
-        "description": "API-åtkomst",
-        "price": "€0",
+        "name": "Get started",
+        "description": "API access",
+        "price": "€1",
         "features": [
-          "Betala per token",
-          "Vissa hastighetsbegränsningar",
-          "Betala per CPU användning",
-          "Community-support",
-          "Listpriser"
+          "€5 Credits",
+          "Pay per token",
+          "Rate limit",
+          "Community support",
+          "Listpris"
         ]
       },
       "starter": {
-        "name": "Starter",
-        "description": "Börja bygga",
-        "price": "€250",
+        "name": "Developer",
+        "description": "För det lilla projektet",
+        "price": "€50 / månad",
         "features": [
-          "100€ token-krediter",
-          "Färre hastighetsbegränsningar",
-          "1 Controller, 3 Workers",
-          "E-postsupport",
-          "10% rabatt"
+          "50€ token credits",
+          "Mindre rate limit",
+          "Email-support",
+          "Listpriser"
         ]
       },
       "developer": {
-        "name": "Developer",
-        "description": "Väx med behov",
-        "price": "€890",
+        "name": "Team",
+        "description": "För utvecklarteams",
+        "price": "€500 / månad",
         "features": [
-          "200€ token-krediter",
-          "Inga hastighetsbegränsningar",
-          "3 Controllers, 6 Workers",
-          "Prioriterad support",
-          "12% rabatt"
+          "10% Extra Credits",
+          "550€ token credits",
+          "Inga rate limits",
+          "Prioriterad support"
         ]
       },
       "enterprise": {
         "name": "Enterprise",
-        "description": "Anpassade lösningar",
-        "price": "Kontakta oss",
+        "description": "När du ska skala upp",
+        "price": "På förfrågan",
         "features": [
-          "Anpassad infrastruktur",
-          "Inga hastighetsbegränsningar",
+          "Egna modeller",
+          "Inga rate limits",
           "Dedikerad support",
-          "SLA garanti",
-          "Utbilding & onboarding"
+          "SLA-garantier på API"
         ]
       }
     },
