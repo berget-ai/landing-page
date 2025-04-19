@@ -92,6 +92,32 @@ function WhyBergetPage() {
               </ul>
             </motion.div>
 
+            {/* Flexible Infrastructure */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="p-8 rounded-xl bg-white/[0.02] backdrop-blur-sm border border-white/10 hover:bg-white/[0.04] transition-colors"
+            >
+              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#74C69D] to-[#52B788] flex items-center justify-center mb-8">
+                <Server className="w-7 h-7 text-white" />
+              </div>
+              <h3 className="text-xl font-medium mb-4">{t('whyBerget.benefits.flexible.title')}</h3>
+              <p className="text-white/60 mb-6">{t('whyBerget.benefits.flexible.description')}</p>
+              <ul className="space-y-3">
+                {(t('whyBerget.benefits.flexible.features', { returnObjects: true }) as string[]).map((feature, index) => (
+                  <li key={index} className="flex items-center gap-3">
+                    <div className="w-6 h-6 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center">
+                      <Check className="w-4 h-4 text-[#52B788]" />
+                    </div>
+                    <span className="text-sm text-white/80">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          
+
             {/* Sustainable AI */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -117,31 +143,7 @@ function WhyBergetPage() {
               </ul>
             </motion.div>
 
-            {/* Flexible Infrastructure */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="p-8 rounded-xl bg-white/[0.02] backdrop-blur-sm border border-white/10 hover:bg-white/[0.04] transition-colors"
-            >
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#74C69D] to-[#52B788] flex items-center justify-center mb-8">
-                <Server className="w-7 h-7 text-white" />
-              </div>
-              <h3 className="text-xl font-medium mb-4">{t('whyBerget.benefits.flexible.title')}</h3>
-              <p className="text-white/60 mb-6">{t('whyBerget.benefits.flexible.description')}</p>
-              <ul className="space-y-3">
-                {(t('whyBerget.benefits.flexible.features', { returnObjects: true }) as string[]).map((feature, index) => (
-                  <li key={index} className="flex items-center gap-3">
-                    <div className="w-6 h-6 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center">
-                      <Check className="w-4 h-4 text-[#52B788]" />
-                    </div>
-                    <span className="text-sm text-white/80">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          </div>
+            </div>
 
           {/* Detailed Features */}
           <div className="max-w-7xl mx-auto space-y-24">

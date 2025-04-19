@@ -118,7 +118,7 @@ export function ServerlessInference() {
       <h3 className="text-xl font-medium">Serverless Inference</h3>
       <p className="text-white/60">Access our comprehensive selection of AI models through our OpenAI compliant API. Pay only for what you use with no upfront commitments.</p>
 
-      <p className="text-white/60">Prices are per 1 million tokens including input and output tokens for text based models unless stated otherwise, only including input tokens for Embedding and Rerank models, and based on image size and steps for Image models.</p>
+      <p className="text-white/60">Prices are per 1 million tokens including input and output tokens for text based models unless stated otherwise, only including input tokens for Embedding and Rerank models. Image models are based on steps for Image models.</p>
       
       <ModelTable 
         title="Text Generation Models" 

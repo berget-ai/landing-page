@@ -2,21 +2,21 @@
   "hero": {
     "tagline": "No data leaves Sweden",
     "title": {
-      "part1": "Unlocking AI Innovation",
-      "part2": "in Europe"
+      "part1": "We champion AI Sovereignty to unlock innovation and growth in Europe",
+      "part2": ""
     },
-    "description": "The first Swedish AI service built for developers. We provide EU-compliant infrastructure for AI applications, combining open architecture security with a simple developer experience.",
+    "description": "EU-compliant inference service and AI infrastructure built by developers for developers.",
     "getStarted": "Get Started",
     "learnMore": "Learn More"
   },
   "about": {
     "hero": {
       "title": "About Berget AI",
-      "description": "Building the future of European AI infrastructure"
+      "description": "We champion AI sovereignty to unlock innovation and growth."
     },
     "origin": {
       "title": "Our Story",
-      "description": "Berget AI was born out of the realization that many organizations are hindered in their pursuit of AI driven innovation - be it legal and regulatory concerns, not having the skills or capital to run train and host your own AI models, not wanting to invest upfront in GPUs, or simply not having access to relevant local language capable LLMs.",
+      "description": "We realised that many organisations are held back in their pursuit of AI by a range of obstacles. Some struggle with legal and regulatory challenges, others simply don’t have the skills or capital to run, train, and host their own AI models. Many are reluctant to invest upfront in GPUs or lack access to local language-capable large language models. That’s why we built Berget AI – to unlock the full potential of AI for innovation and growth by championing sovereign, open and sustainable AI.",
       "nameOrigin": "The name is Swedish for \"mountain\", which we have plenty of in Sweden, many of which host underground Data Centers. So why have your data in the cloud when you can have in \"Berget\"?"
     },
     "values": {
@@ -48,7 +48,7 @@
   },
   "team": {
     "title": "Our Team",
-    "description": "We are entrepreneurs and founders with decades of experience in technology and AI",
+    "description": "We are entrepreneurs with decades of experience in technology and AI",
     "members": {
       "christian": {
         "name": "Christian Landgren",
@@ -73,10 +73,16 @@
           "role": "Datacenter Networking",
           "bio": "A leading Data Center network designer and builder who has helped leading enterprises and scale-ups build global multi-site datacenter deployments",
           "image": "/team/johan-profil.jpg"
-        }
+        },
+        "sara": {
+          "name": "Sara Alsén",
+          "role": "Communication & Marketing",
+          "bio": "Sara has over 25 years of experience of building brands with purpose through impactful communication - for start-ups and multinationals.",
+          "image": "/team/sara.jpg"
       }
     }
-  },
+  }
+},
 
   "header": {
     "navigation": {
@@ -95,8 +101,8 @@
   },
   "products": {
     "hero": {
-      "title": "Build the Future with Berget AI",
-      "description": "AI infrastructure designed for Europe. Secure, compliant, and ready to scale.",
+      "title": "Inference services and agentic infrastructure in one place",
+      "description": "Sovereign, Open and Sustainable AI – ready to scale.",
       "exploreMore": "Learn more"
     },
     "serverless": {
@@ -308,40 +314,40 @@
   },
   "whyBerget": {
     "hero": {
-      "tagline": "EU-based AI Infrastructure",
+      "tagline": "No data leaves Sweden",
       "title": "Why choose Berget AI?",
-      "description": "Secure, compliant, and sustainable AI infrastructure built for European innovation and data sovereignty.",
+      "description": "No dependencies, no legal exposure, no data retention",
       "getStarted": "Get Started",
       "bookDemo": "Book Demo"
     },
     "benefits": {
       "title": "Benefits of Berget AI",
-      "description": "We offer a unique combination of security, compliance, and flexibility for European companies.",
+      "description": "We serve (public and private sector) organisations that seek to harness the power of AI with full control and with a minimum impact on the planet.",
       "euBased": {
-        "title": "100% EU Based",
-        "description": "All data stays within EU borders. Our infrastructure is built in Europe, for Europe, with full compliance with EU regulations.",
+        "title": "Sovereign AI",
+        "description": "Run models while all data stays within EU borders, our infrastructure is all in Europe, with full compliance with EU regulations.",
         "features": [
-          "GDPR Compliant",
-          "NIS2 Ready",
-          "EU AI Act Aligned"
+          "Enables AI and Data Sovereignty",
+          "Aligned with EU regulations",
+          "Full control of your data"
         ]
       },
       "sustainable": {
         "title": "Sustainable AI",
         "description": "Our infrastructure is built with sustainability in focus, from fossil-free electricity to heat recovery and circular hardware.",
         "features": [
-          "100% Renewable Energy",
-          "CO₂ Tracking per API Call",
+          "100% Fossil-free Energy",
+          "CO₂ Tracking",
           "Circular Hardware"
         ]
       },
       "flexible": {
-        "title": "Flexible Infrastructure",
-        "description": "From serverless to dedicated GPUs, we offer the flexibility you need to build and scale your AI applications.",
+        "title": "Open AI",
+        "description": "We are champions of open innovation and we host and serve open models. Our services are fully built on open source.",
         "features": [
-          "Kubernetes Based",
-          "GitOps Workflow",
-          "Scalable Computing"
+          "Open Models",
+          "Open Source",
+          "Open Innovation"
         ]
       }
     },
@@ -385,9 +391,9 @@
     },
     "cta": {
       "title": "Ready to Build with Berget AI?",
-      "description": "Get started today and discover the benefits of a secure, compliant, and sustainable AI infrastructure.",
+      "description": "No up front investments, no hidden costs, no lock-ins.",
       "createAccount": "Create Account",
-      "contactSales": "Contact Sales"
+      "contactSales": "Contact Us"
     }
   },
   "pricing": {
@@ -407,51 +413,49 @@
     },
     "tiers": {
       "payg": {
-        "name": "Flex",
+        "name": "Get started",
         "description": "API access",
-        "price": "€0",
+        "price": "€1",
         "features": [
+          "€5 Credits",
           "Pay per token",
           "Some Rate limit",
-          "Payg compute",
           "Community support",
           "List prices"
         ]
       },
       "starter": {
-        "name": "Starter",
-        "description": "Start building",
-        "price": "€250",
+        "name": "Developer",
+        "description": "For the small team",
+        "price": "€50 / month",
         "features": [
-          "100€ token credits",
+          "50€ token credits",
           "Less rate limits",
-          "1 Controller, 3 Workers",
+          "TDB",
           "Email support",
-          "10% Discount"
+          "List prices"
         ]
       },
       "developer": {
-        "name": "Developer",
-        "description": "Grow your business",
-        "price": "€890",
+        "name": "Team",
+        "description": "For developer teams",
+        "price": "€500 / month",
         "features": [
-          "200€ token credits",
+          "550€ token credits",
           "No rate limits",
-          "3 Controllers, 6 Workers",
           "Priority support",
-          "12% discount"
+          "10% Extra Credits"
         ]
       },
       "enterprise": {
         "name": "Enterprise",
-        "description": "Custom solutions",
+        "description": "When you need scale",
         "price": "Custom",
         "features": [
-          "Custom infrastructure",
+          "Custom models",
           "No rate limits",
           "Dedicated support",
-          "SLA guarantees",
-          "Training & onboarding"
+          "SLA guarantees"
         ]
       }
     },
@@ -464,7 +468,7 @@
     "comparisonTooltip": "Based on public pricing"
   },
   "footer": {
-    "description": "We provide open, EU-compliant infrastructure for AI applications, combining open architecture security with a simple developer experience",
+    "description": "Berget AI champions AI sovereignty to unlock innovation and growth in Europe. Founded in Sweden in 2024, Berget AI offers inference and AI infrastructure for private and public sector organisations.",
     "product": {
       "title": "Product",
       "features": "Features",
@@ -500,9 +504,9 @@
     "support": "Support"
   },
   "compliance": {
-    "tagline": "Built for European Regulations",
-    "title": "Compliance Made Simple",
-    "description": "Navigate complex regulations with confidence. Our infrastructure is designed to meet European standards from the ground up.",
+    "tagline": "No data leaves Sweden",
+    "title": "Compliance made simple",
+    "description": "No dependencies, no legal exposure, no data retention.",
     "regulations": {
       "gdpr": {
         "name": "GDPR Compliance",
@@ -514,7 +518,7 @@
         ]
       },
       "nis2": {
-        "name": "NIS2 Ready",
+        "name": "NIS2 Aligned",
         "description": "Meeting requirements for critical infrastructure",
         "benefits": [
           "24/7 security monitoring",
@@ -537,7 +541,7 @@
     "learnMore": "Learn More About Compliance"
   },
   "overview": {
-    "whatIsGitOps": {
+    "whatIsGitOps": { 
       "title": "Manage Your Infrastructure with GitOps",
       "description": "GitOps brings the best practices of software development to infrastructure management. Version control, collaboration, and automated deployments - all through Git."
     },
@@ -559,7 +563,7 @@
   },
   "whyBergetSection": {
     "title": "Why Choose Berget",
-    "description": "Built for European businesses who need secure, compliant AI infrastructure",
+    "description": "No dependencies, no legal exposure, no data retention.",
     "features": {
       "european": {
         "title": "European Sovereignty",
@@ -602,8 +606,8 @@
     ]
   },
   "SustainabilitySection": {
-      "badge": "Sustainability at the Core",
-      "title": "Our Sustainability Promise",
+      "badge": "Built for sunstainable AI",
+      "title": "Our sustainability promise",
       "description": "We are building Europe’s most sustainable AI infrastructure. Our environmental commitment is foundational to our operations, not an afterthought.",
     "points": [
       {
@@ -612,9 +616,14 @@
         "stats": "100% fossil-free energy"
       },
       {
+        "title": "No Waste Water",
+        "description": "Our data centers use zero water for buildling cooling, removing one of the biggest environmental concerns of AI.",
+        "stats": "0% water waste"
+      },
+      {
         "title": "Circular Hardware",
         "description": "We use circular hardware as much as possible to reduce emissions from production. Our servers have extended lifecycles through certified reuse processes.",
-        "stats": "75% reduced hardware production"
+        "stats": "75% hardware CO₂e footprint."
       },
       {
         "title": "CO₂e Tracking",
@@ -657,7 +666,7 @@
   },
 "DevelopersPage": {
   "hero": {
-    "title": "Infrastructure for AI Developers",
+    "title": "AI infrastructure for developers and DevOps teams",
     "description": "Run your AI models and applications in a secure, EU-based environment with full control over your code and data."
   },
   "sections": [
