@@ -129,7 +129,10 @@ export default function ProductsPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-3xl font-medium mb-4">{t('products.dedicated.title')}</h2>
+                <div className="flex items-center gap-3 mb-4">
+                  <h2 className="text-3xl font-medium">{t('products.dedicated.title')}</h2>
+                  <span className="px-4 py-1 text-xs font-medium bg-[#52B788]/10 text-[#52B788] rounded-full whitespace-nowrap">Coming Soon</span>
+                </div>
                 <p className="text-lg text-white/60">
                   {t('products.dedicated.description')}
                 </p>
@@ -193,7 +196,10 @@ export default function ProductsPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-3xl font-medium mb-4">{t('products.platform.title')}</h2>
+                <div className="flex items-center gap-3 mb-4">
+                  <h2 className="text-3xl font-medium">{t('products.platform.title')}</h2>
+                  <span className="px-4 py-1 text-xs font-medium bg-[#52B788]/10 text-[#52B788] rounded-full whitespace-nowrap">Coming Soon</span>
+                </div>
                 <p className="text-lg text-white/60">
                   {t('products.platform.description')}
                 </p>
