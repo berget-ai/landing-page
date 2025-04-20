@@ -65,7 +65,10 @@ export function ProductFeatures() {
               <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#FFB700] to-[#FFB700]/80 flex items-center justify-center mb-8">
                 <Server className="w-7 h-7 text-[#1A1A1A]" />
               </div>
-              <h3 className="text-xl font-medium mb-4">{t('products.dedicated.title')}</h3>
+              <div className="flex items-center gap-3 mb-4">
+                <h3 className="text-xl font-medium">{t('products.dedicated.title')}</h3>
+                <span className="px-4 py-1 text-xs font-medium bg-[#52B788]/10 text-[#52B788] rounded-full whitespace-nowrap">Coming Soon</span>
+              </div>
               <p className="text-white/60 mb-6">{t('products.dedicated.description')}</p>
               <ul className="space-y-3">
                 {(t('products.dedicated.features.deployment.items', { returnObjects: true }) as string[]).map((item) => (
@@ -93,7 +96,10 @@ export function ProductFeatures() {
               <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#74C69D] to-[#52B788] flex items-center justify-center mb-8">
                 <Cpu className="w-7 h-7 text-white" />
               </div>
-              <h3 className="text-xl font-medium mb-4">{t('products.platform.title')}</h3>
+              <div className="flex items-center gap-3 mb-4">
+                <h3 className="text-xl font-medium">{t('products.platform.title')}</h3>
+                <span className="px-4 py-1 text-xs font-medium bg-[#52B788]/10 text-[#52B788] rounded-full whitespace-nowrap">Coming Soon</span>
+              </div>
               <p className="text-white/60 mb-6">{t('products.platform.description')}</p>
               <ul className="space-y-3">
                 {(t('products.platform.features.toolset.items', { returnObjects: true }) as string[]).map((item) => (

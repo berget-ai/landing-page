@@ -25,16 +25,6 @@ const networkPricing: PricingRow[] = [
     price: '€99 / month',
   },
   {
-    name: 'AWS Direct Connect',
-    flavour: 'Direct Connect',
-    price: '€499 / month',
-  },
-  {
-    name: 'Azure ExpressRoute',
-    flavour: 'Direct Connect',
-    price: '€499 / month',
-  },
-  {
     name: 'Egress traffic',
     flavour: 'Network',
     price: 'Free up to 1TB/month',
