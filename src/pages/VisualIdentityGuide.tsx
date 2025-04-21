@@ -295,7 +295,9 @@ export function VisualIdentityGuide() {
               </div>
             </div>
 
-            <div className="mb-8">
+            </div>
+          </section>
+
           {/* Background Effects Section */}
           <section className="mb-16">
             <h2 className="text-3xl font-ovo mb-6 border-b border-white/10 pb-2">
