@@ -9,6 +9,12 @@ export default {
   ],
   theme: {
     extend: {
+      fontSize: {
+        '4xl': '2.5rem',
+        '3xl': '2rem',
+        '2xl': '1.5rem',
+        'xl': '1.25rem',
+      },
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',

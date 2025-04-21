@@ -277,29 +277,29 @@ export function VisualIdentityGuide() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
               <div>
                 <h3 className="text-xl mb-4 font-medium">Headings</h3>
-                <div className="p-6 rounded-lg bg-[#1A1A1A] border border-white/10 space-y-4">
+                <div className="p-6 rounded-lg bg-[#1A1A1A] border border-white/10 space-y-6">
                   <div>
-                    <h1 className="text-4xl font-ovo">Heading 1</h1>
+                    <h1>Heading 1</h1>
                     <div className="text-xs text-white/60 mt-1">
-                      font-ovo, text-4xl or text-5xl
+                      2.5rem (40px) - Används för huvudrubriker
                     </div>
                   </div>
                   <div>
-                    <h2 className="text-3xl font-ovo">Heading 2</h2>
+                    <h2>Heading 2</h2>
                     <div className="text-xs text-white/60 mt-1">
-                      font-ovo, text-3xl
+                      2rem (32px) - Används för sektionsrubriker
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-2xl font-medium">Heading 3</h3>
+                    <h3>Heading 3</h3>
                     <div className="text-xs text-white/60 mt-1">
-                      font-medium, text-2xl
+                      1.5rem (24px) - Används för underrubriker
                     </div>
                   </div>
                   <div>
                     <h4 className="text-xl font-medium">Heading 4</h4>
                     <div className="text-xs text-white/60 mt-1">
-                      font-medium, text-xl
+                      1.25rem (20px) - Används för mindre rubriker
                     </div>
                   </div>
                 </div>
