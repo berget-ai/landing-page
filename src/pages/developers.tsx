@@ -6,6 +6,7 @@ import { TerminalCarousel } from '@/components/terminal/TerminalCarousel'
 import { Link } from 'react-router-dom'
 import { ModelsSection } from '@/components/sections/ModelsSection'
 import { Overview } from '@/components/sections/Overview'
+import { Feature } from '@/components/ui/feature-section-with-bento-grid'
 
 const iconMap = {
   github: Github,
