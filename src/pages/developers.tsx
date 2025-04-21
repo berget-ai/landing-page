@@ -59,49 +59,33 @@ export default function DevelopersPage() {
 
       {/* Features */}
       <div className="container mx-auto px-4 py-24">
-        <div className="max-w-7xl mx-auto space-y-24">
-          {Array.isArray(sections) ? (
-            sections.map((section, index) => {
-              const Icon = iconMap[section.icon]
-              return (
-                <motion.div
-                  key={section.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="relative group"
-                >
-                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-[#52B788]/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="relative p-8 rounded-3xl border border-[#74C69D]/20 bg-white/[0.02] backdrop-blur-sm">
-                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#2D6A4F] to-[#40916C] flex items-center justify-center mb-6">
-                      <Icon className="w-6 h-6 text-white" />
-                    </div>
-                    <h2 className="text-2xl font-medium mb-4">
-                      {section.title}
-                    </h2>
-                    <p className="text-white/80 mb-4">{section.description}</p>
-                    <ul className="space-y-4">
-                      {section.bullets.map((bullet, i) => (
-                        <li key={i} className="flex items-center gap-3">
-                          <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
-                          <span dangerouslySetInnerHTML={{ __html: bullet }} />
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </motion.div>
-              )
-            })
-          ) : (
-            <div className="p-8 rounded-3xl border border-[#74C69D]/20 bg-white/[0.02] backdrop-blur-sm text-center">
-              <p className="text-white/80">
-                Developer sections will appear here.
-              </p>
-            </div>
-          )}
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Feature 
+              title={t('DevelopersPage.hero.title')}
+              description={t('DevelopersPage.hero.description')}
+              badge="For Developers"
+              items={Array.isArray(sections) ? sections.map((section, index) => {
+                const Icon = iconMap[section.icon];
+                // Transform bullets into description text
+                const bulletPoints = section.bullets.map(bullet => `• ${bullet.replace(/<[^>]*>/g, '')}`).join('\n\n');
+                return {
+                  icon: <Icon className="w-8 h-8 stroke-1 text-white" />,
+                  title: section.title,
+                  description: `${section.description}\n\n${bulletPoints}`,
+                  span: index % 3 === 0 ? "col" : "none"
+                };
+              }) : []}
+            />
+          </motion.div>
 
-          <Overview />
+          <div className="mt-24">
+            <Overview />
+          </div>
 
           {/* CTA */}
           <motion.div
