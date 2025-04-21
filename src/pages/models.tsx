@@ -259,9 +259,9 @@ export default function ModelsPage() {
   return (
     <div className="container mx-auto py-24">
       <div className="max-w-4xl mx-auto mb-16">
-        <h1 className="text-4xl font-medium mb-6">Model Library</h1>
+        <h1 className="text-5xl font-medium mb-6">Model Library</h1>
         <div className="prose prose-invert max-w-none">
-          <p className="text-lg text-white/80 leading-relaxed mb-6">
+          <p className="text-xl text-white/80 leading-relaxed mb-6">
             At Berget AI, we're committed to providing the most powerful open
             models available, carefully selected to enable our customers to
             build and deploy sophisticated AI applications. Our model library is

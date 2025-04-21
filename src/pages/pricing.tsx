@@ -21,8 +21,8 @@ export default function PricingPage() {
     <main className="min-h-screen pt-24">
       <div className="container mx-auto px-4 py-12">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h1 className="text-4xl font-medium mb-4">{t('pricing.title')}</h1>
-          <p className="text-lg text-white/60">{t('pricing.description')}</p>
+          <h1 className="text-5xl font-medium mb-4">{t('pricing.title')}</h1>
+          <p className="text-xl text-white/60">{t('pricing.description')}</p>
         </div>
 
         <div className="mb-8">

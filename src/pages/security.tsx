@@ -8,7 +8,7 @@ export default function SecurityPage() {
       <Header />
       <main className="min-h-screen pt-24">
         <div className="container mx-auto px-4 py-12">
-          <h1 className="text-4xl font-medium mb-8">Security</h1>
+          <h1 className="text-5xl font-medium mb-8">Security</h1>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             <div className="p-6 rounded-xl bg-[#52B788]/5 border border-[#74C69D]/20">

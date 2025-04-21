@@ -89,7 +89,7 @@ export default function SaaSPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h1 className="text-5xl font-medium mb-6">
+              <h1 className="text-5xl font-ovo mb-6">
                 {t('saas.hero.title')}
               </h1>
               <p className="text-xl text-white/80 mb-8">
@@ -149,8 +149,8 @@ export default function SaaSPage() {
       <section className="py-24 relative">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl font-medium mb-4">Everything You Need to Scale</h2>
-            <p className="text-lg text-white/60">
+            <h2 className="text-3xl font-ovo mb-4">Everything You Need to Scale</h2>
+            <p className="text-xl text-white/60">
               Built specifically for SaaS companies who need to move fast while staying compliant
             </p>
           </div>
@@ -191,8 +191,8 @@ export default function SaaSPage() {
       <section className="py-24 relative">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl font-medium mb-4">Simple, Transparent Pricing</h2>
-            <p className="text-lg text-white/60">
+            <h2 className="text-3xl font-ovo mb-4">Simple, Transparent Pricing</h2>
+            <p className="text-xl text-white/60">
               Start small and scale as you grow. No upfront commitments, pay only for what you use.
             </p>
           </div>

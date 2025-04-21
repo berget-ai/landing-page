@@ -44,10 +44,10 @@ export default function ProductsPage() {
         <div className="absolute inset-0 bg-grid-white/5 bg-[size:32px_32px] pointer-events-none" />
         <div className="container mx-auto px-4 py-24">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-5xl font-medium mb-6">
+            <h1 className="text-5xl font-ovo mb-6">
               {t('products.hero.title')}
             </h1>
-            <p className="text-xl text-white/60 mb-8">
+            <p className="text-xl text-white/80 mb-8 leading-relaxed">
               {t('products.hero.description')}
             </p>
           </div>

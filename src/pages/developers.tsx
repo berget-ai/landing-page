@@ -43,10 +43,10 @@ export default function DevelopersPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
-              <h1 className="text-5xl font-medium mb-6">
+              <h1 className="text-5xl font-ovo mb-6">
                 {t('DevelopersPage.hero.title')}
               </h1>
-              <p className="text-xl text-white/80 mb-8 max-w-2xl">
+              <p className="text-xl text-white/80 mb-8 max-w-2xl leading-relaxed">
                 {t('DevelopersPage.hero.description')}
               </p>
               <div className="mt-8">

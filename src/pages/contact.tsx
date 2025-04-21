@@ -56,8 +56,8 @@ export default function ContactPage() {
               <Mail className="w-4 h-4" />
               <span>{t('contact.hero.getInTouch')}</span>
             </div>
-            <h1 className="text-4xl font-medium mb-4">{t('contact.hero.title')}</h1>
-            <p className="text-lg text-white/60">
+            <h1 className="text-5xl font-medium mb-4">{t('contact.hero.title')}</h1>
+            <p className="text-xl text-white/60">
               {t('contact.hero.description')}
             </p>
           </motion.div>

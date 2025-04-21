@@ -23,9 +23,9 @@ export default function SignupPage() {
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-md mx-auto">
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-medium mb-2">Create your account</h1>
-            <p className="text-white/60">
-              Start building secure AI applications with Berget
+            <h1 className="text-4xl font-medium mb-2">Create Your Account</h1>
+            <p className="text-lg text-white/60">
+              Start Building Secure AI Applications with Berget
             </p>
           </div>
 

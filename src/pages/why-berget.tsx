@@ -29,7 +29,7 @@ function WhyBergetPage() {
               <Shield className="w-4 h-4 mr-2" />
               <span className="text-sm font-medium">{t('whyBerget.hero.tagline')}</span>
             </div>
-            <h1 className="text-5xl md:text-6xl font-medium mb-6 leading-tight">
+            <h1 className="text-5xl font-medium mb-6 leading-tight">
               {t('whyBerget.hero.title')}
             </h1>
             <p className="text-xl text-white/80 mb-8 leading-relaxed">
