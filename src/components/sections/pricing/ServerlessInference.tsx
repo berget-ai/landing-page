@@ -197,8 +197,8 @@ function ImageModelTable({ title, description, models }: { title: string; descri
   return (
     <div className="space-y-4">
       <div>
-        <h4 className="text-lg font-medium">{title}</h4>
-        <p className="text-sm text-white/60 mt-1">{description}</p>
+        <h4 className="text-lg font-ovo">{title}</h4>
+        <p className="text-sm text-white/80 mt-1">{description}</p>
       </div>
       <Table>
         <TableHeader>

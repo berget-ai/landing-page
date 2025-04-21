@@ -138,7 +138,7 @@ export function ModelsSection() {
                   <TableCell>
                     <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs ${
                       model.status === 'Available' 
-                        ? 'bg-primary/20 text-primary'
+                        ? 'bg-white/20 text-white'
                         : 'bg-muted text-muted-foreground'
                     }`}>
                       {t(`models.status.${model.status.toLowerCase().replace(/\s+/g, '-')}`)}

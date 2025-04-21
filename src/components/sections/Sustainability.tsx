@@ -52,8 +52,8 @@ export function Sustainability() {
       <div className="absolute inset-0 bg-[#2D6A4F]/10 opacity-30 dark:opacity-30 light:opacity-10" />
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#40916C]/15 text-[#52B788] mb-6">
-            <Leaf className="w-4 h-4 mr-2" />
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#40916C]/15 text-white mb-6">
+            <Leaf className="w-4 h-4 mr-2 text-white" />
             <span className="text-sm">Hållbarhet i centrum</span>
           </div>
           <h2 className="text-4xl font-ovo mb-6">

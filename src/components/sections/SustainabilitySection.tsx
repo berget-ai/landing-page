@@ -27,9 +27,9 @@ export function SustainabilitySection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-muted mb-6">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#40916C]/15 mb-6">
               <Leaf className="w-4 h-4 mr-2 text-white" />
-              <span className="text-sm">{section.badge}</span>
+              <span className="text-sm text-white">{section.badge}</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-ovo mb-6">
               {section.title}

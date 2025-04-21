@@ -35,7 +35,7 @@ export function PricingTiers() {
             <div className="space-y-4">
               {features.map((feature) => (
                 <div key={feature} className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                  <Check className="w-5 h-5 text-white shrink-0 mt-0.5" />
                   <div>
                     <p className="text-sm">{feature}</p>
                   </div>

@@ -67,14 +67,14 @@ export function ProductFeatures() {
               </div>
               <div className="flex items-center gap-3 mb-4">
                 <h3 className="text-xl font-ovo">{t('products.dedicated.title')}</h3>
-                <span className="px-4 py-1 text-xs font-medium bg-[#52B788]/10 text-[#52B788] rounded-full whitespace-nowrap">Coming Soon</span>
+                <span className="px-4 py-1 text-xs font-medium bg-white/10 text-white rounded-full whitespace-nowrap">Coming Soon</span>
               </div>
               <p className="text-white/80 mb-6">{t('products.dedicated.description')}</p>
               <ul className="space-y-3">
                 {(t('products.dedicated.features.deployment.items', { returnObjects: true }) as string[]).map((item) => (
                   <li key={item} className="flex items-center gap-3">
-                    <div className="w-6 h-6 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center">
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#52B788]" />
+                    <div className="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-white/60" />
                     </div>
                     <span className="text-sm text-white/80">{item}</span>
                   </li>

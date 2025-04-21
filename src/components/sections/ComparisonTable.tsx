@@ -149,7 +149,7 @@ export function ComparisonTable() {
                     <td className="p-4">
                       <div className="flex justify-center">
                         {feature.berget ? (
-                          <Check className="w-5 h-5 text-primary" />
+                          <Check className="w-5 h-5 text-white" />
                         ) : (
                           <Minus className="w-5 h-5 text-muted-foreground/50" />
                         )}
