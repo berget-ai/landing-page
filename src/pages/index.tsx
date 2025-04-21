@@ -4,6 +4,7 @@ import { ProductFeatures } from '@/components/sections/ProductFeatures'
 import { WhyChooseBerget } from '@/components/sections/WhyChooseBerget'
 import { PricingSection } from '@/components/sections/PricingSection'
 import { PartnerQuotes } from '@/components/sections/PartnerQuotes'
+import { KeyBenefitsSection } from '@/components/sections/KeyBenefitsSection'
 
 export default function HomePage() {
   return (
@@ -15,8 +16,8 @@ export default function HomePage() {
       <ProductFeatures />
 
       {/* Why Choose Berget */}
-      <WhyChooseBerget />
-      
+      <KeyBenefitsSection />
+
       {/* Expert Opinions */}
       <PartnerQuotes />
 
