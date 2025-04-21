@@ -697,7 +697,7 @@
       "description": "Get the benefits of Kubernetes without having to manage the infrastructure yourself.",
       "bullets": [
         "Preconfigured clusters – get started in minutes instead of days",
-        "Standardized Helm charts – install databases, caching and services with a single command",
+        "Standardised Helm charts – install databases, caching and services with a single command",
         "GPU support – run your own models on dedicated GPUs when needed",
         "Autoscaling – automatically scale up and down based on demand"
       ]
