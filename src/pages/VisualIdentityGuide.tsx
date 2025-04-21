@@ -1,7 +1,4 @@
-import { motion } from 'framer-motion'
-import { Button } from '@/components/ui/button'
 import { Shield, Check, X, ArrowRight, Download } from 'lucide-react'
-// Using placeholder values for logos until actual assets are available
 const logoWithText = '/placeholder.svg'
 const logoWithTextWhite = '/placeholder.svg'
 const logoMark = '/placeholder.svg'
@@ -32,11 +29,12 @@ export function VisualIdentityGuide() {
             <h2 className="text-3xl font-ovo mb-6 border-b border-white/10 pb-2">
               Logo
             </h2>
-            
+
             <p className="mb-6 text-white/80">
-              The Berget AI logo is available in two main variants: with text and mark-only. 
-              Each variant comes in black and white versions with transparent backgrounds, 
-              available in both SVG (for web and print) and PNG formats (for digital applications).
+              The Berget AI logo is available in two main variants: with text
+              and mark-only. Each variant comes in black and white versions with
+              transparent backgrounds, available in both SVG (for web and print)
+              and PNG formats (for digital applications).
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
@@ -55,7 +53,9 @@ export function VisualIdentityGuide() {
               </div>
 
               <div>
-                <h3 className="text-xl mb-4 font-medium">Logo with Text (White)</h3>
+                <h3 className="text-xl mb-4 font-medium">
+                  Logo with Text (White)
+                </h3>
                 <div className="p-6 rounded-lg bg-[#333] border border-white/10 flex justify-center items-center">
                   <img
                     src={logoWithTextWhite}
@@ -98,7 +98,7 @@ export function VisualIdentityGuide() {
                 </div>
               </div>
             </div>
-            
+
             <div className="mb-8">
               <h3 className="text-xl mb-4 font-medium">Logo Mark Sizes</h3>
               <div className="p-6 rounded-lg bg-[#1A1A1A] border border-white/10">
@@ -138,14 +138,13 @@ export function VisualIdentityGuide() {
                 </div>
               </div>
               <div className="text-sm text-white/60 mt-2">
-                The logo mark is available in various sizes for different applications
+                The logo mark is available in various sizes for different
+                applications
               </div>
             </div>
-            
+
             <div className="bg-white/5 rounded-xl p-6 mb-8">
-              <h4 className="text-lg font-medium mb-4">
-                Logo File Formats
-              </h4>
+              <h4 className="text-lg font-medium mb-4">Logo File Formats</h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <div className="flex items-center gap-2 mb-2">
@@ -156,13 +155,15 @@ export function VisualIdentityGuide() {
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
                       <span>
-                        <strong>SVG</strong> - Vector format for web and print materials (scalable)
+                        <strong>SVG</strong> - Vector format for web and print
+                        materials (scalable)
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
                       <span>
-                        <strong>PNG</strong> - Raster format with transparency for digital applications
+                        <strong>PNG</strong> - Raster format with transparency
+                        for digital applications
                       </span>
                     </li>
                   </ul>
@@ -196,14 +197,13 @@ export function VisualIdentityGuide() {
             <h2 className="text-3xl font-ovo mb-6 border-b border-white/10 pb-2">
               UI Components
             </h2>
-            
+
             <div className="bg-white/5 rounded-xl p-6 mb-8">
-              <h4 className="text-lg font-medium mb-4">
-                Icon Guidelines
-              </h4>
+              <h4 className="text-lg font-medium mb-4">Icon Guidelines</h4>
               <p className="mb-4">
-                Icons should be used consistently throughout the interface to enhance usability and visual appeal. 
-                All icons should use the <code>text-white</code> class by default.
+                Icons should be used consistently throughout the interface to
+                enhance usability and visual appeal. All icons should use the{' '}
+                <code>text-white</code> class by default.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
@@ -215,19 +215,19 @@ export function VisualIdentityGuide() {
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
                       <span>
-                        Use <code>text-white</code> for all icons, including in warnings and errors
+                        Use <code>text-white</code> for all icons, including in
+                        warnings and errors
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
-                      <span>
-                        Never use colored icons purely for decoration
-                      </span>
+                      <span>Never use colored icons purely for decoration</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
                       <span>
-                        Maintain consistent icon sizes within similar UI elements
+                        Maintain consistent icon sizes within similar UI
+                        elements
                       </span>
                     </li>
                   </ul>
@@ -240,9 +240,7 @@ export function VisualIdentityGuide() {
                   <ul className="space-y-2">
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
-                      <span>
-                        Using colored icons purely for decoration
-                      </span>
+                      <span>Using colored icons purely for decoration</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
@@ -274,7 +272,8 @@ export function VisualIdentityGuide() {
                     <span className="text-sm">Error message example</span>
                   </div>
                   <div className="text-sm text-white/60 mt-2">
-                    All icons use text-white class, even in warning and error states
+                    All icons use text-white class, even in warning and error
+                    states
                   </div>
                 </div>
               </div>
@@ -302,44 +301,57 @@ export function VisualIdentityGuide() {
             <h2 className="text-3xl font-ovo mb-6 border-b border-white/10 pb-2">
               Background Effects
             </h2>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
               <div>
-                <h3 className="text-xl mb-4 font-medium">Gradient Backgrounds</h3>
+                <h3 className="text-xl mb-4 font-medium">
+                  Gradient Backgrounds
+                </h3>
                 <div className="p-6 rounded-lg bg-gradient-to-br from-[#1A1A1A] to-[#2D6A4F]/20 border border-white/10 h-48 flex items-center justify-center">
                   <div className="text-center">
-                    <div className="text-sm text-white/80 mb-2">Primary Gradient</div>
-                    <code className="text-xs bg-black/30 px-2 py-1 rounded">from-[#1A1A1A] to-[#2D6A4F]/20</code>
+                    <div className="text-sm text-white/80 mb-2">
+                      Primary Gradient
+                    </div>
+                    <code className="text-xs bg-black/30 px-2 py-1 rounded">
+                      from-[#1A1A1A] to-[#2D6A4F]/20
+                    </code>
                   </div>
                 </div>
               </div>
-              
+
               <div>
                 <h3 className="text-xl mb-4 font-medium">Network Effect</h3>
                 <div className="p-6 rounded-lg bg-[#1A1A1A] border border-white/10 h-48 relative overflow-hidden">
                   <div className="absolute inset-0 opacity-40">
-                    <div className="w-full h-full" style={{ 
-                      backgroundImage: `radial-gradient(circle, rgba(82, 183, 136, 0.1) 1px, transparent 1px)`,
-                      backgroundSize: '30px 30px'
-                    }}></div>
+                    <div
+                      className="w-full h-full"
+                      style={{
+                        backgroundImage: `radial-gradient(circle, rgba(82, 183, 136, 0.1) 1px, transparent 1px)`,
+                        backgroundSize: '30px 30px',
+                      }}
+                    ></div>
                   </div>
                   <div className="relative z-10 text-center flex items-center justify-center h-full">
                     <div>
-                      <div className="text-sm text-white/80 mb-2">Network Pattern</div>
-                      <code className="text-xs bg-black/30 px-2 py-1 rounded">NetworkBackground component</code>
+                      <div className="text-sm text-white/80 mb-2">
+                        Network Pattern
+                      </div>
+                      <code className="text-xs bg-black/30 px-2 py-1 rounded">
+                        NetworkBackground component
+                      </code>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </section>
-          
+
           {/* Typography Section */}
           <section className="mb-16">
             <h2 className="text-3xl font-ovo mb-6 border-b border-white/10 pb-2">
               Typography
             </h2>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
               <div>
                 <h3 className="text-xl mb-4 font-medium">Headings</h3>
@@ -370,21 +382,21 @@ export function VisualIdentityGuide() {
                   </div>
                 </div>
               </div>
-              
+
               <div>
                 <h3 className="text-xl mb-4 font-medium">Body Text</h3>
                 <div className="p-6 rounded-lg bg-[#1A1A1A] border border-white/10 space-y-4">
                   <div>
                     <p className="text-base">
-                      This is the standard body text used throughout the application. It should be legible and comfortable to read.
+                      This is the standard body text used throughout the
+                      application. It should be legible and comfortable to read.
                     </p>
-                    <div className="text-xs text-white/60 mt-1">
-                      text-base
-                    </div>
+                    <div className="text-xs text-white/60 mt-1">text-base</div>
                   </div>
                   <div>
                     <p className="text-sm text-white/80">
-                      This is smaller text often used for secondary information or UI elements.
+                      This is smaller text often used for secondary information
+                      or UI elements.
                     </p>
                     <div className="text-xs text-white/60 mt-1">
                       text-sm, text-white/80
@@ -392,7 +404,8 @@ export function VisualIdentityGuide() {
                   </div>
                   <div>
                     <p className="text-xs text-white/60">
-                      This is the smallest text size, used for captions, footnotes, and other tertiary information.
+                      This is the smallest text size, used for captions,
+                      footnotes, and other tertiary information.
                     </p>
                     <div className="text-xs text-white/60 mt-1">
                       text-xs, text-white/60
@@ -402,13 +415,13 @@ export function VisualIdentityGuide() {
               </div>
             </div>
           </section>
-          
+
           {/* Color Palette Section */}
           <section className="mb-16">
             <h2 className="text-3xl font-ovo mb-6 border-b border-white/10 pb-2">
               Color Palette
             </h2>
-            
+
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
               <div>
                 <div className="h-24 rounded-lg bg-[#52B788] mb-2"></div>
@@ -431,7 +444,7 @@ export function VisualIdentityGuide() {
                 <div className="text-xs text-white/60">Background</div>
               </div>
             </div>
-            
+
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
               <div>
                 <div className="h-24 rounded-lg bg-white mb-2"></div>
