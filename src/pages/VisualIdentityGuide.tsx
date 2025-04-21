@@ -36,7 +36,9 @@ export function VisualIdentityGuide() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
               <div>
-                <h3 className="text-xl mb-4 font-medium">Logo on Dark Background</h3>
+                <h3 className="text-xl mb-4 font-medium">
+                  Logo on Dark Background
+                </h3>
                 <div className="p-6 rounded-lg bg-[#1A1A1A] border border-white/10 flex justify-center items-center">
                   <LogoComponent size="lg" className="h-24" inverted={false} />
                 </div>
@@ -62,7 +64,7 @@ export function VisualIdentityGuide() {
               <div>
                 <h3 className="text-xl mb-4 font-medium">Logo with Text</h3>
                 <div className="p-6 rounded-lg bg-[#1A1A1A] border border-white/10 flex justify-center items-center">
-                  <LogoComponent size={64} withText variant="horizontal" />
+                  <LogoComponent withText variant="horizontal" />
                 </div>
                 <div className="text-sm text-white/60 mt-2">
                   Logo with company name for headers and branding
@@ -70,9 +72,15 @@ export function VisualIdentityGuide() {
               </div>
 
               <div>
-                <h3 className="text-xl mb-4 font-medium">Logo with Text (Light)</h3>
+                <h3 className="text-xl mb-4 font-medium">
+                  Logo with Text (Light)
+                </h3>
                 <div className="p-6 rounded-lg bg-white border border-gray-200 flex justify-center items-center">
-                  <LogoComponent size={64} withText variant="horizontal" inverted={true} />
+                  <LogoComponent
+                    withText
+                    variant="horizontal"
+                    inverted={true}
+                  />
                 </div>
                 <div className="text-sm text-white/60 mt-2">
                   Logo with company name on light background
@@ -114,36 +122,68 @@ export function VisualIdentityGuide() {
                   <div>
                     <h4 className="text-lg font-medium mb-3">SVG Format</h4>
                     <div className="space-y-3">
-                      <a href="/images/logo.svg" download="berget-logo.svg" className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                      <a
+                        href="/images/logo.svg"
+                        download="berget-logo.svg"
+                        className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+                      >
                         <Download className="w-5 h-5 text-white" />
                         <span className="text-sm">Logo (SVG)</span>
                       </a>
-                      <a href="/images/berget-logo-white.svg" download="berget-logo-white.svg" className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                      <a
+                        href="/images/berget-logo-white.svg"
+                        download="berget-logo-white.svg"
+                        className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+                      >
                         <Download className="w-5 h-5 text-white" />
-                        <span className="text-sm">Logo with Text - White (SVG)</span>
+                        <span className="text-sm">
+                          Logo with Text - White (SVG)
+                        </span>
                       </a>
-                      <a href="/images/berget-logo-black.svg" download="berget-logo-black.svg" className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                      <a
+                        href="/images/berget-logo-black.svg"
+                        download="berget-logo-black.svg"
+                        className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+                      >
                         <Download className="w-5 h-5 text-white" />
-                        <span className="text-sm">Logo with Text - Black (SVG)</span>
+                        <span className="text-sm">
+                          Logo with Text - Black (SVG)
+                        </span>
                       </a>
                     </div>
                   </div>
                   <div>
                     <h4 className="text-lg font-medium mb-3">PNG Format</h4>
                     <div className="space-y-3">
-                      <a href="/images/logo-16.png" download="berget-logo-16.png" className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                      <a
+                        href="/images/logo-16.png"
+                        download="berget-logo-16.png"
+                        className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+                      >
                         <Download className="w-5 h-5 text-white" />
                         <span className="text-sm">Logo 16px (PNG)</span>
                       </a>
-                      <a href="/images/logo-32.png" download="berget-logo-32.png" className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                      <a
+                        href="/images/logo-32.png"
+                        download="berget-logo-32.png"
+                        className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+                      >
                         <Download className="w-5 h-5 text-white" />
                         <span className="text-sm">Logo 32px (PNG)</span>
                       </a>
-                      <a href="/images/logo-64.png" download="berget-logo-64.png" className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                      <a
+                        href="/images/logo-64.png"
+                        download="berget-logo-64.png"
+                        className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+                      >
                         <Download className="w-5 h-5 text-white" />
                         <span className="text-sm">Logo 64px (PNG)</span>
                       </a>
-                      <a href="/images/logo-128.png" download="berget-logo-128.png" className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                      <a
+                        href="/images/logo-128.png"
+                        download="berget-logo-128.png"
+                        className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+                      >
                         <Download className="w-5 h-5 text-white" />
                         <span className="text-sm">Logo 128px (PNG)</span>
                       </a>
@@ -164,24 +204,31 @@ export function VisualIdentityGuide() {
                     <div className="p-4 rounded-lg bg-[#52B788]">
                       <LogoComponent size={48} inverted={true} />
                     </div>
-                    <span className="text-xs text-white/60 mt-2">On Primary Green</span>
+                    <span className="text-xs text-white/60 mt-2">
+                      On Primary Green
+                    </span>
                   </div>
                   <div className="flex flex-col items-center">
                     <div className="p-4 rounded-lg bg-[#2D6A4F]">
                       <LogoComponent size={48} inverted={false} />
                     </div>
-                    <span className="text-xs text-white/60 mt-2">On Dark Green</span>
+                    <span className="text-xs text-white/60 mt-2">
+                      On Dark Green
+                    </span>
                   </div>
                   <div className="flex flex-col items-center">
                     <div className="p-4 rounded-lg bg-[#74C69D]">
                       <LogoComponent size={48} inverted={true} />
                     </div>
-                    <span className="text-xs text-white/60 mt-2">On Light Green</span>
+                    <span className="text-xs text-white/60 mt-2">
+                      On Light Green
+                    </span>
                   </div>
                 </div>
               </div>
               <div className="text-sm text-white/60 mt-2">
-                The logo should only be used in black or white, depending on the background
+                The logo should only be used in black or white, depending on the
+                background
               </div>
             </div>
 
@@ -197,31 +244,44 @@ export function VisualIdentityGuide() {
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
                       <span>
-                        <code className="bg-black/30 px-1 rounded">size</code> - 'sm' | 'md' | 'lg' | number
+                        <code className="bg-black/30 px-1 rounded">size</code> -
+                        'sm' | 'md' | 'lg' | number
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
                       <span>
-                        <code className="bg-black/30 px-1 rounded">inverted</code> - boolean (force inversion)
+                        <code className="bg-black/30 px-1 rounded">
+                          inverted
+                        </code>{' '}
+                        - boolean (force inversion)
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
                       <span>
-                        <code className="bg-black/30 px-1 rounded">variant</code> - 'icon' | 'full' | 'horizontal'
+                        <code className="bg-black/30 px-1 rounded">
+                          variant
+                        </code>{' '}
+                        - 'icon' | 'full' | 'horizontal'
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
                       <span>
-                        <code className="bg-black/30 px-1 rounded">withText</code> - boolean (add company name)
+                        <code className="bg-black/30 px-1 rounded">
+                          withText
+                        </code>{' '}
+                        - boolean (add company name)
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
                       <span>
-                        <code className="bg-black/30 px-1 rounded">backgroundColor</code> - optional background
+                        <code className="bg-black/30 px-1 rounded">
+                          backgroundColor
+                        </code>{' '}
+                        - optional background
                       </span>
                     </li>
                   </ul>
@@ -247,19 +307,28 @@ export function VisualIdentityGuide() {
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
                       <span>
-                        Use <code className="bg-black/30 px-1 rounded">withText</code> for logo with company name
+                        Use{' '}
+                        <code className="bg-black/30 px-1 rounded">
+                          withText
+                        </code>{' '}
+                        for logo with company name
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
                       <span>
-                        Use <code className="bg-black/30 px-1 rounded">variant</code> to control layout
+                        Use{' '}
+                        <code className="bg-black/30 px-1 rounded">
+                          variant
+                        </code>{' '}
+                        to control layout
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
                       <span>
-                        <strong>Important:</strong> The logo must only be used in black or white
+                        <strong>Important:</strong> The logo must only be used
+                        in black or white
                       </span>
                     </li>
                   </ul>
@@ -402,7 +471,8 @@ export function VisualIdentityGuide() {
               <p className="mb-4">
                 Icons should be used consistently throughout the interface to
                 enhance usability and visual appeal. All icons should use the{' '}
-                <code>text-white</code> class by default, regardless of the context.
+                <code>text-white</code> class by default, regardless of the
+                context.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
@@ -414,14 +484,18 @@ export function VisualIdentityGuide() {
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
                       <span>
-                        <strong>Always use <code>text-white</code></strong> for all icons, even in
-                        warnings, errors, and success states
+                        <strong>
+                          Always use <code>text-white</code>
+                        </strong>{' '}
+                        for all icons, even in warnings, errors, and success
+                        states
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
                       <span>
-                        Color should only be used for the background or container, never for the icon itself
+                        Color should only be used for the background or
+                        container, never for the icon itself
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
@@ -442,19 +516,22 @@ export function VisualIdentityGuide() {
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
                       <span>
-                        <strong>Never use colored icons</strong> - colors are reserved for emphasizing important messages only
+                        <strong>Never use colored icons</strong> - colors are
+                        reserved for emphasizing important messages only
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
                       <span>
-                        Don't use colors to make the interface "more colorful" - this reduces clarity and accessibility
+                        Don't use colors to make the interface "more colorful" -
+                        this reduces clarity and accessibility
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
                       <span>
-                        Avoid inconsistent icon styling or using too many different icons that may confuse users
+                        Avoid inconsistent icon styling or using too many
+                        different icons that may confuse users
                       </span>
                     </li>
                   </ul>
@@ -479,8 +556,9 @@ export function VisualIdentityGuide() {
                     <span className="text-sm">Success message example</span>
                   </div>
                   <div className="text-sm text-white/60 mt-2">
-                    <strong>Note:</strong> The background and border colors indicate the message type, 
-                    but all icons remain white for consistency
+                    <strong>Note:</strong> The background and border colors
+                    indicate the message type, but all icons remain white for
+                    consistency
                   </div>
                 </div>
               </div>
@@ -505,7 +583,8 @@ export function VisualIdentityGuide() {
                     </div>
                   </div>
                   <div className="text-sm text-white/60 mt-2">
-                    All UI components use consistent white icons regardless of context
+                    All UI components use consistent white icons regardless of
+                    context
                   </div>
                 </div>
               </div>
@@ -513,7 +592,9 @@ export function VisualIdentityGuide() {
             <div className="bg-white/5 rounded-xl p-6 mb-8">
               <h4 className="text-lg font-medium mb-4">Color Usage in UI</h4>
               <p className="mb-4">
-                Color should be used purposefully and sparingly in the interface. Reserve colors for emphasizing important information or indicating state changes.
+                Color should be used purposefully and sparingly in the
+                interface. Reserve colors for emphasizing important information
+                or indicating state changes.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
@@ -525,19 +606,22 @@ export function VisualIdentityGuide() {
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
                       <span>
-                        Use color for backgrounds to indicate different states (warning, error, success)
+                        Use color for backgrounds to indicate different states
+                        (warning, error, success)
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
                       <span>
-                        Use brand colors for primary action buttons and important UI elements
+                        Use brand colors for primary action buttons and
+                        important UI elements
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
                       <span>
-                        Maintain high contrast ratios for accessibility (minimum 4.5:1)
+                        Maintain high contrast ratios for accessibility (minimum
+                        4.5:1)
                       </span>
                     </li>
                   </ul>
@@ -551,13 +635,15 @@ export function VisualIdentityGuide() {
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
                       <span>
-                        <strong>Don't use colored icons</strong> - this creates visual noise and inconsistency
+                        <strong>Don't use colored icons</strong> - this creates
+                        visual noise and inconsistency
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
                       <span>
-                        Don't use colors purely for decoration or to make the interface "more colorful"
+                        Don't use colors purely for decoration or to make the
+                        interface "more colorful"
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
