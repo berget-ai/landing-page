@@ -1,12 +1,8 @@
 import {
   Check,
-  Globe,
   Heart,
   Leaf,
   Library,
-  Lock,
-  Server,
-  Shield,
 } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { t } from 'i18next'

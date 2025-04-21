@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Shield, ArrowRight, Check, Globe, Server, Lock } from 'lucide-react'
+import { Shield, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { ComplianceSection } from '@/components/sections/ComplianceSection'
 import { SustainabilitySection } from '@/components/sections/SustainabilitySection'

@@ -6,7 +6,7 @@ interface FeatureProps {
   title?: string
   description?: string
   badge?: string
-  sitems?: {
+  items?: {
     icon: ReactNode
     title: string
     description: ReactNode
