@@ -1,20 +1,20 @@
-import { ReactNode } from "react";
-import { User } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import { ReactNode } from 'react'
+import { User } from 'lucide-react'
+import { Badge } from '@/components/ui/badge'
 
 interface FeatureProps {
-  title?: string;
-  description?: string;
-  badge?: string;
-  items?: {
-    icon: ReactNode;
-    title: string;
-    description: string;
-    span?: "col" | "row" | "both" | "none";
-  }[];
+  title?: string
+  description?: string
+  badge?: string
+  sitems?: {
+    icon: ReactNode
+    title: string
+    description: ReactNode
+    span?: 'col' | 'row' | 'both' | 'none'
+  }[]
 }
 
-function Feature({ title = "Something new!", description = "Managing a small business today is already tough.", badge = "Platform", items = [] }: FeatureProps) {
+function Feature({ title, description, badge, items = [] }: FeatureProps) {
   return (
     <div className="w-full py-20 lg:py-40">
       <div className="container mx-auto px-4 max-w-7xl">
@@ -34,18 +34,20 @@ function Feature({ title = "Something new!", description = "Managing a small bus
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {items.map((item, index) => (
-              <div 
+              <div
                 key={index}
-                className={`bg-muted rounded-md p-6 flex justify-between flex-col ${
-                  item.span === "col" || item.span === "both" 
-                    ? "lg:col-span-2" 
-                    : ""
+                className={`bg-muted/60 rounded-md p-6 flex justify-between flex-col ${
+                  item.span === 'col' || item.span === 'both'
+                    ? 'lg:col-span-2'
+                    : ''
                 } ${
-                  item.span === "row" || item.span === "both"
-                    ? "lg:row-span-2"
-                    : ""
+                  item.span === 'row' || item.span === 'both'
+                    ? 'lg:row-span-2'
+                    : ''
                 } ${
-                  item.span === "none" ? "aspect-square" : "aspect-square lg:aspect-auto"
+                  item.span === 'none'
+                    ? 'aspect-square'
+                    : 'aspect-square lg:aspect-auto'
                 }`}
               >
                 {item.icon || <User className="w-8 h-8 stroke-1" />}
@@ -61,7 +63,7 @@ function Feature({ title = "Something new!", description = "Managing a small bus
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export { Feature };
+export { Feature }

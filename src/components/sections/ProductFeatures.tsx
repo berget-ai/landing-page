@@ -17,7 +17,9 @@ export function ProductFeatures() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-ovo mb-6">{t('products.hero.title')}</h2>
+            <h2 className="text-3xl md:text-4xl font-ovo mb-6">
+              {t('products.hero.title')}
+            </h2>
             <p className="text-xl text-white/80">
               {t('products.hero.description')}
             </p>
@@ -37,10 +39,18 @@ export function ProductFeatures() {
               <div className="w-14 h-14 rounded-2xl bg-muted flex items-center justify-center mb-8">
                 <Cloud className="w-7 h-7 text-white" />
               </div>
-              <h3 className="text-xl font-ovo mb-4">{t('products.serverless.title')}</h3>
-              <p className="text-white/80 mb-6">{t('products.serverless.description')}</p>
+              <h3 className="text-xl font-ovo mb-4">
+                {t('products.serverless.title')}
+              </h3>
+              <p className="text-white/80 mb-6">
+                {t('products.serverless.description')}
+              </p>
               <ul className="space-y-3">
-                {(t('products.serverless.features.integration.items', { returnObjects: true }) as string[]).map((item) => (
+                {(
+                  t('products.serverless.features.integration.items', {
+                    returnObjects: true,
+                  }) as string[]
+                ).map((item) => (
                   <li key={item} className="flex items-center gap-3">
                     <div className="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center">
                       <div className="w-1.5 h-1.5 rounded-full bg-white/60" />
@@ -66,12 +76,22 @@ export function ProductFeatures() {
                 <Server className="w-7 h-7 text-white" />
               </div>
               <div className="flex items-center gap-3 mb-4">
-                <h3 className="text-xl font-ovo">{t('products.dedicated.title')}</h3>
-                <span className="px-4 py-1 text-xs font-medium bg-white/10 text-white rounded-full whitespace-nowrap">Coming Soon</span>
+                <h3 className="text-xl font-ovo">
+                  {t('products.dedicated.title')}
+                </h3>
+                <span className="px-4 py-1 text-xs font-medium bg-white/10 text-green rounded-full whitespace-nowrap">
+                  Coming Soon
+                </span>
               </div>
-              <p className="text-white/80 mb-6">{t('products.dedicated.description')}</p>
+              <p className="text-white/80 mb-6">
+                {t('products.dedicated.description')}
+              </p>
               <ul className="space-y-3">
-                {(t('products.dedicated.features.deployment.items', { returnObjects: true }) as string[]).map((item) => (
+                {(
+                  t('products.dedicated.features.deployment.items', {
+                    returnObjects: true,
+                  }) as string[]
+                ).map((item) => (
                   <li key={item} className="flex items-center gap-3">
                     <div className="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center">
                       <div className="w-1.5 h-1.5 rounded-full bg-white/60" />
@@ -97,12 +117,22 @@ export function ProductFeatures() {
                 <Cpu className="w-7 h-7 text-white" />
               </div>
               <div className="flex items-center gap-3 mb-4">
-                <h3 className="text-xl font-ovo">{t('products.platform.title')}</h3>
-                <span className="px-4 py-1 text-xs font-medium bg-white/10 text-white rounded-full whitespace-nowrap">Coming Soon</span>
+                <h3 className="text-xl font-ovo">
+                  {t('products.platform.title')}
+                </h3>
+                <span className="px-4 py-1 text-xs font-medium bg-white/10 text-white rounded-full whitespace-nowrap">
+                  Coming Soon
+                </span>
               </div>
-              <p className="text-white/80 mb-6">{t('products.platform.description')}</p>
+              <p className="text-white/80 mb-6">
+                {t('products.platform.description')}
+              </p>
               <ul className="space-y-3">
-                {(t('products.platform.features.toolset.items', { returnObjects: true }) as string[]).map((item) => (
+                {(
+                  t('products.platform.features.toolset.items', {
+                    returnObjects: true,
+                  }) as string[]
+                ).map((item) => (
                   <li key={item} className="flex items-center gap-3">
                     <div className="w-6 h-6 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center">
                       <div className="w-1.5 h-1.5 rounded-full bg-[#52B788]" />

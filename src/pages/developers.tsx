@@ -66,21 +66,41 @@ export default function DevelopersPage() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <Feature 
+            <Feature
               title={t('DevelopersPage.hero.title')}
               description={t('DevelopersPage.hero.description')}
               badge="For Developers"
-              items={Array.isArray(sections) ? sections.map((section, index) => {
-                const Icon = iconMap[section.icon];
-                // Transform bullets into description text
-                const bulletPoints = section.bullets.map(bullet => `• ${bullet.replace(/<[^>]*>/g, '')}`).join('\n\n');
-                return {
-                  icon: <Icon className="w-8 h-8 stroke-1 text-white" />,
-                  title: section.title,
-                  description: `${section.description}\n\n${bulletPoints}`,
-                  span: index % 3 === 0 ? "col" : "none"
-                };
-              }) : []}
+              items={
+                Array.isArray(sections)
+                  ? sections.map((section, index) => {
+                      const Icon = iconMap[section.icon]
+                      return {
+                        icon: <Icon className="w-8 h-8 stroke-1 text-white" />,
+                        title: section.title,
+                        description: (
+                          <>
+                            <p>{section.description}</p>
+                            <div className="mt-4">
+                              <ul className="list-disc list-inside text-sm">
+                                {section.bullets.map((bullet, bulletIndex) => (
+                                  <li
+                                    key={bulletIndex}
+                                    className="flex items-start gap-3 text-sm"
+                                  >
+                                    <span className=" text-[#52B788] mt-0.5 flex-shrink-0">
+                                      {bullet.split('–')[0]}
+                                    </span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          </>
+                        ),
+                        span: index % 3 === 0 ? 'col' : 'none',
+                      }
+                    })
+                  : []
+              }
             />
           </motion.div>
 

@@ -1,5 +1,18 @@
 import { motion } from 'framer-motion'
-import { Cloud, Server, Cpu, Database, Bot, ArrowRight, Sparkles, Zap, Network, Box, Users, Layers } from 'lucide-react'
+import {
+  Cloud,
+  Server,
+  Cpu,
+  Database,
+  Bot,
+  ArrowRight,
+  Sparkles,
+  Zap,
+  Network,
+  Box,
+  Users,
+  Layers,
+} from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Link } from 'react-router-dom'
 import { ModelsSection } from '@/components/sections/ModelsSection'
@@ -65,7 +78,9 @@ export default function ProductsPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-3xl font-medium mb-4">{t('products.serverless.title')}</h2>
+                <h2 className="text-3xl font-medium mb-4">
+                  {t('products.serverless.title')}
+                </h2>
                 <p className="text-lg text-white/60">
                   {t('products.serverless.description')}
                 </p>
@@ -79,9 +94,15 @@ export default function ProductsPage() {
                 className="p-6 rounded-xl bg-[#52B788]/5 border border-[#74C69D]/20 hover:bg-[#52B788]/10 transition-colors"
               >
                 <Cloud className="w-8 h-8 mb-4 text-[#52B788]" />
-                <h3 className="text-xl font-medium mb-3">{t('products.serverless.features.integration.title')}</h3>
+                <h3 className="text-xl font-medium mb-3">
+                  {t('products.serverless.features.integration.title')}
+                </h3>
                 <ul className="space-y-3 text-white/60">
-                  {(t('products.serverless.features.integration.items', { returnObjects: true }) as string[]).map((item: string) => (
+                  {(
+                    t('products.serverless.features.integration.items', {
+                      returnObjects: true,
+                    }) as string[]
+                  ).map((item: string) => (
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
@@ -95,9 +116,15 @@ export default function ProductsPage() {
                 className="p-6 rounded-xl bg-[#52B788]/5 border border-[#74C69D]/20 hover:bg-[#52B788]/10 transition-colors"
               >
                 <Zap className="w-8 h-8 mb-4 text-[#74C69D]" />
-                <h3 className="text-xl font-medium mb-3">{t('products.serverless.features.usage.title')}</h3>
+                <h3 className="text-xl font-medium mb-3">
+                  {t('products.serverless.features.usage.title')}
+                </h3>
                 <ul className="space-y-3 text-white/60">
-                  {(t('products.serverless.features.usage.items', { returnObjects: true }) as string[]).map((item: string) => (
+                  {(
+                    t('products.serverless.features.usage.items', {
+                      returnObjects: true,
+                    }) as string[]
+                  ).map((item: string) => (
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
@@ -111,9 +138,15 @@ export default function ProductsPage() {
                 className="p-6 rounded-xl bg-[#2D6A4F]/5 border border-[#40916C]/20 hover:bg-[#2D6A4F]/10 transition-colors"
               >
                 <Server className="w-8 h-8 mb-4 text-[#FFB700]" />
-                <h3 className="text-xl font-medium mb-3">{t('products.serverless.features.infrastructure.title')}</h3>
+                <h3 className="text-xl font-medium mb-3">
+                  {t('products.serverless.features.infrastructure.title')}
+                </h3>
                 <ul className="space-y-3 text-white/60">
-                  {(t('products.serverless.features.infrastructure.items', { returnObjects: true }) as string[]).map((item: string) => (
+                  {(
+                    t('products.serverless.features.infrastructure.items', {
+                      returnObjects: true,
+                    }) as string[]
+                  ).map((item: string) => (
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
@@ -130,8 +163,12 @@ export default function ProductsPage() {
                 viewport={{ once: true }}
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <h2 className="text-3xl font-medium">{t('products.dedicated.title')}</h2>
-                  <span className="px-4 py-1 text-xs font-medium bg-[#52B788]/10 text-[#52B788] rounded-full whitespace-nowrap">Coming Soon</span>
+                  <h2 className="text-3xl font-medium">
+                    {t('products.dedicated.title')}
+                  </h2>
+                  <span className="px-4 py-1 text-xs font-medium bg-[#52B788]/10 text-[#52B788] rounded-full whitespace-nowrap">
+                    Coming Soon
+                  </span>
                 </div>
                 <p className="text-lg text-white/60">
                   {t('products.dedicated.description')}
@@ -146,9 +183,15 @@ export default function ProductsPage() {
                 className="p-6 rounded-xl bg-[#52B788]/5 border border-[#74C69D]/20 hover:bg-[#52B788]/10 transition-colors"
               >
                 <Cpu className="w-8 h-8 mb-4 text-[#52B788]" />
-                <h3 className="text-xl font-medium mb-3">{t('products.dedicated.features.deployment.title')}</h3>
+                <h3 className="text-xl font-medium mb-3">
+                  {t('products.dedicated.features.deployment.title')}
+                </h3>
                 <ul className="space-y-3 text-white/60">
-                  {(t('products.dedicated.features.deployment.items', { returnObjects: true }) as string[]).map((item: string) => (
+                  {(
+                    t('products.dedicated.features.deployment.items', {
+                      returnObjects: true,
+                    }) as string[]
+                  ).map((item: string) => (
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
@@ -162,9 +205,15 @@ export default function ProductsPage() {
                 className="p-6 rounded-xl bg-[#52B788]/5 border border-[#74C69D]/20 hover:bg-[#52B788]/10 transition-colors"
               >
                 <Bot className="w-8 h-8 mb-4 text-[#74C69D]" />
-                <h3 className="text-xl font-medium mb-3">{t('products.dedicated.features.control.title')}</h3>
+                <h3 className="text-xl font-medium mb-3">
+                  {t('products.dedicated.features.control.title')}
+                </h3>
                 <ul className="space-y-3 text-white/60">
-                  {(t('products.dedicated.features.control.items', { returnObjects: true }) as string[]).map((item: string) => (
+                  {(
+                    t('products.dedicated.features.control.items', {
+                      returnObjects: true,
+                    }) as string[]
+                  ).map((item: string) => (
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
@@ -178,9 +227,15 @@ export default function ProductsPage() {
                 className="p-6 rounded-xl bg-[#2D6A4F]/5 border border-[#40916C]/20 hover:bg-[#2D6A4F]/10 transition-colors"
               >
                 <Sparkles className="w-8 h-8 mb-4 text-[#FFB700]" />
-                <h3 className="text-xl font-medium mb-3">{t('products.dedicated.features.performance.title')}</h3>
+                <h3 className="text-xl font-medium mb-3">
+                  {t('products.dedicated.features.performance.title')}
+                </h3>
                 <ul className="space-y-3 text-white/60">
-                  {(t('products.dedicated.features.performance.items', { returnObjects: true }) as string[]).map((item: string) => (
+                  {(
+                    t('products.dedicated.features.performance.items', {
+                      returnObjects: true,
+                    }) as string[]
+                  ).map((item: string) => (
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
@@ -197,8 +252,12 @@ export default function ProductsPage() {
                 viewport={{ once: true }}
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <h2 className="text-3xl font-medium">{t('products.platform.title')}</h2>
-                  <span className="px-4 py-1 text-xs font-medium bg-[#52B788]/10 text-[#52B788] rounded-full whitespace-nowrap">Coming Soon</span>
+                  <h2 className="text-3xl font-medium">
+                    {t('products.platform.title')}
+                  </h2>
+                  <span className="px-4 py-1 text-xs font-medium bg-[#52B788]/10 text-[#52B788] rounded-full whitespace-nowrap">
+                    Coming Soon
+                  </span>
                 </div>
                 <p className="text-lg text-white/60">
                   {t('products.platform.description')}
@@ -213,9 +272,15 @@ export default function ProductsPage() {
                 className="p-6 rounded-xl bg-[#52B788]/5 border border-[#74C69D]/20 hover:bg-[#52B788]/10 transition-colors"
               >
                 <Database className="w-8 h-8 mb-4 text-[#52B788]" />
-                <h3 className="text-xl font-medium mb-3">{t('products.platform.features.toolset.title')}</h3>
+                <h3 className="text-xl font-medium mb-3">
+                  {t('products.platform.features.toolset.title')}
+                </h3>
                 <ul className="space-y-3 text-white/60">
-                  {(t('products.platform.features.toolset.items', { returnObjects: true }) as string[]).map((item: string) => (
+                  {(
+                    t('products.platform.features.toolset.items', {
+                      returnObjects: true,
+                    }) as string[]
+                  ).map((item: string) => (
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
@@ -229,9 +294,15 @@ export default function ProductsPage() {
                 className="p-6 rounded-xl bg-[#52B788]/5 border border-[#74C69D]/20 hover:bg-[#52B788]/10 transition-colors"
               >
                 <Box className="w-8 h-8 mb-4 text-[#74C69D]" />
-                <h3 className="text-xl font-medium mb-3">{t('products.platform.features.services.title')}</h3>
+                <h3 className="text-xl font-medium mb-3">
+                  {t('products.platform.features.services.title')}
+                </h3>
                 <ul className="space-y-3 text-white/60">
-                  {(t('products.platform.features.services.items', { returnObjects: true }) as string[]).map((item: string) => (
+                  {(
+                    t('products.platform.features.services.items', {
+                      returnObjects: true,
+                    }) as string[]
+                  ).map((item: string) => (
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
@@ -245,9 +316,15 @@ export default function ProductsPage() {
                 className="p-6 rounded-xl bg-[#2D6A4F]/5 border border-[#40916C]/20 hover:bg-[#2D6A4F]/10 transition-colors"
               >
                 <Layers className="w-8 h-8 mb-4 text-[#FFB700]" />
-                <h3 className="text-xl font-medium mb-3">{t('products.platform.features.infrastructure.title')}</h3>
+                <h3 className="text-xl font-medium mb-3">
+                  {t('products.platform.features.infrastructure.title')}
+                </h3>
                 <ul className="space-y-3 text-white/60">
-                  {(t('products.platform.features.infrastructure.items', { returnObjects: true }) as string[]).map((item: string) => (
+                  {(
+                    t('products.platform.features.infrastructure.items', {
+                      returnObjects: true,
+                    }) as string[]
+                  ).map((item: string) => (
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
@@ -264,7 +341,9 @@ export default function ProductsPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                 >
-                  <h2 className="text-3xl font-medium mb-4">{t('products.architecture.title')}</h2>
+                  <h2 className="text-3xl font-medium mb-4">
+                    {t('products.architecture.title')}
+                  </h2>
                   <p className="text-lg text-white/60">
                     {t('products.architecture.description')}
                   </p>
@@ -274,47 +353,59 @@ export default function ProductsPage() {
               <div className="relative">
                 {/* Background gradient effects */}
                 <div className="absolute inset-0 bg-gradient-to-b from-background via-background/50 to-background pointer-events-none" />
-                
+
                 {/* Main layout container */}
                 <div className="relative grid grid-cols-12 gap-6">
                   {/* Stack layers - Left side */}
                   <div className="col-span-9">
                     <div className="space-y-4">
-                      {Object.entries(t('products.architecture.layers', { returnObjects: true }) as Record<string, any>).slice(0, 4).map(([key, layer]: [string, any], index) => {
-                        const IconComponent = platformStack[index].icon
-                        return (
-                          <motion.div
-                            key={key}
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            className="relative group"
-                          >
-                            <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r from-[#2D6A4F]/5 via-[#40916C]/5 to-[#FFB700]/5 opacity-5 group-hover:opacity-10 transition-opacity duration-300`} />
-                            <div className="relative p-6 rounded-2xl border border-[#40916C]/20 bg-[#2D6A4F]/5">
-                              <div className="flex items-center gap-4 mb-6">
-                                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br from-[#2D6A4F] to-[#40916C] flex items-center justify-center`}>
-                                  <IconComponent className="w-6 h-6 text-white" />
-                                </div>
-                                <div>
-                                  <h3 className="text-xl font-medium">{layer.title}</h3>
-                                </div>
-                              </div>
-                              <div className="grid grid-cols-4 gap-4">
-                                {layer.items.map((item: string) => (
+                      {Object.entries(
+                        t('products.architecture.layers', {
+                          returnObjects: true,
+                        }) as Record<string, any>
+                      )
+                        .slice(0, 4)
+                        .map(([key, layer]: [string, any], index) => {
+                          const IconComponent = platformStack[index].icon
+                          return (
+                            <motion.div
+                              key={key}
+                              initial={{ opacity: 0, x: -20 }}
+                              whileInView={{ opacity: 1, x: 0 }}
+                              viewport={{ once: true }}
+                              transition={{ delay: index * 0.1 }}
+                              className="relative group"
+                            >
+                              <div
+                                className={`absolute inset-0 rounded-2xl bg-gradient-to-r from-[#2D6A4F]/5 via-[#40916C]/5 to-[#FFB700]/5 opacity-5 group-hover:opacity-10 transition-opacity duration-300`}
+                              />
+                              <div className="relative p-6 rounded-2xl border border-[#40916C]/20 bg-[#2D6A4F]/5">
+                                <div className="flex items-center gap-4 mb-6">
                                   <div
-                                    key={item}
-                                    className="px-4 py-3 rounded-lg bg-[#2D6A4F]/5 text-sm text-center border border-[#40916C]/20 hover:bg-[#2D6A4F]/10 transition-colors"
+                                    className={`w-12 h-12 rounded-xl bg-gradient-to-br from-[#2D6A4F] to-[#40916C] flex items-center justify-center`}
                                   >
-                                    {item}
+                                    <IconComponent className="w-6 h-6 text-white" />
                                   </div>
-                                ))}
+                                  <div>
+                                    <h3 className="text-xl font-medium">
+                                      {layer.title}
+                                    </h3>
+                                  </div>
+                                </div>
+                                <div className="grid grid-cols-4 gap-4">
+                                  {layer.items.map((item: string) => (
+                                    <div
+                                      key={item}
+                                      className="px-4 py-3 rounded-lg bg-[#2D6A4F]/5 text-sm text-center border border-[#40916C]/20 hover:bg-[#2D6A4F]/10 transition-colors"
+                                    >
+                                      {item}
+                                    </div>
+                                  ))}
+                                </div>
                               </div>
-                            </div>
-                          </motion.div>
-                        )
-                      })}
+                            </motion.div>
+                          )
+                        })}
                     </div>
                   </div>
 
@@ -326,18 +417,30 @@ export default function ProductsPage() {
                     className="col-span-3"
                   >
                     <div className={`relative h-full group`}>
-                      <div className={`absolute inset-0 rounded-2xl bg-gradient-to-b from-[#FFB700]/5 to-[#2D6A4F]/5 opacity-5 group-hover:opacity-10 transition-opacity duration-300`} />
+                      <div
+                        className={`absolute inset-0 rounded-2xl bg-gradient-to-b from-[#FFB700]/5 to-[#2D6A4F]/5 opacity-5 group-hover:opacity-10 transition-opacity duration-300`}
+                      />
                       <div className="relative h-full p-6 rounded-2xl border border-[#40916C]/20 bg-[#2D6A4F]/5 flex flex-col">
                         <div className="flex items-center gap-4 mb-8">
-                          <div className={`w-12 h-12 rounded-xl bg-gradient-to-br from-[#FFB700] to-[#FFB700]/80 flex items-center justify-center`}>
+                          <div
+                            className={`w-12 h-12 rounded-xl bg-gradient-to-br from-[#FFB700] to-[#FFB700]/80 flex items-center justify-center`}
+                          >
                             <managementStack.icon className="w-6 h-6 text-[#1A1A1A]" />
                           </div>
                           <div>
-                            <h3 className="text-xl font-medium">{t('products.architecture.layers.management.title')}</h3>
+                            <h3 className="text-xl font-medium">
+                              {t(
+                                'products.architecture.layers.management.title'
+                              )}
+                            </h3>
                           </div>
                         </div>
                         <div className="flex-1 flex flex-col justify-center space-y-4">
-                          {(t('products.architecture.layers.management.items', { returnObjects: true }) as string[]).map((item: string) => (
+                          {(
+                            t('products.architecture.layers.management.items', {
+                              returnObjects: true,
+                            }) as string[]
+                          ).map((item: string) => (
                             <div
                               key={item}
                               className="p-4 rounded-lg bg-[#2D6A4F]/5 text-sm text-center border border-[#40916C]/20 hover:bg-[#2D6A4F]/10 transition-colors"
@@ -369,7 +472,9 @@ export default function ProductsPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-3xl font-medium mb-4">{t('products.models.title')}</h2>
+                <h2 className="text-3xl font-medium mb-4">
+                  {t('products.models.title')}
+                </h2>
                 <p className="text-lg text-white/60">
                   {t('products.models.description')}
                 </p>
@@ -393,7 +498,9 @@ export default function ProductsPage() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <h2 className="text-3xl font-medium mb-6">{t('products.cta.title')}</h2>
+            <h2 className="text-3xl font-medium mb-6">
+              {t('products.cta.title')}
+            </h2>
             <p className="text-xl text-white/60 mb-8 max-w-2xl mx-auto">
               {t('products.cta.description')}
             </p>
