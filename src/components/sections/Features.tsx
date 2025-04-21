@@ -1,166 +1,65 @@
 import { motion } from 'framer-motion'
 import { Globe, Shield, Server, Lock, Check } from 'lucide-react'
-import { t } from 'i18next'
+import { useTranslation } from 'react-i18next'
+import { Feature } from '@/components/ui/feature-section-with-bento-grid'
 
 export default function Features() {
+  const { t } = useTranslation()
+
+  const featureItems = [
+    {
+      icon: <Globe className="w-8 h-8 stroke-1 text-white" />,
+      title: t('whyBerget.features.european.title'),
+      description: t('whyBerget.features.european.description'),
+      span: "col" as const,
+      points: t('whyBerget.features.european.points', { returnObjects: true }) as string[]
+    },
+    {
+      icon: <Shield className="w-8 h-8 stroke-1 text-white" />,
+      title: t('whyBerget.features.privacy.title'),
+      description: t('whyBerget.features.privacy.description'),
+      span: "none" as const,
+      points: t('whyBerget.features.privacy.points', { returnObjects: true }) as string[]
+    },
+    {
+      icon: <Server className="w-8 h-8 stroke-1 text-white" />,
+      title: t('whyBerget.features.alternative.title'),
+      description: t('whyBerget.features.alternative.description'),
+      span: "none" as const,
+      points: t('whyBerget.features.alternative.points', { returnObjects: true }) as string[]
+    },
+    {
+      icon: <Lock className="w-8 h-8 stroke-1 text-white" />,
+      title: t('whyBerget.features.security.title'),
+      description: t('whyBerget.features.security.description'),
+      span: "col" as const,
+      points: t('whyBerget.features.security.points', { returnObjects: true }) as string[]
+    }
+  ]
+
+  // Transform the feature items to include the points in the description
+  const gridItems = featureItems.map(item => {
+    const pointsText = item.points.map(point => `• ${point}`).join('\n\n');
+    return {
+      icon: item.icon,
+      title: item.title,
+      description: `${item.description}\n\n${pointsText}`,
+      span: item.span
+    };
+  });
+
   return (
-    <div className="max-w-7xl mx-auto space-y-24">
-      {/* European Innovation & Sovereignty */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="relative group"
-      >
-        <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-[#52B788]/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-        <div className="relative p-12 rounded-3xl bg-white/[0.02] backdrop-blur-sm border border-white/10">
-          <div className="flex items-start gap-8">
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#52B788] to-[#74C69D] flex items-center justify-center shrink-0">
-              <Globe className="w-8 h-8 text-white" />
-            </div>
-            <div>
-              <h2 className="text-2xl font-medium mb-6">
-                {t('whyBerget.features.european.title')}
-              </h2>
-              <p className="text-white/80 mb-8 leading-relaxed text-lg">
-                {t('whyBerget.features.european.description')}
-              </p>
-              <ul className="space-y-6">
-                {(
-                  t('whyBerget.features.european.points', {
-                    returnObjects: true,
-                  }) as string[]
-                ).map((point, index) => (
-                  <li key={index} className="flex items-start gap-4">
-                    <div className="w-8 h-8 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center mt-0.5">
-                      <Check className="w-5 h-5 text-[#52B788]" />
-                    </div>
-                    <span className="text-lg text-white/80">{point}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.2 }}
-        className="relative group"
-      >
-        <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-[#52B788]/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-        <div className="relative p-12 rounded-3xl bg-white/[0.02] backdrop-blur-sm border border-white/10">
-          <div className="flex items-start gap-8">
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#52B788] to-[#74C69D] flex items-center justify-center shrink-0">
-              <Shield className="w-8 h-8 text-white" />
-            </div>
-            <div>
-              <h2 className="text-2xl font-medium mb-6">
-                {t('whyBerget.features.privacy.title')}
-              </h2>
-              <p className="text-white/80 mb-8 leading-relaxed text-lg">
-                {t('whyBerget.features.privacy.description')}
-              </p>
-              <ul className="space-y-6">
-                {(
-                  t('whyBerget.features.privacy.points', {
-                    returnObjects: true,
-                  }) as string[]
-                ).map((point, index) => (
-                  <li key={index} className="flex items-start gap-4">
-                    <div className="w-8 h-8 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center mt-0.5">
-                      <Check className="w-5 h-5 text-[#52B788]" />
-                    </div>
-                    <span className="text-lg text-white/80">{point}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.3 }}
-        className="relative group"
-      >
-        <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-[#2D6A4F]/5 via-[#40916C]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-        <div className="relative p-12 rounded-3xl bg-white/[0.02] backdrop-blur-sm border border-white/10">
-          <div className="flex items-start gap-8">
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#FFB700] to-[#FFB700]/80 flex items-center justify-center shrink-0">
-              <Server className="w-8 h-8 text-[#1A1A1A]" />
-            </div>
-            <div>
-              <h2 className="text-2xl font-medium mb-6">
-                {t('whyBerget.features.alternative.title')}
-              </h2>
-              <p className="text-white/80 mb-8 leading-relaxed text-lg">
-                {t('whyBerget.features.alternative.description')}
-              </p>
-              <ul className="space-y-6">
-                {(
-                  t('whyBerget.features.alternative.points', {
-                    returnObjects: true,
-                  }) as string[]
-                ).map((point, index) => (
-                  <li key={index} className="flex items-start gap-4">
-                    <div className="w-8 h-8 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center mt-0.5">
-                      <Check className="w-5 h-5 text-[#52B788]" />
-                    </div>
-                    <span className="text-lg text-white/80">{point}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </motion.div>
-
-      {/* Security & Privacy */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.4 }}
-        className="relative group"
-      >
-        <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-[#52B788]/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-        <div className="relative p-12 rounded-3xl bg-white/[0.02] backdrop-blur-sm border border-white/10">
-          <div className="flex items-start gap-8">
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#74C69D] to-[#52B788] flex items-center justify-center shrink-0">
-              <Lock className="w-8 h-8 text-white" />
-            </div>
-            <div>
-              <h2 className="text-2xl font-medium mb-6">
-                {t('whyBerget.features.security.title')}
-              </h2>
-              <p className="text-white/80 mb-8 leading-relaxed text-lg">
-                {t('whyBerget.features.security.description')}
-              </p>
-              <ul className="space-y-6">
-                {(
-                  t('whyBerget.features.security.points', {
-                    returnObjects: true,
-                  }) as string[]
-                ).map((point, index) => (
-                  <li key={index} className="flex items-start gap-4">
-                    <div className="w-8 h-8 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center mt-0.5">
-                      <Check className="w-5 h-5 text-[#52B788]" />
-                    </div>
-                    <span className="text-lg text-white/80">{point}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </motion.div>
-    </div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      <Feature 
+        title={t('whyBerget.hero.title')}
+        description={t('whyBerget.hero.description')}
+        badge={t('whyBerget.hero.tagline')}
+        items={gridItems}
+      />
+    </motion.div>
   )
 }
