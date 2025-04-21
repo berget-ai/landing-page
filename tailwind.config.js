@@ -84,11 +84,20 @@ export default {
           '0%, 100%': { opacity: '1' },
           '50%': { opacity: '0' },
         },
+        'skew-scroll': {
+          '0%': {
+            transform: 'translateY(0) skewY(0deg)',
+          },
+          '100%': {
+            transform: 'translateY(calc(-100% + 250px)) skewY(0deg)',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'blink': 'blink 1s step-end infinite',
+        'skew-scroll': 'skew-scroll 20s linear infinite',
       },
     },
   },
