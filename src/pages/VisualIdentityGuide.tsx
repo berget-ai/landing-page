@@ -305,6 +305,70 @@ export function VisualIdentityGuide() {
             <h2 className="text-3xl font-ovo mb-6 border-b border-white/10 pb-2">
               UI Components
             </h2>
+            
+            <div className="bg-white/5 rounded-xl p-6 mb-8">
+              <h4 className="text-lg font-medium mb-4">
+                Icon Guidelines
+              </h4>
+              <p className="mb-4">
+                Icons should be used consistently throughout the interface to enhance usability and visual appeal. 
+                All icons should use the <code>text-white</code> class by default.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <Check className="w-5 h-5 text-white" />
+                    <span className="font-medium">Icon Color Usage</span>
+                  </div>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#52B788] mt-2" />
+                      <span>
+                        Use <code>text-white</code> for all standard icons
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#52B788] mt-2" />
+                      <span>
+                        Only use colored icons to emphasize important elements like warnings (<code>text-[#F59E0B]</code>) or errors (<code>text-[#FF0033]</code>)
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#52B788] mt-2" />
+                      <span>
+                        Maintain consistent icon sizes within similar UI elements
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <X className="w-5 h-5 text-white" />
+                    <span className="font-medium">Avoid</span>
+                  </div>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-red-500 mt-2" />
+                      <span>
+                        Using colored icons purely for decoration
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-red-500 mt-2" />
+                      <span>
+                        Inconsistent icon styling within the same interface
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-red-500 mt-2" />
+                      <span>
+                        Using too many different icons that may confuse users
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
 
             <div className="mb-8">
               <h3 className="text-xl mb-4 font-medium">Buttons</h3>
