@@ -1,8 +1,5 @@
 import { Shield, Check, X, ArrowRight, Download } from 'lucide-react'
-import logoWithText from '@/assets/berget-logo-black.svg'
-import logoWithTextWhite from '@/assets/berget-logo-white.svg'
-import logoMark from '@/assets/berget-icon-black.svg'
-import logoMarkWhite from '@/assets/berget-icon-white.svg'
+import { LogoComponent } from '@/components/common/LogoComponent'
 
 export function VisualIdentityGuide() {
   return (
@@ -39,131 +36,121 @@ export function VisualIdentityGuide() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
               <div>
-                <h3 className="text-xl mb-4 font-medium">Logo with Text</h3>
+                <h3 className="text-xl mb-4 font-medium">Logo (Dark Mode)</h3>
                 <div className="p-6 rounded-lg bg-[#1A1A1A] border border-white/10 flex justify-center items-center">
-                  <img
-                    src={logoWithText}
-                    alt="Berget AI Logo with Text"
-                    className="h-24"
-                  />
+                  <LogoComponent size="lg" className="h-24" />
                 </div>
                 <div className="text-sm text-white/60 mt-2">
-                  Black logo with text on transparent background
+                  Logo automatically adapts to dark mode
                 </div>
               </div>
 
               <div>
                 <h3 className="text-xl mb-4 font-medium">
-                  Logo with Text (White)
+                  Logo (Light Mode)
                 </h3>
-                <div className="p-6 rounded-lg bg-[#333] border border-white/10 flex justify-center items-center">
-                  <img
-                    src={logoWithTextWhite}
-                    alt="Berget AI White Logo with Text"
-                    className="h-24"
-                  />
+                <div className="p-6 rounded-lg bg-white border border-gray-200 flex justify-center items-center">
+                  <LogoComponent size="lg" inverted={true} className="h-24" />
                 </div>
                 <div className="text-sm text-white/60 mt-2">
-                  White logo with text for use on dark backgrounds
+                  Logo automatically adapts to light mode
                 </div>
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
               <div>
-                <h3 className="text-xl mb-4 font-medium">Logo Mark</h3>
-                <div className="p-6 rounded-lg bg-[#1A1A1A] border border-white/10 flex justify-center items-center">
-                  <img
-                    src={logoMark}
-                    alt="Berget AI Logo Mark"
-                    className="h-24"
-                  />
+                <h3 className="text-xl mb-4 font-medium">Logo Sizes</h3>
+                <div className="p-6 rounded-lg bg-[#1A1A1A] border border-white/10 flex justify-center items-center gap-8">
+                  <div className="flex flex-col items-center">
+                    <LogoComponent size="sm" />
+                    <span className="text-xs text-white/60 mt-2">Small</span>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <LogoComponent size="md" />
+                    <span className="text-xs text-white/60 mt-2">Medium</span>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <LogoComponent size="lg" />
+                    <span className="text-xs text-white/60 mt-2">Large</span>
+                  </div>
                 </div>
                 <div className="text-sm text-white/60 mt-2">
-                  Black logo mark on transparent background
+                  Logo is available in multiple sizes
                 </div>
               </div>
 
               <div>
-                <h3 className="text-xl mb-4 font-medium">Logo Mark (White)</h3>
-                <div className="p-6 rounded-lg bg-[#333] border border-white/10 flex justify-center items-center">
-                  <img
-                    src={logoMarkWhite}
-                    alt="Berget AI White Logo Mark"
-                    className="h-24"
-                  />
+                <h3 className="text-xl mb-4 font-medium">Logo on Different Backgrounds</h3>
+                <div className="space-y-4">
+                  <div className="p-4 rounded-lg bg-[#52B788] flex justify-center items-center">
+                    <LogoComponent size="md" inverted={true} />
+                  </div>
+                  <div className="p-4 rounded-lg bg-[#1A1A1A] flex justify-center items-center">
+                    <LogoComponent size="md" />
+                  </div>
+                  <div className="p-4 rounded-lg bg-white flex justify-center items-center">
+                    <LogoComponent size="md" inverted={true} />
+                  </div>
                 </div>
                 <div className="text-sm text-white/60 mt-2">
-                  White logo mark for use on dark backgrounds
+                  Logo adapts to different background colors
                 </div>
               </div>
             </div>
 
             <div className="mb-8">
-              <h3 className="text-xl mb-4 font-medium">Logo Mark Sizes</h3>
+              <h3 className="text-xl mb-4 font-medium">Custom Logo Sizes</h3>
               <div className="p-6 rounded-lg bg-[#1A1A1A] border border-white/10">
                 <div className="flex flex-wrap items-end gap-8 justify-center">
                   <div className="flex flex-col items-center">
-                    <img
-                      src="@/assets/berget-icon-black-16x16.png"
-                      alt="Berget AI Logo Mark 16px"
-                      className="mb-2"
-                    />
-                    <span className="text-xs text-white/60">16px</span>
+                    <LogoComponent size={16} />
+                    <span className="text-xs text-white/60 mt-2">16px</span>
                   </div>
                   <div className="flex flex-col items-center">
-                    <img
-                      src="@/assets/berget-icon-black-32x32.png"
-                      alt="Berget AI Logo Mark 32px"
-                      className="mb-2"
-                    />
-                    <span className="text-xs text-white/60">32px</span>
+                    <LogoComponent size={32} />
+                    <span className="text-xs text-white/60 mt-2">32px</span>
                   </div>
                   <div className="flex flex-col items-center">
-                    <img
-                      src="@/assets/berget-icon-black-64x64.png"
-                      alt="Berget AI Logo Mark 64px"
-                      className="mb-2"
-                    />
-                    <span className="text-xs text-white/60">64px</span>
+                    <LogoComponent size={64} />
+                    <span className="text-xs text-white/60 mt-2">64px</span>
                   </div>
                   <div className="flex flex-col items-center">
-                    <img
-                      src="@/assets/berget-icon-black-128x128.png"
-                      alt="Berget AI Logo Mark 128px"
-                      className="mb-2"
-                    />
-                    <span className="text-xs text-white/60">128px</span>
+                    <LogoComponent size={128} />
+                    <span className="text-xs text-white/60 mt-2">128px</span>
                   </div>
                 </div>
               </div>
               <div className="text-sm text-white/60 mt-2">
-                The logo mark is available in various sizes for different
-                applications
+                The logo component accepts custom sizes as numbers
               </div>
             </div>
 
             <div className="bg-white/5 rounded-xl p-6 mb-8">
-              <h4 className="text-lg font-medium mb-4">Logo File Formats</h4>
+              <h4 className="text-lg font-medium mb-4">Logo Component Usage</h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <div className="flex items-center gap-2 mb-2">
                     <Download className="w-5 h-5 text-white" />
-                    <span className="font-medium">Available Formats</span>
+                    <span className="font-medium">Component Props</span>
                   </div>
                   <ul className="space-y-2">
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
                       <span>
-                        <strong>SVG</strong> - Vector format for web and print
-                        materials (scalable)
+                        <code className="bg-black/30 px-1 rounded">size</code> - 'sm' | 'md' | 'lg' | number
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
                       <span>
-                        <strong>PNG</strong> - Raster format with transparency
-                        for digital applications (16px, 32px, 64px, 128px)
+                        <code className="bg-black/30 px-1 rounded">inverted</code> - boolean (force inversion)
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
+                      <span>
+                        <code className="bg-black/30 px-1 rounded">className</code> - additional CSS classes
                       </span>
                     </li>
                   </ul>
@@ -177,13 +164,19 @@ export function VisualIdentityGuide() {
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
                       <span>
-                        Use SVG format whenever possible for best quality
+                        Use the component for consistent logo rendering
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
                       <span>
-                        Use the mark-only version when space is limited
+                        The logo automatically adapts to light/dark themes
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
+                      <span>
+                        Use <code className="bg-black/30 px-1 rounded">inverted</code> prop for special cases
                       </span>
                     </li>
                   </ul>
