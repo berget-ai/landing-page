@@ -15,8 +15,9 @@ export function LogoComponent({
 }: LogoComponentProps) {
   const { theme } = useTheme()
   
-  // Determine if we should invert the logo based on theme and inverted prop
-  const shouldInvert = inverted ? !isDarkTheme(theme) : isDarkTheme(theme)
+  // If inverted is explicitly set, use that value
+  // Otherwise, determine based on theme
+  const shouldInvert = inverted !== undefined ? inverted : isDarkTheme(theme)
   
   // Calculate size in pixels
   const sizeInPx = typeof size === 'number' 

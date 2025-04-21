@@ -36,24 +36,24 @@ export function VisualIdentityGuide() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
               <div>
-                <h3 className="text-xl mb-4 font-medium">Logo (Dark Mode)</h3>
+                <h3 className="text-xl mb-4 font-medium">Logo on Dark Background</h3>
                 <div className="p-6 rounded-lg bg-[#1A1A1A] border border-white/10 flex justify-center items-center">
-                  <LogoComponent size="lg" className="h-24" />
+                  <LogoComponent size="lg" className="h-24" inverted={false} />
                 </div>
                 <div className="text-sm text-white/60 mt-2">
-                  Logo automatically adapts to dark mode
+                  White logo for dark backgrounds
                 </div>
               </div>
 
               <div>
                 <h3 className="text-xl mb-4 font-medium">
-                  Logo (Light Mode)
+                  Logo on Light Background
                 </h3>
                 <div className="p-6 rounded-lg bg-white border border-gray-200 flex justify-center items-center">
-                  <LogoComponent size="lg" inverted={true} className="h-24" />
+                  <LogoComponent size="lg" className="h-24" inverted={true} />
                 </div>
                 <div className="text-sm text-white/60 mt-2">
-                  Logo automatically adapts to light mode
+                  Black logo for light backgrounds
                 </div>
               </div>
             </div>
