@@ -2,7 +2,7 @@
   "hero": {
     "tagline": "No data leaves Sweden",
     "title": {
-      "part1": "We champion AI Sovereignty to unlock innovation and growth in Europe",
+      "part1": "We champion AI sovereignty to unlock innovation and growth in Europe",
       "part2": ""
     },
     "description": "EU-compliant inference service and AI infrastructure built by developers for developers.",
@@ -166,7 +166,7 @@
     },
     "platform": {
       "title": "Berget AI Platform",
-      "description": "Unlock your developer team with our intuitive platform designed for development and deployment of AI Applications.",
+      "description": "Unlock your developer team with our intuitive platform designed for development and deployment of AI applications.",
       "features": {
         "toolset": {
           "title": "Full Flexibility and Control",
@@ -180,7 +180,7 @@
           "title": "Ready-to-Use Services",
           "items": [
             "Pre-configured recipes",
-            "Most popular AI buildign tools",
+            "Most popular AI building tools",
             "Easy deployment"
           ]
         },
@@ -233,7 +233,7 @@
       "getStarted" : "Sign up!"
     },
     "models" : {
-      "title" : "Access the latest and most powerful open LLMs",
+      "title" : "Access the Latest and Most Powerful Open LLMs",
       "description" : "Use our range of models to power your agentic workflows",
       "requestModel" : "Request a Model"
     }
@@ -315,14 +315,14 @@
   "whyBerget": {
     "hero": {
       "tagline": "No data leaves Sweden",
-      "title": "Why choose Berget AI?",
+      "title": "Why Choose Berget AI?",
       "description": "No dependencies, no legal exposure, no data retention",
       "getStarted": "Get Started",
       "bookDemo": "Book Demo"
     },
     "benefits": {
       "title": "Benefits of Berget AI",
-      "description": "We serve (public and private sector) organisations that seek to harness the power of AI with full control and with a minimum impact on the planet.",
+      "description": "We serve (public and private sector) organizations that seek to harness the power of AI with full control and with a minimum impact on the planet.",
       "euBased": {
         "title": "Sovereign AI",
         "description": "Run models while all data stays within EU borders, our infrastructure is all in Europe, with full compliance with EU regulations.",
@@ -665,7 +665,7 @@
   },
 "DevelopersPage": {
   "hero": {
-    "title": "AI infrastructure for developers and DevOps teams",
+    "title": "AI Infrastructure for Developers and DevOps Teams",
     "description": "Run your AI models and applications in a secure, EU-based environment with full control over your code and data."
   },
   "sections": [
@@ -715,10 +715,10 @@
     }
   ],
     "cta": {
-    "title": "Ready to start building?",
+    "title": "Ready to Start Building?",
     "description": "Get started in under 5 minutes with our CLI tool and build your first AI application.",
-    "signup": "Create account",
-    "docs": "Read the documentation"
+    "signup": "Create Account",
+    "docs": "Read the Documentation"
   }
 }
 }
