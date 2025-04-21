@@ -60,47 +60,6 @@ export function VisualIdentityGuide() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
               <div>
-                <h3 className="text-xl mb-4 font-medium">Logo Sizes</h3>
-                <div className="p-6 rounded-lg bg-[#1A1A1A] border border-white/10 flex justify-center items-center gap-8">
-                  <div className="flex flex-col items-center">
-                    <LogoComponent size="sm" />
-                    <span className="text-xs text-white/60 mt-2">Small</span>
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <LogoComponent size="md" />
-                    <span className="text-xs text-white/60 mt-2">Medium</span>
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <LogoComponent size="lg" />
-                    <span className="text-xs text-white/60 mt-2">Large</span>
-                  </div>
-                </div>
-                <div className="text-sm text-white/60 mt-2">
-                  Logo is available in multiple sizes
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-xl mb-4 font-medium">Logo on Different Backgrounds</h3>
-                <div className="space-y-4">
-                  <div className="p-4 rounded-lg bg-[#52B788] flex justify-center items-center">
-                    <LogoComponent size="md" inverted={true} />
-                  </div>
-                  <div className="p-4 rounded-lg bg-[#1A1A1A] flex justify-center items-center">
-                    <LogoComponent size="md" />
-                  </div>
-                  <div className="p-4 rounded-lg bg-white flex justify-center items-center">
-                    <LogoComponent size="md" inverted={true} />
-                  </div>
-                </div>
-                <div className="text-sm text-white/60 mt-2">
-                  Logo adapts to different background colors
-                </div>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-              <div>
                 <h3 className="text-xl mb-4 font-medium">Logo with Text</h3>
                 <div className="p-6 rounded-lg bg-[#1A1A1A] border border-white/10 flex justify-center items-center">
                   <LogoComponent size={64} withText variant="horizontal" />
@@ -122,7 +81,7 @@ export function VisualIdentityGuide() {
             </div>
 
             <div className="mb-8">
-              <h3 className="text-xl mb-4 font-medium">Custom Logo Sizes</h3>
+              <h3 className="text-xl mb-4 font-medium">Logo Sizes</h3>
               <div className="p-6 rounded-lg bg-[#1A1A1A] border border-white/10">
                 <div className="flex flex-wrap items-end gap-8 justify-center">
                   <div className="flex flex-col items-center">
@@ -145,6 +104,55 @@ export function VisualIdentityGuide() {
               </div>
               <div className="text-sm text-white/60 mt-2">
                 The logo component accepts custom sizes as numbers
+              </div>
+            </div>
+
+            <div className="mb-8">
+              <h3 className="text-xl mb-4 font-medium">Logo Downloads</h3>
+              <div className="p-6 rounded-lg bg-[#1A1A1A] border border-white/10">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 className="text-lg font-medium mb-3">SVG Format</h4>
+                    <div className="space-y-3">
+                      <a href="/assets/logo.svg" download className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                        <Download className="w-5 h-5 text-white" />
+                        <span className="text-sm">Logo (SVG)</span>
+                      </a>
+                      <a href="/assets/berget-logo-white.svg" download className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                        <Download className="w-5 h-5 text-white" />
+                        <span className="text-sm">Logo with Text - White (SVG)</span>
+                      </a>
+                      <a href="/assets/berget-logo-black.svg" download className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                        <Download className="w-5 h-5 text-white" />
+                        <span className="text-sm">Logo with Text - Black (SVG)</span>
+                      </a>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-medium mb-3">PNG Format</h4>
+                    <div className="space-y-3">
+                      <a href="/assets/logo-16.png" download className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                        <Download className="w-5 h-5 text-white" />
+                        <span className="text-sm">Logo 16px (PNG)</span>
+                      </a>
+                      <a href="/assets/logo-32.png" download className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                        <Download className="w-5 h-5 text-white" />
+                        <span className="text-sm">Logo 32px (PNG)</span>
+                      </a>
+                      <a href="/assets/logo-64.png" download className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                        <Download className="w-5 h-5 text-white" />
+                        <span className="text-sm">Logo 64px (PNG)</span>
+                      </a>
+                      <a href="/assets/logo-128.png" download className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                        <Download className="w-5 h-5 text-white" />
+                        <span className="text-sm">Logo 128px (PNG)</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="text-sm text-white/60 mt-2">
+                Download logo assets for use in various applications
               </div>
             </div>
 
@@ -256,6 +264,129 @@ export function VisualIdentityGuide() {
                     </li>
                   </ul>
                 </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Typography Section */}
+          <section className="mb-16">
+            <h2 className="text-3xl font-ovo mb-6 border-b border-white/10 pb-2">
+              Typography
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+              <div>
+                <h3 className="text-xl mb-4 font-medium">Headings</h3>
+                <div className="p-6 rounded-lg bg-[#1A1A1A] border border-white/10 space-y-4">
+                  <div>
+                    <h1 className="text-4xl font-ovo">Heading 1</h1>
+                    <div className="text-xs text-white/60 mt-1">
+                      font-ovo, text-4xl or text-5xl
+                    </div>
+                  </div>
+                  <div>
+                    <h2 className="text-3xl font-ovo">Heading 2</h2>
+                    <div className="text-xs text-white/60 mt-1">
+                      font-ovo, text-3xl
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-medium">Heading 3</h3>
+                    <div className="text-xs text-white/60 mt-1">
+                      font-medium, text-2xl
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-medium">Heading 4</h4>
+                    <div className="text-xs text-white/60 mt-1">
+                      font-medium, text-xl
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl mb-4 font-medium">Body Text</h3>
+                <div className="p-6 rounded-lg bg-[#1A1A1A] border border-white/10 space-y-4">
+                  <div>
+                    <p className="text-base">
+                      This is the standard body text used throughout the
+                      application. It should be legible and comfortable to read.
+                    </p>
+                    <div className="text-xs text-white/60 mt-1">text-base</div>
+                  </div>
+                  <div>
+                    <p className="text-sm text-white/80">
+                      This is smaller text often used for secondary information
+                      or UI elements.
+                    </p>
+                    <div className="text-xs text-white/60 mt-1">
+                      text-sm, text-white/80
+                    </div>
+                  </div>
+                  <div>
+                    <p className="text-xs text-white/60">
+                      This is the smallest text size, used for captions,
+                      footnotes, and other tertiary information.
+                    </p>
+                    <div className="text-xs text-white/60 mt-1">
+                      text-xs, text-white/60
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Color Palette Section */}
+          <section className="mb-16">
+            <h2 className="text-3xl font-ovo mb-6 border-b border-white/10 pb-2">
+              Color Palette
+            </h2>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+              <div>
+                <div className="h-24 rounded-lg bg-[#52B788] mb-2"></div>
+                <div className="text-sm font-medium">#52B788</div>
+                <div className="text-xs text-white/60">Primary Green</div>
+              </div>
+              <div>
+                <div className="h-24 rounded-lg bg-[#2D6A4F] mb-2"></div>
+                <div className="text-sm font-medium">#2D6A4F</div>
+                <div className="text-xs text-white/60">Dark Green</div>
+              </div>
+              <div>
+                <div className="h-24 rounded-lg bg-[#74C69D] mb-2"></div>
+                <div className="text-sm font-medium">#74C69D</div>
+                <div className="text-xs text-white/60">Light Green</div>
+              </div>
+              <div>
+                <div className="h-24 rounded-lg bg-[#1A1A1A] mb-2"></div>
+                <div className="text-sm font-medium">#1A1A1A</div>
+                <div className="text-xs text-white/60">Background</div>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+              <div>
+                <div className="h-24 rounded-lg bg-white mb-2"></div>
+                <div className="text-sm font-medium">#FFFFFF</div>
+                <div className="text-xs text-white/60">White</div>
+              </div>
+              <div>
+                <div className="h-24 rounded-lg bg-white/60 mb-2"></div>
+                <div className="text-sm font-medium">white/60</div>
+                <div className="text-xs text-white/60">Secondary Text</div>
+              </div>
+              <div>
+                <div className="h-24 rounded-lg bg-[#F59E0B] mb-2"></div>
+                <div className="text-sm font-medium">#F59E0B</div>
+                <div className="text-xs text-white/60">Warning</div>
+              </div>
+              <div>
+                <div className="h-24 rounded-lg bg-[#FF0033] mb-2"></div>
+                <div className="text-sm font-medium">#FF0033</div>
+                <div className="text-xs text-white/60">Error</div>
               </div>
             </div>
           </section>
@@ -410,129 +541,6 @@ export function VisualIdentityGuide() {
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Typography Section */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-ovo mb-6 border-b border-white/10 pb-2">
-              Typography
-            </h2>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-              <div>
-                <h3 className="text-xl mb-4 font-medium">Headings</h3>
-                <div className="p-6 rounded-lg bg-[#1A1A1A] border border-white/10 space-y-4">
-                  <div>
-                    <h1 className="text-4xl font-ovo">Heading 1</h1>
-                    <div className="text-xs text-white/60 mt-1">
-                      font-ovo, text-4xl or text-5xl
-                    </div>
-                  </div>
-                  <div>
-                    <h2 className="text-3xl font-ovo">Heading 2</h2>
-                    <div className="text-xs text-white/60 mt-1">
-                      font-ovo, text-3xl
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-medium">Heading 3</h3>
-                    <div className="text-xs text-white/60 mt-1">
-                      font-medium, text-2xl
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-medium">Heading 4</h4>
-                    <div className="text-xs text-white/60 mt-1">
-                      font-medium, text-xl
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-xl mb-4 font-medium">Body Text</h3>
-                <div className="p-6 rounded-lg bg-[#1A1A1A] border border-white/10 space-y-4">
-                  <div>
-                    <p className="text-base">
-                      This is the standard body text used throughout the
-                      application. It should be legible and comfortable to read.
-                    </p>
-                    <div className="text-xs text-white/60 mt-1">text-base</div>
-                  </div>
-                  <div>
-                    <p className="text-sm text-white/80">
-                      This is smaller text often used for secondary information
-                      or UI elements.
-                    </p>
-                    <div className="text-xs text-white/60 mt-1">
-                      text-sm, text-white/80
-                    </div>
-                  </div>
-                  <div>
-                    <p className="text-xs text-white/60">
-                      This is the smallest text size, used for captions,
-                      footnotes, and other tertiary information.
-                    </p>
-                    <div className="text-xs text-white/60 mt-1">
-                      text-xs, text-white/60
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Color Palette Section */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-ovo mb-6 border-b border-white/10 pb-2">
-              Color Palette
-            </h2>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-              <div>
-                <div className="h-24 rounded-lg bg-[#52B788] mb-2"></div>
-                <div className="text-sm font-medium">#52B788</div>
-                <div className="text-xs text-white/60">Primary Green</div>
-              </div>
-              <div>
-                <div className="h-24 rounded-lg bg-[#2D6A4F] mb-2"></div>
-                <div className="text-sm font-medium">#2D6A4F</div>
-                <div className="text-xs text-white/60">Dark Green</div>
-              </div>
-              <div>
-                <div className="h-24 rounded-lg bg-[#74C69D] mb-2"></div>
-                <div className="text-sm font-medium">#74C69D</div>
-                <div className="text-xs text-white/60">Light Green</div>
-              </div>
-              <div>
-                <div className="h-24 rounded-lg bg-[#1A1A1A] mb-2"></div>
-                <div className="text-sm font-medium">#1A1A1A</div>
-                <div className="text-xs text-white/60">Background</div>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-              <div>
-                <div className="h-24 rounded-lg bg-white mb-2"></div>
-                <div className="text-sm font-medium">#FFFFFF</div>
-                <div className="text-xs text-white/60">White</div>
-              </div>
-              <div>
-                <div className="h-24 rounded-lg bg-white/60 mb-2"></div>
-                <div className="text-sm font-medium">white/60</div>
-                <div className="text-xs text-white/60">Secondary Text</div>
-              </div>
-              <div>
-                <div className="h-24 rounded-lg bg-[#F59E0B] mb-2"></div>
-                <div className="text-sm font-medium">#F59E0B</div>
-                <div className="text-xs text-white/60">Warning</div>
-              </div>
-              <div>
-                <div className="h-24 rounded-lg bg-[#FF0033] mb-2"></div>
-                <div className="text-sm font-medium">#FF0033</div>
-                <div className="text-xs text-white/60">Error</div>
               </div>
             </div>
           </section>
