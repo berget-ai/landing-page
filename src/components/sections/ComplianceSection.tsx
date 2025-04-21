@@ -113,8 +113,8 @@ export function ComplianceSection() {
                   : [] as string[]
                 ).map((benefit) => (
                   <li key={benefit} className="flex items-center gap-3">
-                    <div className="w-6 h-6 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center">
-                      <div className="w-1.5 h-1.5 rounded-full bg-green" />
+                    <div className="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-white/60" />
                     </div>
                     <span className="text-sm text-white/80">{benefit}</span>
                   </li>

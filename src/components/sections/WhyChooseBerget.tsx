@@ -41,7 +41,7 @@ export function WhyChooseBerget() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="p-8 rounded-2xl bg-[#2D6A4F]/10 border border-[#40916C]/20 hover:bg-[#2D6A4F]/15 transition-all duration-300 transform hover:-translate-y-1 h-full"
+            className="p-8 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-1 h-full"
           >
             <div className="w-14 h-14 rounded-xl bg-muted flex items-center justify-center mb-6">
               <Shield className="w-7 h-7 text-white" />

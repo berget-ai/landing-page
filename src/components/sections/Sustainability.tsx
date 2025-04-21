@@ -72,9 +72,9 @@ export function Sustainability() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="p-8 rounded-xl bg-[#2D6A4F]/5 border border-[#40916C]/20 hover:bg-[#2D6A4F]/10 transition-colors relative group shadow-sm"
+              className="p-8 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors relative group shadow-sm"
             >
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#52B788]/0 via-[#52B788]/50 to-[#52B788]/0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-white/0 via-white/50 to-white/0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
               <div className="mb-6">
                 <point.icon className="w-10 h-10 text-white" />
               </div>

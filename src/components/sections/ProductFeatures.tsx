@@ -98,7 +98,7 @@ export function ProductFeatures() {
               </div>
               <div className="flex items-center gap-3 mb-4">
                 <h3 className="text-xl font-ovo">{t('products.platform.title')}</h3>
-                <span className="px-4 py-1 text-xs font-medium bg-[#52B788]/10 text-[#52B788] rounded-full whitespace-nowrap">Coming Soon</span>
+                <span className="px-4 py-1 text-xs font-medium bg-white/10 text-white rounded-full whitespace-nowrap">Coming Soon</span>
               </div>
               <p className="text-white/80 mb-6">{t('products.platform.description')}</p>
               <ul className="space-y-3">
