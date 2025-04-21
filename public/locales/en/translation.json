@@ -27,7 +27,7 @@
       },
       "european": {
         "title": "European Innovation",
-        "description": "We are passionate about European competitiveness overall, and in particular in the field of AI. Europe needs to have its own AI agenda, innovation system and sovereignty, especially in an increasingly volatile geopolitical context. It needs to be enabled by EU and its members states, and driven by businesses, organizations and communities."
+        "description": "We are passionate about European competitiveness overall, and in particular in the field of AI. Europe needs to have its own AI agenda, innovation system and sovereignty, especially in an increasingly volatile geopolitical context. It needs to be enabled by EU and its members states, and driven by businesses, organisations and communities."
       },
       "integrity": {
         "title": "Integrity & Privacy",
@@ -322,7 +322,7 @@
     },
     "benefits": {
       "title": "Benefits of Berget AI",
-      "description": "We serve (public and private sector) organizations that seek to harness the power of AI with full control and with a minimum impact on the planet.",
+      "description": "We serve (public and private sector) organisations that seek to harness the power of AI with full control and with a minimum impact on the planet.",
       "euBased": {
         "title": "Sovereign AI",
         "description": "Run models while all data stays within EU borders, our infrastructure is all in Europe, with full compliance with EU regulations.",
@@ -616,7 +616,7 @@
       },
       {
         "title": "No Waste Water",
-        "description": "Our data centers use zero water for buildling cooling, removing one of the biggest environmental concerns of AI.",
+        "description": "Our data centers use zero water for building cooling, removing one of the biggest environmental concerns of AI.",
         "stats": "0% water waste"
       },
       {
