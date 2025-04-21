@@ -402,7 +402,7 @@ export function VisualIdentityGuide() {
               <p className="mb-4">
                 Icons should be used consistently throughout the interface to
                 enhance usability and visual appeal. All icons should use the{' '}
-                <code>text-white</code> class by default.
+                <code>text-white</code> class by default, regardless of the context.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
@@ -414,19 +414,21 @@ export function VisualIdentityGuide() {
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
                       <span>
-                        Use <code>text-white</code> for all icons, including in
-                        warnings and errors
+                        <strong>Always use <code>text-white</code></strong> for all icons, even in
+                        warnings, errors, and success states
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
-                      <span>Never use colored icons purely for decoration</span>
+                      <span>
+                        Color should only be used for the background or container, never for the icon itself
+                      </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
                       <span>
                         Maintain consistent icon sizes within similar UI
-                        elements
+                        elements (recommended: 20px for most UI elements)
                       </span>
                     </li>
                   </ul>
@@ -439,18 +441,20 @@ export function VisualIdentityGuide() {
                   <ul className="space-y-2">
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
-                      <span>Using colored icons purely for decoration</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
                       <span>
-                        Inconsistent icon styling within the same interface
+                        <strong>Never use colored icons</strong> - colors are reserved for emphasizing important messages only
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
                       <span>
-                        Using too many different icons that may confuse users
+                        Don't use colors to make the interface "more colorful" - this reduces clarity and accessibility
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
+                      <span>
+                        Avoid inconsistent icon styling or using too many different icons that may confuse users
                       </span>
                     </li>
                   </ul>
@@ -460,7 +464,7 @@ export function VisualIdentityGuide() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               <div className="p-4 rounded-lg bg-[#1A1A1A] border border-white/10">
-                <h4 className="text-lg font-medium mb-4">Card Examples</h4>
+                <h4 className="text-lg font-medium mb-4">Message Cards</h4>
                 <div className="space-y-4">
                   <div className="flex items-center gap-2 p-3 rounded-lg bg-[#F59E0B]/10 border border-[#F59E0B]/20">
                     <Shield className="w-5 h-5 text-white" />
@@ -470,26 +474,99 @@ export function VisualIdentityGuide() {
                     <X className="w-5 h-5 text-white" />
                     <span className="text-sm">Error message example</span>
                   </div>
+                  <div className="flex items-center gap-2 p-3 rounded-lg bg-[#52B788]/10 border border-[#52B788]/20">
+                    <Check className="w-5 h-5 text-white" />
+                    <span className="text-sm">Success message example</span>
+                  </div>
                   <div className="text-sm text-white/60 mt-2">
-                    All icons use text-white class, even in warning and error
-                    states
+                    <strong>Note:</strong> The background and border colors indicate the message type, 
+                    but all icons remain white for consistency
                   </div>
                 </div>
               </div>
               <div className="p-4 rounded-lg bg-[#1A1A1A] border border-white/10">
-                <h4 className="text-lg font-medium mb-4">Standard Icons</h4>
+                <h4 className="text-lg font-medium mb-4">UI Components</h4>
                 <div className="space-y-4">
                   <div className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10">
                     <Shield className="w-5 h-5 text-white" />
-                    <span className="text-sm">Standard icon example</span>
+                    <span className="text-sm">Security feature</span>
                   </div>
                   <div className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10">
                     <ArrowRight className="w-5 h-5 text-white" />
-                    <span className="text-sm">Standard icon example</span>
+                    <span className="text-sm">Navigation element</span>
+                  </div>
+                  <div className="p-3 rounded-lg bg-white/5 border border-white/10">
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm">Button with icon</span>
+                      <button className="px-3 py-1 rounded bg-[#52B788] flex items-center gap-1">
+                        <span className="text-xs">Action</span>
+                        <ArrowRight className="w-4 h-4 text-white" />
+                      </button>
+                    </div>
                   </div>
                   <div className="text-sm text-white/60 mt-2">
-                    Standard icons use text-white class for consistency
+                    All UI components use consistent white icons regardless of context
                   </div>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white/5 rounded-xl p-6 mb-8">
+              <h4 className="text-lg font-medium mb-4">Color Usage in UI</h4>
+              <p className="mb-4">
+                Color should be used purposefully and sparingly in the interface. Reserve colors for emphasizing important information or indicating state changes.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <Check className="w-5 h-5 text-white" />
+                    <span className="font-medium">Correct Color Usage</span>
+                  </div>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
+                      <span>
+                        Use color for backgrounds to indicate different states (warning, error, success)
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
+                      <span>
+                        Use brand colors for primary action buttons and important UI elements
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
+                      <span>
+                        Maintain high contrast ratios for accessibility (minimum 4.5:1)
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <X className="w-5 h-5 text-white" />
+                    <span className="font-medium">Incorrect Color Usage</span>
+                  </div>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
+                      <span>
+                        <strong>Don't use colored icons</strong> - this creates visual noise and inconsistency
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
+                      <span>
+                        Don't use colors purely for decoration or to make the interface "more colorful"
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
+                      <span>
+                        Avoid using too many different colors in close proximity
+                      </span>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
