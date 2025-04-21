@@ -22,7 +22,7 @@ export function NetworkConnectivity() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="space-y-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-muted text-sm">
-                <Shield className="w-4 h-4" />
+                <Shield className="w-4 h-4 text-white" />
                 <span>Safe and Compliant AI</span>
               </div>
 
@@ -37,7 +37,7 @@ export function NetworkConnectivity() {
 
             <div className="grid gap-6">
               <div className="p-6 rounded-xl bg-white/5">
-                <Network className="w-6 h-6 mb-4" />
+                <Network className="w-6 h-6 mb-4 text-white" />
                 <h4 className="text-lg font-medium mb-2">
                   {t('networkConnectivity.features.directConnect.title')}
                 </h4>
@@ -47,7 +47,7 @@ export function NetworkConnectivity() {
               </div>
 
               <div className="p-6 rounded-xl bg-white/5">
-                <Lock className="w-6 h-6 mb-4" />
+                <Lock className="w-6 h-6 mb-4 text-white" />
                 <h4 className="text-lg font-medium mb-2">
                   {t('networkConnectivity.features.compliance.title')}
                 </h4>
@@ -57,7 +57,7 @@ export function NetworkConnectivity() {
               </div>
 
               <div className="p-6 rounded-xl bg-white/5">
-                <Shield className="w-6 h-6 mb-4" />
+                <Shield className="w-6 h-6 mb-4 text-white" />
                 <h4 className="text-lg font-medium mb-2">
                   {t('networkConnectivity.features.security.title')}
                 </h4>

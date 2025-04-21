@@ -27,11 +27,11 @@ export function SustainabilitySection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#40916C]/15 text-[#52B788] mb-6">
-              <Leaf className="w-4 h-4 mr-2" />
-              <span className="text-sm font-medium">{section.badge}</span>
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-muted mb-6">
+              <Leaf className="w-4 h-4 mr-2 text-white" />
+              <span className="text-sm">{section.badge}</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-medium mb-6 text-[#52B788]">
+            <h2 className="text-3xl md:text-4xl font-medium mb-6">
               {section.title}
             </h2>
             <p className="text-lg text-white/60">
@@ -54,14 +54,14 @@ export function SustainabilitySection() {
               >
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-[#52B788]/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative p-8 rounded-2xl bg-white/[0.02] backdrop-blur-sm border border-[#74C69D]/20 h-full">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#52B788] to-[#74C69D] flex items-center justify-center mb-8">
+                  <div className="w-14 h-14 rounded-2xl bg-muted flex items-center justify-center mb-8">
                     <Icon className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-xl font-medium mb-3 text-[#74C69D]">{point.title}</h3>
+                  <h3 className="text-xl font-medium mb-3">{point.title}</h3>
                   <p className="text-white/60 mb-4 text-sm leading-relaxed">
                     {point.description}
                   </p>
-                  <div className="text-sm font-medium text-[#52B788]">
+                  <div className="text-sm font-medium">
                     {point.stats}
                   </div>
                 </div>

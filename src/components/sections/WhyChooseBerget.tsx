@@ -26,7 +26,7 @@ export function WhyChooseBerget() {
             viewport={{ once: true }}
             className="p-8 rounded-2xl bg-[#2D6A4F]/10 border border-[#40916C]/20 hover:bg-[#2D6A4F]/15 transition-all duration-300 transform hover:-translate-y-1 h-full"
           >
-            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#52B788] to-[#74C69D] flex items-center justify-center mb-6">
+            <div className="w-14 h-14 rounded-xl bg-muted flex items-center justify-center mb-6">
               <Globe className="w-7 h-7 text-white" />
             </div>
             <h3 className="text-xl font-medium mb-4">{t('whyBergetSection.features.european.title')}</h3>
@@ -43,7 +43,7 @@ export function WhyChooseBerget() {
             transition={{ delay: 0.1 }}
             className="p-8 rounded-2xl bg-[#2D6A4F]/10 border border-[#40916C]/20 hover:bg-[#2D6A4F]/15 transition-all duration-300 transform hover:-translate-y-1 h-full"
           >
-            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#52B788] to-[#74C69D] flex items-center justify-center mb-6">
+            <div className="w-14 h-14 rounded-xl bg-muted flex items-center justify-center mb-6">
               <Shield className="w-7 h-7 text-white" />
             </div>
             <h3 className="text-xl font-medium mb-4">{t('whyBergetSection.features.security.title')}</h3>
@@ -60,8 +60,8 @@ export function WhyChooseBerget() {
             transition={{ delay: 0.2 }}
             className="p-8 rounded-2xl bg-[#2D6A4F]/10 border border-[#40916C]/20 hover:bg-[#2D6A4F]/15 transition-all duration-300 transform hover:-translate-y-1 h-full"
           >
-            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#FFB700] to-[#FFB700]/80 flex items-center justify-center mb-6">
-              <Server className="w-7 h-7 text-[#1A1A1A]" />
+            <div className="w-14 h-14 rounded-xl bg-muted flex items-center justify-center mb-6">
+              <Server className="w-7 h-7 text-white" />
             </div>
             <h3 className="text-xl font-medium mb-4">{t('whyBergetSection.features.alternative.title')}</h3>
             <p className="text-lg text-white/60">
@@ -77,7 +77,7 @@ export function WhyChooseBerget() {
             transition={{ delay: 0.3 }}
             className="p-8 rounded-2xl bg-[#2D6A4F]/10 border border-[#40916C]/20 hover:bg-[#2D6A4F]/15 transition-all duration-300 transform hover:-translate-y-1 h-full"
           >
-            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#74C69D] to-[#52B788] flex items-center justify-center mb-6">
+            <div className="w-14 h-14 rounded-xl bg-muted flex items-center justify-center mb-6">
               <Lock className="w-7 h-7 text-white" />
             </div>
             <h3 className="text-xl font-medium mb-4">{t('whyBergetSection.features.privacy.title')}</h3>

@@ -11,7 +11,7 @@ export function Overview() {
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-muted text-foreground mb-6">
-            <GitBranch className="w-4 h-4 mr-2" />
+            <GitBranch className="w-4 h-4 mr-2 text-white" />
             <span className="text-sm">GitOps Architecture</span>
           </div>
           <h2 className="text-4xl font-medium mb-6">
@@ -34,7 +34,7 @@ export function Overview() {
               className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
             >
               <div className="mb-4">
-                <GitBranch className="w-8 h-8" />
+                <GitBranch className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-medium mb-2">
                 {t('overview.gitRepository.title')}
@@ -56,7 +56,7 @@ export function Overview() {
               className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
             >
               <div className="mb-4">
-                <Cpu className="w-8 h-8" />
+                <Cpu className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-medium mb-2">
                 {t('overview.bergetCluster.title')}
@@ -78,7 +78,7 @@ export function Overview() {
               className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
             >
               <div className="mb-4">
-                <Link2 className="w-8 h-8" />
+                <Link2 className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-medium mb-2">
                 {t('overview.aiApis.title')}
@@ -94,15 +94,15 @@ export function Overview() {
 
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="flex items-center gap-3 p-4 rounded-lg bg-white/5">
-              <Network className="w-5 h-5" />
+              <Network className="w-5 h-5 text-white" />
               <span className="text-sm text-white/60">Network Isolation</span>
             </div>
             <div className="flex items-center gap-3 p-4 rounded-lg bg-white/5">
-              <Shield className="w-5 h-5" />
+              <Shield className="w-5 h-5 text-white" />
               <span className="text-sm text-white/60">Encrypted Storage</span>
             </div>
             <div className="flex items-center gap-3 p-4 rounded-lg bg-white/5">
-              <Cloud className="w-5 h-5" />
+              <Cloud className="w-5 h-5 text-white" />
               <span className="text-sm text-white/60">Multi-Cloud Support</span>
             </div>
           </div>

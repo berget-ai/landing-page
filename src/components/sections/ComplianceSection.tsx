@@ -40,7 +40,7 @@ export function ComplianceSection() {
           >
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-green/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative p-8 rounded-2xl bg-white/[0.02] backdrop-blur-sm border border-[#74C69D]/20 h-full">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-green to-[#74C69D] flex items-center justify-center mb-8">
+              <div className="w-14 h-14 rounded-2xl bg-muted flex items-center justify-center mb-8">
                 <Shield className="w-7 h-7 text-white" />
               </div>
               <h3 className="text-xl font-medium mb-4">{t('compliance.regulations.gdpr.name')}</h3>
@@ -51,8 +51,8 @@ export function ComplianceSection() {
                   : [] as string[]
                 ).map((benefit) => (
                   <li key={benefit} className="flex items-center gap-3">
-                    <div className="w-6 h-6 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center">
-                      <div className="w-1.5 h-1.5 rounded-full bg-green" />
+                    <div className="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-white/60" />
                     </div>
                     <span className="text-sm text-white/80">{benefit}</span>
                   </li>
@@ -71,8 +71,8 @@ export function ComplianceSection() {
           >
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-green/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative p-8 rounded-2xl bg-white/[0.02] backdrop-blur-sm border border-[#74C69D]/20 h-full">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#FFB700] to-[#FFB700]/80 flex items-center justify-center mb-8">
-                <Network className="w-7 h-7 text-[#1A1A1A]" />
+              <div className="w-14 h-14 rounded-2xl bg-muted flex items-center justify-center mb-8">
+                <Network className="w-7 h-7 text-white" />
               </div>
               <h3 className="text-xl font-medium mb-4">{t('compliance.regulations.nis2.name')}</h3>
               <p className="text-white/60 mb-6">{t('compliance.regulations.nis2.description')}</p>
@@ -102,7 +102,7 @@ export function ComplianceSection() {
           >
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-green/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative p-8 rounded-2xl bg-white/[0.02] backdrop-blur-sm border border-[#74C69D]/20 h-full">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#74C69D] to-green flex items-center justify-center mb-8">
+              <div className="w-14 h-14 rounded-2xl bg-muted flex items-center justify-center mb-8">
                 <Lock className="w-7 h-7 text-white" />
               </div>
               <h3 className="text-xl font-medium mb-4">{t('compliance.regulations.schrems2.name')}</h3>

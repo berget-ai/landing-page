@@ -34,7 +34,7 @@ export function ProductFeatures() {
           >
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-[#52B788]/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative p-8 rounded-2xl bg-white/[0.02] backdrop-blur-sm border border-[#74C69D]/20 h-full">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#52B788] to-[#74C69D] flex items-center justify-center mb-8">
+              <div className="w-14 h-14 rounded-2xl bg-muted flex items-center justify-center mb-8">
                 <Cloud className="w-7 h-7 text-white" />
               </div>
               <h3 className="text-xl font-medium mb-4">{t('products.serverless.title')}</h3>
@@ -42,8 +42,8 @@ export function ProductFeatures() {
               <ul className="space-y-3">
                 {(t('products.serverless.features.integration.items', { returnObjects: true }) as string[]).map((item) => (
                   <li key={item} className="flex items-center gap-3">
-                    <div className="w-6 h-6 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center">
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#52B788]" />
+                    <div className="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-white/60" />
                     </div>
                     <span className="text-sm text-white/80">{item}</span>
                   </li>
@@ -62,8 +62,8 @@ export function ProductFeatures() {
           >
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-[#52B788]/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative p-8 rounded-2xl bg-white/[0.02] backdrop-blur-sm border border-[#74C69D]/20 h-full">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#FFB700] to-[#FFB700]/80 flex items-center justify-center mb-8">
-                <Server className="w-7 h-7 text-[#1A1A1A]" />
+              <div className="w-14 h-14 rounded-2xl bg-muted flex items-center justify-center mb-8">
+                <Server className="w-7 h-7 text-white" />
               </div>
               <div className="flex items-center gap-3 mb-4">
                 <h3 className="text-xl font-medium">{t('products.dedicated.title')}</h3>
@@ -93,7 +93,7 @@ export function ProductFeatures() {
           >
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-[#52B788]/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative p-8 rounded-2xl bg-white/[0.02] backdrop-blur-sm border border-[#74C69D]/20 h-full">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#74C69D] to-[#52B788] flex items-center justify-center mb-8">
+              <div className="w-14 h-14 rounded-2xl bg-muted flex items-center justify-center mb-8">
                 <Cpu className="w-7 h-7 text-white" />
               </div>
               <div className="flex items-center gap-3 mb-4">
