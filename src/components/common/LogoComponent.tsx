@@ -9,7 +9,6 @@ interface LogoComponentProps {
   inverted?: boolean
   variant?: 'icon' | 'full' | 'horizontal'
   withText?: boolean
-  color?: string
   backgroundColor?: string
 }
 
@@ -19,7 +18,6 @@ export function LogoComponent({
   inverted = false,
   variant = 'icon',
   withText = false,
-  color,
   backgroundColor,
 }: LogoComponentProps) {
   const { theme } = useTheme()
@@ -52,6 +50,7 @@ export function LogoComponent({
     padding: withText ? '0.5rem' : 0,
   }
 
+  // Logo should only be black or white based on inversion
   return (
     <div className={`inline-block ${className}`} style={containerStyle}>
       {!withText && (
