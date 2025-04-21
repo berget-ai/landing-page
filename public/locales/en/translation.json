@@ -34,38 +34,38 @@
         "description": "We think integrity, data privacy and regulations are good as long as it ensures a level playing field, fosters simplicity over complexity and ensures openness and broad participation. We want to be a key enabler for European organizations and unlock AI innovations in a safe and responsible way."
       }
     },
-  "promises": {
-    "title": "Our Customer Promises",
-    "description": "What you can expect when working with us",
-    "list": [
-      "An easy way to build AI applications",
-      "Affordable and fair, no lock-ins, no hidden fees",
-      "A simple way to be compliant to key regulatory frameworks",
-      "Developer friendly, built by developers for developers",
-      "In constant state of innovation and listen to what our customers need",
-      "Contributing to positive and sustainable societal progress"
-    ]
-  },
-  "team": {
-    "title": "Our Team",
-    "description": "We are entrepreneurs with decades of experience in technology and AI",
-    "members": {
-      "christian": {
-        "name": "Christian Landgren",
-        "role": "Co-founder & CPTO",
-        "bio": "30 years of experience helping organizations with digitalization and AI, passionate about AI and software development, deeply engaged in open source and open innovations, trusted advisor to government and public sector, challenger and technology optimist",
-        "image": "/team/christian.png"
+    "promises": {
+      "title": "Our Customer Promises",
+      "description": "What you can expect when working with us",
+      "list": [
+        "An easy way to build AI applications",
+        "Affordable and fair, no lock-ins, no hidden fees",
+        "A simple way to be compliant to key regulatory frameworks",
+        "Developer friendly, built by developers for developers",
+        "In constant state of innovation and listen to what our customers need",
+        "Contributing to positive and sustainable societal progress"
+      ]
+    },
+    "team": {
+      "title": "Our Team",
+      "description": "We are entrepreneurs with decades of experience in technology and AI",
+      "members": {
+        "christian": {
+          "name": "Christian Landgren",
+          "role": "Co-founder & CPTO",
+          "bio": "30 years of experience helping organizations with digitalization and AI, passionate about AI and software development, deeply engaged in open source and open innovations, trusted advisor to government and public sector, challenger and technology optimist",
+          "image": "/team/christian.png"
         },
-      "andreas": {
-        "name": "Andreas Lundmark",
-        "role": "Co-founder & CEO",
-        "bio": "Andreas was an integral part of building the AI capabilities and offering at Boston Consulting Group (BCG Gamma) where he led the Nordic team and was globally responsible for the \"AI at Scale\" topic, and led multiple large scale data and AI transformations at leading global brands",
-        "image": "/team/andreas.png"
+        "andreas": {
+          "name": "Andreas Lundmark",
+          "role": "Co-founder & CEO",
+          "bio": "Andreas was an integral part of building the AI capabilities and offering at Boston Consulting Group (BCG Gamma) where he led the Nordic team and was globally responsible for the \"AI at Scale\" topic, and led multiple large scale data and AI transformations at leading global brands",
+          "image": "/team/andreas.png"
         },
-      "john": {
-        "name": "John Angelmo",
-        "role": "Server Infrastructure",
-        "bio": "A networking and kubernetes wizard with extensive experience in building and managing large-scale Kubernetes based infrastructure",
+        "john": {
+          "name": "John Angelmo",
+          "role": "Server Infrastructure",
+          "bio": "A networking and kubernetes wizard with extensive experience in building and managing large-scale Kubernetes based infrastructure",
           "image": "/team/john.png"
         },
         "johan": {
@@ -79,10 +79,10 @@
           "role": "Communication & Marketing",
           "bio": "Sara has over 25 years of experience of building brands with purpose through impactful communication - for start-ups and multinationals.",
           "image": "/team/sara.jpg"
+        }
       }
     }
-  }
-},
+  },
 
   "header": {
     "navigation": {
@@ -226,48 +226,48 @@
         }
       }
     },
-  
+
     "cta": {
       "title": "Ready to Start Building?",
       "description": "Get started today and discover the benefits of a secure, compliant, and sustainable AI infrastructure.",
-      "getStarted" : "Sign up!"
+      "getStarted": "Sign up!"
     },
-    "models" : {
-      "title" : "Access the Latest and Most Powerful Open LLMs",
-      "description" : "Use our range of models to power your agentic workflows",
-      "requestModel" : "Request a Model"
-    }
-  }, 
-   
     "models": {
-      "title": "Our Models",
-      "description": "Access a broad selection of powerful open models to build diverse AI solutions.",
-      "requestModel": "Request a Model",
-      "viewDocs": "View Model Documentation",
-      "comprehensive": {
-        "title": "Comprehensive Model Selection",
-        "point1": "Broad selection of model types including instruct, re-rerank, and moderation models",
-        "point2": "Optimized for agentic applications and complex AI workflows",
-        "point3": "Support for multiple modalities: text, image, speech-to-text, and text-to-speech"
-      },
-      "table": {
-        "model": "Model",
-        "type": "Type",
-        "context": "Context",
-        "status": "Status"
-      },
-      "types": {
-        "text-generation": "Text Generation",
-        "speech-to-text": "Speech to Text",
-        "image-generation": "Image Generation",
-        "embedding": "Embedding",
-        "rerank": "Rerank"
-      },
-      "status": {
-        "available": "Available",
-        "coming-soon": "Coming Soon"
-      }
+      "title": "Access the Latest and Most Powerful Open LLMs",
+      "description": "Use our range of models to power your agentic workflows",
+      "requestModel": "Request a Model"
+    }
+  },
+
+  "models": {
+    "title": "Our Models",
+    "description": "Access a broad selection of powerful open models to build diverse AI solutions.",
+    "requestModel": "Request a Model",
+    "viewDocs": "View Model Documentation",
+    "comprehensive": {
+      "title": "Comprehensive Model Selection",
+      "point1": "Broad selection of model types including instruct, re-rerank, and moderation models",
+      "point2": "Optimized for agentic applications and complex AI workflows",
+      "point3": "Support for multiple modalities: text, image, speech-to-text, and text-to-speech"
     },
+    "table": {
+      "model": "Model",
+      "type": "Type",
+      "context": "Context",
+      "status": "Status"
+    },
+    "types": {
+      "text-generation": "Text Generation",
+      "speech-to-text": "Speech to Text",
+      "image-generation": "Image Generation",
+      "embedding": "Embedding",
+      "rerank": "Rerank"
+    },
+    "status": {
+      "available": "Available",
+      "coming-soon": "Coming Soon"
+    }
+  },
   "developers": {
     "hero": {
       "title": "Built by Developers for Developers",
@@ -342,13 +342,9 @@
         ]
       },
       "flexible": {
-        "title": "Open AI",
+        "title": "(truly) Open AI",
         "description": "We are champions of open innovation and we host and serve open models. Our services are fully built on open source.",
-        "features": [
-          "Open Models",
-          "Open Source",
-          "Open Innovation"
-        ]
+        "features": ["Open Models", "Open Source", "Open Innovation"]
       }
     },
     "features": {
@@ -401,11 +397,11 @@
     "description": "Pay for exactly what you use. Choose a plan that fits your needs, and scale up as your usage grows.",
     "moneyBackDescription": "The above price plans include pre-paid compute and tokens at a discount compared to list price. Any usage above the included amount is charged on top, and any remaining balance is rolled over to the next month.",
     "moneyBackBullets": [
-    "Credit Card pre-payment for all plans",
-    "Invoice possible for Enterprise customers",
-    "Automatic top-up of wallet at a set threshold"
-  ],
-  "moneyBackNote": "Prices above are for monthly pre-payments. Yearly payments come with a 10% extra discount to the above price plans.",
+      "Credit Card pre-payment for all plans",
+      "Invoice possible for Enterprise customers",
+      "Automatic top-up of wallet at a set threshold"
+    ],
+    "moneyBackNote": "Prices above are for monthly pre-payments. Yearly payments come with a 10% extra discount to the above price plans.",
     "section": {
       "title": "Plans for Every Need",
       "description": "Choose the plan that works best for you",
@@ -492,7 +488,7 @@
     "legal": {
       "title": "Legal",
       "privacy": "Data Privacy",
-      "dpa" : "DPA",
+      "dpa": "DPA",
       "terms": "Terms",
       "security": "Security",
       "acceptableUse": "Acceptable Use",
@@ -540,7 +536,7 @@
     "learnMore": "Learn More About Compliance"
   },
   "overview": {
-    "whatIsGitOps": { 
+    "whatIsGitOps": {
       "title": "Manage Your Infrastructure with GitOps",
       "description": "GitOps brings the best practices of software development to infrastructure management. Version control, collaboration, and automated deployments - all through Git."
     },
@@ -605,9 +601,9 @@
     ]
   },
   "SustainabilitySection": {
-      "badge": "Built for sunstainable AI",
-      "title": "Our sustainability promise",
-      "description": "We are building Europe’s most sustainable AI infrastructure. Our environmental commitment is foundational to our operations, not an afterthought.",
+    "badge": "Built for sunstainable AI",
+    "title": "Our sustainability promise",
+    "description": "We are building Europe’s most sustainable AI infrastructure. Our environmental commitment is foundational to our operations, not an afterthought.",
     "points": [
       {
         "title": "100% Fossil-Free Electricity",
@@ -663,62 +659,62 @@
       "description": "Please try again later."
     }
   },
-"DevelopersPage": {
-  "hero": {
-    "title": "AI Infrastructure for Developers and DevOps Teams",
-    "description": "Run your AI models and applications in a secure, EU-based environment with full control over your code and data."
-  },
-  "sections": [
-    {
-      "icon": "github",
-      "title": "GitOps-Based Infrastructure",
-      "description": "Skip complex Terraform scripts and the AWS console. Define your infrastructure using simple YAML files in your Git repo.",
-      "bullets": [
-        "Automatic sync – changes in your repo are automatically applied to your infrastructure",
-        "Version control – full history and ability to roll back changes",
-        "Portability – your infrastructure is defined as code and can be moved between environments",
-        "CI/CD integration – connect with your existing CI/CD pipelines"
-      ]
+  "DevelopersPage": {
+    "hero": {
+      "title": "AI Infrastructure for Developers and DevOps Teams",
+      "description": "Run your AI models and applications in a secure, EU-based environment with full control over your code and data."
     },
-    {
-      "icon": "lock",
-      "title": "OpenAI-Compatible API",
-      "description": "Use the same code and libraries you're already using with OpenAI, but with full control over your data.",
-      "bullets": [
-        "Minimal code change – just switch your API key and endpoint to migrate from OpenAI",
-        "Support for popular libraries – works with LangChain, LlamaIndex and other frameworks",
-        "GDPR-compliant – all data stays within the EU and is never stored",
-        "CO₂ tracking – get carbon emission data for every API call"
-      ]
-    },
-    {
-      "icon": "server",
-      "title": "Kubernetes Without the Complexity",
-      "description": "Get the benefits of Kubernetes without having to manage the infrastructure yourself.",
-      "bullets": [
-        "Preconfigured clusters – get started in minutes instead of days",
-        "Standardised Helm charts – install databases, caching and services with a single command",
-        "GPU support – run your own models on dedicated GPUs when needed",
-        "Autoscaling – automatically scale up and down based on demand"
-      ]
-    },
-    {
-      "icon": "database",
-      "title": "Developer Tools That Simplify",
-      "description": "Tools to help you build, test, and deploy your AI applications faster.",
-      "bullets": [
-        "CLI tools – manage your resources directly from the terminal",
-        "Logging and monitoring – built-in integration with Prometheus and Grafana",
-        "Cost tracking – see exactly what costs and optimize your resources",
-        "Developer environments – preconfigured environments for rapid development"
-      ]
-    }
-  ],
+    "sections": [
+      {
+        "icon": "github",
+        "title": "GitOps-Based Infrastructure",
+        "description": "Skip complex Terraform scripts and the AWS console. Define your infrastructure using simple YAML files in your Git repo.",
+        "bullets": [
+          "Automatic sync – changes in your repo are automatically applied to your infrastructure",
+          "Version control – full history and ability to roll back changes",
+          "Portability – your infrastructure is defined as code and can be moved between environments",
+          "CI/CD integration – connect with your existing CI/CD pipelines"
+        ]
+      },
+      {
+        "icon": "lock",
+        "title": "OpenAI-Compatible API",
+        "description": "Use the same code and libraries you're already using with OpenAI, but with full control over your data.",
+        "bullets": [
+          "Minimal code change – just switch your API key and endpoint to migrate from OpenAI",
+          "Support for popular libraries – works with LangChain, LlamaIndex and other frameworks",
+          "GDPR-compliant – all data stays within the EU and is never stored",
+          "CO₂ tracking – get carbon emission data for every API call"
+        ]
+      },
+      {
+        "icon": "server",
+        "title": "Kubernetes Without the Complexity",
+        "description": "Get the benefits of Kubernetes without having to manage the infrastructure yourself.",
+        "bullets": [
+          "Preconfigured clusters – get started in minutes instead of days",
+          "Standardised Helm charts – install databases, caching and services with a single command",
+          "GPU support – run your own models on dedicated GPUs when needed",
+          "Autoscaling – automatically scale up and down based on demand"
+        ]
+      },
+      {
+        "icon": "database",
+        "title": "Developer Tools That Simplify",
+        "description": "Tools to help you build, test, and deploy your AI applications faster.",
+        "bullets": [
+          "CLI tools – manage your resources directly from the terminal",
+          "Logging and monitoring – built-in integration with Prometheus and Grafana",
+          "Cost tracking – see exactly what costs and optimize your resources",
+          "Developer environments – preconfigured environments for rapid development"
+        ]
+      }
+    ],
     "cta": {
-    "title": "Ready to Start Building?",
-    "description": "Get started in under 5 minutes with our CLI tool and build your first AI application.",
-    "signup": "Create Account",
-    "docs": "Read the Documentation"
+      "title": "Ready to Start Building?",
+      "description": "Get started in under 5 minutes with our CLI tool and build your first AI application.",
+      "signup": "Create Account",
+      "docs": "Read the Documentation"
+    }
   }
-}
 }
