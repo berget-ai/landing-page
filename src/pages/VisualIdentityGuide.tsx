@@ -1,8 +1,8 @@
 import { Shield, Check, X, ArrowRight, Download } from 'lucide-react'
-const logoWithText = '/placeholder.svg'
-const logoWithTextWhite = '/placeholder.svg'
-const logoMark = '/placeholder.svg'
-const logoMarkWhite = '/placeholder.svg'
+import logoWithText from '@/assets/logo-with-text.svg'
+import logoWithTextWhite from '@/assets/logo-with-text-white.svg'
+import logoMark from '@/assets/logo-mark.svg'
+import logoMarkWhite from '@/assets/logo-mark-white.svg'
 
 export function VisualIdentityGuide() {
   return (
