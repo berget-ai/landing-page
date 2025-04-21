@@ -1,8 +1,8 @@
 import { Shield, Check, X, ArrowRight, Download } from 'lucide-react'
-import logoWithText from '@/assets/logo-with-text.svg'
-import logoWithTextWhite from '@/assets/logo-with-text-white.svg'
-import logoMark from '@/assets/logo-mark.svg'
-import logoMarkWhite from '@/assets/logo-mark-white.svg'
+import logoWithText from '@/assets/berget-logo-black.svg'
+import logoWithTextWhite from '@/assets/berget-logo-white.svg'
+import logoMark from '@/assets/berget-icon-black.svg'
+import logoMarkWhite from '@/assets/berget-icon-white.svg'
 
 export function VisualIdentityGuide() {
   return (
@@ -105,35 +105,35 @@ export function VisualIdentityGuide() {
                 <div className="flex flex-wrap items-end gap-8 justify-center">
                   <div className="flex flex-col items-center">
                     <img
-                      src={logoMark}
-                      alt="Berget AI Logo Mark Small"
-                      className="h-8 mb-2"
+                      src="@/assets/berget-icon-black-16x16.png"
+                      alt="Berget AI Logo Mark 16px"
+                      className="mb-2"
                     />
                     <span className="text-xs text-white/60">16px</span>
                   </div>
                   <div className="flex flex-col items-center">
                     <img
-                      src={logoMark}
-                      alt="Berget AI Logo Mark Medium"
-                      className="h-12 mb-2"
-                    />
-                    <span className="text-xs text-white/60">24px</span>
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <img
-                      src={logoMark}
-                      alt="Berget AI Logo Mark Large"
-                      className="h-16 mb-2"
+                      src="@/assets/berget-icon-black-32x32.png"
+                      alt="Berget AI Logo Mark 32px"
+                      className="mb-2"
                     />
                     <span className="text-xs text-white/60">32px</span>
                   </div>
                   <div className="flex flex-col items-center">
                     <img
-                      src={logoMark}
-                      alt="Berget AI Logo Mark XL"
-                      className="h-24 mb-2"
+                      src="@/assets/berget-icon-black-64x64.png"
+                      alt="Berget AI Logo Mark 64px"
+                      className="mb-2"
                     />
-                    <span className="text-xs text-white/60">48px</span>
+                    <span className="text-xs text-white/60">64px</span>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <img
+                      src="@/assets/berget-icon-black-128x128.png"
+                      alt="Berget AI Logo Mark 128px"
+                      className="mb-2"
+                    />
+                    <span className="text-xs text-white/60">128px</span>
                   </div>
                 </div>
               </div>
@@ -163,7 +163,7 @@ export function VisualIdentityGuide() {
                       <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
                       <span>
                         <strong>PNG</strong> - Raster format with transparency
-                        for digital applications
+                        for digital applications (16px, 32px, 64px, 128px)
                       </span>
                     </li>
                   </ul>
