@@ -8,12 +8,14 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip'
 import { DetailedPricing } from '@/components/sections/pricing/DetailedPricing'
-import { Info, Check } from 'lucide-react'
+import { Info } from 'lucide-react'
 
 export default function PricingPage() {
   const { t } = useTranslation()
 
-  const bullets = t('pricing.moneyBackBullets', { returnObjects: true }) as string[]
+  const bullets = t('pricing.moneyBackBullets', {
+    returnObjects: true,
+  }) as string[]
 
   return (
     <main className="min-h-screen pt-24">
@@ -29,8 +31,9 @@ export default function PricingPage() {
 
         {/* Money Back Guarantee Section */}
         <div className="mb-24 max-w-6xl mx-auto">
-
-          <p className="text-white/60 mb-4">{t('pricing.moneyBackDescription')}</p>
+          <p className="text-white/60 mb-4">
+            {t('pricing.moneyBackDescription')}
+          </p>
           <ul className="text-white/60 space-y-2 list-disc list-inside mb-4">
             {bullets.map((item) => (
               <li key={item}>{item}</li>
@@ -41,7 +44,9 @@ export default function PricingPage() {
 
         <div className="mb-24 max-w-6xl mx-auto">
           <div className="flex items-center justify-between mb-8">
-            <h2 className="text-2xl font-medium">{t('pricing.detailedPricing')}</h2>
+            <h2 className="text-2xl font-medium">
+              {t('pricing.detailedPricing')}
+            </h2>
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>

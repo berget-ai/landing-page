@@ -7,6 +7,7 @@ export interface PricingRow {
   tooltip?: string
   inputprice?: string
   outputprice?: string
+  price?: string
 }
 
 export interface PricingSectionProps {

@@ -1,6 +1,4 @@
 import { ServerlessInference } from './ServerlessInference'
-import { ComputeResources } from './ComputeResources'
-import { NetworkConnectivity } from './NetworkConnectivity'
 
 export function DetailedPricing() {
   return (
