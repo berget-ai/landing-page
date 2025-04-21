@@ -99,6 +99,28 @@ export function VisualIdentityGuide() {
               </div>
             </div>
 
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+              <div>
+                <h3 className="text-xl mb-4 font-medium">Logo with Text</h3>
+                <div className="p-6 rounded-lg bg-[#1A1A1A] border border-white/10 flex justify-center items-center">
+                  <LogoComponent size={64} withText variant="horizontal" />
+                </div>
+                <div className="text-sm text-white/60 mt-2">
+                  Logo with company name for headers and branding
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl mb-4 font-medium">Logo with Text (Light)</h3>
+                <div className="p-6 rounded-lg bg-white border border-gray-200 flex justify-center items-center">
+                  <LogoComponent size={64} withText variant="horizontal" inverted={true} />
+                </div>
+                <div className="text-sm text-white/60 mt-2">
+                  Logo with company name on light background
+                </div>
+              </div>
+            </div>
+
             <div className="mb-8">
               <h3 className="text-xl mb-4 font-medium">Custom Logo Sizes</h3>
               <div className="p-6 rounded-lg bg-[#1A1A1A] border border-white/10">
@@ -126,6 +148,33 @@ export function VisualIdentityGuide() {
               </div>
             </div>
 
+            <div className="mb-8">
+              <h3 className="text-xl mb-4 font-medium">Logo with Custom Colors</h3>
+              <div className="p-6 rounded-lg bg-[#1A1A1A] border border-white/10">
+                <div className="flex flex-wrap items-end gap-8 justify-center">
+                  <div className="flex flex-col items-center">
+                    <LogoComponent size={48} color="#52B788" />
+                    <span className="text-xs text-white/60 mt-2">Primary Green</span>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <LogoComponent size={48} color="#74C69D" />
+                    <span className="text-xs text-white/60 mt-2">Light Green</span>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <LogoComponent 
+                      size={48} 
+                      backgroundColor="#52B788" 
+                      inverted={true}
+                    />
+                    <span className="text-xs text-white/60 mt-2">On Brand Color</span>
+                  </div>
+                </div>
+              </div>
+              <div className="text-sm text-white/60 mt-2">
+                The logo can be customized with different colors
+              </div>
+            </div>
+
             <div className="bg-white/5 rounded-xl p-6 mb-8">
               <h4 className="text-lg font-medium mb-4">Logo Component Usage</h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -150,7 +199,25 @@ export function VisualIdentityGuide() {
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
                       <span>
-                        <code className="bg-black/30 px-1 rounded">className</code> - additional CSS classes
+                        <code className="bg-black/30 px-1 rounded">variant</code> - 'icon' | 'full' | 'horizontal'
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
+                      <span>
+                        <code className="bg-black/30 px-1 rounded">withText</code> - boolean (add company name)
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
+                      <span>
+                        <code className="bg-black/30 px-1 rounded">color</code> - optional text/logo color
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
+                      <span>
+                        <code className="bg-black/30 px-1 rounded">backgroundColor</code> - optional background
                       </span>
                     </li>
                   </ul>
@@ -176,7 +243,13 @@ export function VisualIdentityGuide() {
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
                       <span>
-                        Use <code className="bg-black/30 px-1 rounded">inverted</code> prop for special cases
+                        Use <code className="bg-black/30 px-1 rounded">withText</code> for logo with company name
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
+                      <span>
+                        Use <code className="bg-black/30 px-1 rounded">variant</code> to control layout
                       </span>
                     </li>
                   </ul>

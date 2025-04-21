@@ -6,12 +6,20 @@ interface LogoComponentProps {
   className?: string
   size?: 'sm' | 'md' | 'lg' | number
   inverted?: boolean
+  variant?: 'icon' | 'full' | 'horizontal'
+  withText?: boolean
+  color?: string
+  backgroundColor?: string
 }
 
 export function LogoComponent({ 
   className = '', 
   size = 'md', 
-  inverted = false 
+  inverted = false,
+  variant = 'icon',
+  withText = false,
+  color,
+  backgroundColor
 }: LogoComponentProps) {
   const { theme } = useTheme()
   
@@ -24,19 +32,47 @@ export function LogoComponent({
     ? size 
     : size === 'sm' ? 24 : size === 'md' ? 32 : 48
   
+  // Calculate aspect ratio based on variant
+  const aspectRatio = variant === 'horizontal' ? 3 : 0.9
+  
+  // Determine container style
+  const containerStyle: React.CSSProperties = {
+    width: sizeInPx,
+    height: sizeInPx * aspectRatio,
+    backgroundColor: backgroundColor || 'transparent',
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: withText ? 'flex-start' : 'center',
+    padding: withText ? '0.5rem' : 0
+  }
+  
+  // Determine logo color
+  const logoColor = color || (shouldInvert ? 'black' : 'white')
+  
   return (
     <div 
       className={`inline-block ${className}`}
-      style={{ 
-        width: sizeInPx, 
-        height: sizeInPx * 0.9 // Maintain aspect ratio
-      }}
+      style={containerStyle}
     >
       <img 
         src={logoSvg} 
         alt="Berget AI Logo" 
-        className={`w-full h-full ${shouldInvert ? 'filter invert' : ''}`}
+        className={`h-full ${shouldInvert ? 'filter invert' : ''}`}
+        style={{ 
+          height: '100%',
+          width: 'auto',
+          objectFit: 'contain'
+        }}
       />
+      
+      {withText && (
+        <span 
+          className={`ml-2 font-medium ${shouldInvert ? 'text-black' : 'text-white'}`}
+          style={{ color: logoColor }}
+        >
+          Berget AI
+        </span>
+      )}
     </div>
   )
 }
