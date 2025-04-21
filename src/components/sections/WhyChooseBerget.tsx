@@ -8,31 +8,41 @@ export function WhyChooseBerget() {
   const { t } = useTranslation()
 
   return (
-    <section className="py-32 relative bg-[#2D6A4F]/5 border-y border-[#40916C]/20">
+    <section className="py-32 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background opacity-30" />
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-3xl md:text-4xl font-ovo mb-6">{t('whyBergetSection.title')}</h2>
-          <p className="text-xl text-white/80">
+          <h2 className="text-3xl md:text-5xl font-ovo mb-6 tracking-tight">{t('whyBergetSection.title')}</h2>
+          <p className="text-xl text-white/80 leading-relaxed">
             {t('whyBergetSection.description')}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 max-w-6xl mx-auto">
           {/* European Innovation */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="p-8 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-1 h-full"
+            className="relative overflow-hidden rounded-2xl group"
           >
-            <div className="w-14 h-14 rounded-xl bg-muted flex items-center justify-center mb-6">
-              <Globe className="w-7 h-7 text-white" />
+            <div className="absolute inset-0 bg-black/40 z-10 transition-opacity group-hover:opacity-60" />
+            <img 
+              src="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1200&auto=format&fit=crop" 
+              alt="European Innovation" 
+              className="w-full h-full object-cover absolute inset-0 transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="relative z-20 p-8 h-full flex flex-col">
+              <div className="w-14 h-14 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center mb-auto">
+                <Globe className="w-7 h-7 text-white" />
+              </div>
+              <div className="mt-auto">
+                <h3 className="text-2xl font-ovo mb-4 text-white">{t('whyBergetSection.features.european.title')}</h3>
+                <p className="text-lg text-white/90 backdrop-blur-sm bg-black/20 p-4 rounded-xl">
+                  {t('whyBergetSection.features.european.description')}
+                </p>
+              </div>
             </div>
-            <h3 className="text-xl font-ovo mb-4">{t('whyBergetSection.features.european.title')}</h3>
-            <p className="text-lg text-white/80">
-              {t('whyBergetSection.features.european.description')}
-            </p>
           </motion.div>
 
           {/* Security & Privacy */}
@@ -41,15 +51,25 @@ export function WhyChooseBerget() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="p-8 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-1 h-full"
+            className="relative overflow-hidden rounded-2xl group"
           >
-            <div className="w-14 h-14 rounded-xl bg-muted flex items-center justify-center mb-6">
-              <Shield className="w-7 h-7 text-white" />
+            <div className="absolute inset-0 bg-black/40 z-10 transition-opacity group-hover:opacity-60" />
+            <img 
+              src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=1200&auto=format&fit=crop" 
+              alt="Security and Privacy" 
+              className="w-full h-full object-cover absolute inset-0 transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="relative z-20 p-8 h-full flex flex-col">
+              <div className="w-14 h-14 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center mb-auto">
+                <Shield className="w-7 h-7 text-white" />
+              </div>
+              <div className="mt-auto">
+                <h3 className="text-2xl font-ovo mb-4 text-white">{t('whyBergetSection.features.security.title')}</h3>
+                <p className="text-lg text-white/90 backdrop-blur-sm bg-black/20 p-4 rounded-xl">
+                  {t('whyBergetSection.features.security.description')}
+                </p>
+              </div>
             </div>
-            <h3 className="text-xl font-ovo mb-4">{t('whyBergetSection.features.security.title')}</h3>
-            <p className="text-lg text-white/80">
-              {t('whyBergetSection.features.security.description')}
-            </p>
           </motion.div>
 
           {/* Alternative to Public Cloud */}
@@ -58,15 +78,25 @@ export function WhyChooseBerget() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="p-8 rounded-2xl bg-[#2D6A4F]/10 border border-[#40916C]/20 hover:bg-[#2D6A4F]/15 transition-all duration-300 transform hover:-translate-y-1 h-full"
+            className="relative overflow-hidden rounded-2xl group"
           >
-            <div className="w-14 h-14 rounded-xl bg-muted flex items-center justify-center mb-6">
-              <Server className="w-7 h-7 text-white" />
+            <div className="absolute inset-0 bg-black/40 z-10 transition-opacity group-hover:opacity-60" />
+            <img 
+              src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1200&auto=format&fit=crop" 
+              alt="Alternative to Public Cloud" 
+              className="w-full h-full object-cover absolute inset-0 transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="relative z-20 p-8 h-full flex flex-col">
+              <div className="w-14 h-14 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center mb-auto">
+                <Server className="w-7 h-7 text-white" />
+              </div>
+              <div className="mt-auto">
+                <h3 className="text-2xl font-ovo mb-4 text-white">{t('whyBergetSection.features.alternative.title')}</h3>
+                <p className="text-lg text-white/90 backdrop-blur-sm bg-black/20 p-4 rounded-xl">
+                  {t('whyBergetSection.features.alternative.description')}
+                </p>
+              </div>
             </div>
-            <h3 className="text-xl font-ovo mb-4">{t('whyBergetSection.features.alternative.title')}</h3>
-            <p className="text-lg text-white/80">
-              {t('whyBergetSection.features.alternative.description')}
-            </p>
           </motion.div>
 
           {/* Data Privacy */}
@@ -75,20 +105,30 @@ export function WhyChooseBerget() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="p-8 rounded-2xl bg-[#2D6A4F]/10 border border-[#40916C]/20 hover:bg-[#2D6A4F]/15 transition-all duration-300 transform hover:-translate-y-1 h-full"
+            className="relative overflow-hidden rounded-2xl group"
           >
-            <div className="w-14 h-14 rounded-xl bg-muted flex items-center justify-center mb-6">
-              <Lock className="w-7 h-7 text-white" />
+            <div className="absolute inset-0 bg-black/40 z-10 transition-opacity group-hover:opacity-60" />
+            <img 
+              src="https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=1200&auto=format&fit=crop" 
+              alt="Data Privacy" 
+              className="w-full h-full object-cover absolute inset-0 transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="relative z-20 p-8 h-full flex flex-col">
+              <div className="w-14 h-14 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center mb-auto">
+                <Lock className="w-7 h-7 text-white" />
+              </div>
+              <div className="mt-auto">
+                <h3 className="text-2xl font-ovo mb-4 text-white">{t('whyBergetSection.features.privacy.title')}</h3>
+                <p className="text-lg text-white/90 backdrop-blur-sm bg-black/20 p-4 rounded-xl">
+                  {t('whyBergetSection.features.privacy.description')}
+                </p>
+              </div>
             </div>
-            <h3 className="text-xl font-ovo mb-4">{t('whyBergetSection.features.privacy.title')}</h3>
-            <p className="text-lg text-white/80">
-              {t('whyBergetSection.features.privacy.description')}
-            </p>
           </motion.div>
         </div>
 
         <div className="text-center">
-          <Button asChild size="lg">
+          <Button asChild size="lg" className="px-8 py-6 text-lg">
             <Link to="/why-berget">
               {t('whyBergetSection.discoverMore')}
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
