@@ -294,8 +294,6 @@ export function VisualIdentityGuide() {
                 </div>
               </div>
             </div>
-
-            </div>
           </section>
 
           {/* Background Effects Section */}
