@@ -3,9 +3,73 @@ import { Button } from '@/components/ui/button'
 import { Link } from 'react-router-dom'
 import { ArrowRight, Globe, Shield, Server, Lock } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
+import { BentoCard, BentoGrid } from '@/components/ui/bento-grid'
 
 export function WhyChooseBerget() {
   const { t } = useTranslation()
+
+  const features = [
+    {
+      Icon: Globe,
+      name: t('whyBergetSection.features.european.title'),
+      description: t('whyBergetSection.features.european.description'),
+      href: "/why-berget",
+      cta: t('whyBergetSection.learnMore'),
+      background: (
+        <img 
+          src="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1200&auto=format&fit=crop" 
+          alt="European Innovation" 
+          className="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-700 group-hover:scale-105"
+        />
+      ),
+      className: "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3",
+    },
+    {
+      Icon: Shield,
+      name: t('whyBergetSection.features.security.title'),
+      description: t('whyBergetSection.features.security.description'),
+      href: "/why-berget",
+      cta: t('whyBergetSection.learnMore'),
+      background: (
+        <img 
+          src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=1200&auto=format&fit=crop" 
+          alt="Security and Privacy" 
+          className="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-700 group-hover:scale-105"
+        />
+      ),
+      className: "lg:row-start-1 lg:row-end-4 lg:col-start-2 lg:col-end-3",
+    },
+    {
+      Icon: Server,
+      name: t('whyBergetSection.features.alternative.title'),
+      description: t('whyBergetSection.features.alternative.description'),
+      href: "/why-berget",
+      cta: t('whyBergetSection.learnMore'),
+      background: (
+        <img 
+          src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1200&auto=format&fit=crop" 
+          alt="Alternative to Public Cloud" 
+          className="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-700 group-hover:scale-105"
+        />
+      ),
+      className: "lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:row-end-2",
+    },
+    {
+      Icon: Lock,
+      name: t('whyBergetSection.features.privacy.title'),
+      description: t('whyBergetSection.features.privacy.description'),
+      href: "/why-berget",
+      cta: t('whyBergetSection.learnMore'),
+      background: (
+        <img 
+          src="https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=1200&auto=format&fit=crop" 
+          alt="Data Privacy" 
+          className="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-700 group-hover:scale-105"
+        />
+      ),
+      className: "lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4 lg:col-start-3 lg:col-end-3 lg:row-start-2 lg:row-end-4",
+    },
+  ];
 
   return (
     <section className="py-32 relative">
@@ -18,114 +82,18 @@ export function WhyChooseBerget() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 max-w-6xl mx-auto">
-          {/* European Innovation */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="relative overflow-hidden rounded-2xl group"
-          >
-            <div className="absolute inset-0 bg-black/40 z-10 transition-opacity group-hover:opacity-60" />
-            <img 
-              src="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1200&auto=format&fit=crop" 
-              alt="European Innovation" 
-              className="w-full h-full object-cover absolute inset-0 transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="relative z-20 p-8 h-full flex flex-col">
-              <div className="w-14 h-14 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center mb-auto">
-                <Globe className="w-7 h-7 text-white" />
-              </div>
-              <div className="mt-auto">
-                <h3 className="text-2xl font-ovo mb-4 text-white">{t('whyBergetSection.features.european.title')}</h3>
-                <p className="text-lg text-white/90 backdrop-blur-sm bg-black/20 p-4 rounded-xl">
-                  {t('whyBergetSection.features.european.description')}
-                </p>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Security & Privacy */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="relative overflow-hidden rounded-2xl group"
-          >
-            <div className="absolute inset-0 bg-black/40 z-10 transition-opacity group-hover:opacity-60" />
-            <img 
-              src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=1200&auto=format&fit=crop" 
-              alt="Security and Privacy" 
-              className="w-full h-full object-cover absolute inset-0 transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="relative z-20 p-8 h-full flex flex-col">
-              <div className="w-14 h-14 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center mb-auto">
-                <Shield className="w-7 h-7 text-white" />
-              </div>
-              <div className="mt-auto">
-                <h3 className="text-2xl font-ovo mb-4 text-white">{t('whyBergetSection.features.security.title')}</h3>
-                <p className="text-lg text-white/90 backdrop-blur-sm bg-black/20 p-4 rounded-xl">
-                  {t('whyBergetSection.features.security.description')}
-                </p>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Alternative to Public Cloud */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="relative overflow-hidden rounded-2xl group"
-          >
-            <div className="absolute inset-0 bg-black/40 z-10 transition-opacity group-hover:opacity-60" />
-            <img 
-              src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1200&auto=format&fit=crop" 
-              alt="Alternative to Public Cloud" 
-              className="w-full h-full object-cover absolute inset-0 transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="relative z-20 p-8 h-full flex flex-col">
-              <div className="w-14 h-14 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center mb-auto">
-                <Server className="w-7 h-7 text-white" />
-              </div>
-              <div className="mt-auto">
-                <h3 className="text-2xl font-ovo mb-4 text-white">{t('whyBergetSection.features.alternative.title')}</h3>
-                <p className="text-lg text-white/90 backdrop-blur-sm bg-black/20 p-4 rounded-xl">
-                  {t('whyBergetSection.features.alternative.description')}
-                </p>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Data Privacy */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-            className="relative overflow-hidden rounded-2xl group"
-          >
-            <div className="absolute inset-0 bg-black/40 z-10 transition-opacity group-hover:opacity-60" />
-            <img 
-              src="https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=1200&auto=format&fit=crop" 
-              alt="Data Privacy" 
-              className="w-full h-full object-cover absolute inset-0 transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="relative z-20 p-8 h-full flex flex-col">
-              <div className="w-14 h-14 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center mb-auto">
-                <Lock className="w-7 h-7 text-white" />
-              </div>
-              <div className="mt-auto">
-                <h3 className="text-2xl font-ovo mb-4 text-white">{t('whyBergetSection.features.privacy.title')}</h3>
-                <p className="text-lg text-white/90 backdrop-blur-sm bg-black/20 p-4 rounded-xl">
-                  {t('whyBergetSection.features.privacy.description')}
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-16 max-w-6xl mx-auto"
+        >
+          <BentoGrid className="lg:grid-rows-3">
+            {features.map((feature) => (
+              <BentoCard key={feature.name} {...feature} />
+            ))}
+          </BentoGrid>
+        </motion.div>
 
         <div className="text-center">
           <Button asChild size="lg" className="px-8 py-6 text-lg">
