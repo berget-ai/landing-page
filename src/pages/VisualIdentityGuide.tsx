@@ -16,8 +16,8 @@ export function VisualIdentityGuide() {
               maintaining a consistent visual identity across all Berget AI
               materials.
             </p>
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#40916C]/15 text-[#52B788]">
-              <Shield className="w-4 h-4 mr-2 text-white" />
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#40916C]/15 text-white">
+              <Shield className="w-4 h-4 mr-2" />
               <span className="text-sm">Internal &amp; Press Use Only</span>
             </div>
           </div>
@@ -90,13 +90,13 @@ export function VisualIdentityGuide() {
                   </div>
                   <ul className="space-y-2">
                     <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#52B788] mt-2" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
                       <span>
                         Use Ovo for headings and DM Sans for body text
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#52B788] mt-2" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
                       <span>
                         Maintain proper hierarchy with clear size differences
                       </span>
@@ -116,11 +116,11 @@ export function VisualIdentityGuide() {
                   </div>
                   <ul className="space-y-2">
                     <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-red-500 mt-2" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
                       <span>Mix font families inconsistently</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-red-500 mt-2" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
                       <span>
                         Use font sizes smaller than 12px for readability
                       </span>
@@ -278,6 +278,41 @@ export function VisualIdentityGuide() {
               </div>
             </div>
 
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div className="p-4 rounded-lg bg-[#1A1A1A] border border-white/10">
+                <h4 className="text-lg font-medium mb-4">Warning & Error Icons</h4>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-2 p-3 rounded-lg bg-[#F59E0B]/10 border border-[#F59E0B]/20">
+                    <Shield className="w-5 h-5 text-[#F59E0B]" />
+                    <span className="text-sm">Warning message example</span>
+                  </div>
+                  <div className="flex items-center gap-2 p-3 rounded-lg bg-[#FF0033]/10 border border-[#FF0033]/20">
+                    <X className="w-5 h-5 text-[#FF0033]" />
+                    <span className="text-sm">Error message example</span>
+                  </div>
+                  <div className="text-sm text-white/60 mt-2">
+                    Colored icons are only used for warnings and errors to draw attention
+                  </div>
+                </div>
+              </div>
+              <div className="p-4 rounded-lg bg-[#1A1A1A] border border-white/10">
+                <h4 className="text-lg font-medium mb-4">Standard Icons</h4>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10">
+                    <Shield className="w-5 h-5 text-white" />
+                    <span className="text-sm">Standard icon example</span>
+                  </div>
+                  <div className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10">
+                    <ArrowRight className="w-5 h-5 text-white" />
+                    <span className="text-sm">Standard icon example</span>
+                  </div>
+                  <div className="text-sm text-white/60 mt-2">
+                    Standard icons use text-white class for consistency
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div className="mb-8">
               <h4 className="text-lg font-medium mb-4">Gradient Examples</h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -330,7 +365,7 @@ export function VisualIdentityGuide() {
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-[#52B788] mt-2" />
                       <span>
-                        Only use colored icons to emphasize important elements like warnings (<code>text-[#F59E0B]</code>) or errors (<code>text-[#FF0033]</code>)
+                        Only use colored icons to emphasize important elements like warnings (<code>text-[#F59E0B]</code> for warnings) or errors (<code>text-[#FF0033]</code> for errors)
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
