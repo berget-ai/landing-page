@@ -563,6 +563,133 @@ export function VisualIdentityGuide() {
             </div>
           </section>
 
+          {/* Logo Section */}
+          <section className="mb-16">
+            <h2 className="text-3xl font-ovo mb-6 border-b border-white/10 pb-2">
+              Logo
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+              <div>
+                <h3 className="text-xl mb-4 font-medium">Primary Logo</h3>
+                <div className="p-6 rounded-lg bg-[#1A1A1A] border border-white/10 flex justify-center items-center">
+                  <img 
+                    src="/assets/logo-primary.svg" 
+                    alt="Berget AI Primary Logo" 
+                    className="h-24"
+                  />
+                </div>
+                <div className="text-sm text-white/60 mt-2">
+                  Full color logo for use on dark backgrounds
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl mb-4 font-medium">Monochrome Logo</h3>
+                <div className="p-6 rounded-lg bg-[#1A1A1A] border border-white/10 flex justify-center items-center">
+                  <img 
+                    src="/assets/logo-white.svg" 
+                    alt="Berget AI White Logo" 
+                    className="h-24"
+                  />
+                </div>
+                <div className="text-sm text-white/60 mt-2">
+                  White logo for use on colored backgrounds
+                </div>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+              <div>
+                <h3 className="text-xl mb-4 font-medium">Logo Mark</h3>
+                <div className="p-6 rounded-lg bg-[#1A1A1A] border border-white/10 flex justify-center items-center">
+                  <img 
+                    src="/assets/logo-mark.svg" 
+                    alt="Berget AI Logo Mark" 
+                    className="h-24"
+                  />
+                </div>
+                <div className="text-sm text-white/60 mt-2">
+                  Standalone mark for small spaces and icons
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl mb-4 font-medium">Logo with Tagline</h3>
+                <div className="p-6 rounded-lg bg-[#1A1A1A] border border-white/10 flex justify-center items-center">
+                  <img 
+                    src="/assets/logo-with-tagline.svg" 
+                    alt="Berget AI Logo with Tagline" 
+                    className="h-32"
+                  />
+                </div>
+                <div className="text-sm text-white/60 mt-2">
+                  Full logo with tagline for marketing materials
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white/5 rounded-xl p-6 mb-8">
+              <h4 className="text-lg font-medium mb-4">
+                Logo Do's and Don'ts
+              </h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <Check className="w-5 h-5 text-[#52B788]" />
+                    <span className="font-medium">Do</span>
+                  </div>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#52B788] mt-2" />
+                      <span>
+                        Maintain clear space around the logo (minimum 1x height of logo)
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#52B788] mt-2" />
+                      <span>
+                        Use the white version on colored backgrounds
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#52B788] mt-2" />
+                      <span>
+                        Use the logo mark for small spaces like favicons and app icons
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <X className="w-5 h-5 text-red-500" />
+                    <span className="font-medium">Don't</span>
+                  </div>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-red-500 mt-2" />
+                      <span>
+                        Stretch or distort the logo proportions
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-red-500 mt-2" />
+                      <span>
+                        Change the logo colors outside of approved variations
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-red-500 mt-2" />
+                      <span>
+                        Place the logo on busy backgrounds that reduce visibility
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* Background Effects Section */}
           <section className="mb-16">
             <h2 className="text-3xl font-ovo mb-6 border-b border-white/10 pb-2">
