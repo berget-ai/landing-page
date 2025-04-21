@@ -17,7 +17,7 @@ interface FeatureProps {
 function Feature({ title = "Something new!", description = "Managing a small business today is already tough.", badge = "Platform", items = [] }: FeatureProps) {
   return (
     <div className="w-full py-20 lg:py-40">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4 max-w-7xl">
         <div className="flex flex-col gap-10">
           <div className="flex gap-4 flex-col items-start">
             <div>
