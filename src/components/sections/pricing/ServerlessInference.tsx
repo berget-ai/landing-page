@@ -168,8 +168,8 @@ function ModelTable({ title, description, models }: { title: string; description
   return (
     <div className="space-y-4">
       <div>
-        <h4 className="text-lg font-medium">{title}</h4>
-        <p className="text-sm text-white/60 mt-1">{description}</p>
+        <h4 className="text-lg font-ovo">{title}</h4>
+        <p className="text-sm text-white/80 mt-1">{description}</p>
       </div>
       <Table>
         <TableHeader>
@@ -284,8 +284,8 @@ function TTSModelTable({ title, description, models }: { title: string; descript
 export function ServerlessInference() {
   return (
     <div className="space-y-8">
-      <h3 className="text-xl font-medium">Serverless Inference</h3>
-      <p className="text-white/60">Access our comprehensive selection of AI models through our OpenAI compliant API. Pay only for what you use with no upfront commitments.</p>
+      <h3 className="text-xl font-ovo">Serverless Inference</h3>
+      <p className="text-white/80">Access our comprehensive selection of AI models through our OpenAI compliant API. Pay only for what you use with no upfront commitments.</p>
       
       <ModelTable 
         title="Text Generationa Models" 

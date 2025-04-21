@@ -56,10 +56,10 @@ export function Sustainability() {
             <Leaf className="w-4 h-4 mr-2" />
             <span className="text-sm">Hållbarhet i centrum</span>
           </div>
-          <h2 className="text-4xl font-medium mb-6">
+          <h2 className="text-4xl font-ovo mb-6">
             Vårt hållbarhetslöfte
           </h2>
-          <p className="text-lg text-white/60">
+          <p className="text-xl text-white/80">
             Vi bygger Europas mest hållbara AI-infrastruktur. Vårt miljöengagemang är grundläggande för vår verksamhet, inte en eftertanke.
           </p>
         </div>
@@ -78,8 +78,8 @@ export function Sustainability() {
               <div className="mb-6">
                 <point.icon className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl font-medium mb-3">{point.title}</h3>
-              <p className="text-white/60 mb-4">
+              <h3 className="text-2xl font-ovo mb-3">{point.title}</h3>
+              <p className="text-white/80 mb-4">
                 {point.description}
               </p>
               <div className="text-sm font-medium">

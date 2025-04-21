@@ -91,8 +91,8 @@ export function ComparisonTable() {
       <div className="absolute inset-0 bg-muted/10 opacity-10 blur-[100px]" />
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl font-medium mb-4">Compare Berget AI</h2>
-          <p className="text-lg text-white/60">
+          <h2 className="text-3xl font-ovo mb-4">Compare Berget AI</h2>
+          <p className="text-xl text-white/80">
             See how Berget AI stacks up against traditional cloud providers
           </p>
         </div>

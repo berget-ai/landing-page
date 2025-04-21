@@ -20,8 +20,8 @@ export function PartnerQuotes() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-medium mb-6">{t('partnerQuotes.title')}</h2>
-            <p className="text-lg text-white/60">
+            <h2 className="text-3xl md:text-4xl font-ovo mb-6">{t('partnerQuotes.title')}</h2>
+            <p className="text-xl text-white/80">
               {t('partnerQuotes.description')}
             </p>
           </motion.div>

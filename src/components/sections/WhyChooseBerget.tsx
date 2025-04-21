@@ -12,8 +12,8 @@ export function WhyChooseBerget() {
       <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background opacity-30" />
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-3xl md:text-4xl font-medium mb-6">{t('whyBergetSection.title')}</h2>
-          <p className="text-lg text-white/60">
+          <h2 className="text-3xl md:text-4xl font-ovo mb-6">{t('whyBergetSection.title')}</h2>
+          <p className="text-xl text-white/80">
             {t('whyBergetSection.description')}
           </p>
         </div>
@@ -29,8 +29,8 @@ export function WhyChooseBerget() {
             <div className="w-14 h-14 rounded-xl bg-muted flex items-center justify-center mb-6">
               <Globe className="w-7 h-7 text-white" />
             </div>
-            <h3 className="text-xl font-medium mb-4">{t('whyBergetSection.features.european.title')}</h3>
-            <p className="text-lg text-white/60">
+            <h3 className="text-xl font-ovo mb-4">{t('whyBergetSection.features.european.title')}</h3>
+            <p className="text-lg text-white/80">
               {t('whyBergetSection.features.european.description')}
             </p>
           </motion.div>
@@ -46,8 +46,8 @@ export function WhyChooseBerget() {
             <div className="w-14 h-14 rounded-xl bg-muted flex items-center justify-center mb-6">
               <Shield className="w-7 h-7 text-white" />
             </div>
-            <h3 className="text-xl font-medium mb-4">{t('whyBergetSection.features.security.title')}</h3>
-            <p className="text-lg text-white/60">
+            <h3 className="text-xl font-ovo mb-4">{t('whyBergetSection.features.security.title')}</h3>
+            <p className="text-lg text-white/80">
               {t('whyBergetSection.features.security.description')}
             </p>
           </motion.div>
@@ -63,8 +63,8 @@ export function WhyChooseBerget() {
             <div className="w-14 h-14 rounded-xl bg-muted flex items-center justify-center mb-6">
               <Server className="w-7 h-7 text-white" />
             </div>
-            <h3 className="text-xl font-medium mb-4">{t('whyBergetSection.features.alternative.title')}</h3>
-            <p className="text-lg text-white/60">
+            <h3 className="text-xl font-ovo mb-4">{t('whyBergetSection.features.alternative.title')}</h3>
+            <p className="text-lg text-white/80">
               {t('whyBergetSection.features.alternative.description')}
             </p>
           </motion.div>
@@ -80,8 +80,8 @@ export function WhyChooseBerget() {
             <div className="w-14 h-14 rounded-xl bg-muted flex items-center justify-center mb-6">
               <Lock className="w-7 h-7 text-white" />
             </div>
-            <h3 className="text-xl font-medium mb-4">{t('whyBergetSection.features.privacy.title')}</h3>
-            <p className="text-lg text-white/60">
+            <h3 className="text-xl font-ovo mb-4">{t('whyBergetSection.features.privacy.title')}</h3>
+            <p className="text-lg text-white/80">
               {t('whyBergetSection.features.privacy.description')}
             </p>
           </motion.div>

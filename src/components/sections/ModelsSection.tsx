@@ -87,7 +87,7 @@ export function ModelsSection() {
           <Bot className="w-6 h-6" />
         </div>
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-2xl font-medium">{t('models.title')}</h2>
+          <h2 className="text-2xl font-ovo">{t('models.title')}</h2>
           <Button asChild variant="ghost" size="sm" className="group">
             <Link to="/docs/models">
               {t('models.viewDocs')}
@@ -95,13 +95,13 @@ export function ModelsSection() {
             </Link>
           </Button>
         </div>
-        <p className="text-white/60 mb-6">
+        <p className="text-white/80 mb-6">
           {t('models.description')}
         </p>
 
         <div className="space-y-6">
           <div className="space-y-2">
-            <h3 className="text-lg font-medium">{t('models.comprehensive.title')}</h3>
+            <h3 className="text-lg font-ovo">{t('models.comprehensive.title')}</h3>
             <ul className="space-y-2">
               <li className="flex items-center gap-3">
                 <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />

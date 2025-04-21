@@ -34,8 +34,8 @@ const computeResources: PricingRow[] = [
 export function ComputeResources() {
   return (
     <div className="space-y-4">
-      <h3 className="text-lg font-medium">Compute Resources</h3>
-      <p className="text-white/60">
+      <h3 className="text-lg font-ovo">Compute Resources</h3>
+      <p className="text-white/80">
         Flexible compute resources for running your own models and applications.
       </p>
       <Table>

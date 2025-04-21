@@ -37,10 +37,10 @@ export function RagRecipes() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between mb-12">
           <div>
-            <h2 className="text-3xl font-medium mb-2 text-white">
+            <h2 className="text-3xl font-ovo mb-2 text-white">
               {t('ragRecipes.title')}
             </h2>
-            <p className="text-lg text-white/80">
+            <p className="text-xl text-white/80">
               {t('ragRecipes.description')}
             </p>
           </div>

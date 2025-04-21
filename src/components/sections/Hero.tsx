@@ -24,7 +24,7 @@ export function Hero() {
               <br />
               {t('hero.title.part2')}
             </h1>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto mb-8 ">
+            <p className="text-xl text-white/80 max-w-3xl mx-auto mb-8 leading-relaxed">
               {t('hero.description')}
             </p>
             <div className="flex gap-4 justify-center">

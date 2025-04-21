@@ -20,11 +20,11 @@ export function ComplianceSection() {
               <span>{t('compliance.tagline')}</span>
             </div>
 
-            <h2 className="text-3xl md:text-4xl font-medium mb-6">
+            <h2 className="text-3xl md:text-4xl font-ovo mb-6">
               {t('compliance.title')}
             </h2>
 
-            <p className="text-lg text-white/60">
+            <p className="text-xl text-white/80">
               {t('compliance.description')}
             </p>
           </motion.div>
@@ -43,8 +43,8 @@ export function ComplianceSection() {
               <div className="w-14 h-14 rounded-2xl bg-muted flex items-center justify-center mb-8">
                 <Shield className="w-7 h-7 text-white" />
               </div>
-              <h3 className="text-xl font-medium mb-4">{t('compliance.regulations.gdpr.name')}</h3>
-              <p className="text-white/60 mb-6">{t('compliance.regulations.gdpr.description')}</p>
+              <h3 className="text-xl font-ovo mb-4">{t('compliance.regulations.gdpr.name')}</h3>
+              <p className="text-white/80 mb-6">{t('compliance.regulations.gdpr.description')}</p>
               <ul className="space-y-3">
                 {(Array.isArray(t('compliance.regulations.gdpr.benefits', { returnObjects: true }))
                   ? t('compliance.regulations.gdpr.benefits', { returnObjects: true }) as string[]
@@ -74,8 +74,8 @@ export function ComplianceSection() {
               <div className="w-14 h-14 rounded-2xl bg-muted flex items-center justify-center mb-8">
                 <Network className="w-7 h-7 text-white" />
               </div>
-              <h3 className="text-xl font-medium mb-4">{t('compliance.regulations.nis2.name')}</h3>
-              <p className="text-white/60 mb-6">{t('compliance.regulations.nis2.description')}</p>
+              <h3 className="text-xl font-ovo mb-4">{t('compliance.regulations.nis2.name')}</h3>
+              <p className="text-white/80 mb-6">{t('compliance.regulations.nis2.description')}</p>
               <ul className="space-y-3">
                 {(Array.isArray(t('compliance.regulations.nis2.benefits', { returnObjects: true }))
                   ? t('compliance.regulations.nis2.benefits', { returnObjects: true }) as string[]
@@ -105,8 +105,8 @@ export function ComplianceSection() {
               <div className="w-14 h-14 rounded-2xl bg-muted flex items-center justify-center mb-8">
                 <Lock className="w-7 h-7 text-white" />
               </div>
-              <h3 className="text-xl font-medium mb-4">{t('compliance.regulations.schrems2.name')}</h3>
-              <p className="text-white/60 mb-6">{t('compliance.regulations.schrems2.description')}</p>
+              <h3 className="text-xl font-ovo mb-4">{t('compliance.regulations.schrems2.name')}</h3>
+              <p className="text-white/80 mb-6">{t('compliance.regulations.schrems2.description')}</p>
               <ul className="space-y-3">
                 {(Array.isArray(t('compliance.regulations.schrems2.benefits', { returnObjects: true }))
                   ? t('compliance.regulations.schrems2.benefits', { returnObjects: true }) as string[]

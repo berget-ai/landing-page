@@ -14,10 +14,10 @@ export function Overview() {
             <GitBranch className="w-4 h-4 mr-2 text-white" />
             <span className="text-sm">GitOps Architecture</span>
           </div>
-          <h2 className="text-4xl font-medium mb-6">
+          <h2 className="text-4xl font-ovo mb-6">
             {t('overview.whatIsGitOps.title')}
           </h2>
-          <p className="text-lg text-white/60">
+          <p className="text-xl text-white/80">
             {t('overview.whatIsGitOps.description')}
           </p>
         </div>
@@ -36,10 +36,10 @@ export function Overview() {
               <div className="mb-4">
                 <GitBranch className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-medium mb-2">
+              <h3 className="text-xl font-ovo mb-2">
                 {t('overview.gitRepository.title')}
               </h3>
-              <p className="text-white/60 mb-4">
+              <p className="text-white/80 mb-4">
                 {t('overview.gitRepository.description')}
               </p>
               <div className="text-sm text-white/40">
@@ -58,10 +58,10 @@ export function Overview() {
               <div className="mb-4">
                 <Cpu className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-medium mb-2">
+              <h3 className="text-xl font-ovo mb-2">
                 {t('overview.bergetCluster.title')}
               </h3>
-              <p className="text-white/60 mb-4">
+              <p className="text-white/80 mb-4">
                 {t('overview.bergetCluster.description')}
               </p>
               <div className="text-sm text-white/40">
@@ -80,10 +80,10 @@ export function Overview() {
               <div className="mb-4">
                 <Link2 className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-medium mb-2">
+              <h3 className="text-xl font-ovo mb-2">
                 {t('overview.aiApis.title')}
               </h3>
-              <p className="text-white/60 mb-4">
+              <p className="text-white/80 mb-4">
                 {t('overview.aiApis.description')}
               </p>
               <div className="text-sm text-white/40">

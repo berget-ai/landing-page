@@ -8,10 +8,10 @@ export function NetworkConnectivity() {
     <section className="py-24 bg-white/[0.02]">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl font-medium mb-4">
+          <h2 className="text-3xl font-ovo mb-4">
             {t('networkConnectivity.title')}
           </h2>
-          <p className="text-lg text-white/60">
+          <p className="text-xl text-white/80">
             {t('networkConnectivity.description')}
           </p>
         </div>
@@ -26,11 +26,11 @@ export function NetworkConnectivity() {
                 <span>Safe and Compliant AI</span>
               </div>
 
-              <h3 className="text-2xl font-medium">
+              <h3 className="text-2xl font-ovo">
                 {t('networkConnectivity.dataLocation.title')}
               </h3>
 
-              <p className="text-lg text-white/60">
+              <p className="text-lg text-white/80">
                 {t('networkConnectivity.dataLocation.description')}
               </p>
             </div>

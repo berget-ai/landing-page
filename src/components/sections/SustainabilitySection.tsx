@@ -31,10 +31,10 @@ export function SustainabilitySection() {
               <Leaf className="w-4 h-4 mr-2 text-white" />
               <span className="text-sm">{section.badge}</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-medium mb-6">
+            <h2 className="text-3xl md:text-4xl font-ovo mb-6">
               {section.title}
             </h2>
-            <p className="text-lg text-white/60">
+            <p className="text-xl text-white/80">
               {section.description}
             </p>
           </motion.div>
@@ -57,8 +57,8 @@ export function SustainabilitySection() {
                   <div className="w-14 h-14 rounded-2xl bg-muted flex items-center justify-center mb-8">
                     <Icon className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-xl font-medium mb-3">{point.title}</h3>
-                  <p className="text-white/60 mb-4 text-sm leading-relaxed">
+                  <h3 className="text-xl font-ovo mb-3">{point.title}</h3>
+                  <p className="text-white/80 mb-4 text-sm leading-relaxed">
                     {point.description}
                   </p>
                   <div className="text-sm font-medium">

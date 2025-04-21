@@ -34,8 +34,8 @@ const networkPricing: PricingRow[] = [
 export function NetworkConnectivity() {
   return (
     <div className="space-y-4">
-      <h3 className="text-lg font-medium">Network & Connectivity</h3>
-      <p className="text-white/60">
+      <h3 className="text-lg font-ovo">Network & Connectivity</h3>
+      <p className="text-white/80">
         Secure and high-performance network connectivity options.
       </p>
       <Table>
