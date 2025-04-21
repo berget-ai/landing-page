@@ -16,7 +16,7 @@
     },
     "origin": {
       "title": "Our Story",
-      "description": "We realised that many organisations are held back in their pursuit of AI by a range of obstacles. Some struggle with legal and regulatory challenges, others simply don’t have the skills or capital to run, train, and host their own AI models. Many are reluctant to invest upfront in GPUs or lack access to local language-capable large language models. That’s why we built Berget AI – to unlock the full potential of AI for innovation and growth by championing sovereign, open and sustainable AI.",
+      "description": "We realised that many organisations are held back in their pursuit of AI by a range of obstacles. Some struggle with legal and regulatory challenges, others simply don’t have the skills or capital to train, host and serve their own AI models. Many are reluctant to invest upfront in GPUs or lack access to local language-capable large language models. That’s why we built Berget AI – to unlock the full potential of AI for innovation and growth by championing sovereign, open and sustainable AI.",
       "nameOrigin": "The name is Swedish for \"mountain\", which we have plenty of in Sweden, many of which host underground Data Centers. So why have your data in the cloud when you can have in \"Berget\"?"
     },
     "values": {
@@ -79,6 +79,12 @@
           "role": "Communication & Marketing",
           "bio": "Sara has over 25 years of experience of building brands with purpose through impactful communication - for start-ups and multinationals.",
           "image": "/team/sara.jpg"
+        },
+        "oscar": {
+          "name": "Oscar Virot",
+          "role": "Tech & Infra",
+          "bio": "Oscar.",
+          "image": "/team/oscar.jpg"
         }
       }
     }
@@ -508,7 +514,7 @@
         "description": "Built-in data protection and privacy controls",
         "benefits": [
           "Data stays in EU",
-          "Complete audit trails",
+          "Audit trails",
           "Data minimization by design"
         ]
       },
@@ -611,11 +617,6 @@
         "stats": "100% fossil-free energy"
       },
       {
-        "title": "No Waste Water",
-        "description": "Our data centers use zero water for building cooling, removing one of the biggest environmental concerns of AI.",
-        "stats": "0% water waste"
-      },
-      {
         "title": "Circular Hardware",
         "description": "We use circular hardware as much as possible to reduce emissions from production. Our servers have extended lifecycles through certified reuse processes.",
         "stats": "75% hardware CO₂e footprint."
@@ -661,7 +662,7 @@
   },
   "DevelopersPage": {
     "hero": {
-      "title": "AI Infrastructure for Developers and DevOps Teams",
+      "title": "Inference and AI Infrastructure for Developers and DevOps Teams",
       "description": "Run your AI models and applications in a secure, EU-based environment with full control over your code and data."
     },
     "sections": [

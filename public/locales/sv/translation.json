@@ -2,21 +2,21 @@
   "hero": {
     "tagline": "Ingen data lämnar Sverige",
     "title": {
-      "part1": "Frigör kraften i AI-innovation",
-      "part2": "för Europa"
+      "part1": "Vi främjar AI-suveränitet för innovation och tillväxt",
+      "part2": ""
     },
-    "description": "Den första svenska tjänsten för AI-infrastruktur byggd för utvecklare. Vi tillhandahåller öppen, modern infrastruktur för AI-applikationer som kombinerar säker användning av språkmodeller med en enkel utvecklarupplevelse.",
+    "description": "EU-anpassad inferenstjänst och AI infrastruktur - byggd av utvecklare för utvecklare.",
     "getStarted": "Kom igång",
     "learnMore": "Läs mer"
   },
   "about": {
     "hero": {
       "title": "Om Berget AI",
-      "description": "Bygger framtidens svenska AI-infrastruktur"
+      "description": "Vi främjar AI-suveränitet för att möjliggöra innovation och tillväxt i Europa"
     },
     "origin": {
       "title": "Vår Historia",
-      "description": "Berget AI föddes ur insikten att många organisationer hindras i sitt arbete med AI-driven innovation - vare sig det handlar om juridiska och regulatoriska bekymmer, brist på kompetens eller kapital för att köra och drifta egna AI-modeller, ovilja att investera i GPUs i förväg, eller helt enkelt brist på tillgång till relevanta språkmodeller för lokala språk.",
+      "description": "Vi insåg att många organisationer hålls tillbaka i sin satsning på AI av en rad olika hinder. Vissa kämpar med juridiska och regulatoriska utmaningar, andra saknar helt enkelt kompetens eller kapital för att träna, hosta och tillhandahålla egna AI-modeller. Många är tveksamma till att investera i GPU:er i förväg eller saknar tillgång till stora språkmodeller med stöd för lokala språk. Därför skapade vi Berget AI – för att frigöra AI:s fulla potential för innovation och tillväxt genom att främja suverän, öppen och hållbar AI.",
       "nameOrigin": "Namnet är svenska för \"berg\", som vi har gott om i Sverige, och många av dem huserar underjordiska datacenter. Så varför ha din data i molnet när du kan ha den i \"Berget\"?"
     },
     "values": {
@@ -51,28 +51,40 @@
       "description": "Vi är entreprenörer och grundare med decenniers erfarenhet inom teknik och AI",
       "members": {
         "christian": {
-          "name": "Christian",
+          "name": "Christian Landgren",
           "role": "Medgrundare & CPTO",
           "bio": "30 års erfarenhet av att hjälpa organisationer med digitalisering och AI, passionerad för AI och mjukvaruutveckling, djupt engagerad i open source och öppen innovation, betrodd rådgivare till regering och offentlig sektor, utmanare och teknikoptimist",
           "image": "/team/christian.png"
         },
         "andreas": {
-          "name": "Andreas",
+          "name": "Andreas Lundmark",
           "role": "Medgrundare & VD",
           "bio": "Ledde uppbyggnaden av AI-erbjudandet på Boston Consulting Group (BCG Gamma) där han ledde det nordiska teamet och var globalt ansvarig för \"AI at Scale\"-området, och ledde flera storskaliga data- och AI-transformationer på ledande globala företag",
           "image": "/team/andreas.png"
         },
         "john": {
-          "name": "John",
+          "name": "John Angelmo",
           "role": "Infrastruktur",
           "bio": "En nätverks- och kubernetes-trollkarl med omfattande erfarenhet av att bygga och hantera storskalig infrastruktur",
           "image": "/team/john.png"
         },
         "johan": {
-          "name": "Johan",
+          "name": "Johan Lahti",
           "role": "Nätverk och Datacenter",
-          "bio": "En ledande datacenter-nätverksdesigner och byggare som har hjälpt ledande företag och scale-ups att bygga globala multi-site beräknings- och lagringsplattformar",
+          "bio": "En ledande datacenternätverksdesigner som har hjälpt ledande företag och scale-ups att bygga globala multi-site serverplattformar",
           "image": "/team/johan-profil.jpg"
+        },
+        "sara": {
+          "name": "Sara Alsén",
+          "role": "Communication & Marketing",
+          "bio": "Sara har över 25 års erfarenhet av att bygga syftesdrivna varumärken genom kraftfull kommunikation – för både start-ups och multinationella företag.",
+          "image": "/team/sara.jpg"
+        },
+        "oscar": {
+          "name": "Oscar Virot",
+          "role": "Tech & Infra",
+          "bio": "Oscar.",
+          "image": "/team/oscar.jpg"
         }
       }
     }
@@ -95,8 +107,8 @@
   },
   "products": {
     "hero": {
-      "title": "Bygg framtiden med Berget AI",
-      "description": "Kraftfull och användarvänlig AI-infrastruktur designad för europeiska företag och organisationer. Säker, regelefterlevande och redo att skala.",
+      "title": "Inferens och AI-infrastruktur i en och samma tjänst",
+      "description": "Suverän, Öppen och Hållbar AI - redo att skala upp.",
       "exploreMore": "Läs mer"
     },
     "serverless": {
@@ -305,54 +317,50 @@
   },
 "whyBerget": {
   "hero": {
-    "tagline": "EU-baserad AI-infrastruktur",
+    "tagline": "Ingen data lämnar Sverige",
     "title": "Varför välja Berget AI?",
-    "description": "Säker, compliant och hållbar AI-infrastruktur byggd för europeisk innovation och suveränitet.",
+    "description": "Vi främjar AI-suveränitet för att möjliggöra innovation och tillväxt i Europa",
     "getStarted": "Kom igång",
     "bookDemo": "Boka demo"
   },
   "benefits": {
-    "title": "Fördelar med Berget AI",
-    "description": "Vi erbjuder en unik kombination av säkerhet, efterlevnad och flexibilitet för europeiska företag och organisationer.",
-    "euBased": {
-      "title": "100 % EU-baserad",
-      "description": "All data stannar inom EU:s gränser. Vår infrastruktur är byggd i Europa, för Europa, med full efterlevnad av EU:s regelverk.",
-      "features": [
-        "GDPR-kompatibel",
-        "Redo för NIS2",
-        "I linje med EU:s AI-förordning"
-      ]
+      "title": "Fördelar med Berget AI",
+      "description": "Vi hjälper organisationer (inom offentlig och privat sektor) som vill utnyttja kraften i AI med full kontroll och minimal påverkan på planeten.",
+      "euBased": {
+        "title": "Suverän AI",
+        "description": "Kör modeller där all data stannar inom EU:s gränser, vår infrastruktur finns helt i Europa och är fullt förenlig med EU:s regelverk.",
+        "features": [
+          "Möjliggör AI- och datasuveränitet",
+          "I linje med EU:s regelverk",
+          "Full kontroll över din data"
+        ]
+      },
+      "sustainable": {
+        "title": "Hållbar AI",
+        "description": "Vår infrastruktur är byggd med fokus på hållbarhet – från fossilfri el till värmeåtervinning och cirkulär hårdvara.",
+        "features": [
+          "100% fossilfri energi",
+          "CO₂-spårning",
+          "Cirkulär hårdvara"
+        ]
+      },
+      "flexible": {
+        "title": "(verkligt) Öppen AI",
+        "description": "Vi är förespråkare för öppen innovation och vi driftar och tillhandahåller öppna modeller. Våra tjänster är helt byggda på öppen källkod.",
+        "features": ["Öppna modeller", "Öppen källkod", "Öppen innovation"]
+      }
     },
-    "sustainable": {
-      "title": "Hållbar AI",
-      "description": "Vår infrastruktur är byggd med hållbarhet i fokus – från fossilfri el till värmeåtervinning och cirkulär hårdvara.",
-      "features": [
-        "100 % förnybar energi",
-        "CO₂-spårning per API-anrop",
-        "Cirkulär hårdvara"
-      ]
-    },
-    "flexible": {
-      "title": "Flexibel infrastruktur",
-      "description": "Från serverlösa lösningar till dedikerade GPU:er – vi erbjuder den flexibilitet du behöver för att bygga och skala dina AI-applikationer.",
-      "features": [
-        "Kubernetes-baserad",
-        "GitOps-arbetsflöden",
-        "Skalbar compute för alla behov"
-      ]
-    }
-  },
-  "features": {
-    "european": {
-      "title": "Europeisk innovation och datasuveränitet",
-      "description": "På Berget AI ger vi europeiska företag möjlighet att innovera utan kompromisser. Vi bygger en framtid där Europa leder inom säker och etisk AI.",
-      "points": [
-        "Din data, dina modeller, din infrastruktur – allt på ett säkert och efterlevande ställe",
-        "Vi främjar öppen innovation inom EU och driver AI- och datasuveränitet",
-        "Var med och forma en framtid där Europa leder inom säker och etisk AI"
-      ]
-    },
-    "privacy": {
+    "features": {
+      "european": {
+        "title": "Europeisk innovation och datasuveränitet",
+        "description": "På Berget AI ger vi europeiska företag möjlighet att innovera utan kompromisser. Vi bygger en framtid där Europa leder utvecklingen av säker och etisk AI.",
+        "points": [
+          "Din data, dina modeller, din infrastruktur – allt på ett säkert och regelrätt ställe",
+          "Vi främjar öppen innovation inom EU och driver AI- och datasuveränitet",
+          "Följ med oss och forma en framtid där Europa leder inom säker och etisk AI"
+        ]      
+      },
+      "privacy": {
       "title": "Enkel dataskydd och efterlevnad",
       "description": "Att navigera i dataskyddslagar är komplext – vi gör det enkelt. Vår infrastruktur är byggd för att uppfylla de striktaste europeiska reglerna.",
       "points": [
@@ -381,10 +389,10 @@
     }
   },
   "cta": {
-    "title": "Redo att bygga med Berget AI?",
-    "description": "Kom igång idag och upptäck fördelarna med en säker, compliant och hållbar AI-infrastruktur.",
+    "title": "Kom igång!",
+    "description": "Inga investeringar, inga dolda kostnader, ingen inlåsning.",
     "createAccount": "Skapa konto",
-    "contactSales": "Kontakta säljteamet"
+    "contactSales": "Kontakta oss"
   }
 },
   "pricing": {
@@ -459,7 +467,7 @@
     "comparisonTooltip": "Baserat på offentlig prissättning"
   },
   "footer": {
-    "description": "Vårt mission är att tillhandahålla de mest pålitliga, smidigaste och hållbara AI-molntjänsterna i Europa.",
+    "description": "Berget AI främjar AI-suveränitet för att möjliggöra innovation och tillväxt i Europa. Berget AI grundades i Sverige 2024 och erbjuder inferens- och AI-infrastruktur för organisationer inom både offentlig och privat sektor.",
     "product": {
       "title": "Produkt",
       "features": "Funktionalitet",
@@ -494,16 +502,16 @@
     "support": "Support"
   },
   "compliance": {
-    "tagline": "Byggd för svenska regelverk",
+    "tagline": "Ingen data lämnar Sverige",
     "title": "Regelefterlevnad på ett enkelt sätt",
-    "description": "Navigera komplexa regelverk med självförtroende. Vår infrastruktur är designad för att möta svenska standarder från grunden.",
+    "description": "Oberoende, ingen legal exponering, ingen data sparas.",
     "regulations": {
       "gdpr": {
         "name": "GDPR-efterlevnad",
-        "description": "Inbyggda dataskydds- och integritetskontroller",
+        "description": "Byggd för dataskydd och - integritet",
         "benefits": [
           "Data stannar inom EU",
-          "Fullständiga loggar för audits",
+          "Loggar för audits",
           "Dataminimering by design"        ]
       },
       "nis2": {
@@ -512,7 +520,7 @@
         "benefits": [
           "24/7 säkerhetsövervakning",
           "Incidenthanteringsplaner",
-          "Regelbundna säkerhetsbedömningar",
+          "Regelbundna säkerhetsutvärderingar",
           "Säker leverantörskedja"
         ]
       },
@@ -522,8 +530,8 @@
         "benefits": [
           "Endast Infrastruktur i EU",
           "Ingen US-entitetsinblandning",
-          "Du vet alltid var ding data är",
-          "Juridisk säkerhet"
+          "Du vet alltid var din data är",
+          "Juridisk tydlighet"
         ]
       }
     },
@@ -595,7 +603,7 @@
     ]
   },
   "SustainabilitySection": {
-    "badge": "Hållbarhet i centrum",
+    "badge": "Ingen data lämnar Sverige",
     "title": "Vårt hållbarhetslöfte",
     "description": "Vi bygger Europas mest hållbara AI-infrastruktur. Vårt miljöengagemang är grundläggande för vår verksamhet, inte en eftertanke.",
   "points": [
@@ -650,7 +658,7 @@
 },
 "DevelopersPage": {
   "hero": {
-    "title": "Infrastruktur för AI-utvecklare",
+    "title": "Inferenstjänster och tnfrastruktur för AI-utvecklare",
     "description": "Kör dina AI-modeller och applikationer i en säker, EU-baserad miljö med full kontroll över din kod och data."
   },
   "sections": [
