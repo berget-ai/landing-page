@@ -62,13 +62,44 @@ export default defineConfig({
             return 'vendor-misc';
           }
           
+          // Media files - separate by type
+          const imageExtensions = ['.png', '.jpg', '.jpeg', '.gif', '.svg', '.webp'];
+          if (imageExtensions.some(ext => id.toLowerCase().endsWith(ext))) {
+            // Group images by directory/section
+            if (id.includes('/assets/logos/')) {
+              return 'media-logos';
+            }
+            if (id.includes('/assets/icons/')) {
+              return 'media-icons';
+            }
+            if (id.includes('/assets/illustrations/')) {
+              return 'media-illustrations';
+            }
+            if (id.includes('/assets/photos/')) {
+              return 'media-photos';
+            }
+            // Default image group
+            return 'media-images';
+          }
+          
+          // Other media types
+          if (id.toLowerCase().endsWith('.mp4') || id.toLowerCase().endsWith('.webm')) {
+            return 'media-videos';
+          }
+          if (id.toLowerCase().endsWith('.mp3') || id.toLowerCase().endsWith('.wav')) {
+            return 'media-audio';
+          }
+          
           // Applikationskod
           if (id.includes('src/components')) {
             if (id.includes('/ui/')) {
               return 'app-ui';
             }
-            if (id.includes('/common/') || id.includes('/sections/')) {
-              return 'app-components';
+            if (id.includes('/common/')) {
+              return 'app-common';
+            }
+            if (id.includes('/sections/')) {
+              return 'app-sections';
             }
             return 'app-features';
           }
@@ -81,10 +112,34 @@ export default defineConfig({
           if (!assetInfo.name) return 'assets/[name].[hash][extname]';
           
           const info = assetInfo.name.split('.');
-          const ext = info[info.length - 1];
+          const ext = info[info.length - 1].toLowerCase();
+          
+          // Organize assets by file type
           if (ext === 'css') {
             return `assets/css/[name].[hash][extname]`;
           }
+          
+          // Image files
+          if (['png', 'jpg', 'jpeg', 'gif', 'svg', 'webp'].includes(ext)) {
+            return `assets/images/[name].[hash][extname]`;
+          }
+          
+          // Font files
+          if (['woff', 'woff2', 'ttf', 'otf', 'eot'].includes(ext)) {
+            return `assets/fonts/[name].[hash][extname]`;
+          }
+          
+          // Video files
+          if (['mp4', 'webm'].includes(ext)) {
+            return `assets/videos/[name].[hash][extname]`;
+          }
+          
+          // Audio files
+          if (['mp3', 'wav'].includes(ext)) {
+            return `assets/audio/[name].[hash][extname]`;
+          }
+          
+          // Default for other file types
           return `assets/[name].[hash][extname]`;
         },
         // Konsekvent namngivning
