@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: berget-website
-          image: ghcr.io/berget-ai/landing-page:1.3.35 # {"$imagepolicy": "flux-system:landingpage"}
+          image: ghcr.io/berget-ai/landing-page:1.3.36 # {"$imagepolicy": "flux-system:landingpage"}
           ports:
             - containerPort: 80
           resources:
