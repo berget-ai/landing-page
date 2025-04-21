@@ -33,19 +33,19 @@ export function VisualIdentityGuide() {
                 <h3 className="text-xl mb-4 font-medium">Headings: Ovo</h3>
                 <div className="space-y-4">
                   <div>
-                    <div className="text-4xl font-ovo">H1 Heading</div>
+                    <h1>H1 Heading</h1>
                     <div className="text-sm text-white/60 mt-1">
                       font-ovo, 2.25rem (36px), letter-spacing: -0.05em
                     </div>
                   </div>
                   <div>
-                    <div className="text-3xl font-ovo">H2 Heading</div>
+                    <h2>H2 Heading</h2>
                     <div className="text-sm text-white/60 mt-1">
                       font-ovo, 1.5rem (24px), letter-spacing: -0.05em
                     </div>
                   </div>
                   <div>
-                    <div className="text-2xl font-ovo">H3 Heading</div>
+                    <h3>H3 Heading</h3>
                     <div className="text-sm text-white/60 mt-1">
                       font-ovo, 1.25rem (20px), letter-spacing: -0.05em
                     </div>
