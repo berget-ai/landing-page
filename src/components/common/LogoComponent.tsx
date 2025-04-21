@@ -1,7 +1,5 @@
 import React from 'react'
 import { useTheme } from 'next-themes'
-import logoSvg from '@/assets/logo.svg'
-import logoWithTextSvg from '@/assets/berget-logo-white.svg'
 
 interface LogoComponentProps {
   className?: string
@@ -55,7 +53,7 @@ export function LogoComponent({
     <div className={`inline-block ${className}`} style={containerStyle}>
       {!withText && (
         <img
-          src={logoSvg}
+          src="/logos/logo.svg"
           alt="Berget AI Logo"
           className={`h-full ${shouldInvert ? 'filter invert' : ''}`}
           style={{
@@ -67,7 +65,7 @@ export function LogoComponent({
       )}
       {withText && (
         <img
-          src={logoWithTextSvg}
+          src="/logos/berget-logo-white.svg"
           alt="Berget AI Logo with Text"
           className={`h-full ${shouldInvert ? 'filter invert' : ''}`}
           style={{ width: '300px', objectFit: 'contain' }}
