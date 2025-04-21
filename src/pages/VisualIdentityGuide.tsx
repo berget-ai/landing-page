@@ -17,7 +17,7 @@ export function VisualIdentityGuide() {
               materials.
             </p>
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#40916C]/15 text-[#52B788]">
-              <Shield className="w-4 h-4 mr-2" />
+              <Shield className="w-4 h-4 mr-2 text-white" />
               <span className="text-sm">Internal &amp; Press Use Only</span>
             </div>
           </div>
@@ -85,7 +85,7 @@ export function VisualIdentityGuide() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <div className="flex items-center gap-2 mb-2">
-                    <Check className="w-5 h-5 text-[#52B788]" />
+                    <Check className="w-5 h-5 text-white" />
                     <span className="font-medium">Do</span>
                   </div>
                   <ul className="space-y-2">
@@ -111,7 +111,7 @@ export function VisualIdentityGuide() {
                 </div>
                 <div>
                   <div className="flex items-center gap-2 mb-2">
-                    <X className="w-5 h-5 text-red-500" />
+                    <X className="w-5 h-5 text-white" />
                     <span className="font-medium">Don't</span>
                   </div>
                   <ul className="space-y-2">
@@ -226,7 +226,7 @@ export function VisualIdentityGuide() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <div className="flex items-center gap-2 mb-2">
-                    <Check className="w-5 h-5 text-[#52B788]" />
+                    <Check className="w-5 h-5 text-white" />
                     <span className="font-medium">Do</span>
                   </div>
                   <ul className="space-y-2">
@@ -254,7 +254,7 @@ export function VisualIdentityGuide() {
                 </div>
                 <div>
                   <div className="flex items-center gap-2 mb-2">
-                    <X className="w-5 h-5 text-red-500" />
+                    <X className="w-5 h-5 text-white" />
                     <span className="font-medium">Don't</span>
                   </div>
                   <ul className="space-y-2">
@@ -360,7 +360,7 @@ export function VisualIdentityGuide() {
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-[#52B788]/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="relative p-8 rounded-2xl bg-white/[0.02] backdrop-blur-sm border border-[#74C69D]/20 h-full">
                     <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#FFB700] to-[#FFB700]/80 flex items-center justify-center mb-8">
-                      <Shield className="w-7 h-7 text-[#1A1A1A]" />
+                      <Shield className="w-7 h-7 text-white" />
                     </div>
                     <h3 className="text-xl font-medium mb-4">Hover Card</h3>
                     <p className="text-white/60 mb-6">
@@ -378,7 +378,7 @@ export function VisualIdentityGuide() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <div className="flex items-center gap-2 mb-2">
-                    <Check className="w-5 h-5 text-[#52B788]" />
+                    <Check className="w-5 h-5 text-white" />
                     <span className="font-medium">Do</span>
                   </div>
                   <ul className="space-y-2">
@@ -401,7 +401,7 @@ export function VisualIdentityGuide() {
                 </div>
                 <div>
                   <div className="flex items-center gap-2 mb-2">
-                    <X className="w-5 h-5 text-red-500" />
+                    <X className="w-5 h-5 text-white" />
                     <span className="font-medium">Don't</span>
                   </div>
                   <ul className="space-y-2">
@@ -517,7 +517,7 @@ export function VisualIdentityGuide() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <div className="flex items-center gap-2 mb-2">
-                    <Check className="w-5 h-5 text-[#52B788]" />
+                    <Check className="w-5 h-5 text-white" />
                     <span className="font-medium">Do</span>
                   </div>
                   <ul className="space-y-2">
@@ -539,7 +539,7 @@ export function VisualIdentityGuide() {
                 </div>
                 <div>
                   <div className="flex items-center gap-2 mb-2">
-                    <X className="w-5 h-5 text-red-500" />
+                    <X className="w-5 h-5 text-white" />
                     <span className="font-medium">Don't</span>
                   </div>
                   <ul className="space-y-2">
@@ -636,7 +636,7 @@ export function VisualIdentityGuide() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <div className="flex items-center gap-2 mb-2">
-                    <Check className="w-5 h-5 text-[#52B788]" />
+                    <Check className="w-5 h-5 text-white" />
                     <span className="font-medium">Do</span>
                   </div>
                   <ul className="space-y-2">
@@ -662,7 +662,7 @@ export function VisualIdentityGuide() {
                 </div>
                 <div>
                   <div className="flex items-center gap-2 mb-2">
-                    <X className="w-5 h-5 text-red-500" />
+                    <X className="w-5 h-5 text-white" />
                     <span className="font-medium">Don't</span>
                   </div>
                   <ul className="space-y-2">
@@ -762,7 +762,7 @@ export function VisualIdentityGuide() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <div className="flex items-center gap-2 mb-2">
-                    <Check className="w-5 h-5 text-[#52B788]" />
+                    <Check className="w-5 h-5 text-white" />
                     <span className="font-medium">Do</span>
                   </div>
                   <ul className="space-y-2">
@@ -789,7 +789,7 @@ export function VisualIdentityGuide() {
                 </div>
                 <div>
                   <div className="flex items-center gap-2 mb-2">
-                    <X className="w-5 h-5 text-red-500" />
+                    <X className="w-5 h-5 text-white" />
                     <span className="font-medium">Don't</span>
                   </div>
                   <ul className="space-y-2">
