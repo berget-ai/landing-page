@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Shield, Check, X, ArrowRight, Download } from 'lucide-react'
-import logoWithText from '@/assets/logo-with-text.svg'
-import logoWithTextWhite from '@/assets/logo-with-text-white.svg'
-import logoMark from '@/assets/logo-mark.svg'
-import logoMarkWhite from '@/assets/logo-mark-white.svg'
+// Using placeholder values for logos until actual assets are available
+const logoWithText = '/placeholder.svg'
+const logoWithTextWhite = '/placeholder.svg'
+const logoMark = '/placeholder.svg'
+const logoMarkWhite = '/placeholder.svg'
 
 export function VisualIdentityGuide() {
   return (
