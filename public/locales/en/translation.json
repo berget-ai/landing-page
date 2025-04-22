@@ -419,11 +419,11 @@
         "description": "API access",
         "price": "€1",
         "features": [
-          "€5 Credits",
-          "Pay per token",
+          "€5 Wallet credits",
+          "Pay as you go",
           "Some Rate limit",
           "Community support",
-          "List prices"
+          "Access to all models"
         ]
       },
       "starter": {
@@ -431,10 +431,11 @@
         "description": "For the small team",
         "price": "€50 / month",
         "features": [
-          "50€ token credits",
+          "50€ monthly wallet refill",
+          "Automatic billing",
           "Less rate limits",
           "Email support",
-          "List prices"
+          "Cancel any time"
         ]
       },
       "developer": {
@@ -442,10 +443,11 @@
         "description": "For developer teams",
         "price": "€500 / month",
         "features": [
+          "550€ monthly wallet refill",
           "10% Extra Credits",
-          "550€ token credits",
-          "No rate limits",
-          "Priority support"
+          "Priority support",
+          "Access to all models",
+          "Best value for money"
         ]
       },
       "enterprise": {
