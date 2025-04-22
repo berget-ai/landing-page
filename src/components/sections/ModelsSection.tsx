@@ -86,7 +86,12 @@ export function ModelsSection() {
         </div>
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-2xl font-ovo">{t('models.title')}</h2>
-         
+          <Button asChild variant="ghost" size="sm" className="group">
+            <Link to="/docs/models">
+              {t('models.viewDocs')}
+              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </Button>
         </div>
         <p className="text-white/80 mb-6">
           {t('models.description')}

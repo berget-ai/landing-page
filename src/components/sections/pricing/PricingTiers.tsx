@@ -1,7 +1,6 @@
 import { Button } from '@/components/ui/button'
 import { Check } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
-import { Link } from 'react-router-dom'
 
 export function PricingTiers() {
   const { t } = useTranslation()
@@ -29,10 +28,9 @@ export function PricingTiers() {
             </div>
             <Button 
               className="w-full mb-8" 
-              variant={plan === 'enterprise' ? 'secondary' : 'default'} >
-              <Link to= {plan === 'enterprise' ? t('pricing.contactSaleslink') : t('pricing.getStartedlink')} >
+              variant={plan === 'enterprise' ? 'secondary' : 'default'}
+            >
               {plan === 'enterprise' ? t('pricing.contactSales') : t('pricing.getStarted')}
-              </Link>
             </Button>
             <div className="space-y-4">
               {features.map((feature) => (
