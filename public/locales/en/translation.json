@@ -78,12 +78,12 @@
           "name": "Sara Alsén",
           "role": "Communication & Marketing",
           "bio": "Sara has over 25 years of experience of building brands with purpose through impactful communication - for start-ups and multinationals.",
-          "image": "/team/sara.jpg"
+          "image": "/team/sara_bw.jpg"
         },
         "oscar": {
           "name": "Oscar Virot",
           "role": "Tech & Infra",
-          "bio": "Oscar.",
+          "bio": "Tech and support for everything related to networks and servers. 20+ years of experience in sysadmin, network, and server operations",
           "image": "/team/oscar.jpg"
         }
       }
