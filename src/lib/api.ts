@@ -75,6 +75,7 @@ export const transformModelData = (apiModel: any) => {
   }
 
   return {
+    id: apiModel.id,
     name: name || apiModel.id,
     type,
     provider: apiModel.owned_by,

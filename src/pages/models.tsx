@@ -1,71 +1,22 @@
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Filter, ExternalLink, AlertCircle, Euro } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Alert, AlertDescription } from '@/components/ui/alert'
-import { fetchModels, transformModelData } from '@/lib/api'
-
-// Define the model interface
-interface Model {
-  name: string
-  type: string
-  provider: string
-  license: string
-  description: string
-  status: string
-  huggingface?: string
-}
+import { useModels } from '@/hooks/use-models'
 
 export default function ModelsPage() {
   const { t } = useTranslation()
   const [selectedType, setSelectedType] = useState<string | null>(null)
-  const [models, setModels] = useState<Model[]>([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
-
-  useEffect(() => {
-    const getModels = async () => {
-      try {
-        setLoading(true)
-        const response = await fetchModels()
-        
-        if (response.data && Array.isArray(response.data)) {
-          // Transform API data to our model format
-          const transformedModels = response.data.map(transformModelData)
-          setModels(transformedModels)
-        } else {
-          throw new Error('Invalid API response format')
-        }
-        
-        setError(null)
-      } catch (err) {
-        console.error('Failed to fetch models:', err)
-        setError('Failed to load models. Please try again later.')
-        // Fallback to empty array if API fails
-        setModels([])
-      } finally {
-        setLoading(false)
-      }
-    }
-
-    getModels()
-  }, [])
+  const { models, loading, error, getModelsByType, getModelTypes } = useModels()
 
   const modelTypes = useMemo(() => {
-    if (models.length === 0) return ['Text Models']
-    console.log('models types', models)
-
-    const types = Array.from(new Set(models.map((model) => model.type)))
-    return [
-      'Text Models',
-      ...types.filter((type) => type !== 'Text Models').sort(),
-    ]
-  }, [models])
+    return getModelTypes()
+  }, [getModelTypes])
 
   const filteredModels = useMemo(() => {
-    if (!selectedType) return models
-    return models.filter((model) => model.type === selectedType)
-  }, [selectedType, models])
+    return getModelsByType(selectedType)
+  }, [selectedType, getModelsByType])
 
   return (
     <div className="container mx-auto py-24">

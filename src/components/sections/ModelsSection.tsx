@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react'
+import { useMemo } from 'react'
 import { motion } from 'framer-motion'
 import { Bot, ArrowRight, AlertCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Link } from 'react-router-dom'
-import { fetchModels, transformModelData } from '@/lib/api'
+import { useModels } from '@/hooks/use-models'
 import {
   Table,
   TableBody,
@@ -14,7 +14,7 @@ import {
 } from '@/components/ui/table'
 import { useTranslation } from 'react-i18next'
 
-interface ModelData {
+interface DisplayModelData {
   name: string
   type: string
   context: string
@@ -24,51 +24,19 @@ interface ModelData {
 
 export function ModelsSection() {
   const { t } = useTranslation()
-  const [models, setModels] = useState<ModelData[]>([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
+  const { models, loading, error } = useModels()
 
-  useEffect(() => {
-    const getModels = async () => {
-      try {
-        setLoading(true)
-        const response = await fetchModels()
-
-        if (response.data && Array.isArray(response.data)) {
-          // Transform API data to our model format
-          const transformedModels = response.data
-            .map(transformModelData)
-            .slice(0, 8)
-            .map((model) => ({
-              name: model.name,
-              type: model.type,
-              context: model.capabilities?.function_calling
-                ? 'Function Calling'
-                : 'N/A',
-              performance: model.capabilities?.json_mode
-                ? 'State-of-the-Art'
-                : 'High',
-              status:
-                model.status.charAt(0).toUpperCase() + model.status.slice(1),
-            }))
-
-          setModels(transformedModels)
-        } else {
-          throw new Error('Invalid API response format')
-        }
-
-        setError(null)
-      } catch (err) {
-        console.error('Failed to fetch models:', err)
-        setError('Failed to load models')
-        setModels([])
-      } finally {
-        setLoading(false)
-      }
-    }
-
-    getModels()
-  }, [])
+  const displayModels = useMemo(() => {
+    return models.slice(0, 8).map((model) => ({
+      name: model.name,
+      type: model.type,
+      context: model.capabilities?.function_calling
+        ? 'Function Calling'
+        : 'N/A',
+      performance: model.capabilities?.json_mode ? 'State-of-the-Art' : 'High',
+      status: model.status.charAt(0).toUpperCase() + model.status.slice(1),
+    }))
+  }, [models])
 
   return (
     <motion.div
@@ -138,7 +106,7 @@ export function ModelsSection() {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {models.map((model) => (
+                {displayModels.map((model) => (
                   <TableRow key={model.name}>
                     <TableCell className="font-medium">{model.name}</TableCell>
                     <TableCell>
