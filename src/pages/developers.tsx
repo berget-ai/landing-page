@@ -126,9 +126,7 @@ export default function DevelopersPage() {
               <Button size="lg" asChild>
                 <Link to="/signup">{t('DevelopersPage.cta.signup')}</Link>
               </Button>
-              <Button size="lg" variant="secondary" asChild>
-                <Link to="/docs">{t('DevelopersPage.cta.docs')}</Link>
-              </Button>
+
             </div>
           </motion.div>
         </div>

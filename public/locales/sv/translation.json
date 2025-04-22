@@ -713,5 +713,49 @@
       "signup": "Skapa konto",
       "docs": "Läs dokumentationen"
   }
- }
+ },
+ "modelPage": {
+    
+  "title": "Modellbibliotek",
+  "intro": "På Berget AI brinner vi för att tillhandahålla de mest kraftfulla öppna modellerna, noggrant utvalda för att möjliggöra för våra kunder att bygga sofistikerade AI-applikationer:",
+  "principles": [
+    "Vi tillhandahåller tillgång till de mest kraftfulla öppen spårkmodellerna, så att våra kunder har tillgång till kraftfulla och kostnadseffektiva modeller som krävs för avancerade AI-applikationer.",
+    "Vi stödjer AI-suveränitet i Europa vill vi särskilt erbjuda modeller som är flerspråkiga och som stödjer europeiska språk och förståelse för våra värderingar.",
+    "Vi balanserar prestanda, hastighet och kostnad över olika modeltyper och storlekar, så att du kan hitta den perfekta lösningen för dina behov.",
+    "Våra modeller är särskilt utvalda för agentbaserade applikationer på vår plattform."
+  ],
+  "continuous": "Vi utvärderar och lägger ständigt till nya modeller så våra kunder alltid har tillgång till de senaste framstegen inom öppna modeller.",
+  "suggestion": "Har du en specifik modell i åtanke? Hör av dig!",
+  "filter": "Filtrera efter typ",
+  "all": "Alla",
+      "view": "View on HF",
+      "models": {
+        "llama_1b": "Compact instruction-tuned language model for high speed and low cost...",
+        "llama_3b": "Instruction-tuned variant of Llama 3 optimized for task completion...",
+        "llama_8b": "Mid-sized instruction-tuned language model with balanced performance...",
+        "gemma_12b": "Advanced language model with strong reasoning capabilities...",
+        "gemma_27b": "Advanced language model with strong performance across various tasks.",
+        "qwq_32b": "Large-scale language model with advanced reasoning capabilities.",
+        "llama_70b": "Large-scale instruction-tuned model with state-of-the-art performance.",
+        "deepseek_r1": "The premier Open Source Reasoning model...",
+        "e5_large": "Large multilingual embedding model based on E5 Mistral 7B...",
+        "e5_small": "Compact but powerful text embedding model...",
+        "sd_xl": "High-performance image generation model optimized for AMD hardware.",
+        "flux_1": "Fast and efficient image generation model...",
+        "flux_1_dev": "Developer-focused variant of Flux.1...",
+        "llama_guard": "Advanced content moderation model for detecting...",
+        "shieldgemma": "Specialized model for content moderation...",
+        "qwen_vl_72b": "Large-scale vision-language model with advanced multimodal capabilities...",
+        "qwen_vl_7b": "Efficient vision-language model optimized for real-time applications.",
+        "rerank_base": "Reranking model for search result optimization...",
+        "bge_reranker": "Lightweight reranker model, possesses strong multilingual capabilities.",
+        "whisper_large": "Large speech recognition and transcription model...",
+        "kb_whisper": "Customized Whisper model optimized for Swedish language...",
+        "whisper_turbo": "Optimized version of Whisper with improved speed and efficiency.",
+        "kokoro": "Lightweight text-to-speech model optimized for efficiency.",
+        "csm_1b": "Compact text-to-speech model with specialized capabilities.",
+        "qwen_coder": "Specialized model for code generation and software development.",
+        "deepcoder": "Preview version of advanced code generation model."
+      }
+    }
 }
