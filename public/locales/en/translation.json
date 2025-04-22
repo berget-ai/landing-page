@@ -461,9 +461,7 @@
       }
     },
     "getStarted": "Get Started",
-    "contactSales": "Contact Us",
-    "getStartedlink": "https://console.berget.ai",
-    "contactSaleslink": "/contact",
+    "contactSales": "Contact Sales",
     "moneyBackGuarantee": "30-day money-back guarantee",
     "detailedPricing": "Detailed Pricing",
     "tooltip": "All prices exclude VAT",
