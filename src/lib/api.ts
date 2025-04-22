@@ -4,7 +4,7 @@
 
 // Base URL for the Berget API
 export const VITE_API_URL =
-  'http://localhost:3000/v1' || 'https://api.berget.ai/v1'
+  import.meta.env.VITE_BERGET_API_URL || 'http://localhost:3000/v1'
 
 /**
  * Get the API key from environment variables
@@ -46,13 +46,16 @@ export const transformModelData = (apiModel: any) => {
   // Extract model name from ID by removing provider prefix
   const nameParts = apiModel.id.split('-')
   const name = nameParts.slice(1).join(' ')
-  
+
   // Map model types based on capabilities or other properties
   let type = 'Text Models'
-  
+
   if (apiModel.id.includes('Whisper')) {
     type = 'Speech-to-Text'
-  } else if (apiModel.id.includes('Flux') || apiModel.id.includes('Diffusion')) {
+  } else if (
+    apiModel.id.includes('Flux') ||
+    apiModel.id.includes('Diffusion')
+  ) {
     type = 'Image Generation'
   } else if (apiModel.id.includes('E5') || apiModel.id.includes('Embedding')) {
     type = 'Text Embedding'
@@ -62,12 +65,15 @@ export const transformModelData = (apiModel: any) => {
     type = 'Multimodal'
   } else if (apiModel.id.includes('Guard') || apiModel.id.includes('Shield')) {
     type = 'Moderation'
-  } else if (apiModel.id.includes('Coder') || apiModel.id.includes('DeepCoder')) {
+  } else if (
+    apiModel.id.includes('Coder') ||
+    apiModel.id.includes('DeepCoder')
+  ) {
     type = 'Code Generation'
   } else if (apiModel.id.includes('Kokoro') || apiModel.id.includes('CSM')) {
     type = 'Text-to-Speech'
   }
-  
+
   return {
     name: name || apiModel.id,
     type,
@@ -75,9 +81,11 @@ export const transformModelData = (apiModel: any) => {
     license: apiModel.root.split('/')[0],
     description: `${type} model by ${apiModel.owned_by}`,
     status: 'available',
-    huggingface: apiModel.root ? `https://huggingface.co/${apiModel.root}` : undefined,
+    huggingface: apiModel.root
+      ? `https://huggingface.co/${apiModel.root}`
+      : undefined,
     pricing: apiModel.pricing,
-    capabilities: apiModel.capabilities
+    capabilities: apiModel.capabilities,
   }
 }
 
