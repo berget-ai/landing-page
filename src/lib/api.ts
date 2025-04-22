@@ -40,10 +40,52 @@ export const fetchModels = async () => {
 }
 
 /**
+ * Transform API model data to application model format
+ */
+export const transformModelData = (apiModel: any) => {
+  // Extract model name from ID by removing provider prefix
+  const nameParts = apiModel.id.split('-')
+  const name = nameParts.slice(1).join(' ')
+  
+  // Map model types based on capabilities or other properties
+  let type = 'Text Models'
+  
+  if (apiModel.id.includes('Whisper')) {
+    type = 'Speech-to-Text'
+  } else if (apiModel.id.includes('Flux') || apiModel.id.includes('Diffusion')) {
+    type = 'Image Generation'
+  } else if (apiModel.id.includes('E5') || apiModel.id.includes('Embedding')) {
+    type = 'Text Embedding'
+  } else if (apiModel.id.includes('Rerank')) {
+    type = 'Reranking'
+  } else if (apiModel.id.includes('VL')) {
+    type = 'Multimodal'
+  } else if (apiModel.id.includes('Guard') || apiModel.id.includes('Shield')) {
+    type = 'Moderation'
+  } else if (apiModel.id.includes('Coder') || apiModel.id.includes('DeepCoder')) {
+    type = 'Code Generation'
+  } else if (apiModel.id.includes('Kokoro') || apiModel.id.includes('CSM')) {
+    type = 'Text-to-Speech'
+  }
+  
+  return {
+    name: name || apiModel.id,
+    type,
+    provider: apiModel.owned_by,
+    license: apiModel.root.split('/')[0],
+    description: `${type} model by ${apiModel.owned_by}`,
+    status: 'available',
+    huggingface: apiModel.root ? `https://huggingface.co/${apiModel.root}` : undefined,
+    pricing: apiModel.pricing,
+    capabilities: apiModel.capabilities
+  }
+}
+
+/**
  * Fetch a specific model by ID
  */
 export const fetchModel = async (modelId: string) => {
-  const response = await fetch(`${API_BASE_URL}/models/${modelId}`, {
+  const response = await fetch(`${VITE_API_URL}/models/${modelId}`, {
     headers: getDefaultHeaders(),
   })
 

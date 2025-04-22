@@ -1,9 +1,9 @@
 import { useState, useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Filter, ExternalLink, AlertCircle } from 'lucide-react'
+import { Filter, ExternalLink, AlertCircle, Euro } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Alert, AlertDescription } from '@/components/ui/alert'
-import { fetchModels } from '@/lib/api'
+import { fetchModels, transformModelData } from '@/lib/api'
 
 // Define the model interface
 interface Model {
@@ -27,8 +27,16 @@ export default function ModelsPage() {
     const getModels = async () => {
       try {
         setLoading(true)
-        const { data } = await fetchModels()
-        setModels(data)
+        const response = await fetchModels()
+        
+        if (response.data && Array.isArray(response.data)) {
+          // Transform API data to our model format
+          const transformedModels = response.data.map(transformModelData)
+          setModels(transformedModels)
+        } else {
+          throw new Error('Invalid API response format')
+        }
+        
         setError(null)
       } catch (err) {
         console.error('Failed to fetch models:', err)
@@ -172,6 +180,29 @@ export default function ModelsPage() {
                         model.status.slice(1)}
                     </span>
                   </div>
+                  
+                  {model.pricing && (
+                    <div className="mt-4 pt-4 border-t border-white/10">
+                      <div className="flex items-center gap-1 mb-2">
+                        <Euro className="w-3 h-3 text-white/60" />
+                        <span className="text-xs text-white/60">{t('modelPage.pricing')}</span>
+                      </div>
+                      <div className="grid grid-cols-2 gap-2">
+                        <div className="text-xs">
+                          <span className="text-white/40">{t('modelPage.input')}: </span>
+                          <span className="text-white/80">
+                            {model.pricing.input.amount} {model.pricing.input.unit}
+                          </span>
+                        </div>
+                        <div className="text-xs">
+                          <span className="text-white/40">{t('modelPage.output')}: </span>
+                          <span className="text-white/80">
+                            {model.pricing.output.amount} {model.pricing.output.unit}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>

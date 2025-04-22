@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { Bot, ArrowRight, AlertCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Link } from 'react-router-dom'
+import { fetchModels, transformModelData } from '@/lib/api'
 import {
   Table,
   TableBody,
@@ -31,18 +32,31 @@ export function ModelsSection() {
     const getModels = async () => {
       try {
         setLoading(true)
-        const data = await fetchModels()
+        const response = await fetchModels()
 
-        // Transform the data to match our component's expected format
-        const formattedData = data.slice(0, 8).map((model: any) => ({
-          name: model.name,
-          type: model.type,
-          context: model.context || 'N/A',
-          performance: model.performance || 'High',
-          status: model.status.charAt(0).toUpperCase() + model.status.slice(1),
-        }))
+        if (response.data && Array.isArray(response.data)) {
+          // Transform API data to our model format
+          const transformedModels = response.data
+            .map(transformModelData)
+            .slice(0, 8)
+            .map((model) => ({
+              name: model.name,
+              type: model.type,
+              context: model.capabilities?.function_calling
+                ? 'Function Calling'
+                : 'N/A',
+              performance: model.capabilities?.json_mode
+                ? 'State-of-the-Art'
+                : 'High',
+              status:
+                model.status.charAt(0).toUpperCase() + model.status.slice(1),
+            }))
 
-        setModels(formattedData)
+          setModels(transformedModels)
+        } else {
+          throw new Error('Invalid API response format')
+        }
+
         setError(null)
       } catch (err) {
         console.error('Failed to fetch models:', err)
