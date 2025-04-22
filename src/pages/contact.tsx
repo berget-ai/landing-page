@@ -128,7 +128,7 @@ export default function ContactPage() {
             </motion.div>
           </div>
 
-          {/* Contact Form */}
+          {/* Contact Form 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -139,7 +139,7 @@ export default function ContactPage() {
             
             <div className="relative p-8 rounded-2xl border border-[#74C69D]/20 bg-black/20 backdrop-blur-sm">
               <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Name */}
+                
                 <div className="space-y-2">
                   <Label htmlFor="name">{t('contact.form.name')}</Label>
                   <Input
@@ -152,7 +152,7 @@ export default function ContactPage() {
                   />
                 </div>
 
-                {/* Email */}
+                
                 <div className="space-y-2">
                   <Label htmlFor="email">{t('contact.form.email')}</Label>
                   <Input
@@ -165,8 +165,7 @@ export default function ContactPage() {
                   />
                 </div>
 
-                {/* Message */}
-                <div className="space-y-2">
+                  <div className="space-y-2">
                   <Label htmlFor="message">{t('contact.form.message')}</Label>
                   <Textarea
                     id="message"
@@ -178,7 +177,6 @@ export default function ContactPage() {
                   />
                 </div>
 
-                {/* Submit Button */}
                 <Button 
                   type="submit" 
                   className="w-full group"
@@ -188,9 +186,9 @@ export default function ContactPage() {
                   {isSubmitting ? t('contact.form.sending') : t('contact.form.submit')}
                   <Send className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
-              </form>
+              </form> 
             </div>
-          </motion.div>
+          </motion.div>*/}
         </div>
       </div>
     </main>

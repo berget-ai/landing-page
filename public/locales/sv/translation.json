@@ -2,8 +2,8 @@
   "hero": {
     "tagline": "Ingen data lämnar Sverige",
     "title": {
-      "part1": "Vi främjar AI-suveränitet för innovation och tillväxt",
-      "part2": ""
+      "part1": "Vi främjar AI-suveränitet för",
+      "part2": "innovation och tillväxt i Europa"
     },
     "description": "EU-anpassad inferenstjänst och AI infrastruktur - byggd av utvecklare för utvecklare.",
     "getStarted": "Kom igång",
@@ -108,7 +108,7 @@
   "products": {
     "hero": {
       "title": "Inferens och AI-infrastruktur i en och samma tjänst",
-      "description": "Suverän, Öppen och Hållbar AI - redo att skala upp.",
+      "description": "Suverän, Öppen och Hållbar AI - redo att skala",
       "exploreMore": "Läs mer"
     },
     "serverless": {
@@ -461,7 +461,9 @@
       }
     },
     "getStarted": "Kom igång",
-    "contactSales": "Kontakta Försäljning",
+    "contactSales": "Kontakta oss",
+    "getStartedlink": "https://console.berget.ai",
+    "contactSaleslink": "/contact",
     "moneyBackGuarantee": "30 dagars pengarna-tillbaka-garanti",
     "compareWithAlternatives": "Jämför med Alternativ",
     "comparisonTooltip": "Baserat på offentlig prissättning"
