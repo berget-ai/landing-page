@@ -3,9 +3,12 @@ import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { PricingTiers } from './pricing/PricingTiers'
+import { useModels } from '@/hooks/use-models'
 
 export function PricingSection() {
   const { t } = useTranslation()
+  // Initialize the models hook to ensure models are loaded
+  useModels()
 
   return (
     <section className="py-24 relative">

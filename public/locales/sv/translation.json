@@ -803,3 +803,63 @@
       "footer": "Alla priser anges i EUR och exklusive moms."
     }
 }
+{
+  "serverlesspricing" : 
+  {
+    "title": "Serverlös inferens",
+    "intro": "Få tillgång till vårt omfattande urval av AI-modeller genom vårt OpenAI-kompatibla API. Betala endast för det du använder utan förhandsåtaganden.",
+    
+    "text": {
+      "title": "Textgenereringsmodeller",
+      "description": "Högpresterande språkmodeller för textgenerering, chatt och kompletteringsuppgifter"
+    },
+    "multimodal": {
+      "title": "Multimodala modeller",
+      "description": "Modeller som låter dig använda både text och bilder som indata för att bygga kraftfulla applikationer"
+    },
+    "rerank": {
+      "title": "Omrankningsmodeller",
+      "description": "Förbättra sökkvaliteten genom att omranka resultat baserat på semantisk relevans"
+    },
+    "embedding": {
+      "title": "Inbäddningsmodeller",
+      "description": "Skapa vektorinbäddningar för semantisk sökning och RAG-applikationer"
+    },
+    "moderation": {
+      "title": "Modereringsmodeller",
+      "description": "Upptäck potentiellt skadligt språk och håll dina applikationer säkra"
+    },
+    "stt": {
+      "title": "Tal-till-text-modeller",
+      "description": "Konvertera mellan tal och text med hög precision",
+      "note": "Priserna är per 1000 minuter röstinmatning. Faktureras i sekundintervaller."
+    },
+    "tts": {
+      "title": "Text-till-tal-modeller",
+      "description": "Lägg till en röst till dina agenter för övertygande och sömlös interaktion",
+      "note": "Priserna är per miljon inmatade tecken"
+    },
+    "image": {
+      "title": "Bildmodeller",
+      "description": "Generera och manipulera bilder med toppmoderna modeller",
+      "note": "SDXL standard är 30 steg per bild. Flux.1 [schnell] standard är 4 steg per bild. Flux.1 Dev är 28 steg per bild"
+    },
+    "footer": "Alla priser är i EUR och exklusive moms."
+  },
+  "modelPage": {
+    "title": "Modellbibliotek",
+    "intro": "På Berget AI är vi engagerade i att tillhandahålla de mest kraftfulla öppna modellerna som finns tillgängliga, noggrant utvalda för att göra det möjligt för våra kunder att bygga och distribuera sofistikerade AI-applikationer. Vårt modellbibliotek är utformat med följande principer i åtanke:",
+    "principles": [
+      "Vi ger tillgång till de mest kraftfulla öppna källkodsmodellerna, vilket säkerställer att du har den kraft, hastighet och kostnadseffektivitet som behövs för avancerad AI-utveckling.",
+      "För att stödja AI-suveränitet för Europa - vi vill särskilt tillhandahålla modeller som är flerspråkiga och stödjer europeiska språk och förståelse för våra värderingar",
+      "Vårt noggrant utvalda urval balanserar prestanda, hastighet och kostnad över olika modelltyper och storlekar, vilket hjälper dig att hitta den perfekta lösningen för dina behov.",
+      "Vårt omfattande utbud av modeller är specifikt utvalda för att stödja utveckling och distribution av sofistikerade agentiska applikationer på vår plattform."
+    ],
+    "continuous": "Vi utvärderar och lägger kontinuerligt till nya modeller i vårt bibliotek, vilket säkerställer att du alltid har tillgång till de senaste framstegen inom öppen källkodsmodeller.",
+    "suggestion": "Har du en specifik modell i åtanke? Kontakta oss!",
+    "pricing": "Prissättning",
+    "input": "Input",
+    "output": "Output",
+    "noModels": "Inga modeller hittades som matchar dina filterkriterier."
+  }
+}

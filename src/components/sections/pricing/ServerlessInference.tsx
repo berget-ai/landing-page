@@ -12,6 +12,8 @@ import { useTranslation } from 'react-i18next'
 import { useModels } from '@/hooks/use-models'
 
 function ModelTable({ title, description, models }: { title: string; description: string; models: PricingRow[] }) {
+  if (models.length === 0) return null;
+  
   return (
     <div className="space-y-4">
       <div>
@@ -22,8 +24,8 @@ function ModelTable({ title, description, models }: { title: string; description
         <TableHeader>
           <TableRow className="hover:bg-transparent">
             <TableHead className="w-[200px]">Model</TableHead>
-            <TableHead className="w-[60px]">Input (€/M Tokens)</TableHead>
-            <TableHead className="w-[60px]">Output (€/M Tokens)</TableHead>
+            <TableHead className="w-[60px]">Input</TableHead>
+            <TableHead className="w-[60px]">Output</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -41,6 +43,8 @@ function ModelTable({ title, description, models }: { title: string; description
 }
 
 function ImageModelTable({ title, description, models }: { title: string; description: string; models: PricingRow[] }) {
+  if (models.length === 0) return null;
+  
   return (
     <div className="space-y-4">
       <div>
@@ -52,7 +56,6 @@ function ImageModelTable({ title, description, models }: { title: string; descri
           <TableRow className="hover:bg-transparent">
             <TableHead className="w-[200px]">Model</TableHead>
             <TableHead className="w-[60px]">€ / step</TableHead>
-            
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -60,7 +63,6 @@ function ImageModelTable({ title, description, models }: { title: string; descri
             <TableRow key={model.name} className="group">
               <TableCell className="font-medium w-[200px]">{model.name}</TableCell>
               <TableCell className="w-[60px]">{model.inputprice}</TableCell>
-            
             </TableRow>
           ))}
         </TableBody>
@@ -70,6 +72,8 @@ function ImageModelTable({ title, description, models }: { title: string; descri
 }
 
 function STTModelTable({ title, description, models }: { title: string; description: string; models: PricingRow[] }) {
+  if (models.length === 0) return null;
+  
   return (
     <div className="space-y-4">
       <div>
@@ -81,7 +85,6 @@ function STTModelTable({ title, description, models }: { title: string; descript
           <TableRow className="hover:bg-transparent">
             <TableHead className="w-[200px]">Model</TableHead>
             <TableHead className="w-[60px]">€ / 1000 mins</TableHead>
-            
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -89,7 +92,6 @@ function STTModelTable({ title, description, models }: { title: string; descript
             <TableRow key={model.name} className="group">
               <TableCell className="font-medium w-[200px]">{model.name}</TableCell>
               <TableCell className="w-[60px]">{model.inputprice}</TableCell>
-            
             </TableRow>
           ))}
         </TableBody>
@@ -99,6 +101,8 @@ function STTModelTable({ title, description, models }: { title: string; descript
 }
 
 function TTSModelTable({ title, description, models }: { title: string; description: string; models: PricingRow[] }) {
+  if (models.length === 0) return null;
+  
   return (
     <div className="space-y-4">
       <div>
@@ -110,7 +114,6 @@ function TTSModelTable({ title, description, models }: { title: string; descript
           <TableRow className="hover:bg-transparent">
             <TableHead className="w-[200px]">Model</TableHead>
             <TableHead className="w-[60px]">€/M Characters</TableHead>
-            
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -118,7 +121,6 @@ function TTSModelTable({ title, description, models }: { title: string; descript
             <TableRow key={model.name} className="group">
               <TableCell className="font-medium w-[200px]">{model.name}</TableCell>
               <TableCell className="w-[60px]">{model.inputprice}</TableCell>
-            
             </TableRow>
           ))}
         </TableBody>
@@ -137,8 +139,8 @@ export function ServerlessInference() {
       .filter(model => model.type === 'Text Models')
       .map(model => ({
         name: model.name,
-        inputprice: `€${model.pricing?.input.amount}`,
-        outputprice: `€${model.pricing?.output.amount}`,
+        inputprice: model.pricing?.input ? `${model.pricing.input.amount} ${model.pricing.input.unit}` : '-',
+        outputprice: model.pricing?.output ? `${model.pricing.output.amount} ${model.pricing.output.unit}` : '-',
       }))
   }, [models])
 
@@ -147,8 +149,8 @@ export function ServerlessInference() {
       .filter(model => model.type === 'Multimodal')
       .map(model => ({
         name: model.name,
-        inputprice: `€${model.pricing?.input.amount}`,
-        outputprice: `€${model.pricing?.output.amount}`,
+        inputprice: model.pricing?.input ? `${model.pricing.input.amount} ${model.pricing.input.unit}` : '-',
+        outputprice: model.pricing?.output ? `${model.pricing.output.amount} ${model.pricing.output.unit}` : '-',
       }))
   }, [models])
 
@@ -157,7 +159,7 @@ export function ServerlessInference() {
       .filter(model => model.type === 'Reranking')
       .map(model => ({
         name: model.name,
-        inputprice: `€${model.pricing?.input.amount}`,
+        inputprice: model.pricing?.input ? `${model.pricing.input.amount} ${model.pricing.input.unit}` : '-',
         outputprice: '-',
       }))
   }, [models])
@@ -167,7 +169,7 @@ export function ServerlessInference() {
       .filter(model => model.type === 'Text Embedding')
       .map(model => ({
         name: model.name,
-        inputprice: `€${model.pricing?.input.amount}`,
+        inputprice: model.pricing?.input ? `${model.pricing.input.amount} ${model.pricing.input.unit}` : '-',
         outputprice: '-',
       }))
   }, [models])
@@ -177,7 +179,7 @@ export function ServerlessInference() {
       .filter(model => model.type === 'Speech-to-Text')
       .map(model => ({
         name: model.name,
-        inputprice: `€${model.pricing?.input.amount}`,
+        inputprice: model.pricing?.input ? `${model.pricing.input.amount} ${model.pricing.input.unit}` : '-',
         outputprice: '-',
       }))
   }, [models])
@@ -187,7 +189,7 @@ export function ServerlessInference() {
       .filter(model => model.type === 'Text-to-Speech')
       .map(model => ({
         name: model.name,
-        inputprice: `€${model.pricing?.input.amount}`,
+        inputprice: model.pricing?.input ? `${model.pricing.input.amount} ${model.pricing.input.unit}` : '-',
         outputprice: '-',
       }))
   }, [models])
@@ -197,7 +199,7 @@ export function ServerlessInference() {
       .filter(model => model.type === 'Image Generation')
       .map(model => ({
         name: model.name,
-        inputprice: `€${model.pricing?.input.amount} / step`,
+        inputprice: model.pricing?.input ? `${model.pricing.input.amount} ${model.pricing.input.unit}` : '-',
         outputprice: '-',
       }))
   }, [models])
@@ -207,8 +209,8 @@ export function ServerlessInference() {
       .filter(model => model.type === 'Moderation')
       .map(model => ({
         name: model.name,
-        inputprice: `€${model.pricing?.input.amount}`,
-        outputprice: `€${model.pricing?.output.amount}`,
+        inputprice: model.pricing?.input ? `${model.pricing.input.amount} ${model.pricing.input.unit}` : '-',
+        outputprice: model.pricing?.output ? `${model.pricing.output.amount} ${model.pricing.output.unit}` : '-',
       }))
   }, [models])
 
@@ -252,21 +254,21 @@ export function ServerlessInference() {
         description={t('serverlesspricing.stt.description')}
         models={STTModels}
       />
-      <p className="text-sm text-white/60 mt-1">{t('stt.note')}</p>
+      {STTModels.length > 0 && <p className="text-sm text-white/60 mt-1">{t('serverlesspricing.stt.note')}</p>}
 
       <TTSModelTable 
         title={t('serverlesspricing.tts.title')} 
         description={t('serverlesspricing.tts.description')}
         models={TTSModels}
       />
-      <p className="text-sm text-white/60 mt-1">{t('tts.note')}</p>
+      {TTSModels.length > 0 && <p className="text-sm text-white/60 mt-1">{t('serverlesspricing.tts.note')}</p>}
 
       <ImageModelTable 
         title={t('serverlesspricing.image.title')} 
         description={t('serverlesspricing.image.description')}
         models={imageModels}
       />
-      <p className="text-sm text-white/60 mt-1">{t('serverlesspricing.image.note')}</p>
+      {imageModels.length > 0 && <p className="text-sm text-white/60 mt-1">{t('serverlesspricing.image.note')}</p>}
 
       <div className="rounded-lg bg-white/5 p-4 text-sm text-white/60">
         <p>{t('serverlesspricing.footer')}</p>
