@@ -116,7 +116,7 @@ export default function AboutPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {['christian', 'andreas', 'john', 'johan','sara'].map((member, index) => (
+              {['christian', 'andreas', 'john', 'johan','sara', 'oscar'].map((member, index) => (
                 <motion.div
                   key={member}
                   initial={{ opacity: 0, y: 20 }}

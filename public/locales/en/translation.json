@@ -16,7 +16,7 @@
     },
     "origin": {
       "title": "Our Story",
-      "description": "We realised that many organisations are held back in their pursuit of AI by a range of obstacles. Some struggle with legal and regulatory challenges, others simply don’t have the skills or capital to run, train, and host their own AI models. Many are reluctant to invest upfront in GPUs or lack access to local language-capable large language models. That’s why we built Berget AI – to unlock the full potential of AI for innovation and growth by championing sovereign, open and sustainable AI.",
+      "description": "We realised that many organisations are held back in their pursuit of AI by a range of obstacles. Some struggle with legal and regulatory challenges, others simply don’t have the skills or capital to train, host and serve their own AI models. Many are reluctant to invest upfront in GPUs or lack access to local language-capable large language models. That’s why we built Berget AI – to unlock the full potential of AI for innovation and growth by championing sovereign, open and sustainable AI.",
       "nameOrigin": "The name is Swedish for \"mountain\", which we have plenty of in Sweden, many of which host underground Data Centers. So why have your data in the cloud when you can have in \"Berget\"?"
     },
     "values": {
@@ -78,7 +78,13 @@
           "name": "Sara Alsén",
           "role": "Communication & Marketing",
           "bio": "Sara has over 25 years of experience of building brands with purpose through impactful communication - for start-ups and multinationals.",
-          "image": "/team/sara.jpg"
+          "image": "/team/sara_bw.jpg"
+        },
+        "oscar": {
+          "name": "Oscar Virot",
+          "role": "Tech & Infra",
+          "bio": "Tech and support for everything related to networks and servers. 20+ years of experience in sysadmin, network, and server operations",
+          "image": "/team/oscar.jpg"
         }
       }
     }
@@ -508,7 +514,7 @@
         "description": "Built-in data protection and privacy controls",
         "benefits": [
           "Data stays in EU",
-          "Complete audit trails",
+          "Audit trails",
           "Data minimization by design"
         ]
       },
@@ -611,11 +617,6 @@
         "stats": "100% fossil-free energy"
       },
       {
-        "title": "No Waste Water",
-        "description": "Our data centers use zero water for building cooling, removing one of the biggest environmental concerns of AI.",
-        "stats": "0% water waste"
-      },
-      {
         "title": "Circular Hardware",
         "description": "We use circular hardware as much as possible to reduce emissions from production. Our servers have extended lifecycles through certified reuse processes.",
         "stats": "75% hardware CO₂e footprint."
@@ -661,7 +662,7 @@
   },
   "DevelopersPage": {
     "hero": {
-      "title": "AI Infrastructure for Developers and DevOps Teams",
+      "title": "Inference and AI Infrastructure for Developers and DevOps Teams",
       "description": "Run your AI models and applications in a secure, EU-based environment with full control over your code and data."
     },
     "sections": [
@@ -716,5 +717,92 @@
       "signup": "Create Account",
       "docs": "Read the Documentation"
     }
+  },
+  "modelPage": {
+    
+      "title": "Model Library",
+      "intro": "At Berget AI, we're committed to providing the most powerful open models available, carefully selected to enable our customers to build and deploy sophisticated AI applications. Our model library is designed with the following principles in mind:",
+      "principles": [
+        "We provide access to the most powerful open source models, ensuring you have the power, speed and cost-efficiency needed for advanced AI development.",
+        "In supporting AI Sovereignty for Europe - we especially want to provide models that are multilingual and support European languages and understanding of our values",
+        "Our carefully curated selection balances performance, speed, and cost across different model types and sizes, helping you find the perfect fit for your needs.",
+        "Our comprehensive range of models is specifically chosen to support the development and deployment of sophisticated agentic applications on our platform."
+      ],
+      "continuous": "We're continuously evaluating and adding new models to our library, ensuring you always have access to the latest advancements in Opensource models.",
+      "suggestion": "Have a specific model in mind? Get in touch!",
+      "filter": "Filter by type",
+      "all": "All",
+      "view": "View on HF",
+      "models": {
+        "llama_1b": "Compact instruction-tuned language model for high speed and low cost...",
+        "llama_3b": "Instruction-tuned variant of Llama 3 optimized for task completion...",
+        "llama_8b": "Mid-sized instruction-tuned language model with balanced performance...",
+        "gemma_12b": "Advanced language model with strong reasoning capabilities...",
+        "gemma_27b": "Advanced language model with strong performance across various tasks.",
+        "qwq_32b": "Large-scale language model with advanced reasoning capabilities.",
+        "llama_70b": "Large-scale instruction-tuned model with state-of-the-art performance.",
+        "deepseek_r1": "The premier Open Source Reasoning model...",
+        "e5_large": "Large multilingual embedding model based on E5 Mistral 7B...",
+        "e5_small": "Compact but powerful text embedding model...",
+        "sd_xl": "High-performance image generation model optimized for AMD hardware.",
+        "flux_1": "Fast and efficient image generation model...",
+        "flux_1_dev": "Developer-focused variant of Flux.1...",
+        "llama_guard": "Advanced content moderation model for detecting...",
+        "shieldgemma": "Specialized model for content moderation...",
+        "qwen_vl_72b": "Large-scale vision-language model with advanced multimodal capabilities...",
+        "qwen_vl_7b": "Efficient vision-language model optimized for real-time applications.",
+        "rerank_base": "Reranking model for search result optimization...",
+        "bge_reranker": "Lightweight reranker model, possesses strong multilingual capabilities.",
+        "whisper_large": "Large speech recognition and transcription model...",
+        "kb_whisper": "Customized Whisper model optimized for Swedish language...",
+        "whisper_turbo": "Optimized version of Whisper with improved speed and efficiency.",
+        "kokoro": "Lightweight text-to-speech model optimized for efficiency.",
+        "csm_1b": "Compact text-to-speech model with specialized capabilities.",
+        "qwen_coder": "Specialized model for code generation and software development.",
+        "deepcoder": "Preview version of advanced code generation model."
+      }
+    },
+  "serverlesspricing" : 
+  {
+    "title": "Serverless Inference",
+    "intro": "Access our comprehensive selection of AI models through our OpenAI compliant API. Pay only for what you use with no upfront commitments.",
+    
+    "text": {
+      "title": "Text Generation Models",
+      "description": "High-performance language models for text generation, chat, and completion tasks"
+    },
+    "multimodal": {
+      "title": "Multimodal Models",
+      "description": "Models that let you use both text and images as input to build powerful applications"
+    },
+    "rerank": {
+      "title": "Rerank Models",
+      "description": "Improve search quality by reranking results based on semantic relevance"
+    },
+    "embedding": {
+      "title": "Embedding Models",
+      "description": "Create vector embeddings for semantic search and RAG applications"
+    },
+    "moderation": {
+      "title": "Moderation Models",
+      "description": "Detect potentially harmful language and keep your applications safe"
+    },
+    "stt": {
+      "title": "Speech-to-Text Models",
+      "description": "Convert between speech and text with high accuracy",
+      "note": "Prices are per 1000 minutes of voice input. Billed on per second intervals."
+    },
+    "tts": {
+      "title": "Text-to-Speech Models",
+      "description": "Add a voice to your agents for convincing and seamless interaction",
+      "note": "Prices are per million input characters"
+    },
+    "image": {
+      "title": "Image Models",
+      "description": "Generate and manipulate images with state-of-the-art models",
+      "note": "SDXL standard is 30 steps per image. Flux.1 [schnell] standard is 4 steps per image. Flux.1 Dev is 28 steps per image"
+    },
+    "footer": "All prices are in EUR and exclude VAT."
   }
 }
+

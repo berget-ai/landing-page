@@ -7,6 +7,7 @@ import {
   TableRow,
 } from '@/components/ui/table'
 import { PricingRow } from './types'
+import { useTranslation } from 'react-i18next'
 
 const textModels: PricingRow[] = [
   {
@@ -282,69 +283,66 @@ function TTSModelTable({ title, description, models }: { title: string; descript
 
 
 export function ServerlessInference() {
+  const {t} = useTranslation()
+
   return (
     <div className="space-y-8">
-      <h3 className="text-xl font-ovo">Serverless Inference</h3>
-      <p className="text-white/80">Access our comprehensive selection of AI models through our OpenAI compliant API. Pay only for what you use with no upfront commitments.</p>
-      
+      <h3 className="text-xl font-ovo">{t('serverlesspricing.title')}</h3>
+      <p className="text-white/80">{t('serverlesspricing.intro')}</p>
+
       <ModelTable 
-        title="Text Generationa Models" 
-        description="High-performance language models for text generation, chat, and completion tasks"
+        title={t('serverlesspricing.text.title')} 
+        description={t('serverlesspricing.text.description')}
         models={textModels}
       />
 
       <ModelTable 
-        title="Multimodal models" 
-        description="Models that lets you take both text and images as input to build powerful applications that leverage seamless understanding of images and text"
+        title={t('serverlesspricing.multimodal.title')} 
+        description={t('serverlesspricing.multimodal.description')}
         models={multimodalModels}
       />
 
       <ModelTable 
-        title="Rerank Models" 
-        description="Improve search quality by reranking results based on semantic relevance"
+        title={t('serverlesspricing.rerank.title')} 
+        description={t('serverlesspricing.rerank.description')}
         models={rerankModels}
       />
 
       <ModelTable 
-        title="Embedding Models" 
-        description="Create vector embeddings for semantic search and RAG applications"
+        title={t('serverlesspricing.embedding.title')} 
+        description={t('serverlesspricing.embedding.description')}
         models={embeddingModels}
       />
 
       <ModelTable 
-        title="Moderation Models" 
-        description="Model that can be used in applications to moderate behaviour, detect potentially hamrful langeugage to keep your applications safe"
+        title={t('serverlesspricing.moderation.title')} 
+        description={t('serverlesspricing.moderation.description')}
         models={moderationModels}
       />
 
-
       <STTModelTable 
-        title="Speech-to-Text Models" 
-        description="Convert between speech and text with high accuracy"
+        title={t('serverlesspricing.stt.title')} 
+        description={t('serverlesspricing.stt.description')}
         models={STTModels}
       />
-      <p className="text-sm text-white/60 mt-1">Prices are per 1000 minutes of voice input. Billed on per second intervalls.</p>
-
+      <p className="text-sm text-white/60 mt-1">{t('stt.note')}</p>
 
       <TTSModelTable 
-        title="Text-to-Speech Models" 
-        description="Add a voice to your agents for convincing and seamless interaction with your agentic applications"
+        title={t('serverlesspricing.tts.title')} 
+        description={t('serverlesspricing.tts.description')}
         models={TTSModels}
       />
-      <p className="text-sm text-white/60 mt-1">Prices and per Million input characters</p>
-
+      <p className="text-sm text-white/60 mt-1">{t('tts.note')}</p>
 
       <ImageModelTable 
-        title="Image Models" 
-        description="Generate and manipulate images with state-of-the-art models"
+        title={t('serverlesspricing.image.title')} 
+        description={t('serverlesspricing.image.description')}
         models={imageModels}
       />
-      <p className="text-sm text-white/60 mt-1">SDXL standard is 30 steps per image. Flux.1 [schnell] standard is 4 steps per image. Flux.1 Dev is 28 steps per image</p>
- 
+      <p className="text-sm text-white/60 mt-1">{t('serverlesspricing.image.note')}</p>
 
       <div className="rounded-lg bg-white/5 p-4 text-sm text-white/60">
-        <p>All prices are in EUR and exclude VAT.</p>
-        <p className="mt-2"></p>
+        <p>{t('serverlesspricing.footer')}</p>
       </div>
     </div>
   )
