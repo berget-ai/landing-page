@@ -14,25 +14,82 @@ interface TerminalExample {
 
 const examples: TerminalExample[] = [
   {
-    title: 'Skapa ett kluster',
-    description: 'Kom igång med ett nytt Berget-kluster på några sekunder',
+    title: 'Chat with Berget',
+    description: 'Use our cli to test our models',
+    commands: [
+      {
+        command: 'npx berget auth login',
+        output: ['# ... loging in with BankID/Github/Google'],
+      },
+      {
+        command: 'npx berget api-keys create --name "My API Key"',
+        output: ['# Your API key is created: sk_ber_xxxx'],
+      },
+      {
+        command: 'export BERGET_API_KEY=sk_ber_xxxx',
+        output: ['# Now you can start chatting with Berget'],
+      },
+      {
+        command:
+          'npx berget chat --model gemma-3 --prompt "What is the highest mountain in Sweden?"',
+        output: [
+          'The highest mountain in Sweden is Kebnekaise with a height of 2096 meters above sea level.',
+        ],
+      },
+      {
+        command:
+          'npx berget chat gemma-3 --prompt "What is the highest mountain in Sweden?"',
+        output: [
+          'The highest mountain in Sweden is Kebnekaise with a height of 2096 meters above sea level.',
+        ],
+      },
+      {
+        command: 'npx berget chat',
+        output: [
+          'Assistant: Hi! How can I help you today?',
+          'User: What is the highest mountain in Sweden?',
+          'Assistant: The highest mountain in Sweden is Kebnekaise with a height of 2096 meters above sea level.',
+        ],
+      },
+    ],
+  },
+  {
+    title: 'AI Requests with OpenAI-Compatible API',
+    description: 'Use our API just like you would use OpenAI',
+    commands: [
+      {
+        command: 'export BERGET_API_KEY=sk_ber_xxxx',
+        output: ['# Your API key from Berget Dashboard'],
+      },
+      {
+        command:
+          'curl -s -X POST https://api.berget.ai/v1/chat/completions \\\n  -H "Content-Type: application/json" \\\n  -H "Authorization: Bearer $BERGET_API_KEY" \\\n  -d \'{"model": "gemma-3", "messages": [{"role": "user", "content": "What is the highest mountain in Sweden?"}]}\' | jq -r \'.choices[0].message.content\'',
+        output: [
+          'The highest mountain in Sweden is Kebnekaise with a height of 2096 meters above sea level.',
+        ],
+      },
+    ],
+  },
+  {
+    title: 'Create a Cluster',
+    description: 'Get started with a new Berget cluster in seconds',
     commands: [
       { command: 'npm i -g berget' },
-      { command: 'berget login', output: ['... loggar in med BankID'] },
+      { command: 'berget auth login', output: ['... logging in with BankID'] },
       {
-        command: 'berget create cluster',
+        command: 'berget cluster create --name ideal-palmtree',
         output: [
           'Done! 5 nodes created.',
-          'Assigned DNS: ideal-palmtree.berget.cloud',
-          'Nu är ditt kluster redo att användas. Nu kan du börja köra dina applikationer. Du kan peka ett CNAME till klustret.',
+          'Assigned DNS: ideal-palmtree.berget.host',
+          'Your cluster is now ready to use. You can start deploying your applications. You can point a CNAME to the cluster.',
         ],
       },
       { command: 'berget apply -f deployment.yaml' },
     ],
   },
   {
-    title: 'Automatisk klusterväxling',
-    description: 'Enkel klusterväxling med berget autocomplete',
+    title: 'Automatic Cluster Switching',
+    description: 'Easily switch clusters with berget autocomplete',
     commands: [
       {
         command: 'berget autocomplete install',
@@ -46,11 +103,11 @@ const examples: TerminalExample[] = [
       },
       {
         command: 'source ~/.bashrc',
-        output: ['# Laddar om bashrc'],
+        output: ['# Reloading bashrc'],
       },
       {
         command: 'echo "cluster: ideal-palmtree" > .bergetconfig',
-        output: ['# Skapar .bergetconfig fil i ditt projekt'],
+        output: ['# Creating .bergetconfig file in your project'],
       },
       {
         command: 'cd .',
@@ -58,16 +115,16 @@ const examples: TerminalExample[] = [
           '🔄 Berget: Switched to cluster "ideal-palmtree"',
           '✓ kubectl config updated',
           '',
-          '# Nu kommer du automatiskt byta till rätt kluster när du går in i projektmappen',
+          '# Now you will automatically switch to the correct cluster when entering the project folder',
         ],
       },
     ],
   },
   {
-    title: 'Installera FluxCD för GitOps',
-    description: 'Automatisera deployment med FluxCD och GitOps-workflow',
+    title: 'Install FluxCD for GitOps',
+    description: 'Automate deployment with FluxCD and GitOps workflow',
     commands: [
-      { command: 'berget login', output: ['... loggar in med BankID'] },
+      { command: 'berget auth login', output: ['... logging in with BankID'] },
       {
         command: 'berget cluster list',
         output: [
@@ -101,11 +158,10 @@ const examples: TerminalExample[] = [
     ],
   },
   {
-    title: 'Bjud in kollegor till klustret',
-    description:
-      'Samarbeta med ditt team genom att bjuda in dem till ditt kluster',
+    title: 'Invite Colleagues to the Cluster',
+    description: 'Collaborate with your team by inviting them to your cluster',
     commands: [
-      { command: 'berget login', output: ['... loggar in med BankID'] },
+      { command: 'berget login', output: ['... logging in with BankID'] },
       {
         command: 'berget cluster list',
         output: [
@@ -115,16 +171,15 @@ const examples: TerminalExample[] = [
         ],
       },
       {
-        command:
-          'berget collaborator add --cluster ideal-palmtree --github-username kollega123',
+        command: 'berget users add --github-username colleague123',
         output: [
-          'Invitation sent to kollega123',
+          'Invitation sent to colleague123',
           'They will receive an email with instructions to accept the invitation',
           '',
           'Current collaborators on ideal-palmtree:',
           'USERNAME      ROLE       STATUS',
           'you           Owner      Active',
-          'kollega123    Editor     Pending',
+          'colleague123  Editor     Pending',
         ],
       },
       {
@@ -132,34 +187,17 @@ const examples: TerminalExample[] = [
         output: [
           'USERNAME      ROLE       STATUS',
           'you           Owner      Active',
-          'kollega123    Editor     Pending',
+          'colleague123  Editor     Pending',
         ],
       },
     ],
   },
+
   {
-    title: 'AI-anrop med OpenAI-kompatibelt API',
-    description: 'Använd vårt API precis som du skulle använda OpenAI',
+    title: 'Install MongoDB with Helm',
+    description: 'Add databases and other services with a single command',
     commands: [
-      {
-        command: 'export OPENAI_API_KEY=berget_sk_xxxx',
-        output: ['# Din API-nyckel från Berget Dashboard'],
-      },
-      {
-        command:
-          'curl -s -X POST https://api.berget.ai/v1/chat/completions \\\n  -H "Content-Type: application/json" \\\n  -H "Authorization: Bearer $OPENAI_API_KEY" \\\n  -d \'{"model": "gemma-3", "messages": [{"role": "user", "content": "Vad är Sveriges högsta berg?"}]}\' | jq -r \'.choices[0].message.content\'',
-        output: [
-          'Sveriges högsta berg är Kebnekaise med en höjd på 2096 meter över havet.',
-        ],
-      },
-    ],
-  },
-  {
-    title: 'Installera MongoDB med Helm',
-    description:
-      'Lägg till databaser och andra tjänster med ett enkelt kommando',
-    commands: [
-      { command: 'berget login', output: ['... loggar in med BankID'] },
+      { command: 'berget login', output: ['... logging in with BankID'] },
       {
         command:
           'berget helm repo add bitnami https://charts.bitnami.com/bitnami',
@@ -187,8 +225,8 @@ const examples: TerminalExample[] = [
     ],
   },
   {
-    title: 'Installera Supabase',
-    description: 'Sätt upp Supabase på ditt Berget-kluster',
+    title: 'Install Supabase',
+    description: 'Set up Supabase on your Berget cluster',
     commands: [
       {
         command: 'berget create namespace supabase',
