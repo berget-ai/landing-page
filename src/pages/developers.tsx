@@ -132,9 +132,9 @@ export default function DevelopersPage() {
         </div>
         
         {/* Models Section (already localized?) */}
-        <div ClassName="pe-16">
+      
         <ModelsSection />
-          </div>
+        
       </div>
     </main>
   )
