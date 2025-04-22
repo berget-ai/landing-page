@@ -1,5 +1,8 @@
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Bot, ArrowRight } from 'lucide-react'
+import { Bot, ArrowRight, AlertCircle } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { Link } from 'react-router-dom'
 import {
   Table,
   TableBody,
@@ -10,67 +13,48 @@ import {
 } from '@/components/ui/table'
 import { useTranslation } from 'react-i18next'
 
-const models = [
-  {
-    name: 'DeepSeek R1 Unsloth DQ',
-    type: 'Text Generation',
-    context: '32k tokens',
-    performance: 'State-of-the-Art',
-    status: 'Available',
-  },
-  {
-    name: 'Gemma 3 27B Instruct',
-    type: 'Text Generation',
-    context: '32k tokens',
-    performance: 'State-of-the-Art',
-    status: 'Available',
-  },
-  {
-    name: 'Gemma 3 12B Instruct',
-    type: 'Text Generation',
-    context: 'N/A',
-    performance: 'State-of-the-Art',
-    status: 'Coming Soon',
-  },
-  {
-    name: 'Qwen QwQ 32B',
-    type: 'Text Generation',
-    context: 'N/A',
-    performance: 'State-of-the-Art',
-    status: 'Coming Soon',
-  },
-  {
-    name: 'Whisper Large v3',
-    type: 'Speech-to-Text',
-    context: 'N/A',
-    performance: 'High',
-    status: 'Available',
-  },
-  {
-    name: 'Stable Diffusion XL',
-    type: 'Image Generation',
-    context: 'N/A',
-    performance: 'High',
-    status: 'Coming Soon',
-  },
-  {
-    name: 'Nomic Text Embedd v1.5',
-    type: 'Embedding',
-    context: 'N/A',
-    performance: 'State-of-the-Art',
-    status: 'Coming Soon',
-  },
-  {
-    name: 'MMxbai Rerank Base V2',
-    type: 'Rerank',
-    context: 'N/A',
-    performance: 'High',
-    status: 'Coming Soon',
-  },
-]
+interface ModelData {
+  name: string
+  type: string
+  context: string
+  performance: string
+  status: string
+}
 
 export function ModelsSection() {
   const { t } = useTranslation()
+  const [models, setModels] = useState<ModelData[]>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+
+  useEffect(() => {
+    const getModels = async () => {
+      try {
+        setLoading(true)
+        const data = await fetchModels()
+
+        // Transform the data to match our component's expected format
+        const formattedData = data.slice(0, 8).map((model: any) => ({
+          name: model.name,
+          type: model.type,
+          context: model.context || 'N/A',
+          performance: model.performance || 'High',
+          status: model.status.charAt(0).toUpperCase() + model.status.slice(1),
+        }))
+
+        setModels(formattedData)
+        setError(null)
+      } catch (err) {
+        console.error('Failed to fetch models:', err)
+        setError('Failed to load models')
+        setModels([])
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    getModels()
+  }, [])
 
   return (
     <motion.div
@@ -87,19 +71,19 @@ export function ModelsSection() {
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-2xl font-ovo">{t('models.title')}</h2>
           <Button asChild variant="ghost" size="sm" className="group">
-            <Link to="/docs/models">
-              {t('models.viewDocs')}
+            <Link to="/models">
+              {t('models.viewAll')}
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </Button>
         </div>
-        <p className="text-white/80 mb-6">
-          {t('models.description')}
-        </p>
+        <p className="text-white/80 mb-6">{t('models.description')}</p>
 
         <div className="space-y-6">
           <div className="space-y-2">
-            <h3 className="text-lg font-ovo">{t('models.comprehensive.title')}</h3>
+            <h3 className="text-lg font-ovo">
+              {t('models.comprehensive.title')}
+            </h3>
             <ul className="space-y-2">
               <li className="flex items-center gap-3">
                 <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
@@ -117,35 +101,62 @@ export function ModelsSection() {
           </div>
         </div>
 
+        {error && (
+          <div className="mt-6 p-4 rounded-lg bg-red-900/20 border border-red-900/30 text-white/80 flex items-center gap-2">
+            <AlertCircle className="w-4 h-4 text-red-400" />
+            <span>{error}</span>
+          </div>
+        )}
+
         <div className="overflow-hidden rounded-lg border border-white/10 mt-8">
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>{t('models.table.model')}</TableHead>
-                <TableHead>{t('models.table.type')}</TableHead>
-                <TableHead>{t('models.table.context')}</TableHead>
-                <TableHead>{t('models.table.status')}</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {models.map((model) => (
-                <TableRow key={model.name}>
-                  <TableCell className="font-medium">{model.name}</TableCell>
-                  <TableCell>{t(`models.types.${model.type.toLowerCase().replace(/\s+/g, '-')}`)}</TableCell>
-                  <TableCell>{model.context}</TableCell>
-                  <TableCell>
-                    <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs ${
-                      model.status === 'Available' 
-                        ? 'bg-white/20 text-white'
-                        : 'bg-muted text-muted-foreground'
-                    }`}>
-                      {t(`models.status.${model.status.toLowerCase().replace(/\s+/g, '-')}`)}
-                    </span>
-                  </TableCell>
+          {loading ? (
+            <div className="flex justify-center items-center py-12">
+              <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-[#52B788]"></div>
+            </div>
+          ) : (
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>{t('models.table.model')}</TableHead>
+                  <TableHead>{t('models.table.type')}</TableHead>
+                  <TableHead>{t('models.table.context')}</TableHead>
+                  <TableHead>{t('models.table.status')}</TableHead>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
+              </TableHeader>
+              <TableBody>
+                {models.map((model) => (
+                  <TableRow key={model.name}>
+                    <TableCell className="font-medium">{model.name}</TableCell>
+                    <TableCell>
+                      {t(
+                        `models.types.${model.type
+                          .toLowerCase()
+                          .replace(/\s+/g, '-')}`,
+                        model.type
+                      )}
+                    </TableCell>
+                    <TableCell>{model.context}</TableCell>
+                    <TableCell>
+                      <span
+                        className={`inline-flex items-center px-2 py-1 rounded-full text-xs ${
+                          model.status === 'Available'
+                            ? 'bg-white/20 text-white'
+                            : 'bg-muted text-muted-foreground'
+                        }`}
+                      >
+                        {t(
+                          `models.status.${model.status
+                            .toLowerCase()
+                            .replace(/\s+/g, '-')}`,
+                          model.status
+                        )}
+                      </span>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          )}
         </div>
       </div>
     </motion.div>
