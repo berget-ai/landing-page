@@ -383,7 +383,7 @@
       "description": "Vår infrastruktur är designad för att skydda din data i varje steg. Vi har byggt säkerheten från grunden – inte som en eftertanke.",
       "points": [
         "Utvecklad enligt OWASP-standarder för högsta möjliga säkerhet",
-        "Inferenser körs helt inom vårt säkra nätverk – din data lämnar aldrig internet",
+        "Inferenser körs helt inom vårt säkra nätverk – din data lämnar aldrig vårt interna nät",
         "Ingen lagring – vi sparar aldrig data som skickas till våra APIer"
       ]
     }
@@ -539,7 +539,7 @@
   },
   "overview": {
     "whatIsGitOps": {
-      "title": "Hantera Din Infrastruktur med GitOps",
+      "title": "Hantera din infrastruktur med GitOps",
       "description": "GitOps för med sig best-practice från mjukvaruutveckling till infrastrukturhantering. Versionskontroll, enkelt samarbete och automatiserad driftsättning - allt genom Git."
     },
     "gitRepository": {
@@ -555,7 +555,7 @@
     "aiApis": {
       "title": "AI-APIer & Tjänster",
       "description": "Anslut till de AI-tjänster eller modeller du behöver",
-      "hybridCloud": "Redo för hybridmoln"
+      "hybridCloud": "Redo för hybridlösningar"
     }
   },
   "whyBergetSection": {
@@ -658,7 +658,7 @@
 },
 "DevelopersPage": {
   "hero": {
-    "title": "Inferenstjänster och tnfrastruktur för AI-utvecklare",
+    "title": "Inferenstjänster och infrastruktur för AI-utvecklare",
     "description": "Kör dina AI-modeller och applikationer i en säker, EU-baserad miljö med full kontroll över din kod och data."
   },
   "sections": [
@@ -667,10 +667,10 @@
       "title": "GitOps-baserad infrastruktur",
       "description": "Slipp komplexa Terraform-skript och AWS-konsolen. Definiera din infrastruktur med enkla YAML-filer i ditt Git-repo.",
       "bullets": [
-        "Automatisk synkronisering - ändringar i ditt repo appliceras automatiskt på din infrastruktur",
-        "Versionskontroll - full historik och möjlighet att rulla tillbaka ändringar",
-        "Portabilitet - din infrastruktur är definierad i kod som kan flyttas mellan miljöer",
-        "CI/CD-integration - koppla ihop med dina befintliga CI/CD-pipelines"
+        "Automatisk synkronisering",
+        "Versionskontroll",
+        "Portabilitet",
+        "CI/CD-integration"
       ]
     },
     {
@@ -678,10 +678,10 @@
       "title": "OpenAI-kompatibelt API",
       "description": "Använd samma kod och bibliotek som du redan använder med OpenAI, men med full kontroll över dina data.",
       "bullets": [
-        "Minimal kodändring - byt bara API-nyckel och endpoint för att migrera från OpenAI",
-        "Stöd för populära bibliotek - fungerar med LangChain, LlamaIndex och andra ramverk",
-        "GDPR-kompatibelt - all data stannar inom EU och lagras aldrig",
-        "CO₂-spårning - få information om koldioxidavtryck för varje API-anrop"
+        "Minimal kodändring",
+        "Stöd för populära bibliotek",
+        "GDPR-kompatibelt",
+        "CO₂-spårning"
       ]
     },
     {
@@ -689,10 +689,10 @@
       "title": "Kubernetes utan komplexitet",
       "description": "Få fördelarna med Kubernetes utan att behöva hantera infrastrukturen själv.",
       "bullets": [
-        "Förkonfigurerade kluster - kom igång på minuter istället för dagar",
-        "Standardiserade Helm charts - installera databaser, caching och andra tjänster med ett kommando",
-        "GPU-stöd - kör dina egna modeller på dedikerade GPU:er när du behöver",
-        "Autoskalning - skala automatiskt upp och ner baserat på belastning"
+        "Kom igång på minuter istället för dagar",
+        "Standardiserade Helm charts",
+        "GPU-stöd",
+        "Autoskalning"
       ]
     },
     {
@@ -700,10 +700,10 @@
       "title": "Utvecklarverktyg som förenklar",
       "description": "Verktyg som hjälper dig att bygga, testa och driftsätta dina AI-applikationer snabbare.",
       "bullets": [
-        "CLI-verktyg - hantera dina resurser direkt från terminalen",
-        "Loggning och övervakning - inbyggd integration med Prometheus och Grafana",
-        "Kostnadsövervakning - se exakt vad som kostar och optimera dina resurser",
-        "Utvecklarmiljöer - förkonfigurerade miljöer för snabb utveckling"
+        "CLI-verktyg",
+        "Integration med Prometheus och Grafana",
+        "Kostnadsövervakning",
+        "Förkonfigurerade miljöer"
       ]
     }
   ],
@@ -757,5 +757,47 @@
         "qwen_coder": "Specialized model for code generation and software development.",
         "deepcoder": "Preview version of advanced code generation model."
       }
+    },
+    "serverlesspricing" :
+    {
+      "title": "Serverlös Inferens",
+      "intro": "Få tillgång till vårt omfattande urval av AI-modeller via vårt OpenAI-kompatibla API. Betala bara för det du använder.",
+      
+      "text": {
+        "title": "Textmodeller",
+        "description": "Högpresterande språkmodeller för textgenerering, chatt och completions"
+      },
+      "multimodal": {
+        "title": "Multimodala Modeller",
+        "description": "Modeller som låter dig använda både text och bilder som input för kraftfulla applikationer"
+      },
+      "rerank": {
+        "title": "Rerankmodeller",
+        "description": "Förbättra sökkvaliteten genom att utvärdera resultat baserat på semantisk relevans"
+      },
+      "embedding": {
+        "title": "Embeddingmodeller",
+        "description": "Skapa vektorrepresentationer för semantisk sökning och RAG-applikationer"
+      },
+      "moderation": {
+        "title": "Modereringsmodeller",
+        "description": "Upptäck potentiellt skadligt språk för att hålla dina applikationer säkra"
+      },
+      "stt": {
+        "title": "Tal-till-text-modeller",
+        "description": "Konvertera från tal och text med hög noggrannhet",
+        "note": "Priser per 1000 minuter röstinmatning. Debitering per sekund."
+      },
+      "tts": {
+        "title": "Text-till-tal-modeller",
+        "description": "Ge dina agenter en röst för ytterligare en dimension av interaktivitet",
+        "note": "Priser per miljon tecken"
+      },
+      "image": {
+        "title": "Bildmodeller",
+        "description": "Generera och manipulera bilder med toppmoderna modeller",
+        "note": "SDXL-standard är 30 steg per bild. Flux.1 [schnell] är 4 steg per bild. Flux.1 Dev är 28 steg per bild"
+      },
+      "footer": "Alla priser anges i EUR och exklusive moms."
     }
 }

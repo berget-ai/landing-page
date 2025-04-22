@@ -761,6 +761,48 @@
         "qwen_coder": "Specialized model for code generation and software development.",
         "deepcoder": "Preview version of advanced code generation model."
       }
-    }
+    },
+  "serverlesspricing" : 
+  {
+    "title": "Serverless Inference",
+    "intro": "Access our comprehensive selection of AI models through our OpenAI compliant API. Pay only for what you use with no upfront commitments.",
+    
+    "text": {
+      "title": "Text Generation Models",
+      "description": "High-performance language models for text generation, chat, and completion tasks"
+    },
+    "multimodal": {
+      "title": "Multimodal Models",
+      "description": "Models that let you use both text and images as input to build powerful applications"
+    },
+    "rerank": {
+      "title": "Rerank Models",
+      "description": "Improve search quality by reranking results based on semantic relevance"
+    },
+    "embedding": {
+      "title": "Embedding Models",
+      "description": "Create vector embeddings for semantic search and RAG applications"
+    },
+    "moderation": {
+      "title": "Moderation Models",
+      "description": "Detect potentially harmful language and keep your applications safe"
+    },
+    "stt": {
+      "title": "Speech-to-Text Models",
+      "description": "Convert between speech and text with high accuracy",
+      "note": "Prices are per 1000 minutes of voice input. Billed on per second intervals."
+    },
+    "tts": {
+      "title": "Text-to-Speech Models",
+      "description": "Add a voice to your agents for convincing and seamless interaction",
+      "note": "Prices are per million input characters"
+    },
+    "image": {
+      "title": "Image Models",
+      "description": "Generate and manipulate images with state-of-the-art models",
+      "note": "SDXL standard is 30 steps per image. Flux.1 [schnell] standard is 4 steps per image. Flux.1 Dev is 28 steps per image"
+    },
+    "footer": "All prices are in EUR and exclude VAT."
+  }
 }
 

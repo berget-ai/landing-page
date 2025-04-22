@@ -30,7 +30,7 @@ export default function DevelopersPage() {
       {/* Hero */}
       <section className="relative overflow-hidden min-h-[80vh] flex items-center">
         {/* Background image */}
-        <div className="absolute inset-0 z-0">
+        <div className="text-center">
           {/* Gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/20" />
           <div className="absolute inset-0 bg-grid-white/5 bg-[size:32px_32px] pointer-events-none" />
