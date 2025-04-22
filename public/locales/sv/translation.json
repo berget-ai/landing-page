@@ -116,7 +116,7 @@
       "description": "Utnyttja kraften i världens ledande öppna språkmodeller utan att hantera infrastruktur.",
       "features": {
         "integration": {
-          "title": "Enkelt att kommaigång",
+          "title": "Enkelt att komma igång",
           "items": [
             "Skapa konto på minuter",
             "OpenAI-kompatibelt API",
