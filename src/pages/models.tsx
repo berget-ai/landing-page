@@ -8,7 +8,7 @@ import { useModels } from '@/hooks/use-models'
 export default function ModelsPage() {
   const { t } = useTranslation()
   const [selectedType, setSelectedType] = useState<string | null>(null)
-  const { models, loading, error, getModelsByType, getModelTypes } = useModels()
+  const { loading, error, getModelsByType, getModelTypes } = useModels()
 
   const modelTypes = useMemo(() => {
     return getModelTypes()
@@ -131,24 +131,32 @@ export default function ModelsPage() {
                         model.status.slice(1)}
                     </span>
                   </div>
-                  
+
                   {model.pricing && (
                     <div className="mt-4 pt-4 border-t border-white/10">
                       <div className="flex items-center gap-1 mb-2">
                         <Euro className="w-3 h-3 text-white/60" />
-                        <span className="text-xs text-white/60">{t('modelPage.pricing')}</span>
+                        <span className="text-xs text-white/60">
+                          {t('modelPage.pricing')}
+                        </span>
                       </div>
                       <div className="grid grid-cols-2 gap-2">
                         <div className="text-xs">
-                          <span className="text-white/40">{t('modelPage.input')}: </span>
+                          <span className="text-white/40">
+                            {t('modelPage.input')}:{' '}
+                          </span>
                           <span className="text-white/80">
-                            {model.pricing.input.amount} {model.pricing.input.unit}
+                            {model.pricing.input.amount}{' '}
+                            {model.pricing.input.unit}
                           </span>
                         </div>
                         <div className="text-xs">
-                          <span className="text-white/40">{t('modelPage.output')}: </span>
+                          <span className="text-white/40">
+                            {t('modelPage.output')}:{' '}
+                          </span>
                           <span className="text-white/80">
-                            {model.pricing.output.amount} {model.pricing.output.unit}
+                            {model.pricing.output.amount}{' '}
+                            {model.pricing.output.unit}
                           </span>
                         </div>
                       </div>

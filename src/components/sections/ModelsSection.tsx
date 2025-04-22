@@ -14,14 +14,6 @@ import {
 } from '@/components/ui/table'
 import { useTranslation } from 'react-i18next'
 
-interface DisplayModelData {
-  name: string
-  type: string
-  context: string
-  performance: string
-  status: string
-}
-
 export function ModelsSection() {
   const { t } = useTranslation()
   const { models, loading, error } = useModels()
