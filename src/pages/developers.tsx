@@ -30,7 +30,7 @@ export default function DevelopersPage() {
       {/* Hero */}
       <section className="relative overflow-hidden min-h-[80vh] flex items-center">
         {/* Background image */}
-        <div className="text-center">
+        <div className="absolute inset-0 z-0">
           {/* Gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/20" />
           <div className="absolute inset-0 bg-grid-white/5 bg-[size:32px_32px] pointer-events-none" />
@@ -124,15 +124,17 @@ export default function DevelopersPage() {
             </p>
             <div className="flex gap-4 justify-center">
               <Button size="lg" asChild>
-                <Link to="/signup">{t('DevelopersPage.cta.signup')}</Link>
+                <Link to="https://console.berget.ai">{t('DevelopersPage.cta.signup')}</Link>
               </Button>
 
             </div>
           </motion.div>
         </div>
-
+        
         {/* Models Section (already localized?) */}
+        <div ClassName="pe-16">
         <ModelsSection />
+          </div>
       </div>
     </main>
   )
