@@ -27,7 +27,7 @@ export default function ModelsPage() {
     const getModels = async () => {
       try {
         setLoading(true)
-        const data = await fetchModels()
+        const { data } = await fetchModels()
         setModels(data)
         setError(null)
       } catch (err) {
@@ -45,7 +45,8 @@ export default function ModelsPage() {
 
   const modelTypes = useMemo(() => {
     if (models.length === 0) return ['Text Models']
-    
+    console.log('models types', models)
+
     const types = Array.from(new Set(models.map((model) => model.type)))
     return [
       'Text Models',
@@ -155,13 +156,20 @@ export default function ModelsPage() {
                     <span className="text-sm font-medium text-[#52B788]">
                       {model.type}
                     </span>
-                    <span className="text-sm text-white/60">• {model.provider}</span>
+                    <span className="text-sm text-white/60">
+                      • {model.provider}
+                    </span>
                   </div>
-                  <p className="text-sm text-white/60 mb-4">{model.description}</p>
+                  <p className="text-sm text-white/60 mb-4">
+                    {model.description}
+                  </p>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-white/40">{model.license}</span>
+                    <span className="text-sm text-white/40">
+                      {model.license}
+                    </span>
                     <span className="text-sm text-[#52B788]">
-                      {model.status.charAt(0).toUpperCase() + model.status.slice(1)}
+                      {model.status.charAt(0).toUpperCase() +
+                        model.status.slice(1)}
                     </span>
                   </div>
                 </div>

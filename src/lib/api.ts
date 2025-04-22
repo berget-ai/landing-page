@@ -3,14 +3,15 @@
  */
 
 // Base URL for the Berget API
-export const API_BASE_URL = 'https://api.berget.ai/v1'
+export const VITE_API_URL =
+  'http://localhost:3000/v1' || 'https://api.berget.ai/v1'
 
 /**
  * Get the API key from environment variables
  * In a production environment, this should be securely managed
  */
 export const getApiKey = () => {
-  return process.env.REACT_APP_BERGET_API_KEY || ''
+  return import.meta.env.VITE_BERGET_API_KEY || ''
 }
 
 /**
@@ -18,8 +19,8 @@ export const getApiKey = () => {
  */
 export const getDefaultHeaders = () => {
   return {
-    'Authorization': `Bearer ${getApiKey()}`,
-    'Content-Type': 'application/json'
+    Authorization: `Bearer ${getApiKey()}`,
+    'Content-Type': 'application/json',
   }
 }
 
@@ -27,14 +28,14 @@ export const getDefaultHeaders = () => {
  * Fetch models from the API
  */
 export const fetchModels = async () => {
-  const response = await fetch(`${API_BASE_URL}/models`, {
-    headers: getDefaultHeaders()
+  const response = await fetch(`${VITE_API_URL}/models`, {
+    headers: getDefaultHeaders(),
   })
-  
+
   if (!response.ok) {
     throw new Error(`API error: ${response.status}`)
   }
-  
+
   return response.json()
 }
 
@@ -43,12 +44,12 @@ export const fetchModels = async () => {
  */
 export const fetchModel = async (modelId: string) => {
   const response = await fetch(`${API_BASE_URL}/models/${modelId}`, {
-    headers: getDefaultHeaders()
+    headers: getDefaultHeaders(),
   })
-  
+
   if (!response.ok) {
     throw new Error(`API error: ${response.status}`)
   }
-  
+
   return response.json()
 }
