@@ -116,7 +116,7 @@
       "description": "Utnyttja kraften i världens ledande öppna språkmodeller utan att hantera infrastruktur.",
       "features": {
         "integration": {
-          "title": "Enkelt att kommaigång",
+          "title": "Enkelt att komma igång",
           "items": [
             "Skapa konto på minuter",
             "OpenAI-kompatibelt API",
@@ -419,11 +419,11 @@
         "description": "API access",
         "price": "€1",
         "features": [
-          "€5 Credits",
-          "Pay per token",
-          "Rate limit",
+          "€5 initla wallet credits",
+          "Pay as you go (listpris)",
+          "Tillgång till alla modeller",
           "Community support",
-          "Listpris"
+          "Inga commitments"
         ]
       },
       "starter": {
@@ -431,10 +431,11 @@
         "description": "För det lilla projektet",
         "price": "€50 / månad",
         "features": [
-          "50€ token credits",
-          "Mindre rate limit",
+          "50€ refill per månad",
+          "Automatisk billing",
           "Email-support",
-          "Listpriser"
+          "Tillgång till alla modeller",
+          "Säg upp när som helst"
         ]
       },
       "developer": {
@@ -442,10 +443,11 @@
         "description": "För utvecklarteams",
         "price": "€500 / månad",
         "features": [
-          "10% Extra Credits",
-          "550€ token credits",
-          "Inga rate limits",
-          "Prioriterad support"
+          "550€ refill per månad",
+          "+10% extra Credits",
+          "Prioriterad support",
+          "Tillgång till alla modeller",
+          "Bäst värde för pengarna"
         ]
       },
       "enterprise": {

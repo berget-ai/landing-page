@@ -132,6 +132,7 @@ export default function DevelopersPage() {
         </div>
 
         {/* Models Section (already localized?) */}
+      
         <ModelsSection />
       </div>
     </main>
