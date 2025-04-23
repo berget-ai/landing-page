@@ -61,7 +61,7 @@ The Customer is responsible for ensuring that all users of the service, includin
 
 ## 5\. Reporting Violations
 
-If you become aware of any violations of this Policy, please report them promptly to abuse@berget.ai. Berget will take reasonable steps to investigate and address reported violations.
+If you become aware of any violations of this Policy, please report them promptly to abuse-reporting@berget.ai. Berget will take reasonable steps to investigate and address reported violations.
 
 ## 6\. Amendments to the Policy
 
@@ -69,7 +69,7 @@ Berget reserves the right to modify this Policy at any time. Changes will be eff
 
 ## 7\. Contact Information
 
-If you have any questions or concerns about this Policy, please contact us at: abuse@berget.ai
+If you have any questions or concerns about this Policy, please contact us at: abuse-reporting@berget.ai
 
 **Acknowledgment**
 
