@@ -44,8 +44,8 @@ Presskontakt: Sara Alsén, [sara@berget.ai](mailto:sara@berget.ai) +46(0)7611070
 
 ### Pressbilder:
 
-![Christian Landgren and Andreas Lundqvist](/team/christian-andreas.jpg)
-_Christian Landgren, CPTO och Andreas Lundqvist, VD_
+![Christian Landgren and Andreas Lundmark](/team/christian-andreas.jpg)
+_Christian Landgren, CPTO och Andreas Lundmark, VD_
 
 ### Högupplöst logotyp:
 
