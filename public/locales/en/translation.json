@@ -464,6 +464,8 @@
     },
     "getStarted": "Get Started",
     "contactSales": "Contact Sales",
+    "getStartedlink": "https://console.berget.ai",
+    "contactSaleslink": "/contact",
     "moneyBackGuarantee": "30-day money-back guarantee",
     "detailedPricing": "Detailed Pricing",
     "tooltip": "All prices exclude VAT",
@@ -735,6 +737,12 @@
       "filter": "Filter by type",
       "all": "All",
       "view": "View on HF",
+
+      "pricing": "Pricing",
+      "input": "Input",
+      "output": "Output",
+      "noModels": "No models found matching your filter criteria.",
+      
       "models": {
         "llama_1b": "Compact instruction-tuned language model for high speed and low cost...",
         "llama_3b": "Instruction-tuned variant of Llama 3 optimized for task completion...",
@@ -805,22 +813,8 @@
       "note": "SDXL standard is 30 steps per image. Flux.1 [schnell] standard is 4 steps per image. Flux.1 Dev is 28 steps per image"
     },
     "footer": "All prices are in EUR and exclude VAT."
-  },
-  "modelPage": {
-    "title": "Model Library",
-    "intro": "At Berget AI, we're committed to providing the most powerful open models available, carefully selected to enable our customers to build and deploy sophisticated AI applications. Our model library is designed with the following principles in mind:",
-    "principles": [
-      "We provide access to the most powerful open source models, ensuring you have the power, speed and cost-efficiency needed for advanced AI development.",
-      "In supporting AI Sovereignty for Europe - we especially want to provide models that are multilingual and support European languages and understanding of our values",
-      "Our carefully curated selection balances performance, speed, and cost across different model types and sizes, helping you find the perfect fit for your needs.",
-      "Our comprehensive range of models is specifically chosen to support the development and deployment of sophisticated agentic applications on our platform."
-    ],
-    "continuous": "We're continuously evaluating and adding new models to our library, ensuring you always have access to the latest advancements in Opensource models.",
-    "suggestion": "Have a specific model in mind? Get in touch!",
-    "pricing": "Pricing",
-    "input": "Input",
-    "output": "Output",
-    "noModels": "No models found matching your filter criteria."
   }
+  
+  
 }
 

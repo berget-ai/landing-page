@@ -463,6 +463,9 @@
     },
     "getStarted": "Kom igång",
     "contactSales": "Kontakta Försäljning",
+    "getStartedlink": "https://console.berget.ai",
+    "contactSaleslink": "/contact",
+
     "moneyBackGuarantee": "30 dagars pengarna-tillbaka-garanti",
     "compareWithAlternatives": "Jämför med Alternativ",
     "comparisonTooltip": "Baserat på offentlig prissättning"
