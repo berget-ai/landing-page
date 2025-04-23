@@ -155,5 +155,3 @@ Sveriges väg framåt inom AI ligger inte i att konkurrera med tech-jättarna om
 3. **För utvecklare**: Bidra till vår open source fine-tuning pipeline
 
 [Kontakta oss för att diskutera hur vi kan hjälpa er med fine-tuning →](mailto:contact@berget.ai)
-
-![Christian Landgren and Andreas Lundqvist](/team/christian-andreas.jpg)
