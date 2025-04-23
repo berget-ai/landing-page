@@ -1,9 +1,9 @@
 ---
-title: "Fine-tuning: Sveriges väg till AI-framgång"
-description: "Hur KB och AI Sweden kan samarbeta för att skapa världsledande AI-modeller"
-date: "2024-02-03"
-author: "Berget Team"
-tags: ["fine-tuning", "kb", "ai-sweden", "strategy"]
+title: 'Fine-tuning: Sveriges väg till AI-framgång'
+description: 'Hur KB och AI Sweden kan samarbeta för att skapa världsledande AI-modeller'
+date: '2024-02-03'
+author: 'Berget Team'
+tags: ['fine-tuning', 'kb', 'ai-sweden', 'strategy']
 ---
 
 # Fine-tuning: Sveriges väg till AI-framgång
@@ -17,18 +17,21 @@ tags: ["fine-tuning", "kb", "ai-sweden", "strategy"]
 Sverige har en unik position med starka institutioner som kompletterar varandra:
 
 ### Kungliga Biblioteket: Kvalitetsinnehåll
+
 - **Omfattande digitalt arkiv**: Århundraden av svensk litteratur och kultur
 - **Kvalitetssäkrat material**: Från Strindberg till samtida författare
 - **Strukturerad data**: Metadata och kontextuell information
 - **Copyright-hantering**: Legal expertis för upphovsrättsfrågor
 
 ### AI Sweden: Teknisk expertis
+
 - **Automatiserad fine-tuning**: Skalbar infrastruktur för modellanpassning
 - **Alignment-metodik**: Säkerställa svenska värderingar
 - **Utvärderingsramverk**: Standardiserade kvalitetsmått
 - **Teknisk koordinering**: Samordning mellan aktörer
 
 ### Svenska universitet: Forskningskompetens
+
 - **Metodutveckling**: Nya tekniker för effektiv fine-tuning
 - **Utvärdering**: Rigorös analys av resultat
 - **Tvärvetenskapligt**: Kombination av teknisk och humanistisk expertis
@@ -36,16 +39,19 @@ Sverige har en unik position med starka institutioner som kompletterar varandra:
 ## Konkreta exempel på framgång
 
 ### Medicinska modeller
+
 - Region Stockholm och Karolinska har fine-tunat språkmodeller för svensk sjukvårdsdokumentation
 - 45 minuter sparad tid per läkare och dag
 - Bättre följsamhet till svenska riktlinjer och terminologi
 
 ### Juridiska assistenter
+
 - Domstolsverkets pilotprojekt visar 40% effektivare handläggning
 - Anpassad till svensk rättspraxis och juridisk tradition
 - Högre precision i svenska juridiska resonemang
 
 ### Utbildningsstöd
+
 - Skolverkets AI-stöd förbättrar studieresultat med 15-20%
 - Anpassat till svenska läroplanen
 - Kulturellt relevant innehåll och exempel
@@ -53,12 +59,15 @@ Sverige har en unik position med starka institutioner som kompletterar varandra:
 ## Teknisk implementation
 
 ### Automatiserad pipeline
+
 1. **Datainsamling**
+
    - API-integration med KB:s arkiv
    - Automatisk metadata-extraktion
    - Kvalitetskontroll och filtrering
 
 2. **Fine-tuning process**
+
    - Distribuerad beräkning
    - Kontinuerlig utvärdering
    - Versionshantering
@@ -69,6 +78,7 @@ Sverige har en unik position med starka institutioner som kompletterar varandra:
    - Prestanda-benchmarks
 
 ### Kvalitetssäkring
+
 - Systematisk bias-kontroll
 - Kulturell relevans
 - Språklig precision
@@ -77,16 +87,19 @@ Sverige har en unik position med starka institutioner som kompletterar varandra:
 ## Kostnadseffektiv approach
 
 ### Infrastruktur
+
 - Återanvändning av existerande beräkningsresurser
 - Fokus på effektiv resursanvändning
 - Delad infrastruktur mellan institutioner
 
 ### Kompetens
+
 - Bygger på befintlig expertis
 - Tvärfunktionella team
 - Kontinuerlig kompetensutveckling
 
 ### Resultat
+
 - Snabbare time-to-market
 - Lägre utvecklingskostnader
 - Högre kvalitet i slutprodukten
@@ -94,16 +107,19 @@ Sverige har en unik position med starka institutioner som kompletterar varandra:
 ## Framtida möjligheter
 
 ### Expansion till nya områden
+
 - Kulturarv och turism
 - Offentlig förvaltning
 - Industriella tillämpningar
 
 ### Internationellt samarbete
+
 - Nordic AI Alliance
 - EU-samarbeten
 - Kunskapsdelning
 
 ### Kommersiella möjligheter
+
 - Licensiering av fine-tunade modeller
 - Konsulttjänster
 - Exportmöjligheter
@@ -111,16 +127,19 @@ Sverige har en unik position med starka institutioner som kompletterar varandra:
 ## Rekommendationer
 
 ### För institutioner
+
 1. Etablera tydliga samarbetsformer
 2. Investera i gemensam infrastruktur
 3. Utveckla standardiserade processer
 
 ### För företag
+
 1. Identifiera domänspecifika användningsområden
 2. Bygg på befintliga fine-tuning pipelines
 3. Bidra till open source-utvecklingen
 
 ### För beslutsfattare
+
 1. Säkerställ långsiktig finansiering
 2. Stöd kompetensutveckling
 3. Främja internationellt samarbete
@@ -136,3 +155,5 @@ Sveriges väg framåt inom AI ligger inte i att konkurrera med tech-jättarna om
 3. **För utvecklare**: Bidra till vår open source fine-tuning pipeline
 
 [Kontakta oss för att diskutera hur vi kan hjälpa er med fine-tuning →](mailto:contact@berget.ai)
+
+![Christian Landgren and Andreas Lundqvist](/team/christian-andreas.jpg)
