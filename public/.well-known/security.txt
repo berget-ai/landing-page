@@ -1,0 +1,19 @@
+# Security.txt file for Berget AI
+# More info: https://securitytxt.org/
+
+# Contact information
+Contact: mailto:abuse-reporting@berget.ai
+Contact: https://berget.ai/security
+Encryption: https://berget.ai/pgp-key.txt
+
+# Preferred languages
+Preferred-Languages: en, sv
+
+# Policy
+Policy: https://berget.ai/security
+
+# Acknowledgments
+Acknowledgments: https://berget.ai/security/hall-of-fame
+
+# Expiration date (6 months from now)
+Expires: 2024-10-23T00:00:00.000Z
