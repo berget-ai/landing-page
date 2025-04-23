@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
 import { Shield, Mail, Lock } from 'lucide-react'
-import { Button } from '@/components/ui/button'
 
 export default function ResponsibleDisclosurePage() {
   return (
