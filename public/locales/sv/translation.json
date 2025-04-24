@@ -401,7 +401,7 @@
     "moneyBackDescription": "Priserna ovan inkluderar förbetald compute och tokens till rabatterat pris. Användning utöver det som ingår debiteras separat, och eventuell kvarvarande balans förs över till nästa månad.",
     "moneyBackBullets": [
       "Förskottsbetalning med kreditkort för alla planer",
-      "Faktura är möjligt för företagskunder",
+      "Faktura och Peppol är möjligt för företagskunder",
       "Automatisk påfyllning av balans vid en viss balans"
     ],
     "moneyBackNote": "Priserna ovan gäller för månatliga förskottsbetalningar. Årsbetalningar ger 10% extra rabatt på ovanstående prisplaner.",

@@ -404,7 +404,7 @@
     "moneyBackDescription": "The above price plans include pre-paid compute and tokens at a discount compared to list price. Any usage above the included amount is charged on top, and any remaining balance is rolled over to the next month.",
     "moneyBackBullets": [
       "Credit Card pre-payment for all plans",
-      "Invoice possible for Enterprise customers",
+      "Invoice and Peppol avaibale for Enterprise customers",
       "Automatic top-up of wallet at a set threshold"
     ],
     "moneyBackNote": "Prices above are for monthly pre-payments. Yearly payments come with a 10% extra discount to the above price plans.",
