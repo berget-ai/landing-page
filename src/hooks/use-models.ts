@@ -3,6 +3,7 @@ import { fetchModels, transformModelData, fetchHealthStatus } from '@/lib/api'
 
 export interface ModelData {
   id: string
+  normalizedId: string
   name: string
   type: string
   provider: string
@@ -12,6 +13,7 @@ export interface ModelData {
   isLive?: boolean
   latency?: number
   error?: string
+  healthId?: string // Original ID from health endpoint for debugging
   huggingface?: string
   pricing?: {
     input: {
@@ -60,28 +62,26 @@ export function useModels() {
 
           // Add live status from health endpoint
           if (healthResponse && healthResponse.models) {
-            // Create a map of model IDs to their health status
+            // Create a map of normalized model IDs to their health status
             const modelHealthMap = new Map()
             healthResponse.models.forEach((model) => {
-              modelHealthMap.set(model.id, {
+              modelHealthMap.set(model.normalizedId, {
                 isLive: model.status === 'ready',
                 latency: model.latency,
                 error: model.error,
+                originalId: model.id
               })
             })
-            console.log('Model health map:', modelHealthMap)
-            console.log('Transformed models:', transformedModels)
-            console.log('Health response:', healthResponse)
-            console.log('Models response:', modelsResponse.data)
 
             // Update models with live status
             transformedModels.forEach((model) => {
-              // Check if we have health data for this model
-              if (modelHealthMap.has(model.id)) {
-                const healthData = modelHealthMap.get(model.id)
+              // Check if we have health data for this model using normalized ID
+              if (modelHealthMap.has(model.normalizedId)) {
+                const healthData = modelHealthMap.get(model.normalizedId)
                 model.isLive = healthData.isLive
                 model.latency = healthData.latency
                 model.error = healthData.error
+                model.healthId = healthData.originalId // Store the original health ID for debugging
               } else {
                 // If no health data is available, mark as unknown status
                 model.isLive = false

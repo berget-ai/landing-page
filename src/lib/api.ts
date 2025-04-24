@@ -43,6 +43,7 @@ export const fetchHealthStatus = async () => {
       timestamp: data.timestamp,
       models: chatEndpoints.map((endpoint) => ({
         id: endpoint.model,
+        normalizedId: normalizeModelId(endpoint.model),
         status: endpoint.status === 'up' ? 'ready' : 'offline',
         latency: endpoint.latency,
         error: endpoint.error,
@@ -52,6 +53,21 @@ export const fetchHealthStatus = async () => {
     console.error('Failed to fetch health status:', error)
     return { models: [] }
   }
+}
+
+/**
+ * Normalize model ID to match between different API endpoints
+ * Health endpoint uses format like "agentica-org/DeepCoder-14B-Preview"
+ * Models endpoint uses format like "Agentica-DeepCoder-14B-Preview"
+ */
+export const normalizeModelId = (id: string): string => {
+  if (!id) return '';
+  
+  // Remove organization prefix if present (e.g., "agentica-org/")
+  const withoutOrg = id.includes('/') ? id.split('/').pop() || '' : id;
+  
+  // Replace hyphens and spaces with nothing to make comparison easier
+  return withoutOrg.toLowerCase().replace(/[-\s]/g, '');
 }
 
 /**
@@ -106,6 +122,7 @@ export const transformModelData = (apiModel: any) => {
 
   return {
     id: apiModel.id,
+    normalizedId: normalizeModelId(apiModel.id),
     name: name || apiModel.id,
     type,
     provider: apiModel.owned_by,

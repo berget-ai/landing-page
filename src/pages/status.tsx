@@ -242,7 +242,14 @@ export default function StatusPage() {
                         <tbody>
                           {systemStatus.subsystems.api.message.chatEndpoints.map((endpoint, index) => (
                             <tr key={index} className="border-b border-white/10">
-                              <td className="py-3 px-4">{endpoint.model}</td>
+                              <td className="py-3 px-4">
+                                <div>
+                                  <div>{endpoint.model}</div>
+                                  <div className="text-xs text-white/40">
+                                    Normalized: {endpoint.model.includes('/') ? endpoint.model.split('/').pop()?.toLowerCase().replace(/[-\s]/g, '') : endpoint.model.toLowerCase().replace(/[-\s]/g, '')}
+                                  </div>
+                                </div>
+                              </td>
                               <td className="py-3 px-4">
                                 <div className="flex items-center gap-2">
                                   {getStatusIcon(endpoint.status)}
