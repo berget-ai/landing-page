@@ -27,6 +27,7 @@ export function ModelsSection() {
         : 'N/A',
       performance: model.capabilities?.json_mode ? 'State-of-the-Art' : 'High',
       status: model.status.charAt(0).toUpperCase() + model.status.slice(1),
+      isLive: model.isLive
     }))
   }, [models])
 
@@ -100,7 +101,17 @@ export function ModelsSection() {
               <TableBody>
                 {displayModels.map((model) => (
                   <TableRow key={model.name}>
-                    <TableCell className="font-medium">{model.name}</TableCell>
+                    <TableCell className="font-medium">
+                      <div className="flex items-center gap-2">
+                        {typeof model.isLive !== 'undefined' && (
+                          <div 
+                            className={`w-2 h-2 rounded-full ${model.isLive ? 'bg-green-500' : 'bg-red-500'}`}
+                            title={model.isLive ? 'Online' : 'Offline'} 
+                          />
+                        )}
+                        {model.name}
+                      </div>
+                    </TableCell>
                     <TableCell>
                       {t(
                         `models.types.${model.type

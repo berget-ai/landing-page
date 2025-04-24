@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { fetchModels, transformModelData } from '@/lib/api'
+import { fetchModels, transformModelData, fetchHealthStatus } from '@/lib/api'
 
 export interface ModelData {
   id: string
@@ -9,6 +9,7 @@ export interface ModelData {
   license: string
   description: string
   status: string
+  isLive?: boolean
   huggingface?: string
   pricing?: {
     input: {
@@ -46,11 +47,29 @@ export function useModels() {
     const getModels = async () => {
       try {
         setLoading(true)
-        const response = await fetchModels()
+        const [modelsResponse, healthResponse] = await Promise.all([
+          fetchModels(),
+          fetchHealthStatus()
+        ]);
         
-        if (response.data && Array.isArray(response.data)) {
+        if (modelsResponse.data && Array.isArray(modelsResponse.data)) {
           // Transform API data to our model format
-          const transformedModels = response.data.map(transformModelData)
+          const transformedModels = modelsResponse.data.map(transformModelData)
+          
+          // Add live status from health endpoint
+          if (healthResponse && healthResponse.models) {
+            const liveModelIds = new Set(
+              healthResponse.models
+                .filter(model => model.status === 'ready')
+                .map(model => model.id)
+            );
+            
+            // Update models with live status
+            transformedModels.forEach(model => {
+              model.isLive = liveModelIds.has(model.id);
+            });
+          }
+          
           setModels(transformedModels)
         } else {
           throw new Error('Invalid API response format')

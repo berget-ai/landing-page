@@ -25,6 +25,26 @@ export const getDefaultHeaders = () => {
 }
 
 /**
+ * Fetch health status from the API
+ */
+export const fetchHealthStatus = async () => {
+  try {
+    const response = await fetch(`${VITE_API_URL}/health`, {
+      headers: getDefaultHeaders(),
+    })
+
+    if (!response.ok) {
+      throw new Error(`API error: ${response.status}`)
+    }
+
+    return response.json()
+  } catch (error) {
+    console.error('Failed to fetch health status:', error)
+    return { models: [] }
+  }
+}
+
+/**
  * Fetch models from the API
  */
 export const fetchModels = async () => {
