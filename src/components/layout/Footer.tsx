@@ -94,6 +94,14 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link
+                  to="/status"
+                  className="text-sm text-white/60 hover:text-white transition-colors"
+                >
+                  {t('footer.status')}
+                </Link>
+              </li>
             </ul>
           </div>
 

@@ -17,6 +17,7 @@ import AboutPage from './pages/about'
 import SignupPage from './pages/signup'
 import ContactPage from './pages/contact'
 import ModelsPage from './pages/models'
+import StatusPage from './pages/status'
 import VisualIdentityGuide from './pages/VisualIdentityGuide'
 
 // Markdown content
@@ -25,6 +26,8 @@ import { html as privacyHtml } from '@/pages/privacy.md'
 import { html as acceptableUseHtml } from '@/pages/acceptable-use.md'
 import { html as dpaHtml } from '@/pages/dpa.md'
 import { html as slaHtml } from '@/pages/sla.md'
+import SecurityPage from './pages/security'
+import ResponsibleDisclosurePage from './pages/responsible-disclosure'
 
 function App() {
   return (
@@ -46,6 +49,8 @@ function App() {
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/models" element={<ModelsPage />} />
+          <Route path="/status" element={<StatusPage />} />
+          <Route path="/security" element={<ResponsibleDisclosurePage />} />
           <Route path="/terms" element={<MarkdownPage html={termsHtml} />} />
           <Route
             path="/privacy"

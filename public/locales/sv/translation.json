@@ -496,8 +496,9 @@
     "legal": {
       "title": "Villkor",
       "privacy": "Integritet",
+      "dpa": "Personuppgiftsbiträdesavtal",
       "terms": "Allmäna villkor",
-      "security": "DPA",
+      "security": "Responsible Disclosure",
       "acceptableUse": "Användningsvillkor",
       "sla": "SLA"
     },
