@@ -17,6 +17,7 @@ import AboutPage from './pages/about'
 import SignupPage from './pages/signup'
 import ContactPage from './pages/contact'
 import ModelsPage from './pages/models'
+import StatusPage from './pages/status'
 import VisualIdentityGuide from './pages/VisualIdentityGuide'
 
 // Markdown content
@@ -46,6 +47,7 @@ function App() {
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/models" element={<ModelsPage />} />
+          <Route path="/status" element={<StatusPage />} />
           <Route path="/terms" element={<MarkdownPage html={termsHtml} />} />
           <Route
             path="/privacy"
