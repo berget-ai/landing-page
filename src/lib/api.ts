@@ -29,28 +29,24 @@ export const getDefaultHeaders = () => {
  */
 export const fetchHealthStatus = async () => {
   try {
-    const response = await fetch(`${VITE_API_URL}/health`, {
+    const response = await fetch(`https://api.berget.ai/health`, {
       headers: getDefaultHeaders(),
     })
 
-    if (!response.ok) {
-      throw new Error(`API error: ${response.status}`)
-    }
-
     const data = await response.json()
-    
+
     // Extract chat endpoints from the health data
     const chatEndpoints = data.subsystems?.api?.message?.chatEndpoints || []
-    
+
     return {
       status: data.status,
       timestamp: data.timestamp,
-      models: chatEndpoints.map(endpoint => ({
+      models: chatEndpoints.map((endpoint) => ({
         id: endpoint.model,
         status: endpoint.status === 'up' ? 'ready' : 'offline',
         latency: endpoint.latency,
-        error: endpoint.error
-      }))
+        error: endpoint.error,
+      })),
     }
   } catch (error) {
     console.error('Failed to fetch health status:', error)
