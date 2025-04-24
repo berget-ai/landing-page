@@ -37,7 +37,21 @@ export const fetchHealthStatus = async () => {
       throw new Error(`API error: ${response.status}`)
     }
 
-    return response.json()
+    const data = await response.json()
+    
+    // Extract chat endpoints from the health data
+    const chatEndpoints = data.subsystems?.api?.message?.chatEndpoints || []
+    
+    return {
+      status: data.status,
+      timestamp: data.timestamp,
+      models: chatEndpoints.map(endpoint => ({
+        id: endpoint.model,
+        status: endpoint.status === 'up' ? 'ready' : 'offline',
+        latency: endpoint.latency,
+        error: endpoint.error
+      }))
+    }
   } catch (error) {
     console.error('Failed to fetch health status:', error)
     return { models: [] }

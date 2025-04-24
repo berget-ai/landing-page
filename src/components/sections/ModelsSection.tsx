@@ -106,7 +106,7 @@ export function ModelsSection() {
                         {typeof model.isLive !== 'undefined' && (
                           <div 
                             className={`w-2 h-2 rounded-full ${model.isLive ? 'bg-green-500' : 'bg-red-500'}`}
-                            title={model.isLive ? 'Online' : 'Offline'} 
+                            title={model.isLive ? `Online (${model.latency}ms)` : `Offline: ${model.error || 'Unknown error'}`} 
                           />
                         )}
                         {model.name}

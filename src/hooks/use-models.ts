@@ -10,6 +10,8 @@ export interface ModelData {
   description: string
   status: string
   isLive?: boolean
+  latency?: number
+  error?: string
   huggingface?: string
   pricing?: {
     input: {
@@ -58,15 +60,29 @@ export function useModels() {
           
           // Add live status from health endpoint
           if (healthResponse && healthResponse.models) {
-            const liveModelIds = new Set(
-              healthResponse.models
-                .filter(model => model.status === 'ready')
-                .map(model => model.id)
-            );
+            // Create a map of model IDs to their health status
+            const modelHealthMap = new Map();
+            healthResponse.models.forEach(model => {
+              modelHealthMap.set(model.id, {
+                isLive: model.status === 'ready',
+                latency: model.latency,
+                error: model.error
+              });
+            });
             
             // Update models with live status
             transformedModels.forEach(model => {
-              model.isLive = liveModelIds.has(model.id);
+              // Check if we have health data for this model
+              if (modelHealthMap.has(model.id)) {
+                const healthData = modelHealthMap.get(model.id);
+                model.isLive = healthData.isLive;
+                model.latency = healthData.latency;
+                model.error = healthData.error;
+              } else {
+                // If no health data is available, mark as unknown status
+                model.isLive = false;
+                model.error = "Status unknown";
+              }
             });
           }
           
