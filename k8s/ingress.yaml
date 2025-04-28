@@ -8,7 +8,7 @@ metadata:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/ssl-redirect: 'true'
     nginx.ingress.kubernetes.io/configuration-snippet: |
-      more_set_headers "Content-Security-Policy: default-src 'self'; script-src 'self' https://*.berget.ai; style-src 'self' https://*.berget.ai; font-src 'self' https://*.berget.ai; img-src 'self' https://*.berget.ai data:; connect-src 'self' https://*.berget.ai; base-uri 'self'; form-action 'self'; frame-src 'none'; frame-ancestors 'none'; object-src 'none'; worker-src 'self'; manifest-src 'self'; upgrade-insecure-requests;";
+      more_set_headers "Content-Security-Policy: default-src 'self'; script-src 'self' https://*.berget.ai; style-src 'self' https://*.berget.ai; font-src 'self' https://*.berget.ai; img-src 'self' https://*.berget.ai data:; connect-src 'self' https://*.berget.ai https://api.berget.ai; base-uri 'self'; form-action 'self'; frame-src 'none'; frame-ancestors 'none'; object-src 'none'; worker-src 'self'; manifest-src 'self'; upgrade-insecure-requests;";
       more_set_headers "X-Content-Type-Options: nosniff";
       more_set_headers "X-Frame-Options: DENY";
       more_set_headers "X-Xss-Protection: 0";
