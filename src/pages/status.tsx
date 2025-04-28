@@ -45,7 +45,7 @@ interface SystemStatus {
 }
 
 export default function StatusPage() {
-  const { t } = useTranslation()
+  // const { t } = useTranslation()
   const [systemStatus, setSystemStatus] = useState<SystemStatus | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)

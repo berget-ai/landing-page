@@ -27,7 +27,9 @@ export function ModelsSection() {
         : 'N/A',
       performance: model.capabilities?.json_mode ? 'State-of-the-Art' : 'High',
       status: model.status.charAt(0).toUpperCase() + model.status.slice(1),
-      isLive: model.isLive
+      isLive: model.isLive,
+      latency: model.latency,
+      error: model.error
     }))
   }, [models])
 
@@ -106,7 +108,7 @@ export function ModelsSection() {
                         {typeof model.isLive !== 'undefined' && (
                           <div 
                             className={`w-2 h-2 rounded-full ${model.isLive ? 'bg-green-500' : 'bg-red-500'}`}
-                            title={model.isLive ? `Online (${model.latency}ms)` : `Offline: ${model.error || 'Unknown error'}`} 
+                            title={model.isLive ? (model.latency ? `Online (${model.latency}ms)` : 'Online') : `Offline: ${model.error || 'Unknown error'}`} 
                           />
                         )}
                         {model.name}
