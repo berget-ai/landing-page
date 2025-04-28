@@ -15,5 +15,9 @@ Policy: https://berget.ai/security
 # Acknowledgments
 Acknowledgments: https://berget.ai/security/hall-of-fame
 
+# Digital signature
+# Note: This file should be digitally signed with OpenPGP
+# Canonical: https://berget.ai/.well-known/security.txt.sig
+
 # Expiration date (6 months from now)
-Expires: 2024-10-23T00:00:00.000Z
+Expires: 2025-10-29T00:00:00.000Z
