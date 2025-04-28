@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Activity, CheckCircle, XCircle, AlertTriangle, Clock, Server } from 'lucide-react'
-import { useTranslation } from 'react-i18next'
 
 interface SystemStatus {
   status: 'healthy' | 'unhealthy' | 'unknown'

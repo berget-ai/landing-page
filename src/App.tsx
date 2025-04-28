@@ -19,6 +19,7 @@ import ContactPage from './pages/contact'
 import ModelsPage from './pages/models'
 import StatusPage from './pages/status'
 import VisualIdentityGuide from './pages/VisualIdentityGuide'
+import SecurityPage from './pages/security'
 
 // Markdown content
 import { html as termsHtml } from '@/pages/terms.md'
@@ -26,7 +27,6 @@ import { html as privacyHtml } from '@/pages/privacy.md'
 import { html as acceptableUseHtml } from '@/pages/acceptable-use.md'
 import { html as dpaHtml } from '@/pages/dpa.md'
 import { html as slaHtml } from '@/pages/sla.md'
-import ResponsibleDisclosurePage from './pages/responsible-disclosure'
 
 function App() {
   return (
