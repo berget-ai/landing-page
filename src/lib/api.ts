@@ -91,7 +91,7 @@ export const fetchModels = async () => {
 export const transformModelData = (apiModel: any) => {
   // Extract model name from ID by removing provider prefix
   const nameParts = apiModel.id.split('-')
-  const name = nameParts.slice(1).join(' ')
+  const name = apiModel.name
 
   // Map model types based on capabilities or other properties
   let type = 'Text Models'
