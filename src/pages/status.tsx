@@ -265,7 +265,6 @@ export default function StatusPage() {
                             <th className="text-left py-3 px-4">Model</th>
                             <th className="text-left py-3 px-4">Status</th>
                             <th className="text-left py-3 px-4">Latency</th>
-                            <th className="text-left py-3 px-4">Error</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -285,13 +284,6 @@ export default function StatusPage() {
                                   {getLatencyIcon(endpoint.latency)}
                                   <span>{endpoint.latency ? `${endpoint.latency}ms` : '-'}</span>
                                 </div>
-                              </td>
-                              <td className="py-3 px-4 text-red-400">
-                                {endpoint.error ? (
-                                  <span title={endpoint.error}>
-                                    {endpoint.error.length > 30 ? `${endpoint.error.substring(0, 30)}...` : endpoint.error}
-                                  </span>
-                                ) : '-'}
                               </td>
                             </tr>
                           ))}
