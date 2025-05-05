@@ -173,7 +173,7 @@ export default function ModelsPage() {
                             {t('modelPage.input')}:{' '}
                           </span>
                           <span className="text-white/80">
-                            {model.pricing.input.amount} {model.pricing.input.currency || 'EUR'}/{model.pricing.input.unit.split('/').pop() || 'M Token'}
+                            {model.pricing.input.amount} {model.pricing.input.currency || 'EUR'}/{model.pricing.input.unit ? model.pricing.input.unit.split('/').pop() : 'M Token'}
                           </span>
                         </div>
                         <div className="text-xs">
@@ -181,7 +181,7 @@ export default function ModelsPage() {
                             {t('modelPage.output')}:{' '}
                           </span>
                           <span className="text-white/80">
-                            {model.pricing.output.amount} {model.pricing.output.currency || 'EUR'}/{model.pricing.output.unit.split('/').pop() || 'M Token'}
+                            {model.pricing.output.amount} {model.pricing.output.currency || 'EUR'}/{model.pricing.output.unit ? model.pricing.output.unit.split('/').pop() : 'M Token'}
                           </span>
                         </div>
                       </div>
