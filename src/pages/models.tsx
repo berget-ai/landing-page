@@ -134,7 +134,7 @@ export default function ModelsPage() {
                     </p>
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-[#52B788]">
-                        {model.status?.up ? 'Available' : 'Not ready'}
+                        {model.isLive ? 'Available' : 'Not ready'}
                       </span>
                     </div>
 

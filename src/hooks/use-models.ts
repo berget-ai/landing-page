@@ -92,20 +92,49 @@ export function useModels() {
       try {
         setLoading(true)
         const modelsResponse = await fetchModels()
+        const healthResponse = await fetch('https://api.berget.ai/health')
+        const healthData = await healthResponse.json()
 
         if (modelsResponse.data && Array.isArray(modelsResponse.data)) {
           // Transform API data to our model format
           const transformedModels = modelsResponse.data.map(transformModelData)
 
-          // Set live status directly from the model API
+          // Create a map of model IDs to their health status
+          const healthStatusMap = new Map()
+          if (healthData && healthData.subsystems?.api?.message?.chatEndpoints) {
+            healthData.subsystems.api.message.chatEndpoints.forEach((endpoint) => {
+              const normalizedId = endpoint.model.includes('/') 
+                ? endpoint.model.split('/').pop()?.toLowerCase().replace(/[-\s]/g, '') 
+                : endpoint.model.toLowerCase().replace(/[-\s]/g, '')
+              
+              healthStatusMap.set(normalizedId, {
+                isLive: endpoint.status === 'up',
+                latency: endpoint.latency,
+                error: endpoint.error
+              })
+            })
+          }
+
+          // Update models with health status
           transformedModels.forEach((model) => {
-            model.isLive = model.status?.up || false
-            if (!model.status?.up) {
-              model.error = 'Model unavailable'
+            // Check if we have health data for this model
+            if (healthStatusMap.has(model.normalizedId)) {
+              const healthStatus = healthStatusMap.get(model.normalizedId)
+              model.isLive = healthStatus.isLive
+              model.latency = healthStatus.latency
+              model.error = healthStatus.error
+              // Override the status from the models API with the actual health status
+              model.status = { up: healthStatus.isLive }
+            } else {
+              // If no health data is available, use the status from the model API
+              model.isLive = model.status?.up || false
+              if (!model.status?.up) {
+                model.error = 'Model unavailable'
+              }
             }
           })
 
-          console.log('Transformed models:', transformedModels)
+          console.log('Transformed models with health status:', transformedModels)
           setModels(transformedModels)
         } else {
           throw new Error('Invalid API response format')

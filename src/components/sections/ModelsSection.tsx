@@ -27,7 +27,7 @@ export function ModelsSection() {
         : (model.capabilities?.vision ? 'Vision' : 'N/A'),
       performance: model.capabilities?.json_mode ? 'State-of-the-Art' : 
                   (model.capabilities?.formatted_output ? 'Advanced' : 'High'),
-      status: model.status?.up ? 'Available' : 'Unavailable',
+      status: model.isLive ? 'Available' : 'Unavailable',
       isLive: model.isLive,
       latency: model.latency,
       error: model.error
