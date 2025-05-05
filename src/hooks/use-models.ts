@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { fetchModels, fetchHealthStatus } from '@/lib/api'
+import { fetchModels } from '@/lib/api'
 
 export interface ModelData {
   id: string
@@ -32,7 +32,6 @@ export interface ModelData {
   isLive?: boolean
   latency?: number
   error?: string
-  healthId?: string // Original ID from health endpoint for debugging
 }
 
 /**
@@ -40,7 +39,7 @@ export interface ModelData {
  */
 function transformModelData(model: any): ModelData {
   // Return the model directly as it already matches our interface
-  // Just ensure normalizedId is set for health status matching
+  // Just ensure normalizedId is set for consistent identification
   const normalizedId = model.id.includes('/') 
     ? model.id.split('/').pop()?.toLowerCase().replace(/[-\s]/g, '') 
     : model.id.toLowerCase().replace(/[-\s]/g, '');
@@ -64,54 +63,19 @@ export function useModels() {
     const getModels = async () => {
       try {
         setLoading(true)
-        const [modelsResponse, healthResponse] = await Promise.all([
-          fetchModels(),
-          fetchHealthStatus(),
-        ])
+        const modelsResponse = await fetchModels()
 
         if (modelsResponse.data && Array.isArray(modelsResponse.data)) {
           // Transform API data to our model format
           const transformedModels = modelsResponse.data.map(transformModelData)
 
-          // Add live status from health endpoint if available
-          if (healthResponse && healthResponse.models) {
-            // Create a map of normalized model IDs to their health status
-            const modelHealthMap = new Map()
-            healthResponse.models.forEach((model) => {
-              modelHealthMap.set(model.normalizedId, {
-                isLive: model.status === 'ready',
-                latency: model.latency,
-                error: model.error,
-                originalId: model.id
-              })
-            })
-
-            // Update models with live status from health endpoint if available
-            transformedModels.forEach((model) => {
-              // Check if we have health data for this model using normalized ID
-              if (modelHealthMap.has(model.normalizedId)) {
-                const healthData = modelHealthMap.get(model.normalizedId)
-                model.isLive = healthData.isLive
-                model.latency = healthData.latency
-                model.error = healthData.error
-                model.healthId = healthData.originalId // Store the original health ID for debugging
-              } else {
-                // If no health data is available, use the status from the model API
-                model.isLive = model.status?.up || false
-                if (!model.status?.up) {
-                  model.error = 'Model unavailable'
-                }
-              }
-            })
-          } else {
-            // If no health endpoint data, use the status from the model API
-            transformedModels.forEach((model) => {
-              model.isLive = model.status?.up || false
-              if (!model.status?.up) {
-                model.error = 'Model unavailable'
-              }
-            })
-          }
+          // Set live status directly from the model API
+          transformedModels.forEach((model) => {
+            model.isLive = model.status?.up || false
+            if (!model.status?.up) {
+              model.error = 'Model unavailable'
+            }
+          })
 
           setModels(transformedModels)
         } else {
