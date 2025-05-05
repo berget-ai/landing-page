@@ -24,8 +24,9 @@ export function ModelsSection() {
       type: model.owned_by || 'Unknown',
       context: model.capabilities?.function_calling
         ? 'Function Calling'
-        : 'N/A',
-      performance: model.capabilities?.json_mode ? 'State-of-the-Art' : 'High',
+        : (model.capabilities?.vision ? 'Vision' : 'N/A'),
+      performance: model.capabilities?.json_mode ? 'State-of-the-Art' : 
+                  (model.capabilities?.formatted_output ? 'Advanced' : 'High'),
       status: model.status?.up ? 'Available' : 'Unavailable',
       isLive: model.isLive,
       latency: model.latency,

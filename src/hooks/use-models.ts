@@ -44,9 +44,35 @@ function transformModelData(model: any): ModelData {
     ? model.id.split('/').pop()?.toLowerCase().replace(/[-\s]/g, '') 
     : model.id.toLowerCase().replace(/[-\s]/g, '');
   
+  // Ensure all required fields are present
   return {
     ...model,
-    normalizedId
+    normalizedId,
+    // Ensure status is an object with up property
+    status: model.status || { up: false },
+    // Ensure capabilities is an object with all required properties
+    capabilities: {
+      vision: model.capabilities?.vision || false,
+      function_calling: model.capabilities?.function_calling || false,
+      json_mode: model.capabilities?.json_mode || false,
+      classification: model.capabilities?.classification || false,
+      embeddings: model.capabilities?.embeddings || false,
+      formatted_output: model.capabilities?.formatted_output || false,
+      streaming: model.capabilities?.streaming || false,
+      ...(model.capabilities || {})
+    },
+    // Ensure pricing has all required fields
+    pricing: model.pricing ? {
+      input: model.pricing.input || 0,
+      output: model.pricing.output || 0,
+      unit: model.pricing.unit || '€ / M Token',
+      currency: model.pricing.currency || 'EUR'
+    } : {
+      input: 0,
+      output: 0,
+      unit: '€ / M Token',
+      currency: 'EUR'
+    }
   };
 }
 
@@ -77,6 +103,7 @@ export function useModels() {
             }
           })
 
+          console.log('Transformed models:', transformedModels)
           setModels(transformedModels)
         } else {
           throw new Error('Invalid API response format')
