@@ -1,15 +1,71 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Activity, CheckCircle, XCircle, Server } from 'lucide-react'
+import { Activity, CheckCircle, XCircle, Server, AlertTriangle, Clock } from 'lucide-react'
 import { useModels } from '@/hooks/use-models'
+
+interface SystemStatus {
+  status: string
+  subsystems: {
+    billing: { status: string }
+    auth: { status: string }
+    compute: { status: string }
+    crm: { status: string }
+  }
+}
 
 export default function StatusPage() {
   const { models, loading, error } = useModels()
+  const [systemStatus, setSystemStatus] = useState<SystemStatus>({
+    status: 'unknown',
+    subsystems: {
+      billing: { status: 'unknown' },
+      auth: { status: 'unknown' },
+      compute: { status: 'unknown' },
+      crm: { status: 'unknown' }
+    }
+  })
+  const [statusLoading, setStatusLoading] = useState(true)
   
-  const getStatusIcon = (isLive: boolean) => {
-    return isLive 
-      ? <CheckCircle className="w-5 h-5 text-green-500" />
-      : <XCircle className="w-5 h-5 text-red-500" />
+  useEffect(() => {
+    const fetchSystemStatus = async () => {
+      try {
+        setStatusLoading(true)
+        // Simulate fetching system status
+        // In a real implementation, this would be an API call
+        setTimeout(() => {
+          setSystemStatus({
+            status: 'healthy',
+            subsystems: {
+              billing: { status: 'up' },
+              auth: { status: 'up' },
+              compute: { status: 'up' },
+              crm: { status: 'up' }
+            }
+          })
+          setStatusLoading(false)
+        }, 1000)
+      } catch (err) {
+        console.error('Failed to fetch system status:', err)
+        setStatusLoading(false)
+      }
+    }
+    
+    fetchSystemStatus()
+  }, [])
+  
+  const getStatusIcon = (status: string) => {
+    switch (status) {
+      case 'up':
+      case 'healthy':
+        return <CheckCircle className="w-5 h-5 text-green-500" />
+      case 'down':
+      case 'unhealthy':
+        return <XCircle className="w-5 h-5 text-red-500" />
+      case 'unknown':
+        return <AlertTriangle className="w-5 h-5 text-yellow-500" />
+      default:
+        return <Clock className="w-5 h-5 text-gray-400" />
+    }
   }
   
   return (
@@ -28,7 +84,7 @@ export default function StatusPage() {
               <h1 className="text-4xl font-ovo">System Status</h1>
             </div>
 
-            {loading ? (
+            {(loading || statusLoading) ? (
               <div className="flex justify-center items-center py-12">
                 <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#52B788]"></div>
               </div>
@@ -37,9 +93,70 @@ export default function StatusPage() {
                 <h2 className="text-xl font-medium mb-2 text-red-400">Error</h2>
                 <p className="text-white/80">{error}</p>
               </div>
-            ) : models.length > 0 ? (
+            ) : (
               <div className="space-y-8">
+                {/* System Status */}
+                <div className="space-y-6">
+                  <h2 className="text-2xl font-medium">System Status</h2>
+                  <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+                    <div className="flex items-center justify-between mb-6">
+                      <h3 className="text-xl font-medium">Overall Status</h3>
+                      <div className="flex items-center gap-2">
+                        {getStatusIcon(systemStatus.status)}
+                        <span className="capitalize">{systemStatus.status}</span>
+                      </div>
+                    </div>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="p-4 rounded-lg bg-white/5 border border-white/10">
+                        <div className="flex items-center justify-between mb-2">
+                          <h4 className="font-medium">Billing</h4>
+                          <div className="flex items-center gap-2">
+                            {getStatusIcon(systemStatus.subsystems.billing.status)}
+                            <span className="text-sm capitalize">{systemStatus.subsystems.billing.status}</span>
+                          </div>
+                        </div>
+                        <p className="text-xs text-white/60">Lago billing system</p>
+                      </div>
+                      
+                      <div className="p-4 rounded-lg bg-white/5 border border-white/10">
+                        <div className="flex items-center justify-between mb-2">
+                          <h4 className="font-medium">Authentication</h4>
+                          <div className="flex items-center gap-2">
+                            {getStatusIcon(systemStatus.subsystems.auth.status)}
+                            <span className="text-sm capitalize">{systemStatus.subsystems.auth.status}</span>
+                          </div>
+                        </div>
+                        <p className="text-xs text-white/60">Keycloak authentication service</p>
+                      </div>
+                      
+                      <div className="p-4 rounded-lg bg-white/5 border border-white/10">
+                        <div className="flex items-center justify-between mb-2">
+                          <h4 className="font-medium">Compute</h4>
+                          <div className="flex items-center gap-2">
+                            {getStatusIcon(systemStatus.subsystems.compute.status)}
+                            <span className="text-sm capitalize">{systemStatus.subsystems.compute.status}</span>
+                          </div>
+                        </div>
+                        <p className="text-xs text-white/60">Harvester compute infrastructure</p>
+                      </div>
+                      
+                      <div className="p-4 rounded-lg bg-white/5 border border-white/10">
+                        <div className="flex items-center justify-between mb-2">
+                          <h4 className="font-medium">CRM</h4>
+                          <div className="flex items-center gap-2">
+                            {getStatusIcon(systemStatus.subsystems.crm.status)}
+                            <span className="text-sm capitalize">{systemStatus.subsystems.crm.status}</span>
+                          </div>
+                        </div>
+                        <p className="text-xs text-white/60">Odoo CRM system</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
                 {/* Model Status */}
+                {models.length > 0 && (
                 <div className="space-y-6">
                   <h2 className="text-2xl font-medium">Model Status</h2>
                   <div className="bg-white/5 rounded-xl p-6 border border-white/10">
@@ -78,15 +195,18 @@ export default function StatusPage() {
                     </div>
                   </div>
                 </div>
-              </div>
-            ) : (
-              <div className="bg-white/5 rounded-xl p-6 border border-white/10">
-                <div className="flex items-center gap-3">
-                  <Server className="w-6 h-6 text-[#52B788]" />
-                  <p className="text-white/80">
-                    No model information available.
-                  </p>
-                </div>
+                )}
+                
+                {models.length === 0 && (
+                  <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+                    <div className="flex items-center gap-3">
+                      <Server className="w-6 h-6 text-[#52B788]" />
+                      <p className="text-white/80">
+                        No model information available.
+                      </p>
+                    </div>
+                  </div>
+                )}
               </div>
             )}
           </motion.div>
