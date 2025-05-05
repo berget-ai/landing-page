@@ -136,81 +136,81 @@ export function ServerlessInference() {
 
   const textModels = useMemo(() => {
     return models
-      .filter(model => model.type === 'Text Models')
+      .filter(model => model.owned_by === 'Meta' || model.owned_by === 'Mistral' || model.owned_by === 'Google' || model.owned_by === 'Qwen')
       .map(model => ({
         name: model.name,
-        inputprice: model.pricing?.input ? `${model.pricing.input.amount} ${model.pricing.input.unit}` : '-',
-        outputprice: model.pricing?.output ? `${model.pricing.output.amount} ${model.pricing.output.unit}` : '-',
+        inputprice: model.pricing?.input ? `${model.pricing.input} ${model.pricing.currency || 'EUR'}/${model.pricing.unit?.split('/').pop() || 'M Token'}` : '-',
+        outputprice: model.pricing?.output ? `${model.pricing.output} ${model.pricing.currency || 'EUR'}/${model.pricing.unit?.split('/').pop() || 'M Token'}` : '-',
       }))
   }, [models])
 
   const multimodalModels = useMemo(() => {
     return models
-      .filter(model => model.type === 'Multimodal')
+      .filter(model => model.capabilities?.vision === true)
       .map(model => ({
         name: model.name,
-        inputprice: model.pricing?.input ? `${model.pricing.input.amount} ${model.pricing.input.unit}` : '-',
-        outputprice: model.pricing?.output ? `${model.pricing.output.amount} ${model.pricing.output.unit}` : '-',
+        inputprice: model.pricing?.input ? `${model.pricing.input} ${model.pricing.currency || 'EUR'}/${model.pricing.unit?.split('/').pop() || 'M Token'}` : '-',
+        outputprice: model.pricing?.output ? `${model.pricing.output} ${model.pricing.currency || 'EUR'}/${model.pricing.unit?.split('/').pop() || 'M Token'}` : '-',
       }))
   }, [models])
 
   const rerankModels = useMemo(() => {
     return models
-      .filter(model => model.type === 'Reranking')
+      .filter(model => model.id.includes('rerank') || model.id.includes('Rerank'))
       .map(model => ({
         name: model.name,
-        inputprice: model.pricing?.input ? `${model.pricing.input.amount} ${model.pricing.input.unit}` : '-',
+        inputprice: model.pricing?.input ? `${model.pricing.input} ${model.pricing.currency || 'EUR'}/${model.pricing.unit?.split('/').pop() || 'M Token'}` : '-',
         outputprice: '-',
       }))
   }, [models])
 
   const embeddingModels = useMemo(() => {
     return models
-      .filter(model => model.type === 'Text Embedding')
+      .filter(model => model.capabilities?.embeddings === true || model.id.includes('E5') || model.id.includes('e5'))
       .map(model => ({
         name: model.name,
-        inputprice: model.pricing?.input ? `${model.pricing.input.amount} ${model.pricing.input.unit}` : '-',
+        inputprice: model.pricing?.input ? `${model.pricing.input} ${model.pricing.currency || 'EUR'}/${model.pricing.unit?.split('/').pop() || 'M Token'}` : '-',
         outputprice: '-',
       }))
   }, [models])
 
   const STTModels = useMemo(() => {
     return models
-      .filter(model => model.type === 'Speech-to-Text')
+      .filter(model => model.id.includes('whisper') || model.id.includes('Whisper'))
       .map(model => ({
         name: model.name,
-        inputprice: model.pricing?.input ? `${model.pricing.input.amount} ${model.pricing.input.unit}` : '-',
+        inputprice: model.pricing?.input ? `${model.pricing.input} ${model.pricing.currency || 'EUR'}/${model.pricing.unit?.split('/').pop() || 'mins'}` : '-',
         outputprice: '-',
       }))
   }, [models])
 
   const TTSModels = useMemo(() => {
     return models
-      .filter(model => model.type === 'Text-to-Speech')
+      .filter(model => model.id.includes('tts') || model.id.includes('TTS') || model.id.includes('Kokoro') || model.id.includes('CSM'))
       .map(model => ({
         name: model.name,
-        inputprice: model.pricing?.input ? `${model.pricing.input.amount} ${model.pricing.input.unit}` : '-',
+        inputprice: model.pricing?.input ? `${model.pricing.input} ${model.pricing.currency || 'EUR'}/${model.pricing.unit?.split('/').pop() || 'M Chars'}` : '-',
         outputprice: '-',
       }))
   }, [models])
 
   const imageModels = useMemo(() => {
     return models
-      .filter(model => model.type === 'Image Generation')
+      .filter(model => model.id.includes('diffusion') || model.id.includes('Diffusion') || model.id.includes('Flux'))
       .map(model => ({
         name: model.name,
-        inputprice: model.pricing?.input ? `${model.pricing.input.amount} ${model.pricing.input.unit}` : '-',
+        inputprice: model.pricing?.input ? `${model.pricing.input} ${model.pricing.currency || 'EUR'}/${model.pricing.unit?.split('/').pop() || 'step'}` : '-',
         outputprice: '-',
       }))
   }, [models])
 
   const moderationModels = useMemo(() => {
     return models
-      .filter(model => model.type === 'Moderation')
+      .filter(model => model.id.includes('guard') || model.id.includes('Guard') || model.id.includes('Shield'))
       .map(model => ({
         name: model.name,
-        inputprice: model.pricing?.input ? `${model.pricing.input.amount} ${model.pricing.input.unit}` : '-',
-        outputprice: model.pricing?.output ? `${model.pricing.output.amount} ${model.pricing.output.unit}` : '-',
+        inputprice: model.pricing?.input ? `${model.pricing.input} ${model.pricing.currency || 'EUR'}/${model.pricing.unit?.split('/').pop() || 'M Token'}` : '-',
+        outputprice: model.pricing?.output ? `${model.pricing.output} ${model.pricing.currency || 'EUR'}/${model.pricing.unit?.split('/').pop() || 'M Token'}` : '-',
       }))
   }, [models])
 
