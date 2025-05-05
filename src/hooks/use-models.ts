@@ -40,10 +40,10 @@ export interface ModelData {
 function transformModelData(model: any): ModelData {
   // Return the model directly as it already matches our interface
   // Just ensure normalizedId is set for consistent identification
-  const normalizedId = model.id.includes('/') 
-    ? model.id.split('/').pop()?.toLowerCase().replace(/[-\s]/g, '') 
-    : model.id.toLowerCase().replace(/[-\s]/g, '');
-  
+  const normalizedId = model.id.includes('/')
+    ? model.id.split('/').pop()?.toLowerCase().replace(/[-\s]/g, '')
+    : model.id.toLowerCase().replace(/[-\s]/g, '')
+
   // Ensure all required fields are present
   return {
     ...model,
@@ -59,21 +59,23 @@ function transformModelData(model: any): ModelData {
       embeddings: model.capabilities?.embeddings || false,
       formatted_output: model.capabilities?.formatted_output || false,
       streaming: model.capabilities?.streaming || false,
-      ...(model.capabilities || {})
+      ...(model.capabilities || {}),
     },
     // Ensure pricing has all required fields
-    pricing: model.pricing ? {
-      input: model.pricing.input || 0,
-      output: model.pricing.output || 0,
-      unit: model.pricing.unit || '€ / M Token',
-      currency: model.pricing.currency || 'EUR'
-    } : {
-      input: 0,
-      output: 0,
-      unit: '€ / M Token',
-      currency: 'EUR'
-    }
-  };
+    pricing: model.pricing
+      ? {
+          input: model.pricing.input || 0,
+          output: model.pricing.output || 0,
+          unit: model.pricing.unit || '€ / M Token',
+          currency: model.pricing.currency || 'EUR',
+        }
+      : {
+          input: 0,
+          output: 0,
+          unit: '€ / M Token',
+          currency: 'EUR',
+        },
+  }
 }
 
 /**
@@ -133,13 +135,8 @@ export function useModels() {
   }
 
   const getModelTypes = () => {
-    if (models.length === 0) return ['All Models']
-
     const types = Array.from(new Set(models.map((model) => model.owned_by)))
-    return [
-      'All Models',
-      ...types.filter((type) => type !== 'All Models').sort(),
-    ]
+    return types
   }
 
   return {

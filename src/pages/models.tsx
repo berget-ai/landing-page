@@ -93,102 +93,89 @@ export default function ModelsPage() {
           ) : (
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
               {filteredModels.map((model) => {
-                // Ensure model has the expected structure for display
-                const displayModel = {
-                  ...model,
-                  type: model.owned_by || 'Unknown',
-                  provider: model.owned_by || 'Unknown',
-                  description: model.description || `${model.name} model from ${model.owned_by}`,
-                  license: model.license || 'Commercial',
-                  pricing: model.pricing ? {
-                    input: {
-                      amount: model.pricing.input,
-                      currency: model.pricing.currency || 'EUR',
-                      unit: model.pricing.unit || '€ / M Token'
-                    },
-                    output: {
-                      amount: model.pricing.output,
-                      currency: model.pricing.currency || 'EUR',
-                      unit: model.pricing.unit || '€ / M Token'
-                    }
-                  } : null
-                };
-                
                 return (
-                <div
-                  key={model.name}
-                  className="p-6 rounded-xl bg-white/[0.02] backdrop-blur-sm border border-white/10 hover:bg-white/[0.04] transition-colors"
-                >
-                  <div className="flex items-center justify-between mb-2">
-                    <div className="flex items-center gap-2">
-                      <div 
-                        className={`w-2 h-2 rounded-full ${model.isLive ? 'bg-green-500' : 'bg-red-500'}`} 
-                        title={model.isLive ? `Online (${model.latency}ms)` : `Offline: ${model.error || 'Unknown error'}`} 
-                      />
-                      <h3 className="text-xl font-medium">{model.name}</h3>
+                  <div
+                    key={model.name}
+                    className="p-6 rounded-xl bg-white/[0.02] backdrop-blur-sm border border-white/10 hover:bg-white/[0.04] transition-colors"
+                  >
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center gap-2">
+                        <div
+                          className={`w-2 h-2 rounded-full ${
+                            model.isLive ? 'bg-green-500' : 'bg-red-500'
+                          }`}
+                          title={
+                            model.isLive
+                              ? `Online (${model.latency}ms)`
+                              : `Offline: ${model.error || 'Unknown error'}`
+                          }
+                        />
+                        <h3 className="text-xl font-medium">{model.name}</h3>
+                      </div>
+                      {model.owned_by && (
+                        <a
+                          href={`https://huggingface.co/${model.root}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[#52B788] hover:text-[#74C69D] transition-colors flex items-center gap-1"
+                        >
+                          <span className="text-sm">{t('view')}</span>
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      )}
                     </div>
-                    {model.huggingface && (
-                      <a
-                        href={model.huggingface}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[#52B788] hover:text-[#74C69D] transition-colors flex items-center gap-1"
-                      >
-                        <span className="text-sm">{t('view')}</span>
-                        <ExternalLink className="w-4 h-4" />
-                      </a>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-sm font-medium text-[#52B788]">
+                        {model.root}
+                      </span>
+                    </div>
+                    <p className="text-sm text-white/60 mb-4">
+                      By {model.owned_by}
+                    </p>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-[#52B788]">
+                        {model.status?.up ? 'Available' : 'Not ready'}
+                      </span>
+                    </div>
+
+                    {model.pricing && (
+                      <div className="mt-4 pt-4 border-t border-white/10">
+                        <div className="flex items-center gap-1 mb-2">
+                          <Euro className="w-3 h-3 text-white/60" />
+                          <span className="text-xs text-white/60">
+                            {t('modelPage.pricing')}
+                          </span>
+                        </div>
+                        <div className="grid grid-cols-2 gap-2">
+                          <div className="text-xs">
+                            <span className="text-white/40">
+                              {t('modelPage.input')}:{' '}
+                            </span>
+                            <span className="text-white/80">
+                              {model.pricing.input}{' '}
+                              {model.pricing.currency || 'EUR'}/
+                              {model.pricing.unit
+                                ? model.pricing.unit.split('/').pop()
+                                : 'M Token'}
+                            </span>
+                          </div>
+                          <div className="text-xs">
+                            <span className="text-white/40">
+                              {t('modelPage.output')}:{' '}
+                            </span>
+                            <span className="text-white/80">
+                              {model.pricing.output}{' '}
+                              {model.pricing.currency || 'EUR'}/
+                              {model.pricing.unit
+                                ? model.pricing.unit.split('/').pop()
+                                : 'M Token'}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
                     )}
                   </div>
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-sm font-medium text-[#52B788]">
-                      {model.type}
-                    </span>
-                    <span className="text-sm text-white/60">
-                      • {model.provider}
-                    </span>
-                  </div>
-                  <p className="text-sm text-white/60 mb-4">
-                    {model.description}
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-white/40">
-                      {model.license}
-                    </span>
-                    <span className="text-sm text-[#52B788]">
-                      {model.status?.up ? 'Available' : 'Unavailable'}
-                    </span>
-                  </div>
-
-                  {model.pricing && (
-                    <div className="mt-4 pt-4 border-t border-white/10">
-                      <div className="flex items-center gap-1 mb-2">
-                        <Euro className="w-3 h-3 text-white/60" />
-                        <span className="text-xs text-white/60">
-                          {t('modelPage.pricing')}
-                        </span>
-                      </div>
-                      <div className="grid grid-cols-2 gap-2">
-                        <div className="text-xs">
-                          <span className="text-white/40">
-                            {t('modelPage.input')}:{' '}
-                          </span>
-                          <span className="text-white/80">
-                            {model.pricing.input.amount} {model.pricing.input.currency || 'EUR'}/{model.pricing.input.unit ? model.pricing.input.unit.split('/').pop() : 'M Token'}
-                          </span>
-                        </div>
-                        <div className="text-xs">
-                          <span className="text-white/40">
-                            {t('modelPage.output')}:{' '}
-                          </span>
-                          <span className="text-white/80">
-                            {model.pricing.output.amount} {model.pricing.output.currency || 'EUR'}/{model.pricing.output.unit ? model.pricing.output.unit.split('/').pop() : 'M Token'}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                </div>
-                );
+                )
               })}
             </div>
           )}
