@@ -21,12 +21,12 @@ export function ModelsSection() {
   const displayModels = useMemo(() => {
     return models.slice(0, 8).map((model) => ({
       name: model.name,
-      type: model.type,
+      type: model.owned_by || 'Unknown',
       context: model.capabilities?.function_calling
         ? 'Function Calling'
         : 'N/A',
       performance: model.capabilities?.json_mode ? 'State-of-the-Art' : 'High',
-      status: model.status.charAt(0).toUpperCase() + model.status.slice(1),
+      status: model.status?.up ? 'Available' : 'Unavailable',
       isLive: model.isLive,
       latency: model.latency,
       error: model.error

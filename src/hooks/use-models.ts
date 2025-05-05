@@ -1,41 +1,54 @@
 import { useState, useEffect } from 'react'
-import { fetchModels, transformModelData, fetchHealthStatus } from '@/lib/api'
+import { fetchModels, fetchHealthStatus } from '@/lib/api'
 
 export interface ModelData {
   id: string
   normalizedId: string
   name: string
-  type: string
-  provider: string
-  license: string
-  description: string
-  status: string
+  object: string
+  created: number
+  owned_by: string
+  permission: any[]
+  root: string
+  parent: string | null
+  pricing: {
+    input: number
+    output: number
+    unit: string
+    currency: string
+  }
+  capabilities: {
+    vision: boolean
+    function_calling: boolean
+    json_mode: boolean
+    classification: boolean
+    embeddings: boolean
+    formatted_output: boolean
+    streaming: boolean
+  }
+  status: {
+    up: boolean
+  }
   isLive?: boolean
   latency?: number
   error?: string
   healthId?: string // Original ID from health endpoint for debugging
-  huggingface?: string
-  pricing?: {
-    input: {
-      amount: number
-      currency: string
-      unit: string
-    }
-    output: {
-      amount: number
-      currency: string
-      unit: string
-    }
-  }
-  capabilities?: {
-    vision?: boolean
-    streaming?: boolean
-    classification?: boolean
-    embeddings?: boolean
-    json_mode?: boolean
-    function_calling?: boolean
-    formatted_output?: boolean
-  }
+}
+
+/**
+ * Transform API model data to normalized format
+ */
+function transformModelData(model: any): ModelData {
+  // Return the model directly as it already matches our interface
+  // Just ensure normalizedId is set for health status matching
+  const normalizedId = model.id.includes('/') 
+    ? model.id.split('/').pop()?.toLowerCase().replace(/[-\s]/g, '') 
+    : model.id.toLowerCase().replace(/[-\s]/g, '');
+  
+  return {
+    ...model,
+    normalizedId
+  };
 }
 
 /**
@@ -60,7 +73,7 @@ export function useModels() {
           // Transform API data to our model format
           const transformedModels = modelsResponse.data.map(transformModelData)
 
-          // Add live status from health endpoint
+          // Add live status from health endpoint if available
           if (healthResponse && healthResponse.models) {
             // Create a map of normalized model IDs to their health status
             const modelHealthMap = new Map()
@@ -73,7 +86,7 @@ export function useModels() {
               })
             })
 
-            // Update models with live status
+            // Update models with live status from health endpoint if available
             transformedModels.forEach((model) => {
               // Check if we have health data for this model using normalized ID
               if (modelHealthMap.has(model.normalizedId)) {
@@ -83,9 +96,19 @@ export function useModels() {
                 model.error = healthData.error
                 model.healthId = healthData.originalId // Store the original health ID for debugging
               } else {
-                // If no health data is available, mark as unknown status
-                model.isLive = false
-                model.error = 'Status unknown'
+                // If no health data is available, use the status from the model API
+                model.isLive = model.status?.up || false
+                if (!model.status?.up) {
+                  model.error = 'Model unavailable'
+                }
+              }
+            })
+          } else {
+            // If no health endpoint data, use the status from the model API
+            transformedModels.forEach((model) => {
+              model.isLive = model.status?.up || false
+              if (!model.status?.up) {
+                model.error = 'Model unavailable'
               }
             })
           }
@@ -111,7 +134,7 @@ export function useModels() {
 
   const getModelsByType = (type: string | null) => {
     if (!type) return models
-    return models.filter((model) => model.type === type)
+    return models.filter((model) => model.owned_by === type)
   }
 
   const getModelById = (id: string) => {
@@ -119,12 +142,12 @@ export function useModels() {
   }
 
   const getModelTypes = () => {
-    if (models.length === 0) return ['Text Models']
+    if (models.length === 0) return ['All Models']
 
-    const types = Array.from(new Set(models.map((model) => model.type)))
+    const types = Array.from(new Set(models.map((model) => model.owned_by)))
     return [
-      'Text Models',
-      ...types.filter((type) => type !== 'Text Models').sort(),
+      'All Models',
+      ...types.filter((type) => type !== 'All Models').sort(),
     ]
   }
 
