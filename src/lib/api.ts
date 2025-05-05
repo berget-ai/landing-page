@@ -24,36 +24,6 @@ export const getDefaultHeaders = () => {
   }
 }
 
-/**
- * Fetch health status from the API
- */
-export const fetchHealthStatus = async () => {
-  try {
-    const response = await fetch(`https://api.berget.ai/health`, {
-      headers: getDefaultHeaders(),
-    })
-
-    const data = await response.json()
-
-    // Extract chat endpoints from the health data
-    const chatEndpoints = data.subsystems?.api?.message?.chatEndpoints || []
-
-    return {
-      status: data.status,
-      timestamp: data.timestamp,
-      models: chatEndpoints.map((endpoint) => ({
-        id: endpoint.model,
-        normalizedId: normalizeModelId(endpoint.model),
-        status: endpoint.status === 'up' ? 'ready' : 'offline',
-        latency: endpoint.latency,
-        error: endpoint.error,
-      })),
-    }
-  } catch (error) {
-    console.error('Failed to fetch health status:', error)
-    return { models: [] }
-  }
-}
 
 /**
  * Normalize model ID to match between different API endpoints
