@@ -92,7 +92,27 @@ export default function ModelsPage() {
             </div>
           ) : (
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
-              {filteredModels.map((model) => (
+              {filteredModels.map((model) => {
+                // Ensure model has the expected structure for display
+                const displayModel = {
+                  ...model,
+                  type: model.owned_by || 'Unknown',
+                  provider: model.owned_by || 'Unknown',
+                  description: model.description || `${model.name} model from ${model.owned_by}`,
+                  license: model.license || 'Commercial',
+                  pricing: model.pricing ? {
+                    input: {
+                      amount: model.pricing.input,
+                      unit: model.pricing.unit || '€ / M Token'
+                    },
+                    output: {
+                      amount: model.pricing.output,
+                      unit: model.pricing.unit || '€ / M Token'
+                    }
+                  } : null
+                };
+                
+                return (
                 <div
                   key={model.name}
                   className="p-6 rounded-xl bg-white/[0.02] backdrop-blur-sm border border-white/10 hover:bg-white/[0.04] transition-colors"
@@ -133,8 +153,7 @@ export default function ModelsPage() {
                       {model.license}
                     </span>
                     <span className="text-sm text-[#52B788]">
-                      {model.status.charAt(0).toUpperCase() +
-                        model.status.slice(1)}
+                      {model.status?.up ? 'Available' : 'Unavailable'}
                     </span>
                   </div>
 
@@ -169,7 +188,8 @@ export default function ModelsPage() {
                     </div>
                   )}
                 </div>
-              ))}
+                );
+              })}
             </div>
           )}
         </>
