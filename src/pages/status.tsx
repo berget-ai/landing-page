@@ -1,6 +1,13 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Activity, CheckCircle, XCircle, AlertTriangle, Clock, Server } from 'lucide-react'
+import {
+  Activity,
+  CheckCircle,
+  XCircle,
+  AlertTriangle,
+  Clock,
+  Server,
+} from 'lucide-react'
 
 interface SystemStatus {
   status: 'healthy' | 'unhealthy' | 'unknown'
@@ -15,9 +22,9 @@ interface SystemStatus {
         lastChecked: string
         lago: { status: string }
         odoo: { status: string }
-        kubecost: { status: string, error?: string }
-        harvester: { status: string, error?: string }
-        keycloak: { status: string, error?: string }
+        kubecost: { status: string; error?: string }
+        harvester: { status: string; error?: string }
+        keycloak: { status: string; error?: string }
         chatEndpoints: Array<{
           model: string
           status: string
@@ -54,11 +61,7 @@ export default function StatusPage() {
       try {
         setLoading(true)
         const response = await fetch('https://api.berget.ai/health')
-        
-        if (!response.ok) {
-          throw new Error(`Failed to fetch status: ${response.status}`)
-        }
-        
+
         const data = await response.json()
         setSystemStatus(data)
         setError(null)
@@ -71,10 +74,10 @@ export default function StatusPage() {
     }
 
     fetchStatus()
-    
+
     // Refresh status every 60 seconds
     const intervalId = setInterval(fetchStatus, 60000)
-    
+
     return () => clearInterval(intervalId)
   }, [])
 
@@ -135,90 +138,130 @@ export default function StatusPage() {
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-white/60">
                     <div>
-                      <span className="font-medium">Environment:</span> {systemStatus.environment}
+                      <span className="font-medium">Environment:</span>{' '}
+                      {systemStatus.environment}
                     </div>
                     <div>
-                      <span className="font-medium">Version:</span> {systemStatus.version}
+                      <span className="font-medium">Version:</span>{' '}
+                      {systemStatus.version}
                     </div>
                     <div>
-                      <span className="font-medium">Last Updated:</span> {formatDate(systemStatus.lastChecked)}
+                      <span className="font-medium">Last Updated:</span>{' '}
+                      {formatDate(systemStatus.lastChecked)}
                     </div>
                   </div>
                 </div>
 
                 <div className="space-y-6">
                   <h2 className="text-2xl font-medium">Subsystems</h2>
-                  
+
                   {/* API Status */}
                   <div className="bg-white/5 rounded-xl p-6 border border-white/10">
                     <div className="flex items-center justify-between mb-4">
                       <h3 className="text-xl font-medium">API</h3>
                       <div className="flex items-center gap-2">
                         {getStatusIcon(systemStatus.subsystems.api.status)}
-                        <span className="capitalize">{systemStatus.subsystems.api.status}</span>
+                        <span className="capitalize">
+                          {systemStatus.subsystems.api.status}
+                        </span>
                       </div>
                     </div>
-                    
+
                     <div className="space-y-4">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="flex items-center gap-2">
                           <span className="font-medium">Lago:</span>
-                          {getStatusIcon(systemStatus.subsystems.api.message.lago.status)}
-                          <span className="capitalize">{systemStatus.subsystems.api.message.lago.status}</span>
+                          {getStatusIcon(
+                            systemStatus.subsystems.api.message.lago.status
+                          )}
+                          <span className="capitalize">
+                            {systemStatus.subsystems.api.message.lago.status}
+                          </span>
                         </div>
                         <div className="flex items-center gap-2">
                           <span className="font-medium">Odoo:</span>
-                          {getStatusIcon(systemStatus.subsystems.api.message.odoo.status)}
-                          <span className="capitalize">{systemStatus.subsystems.api.message.odoo.status}</span>
+                          {getStatusIcon(
+                            systemStatus.subsystems.api.message.odoo.status
+                          )}
+                          <span className="capitalize">
+                            {systemStatus.subsystems.api.message.odoo.status}
+                          </span>
                         </div>
                         <div className="flex items-center gap-2">
                           <span className="font-medium">Kubecost:</span>
-                          {getStatusIcon(systemStatus.subsystems.api.message.kubecost.status)}
-                          <span className="capitalize">{systemStatus.subsystems.api.message.kubecost.status}</span>
+                          {getStatusIcon(
+                            systemStatus.subsystems.api.message.kubecost.status
+                          )}
+                          <span className="capitalize">
+                            {
+                              systemStatus.subsystems.api.message.kubecost
+                                .status
+                            }
+                          </span>
                         </div>
                         <div className="flex items-center gap-2">
                           <span className="font-medium">Harvester:</span>
-                          {getStatusIcon(systemStatus.subsystems.api.message.harvester.status)}
-                          <span className="capitalize">{systemStatus.subsystems.api.message.harvester.status}</span>
+                          {getStatusIcon(
+                            systemStatus.subsystems.api.message.harvester.status
+                          )}
+                          <span className="capitalize">
+                            {
+                              systemStatus.subsystems.api.message.harvester
+                                .status
+                            }
+                          </span>
                         </div>
                         <div className="flex items-center gap-2">
                           <span className="font-medium">Keycloak:</span>
-                          {getStatusIcon(systemStatus.subsystems.api.message.keycloak.status)}
-                          <span className="capitalize">{systemStatus.subsystems.api.message.keycloak.status}</span>
+                          {getStatusIcon(
+                            systemStatus.subsystems.api.message.keycloak.status
+                          )}
+                          <span className="capitalize">
+                            {
+                              systemStatus.subsystems.api.message.keycloak
+                                .status
+                            }
+                          </span>
                         </div>
                       </div>
                     </div>
                   </div>
-                  
+
                   {/* Compute Status */}
                   <div className="bg-white/5 rounded-xl p-6 border border-white/10">
                     <div className="flex items-center justify-between mb-4">
                       <h3 className="text-xl font-medium">Compute</h3>
                       <div className="flex items-center gap-2">
                         {getStatusIcon(systemStatus.subsystems.compute.status)}
-                        <span className="capitalize">{systemStatus.subsystems.compute.status}</span>
+                        <span className="capitalize">
+                          {systemStatus.subsystems.compute.status}
+                        </span>
                       </div>
                     </div>
                   </div>
-                  
+
                   {/* Billing Status */}
                   <div className="bg-white/5 rounded-xl p-6 border border-white/10">
                     <div className="flex items-center justify-between mb-4">
                       <h3 className="text-xl font-medium">Billing</h3>
                       <div className="flex items-center gap-2">
                         {getStatusIcon(systemStatus.subsystems.billing.status)}
-                        <span className="capitalize">{systemStatus.subsystems.billing.status}</span>
+                        <span className="capitalize">
+                          {systemStatus.subsystems.billing.status}
+                        </span>
                       </div>
                     </div>
                   </div>
-                  
+
                   {/* CRM Status */}
                   <div className="bg-white/5 rounded-xl p-6 border border-white/10">
                     <div className="flex items-center justify-between mb-4">
                       <h3 className="text-xl font-medium">CRM</h3>
                       <div className="flex items-center gap-2">
                         {getStatusIcon(systemStatus.subsystems.crm.status)}
-                        <span className="capitalize">{systemStatus.subsystems.crm.status}</span>
+                        <span className="capitalize">
+                          {systemStatus.subsystems.crm.status}
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -239,30 +282,48 @@ export default function StatusPage() {
                           </tr>
                         </thead>
                         <tbody>
-                          {systemStatus.subsystems.api.message.chatEndpoints.map((endpoint, index) => (
-                            <tr key={index} className="border-b border-white/10">
-                              <td className="py-3 px-4">
-                                <div>
-                                  <div>{endpoint.model}</div>
-                                  <div className="text-xs text-white/40">
-                                    Normalized: {endpoint.model.includes('/') ? endpoint.model.split('/').pop()?.toLowerCase().replace(/[-\s]/g, '') : endpoint.model.toLowerCase().replace(/[-\s]/g, '')}
+                          {systemStatus.subsystems.api.message.chatEndpoints.map(
+                            (endpoint, index) => (
+                              <tr
+                                key={index}
+                                className="border-b border-white/10"
+                              >
+                                <td className="py-3 px-4">
+                                  <div>
+                                    <div>{endpoint.model}</div>
+                                    <div className="text-xs text-white/40">
+                                      Normalized:{' '}
+                                      {endpoint.model.includes('/')
+                                        ? endpoint.model
+                                            .split('/')
+                                            .pop()
+                                            ?.toLowerCase()
+                                            .replace(/[-\s]/g, '')
+                                        : endpoint.model
+                                            .toLowerCase()
+                                            .replace(/[-\s]/g, '')}
+                                    </div>
                                   </div>
-                                </div>
-                              </td>
-                              <td className="py-3 px-4">
-                                <div className="flex items-center gap-2">
-                                  {getStatusIcon(endpoint.status)}
-                                  <span className="capitalize">{endpoint.status}</span>
-                                </div>
-                              </td>
-                              <td className="py-3 px-4">
-                                {endpoint.latency ? `${endpoint.latency}ms` : '-'}
-                              </td>
-                              <td className="py-3 px-4 text-red-400">
-                                {endpoint.error || '-'}
-                              </td>
-                            </tr>
-                          ))}
+                                </td>
+                                <td className="py-3 px-4">
+                                  <div className="flex items-center gap-2">
+                                    {getStatusIcon(endpoint.status)}
+                                    <span className="capitalize">
+                                      {endpoint.status}
+                                    </span>
+                                  </div>
+                                </td>
+                                <td className="py-3 px-4">
+                                  {endpoint.latency
+                                    ? `${endpoint.latency}ms`
+                                    : '-'}
+                                </td>
+                                <td className="py-3 px-4 text-red-400">
+                                  {endpoint.error || '-'}
+                                </td>
+                              </tr>
+                            )
+                          )}
                         </tbody>
                       </table>
                     </div>
@@ -273,7 +334,9 @@ export default function StatusPage() {
               <div className="bg-white/5 rounded-xl p-6 border border-white/10">
                 <div className="flex items-center gap-3">
                   <Server className="w-6 h-6 text-[#52B788]" />
-                  <p className="text-white/80">No status information available.</p>
+                  <p className="text-white/80">
+                    No status information available.
+                  </p>
                 </div>
               </div>
             )}
