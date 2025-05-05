@@ -44,16 +44,21 @@ export default function StatusPage() {
         setStatusLoading(true)
         const response = await fetch('https://api.berget.ai/health')
         
-        if (!response.ok) {
-          throw new Error(`Failed to fetch status: ${response.status}`)
+        // Even if we get a 503 error, try to parse the response
+        let data;
+        try {
+          data = await response.json()
+          setSystemStatus(data)
+          setStatusError(null)
+        } catch (parseErr) {
+          console.error('Failed to parse system status:', parseErr)
+          // If we can't parse the response, set a partial error but don't block the whole page
+          setStatusError('System status information is incomplete.')
         }
-        
-        const data = await response.json()
-        setSystemStatus(data)
-        setStatusError(null)
       } catch (err) {
         console.error('Failed to fetch system status:', err)
-        setStatusError('Failed to load system status. Please try again later.')
+        // Don't block the whole page, just show a warning
+        setStatusError('System status information is currently unavailable.')
       } finally {
         setStatusLoading(false)
       }
@@ -102,13 +107,22 @@ export default function StatusPage() {
               <div className="flex justify-center items-center py-12">
                 <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#52B788]"></div>
               </div>
-            ) : error || statusError ? (
+            ) : error ? (
               <div className="bg-red-900/20 border border-red-900/30 rounded-lg p-6 mb-8">
                 <h2 className="text-xl font-medium mb-2 text-red-400">Error</h2>
-                <p className="text-white/80">{error || statusError}</p>
+                <p className="text-white/80">{error}</p>
               </div>
             ) : (
               <div className="space-y-8">
+                {statusError && (
+                  <div className="bg-yellow-900/20 border border-yellow-900/30 rounded-lg p-4 mb-4">
+                    <div className="flex items-center gap-2">
+                      <AlertTriangle className="w-5 h-5 text-yellow-500" />
+                      <p className="text-white/80">{statusError}</p>
+                    </div>
+                  </div>
+                )}
+                
                 {/* System Status */}
                 {systemStatus && (
                 <div className="space-y-6">
@@ -219,7 +233,7 @@ export default function StatusPage() {
                 )}
                 
                 {/* Model Status */}
-                {systemStatus && systemStatus.subsystems.api.message.chatEndpoints && (
+                {systemStatus && systemStatus.subsystems?.api?.message?.chatEndpoints && (
                 <div className="space-y-6">
                   <h2 className="text-2xl font-medium">Model Status</h2>
                   <div className="bg-white/5 rounded-xl p-6 border border-white/10">
@@ -260,7 +274,51 @@ export default function StatusPage() {
                 </div>
                 )}
                 
-                {models.length === 0 && (
+                {(!systemStatus || !systemStatus.subsystems?.api?.message?.chatEndpoints) && models.length > 0 && (
+                  <div className="space-y-6">
+                    <h2 className="text-2xl font-medium">Model Status</h2>
+                    <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+                      <div className="overflow-x-auto">
+                        <table className="w-full">
+                          <thead>
+                            <tr className="border-b border-white/10">
+                              <th className="text-left py-3 px-4">Model</th>
+                              <th className="text-left py-3 px-4">Provider</th>
+                              <th className="text-left py-3 px-4">Status</th>
+                              <th className="text-left py-3 px-4">Latency</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {models.map((model, index) => (
+                              <tr key={index} className="border-b border-white/10">
+                                <td className="py-3 px-4">
+                                  {model.name}
+                                </td>
+                                <td className="py-3 px-4">
+                                  {model.owned_by}
+                                </td>
+                                <td className="py-3 px-4">
+                                  <div className="flex items-center gap-2">
+                                    {model.isLive ? 
+                                      <CheckCircle className="w-5 h-5 text-green-500" /> : 
+                                      <XCircle className="w-5 h-5 text-red-500" />
+                                    }
+                                    <span className="capitalize">{model.isLive ? 'Available' : 'Unavailable'}</span>
+                                  </div>
+                                </td>
+                                <td className="py-3 px-4">
+                                  {model.latency ? `${model.latency}ms` : '-'}
+                                </td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                
+                {(!systemStatus || !systemStatus.subsystems?.api?.message?.chatEndpoints) && models.length === 0 && (
                   <div className="bg-white/5 rounded-xl p-6 border border-white/10">
                     <div className="flex items-center gap-3">
                       <Server className="w-6 h-6 text-[#52B788]" />
