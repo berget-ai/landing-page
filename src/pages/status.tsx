@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Activity, CheckCircle, XCircle, Server, AlertTriangle, Clock } from 'lucide-react'
+import { Activity, CheckCircle, XCircle, Server, AlertTriangle, Clock, Lock, AlertOctagon, Rabbit, Snail } from 'lucide-react'
 import { useModels } from '@/hooks/use-models'
 
 interface SystemStatus {
@@ -72,7 +72,16 @@ export default function StatusPage() {
     return () => clearInterval(intervalId)
   }, [])
   
-  const getStatusIcon = (status: string) => {
+  const getStatusIcon = (status: string, error?: string) => {
+    // Om status är "down" och felmeddelandet innehåller en HTTP-statuskod
+    if (status === 'down' && error) {
+      if (error.includes('400') || error.includes('401') || error.includes('403') || error.includes('404')) {
+        return <Lock className="w-5 h-5 text-yellow-500" title="Authentication/Permission error" />
+      } else if (error.includes('500') || error.includes('502') || error.includes('503') || error.includes('504')) {
+        return <AlertOctagon className="w-5 h-5 text-red-500" title="Server error" />
+      }
+    }
+    
     switch (status) {
       case 'up':
       case 'healthy':
@@ -84,6 +93,18 @@ export default function StatusPage() {
         return <AlertTriangle className="w-5 h-5 text-yellow-500" />
       default:
         return <Clock className="w-5 h-5 text-gray-400" />
+    }
+  }
+  
+  const getLatencyIcon = (latency?: number) => {
+    if (!latency) return null;
+    
+    if (latency < 100) {
+      return <Rabbit className="w-5 h-5 text-green-500" title="Fast response (<100ms)" />
+    } else if (latency > 200) {
+      return <Snail className="w-5 h-5 text-yellow-500" title="Slow response (>200ms)" />
+    } else {
+      return <CheckCircle className="w-5 h-5 text-blue-500" title="Normal response time" />
     }
   }
   
@@ -255,15 +276,22 @@ export default function StatusPage() {
                               </td>
                               <td className="py-3 px-4">
                                 <div className="flex items-center gap-2">
-                                  {getStatusIcon(endpoint.status)}
+                                  {getStatusIcon(endpoint.status, endpoint.error)}
                                   <span className="capitalize">{endpoint.status}</span>
                                 </div>
                               </td>
                               <td className="py-3 px-4">
-                                {endpoint.latency ? `${endpoint.latency}ms` : '-'}
+                                <div className="flex items-center gap-2">
+                                  {getLatencyIcon(endpoint.latency)}
+                                  <span>{endpoint.latency ? `${endpoint.latency}ms` : '-'}</span>
+                                </div>
                               </td>
                               <td className="py-3 px-4 text-red-400">
-                                {endpoint.error || '-'}
+                                {endpoint.error ? (
+                                  <span title={endpoint.error}>
+                                    {endpoint.error.length > 30 ? `${endpoint.error.substring(0, 30)}...` : endpoint.error}
+                                  </span>
+                                ) : '-'}
                               </td>
                             </tr>
                           ))}
@@ -299,15 +327,15 @@ export default function StatusPage() {
                                 </td>
                                 <td className="py-3 px-4">
                                   <div className="flex items-center gap-2">
-                                    {model.isLive ? 
-                                      <CheckCircle className="w-5 h-5 text-green-500" /> : 
-                                      <XCircle className="w-5 h-5 text-red-500" />
-                                    }
+                                    {getStatusIcon(model.isLive ? 'up' : 'down', model.error)}
                                     <span className="capitalize">{model.isLive ? 'Available' : 'Unavailable'}</span>
                                   </div>
                                 </td>
                                 <td className="py-3 px-4">
-                                  {model.latency ? `${model.latency}ms` : '-'}
+                                  <div className="flex items-center gap-2">
+                                    {getLatencyIcon(model.latency)}
+                                    <span>{model.latency ? `${model.latency}ms` : '-'}</span>
+                                  </div>
                                 </td>
                               </tr>
                             ))}
