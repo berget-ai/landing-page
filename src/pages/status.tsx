@@ -5,31 +5,16 @@ import { useModels } from '@/hooks/use-models'
 
 interface SystemStatus {
   status: string
-  timestamp: string
-  version: string
-  environment: string
-  subsystems: {
-    api: {
-      status: string
-      message: {
-        status: string
-        lastChecked: string
-        lago: { status: string }
-        odoo: { status: string }
-        keycloak: { status: string, error?: string }
-        chatEndpoints: Array<{
-          model: string
-          status: string
-          latency?: number
-          error?: string
-        }>
-      }
-    }
-    compute: { status: string, message: any }
-    billing: { status: string, message: any }
-    crm: { status: string, message: any }
-  }
   lastChecked: string
+  lago: { status: string }
+  odoo: { status: string }
+  keycloak: { status: string, error?: string }
+  chatEndpoints: Array<{
+    model: string
+    status: string
+    latency?: number
+    error?: string
+  }>
 }
 
 export default function StatusPage() {
@@ -154,103 +139,49 @@ export default function StatusPage() {
                     </div>
                     
                     <div className="text-sm text-white/60 mb-6">
-                      <div><span className="font-medium">Environment:</span> {systemStatus.environment}</div>
-                      <div><span className="font-medium">Version:</span> {systemStatus.version}</div>
                       <div><span className="font-medium">Last Updated:</span> {new Date(systemStatus.lastChecked).toLocaleString()}</div>
                     </div>
                     
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div className="p-4 rounded-lg bg-white/5 border border-white/10">
-                        <div className="flex items-center justify-between mb-2">
-                          <h4 className="font-medium">Billing</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      <div className="p-3 rounded-lg bg-white/5 border border-white/10">
+                        <div className="flex items-center justify-between">
+                          <h5 className="text-sm font-medium">Lago</h5>
                           <div className="flex items-center gap-2">
-                            {getStatusIcon(systemStatus.subsystems.billing.status)}
-                            <span className="text-sm capitalize">{systemStatus.subsystems.billing.status}</span>
+                            {getStatusIcon(systemStatus.lago.status)}
+                            <span className="text-xs capitalize">{systemStatus.lago.status}</span>
                           </div>
                         </div>
-                        <p className="text-xs text-white/60">Lago billing system</p>
                       </div>
                       
-                      <div className="p-4 rounded-lg bg-white/5 border border-white/10">
-                        <div className="flex items-center justify-between mb-2">
-                          <h4 className="font-medium">API</h4>
+                      <div className="p-3 rounded-lg bg-white/5 border border-white/10">
+                        <div className="flex items-center justify-between">
+                          <h5 className="text-sm font-medium">Odoo</h5>
                           <div className="flex items-center gap-2">
-                            {getStatusIcon(systemStatus.subsystems.api.status)}
-                            <span className="text-sm capitalize">{systemStatus.subsystems.api.status}</span>
+                            {getStatusIcon(systemStatus.odoo.status)}
+                            <span className="text-xs capitalize">{systemStatus.odoo.status}</span>
                           </div>
                         </div>
-                        <p className="text-xs text-white/60">API services</p>
                       </div>
                       
-                      <div className="p-4 rounded-lg bg-white/5 border border-white/10">
-                        <div className="flex items-center justify-between mb-2">
-                          <h4 className="font-medium">Compute</h4>
+                      <div className="p-3 rounded-lg bg-white/5 border border-white/10">
+                        <div className="flex items-center justify-between">
+                          <h5 className="text-sm font-medium">Keycloak</h5>
                           <div className="flex items-center gap-2">
-                            {getStatusIcon(systemStatus.subsystems.compute.status)}
-                            <span className="text-sm capitalize">{systemStatus.subsystems.compute.status}</span>
+                            {getStatusIcon(systemStatus.keycloak.status)}
+                            <span className="text-xs capitalize">{systemStatus.keycloak.status}</span>
                           </div>
                         </div>
-                        <p className="text-xs text-white/60">Compute infrastructure</p>
-                      </div>
-                      
-                      <div className="p-4 rounded-lg bg-white/5 border border-white/10">
-                        <div className="flex items-center justify-between mb-2">
-                          <h4 className="font-medium">CRM</h4>
-                          <div className="flex items-center gap-2">
-                            {getStatusIcon(systemStatus.subsystems.crm.status)}
-                            <span className="text-sm capitalize">{systemStatus.subsystems.crm.status}</span>
-                          </div>
-                        </div>
-                        <p className="text-xs text-white/60">Odoo CRM system</p>
+                        {systemStatus.keycloak.error && (
+                          <p className="text-xs text-red-400 mt-1">{systemStatus.keycloak.error}</p>
+                        )}
                       </div>
                     </div>
-                    
-                    {/* API Subsystems */}
-                    {systemStatus.subsystems.api.message && (
-                      <div className="mt-6 pt-6 border-t border-white/10">
-                        <h4 className="font-medium mb-4">API Subsystems</h4>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                          <div className="p-3 rounded-lg bg-white/5 border border-white/10">
-                            <div className="flex items-center justify-between">
-                              <h5 className="text-sm font-medium">Lago</h5>
-                              <div className="flex items-center gap-2">
-                                {getStatusIcon(systemStatus.subsystems.api.message.lago.status)}
-                                <span className="text-xs capitalize">{systemStatus.subsystems.api.message.lago.status}</span>
-                              </div>
-                            </div>
-                          </div>
-                          
-                          <div className="p-3 rounded-lg bg-white/5 border border-white/10">
-                            <div className="flex items-center justify-between">
-                              <h5 className="text-sm font-medium">Odoo</h5>
-                              <div className="flex items-center gap-2">
-                                {getStatusIcon(systemStatus.subsystems.api.message.odoo.status)}
-                                <span className="text-xs capitalize">{systemStatus.subsystems.api.message.odoo.status}</span>
-                              </div>
-                            </div>
-                          </div>
-                          
-                          <div className="p-3 rounded-lg bg-white/5 border border-white/10">
-                            <div className="flex items-center justify-between">
-                              <h5 className="text-sm font-medium">Keycloak</h5>
-                              <div className="flex items-center gap-2">
-                                {getStatusIcon(systemStatus.subsystems.api.message.keycloak.status)}
-                                <span className="text-xs capitalize">{systemStatus.subsystems.api.message.keycloak.status}</span>
-                              </div>
-                            </div>
-                            {systemStatus.subsystems.api.message.keycloak.error && (
-                              <p className="text-xs text-red-400 mt-1">{systemStatus.subsystems.api.message.keycloak.error}</p>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                    )}
                   </div>
                 </div>
                 )}
                 
                 {/* Model Status */}
-                {systemStatus && systemStatus.subsystems?.api?.message?.chatEndpoints && (
+                {systemStatus && systemStatus.chatEndpoints && (
                 <div className="space-y-6">
                   <h2 className="text-2xl font-medium">Model Status</h2>
                   <div className="bg-white/5 rounded-xl p-6 border border-white/10">
@@ -264,7 +195,7 @@ export default function StatusPage() {
                           </tr>
                         </thead>
                         <tbody>
-                          {systemStatus.subsystems.api.message.chatEndpoints.map((endpoint, index) => (
+                          {systemStatus.chatEndpoints.map((endpoint, index) => (
                             <tr key={index} className="border-b border-white/10">
                               <td className="py-3 px-4">
                                 {endpoint.model}
