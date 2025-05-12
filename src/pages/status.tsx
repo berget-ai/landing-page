@@ -72,9 +72,9 @@ export default function StatusPage() {
     // Om status är "down" och felmeddelandet innehåller en HTTP-statuskod
     if (status === 'down' && error) {
       if (error.includes('400') || error.includes('401') || error.includes('403') || error.includes('404')) {
-        return <Lock className="w-5 h-5 text-yellow-500" title="Authentication/Permission error" />
+        return <div title="Authentication/Permission error"><Lock className="w-5 h-5 text-yellow-500" /></div>
       } else if (error.includes('500') || error.includes('502') || error.includes('503') || error.includes('504')) {
-        return <AlertOctagon className="w-5 h-5 text-red-500" title="Server error" />
+        return <div title="Server error"><AlertOctagon className="w-5 h-5 text-red-500" /></div>
       }
     }
     
@@ -96,11 +96,11 @@ export default function StatusPage() {
     if (!latency) return null;
     
     if (latency < 100) {
-      return <Rabbit className="w-5 h-5 text-green-500" title="Fast response (<100ms)" />
+      return <div title="Fast response (<100ms)"><Rabbit className="w-5 h-5 text-green-500" /></div>
     } else if (latency > 200) {
-      return <Snail className="w-5 h-5 text-yellow-500" title="Slow response (>200ms)" />
+      return <div title="Slow response (>200ms)"><Snail className="w-5 h-5 text-yellow-500" /></div>
     } else {
-      return <CheckCircle className="w-5 h-5 text-blue-500" title="Normal response time" />
+      return <div title="Normal response time"><CheckCircle className="w-5 h-5 text-blue-500" /></div>
     }
   }
   
