@@ -42,22 +42,18 @@ export default function StatusPage() {
     const fetchSystemStatus = async () => {
       try {
         setStatusLoading(true)
+        
+        // Hämta svaret från health-routen
         const response = await fetch('https://api.berget.ai/health')
         
-        // Even if we get a 503 error, try to parse the response
-        let data;
-        try {
-          data = await response.json()
-          setSystemStatus(data)
-          setStatusError(null)
-        } catch (parseErr) {
-          console.error('Failed to parse system status:', parseErr)
-          // If we can't parse the response, set a partial error but don't block the whole page
-          setStatusError('System status information is incomplete.')
-        }
+        // Ignorera response.ok och försök alltid parsa JSON
+        // Health-routen returnerar alltid valid JSON även vid 503-fel
+        const data = await response.json()
+        setSystemStatus(data)
+        setStatusError(null)
       } catch (err) {
         console.error('Failed to fetch system status:', err)
-        // Don't block the whole page, just show a warning
+        // Visa en varning men blockera inte hela sidan
         setStatusError('System status information is currently unavailable.')
       } finally {
         setStatusLoading(false)
