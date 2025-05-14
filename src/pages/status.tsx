@@ -221,7 +221,7 @@ export default function StatusPage() {
                 </div>
                 )}
                 
-                {(!systemStatus || !systemStatus.subsystems?.api?.message?.chatEndpoints) && models.length > 0 && (
+                {(!systemStatus || !systemStatus.chatEndpoints) && models.length > 0 && (
                   <div className="space-y-6">
                     <h2 className="text-2xl font-medium">Model Status</h2>
                     <div className="bg-white/5 rounded-xl p-6 border border-white/10">
@@ -265,7 +265,7 @@ export default function StatusPage() {
                   </div>
                 )}
                 
-                {(!systemStatus || !systemStatus.subsystems?.api?.message?.chatEndpoints) && models.length === 0 && (
+                {(!systemStatus || !systemStatus.chatEndpoints) && models.length === 0 && (
                   <div className="bg-white/5 rounded-xl p-6 border border-white/10">
                     <div className="flex items-center gap-3">
                       <Server className="w-6 h-6 text-[#52B788]" />
