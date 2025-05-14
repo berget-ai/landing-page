@@ -131,6 +131,26 @@ export function VisualIdentityGuide() {
                         <span className="text-sm">Logo (SVG)</span>
                       </a>
                       <a
+                        href="/logos/berget-icon-white.svg"
+                        download="berget-icon-white.svg"
+                        className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+                      >
+                        <Download className="w-5 h-5 text-white" />
+                        <span className="text-sm">
+                          Icon Only - White (SVG)
+                        </span>
+                      </a>
+                      <a
+                        href="/logos/berget-icon-black.svg"
+                        download="berget-icon-black.svg"
+                        className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+                      >
+                        <Download className="w-5 h-5 text-white" />
+                        <span className="text-sm">
+                          Icon Only - Black (SVG)
+                        </span>
+                      </a>
+                      <a
                         href="/logos/berget-logo-white.svg"
                         download="berget-logo-white.svg"
                         className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
@@ -155,38 +175,87 @@ export function VisualIdentityGuide() {
                   <div>
                     <h4 className="text-lg font-medium mb-3">PNG Format</h4>
                     <div className="space-y-3">
-                      <a
-                        href="/logos/logo-16.png"
-                        download="berget-logo-16.png"
-                        className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
-                      >
-                        <Download className="w-5 h-5 text-white" />
-                        <span className="text-sm">Logo 16px (PNG)</span>
-                      </a>
-                      <a
-                        href="/logos/logo-32.png"
-                        download="berget-logo-32.png"
-                        className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
-                      >
-                        <Download className="w-5 h-5 text-white" />
-                        <span className="text-sm">Logo 32px (PNG)</span>
-                      </a>
-                      <a
-                        href="/logos/logo-64.png"
-                        download="berget-logo-64.png"
-                        className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
-                      >
-                        <Download className="w-5 h-5 text-white" />
-                        <span className="text-sm">Logo 64px (PNG)</span>
-                      </a>
-                      <a
-                        href="/logos/logo-128.png"
-                        download="berget-logo-128.png"
-                        className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
-                      >
-                        <Download className="w-5 h-5 text-white" />
-                        <span className="text-sm">Logo 128px (PNG)</span>
-                      </a>
+                      <div className="grid grid-cols-1 gap-3">
+                        <h5 className="text-sm font-medium">Icon Only - White</h5>
+                        <div className="grid grid-cols-2 gap-3">
+                          <a
+                            href="/logos/berget-icon-white-64.png"
+                            download="berget-icon-white-64.png"
+                            className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+                          >
+                            <Download className="w-5 h-5 text-white" />
+                            <span className="text-sm">64px</span>
+                          </a>
+                          <a
+                            href="/logos/berget-icon-white-128.png"
+                            download="berget-icon-white-128.png"
+                            className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+                          >
+                            <Download className="w-5 h-5 text-white" />
+                            <span className="text-sm">128px</span>
+                          </a>
+                        </div>
+                        
+                        <h5 className="text-sm font-medium mt-2">Icon Only - Black</h5>
+                        <div className="grid grid-cols-2 gap-3">
+                          <a
+                            href="/logos/berget-icon-black-64.png"
+                            download="berget-icon-black-64.png"
+                            className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+                          >
+                            <Download className="w-5 h-5 text-white" />
+                            <span className="text-sm">64px</span>
+                          </a>
+                          <a
+                            href="/logos/berget-icon-black-128.png"
+                            download="berget-icon-black-128.png"
+                            className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+                          >
+                            <Download className="w-5 h-5 text-white" />
+                            <span className="text-sm">128px</span>
+                          </a>
+                        </div>
+                        
+                        <h5 className="text-sm font-medium mt-2">Logo with Text - White</h5>
+                        <div className="grid grid-cols-2 gap-3">
+                          <a
+                            href="/logos/berget-logo-white-128.png"
+                            download="berget-logo-white-128.png"
+                            className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+                          >
+                            <Download className="w-5 h-5 text-white" />
+                            <span className="text-sm">128px</span>
+                          </a>
+                          <a
+                            href="/logos/berget-logo-white-256.png"
+                            download="berget-logo-white-256.png"
+                            className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+                          >
+                            <Download className="w-5 h-5 text-white" />
+                            <span className="text-sm">256px</span>
+                          </a>
+                        </div>
+                        
+                        <h5 className="text-sm font-medium mt-2">Logo with Text - Black</h5>
+                        <div className="grid grid-cols-2 gap-3">
+                          <a
+                            href="/logos/berget-logo-black-128.png"
+                            download="berget-logo-black-128.png"
+                            className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+                          >
+                            <Download className="w-5 h-5 text-white" />
+                            <span className="text-sm">128px</span>
+                          </a>
+                          <a
+                            href="/logos/berget-logo-black-256.png"
+                            download="berget-logo-black-256.png"
+                            className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+                          >
+                            <Download className="w-5 h-5 text-white" />
+                            <span className="text-sm">256px</span>
+                          </a>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
