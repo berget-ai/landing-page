@@ -53,9 +53,8 @@ export function LogoComponent({
     <div className={`inline-block ${className}`} style={containerStyle}>
       {!withText && (
         <img
-          src="/logos/logo.svg"
+          src={shouldInvert ? "/logos/berget-icon-black.svg" : "/logos/berget-icon-white.svg"}
           alt="Berget AI Logo"
-          className={`h-full ${shouldInvert ? 'filter invert' : ''}`}
           style={{
             height: '100%',
             width: 'auto',
@@ -65,9 +64,8 @@ export function LogoComponent({
       )}
       {withText && (
         <img
-          src="/logos/berget-logo-white.svg"
+          src={shouldInvert ? "/logos/berget-logo-black.svg" : "/logos/berget-logo-white.svg"}
           alt="Berget AI Logo with Text"
-          className={`h-full ${shouldInvert ? 'filter invert' : ''}`}
           style={{ width: '300px', objectFit: 'contain' }}
         />
       )}
