@@ -53,7 +53,7 @@ export function LogoComponent({
     <div className={`inline-block ${className}`} style={containerStyle}>
       {!withText && (
         <img
-          src="/images/logo.svg"
+          src="/logos/logo.svg"
           alt="Berget AI Logo"
           className={`h-full ${shouldInvert ? 'filter invert' : ''}`}
           style={{
@@ -65,7 +65,7 @@ export function LogoComponent({
       )}
       {withText && (
         <img
-          src="/images/berget-logo-white.svg"
+          src="/logos/berget-logo-white.svg"
           alt="Berget AI Logo with Text"
           className={`h-full ${shouldInvert ? 'filter invert' : ''}`}
           style={{ width: '300px', objectFit: 'contain' }}
