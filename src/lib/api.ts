@@ -24,20 +24,19 @@ export const getDefaultHeaders = () => {
   }
 }
 
-
 /**
  * Normalize model ID to match between different API endpoints
  * Health endpoint uses format like "agentica-org/DeepCoder-14B-Preview"
  * Models endpoint uses format like "Agentica-DeepCoder-14B-Preview"
  */
 export const normalizeModelId = (id: string): string => {
-  if (!id) return '';
-  
+  if (!id) return ''
+
   // Remove organization prefix if present (e.g., "agentica-org/")
-  const withoutOrg = id.includes('/') ? id.split('/').pop() || '' : id;
-  
+  const withoutOrg = id.includes('/') ? id.split('/').pop() || '' : id
+
   // Replace hyphens and spaces with nothing to make comparison easier
-  return withoutOrg.toLowerCase().replace(/[-\s]/g, '');
+  return withoutOrg.toLowerCase().replace(/[-\s]/g, '')
 }
 
 /**
