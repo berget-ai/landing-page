@@ -64,7 +64,7 @@ export function VisualIdentityGuide() {
               <div>
                 <h3 className="text-xl mb-4 font-medium">Logo with Text</h3>
                 <div className="p-6 rounded-lg bg-[#1A1A1A] border border-white/10 flex justify-center items-center">
-                  <LogoComponent withText variant="horizontal" />
+                  <LogoComponent withText variant="horizontal" size={128} />
                 </div>
                 <div className="text-sm text-white/60 mt-2">
                   Logo with company name for headers and branding
@@ -80,6 +80,7 @@ export function VisualIdentityGuide() {
                     withText
                     variant="horizontal"
                     inverted={true}
+                    size={128}
                   />
                 </div>
                 <div className="text-sm text-white/60 mt-2">

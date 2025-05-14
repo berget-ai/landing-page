@@ -66,7 +66,11 @@ export function LogoComponent({
         <img
           src={shouldInvert ? "/logos/berget-logo-black.svg" : "/logos/berget-logo-white.svg"}
           alt="Berget AI Logo with Text"
-          style={{ width: '300px', objectFit: 'contain' }}
+          style={{ 
+            width: variant === 'horizontal' ? '300px' : '100%',
+            height: '100%',
+            objectFit: 'contain' 
+          }}
         />
       )}
     </div>
