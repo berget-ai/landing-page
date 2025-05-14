@@ -123,7 +123,7 @@ export function VisualIdentityGuide() {
                     <h4 className="text-lg font-medium mb-3">SVG Format</h4>
                     <div className="space-y-3">
                       <a
-                        href="/images/logo.svg"
+                        href="/logos/logo.svg"
                         download="berget-logo.svg"
                         className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
                       >
@@ -131,7 +131,7 @@ export function VisualIdentityGuide() {
                         <span className="text-sm">Logo (SVG)</span>
                       </a>
                       <a
-                        href="/images/berget-logo-white.svg"
+                        href="/logos/berget-logo-white.svg"
                         download="berget-logo-white.svg"
                         className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
                       >
@@ -141,7 +141,7 @@ export function VisualIdentityGuide() {
                         </span>
                       </a>
                       <a
-                        href="/images/berget-logo-black.svg"
+                        href="/logos/berget-logo-black.svg"
                         download="berget-logo-black.svg"
                         className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
                       >
@@ -156,7 +156,7 @@ export function VisualIdentityGuide() {
                     <h4 className="text-lg font-medium mb-3">PNG Format</h4>
                     <div className="space-y-3">
                       <a
-                        href="/images/logo-16.png"
+                        href="/logos/logo-16.png"
                         download="berget-logo-16.png"
                         className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
                       >
@@ -164,7 +164,7 @@ export function VisualIdentityGuide() {
                         <span className="text-sm">Logo 16px (PNG)</span>
                       </a>
                       <a
-                        href="/images/logo-32.png"
+                        href="/logos/logo-32.png"
                         download="berget-logo-32.png"
                         className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
                       >
@@ -172,7 +172,7 @@ export function VisualIdentityGuide() {
                         <span className="text-sm">Logo 32px (PNG)</span>
                       </a>
                       <a
-                        href="/images/logo-64.png"
+                        href="/logos/logo-64.png"
                         download="berget-logo-64.png"
                         className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
                       >
@@ -180,7 +180,7 @@ export function VisualIdentityGuide() {
                         <span className="text-sm">Logo 64px (PNG)</span>
                       </a>
                       <a
-                        href="/images/logo-128.png"
+                        href="/logos/logo-128.png"
                         download="berget-logo-128.png"
                         className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
                       >
