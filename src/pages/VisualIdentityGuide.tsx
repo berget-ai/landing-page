@@ -40,7 +40,7 @@ export function VisualIdentityGuide() {
                   Logo on Dark Background
                 </h3>
                 <div className="p-6 rounded-lg bg-[#1A1A1A] border border-white/10 flex justify-center items-center">
-                  <LogoComponent size="lg" className="h-24" inverted={false} />
+                  <LogoComponent size={96} className="h-24" inverted={false} variant="icon" />
                 </div>
                 <div className="text-sm text-white/60 mt-2">
                   White logo for dark backgrounds
@@ -52,7 +52,7 @@ export function VisualIdentityGuide() {
                   Logo on Light Background
                 </h3>
                 <div className="p-6 rounded-lg bg-white border border-gray-200 flex justify-center items-center">
-                  <LogoComponent size="lg" className="h-24" inverted={true} />
+                  <LogoComponent size={96} className="h-24" inverted={true} variant="icon" />
                 </div>
                 <div className="text-sm text-white/60 mt-2">
                   Black logo for light backgrounds
