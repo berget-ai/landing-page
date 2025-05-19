@@ -1,12 +1,12 @@
 ---
-title: Berget AI update
-description: We have been cooking new things
+title: Berget AI update #1
+description: We have been cooking new things!
 date: 2025-05-19
 author: Berget Team
 tags:
   - models
   - features
-image: https://berget.ai/logos/berget-logo-white.png
+image: https://berget.ai/logos/update.png
 imageAlt: Berget AI Logo
 ---
 
