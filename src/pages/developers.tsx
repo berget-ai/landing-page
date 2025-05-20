@@ -124,7 +124,7 @@ export default function DevelopersPage() {
             </p>
             <div className="flex gap-4 justify-center">
               <Button size="lg" asChild>
-                <Link to="/signup">{t('DevelopersPage.cta.signup')}</Link>
+                <Link to="https://console.berget.ai">{t('DevelopersPage.cta.signup')}</Link>
               </Button>
 
             </div>
