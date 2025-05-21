@@ -31,27 +31,8 @@ export default function OpenSourcePage() {
           <div className="space-y-16">
             {/* Core Principles */}
             <section>
-              <h2 className="text-2xl font-ovo mb-6">Core Principles</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="p-6 rounded-xl bg-white/[0.02] border border-[#74C69D]/20">
-                  <Github className="w-8 h-8 mb-4 text-[#52B788]" />
-                  <h3 className="text-xl font-medium mb-3">100% Open Source</h3>
-                  <ul className="space-y-3">
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-[#52B788] mt-0.5" />
-                      <span className="text-white/80">Publicly accessible code repository</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-[#52B788] mt-0.5" />
-                      <span className="text-white/80">Recognized open source license (MIT, Apache 2.0, GPLv3)</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-[#52B788] mt-0.5" />
-                      <span className="text-white/80">Clear project documentation and purpose</span>
-                    </li>
-                  </ul>
-                </div>
-
+              <h2 className="text-2xl font-ovo mb-6">What we offer</h2>
+                
                 <div className="p-6 rounded-xl bg-white/[0.02] border border-[#74C69D]/20">
                   <Shield className="w-8 h-8 mb-4 text-[#52B788]" />
                   <h3 className="text-xl font-medium mb-3">Free Resources</h3>
@@ -70,16 +51,15 @@ export default function OpenSourcePage() {
                     </li>
                   </ul>
                 </div>
-              </div>
             </section>
 
             {/* Project Requirements */}
             <section>
               <h2 className="text-2xl font-ovo mb-6">Project Requirements</h2>
-              <div className="p-6 rounded-xl bg-white/[0.02] border border-[#74C69D]/20">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="p-6 rounded-xl bg-white/[0.02] border border-[#74C69D]/20">
                 <FileCode className="w-8 h-8 mb-4 text-[#52B788]" />
                 <h3 className="text-xl font-medium mb-3">Eligibility Criteria</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <ul className="space-y-3">
                     <li className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-[#52B788] mt-0.5" />
@@ -89,8 +69,6 @@ export default function OpenSourcePage() {
                       <Check className="w-5 h-5 text-[#52B788] mt-0.5" />
                       <span className="text-white/80">Comprehensive README.md</span>
                     </li>
-                  </ul>
-                  <ul className="space-y-3">
                     <li className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-[#52B788] mt-0.5" />
                       <span className="text-white/80">No commercial paywalls</span>
@@ -101,7 +79,26 @@ export default function OpenSourcePage() {
                     </li>
                   </ul>
                 </div>
+                <div className="p-6 rounded-xl bg-white/[0.02] border border-[#74C69D]/20">
+                  <Github className="w-8 h-8 mb-4 text-[#52B788]" />
+                  <h3 className="text-xl font-medium mb-3">100% Open Source</h3>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-[#52B788] mt-0.5" />
+                      <span className="text-white/80">Publicly accessible code repository</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-[#52B788] mt-0.5" />
+                      <span className="text-white/80">Recognized open source license (MIT, Apache 2.0, GPLv3)</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-[#52B788] mt-0.5" />
+                      <span className="text-white/80">Clear project documentation and purpose</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
+            
             </section>
 
             {/* Benefits & Growth */}
