@@ -15,6 +15,7 @@ const footerLinks = {
     { key: 'about', href: '/about' },
     { key: 'blog', href: '/blog' },
     { key: 'contact', href: '/contact' },
+    { key: 'open-source', href: '/open-source' },
   ],
   legal: [
     { key: 'privacy', href: '/privacy' },
@@ -90,18 +91,10 @@ export function Footer() {
                     to={link.href}
                     className="text-sm text-white/60 hover:text-white transition-colors"
                   >
-                    {t(`footer.company.${link.key}`)}
+                    {link.key === 'open-source' ? 'Open Source Program' : t(`footer.company.${link.key}`)}
                   </Link>
                 </li>
               ))}
-             {/* <li>
-                <Link
-                  to="/status"
-                  className="text-sm text-white/60 hover:text-white transition-colors"
-                >
-                  {t('footer.status')}
-                </Link>
-              </li> */}
             </ul>
           </div>
 
