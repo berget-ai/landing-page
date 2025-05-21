@@ -19,6 +19,7 @@ import ContactPage from './pages/contact'
 import ModelsPage from './pages/models'
 import StatusPage from './pages/status'
 import VisualIdentityGuide from './pages/VisualIdentityGuide'
+import OpenSourcePage from './pages/open-source'
 
 // Markdown content
 import { html as termsHtml } from '@/pages/terms.md'
@@ -51,19 +52,14 @@ function App() {
           <Route path="/status" element={<StatusPage />} />
           <Route path="/security" element={<ResponsibleDisclosurePage />} />
           <Route path="/terms" element={<MarkdownPage html={termsHtml} />} />
-          <Route
-            path="/privacy"
-            element={<MarkdownPage html={privacyHtml} />}
-          />
-          <Route
-            path="/acceptable-use"
-            element={<MarkdownPage html={acceptableUseHtml} />}
-          />
+          <Route path="/privacy" element={<MarkdownPage html={privacyHtml} />} />
+          <Route path="/acceptable-use" element={<MarkdownPage html={acceptableUseHtml} />} />
           <Route path="/sla" element={<MarkdownPage html={slaHtml} />} />
           <Route path="/dpa" element={<MarkdownPage html={dpaHtml} />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:id" element={<BlogPostPage />} />
           <Route path="/vig" element={<VisualIdentityGuide />} />
+          <Route path="/open-source" element={<OpenSourcePage />} />
         </Routes>
         <Footer />
       </div>
