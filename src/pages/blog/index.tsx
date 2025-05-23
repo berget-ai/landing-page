@@ -36,6 +36,7 @@ export default function BlogPage() {
             description: metadata.description || '',
             date: metadata.date || '',
             author: metadata.author || 'Berget Team',
+            email: metadata.email || '',
             content: content.replace(/^---\n[\s\S]*?\n---\n/, ''), // Remove frontmatter
             tags: metadata.tags || [],
             image: metadata.image || '',

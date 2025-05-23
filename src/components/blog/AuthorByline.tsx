@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Calendar, Twitter, Linkedin } from 'lucide-react'
-import teamData from '@/data/team.json'
+import { useTranslation } from 'react-i18next'
 
 interface AuthorBylineProps {
   email?: string
@@ -10,9 +10,18 @@ interface AuthorBylineProps {
 }
 
 export function AuthorByline({ email, name, date, size = 'md' }: AuthorBylineProps) {
-  // Find team member by email
-  const author = teamData.find(member => member.email === email) || 
-                 teamData.find(member => member.name === name)
+  const { t } = useTranslation()
+  
+  // Get team members from translations
+  const teamMembers = t('about.team.members', { returnObjects: true }) as Record<string, any>
+  
+  // Find team member by name or email
+  const memberKey = Object.keys(teamMembers).find(key => {
+    const member = teamMembers[key]
+    return member.name === name || (email && member.email === email)
+  })
+  
+  const author = memberKey ? teamMembers[memberKey] : null
   
   const imageSize = {
     sm: 'w-8 h-8',

@@ -95,6 +95,7 @@ export default function BlogPostPage() {
         description: metadata.description || '',
         date: metadata.date || '',
         author: metadata.author || 'Berget Team',
+        email: metadata.email || '',
         content: htmlContent,
         tags: metadata.tags || [],
         image: metadata.image || '',
