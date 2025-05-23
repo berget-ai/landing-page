@@ -5,8 +5,8 @@ date: '2025-05-23'
 author: 'Christian Landgren'
 email: 'christian@berget.ai'
 tags: ['teknik', 'infrastruktur', 'optimering', 'llm']
-image: 'https://images.unsplash.com/photo-1607723619497-dd438a8168ae?q=80'
-imageAlt: 'Närbild på GPU-kort i ett serverrack med blått ljus'
+image: 'https://images.unsplash.com/photos/M5tzZtFCOfs'
+imageAlt: 'Serverrack med nätverkskablar i ett modernt datacenter'
 ---
 
 # Bakom kulisserna: Så optimerar vi våra AI-modeller
