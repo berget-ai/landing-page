@@ -10,184 +10,101 @@ imageAlt: 'Serverrum med modern AI-infrastruktur'
 
 # Vår modellstrategi: Balans mellan kraft och precision
 
-> **"Det handlar inte bara om att ha de största modellerna, utan de smartaste kombinationerna"**
->
-> I en värld där AI-modeller blir allt större och mer resurskrävande, fokuserar vi på att hitta den optimala balansen mellan prestanda, precision och hållbarhet. Genom att kombinera specialiserade modeller kan vi ofta uppnå bättre resultat än med enskilda jättemodeller.
+I en värld där AI-modeller blir allt större och mer resurskrävande, har vi på Berget AI valt en annan väg. Vi tror inte att framtidens AI handlar om att ha de största modellerna, utan om att skapa de smartaste kombinationerna av specialiserade verktyg. Denna artikel förklarar vår filosofi kring modellval, de centrala begreppen inom modern AI, och varför vi har valt just de modeller som utgör vår infrastruktur.
 
-## Vår modellportfölj: Mångfald och specialisering
+## Grundläggande begrepp inom modern AI
 
-På Berget AI har vi noggrant valt en diversifierad uppsättning modeller som täcker olika användningsområden och storleksklasser. Vår strategi bygger på att kombinera:
+Innan vi går in på specifika modellval är det viktigt att förstå några centrala begrepp som formar dagens AI-landskap:
 
-### 1. Reasoning-modeller för komplex problemlösning
+**Reasoning-modeller** är stora språkmodeller optimerade för att förstå, resonera och lösa komplexa problem. De fungerar som "hjärnor" i AI-system och kan hantera allt från konversationer till problemlösning. Dessa modeller kräver ofta betydande beräkningsresurser men erbjuder bred funktionalitet.
 
-Dessa modeller är optimerade för att förstå, resonera och lösa komplexa problem. De utgör ryggraden i vår infrastruktur:
+**Embedding-modeller** omvandlar text, bilder eller andra data till numeriska vektorer som fångar semantisk betydelse. Dessa vektorer gör det möjligt för datorer att "förstå" likheter mellan koncept. När du söker efter information och vill hitta relevanta dokument även om de inte innehåller exakt de sökord du använt, är det embedding-modeller som gör detta möjligt.
 
-- **Llama 3.3 70B**: Vår största generella modell med exceptionell förmåga att förstå kontext och generera högkvalitativt innehåll. Med sina 70 miljarder parametrar kräver den betydande beräkningsresurser, men levererar toppresultat för komplexa uppgifter.
+**Rerankers** är specialiserade modeller som förbättrar sökresultat genom att omranka kandidater baserat på relevans till frågan. De fungerar som ett andra filter efter initial sökning och kan dramatiskt förbättra precisionen i informationshämtning.
 
-- **Mistral Small 24B**: En balanserad modell som erbjuder utmärkt resonemang med lägre resurskrav än de allra största modellerna. Särskilt stark på svenska och nordiska språk.
+**Multimodala modeller** kan arbeta med flera typer av data samtidigt – text, bilder, ljud och ibland video. De kan "se" bilder, "läsa" text och förstå sambanden mellan olika informationstyper, vilket möjliggör mer naturlig interaktion.
 
-- **Gemma 3**: Googles senaste open source-modell som visar imponerande prestanda trots sin relativt kompakta storlek. Utmärkt för applikationer där balans mellan prestanda och resurseffektivitet är kritiskt.
+**Fine-tuning** är processen att anpassa en förtränad modell för specifika uppgifter eller domäner genom ytterligare träning på specialiserad data. Detta ger modellen djupare förståelse för specifika områden utan att behöva träna en helt ny modell från grunden.
 
-### 2. Specialiserade modeller för specifika uppgifter
+## Vårt ställningstagande: Kvalitet framför kvantitet
 
-Istället för att förlita oss på generella modeller för alla uppgifter, använder vi specialiserade modeller för specifika domäner:
+På Berget AI har vi tagit ett tydligt ställningstagande: Vi prioriterar specialisering, effektivitet och etik framför rå beräkningskraft. Detta innebär att:
 
-- **DeepCoder 14B**: Optimerad för kodgenerering och programmeringsuppgifter. Genom att specialisera sig på kod kan den ofta överträffa mycket större generella modeller för utvecklingsrelaterade uppgifter.
+1. **Vi väljer öppna modeller när det är möjligt**, eftersom de ger oss och våra kunder större kontroll och transparens. Vi kan anpassa, förbättra och säkerställa att modellerna fungerar enligt våra värderingar.
 
-- **Devstral Small**: En effektiv modell för utvecklare som kombinerar kodförståelse med naturligt språk. Perfekt för dokumentation, kodkommentarer och tekniska förklaringar.
+2. **Vi prioriterar modeller som respekterar integritet och upphovsrätt**. Vi väljer bort modeller som tränats på data som samlats in utan tydligt samtycke eller som kränker upphovsrätt.
 
-### 3. Modalitetsspecifika modeller
+3. **Vi balanserar prestanda mot resursanvändning**. En modell som är 10% bättre men kräver 200% mer energi är ofta inte ett hållbart val.
 
-AI handlar inte bara om text. Vår infrastruktur stödjer flera modaliteter:
+4. **Vi värdesätter kulturell relevans för svenska och nordiska sammanhang**. Modeller som förstår vår kultur, vårt språk och våra samhällssystem ger bättre resultat för våra kunder.
 
-- **KB-Whisper Large**: Vår anpassade version av Whisper för tal-till-text, särskilt optimerad för svenska och nordiska språk i samarbete med Kungliga Biblioteket. Hanterar dialekter, accenter och domänspecifik terminologi med hög precision.
+## Våra modellval: En berättelse om medvetna beslut
 
-- **Docling**: Specialiserad på dokumentförståelse och extraktion av strukturerad information från ostrukturerade dokument. Särskilt värdefull för juridiska dokument, rapporter och formulär.
+### Reasoning-modeller: Hjärnan i systemet
 
-### 4. Embedding- och retrieval-modeller
+För generell problemlösning och konversation använder vi flera modeller med olika styrkor:
 
-Dessa modeller är avgörande för att förstå semantisk likhet och effektiv informationshämtning:
+**Llama 3.3 70B** är vår största generella modell med exceptionell förmåga att förstå kontext och generera högkvalitativt innehåll. Med sina 70 miljarder parametrar levererar den toppresultat för komplexa uppgifter, men kräver också betydande beräkningsresurser. Vi har valt denna modell för dess balans mellan prestanda och öppenhet – till skillnad från stängda alternativ som GPT-4 kan vi anpassa och optimera Llama 3.3 för våra kunders specifika behov.
 
-- **Multilingual E5**: Genererar högkvalitativa flerspråkiga embeddings som fångar semantisk betydelse över språkgränser. Kritisk för vår RAG-infrastruktur (Retrieval-Augmented Generation).
+**Mistral Small 24B** erbjuder utmärkt resonemang med lägre resurskrav. Vi har valt denna modell särskilt för dess styrka på svenska och nordiska språk. I många fall presterar den nästan lika bra som mycket större modeller, men med betydligt lägre energiförbrukning.
 
-- **BGE Reranker**: Förbättrar sökresultat genom att omranka kandidater baserat på relevans till frågan. Detta ger betydligt bättre precision i informationshämtning.
+**Gemma 3** från Google visar imponerande prestanda trots sin relativt kompakta storlek. Vi har implementerat denna modell för applikationer där balans mellan prestanda och resurseffektivitet är kritiskt. Den är särskilt värdefull för kunder med begränsad beräkningskapacitet som ändå behöver avancerad AI-funktionalitet.
 
-### 5. Multimodala modeller
+**MAI-DS-R1** är vår mest avancerade multimodala modell. Vi valde att implementera denna modell eftersom den bygger på DeepSeeks grundmodell men har fine-tunats utan den censur som finns i originalversionen. Detta är ett medvetet etiskt val – vi anser att våra kunder behöver modeller som kan diskutera känsliga ämnen på ett balanserat sätt utan inbyggda politiska begränsningar. MAI-DS-R1 distribueras över flera GPUer för optimal prestanda och kan arbeta med text, bilder och strukturerad data samtidigt.
 
-- **MAI-DS-R1**: Vår mest avancerade multimodala modell som kan arbeta med text, bilder och strukturerad data samtidigt. Distribuerad över flera GPUer för optimal prestanda.
+### Specialiserade modeller: Experter på sina områden
 
-## Varför modellmix är avgörande
+**DeepCoder 14B** är optimerad för kodgenerering och programmeringsuppgifter. Våra tester visar att den ofta överträffar Llama 3.3 70B på kodgenereringsuppgifter trots att den är 5x mindre. Detta är ett perfekt exempel på hur specialisering kan ge bättre resultat än rå storlek.
 
-Det finns flera anledningar till att vi prioriterar en diversifierad modellportfölj:
+**Devstral Small** kombinerar kodförståelse med naturligt språk. Vi valde denna modell för dess förmåga att generera tekniska förklaringar och dokumentation – en nisch där den presterar exceptionellt väl.
 
-### Hållbarhet och resurseffektivitet
+### Modalitetsspecifika modeller: Utöka AI:ns sinnen
 
-Stora modeller som Llama 3.3 70B är imponerande men extremt resurskrävande. De kräver:
-- Betydande GPU-minne (70+ GB)
-- Hög energiförbrukning
-- Större koldioxidavtryck
+**KB-Whisper Large** är vår anpassade version av Whisper för tal-till-text, utvecklad i samarbete med Kungliga Biblioteket. Vi valde att investera i denna specialanpassning eftersom standardmodeller för taligenkänning ofta presterar dåligt på svenska, särskilt när det gäller dialekter och domänspecifik terminologi. Våra tester visar 25% högre precision för svenska transkriptioner jämfört med generella modeller.
 
-Genom att använda mindre, specialiserade modeller när det är möjligt kan vi:
-- Minska energiförbrukningen med upp till 90% för vissa uppgifter
-- Betjäna fler användare samtidigt
-- Minska latensen för snabbare svarstider
+**Docling** specialiserar sig på dokumentförståelse och extraktion av strukturerad information från ostrukturerade dokument. Vi implementerade denna modell efter att ha sett hur många av våra kunder inom juridik och offentlig sektor brottades med att automatisera dokumenthantering.
 
-### Precision genom specialisering
+### Embedding- och retrieval-modeller: Hitta rätt information
 
-Generella modeller är mångsidiga men inte alltid optimala för specifika uppgifter. Våra tester visar att:
+**Multilingual E5** genererar högkvalitativa flerspråkiga embeddings som fångar semantisk betydelse över språkgränser. Vi valde denna modell framför alternativ som endast fokuserar på engelska eftersom många av våra kunder arbetar i flerspråkiga miljöer där svenska, engelska och andra nordiska språk används parallellt.
 
-- **DeepCoder 14B** överträffar ofta Llama 3.3 70B på kodgenereringsuppgifter trots att den är 5x mindre
-- **KB-Whisper Large** ger 25% högre precision för svenska transkriptioner jämfört med generella multimodala modeller
-- **BGE Reranker** förbättrar relevansen i informationshämtning med upp till 40% jämfört med enbart embedding-baserade metoder
+**BGE Reranker** förbättrar sökresultat genom att omranka kandidater baserat på relevans. Våra tester visar att denna modell förbättrar relevansen i informationshämtning med upp till 40% jämfört med enbart embedding-baserade metoder. Detta är avgörande för RAG-applikationer (Retrieval-Augmented Generation) där kvaliteten på hämtad information direkt påverkar slutresultatet.
 
-### Modellkedjor: Mer än summan av delarna
+## Modeller vi valt bort – och varför
 
-En av våra viktigaste insikter är att kedjor av specialiserade modeller ofta överträffar enskilda stora modeller. Ett typiskt exempel:
+Våra modellval handlar lika mycket om vad vi väljer bort som vad vi väljer in. Här är några modeller vi medvetet valt att inte implementera:
 
-1. **Användarfråga** → **Mistral Small 24B** (förstår intentionen)
-2. **Multilingual E5** (genererar embeddings för sökning)
-3. **BGE Reranker** (förbättrar sökresultaten)
-4. **DeepCoder 14B** (genererar kod baserat på kontexten)
-5. **Mistral Small 24B** (förklarar koden och ger rekommendationer)
+**GPT-4 och Claude 3 Opus** – Trots deras imponerande prestanda har vi valt bort dessa stängda modeller eftersom de inte ger oss den kontroll och transparens vi eftersträvar. Vi kan inte anpassa dem för våra kunders specifika behov eller säkerställa att de hanterar data enligt våra integritetsprinciper.
 
-Denna kedja ger betydligt bättre resultat än att bara skicka frågan till en enda stor modell, samtidigt som den totala energiförbrukningen är lägre.
+**Qwen 3 235B** – Denna enorma modell från Alibaba visar imponerande resultat, men vi har valt att inte implementera den på grund av dess extrema resurskrav och oklarheter kring dess träningsdata. Modellen kräver över 200GB GPU-minne och har ett oproportionerligt stort koldioxidavtryck jämfört med förbättringen i prestanda.
 
-## Vår utvärderingsprocess
+**Proprietary Vision-Language Models** – Vi har valt bort flera stängda multimodala modeller till förmån för öppna alternativ, trots att de stängda ibland har marginellt bättre prestanda. Detta eftersom vi värdesätter möjligheten att anpassa modellerna för nordiska språk och kulturella sammanhang.
 
-Att välja rätt modeller kräver en rigorös utvärderingsprocess. Vi följer en strukturerad metodik:
+## Modellkedjor: Framtidens AI-arkitektur
 
-### 1. Benchmarking
+En av våra viktigaste insikter är att kedjor av specialiserade modeller ofta överträffar enskilda stora modeller. När en användare ställer en komplex fråga som kräver informationshämtning och kodgenerering, aktiverar vi en kedja av modeller:
 
-Vi utvärderar nya modeller mot etablerade benchmarks som:
-- MMLU för allmän kunskap
-- HumanEval och MBPP för kodgenerering
-- HELM för etik och säkerhet
-- SweWiC och SweFAQ för svenska språkförmågor
+1. **Mistral Small 24B** analyserar frågan och förstår användarens intention
+2. **Multilingual E5** genererar embeddings för att hitta relevant information
+3. **BGE Reranker** förbättrar sökresultaten genom att prioritera de mest relevanta dokumenten
+4. **DeepCoder 14B** genererar kod baserat på den hämtade informationen
+5. **Mistral Small 24B** förklarar koden och ger rekommendationer
 
-### 2. Domänspecifika tester
+Denna kedja ger betydligt bättre resultat än att bara skicka frågan till en enda stor modell, samtidigt som den totala energiförbrukningen är lägre. Det är denna typ av smarta kombinationer som representerar framtidens AI – inte ständigt växande monolitiska modeller.
 
-Generella benchmarks räcker inte. Vi utvecklar och använder domänspecifika tester för:
-- Juridisk förståelse
-- Medicinsk kunskap
-- Finansiell analys
-- Teknisk dokumentation
+## Vår utvärderingsprocess: Vetenskap framför hype
 
-### 3. Realtidsutvärdering
+För att säkerställa att våra modellval baseras på fakta snarare än hype, följer vi en rigorös utvärderingsprocess:
 
-Vi övervakar kontinuerligt modellernas prestanda i produktion:
-- Användarfeedback
-- Automatiserade kvalitetsmått
-- A/B-testning av nya modeller mot befintliga
+Vi utvärderar modeller mot både etablerade benchmarks (MMLU, HumanEval, HELM) och egenutvecklade domänspecifika tester för svenska förhållanden. Vi genomför också omfattande hållbarhetsanalyser där vi beräknar energiförbrukning, CO2-avtryck och kostnad per token.
 
-### 4. Hållbarhetsanalys
+När en ny modell släpps, genomför vårt forskningsteam en initial utvärdering inom 48 timmar. Om resultaten är lovande, fattar vi beslut om implementation inom en vecka och kan ha modellen i produktion inom två veckor. Detta har gjort att vi kunnat vara bland de första att erbjuda modeller som Llama 3.3, Gemma 3 och Mistral Small.
 
-För varje modell beräknar vi:
-- Energiförbrukning per förfrågan
-- CO2-avtryck
-- Kostnad per token
-- Latens och genomströmning
+## Slutsats: En balanserad approach för en hållbar AI-framtid
 
-## Att vara i framkant: Snabb implementation av nya modeller
+I en värld besatt av allt större modeller, tror vi på en mer nyanserad approach. Genom att noggrant välja och kombinera specialiserade modeller kan vi leverera överlägsna resultat för specifika uppgifter, minimera energiförbrukning och miljöpåverkan, och maximera värdet för våra kunder.
 
-AI-fältet utvecklas i en svindlande takt. Vår strategi för att hålla jämna steg:
-
-### Kontinuerlig bevakning
-
-Vårt forskningsteam följer aktivt:
-- Akademiska publikationer
-- Open source-releaser
-- Industriella framsteg
-
-### Snabb utvärdering och implementation
-
-När en lovande ny modell identifieras:
-1. Initial utvärdering inom 24-48 timmar
-2. Beslut om implementation inom en vecka
-3. Produktionssättning inom två veckor
-
-Detta har gjort att vi kunnat vara bland de första att erbjuda modeller som Llama 3.3, Gemma 3 och Mistral Small.
-
-### Balanserad portfölj
-
-Vi upprätthåller en balanserad portfölj genom att:
-- Behålla beprövade modeller för stabilitet
-- Lägga till nya modeller för förbättrad prestanda
-- Fasa ut äldre modeller när bättre alternativ finns tillgängliga
-
-## Framtiden: Mot ännu smartare modellkombinationer
-
-Vi ser flera spännande trender för framtiden:
-
-### Automatiserad modellval
-
-System som automatiskt väljer optimal modell eller modellkedja baserat på:
-- Uppgiftens karaktär
-- Tillgängliga resurser
-- Krav på latens och precision
-
-### Adaptiv kvantisering
-
-Dynamisk anpassning av modellernas precision baserat på:
-- Aktuell belastning
-- Uppgiftens komplexitet
-- Energitillgång
-
-### Federerad modellexekvering
-
-Distribution av modellberäkningar över flera datacenter för:
-- Förbättrad resiliens
-- Optimerad energianvändning
-- Minskad latens genom geografisk närhet
-
-## Slutsats: Smarta kombinationer vinner över rå kraft
-
-I en värld besatt av allt större modeller, tror vi på en mer nyanserad approach. Genom att noggrant välja och kombinera specialiserade modeller kan vi:
-
-1. Leverera överlägsna resultat för specifika uppgifter
-2. Minimera energiförbrukning och miljöpåverkan
-3. Maximera värdet för våra kunder
-
-Detta är inte bara en teknisk strategi utan också ett etiskt ställningstagande. AI bör utvecklas på ett sätt som är hållbart, tillgängligt och optimerat för verklig nytta snarare än imponerande parametersiffror.
+Detta är inte bara en teknisk strategi utan också ett etiskt ställningstagande. AI bör utvecklas på ett sätt som är hållbart, tillgängligt och optimerat för verklig nytta snarare än imponerande parametersiffror. Genom att välja modeller som respekterar integritet, minimerar miljöpåverkan och förstår nordiska sammanhang, bygger vi en AI-infrastruktur som är anpassad för våra kunders verkliga behov – inte för att imponera med storlekssiffror.
 
 ---
 
