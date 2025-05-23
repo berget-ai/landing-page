@@ -13,6 +13,9 @@ imageAlt: 'Närbild på GPU-kort i ett serverrack med blått ljus'
 
 När vi på Berget AI bygger vår infrastruktur för att köra stora språkmodeller (LLMs) står vi inför en intressant utmaning: Hur får vi plats med så många kraftfulla modeller som möjligt på vår hårdvara, samtidigt som vi säkerställer snabb responstid och hög tillgänglighet? I denna artikel delar vi med oss av våra erfarenheter och tekniker för att optimera minnesanvändningen för våra AI-modeller.
 
+![GPU-konfiguration för våra modeller](/images/gpu-configurator.png)
+*Vår nuvarande GPU-konfiguration med modellplacering och minnesanvändning*
+
 ## Vår hårdvaruinfrastruktur: AMD MI300x
 
 Kärnan i vår infrastruktur är AMD:s senaste accelerator för AI-arbetsbelastningar, MI300x. Dessa kraftfulla GPU:er har flera fördelar jämfört med traditionella alternativ:
