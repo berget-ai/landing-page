@@ -40,7 +40,9 @@ export default function BlogPage() {
             content: content.replace(/^---\n[\s\S]*?\n---\n/, ''), // Remove frontmatter
             tags: metadata.tags || [],
             image: metadata.image || '',
-            imageAlt: metadata.imageAlt || ''
+            imageAlt: metadata.imageAlt || '',
+            language: fileName.includes('model-selection-strategy') || 
+                      fileName.includes('optimizing-llm-models') ? 'en' : 'sv'
           }
         })
 

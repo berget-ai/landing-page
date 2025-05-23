@@ -89,6 +89,11 @@ export default function BlogPostPage() {
       const markdownContent = content.replace(/^---\n[\s\S]*?\n---\n/, '') // Remove frontmatter
       const htmlContent = md.render(markdownContent)
 
+      // Determine language based on file name
+      const language = id?.includes('model-selection-strategy') || 
+                       id?.includes('optimizing-llm-models') 
+                       ? 'en' as const : 'sv' as const;
+      
       setPost({
         id: id || '',
         title: metadata.title || '',
@@ -100,6 +105,7 @@ export default function BlogPostPage() {
         tags: metadata.tags || [],
         image: metadata.image || '',
         imageAlt: metadata.imageAlt || '',
+        language
       })
     }
 
@@ -148,6 +154,11 @@ export default function BlogPostPage() {
             <h1 className="text-4xl md:text-5xl font-medium mb-6">{post.title}</h1>
 
             <div className="flex flex-wrap gap-2 mb-12">
+              {post.language && (
+                <span className="px-3 py-1 rounded-full bg-[#52B788]/30 text-sm font-medium">
+                  {post.language === 'en' ? '🇬🇧 English' : '🇸🇪 Svenska'}
+                </span>
+              )}
               {post.tags.map((tag) => (
                 <span
                   key={tag}

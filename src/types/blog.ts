@@ -9,4 +9,5 @@ export interface BlogPost {
   tags: string[]
   image?: string
   imageAlt?: string
+  language?: 'en' | 'sv'
 }
