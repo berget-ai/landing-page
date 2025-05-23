@@ -69,15 +69,19 @@ For general problem-solving and conversation, we use several models with differe
 
 **BGE Reranker** improves search results by reranking candidates based on relevance. Our tests show that this model improves the relevance in information retrieval by up to 40% compared to embedding-based methods alone. This is crucial for RAG applications (Retrieval-Augmented Generation) where the quality of retrieved information directly affects the end result.
 
-## Models We've Opted Out Of – and Why
+## The Advantages of Open Models
 
-Our model choices are as much about what we choose not to implement as what we choose to implement. Here are some models we've consciously chosen not to implement:
+One of the most exciting developments in AI over the past year is how quickly open models have caught up to and in some cases surpassed closed alternatives. This is a direct result of the distributed innovation power of the open source community:
 
-**GPT-4 and Claude 3 Opus** – Despite their impressive performance, we've opted out of these closed models because they don't give us the control and transparency we strive for. We cannot adapt them for our customers' specific needs or ensure that they handle data according to our privacy principles.
+**Collective Improvement** – Thousands of developers and researchers worldwide work in parallel to improve open models. This collective intelligence often outperforms what individual organizations can achieve, regardless of their resources.
 
-**Qwen 3 235B** – This enormous model from Alibaba shows impressive results, but we've chosen not to implement it due to its extreme resource requirements and uncertainties around its training data. The model requires over 200GB of GPU memory and has a disproportionately large carbon footprint compared to the improvement in performance.
+**Faster Iteration** – Open models undergo continuous improvement with much shorter cycles than closed alternatives. When an improvement is discovered, it can be quickly implemented and built upon by the entire community.
 
-**Proprietary Vision-Language Models** – We've opted out of several closed multimodal models in favor of open alternatives, despite the closed ones sometimes having marginally better performance. This is because we value the ability to adapt the models for Nordic languages and cultural contexts.
+**Specialization and Adaptation** – Open models can be adapted for specific domains and languages, which is particularly valuable for Swedish and Nordic contexts where commercial actors often prioritize larger language regions.
+
+**Transparency and Understanding** – With open models, we can understand exactly how they work, making it possible to identify and address issues such as bias or security vulnerabilities.
+
+The difference in performance between open and closed models is now minimal for most use cases, while the benefits of openness, adaptability, and cost are significant.
 
 ## Model Chains: The Future of AI Architecture
 
@@ -91,13 +95,13 @@ One of our most important insights is that chains of specialized models often ou
 
 This chain delivers significantly better results than just sending the question to a single large model, while the total energy consumption is lower. It's this type of smart combinations that represents the future of AI – not constantly growing monolithic models.
 
-## Our Evaluation Process: Science Over Hype
+## Our Evaluation Process: Speed and Thoroughness
 
-To ensure that our model choices are based on facts rather than hype, we follow a rigorous evaluation process:
+To ensure that our model choices are based on facts rather than hype, we follow a structured evaluation process:
 
-We evaluate models against both established benchmarks (MMLU, HumanEval, HELM) and self-developed domain-specific tests for Swedish conditions. We also conduct comprehensive sustainability analyses where we calculate energy consumption, CO2 footprint, and cost per token.
+We evaluate models against both established benchmarks (MMLU, HumanEval, HELM) and domain-specific tests for Swedish conditions. We also conduct sustainability analyses where we calculate energy consumption, CO2 footprint, and cost per token.
 
-When a new model is released, our research team conducts an initial evaluation within 48 hours. If the results are promising, we make a decision about implementation within a week and can have the model in production within two weeks. This has allowed us to be among the first to offer models like Llama 3.3, Gemma 3, and Mistral Small.
+When a new model is released, we prioritize testing and evaluating it quickly. We aim to conduct an initial evaluation within 48 hours after release. If the results are promising, we make a decision about implementation within a week and can have the model in production shortly thereafter. This speed has allowed us to be among the first to offer models like Llama 3.3, Gemma 3, and Mistral Small to our customers.
 
 ## Conclusion: A Balanced Approach for a Sustainable AI Future
 

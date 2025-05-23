@@ -69,15 +69,19 @@ För generell problemlösning och konversation använder vi flera modeller med o
 
 **BGE Reranker** förbättrar sökresultat genom att omranka kandidater baserat på relevans. Våra tester visar att denna modell förbättrar relevansen i informationshämtning med upp till 40% jämfört med enbart embedding-baserade metoder. Detta är avgörande för RAG-applikationer (Retrieval-Augmented Generation) där kvaliteten på hämtad information direkt påverkar slutresultatet.
 
-## Modeller vi valt bort – och varför
+## Fördelarna med öppna modeller
 
-Våra modellval handlar lika mycket om vad vi väljer bort som vad vi väljer in. Här är några modeller vi medvetet valt att inte implementera:
+En av de mest spännande utvecklingarna inom AI under det senaste året är hur snabbt öppna modeller har kommit ikapp och i vissa fall gått om stängda alternativ. Detta är en direkt följd av den distribuerade innovationskraften i open source-communityn:
 
-**GPT-4 och Claude 3 Opus** – Trots deras imponerande prestanda har vi valt bort dessa stängda modeller eftersom de inte ger oss den kontroll och transparens vi eftersträvar. Vi kan inte anpassa dem för våra kunders specifika behov eller säkerställa att de hanterar data enligt våra integritetsprinciper.
+**Kollektiv förbättring** – Tusentals utvecklare och forskare världen över arbetar parallellt på att förbättra öppna modeller. Denna kollektiva intelligens överträffar ofta vad enskilda organisationer kan åstadkomma, oavsett deras resurser.
 
-**Qwen 3 235B** – Denna enorma modell från Alibaba visar imponerande resultat, men vi har valt att inte implementera den på grund av dess extrema resurskrav och oklarheter kring dess träningsdata. Modellen kräver över 200GB GPU-minne och har ett oproportionerligt stort koldioxidavtryck jämfört med förbättringen i prestanda.
+**Snabbare iteration** – Öppna modeller genomgår kontinuerlig förbättring med betydligt kortare cykler än stängda alternativ. När en förbättring upptäcks kan den snabbt implementeras och byggas vidare på av hela communityn.
 
-**Proprietary Vision-Language Models** – Vi har valt bort flera stängda multimodala modeller till förmån för öppna alternativ, trots att de stängda ibland har marginellt bättre prestanda. Detta eftersom vi värdesätter möjligheten att anpassa modellerna för nordiska språk och kulturella sammanhang.
+**Specialisering och anpassning** – Öppna modeller kan anpassas för specifika domäner och språk, vilket är särskilt värdefullt för svenska och nordiska sammanhang där kommersiella aktörer ofta prioriterar större språkområden.
+
+**Transparens och förståelse** – Med öppna modeller kan vi förstå exakt hur de fungerar, vilket gör det möjligt att identifiera och åtgärda problem som bias eller säkerhetsluckor.
+
+Skillnaden i prestanda mellan öppna och stängda modeller är idag minimal för de flesta användningsområden, medan fördelarna med öppenhet, anpassningsbarhet och kostnad är betydande.
 
 ## Modellkedjor: Framtidens AI-arkitektur
 
@@ -91,13 +95,13 @@ En av våra viktigaste insikter är att kedjor av specialiserade modeller ofta �
 
 Denna kedja ger betydligt bättre resultat än att bara skicka frågan till en enda stor modell, samtidigt som den totala energiförbrukningen är lägre. Det är denna typ av smarta kombinationer som representerar framtidens AI – inte ständigt växande monolitiska modeller.
 
-## Vår utvärderingsprocess: Vetenskap framför hype
+## Vår utvärderingsprocess: Snabbhet och noggrannhet
 
-För att säkerställa att våra modellval baseras på fakta snarare än hype, följer vi en rigorös utvärderingsprocess:
+För att säkerställa att våra modellval baseras på fakta snarare än hype, följer vi en strukturerad utvärderingsprocess:
 
-Vi utvärderar modeller mot både etablerade benchmarks (MMLU, HumanEval, HELM) och egenutvecklade domänspecifika tester för svenska förhållanden. Vi genomför också omfattande hållbarhetsanalyser där vi beräknar energiförbrukning, CO2-avtryck och kostnad per token.
+Vi utvärderar modeller mot både etablerade benchmarks (MMLU, HumanEval, HELM) och domänspecifika tester för svenska förhållanden. Vi genomför också hållbarhetsanalyser där vi beräknar energiförbrukning, CO2-avtryck och kostnad per token.
 
-När en ny modell släpps, genomför vårt forskningsteam en initial utvärdering inom 48 timmar. Om resultaten är lovande, fattar vi beslut om implementation inom en vecka och kan ha modellen i produktion inom två veckor. Detta har gjort att vi kunnat vara bland de första att erbjuda modeller som Llama 3.3, Gemma 3 och Mistral Small.
+När en ny modell släpps prioriterar vi att snabbt testa och utvärdera den. Vi strävar efter att genomföra en initial utvärdering inom 48 timmar efter release. Om resultaten är lovande, fattar vi beslut om implementation inom en vecka och kan ha modellen i produktion kort därefter. Denna snabbhet har gjort att vi kunnat vara bland de första att erbjuda modeller som Llama 3.3, Gemma 3 och Mistral Small till våra kunder.
 
 ## Slutsats: En balanserad approach för en hållbar AI-framtid
 
