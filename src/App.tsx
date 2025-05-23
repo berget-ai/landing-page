@@ -20,6 +20,7 @@ import ModelsPage from './pages/models'
 import StatusPage from './pages/status'
 import VisualIdentityGuide from './pages/VisualIdentityGuide'
 import OpenSourcePage from './pages/open-source'
+import PartnersPage from './pages/partners'
 
 // Markdown content
 import { html as termsHtml } from '@/pages/terms.md'
@@ -60,6 +61,7 @@ function App() {
           <Route path="/blog/:id" element={<BlogPostPage />} />
           <Route path="/vig" element={<VisualIdentityGuide />} />
           <Route path="/open-source" element={<OpenSourcePage />} />
+          <Route path="/partners" element={<PartnersPage />} />
         </Routes>
         <Footer />
       </div>
