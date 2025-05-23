@@ -9,8 +9,6 @@ image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80'
 imageAlt: 'Serverrum med modern AI-infrastruktur'
 ---
 
-# Vår modellstrategi: Balans mellan kraft och precision
-
 I en värld där AI-modeller blir allt större och mer resurskrävande, har vi på Berget AI valt en annan väg. Vi tror inte att framtidens AI handlar om att ha de största modellerna, utan om att skapa de smartaste kombinationerna av specialiserade verktyg. Denna artikel förklarar vår filosofi kring modellval, de centrala begreppen inom modern AI, och varför vi har valt just de modeller som utgör vår infrastruktur.
 
 ## Grundläggande begrepp inom modern AI

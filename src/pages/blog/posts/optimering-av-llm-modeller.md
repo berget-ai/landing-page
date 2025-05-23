@@ -9,8 +9,6 @@ image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80'
 imageAlt: 'Serverrack med AMD MI300x-acceleratorer i ett modernt datacenter'
 ---
 
-# Bakom kulisserna: Så optimerar vi våra AI-modeller
-
 När vi på Berget AI bygger vår infrastruktur för att köra stora språkmodeller (LLMs) står vi inför en intressant utmaning: Hur får vi plats med så många kraftfulla modeller som möjligt på vår hårdvara, samtidigt som vi säkerställer snabb responstid och hög tillgänglighet? I denna artikel delar vi med oss av våra erfarenheter och tekniker för att optimera minnesanvändningen för våra AI-modeller.
 
 ![GPU-konfiguration för våra modeller](/images/gpu-configurator.png)
