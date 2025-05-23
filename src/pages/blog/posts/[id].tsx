@@ -1,9 +1,10 @@
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { Calendar, User, ArrowLeft } from 'lucide-react'
+import { ArrowLeft } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
+import { AuthorByline } from '@/components/blog/AuthorByline'
 import type { BlogPost } from '@/types/blog'
 import MarkdownIt from 'markdown-it'
 
@@ -136,18 +137,12 @@ export default function BlogPostPage() {
               </div>
             )}
 
-            <div className="flex flex-wrap gap-4 text-sm text-white/60 mb-6">
-              <div className="flex items-center gap-2">
-                <Calendar className="w-4 h-4" />
-                <time dateTime={post.date}>
-                  {new Date(post.date).toLocaleDateString()}
-                </time>
-              </div>
-              <div className="flex items-center gap-2">
-                <User className="w-4 h-4" />
-                <span>{post.author}</span>
-              </div>
-            </div>
+            <AuthorByline 
+              name={post.author} 
+              email={post.email} 
+              date={post.date}
+              size="lg"
+            />
 
             <h1 className="text-4xl md:text-5xl font-medium mb-6">{post.title}</h1>
 
