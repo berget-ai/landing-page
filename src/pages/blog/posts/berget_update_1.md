@@ -2,11 +2,12 @@
 title: Berget AI update #1
 description: We have been cooking new things!
 date: 2025-05-19
-author: Berget Team
+author: 'Andreas Lundmark'
+email: 'andreas@berget.ai'
 tags:
   - models
   - features
-image: https://berget.ai/logos/update.png
+image: /logos/update.png
 imageAlt: Berget AI Logo
 ---
 
