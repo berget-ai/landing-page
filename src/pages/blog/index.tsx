@@ -36,10 +36,13 @@ export default function BlogPage() {
             description: metadata.description || '',
             date: metadata.date || '',
             author: metadata.author || 'Berget Team',
+            email: metadata.email || '',
             content: content.replace(/^---\n[\s\S]*?\n---\n/, ''), // Remove frontmatter
             tags: metadata.tags || [],
             image: metadata.image || '',
-            imageAlt: metadata.imageAlt || ''
+            imageAlt: metadata.imageAlt || '',
+            language: (fileName.includes('model-selection-strategy') || 
+                      fileName.includes('optimizing-llm-models')) ? 'en' : 'sv' as 'en' | 'sv'
           }
         })
 

@@ -7,19 +7,10 @@ export const VITE_API_URL =
   import.meta.env.VITE_BERGET_API_URL || 'http://localhost:3000/v1'
 
 /**
- * Get the API key from environment variables
- * In a production environment, this should be securely managed
- */
-export const getApiKey = () => {
-  return import.meta.env.VITE_BERGET_API_KEY || ''
-}
-
-/**
  * Default headers for API requests
  */
 export const getDefaultHeaders = () => {
   return {
-    Authorization: `Bearer ${getApiKey()}`,
     'Content-Type': 'application/json',
   }
 }

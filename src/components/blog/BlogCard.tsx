@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import type { BlogPost } from '@/types/blog'
+import { AuthorByline } from './AuthorByline'
 
 interface BlogCardProps {
   post: BlogPost
@@ -15,9 +16,9 @@ export function BlogCard({ post, index }: BlogCardProps) {
       transition={{ delay: index * 0.1 }}
       className="group relative"
     >
-      <Link to={`/blog/${post.id}`}>
-        <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-[#52B788]/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-        <div className="relative p-6 rounded-2xl bg-white/[0.02] backdrop-blur-sm border border-[#74C69D]/20 h-full">
+      <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-[#52B788]/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="relative p-6 rounded-2xl bg-white/[0.02] backdrop-blur-sm border border-[#74C69D]/20 h-full">
+        <Link to={`/blog/${post.id}`}>
           {post.image && (
             <div className="relative w-full h-48 mb-6 rounded-lg overflow-hidden">
               <img 
@@ -32,11 +33,26 @@ export function BlogCard({ post, index }: BlogCardProps) {
             {post.title}
           </h2>
           
-          <p className="text-white/60 mb-6 line-clamp-3">
+          <p className="text-white/60 mb-4 line-clamp-3">
             {post.description}
           </p>
-        </div>
-      </Link>
+          
+          {post.language && (
+            <div className="mb-4">
+              <span className="px-2 py-1 text-xs rounded-full bg-[#52B788]/20 text-white/80">
+                {post.language === 'en' ? '🇬🇧 English' : '🇸🇪 Svenska'}
+              </span>
+            </div>
+          )}
+        </Link>
+        
+        <AuthorByline 
+          name={post.author} 
+          email={post.email} 
+          date={post.date}
+          size="sm"
+        />
+      </div>
     </motion.article>
   )
 }

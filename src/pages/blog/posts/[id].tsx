@@ -1,9 +1,10 @@
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { Calendar, User, ArrowLeft } from 'lucide-react'
+import { ArrowLeft } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
+import { AuthorByline } from '@/components/blog/AuthorByline'
 import type { BlogPost } from '@/types/blog'
 import MarkdownIt from 'markdown-it'
 
@@ -88,16 +89,23 @@ export default function BlogPostPage() {
       const markdownContent = content.replace(/^---\n[\s\S]*?\n---\n/, '') // Remove frontmatter
       const htmlContent = md.render(markdownContent)
 
+      // Determine language based on file name
+      const language = id?.includes('model-selection-strategy') || 
+                       id?.includes('optimizing-llm-models') 
+                       ? 'en' as const : 'sv' as const;
+      
       setPost({
         id: id || '',
         title: metadata.title || '',
         description: metadata.description || '',
         date: metadata.date || '',
         author: metadata.author || 'Berget Team',
+        email: metadata.email || '',
         content: htmlContent,
         tags: metadata.tags || [],
         image: metadata.image || '',
         imageAlt: metadata.imageAlt || '',
+        language
       })
     }
 
@@ -136,22 +144,21 @@ export default function BlogPostPage() {
               </div>
             )}
 
-            <div className="flex flex-wrap gap-4 text-sm text-white/60 mb-6">
-              <div className="flex items-center gap-2">
-                <Calendar className="w-4 h-4" />
-                <time dateTime={post.date}>
-                  {new Date(post.date).toLocaleDateString()}
-                </time>
-              </div>
-              <div className="flex items-center gap-2">
-                <User className="w-4 h-4" />
-                <span>{post.author}</span>
-              </div>
-            </div>
+            <AuthorByline 
+              name={post.author} 
+              email={post.email} 
+              date={post.date}
+              size="lg"
+            />
 
             <h1 className="text-4xl md:text-5xl font-medium mb-6">{post.title}</h1>
 
             <div className="flex flex-wrap gap-2 mb-12">
+              {post.language && (
+                <span className="px-3 py-1 rounded-full bg-[#52B788]/30 text-sm font-medium">
+                  {post.language === 'en' ? '🇬🇧 English' : '🇸🇪 Svenska'}
+                </span>
+              )}
               {post.tags.map((tag) => (
                 <span
                   key={tag}

@@ -4,8 +4,10 @@ export interface BlogPost {
   description: string
   date: string
   author: string
+  email?: string
   content: string
   tags: string[]
   image?: string
   imageAlt?: string
+  language?: 'en' | 'sv'
 }
