@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { BlogList } from '@/components/blog/BlogList'
 import { Input } from '@/components/ui/input'
 import { Search } from 'lucide-react'
+import { Helmet } from '@/components/common/Helmet'
 import type { BlogPost } from '@/types/blog'
 
 // Import all blog posts
@@ -89,6 +90,12 @@ export default function BlogPage() {
 
   return (
     <main className="min-h-screen pt-24">
+      <Helmet 
+        title="Berget AI Blog"
+        description="Insights and updates about AI infrastructure, European tech innovation, and industry best practices"
+        image="/logos/berget-logo-white.png"
+        type="website"
+      />
       <div className="container mx-auto px-4 py-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

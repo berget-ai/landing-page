@@ -5,6 +5,7 @@ import { ArrowLeft } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import { AuthorByline } from '@/components/blog/AuthorByline'
+import { Helmet } from '@/components/common/Helmet'
 import type { BlogPost } from '@/types/blog'
 import MarkdownIt from 'markdown-it'
 
@@ -116,6 +117,15 @@ export default function BlogPostPage() {
 
   return (
     <main className="min-h-screen pt-24">
+      {post && (
+        <Helmet 
+          title={post.title}
+          description={post.description}
+          image={post.image}
+          author={post.author}
+          language={post.language}
+        />
+      )}
       <article className="container mx-auto px-4 py-8">
         <div className="max-w-3xl mx-auto">
           <motion.div
