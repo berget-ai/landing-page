@@ -41,8 +41,8 @@ export default function BlogPage() {
             tags: metadata.tags || [],
             image: metadata.image || '',
             imageAlt: metadata.imageAlt || '',
-            language: fileName.includes('model-selection-strategy') || 
-                      fileName.includes('optimizing-llm-models') ? 'en' : 'sv'
+            language: (fileName.includes('model-selection-strategy') || 
+                      fileName.includes('optimizing-llm-models')) ? 'en' : 'sv' as 'en' | 'sv'
           }
         })
 

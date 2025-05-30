@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { Calendar, Twitter, Linkedin } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
