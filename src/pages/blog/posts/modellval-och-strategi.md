@@ -5,7 +5,7 @@ date: '2025-05-23'
 author: 'Andreas Lundmark'
 email: 'andreas@berget.ai'
 tags: ['ai-modeller', 'strategi', 'hållbarhet', 'teknik']
-image: https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80
+image: /images/ai-robot.png
 imageAlt: 'Serverrum med modern AI-infrastruktur'
 ---
 

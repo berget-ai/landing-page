@@ -5,7 +5,7 @@ date: '2025-05-23'
 author: 'Andreas Lundmark'
 email: 'andreas@berget.ai'
 tags: ['ai-models', 'strategy', 'sustainability', 'technology']
-image: '/images'
+image: /images/ai-robot.png
 imageAlt: 'Server room with modern AI infrastructure'
 ---
 
