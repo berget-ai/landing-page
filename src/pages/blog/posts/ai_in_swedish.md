@@ -6,7 +6,7 @@ author: Andreas Lundmark
 tags:
   - LLM
   - Swedish
-image: /images/nordicflags.jpg
+image: /images/nordicflags.png
 imageAlt: Nordic Flags
 email: andreas@berget.ai
 ---
