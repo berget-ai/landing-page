@@ -5,7 +5,7 @@ date: '2025-05-23'
 author: 'Christian Landgren'
 email: 'christian@berget.ai'
 tags: ['teknik', 'infrastruktur', 'optimering', 'llm']
-image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80'
+image: https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80
 imageAlt: 'Serverrack med AMD MI300x-acceleratorer i ett modernt datacenter'
 ---
 

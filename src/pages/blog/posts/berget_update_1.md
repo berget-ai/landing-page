@@ -7,7 +7,7 @@ email: 'andreas@berget.ai'
 tags:
   - models
   - features
-image: /logos/update.png
+image: /images/update.png
 imageAlt: Berget AI Logo
 ---
 

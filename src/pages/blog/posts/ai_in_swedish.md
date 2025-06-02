@@ -6,7 +6,7 @@ author: Andreas Lundmark
 tags:
   - LLM
   - Swedish
-image: https://unsplash.com/photos/a-group-of-flags-that-are-flying-in-the-air-6H1KU8zJJ1E
+image: /images/nordicflags.jpg
 imageAlt: Nordic Flags
 email: andreas@berget.ai
 ---
