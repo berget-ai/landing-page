@@ -1,7 +1,7 @@
 {
   "name": "@bergetai/platform",
   "private": true,
-  "version": "1.3.87",
+  "version": "1.3.88",
   "description": "En säker och hållbar AI-plattform byggd för svenska och europeiska företag",
   "type": "module",
   "scripts": {
