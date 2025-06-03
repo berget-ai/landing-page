@@ -4,7 +4,6 @@ import { Building2, Wrench, Server, Microscope } from 'lucide-react'
 interface Partner {
   name: string
   logo: string
-  description: string
   website: string
 }
 
@@ -22,25 +21,21 @@ const categories: Category[] = [
       {
         name: 'iTeam Solutions',
         logo: 'https://i.ibb.co/Qj1bxnk/iteam.png',
-        description: 'Enterprise IT consulting and solutions',
         website: 'https://iteam.se'
       },
       {
         name: 'Digitalist.se',
         logo: 'https://i.ibb.co/0jZ3Q9Y/digitalist.png',
-        description: 'Digital transformation experts',
         website: 'https://digitalist.se'
       },
       {
         name: 'Active Solution',
         logo: 'https://i.ibb.co/YRwPn5Z/active-solution.png',
-        description: 'Custom software development',
         website: 'https://activesolution.se'
       },
       {
         name: 'Netlight Consulting',
         logo: 'https://i.ibb.co/Jt8BgD7/netlight.png',
-        description: 'Technology consulting services',
         website: 'https://netlight.com'
       }
     ]
@@ -52,7 +47,6 @@ const categories: Category[] = [
       {
         name: 'Opper.AI',
         logo: 'https://i.ibb.co/0QZ3Q9Y/opper.png',
-        description: 'AI development tools and platforms',
         website: 'https://opper.ai'
       }
     ]
@@ -64,13 +58,11 @@ const categories: Category[] = [
       {
         name: 'AMD',
         logo: 'https://i.ibb.co/YRwPn5Z/amd.png',
-        description: 'Advanced computing solutions',
         website: 'https://amd.com'
       },
       {
         name: 'SuperMicro',
         logo: 'https://i.ibb.co/Jt8BgD7/supermicro.png',
-        description: 'Server and storage solutions',
         website: 'https://supermicro.com'
       }
     ]
@@ -82,25 +74,21 @@ const categories: Category[] = [
       {
         name: 'Ri.se',
         logo: 'https://i.ibb.co/YRwPn5Z/rise.png',
-        description: 'Research Institutes of Sweden',
         website: 'https://ri.se'
       },
       {
         name: 'AI Sweden',
         logo: 'https://i.ibb.co/Jt8BgD7/ai-sweden.png',
-        description: 'Swedish AI innovation center',
         website: 'https://ai.se'
       },
       {
         name: 'Kungliga Biblioteket',
         logo: 'https://i.ibb.co/0QZ3Q9Y/kb.png',
-        description: 'National Library of Sweden',
         website: 'https://kb.se'
       },
       {
         name: 'Linköpings Universitet',
         logo: 'https://i.ibb.co/YRwPn5Z/liu.png',
-        description: 'Leading research university',
         website: 'https://liu.se'
       }
     ]
@@ -140,7 +128,7 @@ export default function PartnersPage() {
                   <h2 className="text-3xl font-ovo">{category.title}</h2>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                   {category.partners.map((partner, partnerIndex) => (
                     <motion.a
                       key={partner.name}
@@ -155,15 +143,13 @@ export default function PartnersPage() {
                     >
                       <div className="absolute inset-0 rounded-xl bg-gradient-to-b from-[#52B788]/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                       <div className="relative p-6 rounded-xl border border-[#74C69D]/20 bg-black/20 backdrop-blur-sm h-full">
-                        <div className="aspect-[3/1] rounded-lg overflow-hidden mb-4 bg-white/5 flex items-center justify-center">
+                        <div className="aspect-[3/1] rounded-lg overflow-hidden bg-white/5 flex items-center justify-center">
                           <img
                             src={partner.logo}
                             alt={partner.name}
                             className="w-full h-full object-contain p-4 opacity-80 group-hover:opacity-100 transition-opacity"
                           />
                         </div>
-                        <h3 className="text-lg font-medium mb-2">{partner.name}</h3>
-                        <p className="text-sm text-white/60">{partner.description}</p>
                       </div>
                     </motion.a>
                   ))}
