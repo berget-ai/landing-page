@@ -90,10 +90,8 @@ export default function BlogPostPage() {
       const markdownContent = content.replace(/^---\n[\s\S]*?\n---\n/, '') // Remove frontmatter
       const htmlContent = md.render(markdownContent)
 
-      // Determine language based on file name
-      const language = id?.includes('model-selection-strategy') || 
-                       id?.includes('optimizing-llm-models') 
-                       ? 'en' as const : 'sv' as const;
+      // Use language from metadata or default to 'sv'
+      const language = metadata.language === 'en' ? 'en' as const : 'sv' as const;
       
       setPost({
         id: id || '',
