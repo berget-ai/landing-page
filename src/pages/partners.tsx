@@ -20,23 +20,23 @@ const categories: Category[] = [
     partners: [
       {
         name: 'iTeam Solutions',
-        logo: 'https://i.ibb.co/Qj1bxnk/iteam.png',
+        logo: '/images/partners/iteam.jpg',
         website: 'https://iteam.se'
       },
       {
         name: 'Digitalist.se',
-        logo: 'https://i.ibb.co/0jZ3Q9Y/digitalist.png',
+        logo: '/images/partners/digitalist-logo.svg',
         website: 'https://digitalist.se'
       },
       {
         name: 'Active Solution',
-        logo: 'https://i.ibb.co/YRwPn5Z/active-solution.png',
+        logo: '/images/partners/activesolution-logo-white.png',
         website: 'https://activesolution.se'
       },
       {
-        name: 'Netlight Consulting',
-        logo: 'https://i.ibb.co/Jt8BgD7/netlight.png',
-        website: 'https://netlight.com'
+        name: 'Abundly AI',
+        logo: '/images/partners/abundly-logo.avif',
+        website: 'https://abundly.ai'
       }
     ]
   },
@@ -46,7 +46,7 @@ const categories: Category[] = [
     partners: [
       {
         name: 'Opper.AI',
-        logo: 'https://i.ibb.co/0QZ3Q9Y/opper.png',
+        logo: '/images/partners/opper.png',
         website: 'https://opper.ai'
       }
     ]
@@ -57,12 +57,12 @@ const categories: Category[] = [
     partners: [
       {
         name: 'AMD',
-        logo: 'https://i.ibb.co/YRwPn5Z/amd.png',
+        logo: '/images/partners/amd7686.jpg',
         website: 'https://amd.com'
       },
       {
         name: 'SuperMicro',
-        logo: 'https://i.ibb.co/Jt8BgD7/supermicro.png',
+        logo: '/images/partners/supermicro.webp',
         website: 'https://supermicro.com'
       }
     ]
@@ -73,22 +73,22 @@ const categories: Category[] = [
     partners: [
       {
         name: 'Ri.se',
-        logo: 'https://i.ibb.co/YRwPn5Z/rise.png',
+        logo: '/images/partners/rise-logo-black.svg',
         website: 'https://ri.se'
       },
       {
         name: 'AI Sweden',
-        logo: 'https://i.ibb.co/Jt8BgD7/ai-sweden.png',
+        logo: '/images/partners/ai-sweden-logo_0.png',
         website: 'https://ai.se'
       },
       {
         name: 'Kungliga Biblioteket',
-        logo: 'https://i.ibb.co/0QZ3Q9Y/kb.png',
+        logo: '/images/partners/KB-logo vit.png',
         website: 'https://kb.se'
       },
       {
         name: 'Linköpings Universitet',
-        logo: 'https://i.ibb.co/YRwPn5Z/liu.png',
+        logo: '/images/partners/liu.png',
         website: 'https://liu.se'
       }
     ]
