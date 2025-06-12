@@ -5,7 +5,6 @@ metadata:
   namespace: berget-web
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
-    kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/ssl-redirect: 'true'
     nginx.ingress.kubernetes.io/configuration-snippet: |
       more_set_headers "Content-Security-Policy: default-src 'self'; script-src 'self' https://*.berget.ai; style-src 'self' https://*.berget.ai; font-src 'self' https://*.berget.ai; img-src 'self' https://*.berget.ai data:; connect-src 'self' https://*.berget.ai https://api.berget.ai; base-uri 'self'; form-action 'self'; frame-src 'none'; frame-ancestors 'none'; object-src 'none'; worker-src 'self'; manifest-src 'self'; upgrade-insecure-requests;";
@@ -16,6 +15,7 @@ metadata:
       more_set_headers "Cross-Origin-Resource-Policy: same-site";
       more_set_headers "Referrer-Policy: strict-origin";
 spec:
+  ingressClassName: nginx
   tls:
     - hosts:
         - berget.ai
@@ -42,10 +42,10 @@ metadata:
   namespace: berget-web
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
-    kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/ssl-redirect: 'true'
     nginx.ingress.kubernetes.io/permanent-redirect: 'https://berget.ai$request_uri'
 spec:
+  ingressClassName: nginx
   tls:
     - hosts:
         - www.berget.ai
