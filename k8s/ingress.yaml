@@ -43,7 +43,7 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     nginx.ingress.kubernetes.io/ssl-redirect: 'true'
-    nginx.ingress.kubernetes.io/permanent-redirect: 'https://berget.ai/$request_uri'
+    nginx.ingress.kubernetes.io/permanent-redirect: https://berget.ai
 spec:
   ingressClassName: nginx
   tls:
