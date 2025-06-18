@@ -7,6 +7,9 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     nginx.ingress.kubernetes.io/ssl-redirect: 'true'
     nginx.ingress.kubernetes.io/custom-headers: berget-web/berget-custom-headers-configmap
+    nginx.ingress.kubernetes.io/rate-limit: "100"
+    nginx.ingress.kubernetes.io/rate-limit-window: "1m"
+    nginx.ingress.kubernetes.io/rate-limit-status-code: "429"
 spec:
   ingressClassName: nginx
   tls:
