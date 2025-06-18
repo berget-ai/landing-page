@@ -7,5 +7,6 @@ resources:
   - service.yaml
   - ingress.yaml
 
-commonLabels:
-  app: berget-website
+labels:
+  - pairs:
+      app: berget-website

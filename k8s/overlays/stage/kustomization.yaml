@@ -6,5 +6,6 @@ namespace: berget-web
 resources:
   - ../../base
 
-commonLabels:
-  environment: stage
+labels:
+  - pairs:
+      environment: stage
