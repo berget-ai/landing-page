@@ -6,14 +6,7 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     nginx.ingress.kubernetes.io/ssl-redirect: 'true'
-    # nginx.ingress.kubernetes.io/configuration-snippet: |
-    #   more_set_headers "Content-Security-Policy: default-src 'self'; script-src 'self' https://*.berget.ai; style-src 'self' https://*.berget.ai; font-src 'self' https://*.berget.ai; img-src 'self' https://*.berget.ai data:; connect-src 'self' https://*.berget.ai https://api.berget.ai; base-uri 'self'; form-action 'self'; frame-src 'none'; frame-ancestors 'none'; object-src 'none'; worker-src 'self'; manifest-src 'self'; upgrade-insecure-requests;";
-    #   more_set_headers "X-Content-Type-Options: nosniff";
-    #   more_set_headers "X-Frame-Options: DENY";
-    #   more_set_headers "X-Xss-Protection: 0";
-    #   more_set_headers "Strict-Transport-Security: max-age=31536000; includeSubDomains; preload";
-    #   more_set_headers "Cross-Origin-Resource-Policy: same-site";
-    #   more_set_headers "Referrer-Policy: strict-origin";
+    nginx.ingress.kubernetes.io/custom-headers: berget-web/berget-custom-headers-configmap
 spec:
   ingressClassName: nginx
   tls:
@@ -34,6 +27,20 @@ spec:
                 name: berget-website
                 port:
                   number: 80
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: berget-custom-headers-configmap
+  namespace: berget-web
+data:
+  Content-Security-Policy: "default-src 'self'; script-src 'self' https://*.berget.ai; style-src 'self' https://*.berget.ai; font-src 'self' https://*.berget.ai; img-src 'self' https://*.berget.ai data:; connect-src 'self' https://*.berget.ai https://api.berget.ai; base-uri 'self'; form-action 'self'; frame-src 'none'; frame-ancestors 'none'; object-src 'none'; worker-src 'self'; manifest-src 'self'; upgrade-insecure-requests;"
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  X-Xss-Protection: "0"
+  Strict-Transport-Security: "max-age=31536000; includeSubDomains; preload"
+  Cross-Origin-Resource-Policy: same-site
+  Referrer-Policy: strict-origin
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
