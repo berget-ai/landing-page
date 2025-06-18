@@ -1,0 +1,40 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: berget-website
+  namespace: berget-web
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/ssl-redirect: 'true'
+    nginx.ingress.kubernetes.io/custom-headers: berget-web/berget-custom-headers-configmap
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - stage.berget.ai
+      secretName: berget-stage-tls
+  rules:
+    - host: stage.berget.ai
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: berget-website
+                port:
+                  number: 80
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: berget-custom-headers-configmap
+  namespace: berget-web
+data:
+  Content-Security-Policy: "default-src 'self'; script-src 'self' https://*.berget.ai; style-src 'self' https://*.berget.ai; font-src 'self' https://*.berget.ai; img-src 'self' https://*.berget.ai data:; connect-src 'self' https://*.berget.ai https://stage-api.berget.ai; base-uri 'self'; form-action 'self'; frame-src 'none'; frame-ancestors 'none'; object-src 'none'; worker-src 'self'; manifest-src 'self'; upgrade-insecure-requests;"
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  X-Xss-Protection: "0"
+  Strict-Transport-Security: "max-age=31536000; includeSubDomains; preload"
+  Cross-Origin-Resource-Policy: same-site
+  Referrer-Policy: strict-origin
