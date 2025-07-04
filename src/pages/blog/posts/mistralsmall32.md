@@ -5,7 +5,7 @@ date: '2025-07-04'
 author: 'Andreas Lundmark'
 email: 'andreas@berget.ai'
 tags: ['models', 'llm']
-image: /images/mistralsmall32.jpg
+image: /images/mistralsmall32.png
 imageAlt: 'Magistral and Berget'
 ---
 
