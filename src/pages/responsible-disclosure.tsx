@@ -32,6 +32,42 @@ export default function ResponsibleDisclosurePage() {
                 working with you to resolve the issue promptly.
               </p>
 
+              <h2>Reporting via GitHub</h2>
+              <p>
+                If you have found a vulnerability in one of our public GitHub repositories, 
+                you can report it privately using GitHub's built-in security advisory system:
+              </p>
+              
+              <div className="bg-white/5 rounded-xl p-6 my-8 border border-white/10">
+                <h3 className="flex items-center gap-2 text-xl mb-4">
+                  <Shield className="w-5 h-5 text-[#52B788]" />
+                  GitHub Private Vulnerability Reporting
+                </h3>
+                <ol className="list-decimal list-inside space-y-2 text-white/80">
+                  <li>Navigate to the main page of the affected repository on GitHub</li>
+                  <li>Click on the <strong>"Security"</strong> tab</li>
+                  <li>Click <strong>"Report a vulnerability"</strong> to open the advisory form</li>
+                  <li>Fill in the vulnerability details including:
+                    <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
+                      <li>Title and description of the vulnerability</li>
+                      <li>Steps to reproduce the issue</li>
+                      <li>Potential impact assessment</li>
+                      <li>Suggested mitigation or fix (if available)</li>
+                    </ul>
+                  </li>
+                  <li>Click <strong>"Submit report"</strong></li>
+                </ol>
+                <p className="mt-4 text-sm text-white/60">
+                  This process is completely private and GitHub will notify our security team directly. 
+                  You'll automatically be added as a collaborator on the security advisory.
+                </p>
+              </div>
+
+              <h2>Direct Contact</h2>
+              <p>
+                For vulnerabilities that cannot be reported through GitHub, or for general security concerns:
+              </p>
+
               <div className="bg-white/5 rounded-xl p-6 my-8 border border-white/10">
                 <h3 className="flex items-center gap-2 text-xl mb-4">
                   <Mail className="w-5 h-5 text-[#52B788]" />
