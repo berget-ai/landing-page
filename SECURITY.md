@@ -6,17 +6,9 @@ At Berget AI, we take security seriously and appreciate the work of security res
 
 ### GitHub Private Vulnerability Reporting
 
-If you've found a vulnerability in this repository, you can report it privately using GitHub's built-in security advisory system:
+If you've found a vulnerability in this repository, you can report it privately using GitHub's built-in security advisory system. For detailed step-by-step instructions, please visit:
 
-1. Navigate to the main page of this repository
-2. Click on the **"Security"** tab
-3. Click **"Report a vulnerability"** to open the advisory form
-4. Fill in the vulnerability details including:
-   - Title and description of the vulnerability
-   - Steps to reproduce the issue
-   - Potential impact assessment
-   - Suggested mitigation or fix (if available)
-5. Click **"Submit report"**
+**https://berget.ai/github-vulnerability-reporting**
 
 This process is completely private and GitHub will notify our security team directly.
 
