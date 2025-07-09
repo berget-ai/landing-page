@@ -3,18 +3,18 @@ import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { PricingTiers } from './pricing/PricingTiers'
-import { useModels } from '@/hooks/use-models'
 
 export function PricingSection() {
   const { t } = useTranslation()
   // Initialize the models hook to ensure models are loaded
-  useModels()
 
   return (
     <section className="py-24 relative">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-ovo mb-6">{t('pricing.section.title')}</h2>
+          <h2 className="text-3xl md:text-4xl font-ovo mb-6">
+            {t('pricing.section.title')}
+          </h2>
           <p className="text-xl text-white/80">
             {t('pricing.section.description')}
           </p>
