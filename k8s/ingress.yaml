@@ -13,8 +13,6 @@ spec:
     - hosts:
         - berget.ai
         - www.berget.ai
-        - berget.cloud
-        - www.berget.cloud
       secretName: berget-ai-tls
   rules:
     - host: berget.ai
@@ -37,15 +35,35 @@ data:
   Content-Security-Policy: "default-src 'self'; script-src 'self' https://*.berget.ai; style-src 'self' https://*.berget.ai; font-src 'self' https://*.berget.ai; img-src 'self' https://*.berget.ai data:; connect-src 'self' https://*.berget.ai https://api.berget.ai; base-uri 'self'; form-action 'self'; frame-src 'none'; frame-ancestors 'none'; object-src 'none'; worker-src 'self'; manifest-src 'self'; upgrade-insecure-requests;"
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
-  X-Xss-Protection: "0"
-  Strict-Transport-Security: "max-age=31536000; includeSubDomains; preload"
+  X-Xss-Protection: '0'
+  Strict-Transport-Security: 'max-age=31536000; includeSubDomains; preload'
   Cross-Origin-Resource-Policy: same-site
   Referrer-Policy: strict-origin
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: berget-redirects
+  name: berget-cloud-redirects
+  namespace: berget-web
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/ssl-redirect: 'true'
+    nginx.ingress.kubernetes.io/permanent-redirect: 'https://berget.ai/'
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - berget.cloud
+        - www.berget.cloud
+      secretName: berget-cloud-redirects-tls
+  rules:
+    - host: berget.cloud
+    - host: www.berget.cloud
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: berget-ai-redirects
   namespace: berget-web
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
@@ -56,37 +74,6 @@ spec:
   tls:
     - hosts:
         - www.berget.ai
-        - berget.cloud
-        - www.berget.cloud
-      secretName: berget-redirects-tls
+      secretName: berget-ai-redirects-tls
   rules:
     - host: www.berget.ai
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: berget-website
-                port:
-                  number: 80
-    - host: berget.cloud
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: berget-website
-                port:
-                  number: 80
-    - host: www.berget.cloud
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: berget-website
-                port:
-                  number: 80
