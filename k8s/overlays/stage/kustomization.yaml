@@ -6,6 +6,9 @@ namespace: berget-web
 resources:
   - ../../base
 
+patches:
+  - path: ingress-patch.yaml
+
 labels:
   - pairs:
       environment: stage

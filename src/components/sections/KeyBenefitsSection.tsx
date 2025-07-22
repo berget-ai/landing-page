@@ -7,6 +7,12 @@ import {
 import { motion } from 'framer-motion'
 import { t } from 'i18next'
 
+// Helper function to safely get array from i18n
+const getFeatures = (key: string): string[] => {
+  const result = t(key, { returnObjects: true })
+  return Array.isArray(result) ? result : []
+}
+
 export function KeyBenefitsSection() {
   return (
     <section className="relative py-32 overflow-hidden">
@@ -45,11 +51,7 @@ export function KeyBenefitsSection() {
               {t('whyBerget.benefits.euBased.description')}
             </p>
             <ul className="space-y-3">
-              {(
-                t('whyBerget.benefits.euBased.features', {
-                  returnObjects: true,
-                }) as string[]
-              ).map((feature, index) => (
+              {getFeatures('whyBerget.benefits.euBased.features').map((feature, index) => (
                 <li key={index} className="flex items-center gap-3">
                   <div className="w-6 h-6 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center">
                     <Check className="w-4 h-4 text-[#52B788]" />
@@ -77,11 +79,7 @@ export function KeyBenefitsSection() {
               {t('whyBerget.benefits.flexible.description')}
             </p>
             <ul className="space-y-3">
-              {(
-                t('whyBerget.benefits.flexible.features', {
-                  returnObjects: true,
-                }) as string[]
-              ).map((feature, index) => (
+              {getFeatures('whyBerget.benefits.flexible.features').map((feature, index) => (
                 <li key={index} className="flex items-center gap-3">
                   <div className="w-6 h-6 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center">
                     <Check className="w-4 h-4 text-[#52B788]" />
@@ -110,11 +108,7 @@ export function KeyBenefitsSection() {
               {t('whyBerget.benefits.sustainable.description')}
             </p>
             <ul className="space-y-3">
-              {(
-                t('whyBerget.benefits.sustainable.features', {
-                  returnObjects: true,
-                }) as string[]
-              ).map((feature, index) => (
+              {getFeatures('whyBerget.benefits.sustainable.features').map((feature, index) => (
                 <li key={index} className="flex items-center gap-3">
                   <div className="w-6 h-6 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center">
                     <Check className="w-4 h-4 text-[#52B788]" />
