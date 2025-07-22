@@ -3,6 +3,8 @@ kind: Ingress
 metadata:
   name: berget-website
   namespace: berget-web
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: stage.berget.ai
 spec:
   tls:
     - hosts:

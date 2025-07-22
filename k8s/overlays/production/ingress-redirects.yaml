@@ -10,6 +10,7 @@ metadata:
     nginx.ingress.kubernetes.io/rate-limit: "50"
     nginx.ingress.kubernetes.io/rate-limit-window: "1m"
     nginx.ingress.kubernetes.io/rate-limit-status-code: "429"
+    external-dns.alpha.kubernetes.io/hostname: www.berget.ai,berget.cloud,www.berget.cloud
 spec:
   ingressClassName: nginx
   tls:
