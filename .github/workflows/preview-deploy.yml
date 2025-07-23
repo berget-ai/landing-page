@@ -76,6 +76,7 @@ jobs:
           push: true
           tags: |
             ${{ env.REGISTRY }}/${{ steps.imagename.outputs.lowercase }}:pr-${{ github.event.number }}
+            ${{ env.REGISTRY }}/${{ steps.imagename.outputs.lowercase }}:pr-${{ github.event.number }}-${{ steps.slug.outputs.SLUG }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
           target: production
@@ -123,7 +124,7 @@ patchesStrategicMerge:
 
 images:
   - name: ghcr.io/berget-ai/landing-page
-    newTag: 'pr-$PR_NUMBER'
+    newTag: 'pr-$PR_NUMBER-$SLUG'
 
 labels:
   - pairs:
@@ -266,7 +267,7 @@ EOF
             <summary>📋 Preview Details</summary>
             
             - **Environment:** \`preview-${slug}\`
-            - **Image:** \`ghcr.io/berget-ai/landing-page:pr-${{ github.event.number }}\`
+            - **Image:** \`ghcr.io/berget-ai/landing-page:pr-${{ github.event.number }}-${{ steps.slug.outputs.SLUG }}\`
             - **Hostname:** \`${hostname}\`
             - **Status:** Updated
             
@@ -285,7 +286,7 @@ EOF
             <summary>📋 Preview Details</summary>
             
             - **Environment:** \`preview-${slug}\`
-            - **Image:** \`ghcr.io/berget-ai/landing-page:pr-${{ github.event.number }}\`
+            - **Image:** \`ghcr.io/berget-ai/landing-page:pr-${{ github.event.number }}-${{ steps.slug.outputs.SLUG }}\`
             - **Hostname:** \`${hostname}\`
             - **Overlay:** \`k8s/overlays/preview-${slug}/\`
             
