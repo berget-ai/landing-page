@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 import { ModelsSection } from '@/components/sections/ModelsSection'
 import { Overview } from '@/components/sections/Overview'
 import { Feature } from '@/components/ui/feature-section-with-bento-grid'
+import { getConsoleUrl } from '@/lib/utils'
 
 const iconMap = {
   github: Github,
@@ -124,7 +125,7 @@ export default function DevelopersPage() {
             </p>
             <div className="flex gap-4 justify-center">
               <Button size="lg" asChild>
-                <Link to="https://console.berget.ai">{t('DevelopersPage.cta.signup')}</Link>
+                <Link to={getConsoleUrl()}>{t('DevelopersPage.cta.signup')}</Link>
               </Button>
 
             </div>

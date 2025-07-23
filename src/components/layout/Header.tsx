@@ -6,6 +6,7 @@ import { LanguageSwitcher } from '../ui/LanguageSwitcher'
 import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'framer-motion'
 import logo from '@/assets/logo.svg'
+import { getConsoleUrl } from '@/lib/utils'
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -55,11 +56,11 @@ export function Header() {
           <LanguageSwitcher />
 
           <Button variant="secondary" size="sm" asChild>
-            <Link to="https://console.berget.ai">{t('header.buttons.signIn')}</Link>
+            <Link to={getConsoleUrl()}>{t('header.buttons.signIn')}</Link>
           </Button>
 
           <Button size="sm" asChild>
-            <Link to="https://console.berget.ai">{t('header.buttons.getStarted')}</Link>
+            <Link to={getConsoleUrl()}>{t('header.buttons.getStarted')}</Link>
           </Button>
         </nav>
 
@@ -133,12 +134,12 @@ export function Header() {
               <div className="pt-4 space-y-4">
                 <LanguageSwitcher />
                 <Button variant="secondary" size="lg" className="w-full text-xl" asChild>
-                  <Link to="https://console.berget.ai" onClick={() => setIsMenuOpen(false)}>
+                  <Link to={getConsoleUrl()} onClick={() => setIsMenuOpen(false)}>
                     {t('header.buttons.signIn')}
                   </Link>
                 </Button>
                 <Button size="lg" className="w-full text-xl" asChild>
-                  <Link to="https://console.berget.ai" onClick={() => setIsMenuOpen(false)}>
+                  <Link to={getConsoleUrl()} onClick={() => setIsMenuOpen(false)}>
                     {t('header.buttons.getStarted')}
                   </Link>
                 </Button>
