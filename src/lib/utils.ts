@@ -23,3 +23,14 @@ export function getConsoleUrl(): string {
   // Production eller andra miljöer
   return 'https://console.berget.ai'
 }
+
+/**
+ * Kontrollerar om vi är i stage-miljön
+ */
+export function isStageEnvironment(): boolean {
+  if (typeof window === 'undefined') {
+    return false
+  }
+  
+  return window.location.hostname === 'stage.berget.ai'
+}
