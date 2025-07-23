@@ -1,7 +1,7 @@
 ---
 title: AI in Swedish
 description: How to get help in selecting your models for Swedish applications
-date: 2025-07-23
+date: 2025-06-02
 author: Andreas Lundmark
 tags:
   - LLM
