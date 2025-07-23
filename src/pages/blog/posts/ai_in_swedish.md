@@ -2,13 +2,13 @@
 title: AI in Swedish
 description: How to get help in selecting your models for Swedish applications
 date: 2025-07-23
-author: Christian Landgren
+author: Andreas Lundmark
 tags:
   - LLM
   - Swedish
 image: /images/nordicflags.png
 imageAlt: Nordic Flags
-email: christian@landgren.nu
+email: andreas@berget.ai
 ---
 
 
