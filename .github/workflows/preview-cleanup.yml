@@ -1,0 +1,65 @@
+name: Cleanup Preview Environment
+
+on:
+  pull_request:
+    types: [closed]
+    branches: [main]
+
+jobs:
+  cleanup-preview:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure Git
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "github-actions@github.com"
+
+      - name: Generate preview slug
+        id: slug
+        run: |
+          BRANCH_NAME="${{ github.head_ref }}"
+          SLUG=$(echo "$BRANCH_NAME" | sed 's/[^a-zA-Z0-9]/-/g' | sed 's/--*/-/g' | sed 's/^-\|-$//g' | tr '[:upper:]' '[:lower:]')
+          SLUG=$(echo "$SLUG" | cut -c1-20 | sed 's/-$//')
+          echo "slug=$SLUG" >> $GITHUB_OUTPUT
+
+      - name: Remove preview overlay
+        run: |
+          SLUG="${{ steps.slug.outputs.slug }}"
+          
+          if [ -d "k8s/overlays/preview-$SLUG" ]; then
+            rm -rf "k8s/overlays/preview-$SLUG"
+            git add -A
+            git commit -m "cleanup: remove preview overlay for PR #${{ github.event.number }} ($SLUG)" || echo "Nothing to commit"
+            git push origin HEAD:main || echo "Nothing to push"
+          fi
+
+      - name: Comment on PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const slug = '${{ steps.slug.outputs.slug }}';
+            
+            const comment = `## 🧹 Preview Environment Cleaned Up
+            
+            Preview-miljön för denna PR har rensats bort:
+            - Overlay \`k8s/overlays/preview-${slug}/\` har tagits bort
+            - Kubernetes-resurser kommer att rensas automatiskt av FluxCD
+            
+            Tack för ditt bidrag! 🎉`;
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
