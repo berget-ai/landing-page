@@ -23,10 +23,6 @@ spec:
                 name: berget-website
                 port:
                   number: 80
-  tls:
-    - hosts:
-        - berget.ai
-      secretName: berget-ai-tls
 ---
 apiVersion: v1
 kind: ConfigMap
