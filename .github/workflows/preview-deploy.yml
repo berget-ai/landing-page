@@ -91,8 +91,7 @@ jobs:
             echo "exists=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Create preview overlay
-        if: steps.check-preview.outputs.exists == 'false'
+      - name: Create or update preview overlay
         run: |
           SLUG="${{ steps.slug.outputs.SLUG }}"
           HOSTNAME="${{ steps.hostname.outputs.hostname }}"
@@ -107,7 +106,7 @@ jobs:
           # Skapa preview overlay directory
           mkdir -p "k8s/overlays/preview-$SLUG"
           
-          # Skapa kustomization.yaml med bättre formatering
+          # Skapa eller uppdatera kustomization.yaml
           cat > "k8s/overlays/preview-$SLUG/kustomization.yaml" << EOF
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
@@ -132,8 +131,9 @@ labels:
       pr-number: '$PR_NUMBER'
 EOF
           
-          # Skapa namespace.yaml
-          cat > "k8s/overlays/preview-$SLUG/namespace.yaml" << EOF
+          # Skapa eller uppdatera namespace.yaml (endast om den inte finns)
+          if [ ! -f "k8s/overlays/preview-$SLUG/namespace.yaml" ]; then
+            cat > "k8s/overlays/preview-$SLUG/namespace.yaml" << EOF
 apiVersion: v1
 kind: Namespace
 metadata:
@@ -143,9 +143,11 @@ metadata:
     pr-number: '$PR_NUMBER'
     preview-slug: '$SLUG'
 EOF
+          fi
 
-          # Skapa ingress-patch.yaml
-          cat > "k8s/overlays/preview-$SLUG/ingress-patch.yaml" << EOF
+          # Skapa eller uppdatera ingress-patch.yaml (endast om den inte finns)
+          if [ ! -f "k8s/overlays/preview-$SLUG/ingress-patch.yaml" ]; then
+            cat > "k8s/overlays/preview-$SLUG/ingress-patch.yaml" << EOF
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -187,8 +189,9 @@ data:
   Cross-Origin-Resource-Policy: same-site
   Referrer-Policy: strict-origin
 EOF
+          fi
           
-          # Skapa deployment-patch.yaml för att sätta unika labels
+          # Skapa eller uppdatera deployment-patch.yaml (denna uppdateras alltid för ny image)
           cat > "k8s/overlays/preview-$SLUG/deployment-patch.yaml" << EOF
 apiVersion: apps/v1
 kind: Deployment
