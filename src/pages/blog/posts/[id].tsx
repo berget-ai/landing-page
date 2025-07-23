@@ -157,9 +157,9 @@ export default function BlogPostPage() {
                   className="absolute inset-0 w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                <div className="absolute inset-0 flex items-end justify-center">
+                <div className="absolute inset-0 flex items-end">
                   <div className="container mx-auto px-4 pb-16">
-                    <div className="max-w-3xl mx-auto text-center">
+                    <div className="max-w-3xl mx-auto">
                       <AuthorByline 
                         name={post.author} 
                         email={post.email} 
