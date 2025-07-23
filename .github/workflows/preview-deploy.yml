@@ -107,7 +107,7 @@ jobs:
           mkdir -p "k8s/overlays/preview-$SLUG"
           
           # Skapa eller uppdatera kustomization.yaml
-          cat > "k8s/overlays/preview-$SLUG/kustomization.yaml" << EOF
+          cat > "k8s/overlays/preview-$SLUG/kustomization.yaml" <<'EOF'
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
@@ -136,7 +136,7 @@ EOF
           
           # Skapa eller uppdatera namespace.yaml (endast om den inte finns)
           if [ ! -f "k8s/overlays/preview-$SLUG/namespace.yaml" ]; then
-            cat > "k8s/overlays/preview-$SLUG/namespace.yaml" << EOF
+            cat > "k8s/overlays/preview-$SLUG/namespace.yaml" <<'EOF'
 apiVersion: v1
 kind: Namespace
 metadata:
@@ -166,7 +166,7 @@ EOF
 
           # Skapa eller uppdatera ingress-patch.yaml (endast om den inte finns)
           if [ ! -f "k8s/overlays/preview-$SLUG/ingress-patch.yaml" ]; then
-            cat > "k8s/overlays/preview-$SLUG/ingress-patch.yaml" << EOF
+            cat > "k8s/overlays/preview-$SLUG/ingress-patch.yaml" <<'EOF'
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -217,7 +217,7 @@ EOF
           fi
           
           # Skapa eller uppdatera deployment-patch.yaml (denna uppdateras alltid för ny image)
-          cat > "k8s/overlays/preview-$SLUG/deployment-patch.yaml" << EOF
+          cat > "k8s/overlays/preview-$SLUG/deployment-patch.yaml" <<'EOF'
 apiVersion: apps/v1
 kind: Deployment
 metadata:
