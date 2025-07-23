@@ -7,14 +7,7 @@ import { Button } from '@/components/ui/button'
 import { AuthorByline } from '@/components/blog/AuthorByline'
 import { Helmet } from '@/components/common/Helmet'
 import type { BlogPost } from '@/types/blog'
-import MarkdownIt from 'markdown-it'
-
-// Configure markdown parser
-const md = new MarkdownIt({
-  html: true,
-  linkify: true,
-  typographer: true,
-})
+import { MarkdownRenderer } from '@/components/blog/MarkdownRenderer'
 
 // Import all blog posts at build time
 const postModules = import.meta.glob('./**/*.md', {
@@ -88,7 +81,6 @@ export default function BlogPostPage() {
       const metadata = metadataMatch ? parseYamlMetadata(metadataMatch[1]) : {}
 
       const markdownContent = content.replace(/^---\n[\s\S]*?\n---\n/, '') // Remove frontmatter
-      const htmlContent = md.render(markdownContent)
 
       // Use language from metadata or default to 'sv'
       const language = metadata.language === 'en' ? 'en' as const : 'sv' as const;
@@ -100,7 +92,7 @@ export default function BlogPostPage() {
         date: metadata.date || '',
         author: metadata.author || 'Berget Team',
         email: metadata.email || '',
-        content: htmlContent,
+        content: markdownContent,
         tags: metadata.tags || [],
         image: metadata.image || '',
         imageAlt: metadata.imageAlt || '',
@@ -177,19 +169,7 @@ export default function BlogPostPage() {
               ))}
             </div>
 
-            <div 
-              className="prose prose-invert max-w-none
-                prose-headings:font-medium 
-                prose-h1:text-4xl prose-h1:mb-8
-                prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4
-                prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-4
-                prose-p:text-white/80 prose-p:leading-relaxed
-                prose-a:text-[#52B788] hover:prose-a:text-[#74C69D] prose-a:no-underline hover:prose-a:underline
-                prose-blockquote:border-l-[#52B788] prose-blockquote:bg-[#2D6A4F]/5 prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:rounded-r-lg
-                prose-code:text-[#52B788] prose-code:bg-[#2D6A4F]/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md
-                prose-pre:bg-[#1A1A1A] prose-pre:border prose-pre:border-white/10"
-              dangerouslySetInnerHTML={{ __html: post.content }}
-            />
+            <MarkdownRenderer content={post.content} />
           </motion.div>
         </div>
       </article>

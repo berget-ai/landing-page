@@ -33,6 +33,18 @@ The secret weapon? **Kubernetes as your universal runtime**, with Git as the sin
 
 > **Pro tip:** Every code example in this guide works directly with AI coding assistants like Lovable, Bolt, or Aider. Even if you've never touched Kubernetes, you'll have a production-ready system running in minutes.
 
+<LLMPrompt title="🤖 GitHub Actions CI/CD Setup">
+Create a complete GitHub Actions CI/CD workflow for a Node.js application that:
+- Runs tests on every push to main
+- Builds a Docker image with automatic version tagging
+- Publishes to GitHub Container Registry (ghcr.io)
+- Uses semantic versioning (auto-increment patch versions)
+- Includes a multi-stage Dockerfile optimized for production
+- Sets up proper caching for faster builds
+
+Please provide the complete .github/workflows/ci.yml file and a production-ready Dockerfile.
+</LLMPrompt>
+
 ## The Golden Path: Build → Tag → Deploy → Scale → Sleep
 
 Let's walk through building a system that automates itself. We'll start with nothing but an empty Git repository and end with enterprise-grade infrastructure.
@@ -80,6 +92,19 @@ No Jenkins sprawl. No YAML nightmares. Just clean automation that works.
 ### Step 2: Make Kubernetes Your Friend, Not Your Enemy
 
 Forget everything you've heard about Kubernetes being complex. With the right setup, it's actually simpler than managing virtual machines.
+
+<LLMPrompt title="🤖 Kubernetes Manifests Setup">
+Create production-ready Kubernetes manifests for a web application with:
+- A Deployment with 2 replicas, proper resource limits (memory: 256Mi, CPU: 200m)
+- Health checks (readiness and liveness probes)
+- A Service to expose the application internally
+- An Ingress for external HTTP/HTTPS traffic
+- Proper labels and selectors for everything
+- Rolling update strategy for zero-downtime deployments
+
+The app runs on port 3000 internally and should be accessible at myapp.example.com
+Please provide separate YAML files: deployment.yaml, service.yaml, and ingress.yaml
+</LLMPrompt>
 
 > **🤖 LLM Prompt:**
 >
@@ -166,6 +191,18 @@ That's it. Run `kubectl apply -f k8s/` and you're live on the internet.
 
 Manual deployments are where dreams go to die. Instead, we use FluxCD to make your Git repository the single source of truth for production.
 
+<LLMPrompt title="🤖 FluxCD GitOps Setup">
+Help me set up GitOps with FluxCD for my Kubernetes application. I need:
+- Step-by-step instructions to install Flux CLI on macOS/Linux
+- Complete bootstrap command for GitHub repository integration
+- Explanation of how FluxCD monitors Git and applies changes automatically
+- Basic troubleshooting commands to check Flux status
+- How to structure my repository for GitOps (which files go where)
+- Examples of how deployments, rollbacks, and updates work with Git commits
+
+My repository is at github.com/myorg/myservice and I want to deploy from the main branch.
+</LLMPrompt>
+
 > **🤖 LLM Prompt:**
 >
 > ```
@@ -202,6 +239,18 @@ Now every commit to your `main` branch automatically deploys to production. Roll
 ## Production-Grade Features That Configure Themselves
 
 ### Automatic HTTPS with cert-manager
+
+<LLMPrompt title="🤖 Automatic HTTPS with cert-manager">
+Set up automatic HTTPS certificates with cert-manager on Kubernetes. I need:
+- Complete HelmRelease manifest to install cert-manager via Flux
+- ClusterIssuer configuration for Let's Encrypt production certificates
+- Updated Ingress manifest with TLS annotations for automatic certificate generation
+- Explanation of how cert-manager automatically renews certificates
+- Troubleshooting commands to check certificate status
+- Support for multiple domains and wildcard certificates
+
+My email is admin@example.com and I want certificates for myapp.example.com
+</LLMPrompt>
 
 > **🤖 LLM Prompt:**
 >
@@ -259,6 +308,18 @@ Add one annotation to your ingress and you get automatic, renewing HTTPS certifi
 
 ### Automatic DNS with external-dns
 
+<LLMPrompt title="🤖 Automatic DNS with external-dns">
+Configure external-dns for automatic DNS management on Kubernetes. I need:
+- HelmRelease manifest for external-dns installation via Flux
+- Configuration for Cloudflare DNS provider (include other popular providers as options)
+- Required API token setup and secret creation
+- Ingress annotations for automatic DNS record creation
+- Examples for different DNS providers (Route53, Google DNS, etc.)
+- Troubleshooting steps to verify DNS automation is working
+
+I'm using Cloudflare as my DNS provider and want DNS records created automatically when I add ingress rules.
+</LLMPrompt>
+
 > **🤖 LLM Prompt:**
 >
 > ```
@@ -289,6 +350,18 @@ spec:
 Now your ingress rules automatically create DNS records. Add a new domain to your ingress, commit to Git, and the DNS updates itself.
 
 ### Automatic Scaling with HPA
+
+<LLMPrompt title="🤖 Horizontal Pod Autoscaler Setup">
+Create Kubernetes Horizontal Pod Autoscaler (HPA) configuration for production workloads. I need:
+- Complete HPA manifest with CPU and memory-based scaling
+- Metrics server setup if required
+- Resource requests/limits in deployment for HPA to work properly
+- Advanced scaling policies (scale-up/down behavior, stabilization windows)
+- Custom metrics examples (HTTP requests, queue length, etc.)
+- Monitoring and alerting for scaling events
+
+Configure for: min 2 pods, max 10 pods, target 70% CPU utilization, with gradual scaling policies.
+</LLMPrompt>
 
 > **🤖 LLM Prompt:**
 >
@@ -331,6 +404,18 @@ Your app now scales up during traffic spikes and scales down during quiet period
 ## Add a Real Backend: Self-Hosted Supabase
 
 Most apps need a database, authentication, and file storage. Instead of cobbling together cloud services, deploy Supabase directly in your cluster:
+
+<LLMPrompt title="🤖 Self-Hosted Supabase Deployment">
+Help me deploy Supabase (open-source Firebase alternative) on Kubernetes using Helm. I need:
+- Complete HelmRelease manifest for Supabase deployment via Flux
+- PostgreSQL configuration with persistent storage
+- Authentication service setup with proper secrets management
+- File storage configuration with S3-compatible backend
+- Real-time service configuration
+- Ingress configuration to expose Supabase APIs
+
+My app domain is myapp.example.com and I want Supabase APIs at api.myapp.example.com
+</LLMPrompt>
 
 > **🤖 LLM Prompt:**
 >
@@ -376,6 +461,19 @@ You now have Postgres, authentication, real-time subscriptions, and file storage
 ## Secrets That Don't Leak
 
 Never commit secrets to Git, but do commit encrypted secrets. Use sealed-secrets:
+
+<LLMPrompt title="🤖 Secure Secrets Management">
+Set up secure secrets management for Kubernetes using sealed-secrets. I need:
+- Installation of sealed-secrets controller via Helm/Flux
+- Step-by-step process to encrypt secrets for Git storage
+- Examples of converting environment files to encrypted secrets
+- Integration with application deployments (how to reference encrypted secrets)
+- Backup and recovery procedures for encryption keys
+- Rotation strategies for both secrets and encryption keys
+- Alternative approaches (External Secrets Operator, Vault integration)
+
+Show me how to encrypt DATABASE_URL, API_KEYS, and other sensitive environment variables.
+</LLMPrompt>
 
 > **🤖 LLM Prompt:**
 >
@@ -445,6 +543,20 @@ Let's take a step back. With these simple patterns, you now have:
 - **Easy rollbacks** with `git revert`
 
 All managed through code, all versioned in Git, all completely portable between clouds.
+
+<LLMPrompt title="🤖 Comprehensive Monitoring Setup">
+Help me create a comprehensive monitoring and observability setup for my GitOps Kubernetes application. I need:
+- Prometheus and Grafana installation via Helm/Flux
+- Pre-built dashboards for Kubernetes, application metrics, and business KPIs
+- Alerting rules for common failure scenarios (pod crashes, high CPU, disk space)
+- Log aggregation with Loki or ELK stack
+- Distributed tracing setup (Jaeger/Zipkin)
+- SLO/SLI monitoring for production services
+- Cost monitoring and optimization recommendations
+- Health check endpoints and uptime monitoring
+
+Focus on actionable alerts that help prevent incidents rather than just reporting them.
+</LLMPrompt>
 
 ## The Path Forward
 
