@@ -7,8 +7,12 @@ resources:
   - ../../base
   - ingress-redirects.yaml
 
-patches:
-  - path: ingress-patch.yaml
+patchesStrategicMerge:
+  - ingress-patch.yaml
+
+images:
+  - name: ghcr.io/berget-ai/landing-page
+    newTag: 'v1.3.99' # {"$imagepolicy": "flux-system:landingpage:tag"}
 
 labels:
   - pairs:

@@ -6,8 +6,12 @@ namespace: berget-web
 resources:
   - ../../base
 
-patches:
-  - path: ingress-patch.yaml
+patchesStrategicMerge:
+  - ingress-patch.yaml
+
+images:
+  - name: ghcr.io/berget-ai/landing-page
+    newTag: 'v1.3.99-rc.0' # {"$imagepolicy": "flux-system:landingpage-stage:tag"}
 
 labels:
   - pairs:
