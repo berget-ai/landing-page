@@ -6,15 +6,16 @@ import { LanguageSwitcher } from '../ui/LanguageSwitcher'
 import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'framer-motion'
 import logo from '@/assets/logo.svg'
-import { getConsoleUrl, isStageEnvironment } from '@/lib/utils'
+import { useEnvironment } from '@/hooks/use-environment'
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { t } = useTranslation()
+  const { isStage, consoleUrl } = useEnvironment()
 
   return (
     <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-lg border-b border-white/5">
-      {isStageEnvironment() && (
+      {isStage && (
         <div className="bg-red-500/90 text-white text-center py-0.5 text-xs font-medium">
           STAGE
         </div>
@@ -61,11 +62,11 @@ export function Header() {
           <LanguageSwitcher />
 
           <Button variant="secondary" size="sm" asChild>
-            <Link to={getConsoleUrl()}>{t('header.buttons.signIn')}</Link>
+            <Link to={consoleUrl}>{t('header.buttons.signIn')}</Link>
           </Button>
 
           <Button size="sm" asChild>
-            <Link to={getConsoleUrl()}>{t('header.buttons.getStarted')}</Link>
+            <Link to={consoleUrl}>{t('header.buttons.getStarted')}</Link>
           </Button>
         </nav>
 
@@ -139,12 +140,12 @@ export function Header() {
               <div className="pt-4 space-y-4">
                 <LanguageSwitcher />
                 <Button variant="secondary" size="lg" className="w-full text-xl" asChild>
-                  <Link to={getConsoleUrl()} onClick={() => setIsMenuOpen(false)}>
+                  <Link to={consoleUrl} onClick={() => setIsMenuOpen(false)}>
                     {t('header.buttons.signIn')}
                   </Link>
                 </Button>
                 <Button size="lg" className="w-full text-xl" asChild>
-                  <Link to={getConsoleUrl()} onClick={() => setIsMenuOpen(false)}>
+                  <Link to={consoleUrl} onClick={() => setIsMenuOpen(false)}>
                     {t('header.buttons.getStarted')}
                   </Link>
                 </Button>

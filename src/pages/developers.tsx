@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 import { ModelsSection } from '@/components/sections/ModelsSection'
 import { Overview } from '@/components/sections/Overview'
 import { Feature } from '@/components/ui/feature-section-with-bento-grid'
-import { getConsoleUrl } from '@/lib/utils'
+import { useEnvironment } from '@/hooks/use-environment'
 
 const iconMap = {
   github: Github,
@@ -18,6 +18,7 @@ const iconMap = {
 
 export default function DevelopersPage() {
   const { t } = useTranslation()
+  const { consoleUrl } = useEnvironment()
   const sections =
     (t('DevelopersPage.sections', { returnObjects: true }) as {
       icon: keyof typeof iconMap
@@ -125,7 +126,7 @@ export default function DevelopersPage() {
             </p>
             <div className="flex gap-4 justify-center">
               <Button size="lg" asChild>
-                <Link to={getConsoleUrl()}>{t('DevelopersPage.cta.signup')}</Link>
+                <Link to={consoleUrl}>{t('DevelopersPage.cta.signup')}</Link>
               </Button>
 
             </div>
