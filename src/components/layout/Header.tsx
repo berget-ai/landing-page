@@ -6,7 +6,7 @@ import { LanguageSwitcher } from '../ui/LanguageSwitcher'
 import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'framer-motion'
 import logo from '@/assets/logo.svg'
-import { getConsoleUrl } from '@/lib/utils'
+import { getConsoleUrl, isStageEnvironment } from '@/lib/utils'
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -14,6 +14,11 @@ export function Header() {
 
   return (
     <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-lg border-b border-white/5">
+      {isStageEnvironment() && (
+        <div className="bg-red-600 text-white text-center py-1 text-xs font-medium">
+          STAGE ENVIRONMENT
+        </div>
+      )}
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center space-x-2">
           <Link to="/" className="flex items-center gap-2 hover:text-white/90 transition-colors">
