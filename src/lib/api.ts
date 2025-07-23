@@ -25,7 +25,7 @@ export const getApiUrl = (): string => {
   return `https://${apiHostname}/v1`
 }
 
-export const VITE_API_URL = getApiUrl()
+// Remove the immediate call - let each function call getApiUrl() when needed
 
 /**
  * Default headers for API requests
