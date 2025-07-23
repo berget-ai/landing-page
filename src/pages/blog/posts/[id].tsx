@@ -122,29 +122,44 @@ export default function BlogPostPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <Button
-              variant="ghost"
-              size="sm"
-              className="mb-8"
-              asChild
-            >
-              <Link to="/blog">
-                <ArrowLeft className="mr-2 h-4 w-4" />
-                Back to Blog
-              </Link>
-            </Button>
+            {!post.image && (
+              <Button
+                variant="ghost"
+                size="sm"
+                className="mb-8"
+                asChild
+              >
+                <Link to="/blog">
+                  <ArrowLeft className="mr-2 h-4 w-4" />
+                  Back to Blog
+                </Link>
+              </Button>
+            )}
 
             {post.image && (
               <div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] h-[70vh] mb-12 overflow-hidden">
+                <div className="absolute top-6 left-6 z-20">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="bg-black/20 backdrop-blur-sm hover:bg-black/40 text-white border-white/20"
+                    asChild
+                  >
+                    <Link to="/blog">
+                      <ArrowLeft className="mr-2 h-4 w-4" />
+                      Back to Blog
+                    </Link>
+                  </Button>
+                </div>
                 <img
                   src={post.image}
                   alt={post.imageAlt || post.title}
                   className="absolute inset-0 w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                <div className="absolute inset-0 flex items-end">
+                <div className="absolute inset-0 flex items-end justify-center">
                   <div className="container mx-auto px-4 pb-16">
-                    <div className="max-w-3xl">
+                    <div className="max-w-3xl mx-auto text-center">
                       <AuthorByline 
                         name={post.author} 
                         email={post.email} 

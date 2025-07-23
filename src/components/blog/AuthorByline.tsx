@@ -41,7 +41,7 @@ export function AuthorByline({ email, name, date, size = 'md' }: AuthorBylinePro
   }[size]
 
   return (
-    <div className="flex items-center gap-4 mb-6">
+    <div className="flex items-center justify-center gap-4 mb-6">
       {author && (
         <div className="flex-shrink-0">
           <img 
@@ -51,18 +51,18 @@ export function AuthorByline({ email, name, date, size = 'md' }: AuthorBylinePro
           />
         </div>
       )}
-      <div>
-        <div className="flex items-center gap-2">
+      <div className="text-center">
+        <div className="flex items-center justify-center gap-2">
           <span className={`font-medium ${nameSize}`}>{name}</span>
         </div>
-        <div className={`flex items-center gap-2 ${dateSize} text-white/60`}>
+        <div className={`flex items-center justify-center gap-2 ${dateSize} text-white/60`}>
           <Calendar className="w-4 h-4" />
           <time dateTime={date}>
             {new Date(date).toLocaleDateString()}
           </time>
         </div>
         {author?.social && (
-          <div className="flex items-center gap-3 mt-1">
+          <div className="flex items-center justify-center gap-3 mt-1">
             {author.social.twitter && (
               <a 
                 href={`https://twitter.com/${author.social.twitter}`} 
