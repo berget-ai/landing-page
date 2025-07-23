@@ -65,20 +65,6 @@ my-service/
     └── ingress.yaml
 ```
 
-> **🤖 LLM Prompt:**
->
-> ```
-> Create a complete GitHub Actions CI/CD workflow for a Node.js application that:
-> - Runs tests on every push to main
-> - Builds a Docker image with automatic version tagging
-> - Publishes to GitHub Container Registry (ghcr.io)
-> - Uses semantic versioning (auto-increment patch versions)
-> - Includes a multi-stage Dockerfile optimized for production
-> - Sets up proper caching for faster builds
->
-> Please provide the complete .github/workflows/ci.yml file and a production-ready Dockerfile.
-> ```
-
 The magic happens in `.github/workflows/ci.yml`. This single file:
 
 - Runs your tests on every commit
@@ -105,21 +91,6 @@ Create production-ready Kubernetes manifests for a web application with:
 The app runs on port 3000 internally and should be accessible at myapp.example.com
 Please provide separate YAML files: deployment.yaml, service.yaml, and ingress.yaml
 </LLMPrompt>
-
-> **🤖 LLM Prompt:**
->
-> ```
-> Create production-ready Kubernetes manifests for a web application with:
-> - A Deployment with 2 replicas, proper resource limits (memory: 256Mi, CPU: 200m)
-> - Health checks (readiness and liveness probes)
-> - A Service to expose the application internally
-> - An Ingress for external HTTP/HTTPS traffic
-> - Proper labels and selectors for everything
-> - Rolling update strategy for zero-downtime deployments
->
-> The app runs on port 3000 internally and should be accessible at myapp.example.com
-> Please provide separate YAML files: deployment.yaml, service.yaml, and ingress.yaml
-> ```
 
 Your entire application lives in three files:
 
@@ -203,20 +174,6 @@ Help me set up GitOps with FluxCD for my Kubernetes application. I need:
 My repository is at github.com/myorg/myservice and I want to deploy from the main branch.
 </LLMPrompt>
 
-> **🤖 LLM Prompt:**
->
-> ```
-> Help me set up GitOps with FluxCD for my Kubernetes application. I need:
-> - Step-by-step instructions to install Flux CLI on macOS/Linux
-> - Complete bootstrap command for GitHub repository integration
-> - Explanation of how FluxCD monitors Git and applies changes automatically
-> - Basic troubleshooting commands to check Flux status
-> - How to structure my repository for GitOps (which files go where)
-> - Examples of how deployments, rollbacks, and updates work with Git commits
->
-> My repository is at github.com/myorg/myservice and I want to deploy from the main branch.
-> ```
-
 Install the Flux CLI:
 
 ```bash
@@ -251,20 +208,6 @@ Set up automatic HTTPS certificates with cert-manager on Kubernetes. I need:
 
 My email is admin@example.com and I want certificates for myapp.example.com
 </LLMPrompt>
-
-> **🤖 LLM Prompt:**
->
-> ```
-> Set up automatic HTTPS certificates with cert-manager on Kubernetes. I need:
-> - Complete HelmRelease manifest to install cert-manager via Flux
-> - ClusterIssuer configuration for Let's Encrypt production certificates
-> - Updated Ingress manifest with TLS annotations for automatic certificate generation
-> - Explanation of how cert-manager automatically renews certificates
-> - Troubleshooting commands to check certificate status
-> - Support for multiple domains and wildcard certificates
->
-> My email is admin@example.com and I want certificates for myapp.example.com
-> ```
 
 Add this to `k8s/cert-manager.yaml`:
 
@@ -320,20 +263,6 @@ Configure external-dns for automatic DNS management on Kubernetes. I need:
 I'm using Cloudflare as my DNS provider and want DNS records created automatically when I add ingress rules.
 </LLMPrompt>
 
-> **🤖 LLM Prompt:**
->
-> ```
-> Configure external-dns for automatic DNS management on Kubernetes. I need:
-> - HelmRelease manifest for external-dns installation via Flux
-> - Configuration for Cloudflare DNS provider (include other popular providers as options)
-> - Required API token setup and secret creation
-> - Ingress annotations for automatic DNS record creation
-> - Examples for different DNS providers (Route53, Google DNS, etc.)
-> - Troubleshooting steps to verify DNS automation is working
->
-> I'm using Cloudflare as my DNS provider and want DNS records created automatically when I add ingress rules.
-> ```
-
 ```yaml
 # k8s/external-dns.yaml
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
@@ -362,20 +291,6 @@ Create Kubernetes Horizontal Pod Autoscaler (HPA) configuration for production w
 
 Configure for: min 2 pods, max 10 pods, target 70% CPU utilization, with gradual scaling policies.
 </LLMPrompt>
-
-> **🤖 LLM Prompt:**
->
-> ```
-> Create Kubernetes Horizontal Pod Autoscaler (HPA) configuration for production workloads. I need:
-> - Complete HPA manifest with CPU and memory-based scaling
-> - Metrics server setup if required
-> - Resource requests/limits in deployment for HPA to work properly
-> - Advanced scaling policies (scale-up/down behavior, stabilization windows)
-> - Custom metrics examples (HTTP requests, queue length, etc.)
-> - Monitoring and alerting for scaling events
->
-> Configure for: min 2 pods, max 10 pods, target 70% CPU utilization, with gradual scaling policies.
-> ```
 
 ```yaml
 # k8s/hpa.yaml
@@ -416,20 +331,6 @@ Help me deploy Supabase (open-source Firebase alternative) on Kubernetes using H
 
 My app domain is myapp.example.com and I want Supabase APIs at api.myapp.example.com
 </LLMPrompt>
-
-> **🤖 LLM Prompt:**
->
-> ```
-> Help me deploy Supabase (open-source Firebase alternative) on Kubernetes using Helm. I need:
-> - Complete HelmRelease manifest for Supabase deployment via Flux
-> - PostgreSQL configuration with persistent storage
-> - Authentication service setup with proper secrets management
-> - File storage configuration with S3-compatible backend
-> - Real-time service configuration
-> - Ingress configuration to expose Supabase APIs
->
-> My app domain is myapp.example.com and I want Supabase APIs at api.myapp.example.com
-> ```
 
 ```yaml
 # k8s/supabase.yaml
@@ -475,21 +376,6 @@ Set up secure secrets management for Kubernetes using sealed-secrets. I need:
 Show me how to encrypt DATABASE_URL, API_KEYS, and other sensitive environment variables.
 </LLMPrompt>
 
-> **🤖 LLM Prompt:**
->
-> ```
-> Set up secure secrets management for Kubernetes using sealed-secrets. I need:
-> - Installation of sealed-secrets controller via Helm/Flux
-> - Step-by-step process to encrypt secrets for Git storage
-> - Examples of converting environment files to encrypted secrets
-> - Integration with application deployments (how to reference encrypted secrets)
-> - Backup and recovery procedures for encryption keys
-> - Rotation strategies for both secrets and encryption keys
-> - Alternative approaches (External Secrets Operator, Vault integration)
->
-> Show me how to encrypt DATABASE_URL, API_KEYS, and other sensitive environment variables.
-> ```
-
 ```bash
 # Create secret from environment file
 kubectl create secret generic app-secrets \
@@ -516,22 +402,6 @@ Minutes later, you have enterprise-grade infrastructure running in production.
 ## What You've Built
 
 Let's take a step back. With these simple patterns, you now have:
-
-> **🤖 LLM Prompt:**
->
-> ```
-> Help me create a comprehensive monitoring and observability setup for my GitOps Kubernetes application. I need:
-> - Prometheus and Grafana installation via Helm/Flux
-> - Pre-built dashboards for Kubernetes, application metrics, and business KPIs
-> - Alerting rules for common failure scenarios (pod crashes, high CPU, disk space)
-> - Log aggregation with Loki or ELK stack
-> - Distributed tracing setup (Jaeger/Zipkin)
-> - SLO/SLI monitoring for production services
-> - Cost monitoring and optimization recommendations
-> - Health check endpoints and uptime monitoring
->
-> Focus on actionable alerts that help prevent incidents rather than just reporting them.
-> ```
 
 - **Automated CI/CD** that builds and deploys on every commit
 - **Automatic HTTPS** certificates that renew themselves
@@ -561,21 +431,6 @@ Focus on actionable alerts that help prevent incidents rather than just reportin
 ## The Path Forward
 
 This isn't just about tools—it's about a mindset shift. Infrastructure as code isn't a nice-to-have anymore; it's the foundation that lets small teams move fast without breaking things.
-
-> **🤖 LLM Prompt:**
->
-> ```
-> Create a step-by-step migration plan to move my existing application to this GitOps setup. I need:
-> - Assessment checklist for current infrastructure and dependencies
-> - Phased migration strategy (containerization → CI/CD → Kubernetes → GitOps)
-> - Risk mitigation strategies and rollback plans for each phase
-> - Team training recommendations and skill development paths
-> - Cost analysis and ROI calculations for the migration
-> - Timeline estimates for different complexity levels
-> - Post-migration optimization and scaling strategies
->
-> My current setup: [describe your current infrastructure - VMs, manual deployments, etc.]
-> ```
 
 Start small. Add one piece at a time. Let your system grow with your needs, not against them.
 
