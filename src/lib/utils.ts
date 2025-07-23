@@ -17,7 +17,7 @@ export function getConsoleUrl(): string {
   
   const hostname = window.location.hostname
   
-  if (hostname === 'stage.berget.ai') {
+  if (hostname === 'stage.berget.ai' || hostname === 'localhost' || hostname === '127.0.0.1') {
     return 'https://console.stage.berget.ai'
   }
   
@@ -34,5 +34,6 @@ export function isStageEnvironment(): boolean {
     return false
   }
   
-  return window.location.hostname === 'stage.berget.ai'
+  const hostname = window.location.hostname
+  return hostname === 'stage.berget.ai' || hostname === 'localhost' || hostname === '127.0.0.1'
 }
