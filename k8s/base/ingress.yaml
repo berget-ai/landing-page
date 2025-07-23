@@ -12,17 +12,6 @@ metadata:
     nginx.ingress.kubernetes.io/rate-limit-status-code: '429'
 spec:
   ingressClassName: nginx
-  rules:
-    - host: berget.ai
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: berget-website
-                port:
-                  number: 80
 ---
 apiVersion: v1
 kind: ConfigMap
