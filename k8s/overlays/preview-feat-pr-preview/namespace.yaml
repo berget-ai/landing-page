@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: preview-feat-pr-preview
+  labels:
+    environment: preview
+    pr-number: '40'
+    preview-slug: 'feat-pr-preview'

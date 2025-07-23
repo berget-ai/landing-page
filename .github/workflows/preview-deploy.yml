@@ -107,14 +107,15 @@ jobs:
           mkdir -p "k8s/overlays/preview-$SLUG"
           
           # Skapa kustomization.yaml med bättre formatering
-          cat > "k8s/overlays/preview-$SLUG/kustomization.yaml" << 'EOF'
+          cat > "k8s/overlays/preview-$SLUG/kustomization.yaml" << EOF
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-namespace: berget-web
+namespace: preview-$SLUG
 
 resources:
   - ../../base
+  - namespace.yaml
 
 patchesStrategicMerge:
   - ingress-patch.yaml
@@ -122,12 +123,12 @@ patchesStrategicMerge:
 
 images:
   - name: ghcr.io/berget-ai/landing-page
-    newTag: 'pr-${{ github.event.number }}'
+    newTag: 'pr-$PR_NUMBER'
 
 labels:
   - pairs:
       environment: preview
-      pr-number: '${{ github.event.number }}'
+      pr-number: '$PR_NUMBER'
 EOF
           
           # Skapa ingress-patch.yaml

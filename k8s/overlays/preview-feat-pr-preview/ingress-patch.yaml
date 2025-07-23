@@ -2,10 +2,10 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: berget-website
-  namespace: berget-web
+  namespace: preview-feat-pr-preview
   annotations:
     external-dns.alpha.kubernetes.io/hostname: feat-pr-preview.stage.berget.ai
-    nginx.ingress.kubernetes.io/custom-headers: berget-web/berget-custom-headers-configmap-feat-pr-preview
+    nginx.ingress.kubernetes.io/custom-headers: preview-feat-pr-preview/berget-custom-headers-configmap
     nginx.ingress.kubernetes.io/configuration-snippet: |
       add_header X-Preview-Environment "PR-40" always;
 spec:
@@ -28,8 +28,8 @@ spec:
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: berget-custom-headers-configmap-feat-pr-preview
-  namespace: berget-web
+  name: berget-custom-headers-configmap
+  namespace: preview-feat-pr-preview
 data:
   Content-Security-Policy: "default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://api.stage.berget.ai; base-uri 'self'; form-action 'self'; frame-src 'none'; frame-ancestors 'none'; object-src 'none'; worker-src 'self'; manifest-src 'self'; upgrade-insecure-requests;"
   X-Content-Type-Options: nosniff

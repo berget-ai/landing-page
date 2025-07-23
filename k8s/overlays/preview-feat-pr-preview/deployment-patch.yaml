@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: berget-website
-  namespace: berget-web
+  namespace: preview-feat-pr-preview
 spec:
   replicas: 1
   selector:
