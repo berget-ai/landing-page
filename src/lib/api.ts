@@ -2,9 +2,30 @@
  * API utilities for Berget AI
  */
 
-// Base URL for the Berget API
-export const VITE_API_URL =
-  import.meta.env.VITE_BERGET_API_URL || 'http://localhost:3000/v1'
+// Base URL for the Berget API - constructed dynamically from current domain
+export const getApiUrl = (): string => {
+  if (typeof window === 'undefined') {
+    // Server-side rendering fallback
+    return 'http://localhost:3000/v1'
+  }
+
+  const hostname = window.location.hostname
+
+  // Handle localhost development
+  if (hostname === 'localhost' || hostname === '127.0.0.1') {
+    return 'http://localhost:3000/v1'
+  }
+
+  // Construct API URL based on current domain
+  // berget.ai -> api.berget.ai
+  // bergetai.se -> api.bergetai.se
+  // stage.berget.ai -> api.stage.berget.ai
+  const apiHostname = `api.${hostname}`
+
+  return `https://${apiHostname}/v1`
+}
+
+// Remove the immediate call - let each function call getApiUrl() when needed
 
 /**
  * Default headers for API requests
@@ -34,7 +55,8 @@ export const normalizeModelId = (id: string): string => {
  * Fetch models from the API
  */
 export const fetchModels = async () => {
-  const response = await fetch(`${VITE_API_URL}/models`, {
+  const apiUrl = getApiUrl()
+  const response = await fetch(`${apiUrl}/models`, {
     headers: getDefaultHeaders(),
   })
 
@@ -100,7 +122,8 @@ export const transformModelData = (apiModel: any) => {
  * Fetch a specific model by ID
  */
 export const fetchModel = async (modelId: string) => {
-  const response = await fetch(`${VITE_API_URL}/models/${modelId}`, {
+  const apiUrl = getApiUrl()
+  const response = await fetch(`${apiUrl}/models/${modelId}`, {
     headers: getDefaultHeaders(),
   })
 

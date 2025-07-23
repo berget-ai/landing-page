@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: berget-website
+  namespace: berget-web
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/ssl-redirect: 'true'
+    nginx.ingress.kubernetes.io/custom-headers: berget-web/berget-custom-headers-configmap
+    nginx.ingress.kubernetes.io/rate-limit: '100'
+    nginx.ingress.kubernetes.io/rate-limit-window: '1m'
+    nginx.ingress.kubernetes.io/rate-limit-status-code: '429'
+spec:
+  ingressClassName: nginx
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: berget-custom-headers-configmap
+  namespace: berget-web
+data:
+  Content-Security-Policy: "default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://api.berget.ai; base-uri 'self'; form-action 'self'; frame-src 'none'; frame-ancestors 'none'; object-src 'none'; worker-src 'self'; manifest-src 'self'; upgrade-insecure-requests;"
+  Cross-Origin-Resource-Policy: "same-site"
+  Referrer-Policy: "strict-origin"
+  Strict-Transport-Security: "max-age=31536000; includeSubDomains; preload"
+  X-Content-Type-Options: "nosniff"
+  X-Frame-Options: "DENY"
+  X-Xss-Protection: "0"
