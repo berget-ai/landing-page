@@ -1,8 +1,8 @@
 ---
 title: The DevOps Holy Grail - Simple to Start, Infinite to Scale
 description: Build services that scale from weekend side-project to multi-region production without rewriting or replatforming
-date: 2025-01-23
-author: Andreas Lundmark
+date: 2025-07-23
+author: Christian Landgren
 tags:
   - DevOps
   - Kubernetes
@@ -11,7 +11,7 @@ tags:
   - Infrastructure
 image: /images/server-infrastructure.jpg
 imageAlt: Modern server infrastructure with automated deployment pipelines
-email: andreas@berget.ai
+email: christian@landgren.nu
 ---
 
 # The DevOps Holy Grail: Simple to Start, Infinite to Scale
