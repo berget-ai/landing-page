@@ -8,22 +8,20 @@ export const getApiUrl = (): string => {
     // Server-side rendering fallback
     return 'http://localhost:3000/v1'
   }
-  
+
   const hostname = window.location.hostname
-  
+
   // Handle localhost development
   if (hostname === 'localhost' || hostname === '127.0.0.1') {
     return 'http://localhost:3000/v1'
   }
-  
+
   // Construct API URL based on current domain
   // berget.ai -> api.berget.ai
-  // bergetai.se -> api.bergetai.se  
+  // bergetai.se -> api.bergetai.se
   // stage.berget.ai -> api.stage.berget.ai
-  const apiHostname = hostname.startsWith('stage.') 
-    ? `api.${hostname}`
-    : `api.${hostname}`
-  
+  const apiHostname = `api.${hostname}`
+
   return `https://${apiHostname}/v1`
 }
 
