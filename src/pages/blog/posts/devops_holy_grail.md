@@ -9,8 +9,8 @@ tags:
   - GitOps
   - CI/CD
   - Infrastructure
-image: /images/server-infrastructure.jpg
-imageAlt: Modern server infrastructure with automated deployment pipelines
+image: /src/assets/images/holy-grail.jpg
+imageAlt: The DevOps Holy Grail - Simple to Start, Infinite to Scale
 email: christian@landgren.nu
 ---
 
