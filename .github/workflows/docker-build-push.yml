@@ -43,10 +43,6 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: 📝 Get Current Version
-        id: package-version
-        uses: martinbeentjes/npm-get-version-action@main
-
       - id: imagename
         uses: ASzc/change-string-case-action@v6
         with:
@@ -60,6 +56,10 @@ jobs:
           git pull --rebase origin main
           npm version prerelease --preid=rc
           git push origin main
+
+      - name: 📝 Get Updated Version
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@main
 
       - name: 🔧 Build and push Docker Image
         uses: docker/build-push-action@v6

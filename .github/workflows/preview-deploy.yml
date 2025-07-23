@@ -76,6 +76,7 @@ jobs:
           push: true
           tags: |
             ${{ env.REGISTRY }}/${{ steps.imagename.outputs.lowercase }}:pr-${{ github.event.number }}
+            ${{ env.REGISTRY }}/${{ steps.imagename.outputs.lowercase }}:pr-${{ github.event.number }}-${{ steps.slug.outputs.SLUG }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
           target: production
@@ -90,8 +91,7 @@ jobs:
             echo "exists=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Create preview overlay
-        if: steps.check-preview.outputs.exists == 'false'
+      - name: Create or update preview overlay
         run: |
           SLUG="${{ steps.slug.outputs.SLUG }}"
           HOSTNAME="${{ steps.hostname.outputs.hostname }}"
@@ -106,15 +106,16 @@ jobs:
           # Skapa preview overlay directory
           mkdir -p "k8s/overlays/preview-$SLUG"
           
-          # Skapa kustomization.yaml med bättre formatering
-          cat > "k8s/overlays/preview-$SLUG/kustomization.yaml" << 'EOF'
+          # Skapa eller uppdatera kustomization.yaml
+          cat > "k8s/overlays/preview-$SLUG/kustomization.yaml" << EOF
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-namespace: berget-web
+namespace: preview-$SLUG
 
 resources:
   - ../../base
+  - namespace.yaml
 
 patchesStrategicMerge:
   - ingress-patch.yaml
@@ -122,86 +123,128 @@ patchesStrategicMerge:
 
 images:
   - name: ghcr.io/berget-ai/landing-page
-    newTag: 'pr-${{ github.event.number }}'
+    newTag: 'pr-$PR_NUMBER-$SLUG'
+
+commonLabels:
+  preview-created: '$(date -u +%Y%m%d)'
 
 labels:
   - pairs:
       environment: preview
-      pr-number: '${{ github.event.number }}'
+      pr-number: '$PR_NUMBER'
 EOF
           
-          # Skapa ingress-patch.yaml
-          cat > "k8s/overlays/preview-$SLUG/ingress-patch.yaml" << EOF
-          apiVersion: networking.k8s.io/v1
-          kind: Ingress
-          metadata:
-            name: berget-website
-            namespace: berget-web
-            annotations:
-              external-dns.alpha.kubernetes.io/hostname: $HOSTNAME
-              nginx.ingress.kubernetes.io/configuration-snippet: |
-                add_header X-Preview-Environment "PR-$PR_NUMBER" always;
-          spec:
-            tls:
-              - hosts:
-                  - $HOSTNAME
-                secretName: berget-preview-$SLUG-tls
-            rules:
-              - host: $HOSTNAME
-                http:
-                  paths:
-                    - path: /
-                      pathType: Prefix
-                      backend:
-                        service:
-                          name: berget-website
-                          port:
-                            number: 80
-          ---
-          apiVersion: v1
-          kind: ConfigMap
-          metadata:
-            name: berget-custom-headers-configmap
-            namespace: berget-web
-          data:
-            Content-Security-Policy: "default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://api.stage.berget.ai; base-uri 'self'; form-action 'self'; frame-src 'none'; frame-ancestors 'none'; object-src 'none'; worker-src 'self'; manifest-src 'self'; upgrade-insecure-requests;"
-            X-Content-Type-Options: nosniff
-            X-Frame-Options: DENY
-            X-Xss-Protection: '0'
-            Strict-Transport-Security: 'max-age=31536000; includeSubDomains; preload'
-            Cross-Origin-Resource-Policy: same-site
-            Referrer-Policy: strict-origin
-          EOF
+          # Skapa eller uppdatera namespace.yaml (endast om den inte finns)
+          if [ ! -f "k8s/overlays/preview-$SLUG/namespace.yaml" ]; then
+            cat > "k8s/overlays/preview-$SLUG/namespace.yaml" << EOF
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: preview-$SLUG
+  labels:
+    environment: preview
+    pr-number: '$PR_NUMBER'
+    preview-slug: '$SLUG'
+    created-at: '$(date -u +%Y-%m-%dT%H:%M:%SZ)'
+---
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: preview-quota
+  namespace: preview-$SLUG
+spec:
+  hard:
+    requests.cpu: "200m"
+    requests.memory: "256Mi"
+    limits.cpu: "500m"
+    limits.memory: "512Mi"
+    pods: "5"
+    services: "2"
+    persistentvolumeclaims: "0"
+EOF
+          fi
+
+          # Skapa eller uppdatera ingress-patch.yaml (endast om den inte finns)
+          if [ ! -f "k8s/overlays/preview-$SLUG/ingress-patch.yaml" ]; then
+            cat > "k8s/overlays/preview-$SLUG/ingress-patch.yaml" << EOF
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: berget-website
+  namespace: preview-$SLUG
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/ssl-redirect: 'true'
+    external-dns.alpha.kubernetes.io/hostname: $HOSTNAME
+    nginx.ingress.kubernetes.io/custom-headers: preview-$SLUG/berget-custom-headers-configmap
+    nginx.ingress.kubernetes.io/rate-limit: "50"
+    nginx.ingress.kubernetes.io/rate-limit-window: "1m"
+    nginx.ingress.kubernetes.io/rate-limit-status-code: "429"
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      add_header X-Preview-Environment "PR-$PR_NUMBER" always;
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - $HOSTNAME
+      secretName: berget-preview-$SLUG-tls
+  rules:
+    - host: $HOSTNAME
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: berget-website
+                port:
+                  number: 80
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: berget-custom-headers-configmap
+  namespace: preview-$SLUG
+data:
+  Content-Security-Policy: "default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://api.stage.berget.ai; base-uri 'self'; form-action 'self'; frame-src 'none'; frame-ancestors 'none'; object-src 'none'; worker-src 'self'; manifest-src 'self'; upgrade-insecure-requests;"
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  X-Xss-Protection: '0'
+  Strict-Transport-Security: 'max-age=31536000; includeSubDomains; preload'
+  Cross-Origin-Resource-Policy: same-site
+  Referrer-Policy: strict-origin
+EOF
+          fi
           
-          # Skapa deployment-patch.yaml för att sätta unika labels
+          # Skapa eller uppdatera deployment-patch.yaml (denna uppdateras alltid för ny image)
           cat > "k8s/overlays/preview-$SLUG/deployment-patch.yaml" << EOF
-          apiVersion: apps/v1
-          kind: Deployment
-          metadata:
-            name: berget-website
-            namespace: berget-web
-          spec:
-            replicas: 1
-            selector:
-              matchLabels:
-                app: berget-website
-                preview: $SLUG
-            template:
-              metadata:
-                labels:
-                  app: berget-website
-                  preview: $SLUG
-              spec:
-                containers:
-                  - name: berget-website
-                    resources:
-                      requests:
-                        cpu: 50m
-                        memory: 64Mi
-                      limits:
-                        cpu: 100m
-                        memory: 128Mi
-          EOF
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: berget-website
+  namespace: preview-$SLUG
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: berget-website
+      preview: $SLUG
+  template:
+    metadata:
+      labels:
+        app: berget-website
+        preview: $SLUG
+    spec:
+      containers:
+        - name: berget-website
+          resources:
+            requests:
+              cpu: 50m
+              memory: 64Mi
+            limits:
+              cpu: 100m
+              memory: 128Mi
+EOF
 
       - name: Commit preview overlay
         run: |
@@ -252,7 +295,7 @@ EOF
             <summary>📋 Preview Details</summary>
             
             - **Environment:** \`preview-${slug}\`
-            - **Image:** \`ghcr.io/berget-ai/landing-page:pr-${{ github.event.number }}\`
+            - **Image:** \`ghcr.io/berget-ai/landing-page:pr-${{ github.event.number }}-${{ steps.slug.outputs.SLUG }}\`
             - **Hostname:** \`${hostname}\`
             - **Status:** Updated
             
@@ -271,7 +314,7 @@ EOF
             <summary>📋 Preview Details</summary>
             
             - **Environment:** \`preview-${slug}\`
-            - **Image:** \`ghcr.io/berget-ai/landing-page:pr-${{ github.event.number }}\`
+            - **Image:** \`ghcr.io/berget-ai/landing-page:pr-${{ github.event.number }}-${{ steps.slug.outputs.SLUG }}\`
             - **Hostname:** \`${hostname}\`
             - **Overlay:** \`k8s/overlays/preview-${slug}/\`
             
