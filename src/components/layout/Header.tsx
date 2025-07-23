@@ -15,8 +15,8 @@ export function Header() {
   return (
     <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-lg border-b border-white/5">
       {isStageEnvironment() && (
-        <div className="bg-red-600 text-white text-center py-1 text-xs font-medium">
-          STAGE ENVIRONMENT
+        <div className="bg-red-500/90 text-white text-center py-0.5 text-xs font-medium">
+          STAGE
         </div>
       )}
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
