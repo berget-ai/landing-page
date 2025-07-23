@@ -1,19 +1,14 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-
 namespace: berget-web
-
 resources:
   - ../../base
   - ingress-redirects.yaml
-
 patchesStrategicMerge:
   - ingress-patch.yaml
-
 images:
   - name: ghcr.io/berget-ai/landing-page
-    newTag: 'v1.3.99' # {"$imagepolicy": "flux-system:landingpage:tag"}
-
+    newTag: '1.3.100' # {"$imagepolicy": "flux-system:landingpage:tag"}
 labels:
   - pairs:
       environment: production
