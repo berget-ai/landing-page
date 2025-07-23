@@ -579,31 +579,42 @@ This isn't just about tools—it's about a mindset shift. Infrastructure as code
 
 Start small. Add one piece at a time. Let your system grow with your needs, not against them.
 
+<LLMPrompt title="🤖 Migration Strategy Planning">
+Create a step-by-step migration plan to move my existing application to this GitOps setup. I need:
+- Assessment checklist for current infrastructure and dependencies
+- Phased migration strategy (containerization → CI/CD → Kubernetes → GitOps)
+- Risk mitigation strategies and rollback plans for each phase
+- Team training recommendations and skill development paths
+- Cost analysis and ROI calculations for the migration
+- Timeline estimates for different complexity levels
+- Post-migration optimization and scaling strategies
+
+My current setup: [describe your current infrastructure - VMs, manual deployments, etc.]
+</LLMPrompt>
+
 The holy grail isn't about finding the perfect tool. It's about building systems that adapt, scale, and heal themselves—so you can focus on building products that matter.
 
 ---
 
-> **🚀 Final LLM Prompt - Complete Setup:**
->
-> ```
-> I want to implement the entire GitOps DevOps stack described in this guide. Help me create:
->
-> 1. A complete project structure with all necessary files
-> 2. GitHub Actions workflow for CI/CD with Docker builds
-> 3. Kubernetes manifests (deployment, service, ingress, HPA)
-> 4. FluxCD setup with GitOps automation
-> 5. cert-manager for automatic HTTPS
-> 6. external-dns for automatic DNS management
-> 7. sealed-secrets for secure secrets management
-> 8. Supabase deployment for backend services
-> 9. Monitoring setup with Prometheus/Grafana
-> 10. Documentation and README files
->
-> Technology stack: [Node.js/Python/Go/etc.], [Cloudflare/Route53] for DNS
-> Domain: [your-domain.com]
-> Cloud provider: [AWS/GCP/DigitalOcean/etc.]
->
-> Provide everything needed to go from empty repository to production deployment.
-> ```
+<LLMPrompt title="🚀 Complete GitOps Stack Implementation" defaultExpanded={true}>
+I want to implement the entire GitOps DevOps stack described in this guide. Help me create:
+
+1. A complete project structure with all necessary files
+2. GitHub Actions workflow for CI/CD with Docker builds
+3. Kubernetes manifests (deployment, service, ingress, HPA)
+4. FluxCD setup with GitOps automation
+5. cert-manager for automatic HTTPS
+6. external-dns for automatic DNS management
+7. sealed-secrets for secure secrets management
+8. Supabase deployment for backend services
+9. Monitoring setup with Prometheus/Grafana
+10. Documentation and README files
+
+Technology stack: [Node.js/Python/Go/etc.], [Cloudflare/Route53] for DNS
+Domain: [your-domain.com]
+Cloud provider: [AWS/GCP/DigitalOcean/etc.]
+
+Provide everything needed to go from empty repository to production deployment.
+</LLMPrompt>
 
 _Ready to get started? Clone the example repository and have your first GitOps deployment running in under 10 minutes. The future of DevOps is declarative, and it's here today._
