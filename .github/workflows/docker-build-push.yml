@@ -43,34 +43,31 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Bump version and push tag
-        id: version
+      - name: 📝 Get Current Version
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@main
+
+      - id: imagename
+        uses: ASzc/change-string-case-action@v6
+        with:
+          string: ${{ github.repository }}
+
+      - name: 🎫 Update version for release
         if: github.ref == 'refs/heads/main' && !startsWith(github.ref, 'refs/tags/')
         run: |
-          npm version patch
-          new_version=$(node -p "require('./package.json').version")
-          git push origin
-          echo "new_version=$new_version" >> $GITHUB_OUTPUT
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git pull --rebase origin main
+          npm version prerelease --preid=rc
+          git push origin main
 
-      - name: Extract metadata (tags, labels) for Docker
-        id: meta
-        uses: docker/metadata-action@v5
+      - name: 🔧 Build and push Docker Image
+        uses: docker/build-push-action@v6
         with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          push: true
           tags: |
-            type=ref,event=branch
-            type=ref,event=pr
-            type=semver,pattern={{version}}
-            type=sha,format=long
-            type=raw,value=${{ steps.version.outputs.new_version }},enable=${{ github.ref == 'refs/heads/main' }}
-
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+            ${{ env.REGISTRY }}/${{ steps.imagename.outputs.lowercase }}:${{ steps.package-version.outputs.current-version}}
+            ${{ env.REGISTRY }}/${{ steps.imagename.outputs.lowercase }}:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
           target: production
