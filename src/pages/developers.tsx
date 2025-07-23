@@ -18,7 +18,7 @@ const iconMap = {
 
 export default function DevelopersPage() {
   const { t } = useTranslation()
-  const { consoleUrl } = useEnvironment()
+  const { urls } = useEnvironment()
   const sections =
     (t('DevelopersPage.sections', { returnObjects: true }) as {
       icon: keyof typeof iconMap
@@ -126,7 +126,7 @@ export default function DevelopersPage() {
             </p>
             <div className="flex gap-4 justify-center">
               <Button size="lg" asChild>
-                <Link to={consoleUrl}>{t('DevelopersPage.cta.signup')}</Link>
+                <Link to={urls.console}>{t('DevelopersPage.cta.signup')}</Link>
               </Button>
 
             </div>

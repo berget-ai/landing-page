@@ -9,22 +9,38 @@ export function useEnvironment() {
     return hostname === 'stage.berget.ai' || hostname === 'localhost' || hostname === '127.0.0.1'
   }, [])
 
-  const consoleUrl = useMemo(() => {
+  const urls = useMemo(() => {
     if (typeof window === 'undefined') {
-      return 'https://console.berget.ai'
+      return {
+        console: 'https://console.berget.ai',
+        api: 'https://api.berget.ai',
+        docs: 'https://docs.berget.ai'
+      }
     }
     
     const hostname = window.location.hostname
-    if (hostname === 'stage.berget.ai' || hostname === 'localhost' || hostname === '127.0.0.1') {
-      return 'https://console.stage.berget.ai'
+    const isStageEnv = hostname === 'stage.berget.ai' || hostname === 'localhost' || hostname === '127.0.0.1'
+    
+    if (isStageEnv) {
+      return {
+        console: 'https://console.stage.berget.ai',
+        api: 'https://api.stage.berget.ai',
+        docs: 'https://docs.stage.berget.ai'
+      }
     }
     
-    return 'https://console.berget.ai'
+    return {
+      console: 'https://console.berget.ai',
+      api: 'https://api.berget.ai',
+      docs: 'https://docs.berget.ai'
+    }
   }, [])
 
   return {
     isStage,
-    consoleUrl,
-    isProd: !isStage
+    isProd: !isStage,
+    urls,
+    // Bakåtkompatibilitet
+    consoleUrl: urls.console
   }
 }

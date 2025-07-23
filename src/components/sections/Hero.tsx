@@ -8,7 +8,7 @@ import { useEnvironment } from '@/hooks/use-environment'
 
 export function Hero() {
   const { t } = useTranslation()
-  const { consoleUrl } = useEnvironment()
+  const { urls } = useEnvironment()
 
   return (
     <>
@@ -31,7 +31,7 @@ export function Hero() {
             </p>
             <div className="flex gap-4 justify-center">
               <Button size="lg" variant="default" asChild>
-                <Link to={consoleUrl}>
+                <Link to={urls.console}>
                   {t('hero.getStarted')} <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>

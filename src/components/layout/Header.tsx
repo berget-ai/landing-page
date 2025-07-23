@@ -11,7 +11,7 @@ import { useEnvironment } from '@/hooks/use-environment'
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { t } = useTranslation()
-  const { isStage, consoleUrl } = useEnvironment()
+  const { isStage, urls } = useEnvironment()
 
   return (
     <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-lg border-b border-white/5">
@@ -55,18 +55,18 @@ export function Header() {
           </Link>
 
           {/* Documentation */}
-          <Link to="https://api.berget.ai" className="text-sm text-white/60 hover:text-white transition-colors">
+          <Link to={urls.api} className="text-sm text-white/60 hover:text-white transition-colors">
             {t('header.navigation.api')}
           </Link>
 
           <LanguageSwitcher />
 
           <Button variant="secondary" size="sm" asChild>
-            <Link to={consoleUrl}>{t('header.buttons.signIn')}</Link>
+            <Link to={urls.console}>{t('header.buttons.signIn')}</Link>
           </Button>
 
           <Button size="sm" asChild>
-            <Link to={consoleUrl}>{t('header.buttons.getStarted')}</Link>
+            <Link to={urls.console}>{t('header.buttons.getStarted')}</Link>
           </Button>
         </nav>
 
@@ -128,7 +128,7 @@ export function Header() {
                     {t('header.navigation.pricing')}
                   </Link>
                   <Link 
-                    to="https://api.berget.ai" 
+                    to={urls.api} 
                     className="text-2xl text-white hover:text-white/80 transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
@@ -140,12 +140,12 @@ export function Header() {
               <div className="pt-4 space-y-4">
                 <LanguageSwitcher />
                 <Button variant="secondary" size="lg" className="w-full text-xl" asChild>
-                  <Link to={consoleUrl} onClick={() => setIsMenuOpen(false)}>
+                  <Link to={urls.console} onClick={() => setIsMenuOpen(false)}>
                     {t('header.buttons.signIn')}
                   </Link>
                 </Button>
                 <Button size="lg" className="w-full text-xl" asChild>
-                  <Link to={consoleUrl} onClick={() => setIsMenuOpen(false)}>
+                  <Link to={urls.console} onClick={() => setIsMenuOpen(false)}>
                     {t('header.buttons.getStarted')}
                   </Link>
                 </Button>
