@@ -1,0 +1,215 @@
+name: Deploy Preview Environment
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [main]
+    paths-ignore:
+      - 'k8s/**'
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  deploy-preview:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure Git
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "github-actions@github.com"
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to the Container registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate preview slug
+        id: slug
+        run: |
+          # Skapa en slug från PR branch name
+          BRANCH_NAME="${{ github.head_ref }}"
+          SLUG=$(echo "$BRANCH_NAME" | sed 's/[^a-zA-Z0-9]/-/g' | sed 's/--*/-/g' | sed 's/^-\|-$//g' | tr '[:upper:]' '[:lower:]')
+          # Begränsa längden till 20 tecken
+          SLUG=$(echo "$SLUG" | cut -c1-20 | sed 's/-$//')
+          echo "slug=$SLUG" >> $GITHUB_OUTPUT
+          echo "hostname=$SLUG.stage.berget.ai" >> $GITHUB_OUTPUT
+
+      - id: imagename
+        uses: ASzc/change-string-case-action@v6
+        with:
+          string: ${{ github.repository }}
+
+      - name: Build and push preview image
+        uses: docker/build-push-action@v6
+        with:
+          push: true
+          tags: |
+            ${{ env.REGISTRY }}/${{ steps.imagename.outputs.lowercase }}:pr-${{ github.event.number }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          target: production
+
+      - name: Create preview overlay
+        run: |
+          SLUG="${{ steps.slug.outputs.slug }}"
+          HOSTNAME="${{ steps.slug.outputs.hostname }}"
+          PR_NUMBER="${{ github.event.number }}"
+          
+          # Skapa preview overlay directory
+          mkdir -p "k8s/overlays/preview-$SLUG"
+          
+          # Skapa kustomization.yaml
+          cat > "k8s/overlays/preview-$SLUG/kustomization.yaml" << EOF
+          apiVersion: kustomize.config.k8s.io/v1beta1
+          kind: Kustomization
+
+          namespace: berget-web
+
+          resources:
+            - ../../base
+
+          patchesStrategicMerge:
+            - ingress-patch.yaml
+            - deployment-patch.yaml
+
+          images:
+            - name: ghcr.io/berget-ai/landing-page
+              newTag: 'pr-$PR_NUMBER'
+
+          labels:
+            - pairs:
+                environment: preview
+                pr-number: '$PR_NUMBER'
+          EOF
+          
+          # Skapa ingress-patch.yaml
+          cat > "k8s/overlays/preview-$SLUG/ingress-patch.yaml" << EOF
+          apiVersion: networking.k8s.io/v1
+          kind: Ingress
+          metadata:
+            name: berget-website
+            namespace: berget-web
+            annotations:
+              external-dns.alpha.kubernetes.io/hostname: $HOSTNAME
+              nginx.ingress.kubernetes.io/configuration-snippet: |
+                add_header X-Preview-Environment "PR-$PR_NUMBER" always;
+          spec:
+            tls:
+              - hosts:
+                  - $HOSTNAME
+                secretName: berget-preview-$SLUG-tls
+            rules:
+              - host: $HOSTNAME
+                http:
+                  paths:
+                    - path: /
+                      pathType: Prefix
+                      backend:
+                        service:
+                          name: berget-website
+                          port:
+                            number: 80
+          ---
+          apiVersion: v1
+          kind: ConfigMap
+          metadata:
+            name: berget-custom-headers-configmap
+            namespace: berget-web
+          data:
+            Content-Security-Policy: "default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://api.stage.berget.ai; base-uri 'self'; form-action 'self'; frame-src 'none'; frame-ancestors 'none'; object-src 'none'; worker-src 'self'; manifest-src 'self'; upgrade-insecure-requests;"
+            X-Content-Type-Options: nosniff
+            X-Frame-Options: DENY
+            X-Xss-Protection: '0'
+            Strict-Transport-Security: 'max-age=31536000; includeSubDomains; preload'
+            Cross-Origin-Resource-Policy: same-site
+            Referrer-Policy: strict-origin
+          EOF
+          
+          # Skapa deployment-patch.yaml för att sätta unika labels
+          cat > "k8s/overlays/preview-$SLUG/deployment-patch.yaml" << EOF
+          apiVersion: apps/v1
+          kind: Deployment
+          metadata:
+            name: berget-website
+            namespace: berget-web
+          spec:
+            replicas: 1
+            selector:
+              matchLabels:
+                app: berget-website
+                preview: $SLUG
+            template:
+              metadata:
+                labels:
+                  app: berget-website
+                  preview: $SLUG
+              spec:
+                containers:
+                  - name: berget-website
+                    resources:
+                      requests:
+                        cpu: 50m
+                        memory: 64Mi
+                      limits:
+                        cpu: 100m
+                        memory: 128Mi
+          EOF
+
+      - name: Commit preview overlay
+        run: |
+          SLUG="${{ steps.slug.outputs.slug }}"
+          git add "k8s/overlays/preview-$SLUG/"
+          git commit -m "feat: add preview overlay for PR #${{ github.event.number }} ($SLUG)"
+          git push origin HEAD:main
+
+      - name: Comment on PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const hostname = '${{ steps.slug.outputs.hostname }}';
+            const slug = '${{ steps.slug.outputs.slug }}';
+            
+            const comment = `## 🚀 Preview Environment Deployed!
+            
+            Din PR har fått en egen preview-miljö:
+            
+            **🌐 Preview URL:** https://${hostname}
+            
+            Preview-miljön uppdateras automatiskt när du pushar nya commits till denna PR.
+            
+            ---
+            
+            <details>
+            <summary>📋 Preview Details</summary>
+            
+            - **Environment:** \`preview-${slug}\`
+            - **Image:** \`ghcr.io/berget-ai/landing-page:pr-${{ github.event.number }}\`
+            - **Hostname:** \`${hostname}\`
+            - **Overlay:** \`k8s/overlays/preview-${slug}/\`
+            
+            </details>`;
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
