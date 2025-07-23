@@ -64,28 +64,13 @@ jobs:
             type=sha,format=long
             type=raw,value=${{ steps.version.outputs.new_version }},enable=${{ github.ref == 'refs/heads/main' }}
 
-      - name: Build and push Docker image (stage)
+      - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          build-args: |
-            VITE_BERGET_API_URL=https://stage-api.berget.ai/v1
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          target: stage
-
-      - name: Build and push Docker image (production)
-        if: github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/')
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}-prod
-          labels: ${{ steps.meta.outputs.labels }}
-          build-args: |
-            VITE_BERGET_API_URL=https://api.berget.ai/v1
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          target: production
