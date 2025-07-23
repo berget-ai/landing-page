@@ -24,30 +24,59 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "github-actions@github.com"
 
+      - name: Checkout preview environments branch
+        run: |
+          if git ls-remote --heads origin preview-environments | grep -q preview-environments; then
+            git fetch origin preview-environments
+            git checkout preview-environments
+          else
+            echo "Preview environments branch does not exist"
+            exit 0
+          fi
+
       - name: Generate preview slug
         id: slug
-        run: |
-          BRANCH_NAME="${{ github.head_ref }}"
-          SLUG=$(echo "$BRANCH_NAME" | sed 's/[^a-zA-Z0-9]/-/g' | sed 's/--*/-/g' | sed 's/^-\|-$//g' | tr '[:upper:]' '[:lower:]')
-          SLUG=$(echo "$SLUG" | cut -c1-20 | sed 's/-$//')
-          echo "slug=$SLUG" >> $GITHUB_OUTPUT
+        uses: rlespinasse/slugify-value@v1.4.0
+        with:
+          key: SLUG
+          value: ${{ github.head_ref }}
+          slug-maxlength: 20
 
       - name: Remove preview overlay
         run: |
-          SLUG="${{ steps.slug.outputs.slug }}"
+          SLUG="${{ steps.slug.outputs.SLUG }}"
           
           if [ -d "k8s/overlays/preview-$SLUG" ]; then
+            echo "Removing preview overlay: preview-$SLUG"
             rm -rf "k8s/overlays/preview-$SLUG"
             git add -A
-            git commit -m "cleanup: remove preview overlay for PR #${{ github.event.number }} ($SLUG)" || echo "Nothing to commit"
-            git push origin HEAD:main || echo "Nothing to push"
+            
+            if ! git diff --staged --quiet; then
+              git commit -m "cleanup: remove preview overlay for PR #${{ github.event.number }} ($SLUG)"
+              
+              # Retry push med exponential backoff
+              for i in {1..3}; do
+                if git push origin preview-environments; then
+                  echo "Successfully removed preview overlay"
+                  break
+                else
+                  echo "Push failed, retrying in $((2**i)) seconds..."
+                  sleep $((2**i))
+                  git pull --rebase origin preview-environments
+                fi
+              done
+            else
+              echo "No changes to commit"
+            fi
+          else
+            echo "Preview overlay preview-$SLUG does not exist"
           fi
 
       - name: Comment on PR
         uses: actions/github-script@v7
         with:
           script: |
-            const slug = '${{ steps.slug.outputs.slug }}';
+            const slug = '${{ steps.slug.outputs.SLUG }}';
             
             const comment = `## 🧹 Preview Environment Cleaned Up
             

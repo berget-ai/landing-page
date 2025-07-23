@@ -31,6 +31,18 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "github-actions@github.com"
 
+      - name: Setup preview environments branch
+        run: |
+          # Skapa eller checka ut preview-environments branch
+          if git ls-remote --heads origin preview-environments | grep -q preview-environments; then
+            git fetch origin preview-environments
+            git checkout preview-environments
+            git pull origin preview-environments
+          else
+            git checkout -b preview-environments
+            git push -u origin preview-environments
+          fi
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
@@ -43,14 +55,15 @@ jobs:
 
       - name: Generate preview slug
         id: slug
-        run: |
-          # Skapa en slug från PR branch name
-          BRANCH_NAME="${{ github.head_ref }}"
-          SLUG=$(echo "$BRANCH_NAME" | sed 's/[^a-zA-Z0-9]/-/g' | sed 's/--*/-/g' | sed 's/^-\|-$//g' | tr '[:upper:]' '[:lower:]')
-          # Begränsa längden till 20 tecken
-          SLUG=$(echo "$SLUG" | cut -c1-20 | sed 's/-$//')
-          echo "slug=$SLUG" >> $GITHUB_OUTPUT
-          echo "hostname=$SLUG.stage.berget.ai" >> $GITHUB_OUTPUT
+        uses: rlespinasse/slugify-value@v1.4.0
+        with:
+          key: SLUG
+          value: ${{ github.head_ref }}
+          slug-maxlength: 20
+
+      - name: Set hostname
+        id: hostname
+        run: echo "hostname=${{ steps.slug.outputs.SLUG }}.stage.berget.ai" >> $GITHUB_OUTPUT
 
       - id: imagename
         uses: ASzc/change-string-case-action@v6
@@ -67,38 +80,55 @@ jobs:
           cache-to: type=gha,mode=max
           target: production
 
-      - name: Create preview overlay
+      - name: Check if preview already exists
+        id: check-preview
         run: |
-          SLUG="${{ steps.slug.outputs.slug }}"
-          HOSTNAME="${{ steps.slug.outputs.hostname }}"
+          SLUG="${{ steps.slug.outputs.SLUG }}"
+          if [ -d "k8s/overlays/preview-$SLUG" ]; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create preview overlay
+        if: steps.check-preview.outputs.exists == 'false'
+        run: |
+          SLUG="${{ steps.slug.outputs.SLUG }}"
+          HOSTNAME="${{ steps.hostname.outputs.hostname }}"
           PR_NUMBER="${{ github.event.number }}"
+          
+          # Validera att SLUG inte är tomt
+          if [ -z "$SLUG" ]; then
+            echo "Error: SLUG is empty"
+            exit 1
+          fi
           
           # Skapa preview overlay directory
           mkdir -p "k8s/overlays/preview-$SLUG"
           
-          # Skapa kustomization.yaml
-          cat > "k8s/overlays/preview-$SLUG/kustomization.yaml" << EOF
-          apiVersion: kustomize.config.k8s.io/v1beta1
-          kind: Kustomization
+          # Skapa kustomization.yaml med bättre formatering
+          cat > "k8s/overlays/preview-$SLUG/kustomization.yaml" << 'EOF'
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
 
-          namespace: berget-web
+namespace: berget-web
 
-          resources:
-            - ../../base
+resources:
+  - ../../base
 
-          patchesStrategicMerge:
-            - ingress-patch.yaml
-            - deployment-patch.yaml
+patchesStrategicMerge:
+  - ingress-patch.yaml
+  - deployment-patch.yaml
 
-          images:
-            - name: ghcr.io/berget-ai/landing-page
-              newTag: 'pr-$PR_NUMBER'
+images:
+  - name: ghcr.io/berget-ai/landing-page
+    newTag: 'pr-${{ github.event.number }}'
 
-          labels:
-            - pairs:
-                environment: preview
-                pr-number: '$PR_NUMBER'
-          EOF
+labels:
+  - pairs:
+      environment: preview
+      pr-number: '${{ github.event.number }}'
+EOF
           
           # Skapa ingress-patch.yaml
           cat > "k8s/overlays/preview-$SLUG/ingress-patch.yaml" << EOF
@@ -175,19 +205,59 @@ jobs:
 
       - name: Commit preview overlay
         run: |
-          SLUG="${{ steps.slug.outputs.slug }}"
-          git add "k8s/overlays/preview-$SLUG/"
-          git commit -m "feat: add preview overlay for PR #${{ github.event.number }} ($SLUG)"
-          git push origin HEAD:main
+          SLUG="${{ steps.slug.outputs.SLUG }}"
+          
+          git add "k8s/overlays/preview-$SLUG/" || true
+          
+          # Kontrollera att det finns ändringar att committa
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            if [ "${{ steps.check-preview.outputs.exists }}" == "false" ]; then
+              git commit -m "feat: add preview overlay for PR #${{ github.event.number }} ($SLUG)"
+            else
+              git commit -m "feat: update preview overlay for PR #${{ github.event.number }} ($SLUG)"
+            fi
+            
+            # Retry push med exponential backoff
+            for i in {1..3}; do
+              if git push origin preview-environments; then
+                break
+              else
+                echo "Push failed, retrying in $((2**i)) seconds..."
+                sleep $((2**i))
+                git pull --rebase origin preview-environments
+              fi
+            done
+          fi
 
       - name: Comment on PR
         uses: actions/github-script@v7
         with:
           script: |
-            const hostname = '${{ steps.slug.outputs.hostname }}';
-            const slug = '${{ steps.slug.outputs.slug }}';
+            const hostname = '${{ steps.hostname.outputs.hostname }}';
+            const slug = '${{ steps.slug.outputs.SLUG }}';
+            const exists = '${{ steps.check-preview.outputs.exists }}' === 'true';
             
-            const comment = `## 🚀 Preview Environment Deployed!
+            const comment = exists 
+              ? `## 🔄 Preview Environment Updated!
+            
+            Preview-miljön har uppdaterats med dina senaste ändringar:
+            
+            **🌐 Preview URL:** https://${hostname}
+            
+            ---
+            
+            <details>
+            <summary>📋 Preview Details</summary>
+            
+            - **Environment:** \`preview-${slug}\`
+            - **Image:** \`ghcr.io/berget-ai/landing-page:pr-${{ github.event.number }}\`
+            - **Hostname:** \`${hostname}\`
+            - **Status:** Updated
+            
+            </details>`
+              : `## 🚀 Preview Environment Deployed!
             
             Din PR har fått en egen preview-miljö:
             
