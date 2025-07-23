@@ -126,7 +126,7 @@ images:
     newTag: 'pr-$PR_NUMBER-$SLUG'
 
 commonLabels:
-  preview-created: "$(date +%Y%m%d)"
+  preview-created: "generated"
 
 labels:
   - pairs:
@@ -145,7 +145,7 @@ metadata:
     environment: preview
     pr-number: '$PR_NUMBER'
     preview-slug: '$SLUG'
-    created-at: "$(date +%Y-%m-%dT%H:%M:%SZ)"
+    created-at: "generated"
 ---
 apiVersion: v1
 kind: ResourceQuota
