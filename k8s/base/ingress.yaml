@@ -12,10 +12,32 @@ metadata:
     nginx.ingress.kubernetes.io/rate-limit-status-code: '429'
 spec:
   ingressClassName: nginx
+  rules:
+    - host: berget.ai
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: berget-website
+                port:
+                  number: 80
+  tls:
+    - hosts:
+        - berget.ai
+      secretName: berget-ai-tls
 ---
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: berget-custom-headers-configmap
   namespace: berget-web
-data: {}
+data:
+  Content-Security-Policy: "default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://api.berget.ai; base-uri 'self'; form-action 'self'; frame-src 'none'; frame-ancestors 'none'; object-src 'none'; worker-src 'self'; manifest-src 'self'; upgrade-insecure-requests;"
+  Cross-Origin-Resource-Policy: "same-site"
+  Referrer-Policy: "strict-origin"
+  Strict-Transport-Security: "max-age=31536000; includeSubDomains; preload"
+  X-Content-Type-Options: "nosniff"
+  X-Frame-Options: "DENY"
+  X-Xss-Protection: "0"
