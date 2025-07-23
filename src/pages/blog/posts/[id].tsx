@@ -116,8 +116,8 @@ export default function BlogPostPage() {
           language={post.language}
         />
       )}
-      <article className="container mx-auto px-4 py-8">
-        <div className="max-w-3xl mx-auto">
+      <article className={post?.image ? "" : "container mx-auto px-4 py-8"}>
+        <div className={post?.image ? "" : "max-w-3xl mx-auto"}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -135,41 +135,64 @@ export default function BlogPostPage() {
             </Button>
 
             {post.image && (
-              <div className="relative w-full h-64 md:h-96 mb-8 rounded-xl overflow-hidden">
+              <div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] h-[70vh] mb-12 overflow-hidden">
                 <img
                   src={post.image}
                   alt={post.imageAlt || post.title}
                   className="absolute inset-0 w-full h-full object-cover"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                <div className="absolute inset-0 flex items-end">
+                  <div className="container mx-auto px-4 pb-16">
+                    <div className="max-w-3xl">
+                      <AuthorByline 
+                        name={post.author} 
+                        email={post.email} 
+                        date={post.date}
+                        size="lg"
+                      />
+                      <h1 className="text-4xl md:text-6xl font-medium text-white drop-shadow-lg">
+                        {post.title}
+                      </h1>
+                    </div>
+                  </div>
+                </div>
               </div>
             )}
 
-            <AuthorByline 
-              name={post.author} 
-              email={post.email} 
-              date={post.date}
-              size="lg"
-            />
+            {!post.image && (
+              <>
+                <AuthorByline 
+                  name={post.author} 
+                  email={post.email} 
+                  date={post.date}
+                  size="lg"
+                />
+                <h1 className="text-4xl md:text-5xl font-medium mb-6">{post.title}</h1>
+              </>
+            )}
 
-            <h1 className="text-4xl md:text-5xl font-medium mb-6">{post.title}</h1>
+            <div className={post.image ? "container mx-auto px-4" : ""}>
+              <div className={post.image ? "max-w-3xl mx-auto" : ""}>
+                <div className="flex flex-wrap gap-2 mb-12">
+                  {post.language && (
+                    <span className="px-3 py-1 rounded-full bg-[#52B788]/30 text-sm font-medium">
+                      {post.language === 'en' ? '🇬🇧 English' : '🇸🇪 Svenska'}
+                    </span>
+                  )}
+                  {post.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-3 py-1 rounded-full bg-[#52B788]/20 text-sm"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
 
-            <div className="flex flex-wrap gap-2 mb-12">
-              {post.language && (
-                <span className="px-3 py-1 rounded-full bg-[#52B788]/30 text-sm font-medium">
-                  {post.language === 'en' ? '🇬🇧 English' : '🇸🇪 Svenska'}
-                </span>
-              )}
-              {post.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="px-3 py-1 rounded-full bg-[#52B788]/20 text-sm"
-                >
-                  {tag}
-                </span>
-              ))}
+                <MarkdownRenderer content={post.content} />
+              </div>
             </div>
-
-            <MarkdownRenderer content={post.content} />
           </motion.div>
         </div>
       </article>
