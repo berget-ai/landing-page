@@ -16,7 +16,7 @@ export function Header() {
   return (
     <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-lg border-b border-white/5">
       {isStage && (
-        <div className="bg-red-500/90 text-white text-center py-0.5 text-xs font-medium">
+        <div className="bg-red-500/90 text-white text-center py-px text-[4pt] font-medium leading-none">
           STAGE
         </div>
       )}
