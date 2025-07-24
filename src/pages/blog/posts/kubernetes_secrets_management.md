@@ -216,125 +216,129 @@ git push
 rm .env.production
 ```
 
-## Solution 2: External Secrets Operator - Cloud Integration
-
-For teams using cloud providers, External Secrets Operator integrates with AWS Secrets Manager, Azure Key Vault, Google Secret Manager, and more.
-
-<LLMPrompt title="🤖 External Secrets Operator Setup">
-Set up External Secrets Operator for Kubernetes with cloud provider integration. I need:
-- Installation via Helm/Flux
-- Configuration for AWS Secrets Manager, Azure Key Vault, and Google Secret Manager
-- SecretStore and ClusterSecretStore examples
-- ExternalSecret manifests that sync cloud secrets to Kubernetes
-- Automatic rotation and refresh policies
-- RBAC and security best practices
-
-Show me how to sync secrets from [AWS/Azure/GCP] to Kubernetes automatically.
-</LLMPrompt>
-
-### Installation
-
-```yaml
-# k8s/external-secrets.yaml
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
-kind: HelmRelease
-metadata:
-  name: external-secrets
-  namespace: external-secrets-system
-spec:
-  chart:
-    spec:
-      chart: external-secrets
-      sourceRef:
-        kind: HelmRepository
-        name: external-secrets
-  values:
-    installCRDs: true
-```
-
-### AWS Secrets Manager Integration
-
-```yaml
-# k8s/secret-store-aws.yaml
-apiVersion: external-secrets.io/v1beta1
-kind: ClusterSecretStore
-metadata:
-  name: aws-secrets-manager
-spec:
-  provider:
-    aws:
-      service: SecretsManager
-      region: us-west-2
-      auth:
-        jwt:
-          serviceAccountRef:
-            name: external-secrets-sa
-            namespace: external-secrets-system
----
-apiVersion: external-secrets.io/v1beta1
-kind: ExternalSecret
-metadata:
-  name: app-secrets
-spec:
-  refreshInterval: 1h
-  secretStoreRef:
-    name: aws-secrets-manager
-    kind: ClusterSecretStore
-  target:
-    name: app-secrets
-    creationPolicy: Owner
-  data:
-    - secretKey: database-url
-      remoteRef:
-        key: myapp/database
-        property: url
-    - secretKey: api-key
-      remoteRef:
-        key: myapp/api
-        property: key
-```
-
-## Solution 3: HashiCorp Vault - Enterprise Grade
+## Solution 2: HashiCorp Vault - Enterprise Grade
 
 For maximum security and compliance, Vault provides enterprise-grade secrets management with dynamic secrets, detailed auditing, and fine-grained access control.
 
-### Vault Integration
+<LLMPrompt title="🤖 HashiCorp Vault Setup with FluxCD">
+Set up HashiCorp Vault in my Kubernetes cluster using FluxCD. I need:
+- Complete Vault installation via Helm/Flux
+- Vault configuration for high availability
+- Kubernetes authentication setup
+- Vault Secrets Operator for automatic secret injection
+- Examples of storing and retrieving secrets
+- Backup and disaster recovery procedures
+- Integration with existing applications
+
+Show me how to deploy Vault in my cluster and use it for secrets management.
+</LLMPrompt>
+
+### Installing Vault with FluxCD
 
 ```yaml
-# k8s/vault-secrets.yaml
-apiVersion: external-secrets.io/v1beta1
-kind: SecretStore
+# k8s/vault-namespace.yaml
+apiVersion: v1
+kind: Namespace
 metadata:
-  name: vault-backend
-spec:
-  provider:
-    vault:
-      server: "https://vault.example.com"
-      path: "secret"
-      version: "v2"
-      auth:
-        kubernetes:
-          mountPath: "kubernetes"
-          role: "myapp"
-          serviceAccountRef:
-            name: vault-auth
+  name: vault
 ---
-apiVersion: external-secrets.io/v1beta1
-kind: ExternalSecret
+# k8s/vault-helm-repo.yaml
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
 metadata:
-  name: vault-secrets
+  name: hashicorp
+  namespace: vault
 spec:
-  refreshInterval: 30m
-  secretStoreRef:
-    name: vault-backend
-    kind: SecretStore
-  target:
+  interval: 1h
+  url: https://helm.releases.hashicorp.com
+---
+# k8s/vault.yaml
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: vault
+  namespace: vault
+spec:
+  interval: 30m
+  chart:
+    spec:
+      chart: vault
+      version: '0.27.x'
+      sourceRef:
+        kind: HelmRepository
+        name: hashicorp
+        namespace: vault
+  values:
+    server:
+      ha:
+        enabled: true
+        replicas: 3
+      dataStorage:
+        enabled: true
+        size: 10Gi
+      auditStorage:
+        enabled: true
+        size: 10Gi
+    ui:
+      enabled: true
+      serviceType: ClusterIP
+    injector:
+      enabled: true
+```
+
+### Vault Secrets Operator
+
+```yaml
+# k8s/vault-secrets-operator.yaml
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: vault-secrets-operator
+  namespace: vault
+spec:
+  interval: 30m
+  chart:
+    spec:
+      chart: vault-secrets-operator
+      version: '0.4.x'
+      sourceRef:
+        kind: HelmRepository
+        name: hashicorp
+        namespace: vault
+  values:
+    defaultVaultConnection:
+      enabled: true
+      address: "http://vault.vault.svc.cluster.local:8200"
+```
+
+### Using Vault Secrets in Applications
+
+```yaml
+# k8s/vault-secret.yaml
+apiVersion: secrets.hashicorp.com/v1beta1
+kind: VaultStaticSecret
+metadata:
+  name: app-secrets
+spec:
+  type: kv-v2
+  mount: secret
+  path: myapp
+  destination:
     name: app-secrets
-  data:
-    - secretKey: database-password
-      remoteRef:
-        key: myapp/database
-        property: password
+    create: true
+  refreshAfter: 30s
+  vaultAuthRef: vault-auth
+---
+apiVersion: secrets.hashicorp.com/v1beta1
+kind: VaultAuth
+metadata:
+  name: vault-auth
+spec:
+  method: kubernetes
+  mount: kubernetes
+  kubernetes:
+    role: myapp
+    serviceAccount: default
 ```
 
 ## Development Workflow: Making It Developer-Friendly
@@ -454,8 +458,7 @@ spec:
 | Solution | Best For | Pros | Cons |
 |----------|----------|------|------|
 | **Sealed Secrets** | Small to medium teams, GitOps workflows | Simple, Git-friendly, no external dependencies | Manual key management, limited rotation |
-| **External Secrets** | Cloud-native teams | Integrates with cloud providers, automatic sync | Requires cloud services, more complex |
-| **Vault** | Enterprise, compliance-heavy environments | Maximum security, dynamic secrets, detailed audit | Complex setup, requires dedicated infrastructure |
+| **Vault** | Enterprise, compliance-heavy environments | Maximum security, dynamic secrets, detailed audit | More complex setup, requires cluster resources |
 
 ## Integration with GitOps
 
@@ -496,8 +499,9 @@ I want to implement a complete secrets management solution for my Kubernetes clu
 6. Monitoring and alerting for secret access
 7. Backup and recovery procedures for encryption keys
 8. Integration with existing GitOps workflow
+9. Optional: HashiCorp Vault for enterprise requirements
 
-My setup: [Kubernetes cluster type], [Cloud provider if any], [Current CI/CD system]
+My setup: [Kubernetes cluster type], [Current CI/CD system]
 Secrets needed: [Database credentials, API keys, certificates, etc.]
 
 Provide everything needed for production-ready secrets management.
