@@ -254,6 +254,238 @@ replicas:
     count: 3
 ```
 
+## Production Database with PostgreSQL
+
+Most applications need a reliable database. Here's how to deploy PostgreSQL with proper persistence and backups:
+
+<LLMPrompt title="🤖 PostgreSQL Database Setup">
+Help me deploy PostgreSQL on Kubernetes with production-ready configuration. I need:
+- PostgreSQL deployment with persistent storage
+- Proper resource limits and health checks
+- Database initialization with custom schemas
+- Connection pooling with PgBouncer
+- Monitoring integration with Prometheus
+- Backup and restore procedures
+- High availability configuration options
+
+Show me how to set up a production-ready PostgreSQL instance in my cluster.
+</LLMPrompt>
+
+### PostgreSQL Deployment
+
+```yaml
+# k8s/postgresql.yaml
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: postgresql
+  namespace: database
+spec:
+  interval: 30m
+  chart:
+    spec:
+      chart: postgresql
+      version: '13.x.x'
+      sourceRef:
+        kind: HelmRepository
+        name: bitnami
+        namespace: flux-system
+  values:
+    auth:
+      postgresPassword: ${POSTGRES_PASSWORD}
+      database: myapp
+    primary:
+      persistence:
+        enabled: true
+        size: 20Gi
+        storageClass: fast-ssd
+      resources:
+        requests:
+          memory: 256Mi
+          cpu: 250m
+        limits:
+          memory: 512Mi
+          cpu: 500m
+    metrics:
+      enabled: true
+      serviceMonitor:
+        enabled: true
+```
+
+### Database Connection in Applications
+
+```yaml
+# k8s/app-with-database.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+spec:
+  template:
+    spec:
+      containers:
+        - name: app
+          image: my-app:latest
+          env:
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: app-secrets
+                  key: DATABASE_URL
+            - name: DB_HOST
+              value: postgresql.database.svc.cluster.local
+            - name: DB_PORT
+              value: "5432"
+```
+
+## Backup and Disaster Recovery with Velero
+
+Velero provides backup and restore capabilities for your entire Kubernetes cluster, including persistent volumes.
+
+<LLMPrompt title="🤖 Velero Backup Setup">
+Set up Velero for Kubernetes cluster backup and disaster recovery. I need:
+- Complete Velero installation via Helm/Flux
+- Configuration for object storage backend (S3-compatible)
+- Scheduled backups for applications and persistent volumes
+- Backup retention policies
+- Restore procedures for different scenarios
+- Monitoring and alerting for backup failures
+- Cross-cluster disaster recovery setup
+
+Show me how to implement comprehensive backup and disaster recovery for my cluster.
+</LLMPrompt>
+
+### Installing Velero
+
+```yaml
+# k8s/velero-namespace.yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: velero
+---
+# k8s/velero.yaml
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: velero
+  namespace: velero
+spec:
+  interval: 30m
+  chart:
+    spec:
+      chart: velero
+      version: '5.x.x'
+      sourceRef:
+        kind: HelmRepository
+        name: vmware-tanzu
+        namespace: flux-system
+  values:
+    configuration:
+      backupStorageLocation:
+        - name: default
+          provider: aws
+          bucket: my-backup-bucket
+          config:
+            region: eu-west-1
+            s3ForcePathStyle: true
+            s3Url: https://s3.eu-west-1.amazonaws.com
+      volumeSnapshotLocation:
+        - name: default
+          provider: aws
+          config:
+            region: eu-west-1
+    credentials:
+      useSecret: true
+      secretContents:
+        cloud: |
+          [default]
+          aws_access_key_id=${AWS_ACCESS_KEY_ID}
+          aws_secret_access_key=${AWS_SECRET_ACCESS_KEY}
+```
+
+### Scheduled Backups
+
+```yaml
+# k8s/backup-schedule.yaml
+apiVersion: velero.io/v1
+kind: Schedule
+metadata:
+  name: daily-backup
+  namespace: velero
+spec:
+  schedule: "0 2 * * *"  # Daily at 2 AM
+  template:
+    includedNamespaces:
+      - default
+      - database
+      - monitoring
+    excludedResources:
+      - events
+      - events.events.k8s.io
+    storageLocation: default
+    ttl: 720h0m0s  # 30 days retention
+---
+apiVersion: velero.io/v1
+kind: Schedule
+metadata:
+  name: weekly-full-backup
+  namespace: velero
+spec:
+  schedule: "0 1 * * 0"  # Weekly on Sunday at 1 AM
+  template:
+    includedNamespaces:
+      - "*"
+    storageLocation: default
+    ttl: 2160h0m0s  # 90 days retention
+```
+
+### Backup Monitoring
+
+```yaml
+# k8s/backup-monitoring.yaml
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: velero-alerts
+  namespace: velero
+spec:
+  groups:
+    - name: velero.rules
+      rules:
+        - alert: VeleroBackupFailure
+          expr: increase(velero_backup_failure_total[1h]) > 0
+          for: 5m
+          annotations:
+            summary: "Velero backup failed"
+            description: "Backup {{ $labels.schedule }} has failed"
+        
+        - alert: VeleroBackupPartialFailure
+          expr: increase(velero_backup_partial_failure_total[1h]) > 0
+          for: 5m
+          annotations:
+            summary: "Velero backup partially failed"
+            description: "Backup {{ $labels.schedule }} has partial failures"
+```
+
+### Restore Procedures
+
+```bash
+# List available backups
+velero backup get
+
+# Restore from specific backup
+velero restore create --from-backup daily-backup-20240124-020000
+
+# Restore specific namespace
+velero restore create --from-backup daily-backup-20240124-020000 \
+  --include-namespaces database
+
+# Restore with different namespace mapping
+velero restore create --from-backup daily-backup-20240124-020000 \
+  --namespace-mappings old-namespace:new-namespace
+```
+
 ## The Complete Picture
 
 With all three parts of this guide, you now have:
@@ -266,7 +498,8 @@ With all three parts of this guide, you now have:
 - **Bulletproof secrets management** (see our [dedicated guide](/blog/kubernetes_secrets_management))
 - **Comprehensive monitoring** that prevents incidents
 - **Multi-environment** deployments with proper isolation
-- **Advanced deployment** strategies for zero-risk releases
+- **Production database** with PostgreSQL and proper persistence
+- **Backup and disaster recovery** with Velero
 
 All managed through code, all versioned in Git, all completely portable between clouds.
 
