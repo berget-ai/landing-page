@@ -9,7 +9,7 @@ tags:
   - GitOps
   - Monitoring
   - Security
-image: /src/assets/images/holy-grail.jpg
+image: /images/holy-grail.jpg
 imageAlt: The DevOps Holy Grail - Enterprise-Grade Features
 email: christian@landgren.nu
 language: en
@@ -335,7 +335,7 @@ spec:
             - name: DB_HOST
               value: postgresql.database.svc.cluster.local
             - name: DB_PORT
-              value: "5432"
+              value: '5432'
 ```
 
 ## Backup and Disaster Recovery with Velero
@@ -414,7 +414,7 @@ metadata:
   name: daily-backup
   namespace: velero
 spec:
-  schedule: "0 2 * * *"  # Daily at 2 AM
+  schedule: '0 2 * * *' # Daily at 2 AM
   template:
     includedNamespaces:
       - default
@@ -424,7 +424,7 @@ spec:
       - events
       - events.events.k8s.io
     storageLocation: default
-    ttl: 720h0m0s  # 30 days retention
+    ttl: 720h0m0s # 30 days retention
 ---
 apiVersion: velero.io/v1
 kind: Schedule
@@ -432,12 +432,12 @@ metadata:
   name: weekly-full-backup
   namespace: velero
 spec:
-  schedule: "0 1 * * 0"  # Weekly on Sunday at 1 AM
+  schedule: '0 1 * * 0' # Weekly on Sunday at 1 AM
   template:
     includedNamespaces:
-      - "*"
+      - '*'
     storageLocation: default
-    ttl: 2160h0m0s  # 90 days retention
+    ttl: 2160h0m0s # 90 days retention
 ```
 
 ### Backup Monitoring
@@ -457,15 +457,15 @@ spec:
           expr: increase(velero_backup_failure_total[1h]) > 0
           for: 5m
           annotations:
-            summary: "Velero backup failed"
-            description: "Backup {{ $labels.schedule }} has failed"
-        
+            summary: 'Velero backup failed'
+            description: 'Backup {{ $labels.schedule }} has failed'
+
         - alert: VeleroBackupPartialFailure
           expr: increase(velero_backup_partial_failure_total[1h]) > 0
           for: 5m
           annotations:
-            summary: "Velero backup partially failed"
-            description: "Backup {{ $labels.schedule }} has partial failures"
+            summary: 'Velero backup partially failed'
+            description: 'Backup {{ $labels.schedule }} has partial failures'
 ```
 
 ### Restore Procedures

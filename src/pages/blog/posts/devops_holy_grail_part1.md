@@ -9,7 +9,7 @@ tags:
   - GitOps
   - CI/CD
   - Infrastructure
-image: /src/assets/images/holy-grail.jpg
+image: /images/holy-grail.jpg
 imageAlt: The DevOps Holy Grail - Simple to Start, Infinite to Scale
 email: christian@landgren.nu
 language: en

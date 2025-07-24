@@ -9,7 +9,7 @@ tags:
   - GitOps
   - CI/CD
   - Infrastructure
-image: /src/assets/images/devops-part2.png
+image: /images/devops-part2.png
 imageAlt: The DevOps Holy Grail - Complete Guide
 email: christian@landgren.nu
 language: en

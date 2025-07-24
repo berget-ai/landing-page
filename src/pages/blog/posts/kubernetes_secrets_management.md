@@ -9,7 +9,7 @@ tags:
   - DevOps
   - Secrets
   - GitOps
-image: /src/assets/images/holy-grail.jpg
+image: /images/holy-grail.jpg
 imageAlt: Kubernetes Secrets Management - Secure and Developer-Friendly
 email: christian@landgren.nu
 language: en
@@ -26,6 +26,7 @@ This guide shows you how to build a secrets management system that's both secure
 ## The Problem: Secrets Everywhere
 
 Modern applications need secrets everywhere:
+
 - Database connection strings
 - API keys for third-party services
 - TLS certificates
@@ -33,6 +34,7 @@ Modern applications need secrets everywhere:
 - Service account tokens
 
 The challenge? These secrets need to be:
+
 - **Secure** - Never exposed in plain text
 - **Accessible** - Available to applications at runtime
 - **Rotatable** - Easy to update without downtime
@@ -308,7 +310,7 @@ spec:
   values:
     defaultVaultConnection:
       enabled: true
-      address: "http://vault.vault.svc.cluster.local:8200"
+      address: 'http://vault.vault.svc.cluster.local:8200'
 ```
 
 ### Using Vault Secrets in Applications
@@ -387,10 +389,10 @@ kind: Role
 metadata:
   name: app-secrets-reader
 rules:
-  - apiGroups: [""]
-    resources: ["secrets"]
-    resourceNames: ["app-secrets"]
-    verbs: ["get"]
+  - apiGroups: ['']
+    resources: ['secrets']
+    resourceNames: ['app-secrets']
+    verbs: ['get']
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
@@ -416,7 +418,7 @@ kind: CronJob
 metadata:
   name: rotate-database-password
 spec:
-  schedule: "0 2 * * 0"  # Weekly at 2 AM Sunday
+  schedule: '0 2 * * 0' # Weekly at 2 AM Sunday
   jobTemplate:
     spec:
       template:
@@ -426,9 +428,9 @@ spec:
               image: my-secret-rotator:latest
               env:
                 - name: SECRET_NAME
-                  value: "app-secrets"
+                  value: 'app-secrets'
                 - name: SECRET_KEY
-                  value: "database-password"
+                  value: 'database-password'
           restartPolicy: OnFailure
 ```
 
@@ -450,7 +452,7 @@ spec:
           expr: increase(apiserver_audit_total{verb="get",objectRef_resource="secrets"}[5m]) > 10
           for: 2m
           annotations:
-            summary: "High number of secret access failures"
+            summary: 'High number of secret access failures'
 ```
 
 ## Choosing the Right Solution
@@ -459,23 +461,24 @@ spec:
 
 Use this matrix to determine which secrets management approach fits your needs:
 
-| Criteria | Manual Secrets | Sealed Secrets | HashiCorp Vault |
-|----------|----------------|----------------|-----------------|
-| **Team Size** | 1-3 developers | 3-20 developers | 20+ developers |
-| **Security Requirements** | Basic | Medium | High/Enterprise |
-| **Compliance Needs** | None | Basic | Advanced (SOC2, GDPR, etc.) |
-| **GitOps Workflow** | ❌ Not compatible | ✅ Perfect fit | ✅ Compatible |
-| **Setup Complexity** | ⭐ Very simple | ⭐⭐ Simple | ⭐⭐⭐⭐ Complex |
-| **Operational Overhead** | ⭐ Minimal | ⭐⭐ Low | ⭐⭐⭐⭐ High |
-| **Secret Rotation** | Manual process | Semi-automated | Fully automated |
-| **Audit Trail** | None | Basic Git history | Comprehensive |
-| **Dynamic Secrets** | ❌ Not supported | ❌ Not supported | ✅ Full support |
-| **Multi-Environment** | Difficult | Good | Excellent |
-| **Cost** | Free | Free | Free (self-hosted) |
+| Criteria                  | Manual Secrets    | Sealed Secrets    | HashiCorp Vault             |
+| ------------------------- | ----------------- | ----------------- | --------------------------- |
+| **Team Size**             | 1-3 developers    | 3-20 developers   | 20+ developers              |
+| **Security Requirements** | Basic             | Medium            | High/Enterprise             |
+| **Compliance Needs**      | None              | Basic             | Advanced (SOC2, GDPR, etc.) |
+| **GitOps Workflow**       | ❌ Not compatible | ✅ Perfect fit    | ✅ Compatible               |
+| **Setup Complexity**      | ⭐ Very simple    | ⭐⭐ Simple       | ⭐⭐⭐⭐ Complex            |
+| **Operational Overhead**  | ⭐ Minimal        | ⭐⭐ Low          | ⭐⭐⭐⭐ High               |
+| **Secret Rotation**       | Manual process    | Semi-automated    | Fully automated             |
+| **Audit Trail**           | None              | Basic Git history | Comprehensive               |
+| **Dynamic Secrets**       | ❌ Not supported  | ❌ Not supported  | ✅ Full support             |
+| **Multi-Environment**     | Difficult         | Good              | Excellent                   |
+| **Cost**                  | Free              | Free              | Free (self-hosted)          |
 
 ### When to Choose Each Solution
 
 #### Choose **Manual Secrets** when:
+
 - 🏠 **Small team** (1-3 developers)
 - 🚀 **Rapid prototyping** or proof-of-concept
 - 💰 **Minimal budget** for infrastructure
@@ -485,6 +488,7 @@ Use this matrix to determine which secrets management approach fits your needs:
 **Example scenario:** Weekend side project, startup MVP, internal tools
 
 #### Choose **Sealed Secrets** when:
+
 - 👥 **Medium team** (3-20 developers)
 - 🔄 **GitOps workflow** is important
 - 🛡️ **Moderate security** requirements
@@ -494,6 +498,7 @@ Use this matrix to determine which secrets management approach fits your needs:
 **Example scenario:** Growing startup, SaaS product, team collaboration needed
 
 #### Choose **HashiCorp Vault** when:
+
 - 🏢 **Large organization** (20+ developers)
 - 🔐 **High security** requirements
 - 📋 **Compliance** mandates (SOC2, HIPAA, GDPR)
@@ -506,7 +511,7 @@ Use this matrix to determine which secrets management approach fits your needs:
 ### Quick Decision Tree
 
 ```
-Do you have compliance requirements? 
+Do you have compliance requirements?
 ├─ Yes → Use Vault
 └─ No
    ├─ Do you use GitOps?
@@ -575,6 +580,7 @@ kubectl create secret generic app-secrets \
 Different solutions have different GitOps compatibility:
 
 ### Sealed Secrets + GitOps ✅
+
 ```yaml
 # k8s/kustomization.yaml - Safe to commit!
 apiVersion: kustomize.config.k8s.io/v1beta1
@@ -583,12 +589,13 @@ kind: Kustomization
 resources:
   - deployment.yaml
   - service.yaml
-  - secrets/app-secrets-sealed.yaml  # Encrypted, safe in Git
+  - secrets/app-secrets-sealed.yaml # Encrypted, safe in Git
 
 namespace: production
 ```
 
 ### Vault + GitOps ✅
+
 ```yaml
 # k8s/kustomization.yaml - Safe to commit!
 apiVersion: kustomize.config.k8s.io/v1beta1
@@ -597,12 +604,13 @@ kind: Kustomization
 resources:
   - deployment.yaml
   - service.yaml
-  - vault-secret.yaml  # References Vault, no actual secrets
+  - vault-secret.yaml # References Vault, no actual secrets
 
 namespace: production
 ```
 
 ### Manual Secrets + GitOps ❌
+
 Manual secrets don't work with GitOps since secrets can't be stored in Git repositories.
 
 ## What's Next?

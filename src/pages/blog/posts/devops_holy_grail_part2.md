@@ -10,7 +10,7 @@ tags:
   - DNS
   - Security
   - Automation
-image: /src/assets/images/holy-grail.jpg
+image: /images/holy-grail.jpg
 imageAlt: The DevOps Holy Grail - HTTPS and DNS Automation
 email: christian@landgren.nu
 language: en
@@ -55,6 +55,7 @@ HTTPS evolved from expensive, manual certificates that only large companies coul
 cert-manager is an open-source Kubernetes add-on that automates the management and issuance of TLS certificates. Originally created by Jetstack (now part of Venafi), it's a CNCF project with strong community support and is used by thousands of organizations worldwide.
 
 What makes cert-manager special:
+
 - **Fully automated** certificate lifecycle management
 - **Multiple certificate authorities** supported (Let's Encrypt, HashiCorp Vault, Venafi, self-signed)
 - **Kubernetes-native** with custom resources and operators
@@ -73,7 +74,7 @@ Set up cert-manager in my Kubernetes cluster for automatic HTTPS certificates. I
 - Support for multiple domains and wildcard certificates
 - Integration with existing GitOps workflow
 
-My email is admin@example.com and I want certificates for myapp.example.com and *.myapp.example.com
+My email is admin@example.com and I want certificates for myapp.example.com and \*.myapp.example.com
 </LLMPrompt>
 
 ### Installing cert-manager
@@ -147,7 +148,7 @@ spec:
               key: api-token
         selector:
           dnsNames:
-            - "*.example.com"
+            - '*.example.com'
 ```
 
 ### Using Certificates in Ingress
@@ -162,13 +163,13 @@ metadata:
     # Tell cert-manager to create a certificate
     cert-manager.io/cluster-issuer: letsencrypt-prod
     # Force HTTPS redirects
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: 'true'
 spec:
   tls:
     - hosts:
         - myapp.example.com
         - api.myapp.example.com
-      secretName: myapp-tls  # cert-manager creates this automatically
+      secretName: myapp-tls # cert-manager creates this automatically
   rules:
     - host: myapp.example.com
       http:
@@ -210,15 +211,15 @@ spec:
           expr: certmanager_certificate_expiration_timestamp_seconds - time() < 7 * 24 * 3600
           for: 1h
           annotations:
-            summary: "Certificate expiring soon"
-            description: "Certificate {{ $labels.name }} expires in less than 7 days"
-        
+            summary: 'Certificate expiring soon'
+            description: 'Certificate {{ $labels.name }} expires in less than 7 days'
+
         - alert: CertificateNotReady
           expr: certmanager_certificate_ready_status == 0
           for: 10m
           annotations:
-            summary: "Certificate not ready"
-            description: "Certificate {{ $labels.name }} is not ready"
+            summary: 'Certificate not ready'
+            description: 'Certificate {{ $labels.name }} is not ready'
 ```
 
 ## DNS Automation: Why Manual DNS is a Liability
@@ -252,6 +253,7 @@ Managing DNS records manually doesn't scale. Here's why automation matters:
 external-dns is an open-source Kubernetes controller that automatically manages DNS records for your services. Originally developed by the Kubernetes community, it's now maintained by the Kubernetes SIG Network and is widely adopted across the ecosystem.
 
 Key features of external-dns:
+
 - **Multi-provider support** - Works with 20+ DNS providers (Cloudflare, Route53, Google DNS, Azure DNS, etc.)
 - **Kubernetes-native** - Watches Ingress, Service, and other Kubernetes resources
 - **Declarative** - DNS records are managed through Kubernetes annotations
@@ -316,13 +318,13 @@ spec:
           secretKeyRef:
             name: cloudflare-api-token
             key: api-token
-    txtOwnerId: "my-cluster"
-    policy: sync  # or 'upsert-only' for safer operation
+    txtOwnerId: 'my-cluster'
+    policy: sync # or 'upsert-only' for safer operation
     sources:
       - ingress
       - service
     domainFilters:
-      - example.com  # Only manage records for this domain
+      - example.com # Only manage records for this domain
 ```
 
 ### Creating DNS Provider Secrets
@@ -356,7 +358,7 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     # external-dns creates DNS records
     external-dns.alpha.kubernetes.io/hostname: myapp.example.com,api.myapp.example.com
-    external-dns.alpha.kubernetes.io/ttl: "300"
+    external-dns.alpha.kubernetes.io/ttl: '300'
 spec:
   tls:
     - hosts:
@@ -480,6 +482,7 @@ spec:
 ```
 
 **Commit this to Git, and within minutes you have:**
+
 - A running service
 - Automatic DNS record creation
 - Automatic HTTPS certificate
@@ -548,7 +551,7 @@ With automatic HTTPS and DNS in place, you now have:
 In **[Part 3](/blog/devops_holy_grail_part3)**, we'll add enterprise-grade features:
 
 - **Self-hosted backends** with Supabase
-- **Bulletproof secrets management** 
+- **Bulletproof secrets management**
 - **Comprehensive monitoring** that prevents incidents
 - **Multi-environment deployments**
 - **Advanced deployment strategies**
