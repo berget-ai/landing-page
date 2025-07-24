@@ -55,9 +55,9 @@ Add advanced capabilities:
 
 - Self-hosted Supabase backend
 - Comprehensive monitoring and alerting
-- Multi-environment deployments
 - Migration strategies and advanced patterns
 - Bulletproof secrets management (see our [dedicated guide](/blog/kubernetes_secrets_management))
+- Multi-environment deployments (see our [dedicated guide](/blog/kubernetes_multi_environment_deployments))
 
 Everything you need to scale from startup to enterprise.
 
