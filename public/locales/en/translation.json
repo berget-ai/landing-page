@@ -320,86 +320,86 @@
   },
   "whyBerget": {
     "hero": {
-      "tagline": "European AI that actually stays in Europe",
-      "title": "Stop Feeding Your Data to Big Tech",
-      "description": "While global cloud giants harvest European data to train their AI models, your sensitive information crosses borders, enters foreign legal systems, and enriches foreign corporations. We built Berget AI because Europe deserves technological independence.",
+      "tagline": "No data leaves Sweden",
+      "title": "Keep Your Sensitive Data Where It Belongs",
+      "description": "Not all data needs the same protection, but your most sensitive information deserves better than foreign cloud infrastructure. We built Berget AI for the data you can't afford to send abroad.",
       "getStarted": "Get Started",
       "bookDemo": "Book Demo"
     },
     "benefits": {
-      "title": "Why Europe Needs Independent AI",
-      "description": "Every day, European companies hand over their most sensitive data to foreign cloud giants, unknowingly funding their own technological colonization. When you use popular AI services, your data doesn't just leave Sweden—it leaves European legal protection entirely. We built Berget AI because this surveillance capitalism model is broken.",
+      "title": "For Data That Can't Leave Europe",
+      "description": "Global cloud providers serve many needs well, but when it comes to sensitive data—customer information, trade secrets, regulated content—you need infrastructure you can fully control and trust.",
       "euBased": {
-        "title": "True Data Sovereignty",
-        "description": "When Big Tech says your data is 'secure in the cloud,' they mean their cloud, under their terms, subject to foreign government requests. Our infrastructure runs entirely on European soil, under European law.",
+        "title": "Data Sovereignty When It Matters",
+        "description": "Some data can travel globally without issue. Other data—the sensitive, regulated, or strategically important—needs to stay under European jurisdiction and law.",
         "features": [
-          "Your data never leaves Swedish servers",
-          "Protected by European privacy laws, not foreign legislation",
-          "No corporate data mining or model training on your information"
+          "Critical data never leaves Swedish servers",
+          "Full compliance with European data residency requirements",
+          "Complete control over who can access your information"
         ]
       },
       "sustainable": {
-        "title": "AI Without Environmental Destruction",
-        "description": "The AI boom is consuming massive amounts of energy while tech giants greenwash their environmental impact. We're building sustainable AI infrastructure that actually tracks and minimizes its carbon footprint.",
+        "title": "Sustainable AI Infrastructure",
+        "description": "AI training and inference consume enormous amounts of energy. We've built our infrastructure to minimize environmental impact while maximizing performance for European workloads.",
         "features": [
-          "100% fossil-free energy from Swedish sources",
-          "Real CO₂ tracking, not corporate sustainability theater",
-          "Circular hardware that extends equipment lifecycles"
+          "100% renewable energy from Swedish sources",
+          "Transparent CO₂ tracking for your AI usage",
+          "Efficient hardware utilization and circular economy principles"
         ]
       },
       "flexible": {
-        "title": "Actually Open AI",
-        "description": "While corporations co-opt the term 'open AI' for marketing, we champion genuine open innovation. No proprietary lock-ins, no hidden algorithms, no corporate gatekeeping.",
+        "title": "Truly Open AI",
+        "description": "Work with open models and open source infrastructure. No vendor lock-in, no proprietary algorithms you can't inspect, no dependencies on closed systems.",
         "features": [
-          "Open models you can inspect and modify",
-          "Open source infrastructure you can trust",
-          "Open innovation that serves Europe, not shareholders"
+          "Open source models and infrastructure",
+          "Full transparency in our AI stack",
+          "Freedom to modify and adapt to your needs"
         ]
       }
     },
     "features": {
       "european": {
-        "title": "European Innovation, Not Silicon Valley Dependence",
-        "description": "Europe's brightest minds shouldn't have to build on American infrastructure or accept foreign terms of service. We're creating the foundation for true European technological sovereignty.",
+        "title": "European Infrastructure for European Data",
+        "description": "When your data is too sensitive for global cloud providers, you need infrastructure built specifically for European regulatory requirements and data protection standards.",
         "points": [
-          "Your data, your models, your infrastructure—all under European jurisdiction",
-          "Break free from foreign cloud dependencies that compromise your sovereignty",
-          "Join the movement toward European technological independence"
+          "Your sensitive data and models stay within European legal jurisdiction",
+          "Built to meet the strictest European compliance requirements",
+          "Local infrastructure that understands European business needs"
         ]
       },
       "privacy": {
-        "title": "Privacy by Design, Not by Marketing",
-        "description": "Data protection isn't a feature we bolt on—it's the foundation everything else is built upon. While others promise privacy and deliver surveillance, we engineered privacy into our core architecture.",
+        "title": "Privacy and Compliance by Design",
+        "description": "We designed our infrastructure specifically for organizations that need absolute control over their data processing, storage, and retention policies.",
         "points": [
           "Zero data retention—your information is processed and immediately discarded",
           "All processing happens within our secure Swedish infrastructure",
-          "GDPR compliance isn't a checkbox for us, it's our operating principle"
+          "GDPR compliance built into every system component, not added as an afterthought"
         ]
       },
       "alternative": {
-        "title": "Beyond the False Choice of Cloud vs On-Premise",
-        "description": "You shouldn't have to choose between convenience and security, between scalability and sovereignty. We've built a third option that delivers both.",
+        "title": "The Middle Ground Between Cloud and On-Premise",
+        "description": "When public cloud isn't suitable for your sensitive data, but on-premise infrastructure is too expensive or complex, we provide a third option.",
         "points": [
-          "Secure infrastructure for organizations that can't trust foreign cloud providers",
-          "Process your most sensitive data without compromising on AI capabilities",
-          "Scale from small experiments to production without upfront hardware investments"
+          "Dedicated infrastructure for organizations with strict data requirements",
+          "Process sensitive data without the complexity of managing your own AI infrastructure",
+          "Scale your AI capabilities without upfront hardware investments"
         ]
       },
       "security": {
-        "title": "Security From the Ground Up",
-        "description": "We didn't add security features to existing infrastructure—we designed our entire system around protecting your data. Every decision prioritizes your security over our convenience.",
+        "title": "Security Architecture You Can Trust",
+        "description": "Our infrastructure is designed for organizations that can't compromise on security. Every component is built with the assumption that your data is irreplaceable.",
         "points": [
-          "Built using OWASP security standards, not minimum viable protection",
-          "Your data never traverses public internet—processing happens entirely within our secure network",
-          "Zero-trust architecture that assumes threats exist at every level"
+          "Security standards that exceed typical cloud provider requirements",
+          "Your data processing happens entirely within our isolated, secure network",
+          "Zero-trust architecture with multiple layers of protection"
         ]
       }
     },
     "cta": {
-      "title": "Ready to Reclaim Your AI Independence?",
-      "description": "No upfront investments, no vendor lock-ins, no compromises on European values.",
-      "createAccount": "Start Building",
-      "contactSales": "Talk to Us"
+      "title": "Ready to Process Sensitive Data Safely?",
+      "description": "No upfront investments, no vendor lock-ins, no compromises on data protection.",
+      "createAccount": "Create Account",
+      "contactSales": "Contact Us"
     }
   },
   "pricing": {
