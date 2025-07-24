@@ -66,66 +66,20 @@ spec:
 
 You now have Postgres, authentication, real-time subscriptions, and file storage—all running in your own infrastructure, managed through Git.
 
-## Secrets That Don't Leak
+## Bulletproof Secrets Management
 
-Never commit secrets to Git, but do commit encrypted secrets. Use sealed-secrets:
+Secrets management is critical but complex enough to deserve its own deep dive. We've created a comprehensive guide that covers everything from basic sealed-secrets to enterprise Vault integration.
 
-<LLMPrompt title="🤖 Secure Secrets Management">
-Set up secure secrets management for Kubernetes using sealed-secrets. I need:
-- Installation of sealed-secrets controller via Helm/Flux
-- Step-by-step process to encrypt secrets for Git storage
-- Examples of converting environment files to encrypted secrets
-- Integration with application deployments (how to reference encrypted secrets)
-- Backup and recovery procedures for encryption keys
-- Rotation strategies for both secrets and encryption keys
-- Alternative approaches (External Secrets Operator, Vault integration)
+**[Read our complete Secrets Management Guide](/blog/kubernetes_secrets_management)**
 
-Show me how to encrypt DATABASE_URL, API_KEYS, and other sensitive environment variables.
-</LLMPrompt>
+This guide covers:
+- Sealed Secrets for Git-safe encryption
+- External Secrets Operator for cloud integration
+- HashiCorp Vault for enterprise environments
+- Development workflows that developers actually use
+- Security best practices and compliance
 
-```bash
-# Create secret from environment file
-kubectl create secret generic app-secrets \
-  --from-env-file=.env.production \
-  --dry-run=client -o json | \
-  kubeseal --format yaml > k8s/secrets/app-secrets.yaml
-```
-
-The encrypted result can safely live in Git. Only your cluster can decrypt it.
-
-### Installing sealed-secrets
-
-```yaml
-# k8s/sealed-secrets.yaml
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
-kind: HelmRelease
-metadata:
-  name: sealed-secrets
-  namespace: kube-system
-spec:
-  chart:
-    spec:
-      chart: sealed-secrets
-      sourceRef:
-        kind: HelmRepository
-        name: sealed-secrets
-```
-
-### Using encrypted secrets in deployments
-
-```yaml
-# In your deployment.yaml
-spec:
-  template:
-    spec:
-      containers:
-        - name: app
-          envFrom:
-            - secretRef:
-                name: app-secrets
-```
-
-Your application gets the decrypted environment variables, but your Git repository only contains encrypted data.
+The secrets management patterns integrate seamlessly with the GitOps infrastructure we're building here.
 
 ## Monitoring That Prevents Incidents
 
@@ -442,7 +396,7 @@ With both parts of this guide, you now have:
 - **DNS management** that updates when you change domains
 - **Auto-scaling** that handles traffic spikes without intervention
 - **Self-hosted backend** with database, auth, and storage
-- **Encrypted secrets** that are Git-safe but production-ready
+- **Bulletproof secrets management** (see our [dedicated guide](/blog/kubernetes_secrets_management))
 - **Comprehensive monitoring** that prevents incidents
 - **Multi-environment** deployments with proper isolation
 - **Cost optimization** through resource management

@@ -42,7 +42,7 @@ Perfect for getting your first production deployment running in under an hour.
 Add advanced capabilities:
 
 - Self-hosted Supabase backend
-- Bulletproof secrets management
+- Bulletproof secrets management (see our [dedicated guide](/blog/kubernetes_secrets_management))
 - Comprehensive monitoring and alerting
 - Multi-environment deployments
 - Migration strategies and advanced patterns

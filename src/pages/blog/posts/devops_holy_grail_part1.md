@@ -347,7 +347,7 @@ All managed through code, all versioned in Git, all completely portable between 
 In **Part 2**, we'll add enterprise-grade features:
 
 - **Self-hosted Supabase** for database, auth, and storage
-- **Encrypted secrets management** that's Git-safe
+- **Bulletproof secrets management** (with our [dedicated guide](/blog/kubernetes_secrets_management))
 - **Comprehensive monitoring** with Prometheus and Grafana
 - **Migration strategies** for existing applications
 - **Advanced patterns** for multi-environment deployments
