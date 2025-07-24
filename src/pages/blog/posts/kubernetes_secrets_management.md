@@ -9,7 +9,7 @@ tags:
   - DevOps
   - Secrets
   - GitOps
-image: /images/holy-grail.jpg
+image: /images/cert-manager.png
 imageAlt: Kubernetes Secrets Management - Secure and Developer-Friendly
 email: christian@landgren.nu
 language: en
@@ -78,6 +78,7 @@ First, ask me about my secrets management needs before generating any code:
 - What is your preferred backup strategy for encryption keys?
 
 Then set up sealed-secrets for Kubernetes secrets management. I need:
+
 - Complete installation via Helm/Flux
 - Step-by-step process to encrypt secrets for Git storage
 - Examples of converting environment files to encrypted secrets
@@ -239,6 +240,7 @@ First, ask me about my Vault requirements before generating any code:
 - What are your backup and disaster recovery requirements?
 
 Then set up HashiCorp Vault in my Kubernetes cluster using FluxCD. I need:
+
 - Complete Vault installation via Helm/Flux
 - Vault configuration for your availability requirements
 - Kubernetes authentication setup

@@ -9,7 +9,7 @@ tags:
   - Kustomize
   - DevOps
   - Multi-Environment
-image: /images/holy-grail.jpg
+image: /images/staging_production.png
 imageAlt: Kubernetes Multi-Environment Deployments - Staging and Production
 email: christian@landgren.nu
 language: en
@@ -26,32 +26,41 @@ This guide shows you how to migrate from a single environment to a proper multi-
 ## Why Multiple Environments Matter
 
 ### Risk Reduction
+
 Test changes in staging before they hit production. Catch integration issues, performance problems, and configuration errors early—when they're cheap to fix.
 
 ### Parallel Development
+
 Multiple teams can work on different features without blocking each other. Staging becomes your integration testing ground where features come together safely.
 
 ### Compliance Requirements
+
 Many industries require separate environments for audit trails and change management. Having proper environment separation isn't just good practice—it's often legally required.
 
 ### Customer Confidence
+
 Demonstrate new features to stakeholders in staging before production release. Show, don't tell, and build confidence in your releases.
 
 ### Incident Response
+
 When production breaks, having a working staging environment means you can test fixes before applying them to production. This dramatically reduces recovery time.
 
 ## The Problem with Single Environment Deployments
 
 ### Everything is Production
+
 When you only have one environment, every change goes directly to production. There's no safety net, no place to test integrations, and no way to validate changes before users see them.
 
 ### No Testing Ground
+
 New features, dependency updates, and configuration changes all get tested in production. This leads to more outages and less confidence in deployments.
 
 ### Difficult Collaboration
+
 Multiple developers can't work on conflicting features simultaneously. Someone always has to wait, slowing down development velocity.
 
 ### Poor Change Management
+
 Without proper environments, it's hard to implement proper change management processes. Everything becomes a "hotfix" because there's nowhere else to test.
 
 ## The Kustomize Pattern: Base + Overlays
@@ -131,7 +140,7 @@ resources:
 
 commonLabels:
   app: my-service
-  
+
 # Default to staging-like configuration
 namespace: staging
 
@@ -155,7 +164,7 @@ kind: Deployment
 metadata:
   name: my-service
 spec:
-  replicas: 2  # Conservative default
+  replicas: 2 # Conservative default
   selector:
     matchLabels:
       app: my-service
@@ -171,16 +180,16 @@ spec:
             - containerPort: 3000
           resources:
             requests:
-              memory: "128Mi"
-              cpu: "100m"
+              memory: '128Mi'
+              cpu: '100m'
             limits:
-              memory: "256Mi"  # Staging-appropriate limits
-              cpu: "200m"
+              memory: '256Mi' # Staging-appropriate limits
+              cpu: '200m'
           env:
             - name: ENVIRONMENT
-              value: "staging"  # Default environment
+              value: 'staging' # Default environment
             - name: LOG_LEVEL
-              value: "debug"    # More verbose by default
+              value: 'debug' # More verbose by default
           envFrom:
             - configMapRef:
                 name: app-config
@@ -228,11 +237,11 @@ metadata:
   name: app-config
 data:
   # Common configuration for all environments
-  APP_NAME: "my-service"
-  PORT: "3000"
+  APP_NAME: 'my-service'
+  PORT: '3000'
   # These can be overridden in overlays
-  DATABASE_POOL_SIZE: "10"
-  CACHE_TTL: "300"
+  DATABASE_POOL_SIZE: '10'
+  CACHE_TTL: '300'
 ```
 
 ## Step 2: Create Staging Overlay
@@ -265,7 +274,7 @@ images:
 # Staging-specific labels
 commonLabels:
   environment: staging
-  
+
 # Override some base configuration
 configMapGenerator:
   - name: app-config
@@ -290,11 +299,11 @@ spec:
         - name: app
           env:
             - name: ENVIRONMENT
-              value: "staging"
+              value: 'staging'
             - name: LOG_LEVEL
-              value: "debug"  # More verbose logging in staging
+              value: 'debug' # More verbose logging in staging
             - name: DEBUG_MODE
-              value: "true"   # Enable debug features
+              value: 'true' # Enable debug features
 ```
 
 ### Staging Ingress
@@ -392,18 +401,18 @@ spec:
         - name: app
           resources:
             requests:
-              memory: "256Mi"
-              cpu: "200m"
+              memory: '256Mi'
+              cpu: '200m'
             limits:
-              memory: "512Mi"  # Higher limits for production
-              cpu: "500m"
+              memory: '512Mi' # Higher limits for production
+              cpu: '500m'
           env:
             - name: ENVIRONMENT
-              value: "production"
+              value: 'production'
             - name: LOG_LEVEL
-              value: "info"  # Less verbose in production
+              value: 'info' # Less verbose in production
             - name: DEBUG_MODE
-              value: "false" # No debug features in production
+              value: 'false' # No debug features in production
       # Production-specific security context
       securityContext:
         runAsNonRoot: true
@@ -423,9 +432,9 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     external-dns.alpha.kubernetes.io/hostname: app.example.com
     # Production-specific annotations
-    nginx.ingress.kubernetes.io/rate-limit: "100"
-    nginx.ingress.kubernetes.io/rate-limit-window: "1m"
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/rate-limit: '100'
+    nginx.ingress.kubernetes.io/rate-limit-window: '1m'
+    nginx.ingress.kubernetes.io/ssl-redirect: 'true'
 spec:
   tls:
     - hosts:
@@ -531,8 +540,8 @@ metadata:
   name: my-service-staging
   namespace: flux-system
 spec:
-  interval: 5m  # Frequent updates for staging
-  path: "./k8s/overlays/staging"
+  interval: 5m # Frequent updates for staging
+  path: './k8s/overlays/staging'
   prune: true
   sourceRef:
     kind: GitRepository
@@ -561,8 +570,8 @@ metadata:
   name: my-service-production
   namespace: flux-system
 spec:
-  interval: 10m  # Less frequent updates in production
-  path: "./k8s/overlays/production"
+  interval: 10m # Less frequent updates in production
+  path: './k8s/overlays/production'
   prune: true
   sourceRef:
     kind: GitRepository
@@ -604,12 +613,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: Update staging image
         run: |
           cd k8s/overlays/staging
           kustomize edit set image my-app:staging-${{ github.sha }}
-          
+
       - name: Commit staging deployment
         run: |
           git config --local user.email "action@github.com"
@@ -622,15 +631,15 @@ jobs:
     runs-on: ubuntu-latest
     needs: deploy-staging
     if: github.ref == 'refs/heads/main'
-    environment: production  # Requires approval in GitHub
+    environment: production # Requires approval in GitHub
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: Update production image
         run: |
           cd k8s/overlays/production
           kustomize edit set image my-app:v${{ github.run_number }}
-          
+
       - name: Commit production deployment
         run: |
           git config --local user.email "action@github.com"
@@ -678,7 +687,7 @@ Keep environments as similar as possible:
 # Use the same base image
 images:
   - name: my-app
-    newTag: v1.2.3  # Same version across environments
+    newTag: v1.2.3 # Same version across environments
 
 # Scale resources proportionally, not differently
 # Production: 4 CPUs, 8GB RAM
@@ -697,10 +706,10 @@ metadata:
   name: app-config
 data:
   # Same across environments
-  APP_NAME: "my-service"
+  APP_NAME: 'my-service'
   # Different per environment (overridden in overlays)
-  LOG_LEVEL: "info"
-  DEBUG_MODE: "false"
+  LOG_LEVEL: 'info'
+  DEBUG_MODE: 'false'
 ```
 
 ### Secret Management
