@@ -320,82 +320,86 @@
   },
   "whyBerget": {
     "hero": {
-      "tagline": "No data leaves Sweden",
-      "title": "Why Choose Berget AI?",
-      "description": "No dependencies, no legal exposure, no data retention",
+      "tagline": "European AI that actually stays in Europe",
+      "title": "Stop Feeding Your Data to Big Tech",
+      "description": "While global cloud giants harvest European data to train their AI models, your sensitive information crosses borders, enters foreign legal systems, and enriches foreign corporations. We built Berget AI because Europe deserves technological independence.",
       "getStarted": "Get Started",
       "bookDemo": "Book Demo"
     },
     "benefits": {
-      "title": "Benefits of Berget AI",
-      "description": "We serve (public and private sector) organisations that seek to harness the power of AI with full control and with a minimum impact on the planet.",
+      "title": "Why Europe Needs Independent AI",
+      "description": "Every day, European companies hand over their most sensitive data to foreign cloud giants, unknowingly funding their own technological colonization. When you use popular AI services, your data doesn't just leave Sweden—it leaves European legal protection entirely. We built Berget AI because this surveillance capitalism model is broken.",
       "euBased": {
-        "title": "Sovereign AI",
-        "description": "Run models while all data stays within EU borders, our infrastructure is all in Europe, with full compliance with EU regulations.",
+        "title": "True Data Sovereignty",
+        "description": "When Big Tech says your data is 'secure in the cloud,' they mean their cloud, under their terms, subject to foreign government requests. Our infrastructure runs entirely on European soil, under European law.",
         "features": [
-          "Enables AI and Data Sovereignty",
-          "Aligned with EU regulations",
-          "Full control of your data"
+          "Your data never leaves Swedish servers",
+          "Protected by European privacy laws, not foreign legislation",
+          "No corporate data mining or model training on your information"
         ]
       },
       "sustainable": {
-        "title": "Sustainable AI",
-        "description": "Our infrastructure is built with sustainability in focus, from fossil-free electricity to heat recovery and circular hardware.",
+        "title": "AI Without Environmental Destruction",
+        "description": "The AI boom is consuming massive amounts of energy while tech giants greenwash their environmental impact. We're building sustainable AI infrastructure that actually tracks and minimizes its carbon footprint.",
         "features": [
-          "100% Fossil-free Energy",
-          "CO₂ Tracking",
-          "Circular Hardware"
+          "100% fossil-free energy from Swedish sources",
+          "Real CO₂ tracking, not corporate sustainability theater",
+          "Circular hardware that extends equipment lifecycles"
         ]
       },
       "flexible": {
-        "title": "(truly) Open AI",
-        "description": "We are champions of open innovation and we host and serve open models. Our services are fully built on open source.",
-        "features": ["Open Models", "Open Source", "Open Innovation"]
+        "title": "Actually Open AI",
+        "description": "While corporations co-opt the term 'open AI' for marketing, we champion genuine open innovation. No proprietary lock-ins, no hidden algorithms, no corporate gatekeeping.",
+        "features": [
+          "Open models you can inspect and modify",
+          "Open source infrastructure you can trust",
+          "Open innovation that serves Europe, not shareholders"
+        ]
       }
     },
     "features": {
       "european": {
-        "title": "European Innovation and Data Sovereignty",
-        "description": "At Berget AI, we empower European companies to innovate without compromises. We're building a future where Europe leads in secure and ethical AI solutions.",
+        "title": "European Innovation, Not Silicon Valley Dependence",
+        "description": "Europe's brightest minds shouldn't have to build on American infrastructure or accept foreign terms of service. We're creating the foundation for true European technological sovereignty.",
         "points": [
-          "Your data, your models, your infrastructure — all in one secure, compliant place",
-          "We promote open innovation within the EU and drive AI and data sovereignty",
-          "Join us in shaping a future where Europe leads in secure, ethical AI solutions"
+          "Your data, your models, your infrastructure—all under European jurisdiction",
+          "Break free from foreign cloud dependencies that compromise your sovereignty",
+          "Join the movement toward European technological independence"
         ]
       },
       "privacy": {
-        "title": "Simple Data Privacy and Compliance",
-        "description": "Navigating data protection laws is complex—we make it simple. Our infrastructure is built to meet the strictest European regulations.",
+        "title": "Privacy by Design, Not by Marketing",
+        "description": "Data protection isn't a feature we bolt on—it's the foundation everything else is built upon. While others promise privacy and deliver surveillance, we engineered privacy into our core architecture.",
         "points": [
-          "Store your data, host your applications, and run your inference - all in one place!",
-          "All data stays within our EU-based servers and never leaves our infrastructure",
-          "Ensure compliance with GDPR and other regulatory frameworks by design"
+          "Zero data retention—your information is processed and immediately discarded",
+          "All processing happens within our secure Swedish infrastructure",
+          "GDPR compliance isn't a checkbox for us, it's our operating principle"
         ]
       },
       "alternative": {
-        "title": "Alternative to On-Prem and Public Cloud",
-        "description": "When public cloud isn't an option, Berget AI is your secure and scalable alternative. We combine the benefits of cloud services and on-premises solutions.",
+        "title": "Beyond the False Choice of Cloud vs On-Premise",
+        "description": "You shouldn't have to choose between convenience and security, between scalability and sovereignty. We've built a third option that delivers both.",
         "points": [
-          "Perfect for companies with sensitive data that can't be stored on public cloud infrastructure",
-          "No limitations — process even sensitive data freely with our LLMs",
-          "No upfront investments—start small and scale as your needs grow"
+          "Secure infrastructure for organizations that can't trust foreign cloud providers",
+          "Process your most sensitive data without compromising on AI capabilities",
+          "Scale from small experiments to production without upfront hardware investments"
         ]
       },
       "security": {
-        "title": "Built-in Security and Privacy",
-        "description": "Our infrastructure is designed to protect your data at every step. We've built security from the ground up, not as an afterthought.",
+        "title": "Security From the Ground Up",
+        "description": "We didn't add security features to existing infrastructure—we designed our entire system around protecting your data. Every decision prioritizes your security over our convenience.",
         "points": [
-          "Developed with OWASP standards to ensure highest level security",
-          "Inference runs entirely within our secure network—your data never traverses the internet",
-          "Zero retention — your data is never stored or retained"
+          "Built using OWASP security standards, not minimum viable protection",
+          "Your data never traverses public internet—processing happens entirely within our secure network",
+          "Zero-trust architecture that assumes threats exist at every level"
         ]
       }
     },
     "cta": {
-      "title": "Ready to Build with Berget AI?",
-      "description": "No up front investments, no hidden costs, no lock-ins.",
-      "createAccount": "Create Account",
-      "contactSales": "Contact Us"
+      "title": "Ready to Reclaim Your AI Independence?",
+      "description": "No upfront investments, no vendor lock-ins, no compromises on European values.",
+      "createAccount": "Start Building",
+      "contactSales": "Talk to Us"
     }
   },
   "pricing": {
