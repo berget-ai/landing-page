@@ -340,7 +340,7 @@ spec:
 
 ## Backup and Disaster Recovery with Velero
 
-Velero provides backup and restore capabilities for your entire Kubernetes cluster, including persistent volumes.
+Velero is an open-source, free tool that provides backup and restore capabilities for your entire Kubernetes cluster, including persistent volumes. Originally developed by VMware (formerly Heptio), it's now a CNCF project with a strong community and enterprise support.
 
 <LLMPrompt title="🤖 Velero Backup Setup">
 Set up Velero for Kubernetes cluster backup and disaster recovery. I need:
