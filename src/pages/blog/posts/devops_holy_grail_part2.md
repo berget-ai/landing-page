@@ -46,47 +46,9 @@ HTTPS isn't optional anymore. It's the foundation of web security, and here's wh
 
 **Compliance**: GDPR, PCI DSS, and other regulations often require encrypted data transmission.
 
-## A Brief History of TLS: From Netscape to Let's Encrypt
+## The Evolution of HTTPS: From Expensive to Universal
 
-Understanding where HTTPS came from helps appreciate why automation matters:
-
-### The Early Days (1994-2000)
-
-**SSL 1.0** (1994): Netscape's first attempt. Never released due to security flaws.
-
-**SSL 2.0** (1995): First public version. Quickly found to have major vulnerabilities.
-
-**SSL 3.0** (1996): More secure, but still had issues. Became the foundation for TLS.
-
-### The TLS Era (1999-Present)
-
-**TLS 1.0** (1999): The Internet Engineering Task Force (IETF) took over from Netscape, creating Transport Layer Security.
-
-**TLS 1.1** (2006): Fixed vulnerabilities in TLS 1.0.
-
-**TLS 1.2** (2008): Major security improvements. Still widely used today.
-
-**TLS 1.3** (2018): Faster, more secure. Removes legacy cryptography.
-
-### The Certificate Authority Problem
-
-For decades, getting HTTPS certificates was:
-- **Expensive**: $100-500+ per year per domain
-- **Complex**: Manual processes, CSR generation, validation emails
-- **Fragile**: Manual renewal every 1-2 years, easy to forget
-- **Exclusive**: Only big companies could afford certificates for all their domains
-
-This created a two-tier internet: secure sites for those who could afford it, insecure sites for everyone else.
-
-### The Let's Encrypt Revolution (2016)
-
-Let's Encrypt changed everything:
-- **Free**: No cost for certificates
-- **Automated**: API-driven certificate issuance and renewal
-- **Open**: Transparent, auditable processes
-- **Universal**: Anyone can get certificates
-
-**The Impact**: HTTPS adoption went from ~40% to ~95% of web traffic in just a few years.
+HTTPS evolved from expensive, manual certificates that only large companies could afford to free, automated certificates available to everyone thanks to Let's Encrypt in 2016. Today, encrypting your services isn't just best practice—it's essential for security, SEO, and user trust.
 
 ## Automatic HTTPS with cert-manager: Set It and Forget It
 
