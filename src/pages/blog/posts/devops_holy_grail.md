@@ -30,14 +30,26 @@ Learn the fundamentals:
 - Containerization and CI/CD setup
 - Kubernetes basics that actually work
 - GitOps with FluxCD
-- Automatic HTTPS and DNS
 - Basic auto-scaling
 
-Perfect for getting your first production deployment running in under an hour.
+Perfect for getting your first deployment running quickly.
 
-## Part 2: Enterprise-Grade Features
+## Part 2: HTTPS and DNS Automation
 
-**[Read Part 2: The DevOps Holy Grail - Enterprise-Grade Features](/blog/devops_holy_grail_part2)**
+**[Read Part 2: The DevOps Holy Grail - HTTPS and DNS Automation](/blog/devops_holy_grail_part2)**
+
+Add security and reliability:
+
+- Why HTTPS matters and the history of TLS
+- Automatic HTTPS certificates with cert-manager
+- DNS automation with external-dns
+- Security best practices and monitoring
+
+Everything you need to make your system production-ready and secure.
+
+## Part 3: Enterprise-Grade Features
+
+**[Read Part 3: The DevOps Holy Grail - Enterprise-Grade Features](/blog/devops_holy_grail_part3)**
 
 Add advanced capabilities:
 
@@ -53,13 +65,19 @@ Everything you need to scale from startup to enterprise.
 
 ## Why Split This Guide?
 
-We've learned that most teams need to implement these patterns incrementally. Part 1 gets you to production quickly with a solid foundation. Part 2 adds the enterprise features you'll need as you grow.
+We've learned that most teams need to implement these patterns incrementally:
 
-Both parts work together to create infrastructure that starts simple but scales infinitely—the true DevOps holy grail.
+- **Part 1** gets you to basic production quickly with containerization, CI/CD, and GitOps
+- **Part 2** adds the security and reliability features that make your system production-ready
+- **Part 3** adds the enterprise features you'll need as you scale
+
+All three parts work together to create infrastructure that starts simple but scales infinitely—the true DevOps holy grail.
 
 **Start with Part 1** if you're building something new or want to modernize your deployment pipeline.
 
-**Jump to Part 2** if you already have basic CI/CD and want to add enterprise-grade features.
+**Move to Part 2** when you need proper HTTPS and DNS automation.
+
+**Add Part 3** when you need enterprise-grade features like monitoring and advanced deployments.
 
 ---
 

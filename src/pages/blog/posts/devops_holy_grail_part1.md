@@ -195,89 +195,6 @@ Now every commit to your `main` branch automatically deploys to production. Roll
 
 ## Production-Grade Features That Configure Themselves
 
-### Automatic HTTPS with cert-manager
-
-<LLMPrompt title="🤖 Automatic HTTPS with cert-manager">
-Set up automatic HTTPS certificates with cert-manager on Kubernetes. I need:
-- Complete HelmRelease manifest to install cert-manager via Flux
-- ClusterIssuer configuration for Let's Encrypt production certificates
-- Updated Ingress manifest with TLS annotations for automatic certificate generation
-- Explanation of how cert-manager automatically renews certificates
-- Troubleshooting commands to check certificate status
-- Support for multiple domains and wildcard certificates
-
-My email is admin@example.com and I want certificates for myapp.example.com
-</LLMPrompt>
-
-Add this to `k8s/cert-manager.yaml`:
-
-```yaml
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
-kind: HelmRelease
-metadata:
-  name: cert-manager
-  namespace: cert-manager
-spec:
-  interval: 30m
-  chart:
-    spec:
-      chart: cert-manager
-      version: '1.13.x'
-      sourceRef:
-        kind: HelmRepository
-        name: jetstack
-```
-
-Create a certificate issuer in `k8s/cluster-issuer.yaml`:
-
-```yaml
-apiVersion: cert-manager.io/v1
-kind: ClusterIssuer
-metadata:
-  name: letsencrypt-prod
-spec:
-  acme:
-    email: your-email@example.com
-    server: https://acme-v02.api.letsencrypt.org/directory
-    privateKeySecretRef:
-      name: letsencrypt-prod
-    solvers:
-      - http01:
-          ingress:
-            class: nginx
-```
-
-Add one annotation to your ingress and you get automatic, renewing HTTPS certificates. Forever.
-
-### Automatic DNS with external-dns
-
-<LLMPrompt title="🤖 Automatic DNS with external-dns">
-Configure external-dns for automatic DNS management on Kubernetes. I need:
-- HelmRelease manifest for external-dns installation via Flux
-- Configuration for Cloudflare DNS provider (include other popular providers as options)
-- Required API token setup and secret creation
-- Ingress annotations for automatic DNS record creation
-- Examples for different DNS providers (Route53, Google DNS, etc.)
-- Troubleshooting steps to verify DNS automation is working
-
-I'm using Cloudflare as my DNS provider and want DNS records created automatically when I add ingress rules.
-</LLMPrompt>
-
-```yaml
-# k8s/external-dns.yaml
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
-kind: HelmRelease
-metadata:
-  name: external-dns
-spec:
-  values:
-    provider: cloudflare # or route53, google, etc.
-    cloudflare:
-      apiToken: ${CLOUDFLARE_API_TOKEN}
-```
-
-Now your ingress rules automatically create DNS records. Add a new domain to your ingress, commit to Git, and the DNS updates itself.
-
 ### Automatic Scaling with HPA
 
 <LLMPrompt title="🤖 Horizontal Pod Autoscaler Setup">
@@ -334,8 +251,7 @@ Minutes later, you have enterprise-grade infrastructure running in production.
 Let's take a step back. With these simple patterns, you now have:
 
 - **Automated CI/CD** that builds and deploys on every commit
-- **Automatic HTTPS** certificates that renew themselves
-- **DNS management** that updates when you change domains
+- **GitOps deployments** that sync automatically with Git
 - **Auto-scaling** that handles traffic spikes without intervention
 - **Zero-downtime deployments** through Kubernetes rolling updates
 - **Easy rollbacks** with `git revert`
@@ -344,7 +260,15 @@ All managed through code, all versioned in Git, all completely portable between 
 
 ## What's Next?
 
-In **Part 2**, we'll add enterprise-grade features:
+This foundation gives you everything you need to run basic production workloads. But there's so much more we can automate...
+
+In **[Part 2](/blog/devops_holy_grail_part2)**, we'll add security and reliability:
+
+- **Automatic HTTPS** with cert-manager and Let's Encrypt
+- **DNS automation** with external-dns
+- **Security best practices** and monitoring
+
+In **[Part 3](/blog/devops_holy_grail_part3)**, we'll add enterprise-grade features:
 
 - **Self-hosted Supabase** for database, auth, and storage
 - **Bulletproof secrets management** (with our [dedicated guide](/blog/kubernetes_secrets_management))
@@ -352,11 +276,9 @@ In **Part 2**, we'll add enterprise-grade features:
 - **Migration strategies** for existing applications
 - **Advanced patterns** for multi-environment deployments
 
-This foundation gives you everything you need to run production workloads. But there's so much more we can automate...
-
 ---
 
-_Ready for Part 2? We'll show you how to add a complete backend, bulletproof secrets, and monitoring that prevents incidents before they happen._
+_Ready for Part 2? We'll show you how to add automatic HTTPS and DNS management that makes your system production-ready._
 
 <LLMPrompt title="🚀 Complete Basic GitOps Stack" defaultExpanded={true}>
 I want to implement the basic GitOps stack from Part 1. Help me create:

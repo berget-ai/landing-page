@@ -1,441 +1,596 @@
 ---
-title: The DevOps Holy Grail: Enterprise-Grade Features
-description: Add bulletproof backends, secrets management, and monitoring to your GitOps infrastructure - Part 2
+title: The DevOps Holy Grail: HTTPS and DNS Automation
+description: Why HTTPS matters, the history of TLS, and how to automate certificates and DNS with cert-manager and external-dns - Part 2
 date: 2025-07-24
 author: Christian Landgren
 tags:
   - DevOps
-  - Kubernetes
-  - GitOps
-  - Monitoring
+  - HTTPS
+  - TLS
+  - DNS
   - Security
+  - Automation
 image: /src/assets/images/holy-grail.jpg
-imageAlt: The DevOps Holy Grail - Enterprise-Grade Features
+imageAlt: The DevOps Holy Grail - HTTPS and DNS Automation
 email: christian@landgren.nu
 language: en
 ---
 
-_Building on the foundation from Part 1, let's add enterprise-grade features that scale with your business - Part 2_
+_Building on Part 1's foundation, let's add automatic HTTPS and DNS management - the security and reliability features that separate hobby projects from production systems - Part 2_
 
 ---
 
-In [Part 1](/blog/devops_holy_grail_part1), we built a solid foundation: automated CI/CD, GitOps deployments, automatic HTTPS, and basic scaling. Now it's time to add the enterprise-grade features that separate weekend projects from production platforms.
+In [Part 1](/blog/devops_holy_grail_part1), we built the foundation: containerization, CI/CD, Kubernetes basics, and GitOps with FluxCD. Now it's time to add the security and reliability features that make your system production-ready.
 
-This isn't about over-engineering. It's about adding the pieces that become critical as you grow—before you desperately need them.
+This isn't just about checking security boxes. It's about building systems that users trust and that scale without breaking.
 
-## Add a Real Backend: Self-Hosted Supabase
+## Why HTTPS Matters: More Than Just a Green Lock
 
-Most apps need a database, authentication, and file storage. Instead of cobbling together cloud services, deploy Supabase directly in your cluster:
+HTTPS isn't optional anymore. It's the foundation of web security, and here's why it matters more than ever:
 
-<LLMPrompt title="🤖 Self-Hosted Supabase Deployment">
-Help me deploy Supabase (open-source Firebase alternative) on Kubernetes using Helm. I need:
-- Complete HelmRelease manifest for Supabase deployment via Flux
-- PostgreSQL configuration with persistent storage
-- Authentication service setup with proper secrets management
-- File storage configuration with S3-compatible backend
-- Real-time service configuration
-- Ingress configuration to expose Supabase APIs
+### The Security Imperative
 
-My app domain is myapp.example.com and I want Supabase APIs at api.myapp.example.com
+**Data Protection**: Every request without HTTPS is visible to anyone between your user and your server. Passwords, API keys, personal data—all transmitted in plain text over HTTP.
+
+**Authentication**: HTTPS proves your server is actually your server, not an imposter. Without it, users have no way to know they're talking to the real you.
+
+**Integrity**: HTTPS ensures data isn't modified in transit. Without it, attackers can inject malicious code into your pages.
+
+### The Business Impact
+
+**SEO Rankings**: Google penalizes HTTP sites in search results. HTTPS is a ranking factor.
+
+**Browser Warnings**: Modern browsers show scary warnings for HTTP sites, especially those with forms. Users abandon sites with security warnings.
+
+**API Requirements**: Most modern APIs require HTTPS. Payment processors, social logins, and third-party services won't work over HTTP.
+
+**Compliance**: GDPR, PCI DSS, and other regulations often require encrypted data transmission.
+
+## A Brief History of TLS: From Netscape to Let's Encrypt
+
+Understanding where HTTPS came from helps appreciate why automation matters:
+
+### The Early Days (1994-2000)
+
+**SSL 1.0** (1994): Netscape's first attempt. Never released due to security flaws.
+
+**SSL 2.0** (1995): First public version. Quickly found to have major vulnerabilities.
+
+**SSL 3.0** (1996): More secure, but still had issues. Became the foundation for TLS.
+
+### The TLS Era (1999-Present)
+
+**TLS 1.0** (1999): The Internet Engineering Task Force (IETF) took over from Netscape, creating Transport Layer Security.
+
+**TLS 1.1** (2006): Fixed vulnerabilities in TLS 1.0.
+
+**TLS 1.2** (2008): Major security improvements. Still widely used today.
+
+**TLS 1.3** (2018): Faster, more secure. Removes legacy cryptography.
+
+### The Certificate Authority Problem
+
+For decades, getting HTTPS certificates was:
+- **Expensive**: $100-500+ per year per domain
+- **Complex**: Manual processes, CSR generation, validation emails
+- **Fragile**: Manual renewal every 1-2 years, easy to forget
+- **Exclusive**: Only big companies could afford certificates for all their domains
+
+This created a two-tier internet: secure sites for those who could afford it, insecure sites for everyone else.
+
+### The Let's Encrypt Revolution (2016)
+
+Let's Encrypt changed everything:
+- **Free**: No cost for certificates
+- **Automated**: API-driven certificate issuance and renewal
+- **Open**: Transparent, auditable processes
+- **Universal**: Anyone can get certificates
+
+**The Impact**: HTTPS adoption went from ~40% to ~95% of web traffic in just a few years.
+
+## Automatic HTTPS with cert-manager: Set It and Forget It
+
+cert-manager brings Let's Encrypt automation to Kubernetes. Install it once, and never think about certificates again.
+
+<LLMPrompt title="🤖 cert-manager Setup with Let's Encrypt">
+Set up cert-manager in my Kubernetes cluster for automatic HTTPS certificates. I need:
+- Complete cert-manager installation via Helm/Flux
+- ClusterIssuer configuration for Let's Encrypt production certificates
+- Updated Ingress manifests with TLS annotations for automatic certificate generation
+- Explanation of how cert-manager automatically renews certificates
+- Troubleshooting commands to check certificate status
+- Support for multiple domains and wildcard certificates
+- Integration with existing GitOps workflow
+
+My email is admin@example.com and I want certificates for myapp.example.com and *.myapp.example.com
 </LLMPrompt>
 
+### Installing cert-manager
+
 ```yaml
-# k8s/supabase.yaml
+# k8s/cert-manager-namespace.yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: cert-manager
+---
+# k8s/cert-manager-helm-repo.yaml
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: jetstack
+  namespace: cert-manager
+spec:
+  interval: 1h
+  url: https://charts.jetstack.io
+---
+# k8s/cert-manager.yaml
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: supabase
-  namespace: supabase
+  name: cert-manager
+  namespace: cert-manager
 spec:
+  interval: 30m
   chart:
     spec:
-      chart: supabase
+      chart: cert-manager
+      version: '1.13.x'
       sourceRef:
         kind: HelmRepository
-        name: supabase-community
+        name: jetstack
+        namespace: cert-manager
   values:
-    auth:
-      siteUrl: https://myapp.example.com
-    postgresql:
-      enabled: true
-      auth:
-        postgresPassword: ${POSTGRES_PASSWORD}
-    storage:
-      enabled: true
+    installCRDs: true
+    global:
+      leaderElection:
+        namespace: cert-manager
 ```
 
-You now have Postgres, authentication, real-time subscriptions, and file storage—all running in your own infrastructure, managed through Git.
-
-## Bulletproof Secrets Management
-
-Secrets management is critical but complex enough to deserve its own deep dive. We've created a comprehensive guide that covers everything from basic sealed-secrets to enterprise Vault integration.
-
-**[Read our complete Secrets Management Guide](/blog/kubernetes_secrets_management)**
-
-This guide covers:
-- Sealed Secrets for Git-safe encryption
-- External Secrets Operator for cloud integration
-- HashiCorp Vault for enterprise environments
-- Development workflows that developers actually use
-- Security best practices and compliance
-
-The secrets management patterns integrate seamlessly with the GitOps infrastructure we're building here.
-
-## Monitoring That Prevents Incidents
-
-Most monitoring tells you what broke after it's too late. Let's build monitoring that prevents incidents:
-
-<LLMPrompt title="🤖 Comprehensive Monitoring Setup">
-Help me create a comprehensive monitoring and observability setup for my GitOps Kubernetes application. I need:
-- Prometheus and Grafana installation via Helm/Flux
-- Pre-built dashboards for Kubernetes, application metrics, and business KPIs
-- Alerting rules for common failure scenarios (pod crashes, high CPU, disk space)
-- Log aggregation with Loki or ELK stack
-- Distributed tracing setup (Jaeger/Zipkin)
-- SLO/SLI monitoring for production services
-- Cost monitoring and optimization recommendations
-- Health check endpoints and uptime monitoring
-
-Focus on actionable alerts that help prevent incidents rather than just reporting them.
-</LLMPrompt>
-
-### Prometheus and Grafana Stack
+### Creating a Certificate Issuer
 
 ```yaml
-# k8s/monitoring.yaml
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
-kind: HelmRelease
+# k8s/cluster-issuer.yaml
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
 metadata:
-  name: kube-prometheus-stack
-  namespace: monitoring
+  name: letsencrypt-prod
 spec:
-  chart:
-    spec:
-      chart: kube-prometheus-stack
-      sourceRef:
-        kind: HelmRepository
-        name: prometheus-community
-  values:
-    grafana:
-      adminPassword: ${GRAFANA_ADMIN_PASSWORD}
-      ingress:
-        enabled: true
-        hosts:
-          - grafana.myapp.example.com
-    prometheus:
-      prometheusSpec:
-        retention: 30d
-        storageSpec:
-          volumeClaimTemplate:
-            spec:
-              resources:
-                requests:
-                  storage: 50Gi
+  acme:
+    # Let's Encrypt production server
+    server: https://acme-v02.api.letsencrypt.org/directory
+    email: admin@example.com
+    privateKeySecretRef:
+      name: letsencrypt-prod
+    solvers:
+      # HTTP-01 challenge for regular domains
+      - http01:
+          ingress:
+            class: nginx
+      # DNS-01 challenge for wildcard certificates
+      - dns01:
+          cloudflare:
+            email: admin@example.com
+            apiTokenSecretRef:
+              name: cloudflare-api-token
+              key: api-token
+        selector:
+          dnsNames:
+            - "*.example.com"
 ```
 
-### Application-Level Metrics
-
-Add health checks and metrics to your application:
-
-```typescript
-// src/metrics.ts
-import express from 'express'
-import promClient from 'prom-client'
-
-const app = express()
-
-// Create metrics
-const httpRequestDuration = new promClient.Histogram({
-  name: 'http_request_duration_seconds',
-  help: 'Duration of HTTP requests in seconds',
-  labelNames: ['method', 'route', 'status_code']
-})
-
-const httpRequestsTotal = new promClient.Counter({
-  name: 'http_requests_total',
-  help: 'Total number of HTTP requests',
-  labelNames: ['method', 'route', 'status_code']
-})
-
-// Health check endpoint
-app.get('/health', (req, res) => {
-  res.status(200).json({ status: 'healthy', timestamp: new Date().toISOString() })
-})
-
-// Metrics endpoint
-app.get('/metrics', (req, res) => {
-  res.set('Content-Type', promClient.register.contentType)
-  res.end(promClient.register.metrics())
-})
-```
-
-### Alerting Rules
+### Using Certificates in Ingress
 
 ```yaml
-# k8s/alerts.yaml
+# k8s/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-app
+  annotations:
+    # Tell cert-manager to create a certificate
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    # Force HTTPS redirects
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+spec:
+  tls:
+    - hosts:
+        - myapp.example.com
+        - api.myapp.example.com
+      secretName: myapp-tls  # cert-manager creates this automatically
+  rules:
+    - host: myapp.example.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: my-app
+                port:
+                  number: 80
+```
+
+### How Automatic Renewal Works
+
+cert-manager handles the entire certificate lifecycle:
+
+1. **Issuance**: When you create an Ingress with cert-manager annotations, it automatically requests certificates from Let's Encrypt
+2. **Validation**: cert-manager proves you control the domain using HTTP-01 or DNS-01 challenges
+3. **Storage**: Certificates are stored as Kubernetes Secrets
+4. **Renewal**: cert-manager automatically renews certificates 30 days before expiration
+5. **Updates**: New certificates are automatically deployed to your Ingress controllers
+
+**You never touch certificates manually again.**
+
+### Monitoring Certificate Health
+
+```yaml
+# k8s/certificate-monitoring.yaml
 apiVersion: monitoring.coreos.com/v1
 kind: PrometheusRule
 metadata:
-  name: app-alerts
+  name: certificate-alerts
 spec:
   groups:
-    - name: app.rules
+    - name: certificates
       rules:
-        - alert: HighErrorRate
-          expr: rate(http_requests_total{status_code=~"5.."}[5m]) > 0.1
-          for: 2m
+        - alert: CertificateExpiringSoon
+          expr: certmanager_certificate_expiration_timestamp_seconds - time() < 7 * 24 * 3600
+          for: 1h
           annotations:
-            summary: "High error rate detected"
-            description: "Error rate is {{ $value }} errors per second"
+            summary: "Certificate expiring soon"
+            description: "Certificate {{ $labels.name }} expires in less than 7 days"
         
-        - alert: PodCrashLooping
-          expr: rate(kube_pod_container_status_restarts_total[15m]) > 0
-          for: 5m
+        - alert: CertificateNotReady
+          expr: certmanager_certificate_ready_status == 0
+          for: 10m
           annotations:
-            summary: "Pod is crash looping"
-            description: "Pod {{ $labels.pod }} is restarting frequently"
+            summary: "Certificate not ready"
+            description: "Certificate {{ $labels.name }} is not ready"
 ```
 
-## Multi-Environment Deployments
+## DNS Automation: Why Manual DNS is a Liability
 
-As you grow, you'll need staging, testing, and production environments. Here's how to structure them:
+Managing DNS records manually doesn't scale. Here's why automation matters:
 
-```
-k8s/
-├── base/                    # Common resources
-│   ├── deployment.yaml
-│   ├── service.yaml
-│   └── kustomization.yaml
-├── overlays/
-│   ├── staging/
-│   │   ├── kustomization.yaml
-│   │   └── ingress.yaml
-│   └── production/
-│       ├── kustomization.yaml
-│       ├── ingress.yaml
-│       └── hpa.yaml
-```
+### The Manual DNS Problem
 
-### Base Configuration
+**Human Error**: Typos in DNS records cause outages. A missing dot, wrong IP, or incorrect TTL can break everything.
 
-```yaml
-# k8s/base/kustomization.yaml
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
+**Slow Changes**: Manual DNS updates take time. In incident response, every minute matters.
 
-resources:
-  - deployment.yaml
-  - service.yaml
+**Inconsistency**: Different team members make changes differently. No standard process leads to configuration drift.
 
-commonLabels:
-  app: my-service
-```
+**No Audit Trail**: Who changed what DNS record when? Manual changes are hard to track.
 
-### Environment-Specific Overlays
+**Scaling Issues**: Adding new services means updating DNS records. This doesn't scale with microservices.
 
-```yaml
-# k8s/overlays/production/kustomization.yaml
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
+### The Business Case for DNS Automation
 
-namespace: production
+**Faster Deployments**: New services get DNS records automatically. No waiting for ops team.
 
-resources:
-  - ../../base
-  - hpa.yaml
+**Reduced Outages**: Automated DNS reduces human error, the leading cause of outages.
 
-patchesStrategicMerge:
-  - ingress.yaml
+**Better Security**: Automated DNS can implement security policies consistently.
 
-replicas:
-  - name: my-service
-    count: 3
-```
+**Cost Savings**: Less manual work means lower operational costs.
 
-## Cost Optimization and Resource Management
+## Automatic DNS with external-dns
 
-### Resource Quotas
+external-dns watches your Kubernetes Ingress and Service resources and automatically creates DNS records.
 
-```yaml
-# k8s/resource-quota.yaml
-apiVersion: v1
-kind: ResourceQuota
-metadata:
-  name: compute-quota
-spec:
-  hard:
-    requests.cpu: "4"
-    requests.memory: 8Gi
-    limits.cpu: "8"
-    limits.memory: 16Gi
-    pods: "10"
-```
+<LLMPrompt title="🤖 external-dns Setup for Automatic DNS Management">
+Set up external-dns for automatic DNS management in my Kubernetes cluster. I need:
+- Complete external-dns installation via Helm/Flux
+- Configuration for Cloudflare DNS provider (include other popular providers as options)
+- Required API token setup and secret creation
+- Ingress annotations for automatic DNS record creation
+- Examples for different DNS providers (Route53, Google DNS, etc.)
+- Troubleshooting steps to verify DNS automation is working
+- Integration with existing GitOps workflow
 
-### Vertical Pod Autoscaler
-
-```yaml
-# k8s/vpa.yaml
-apiVersion: autoscaling.k8s.io/v1
-kind: VerticalPodAutoscaler
-metadata:
-  name: my-service-vpa
-spec:
-  targetRef:
-    apiVersion: apps/v1
-    kind: Deployment
-    name: my-service
-  updatePolicy:
-    updateMode: "Auto"
-```
-
-## Migration Strategies
-
-Moving from your current setup to this GitOps paradise? Here's how:
-
-<LLMPrompt title="🤖 Migration Strategy Planning">
-Create a step-by-step migration plan to move my existing application to this GitOps setup. I need:
-- Assessment checklist for current infrastructure and dependencies
-- Phased migration strategy (containerization → CI/CD → Kubernetes → GitOps)
-- Risk mitigation strategies and rollback plans for each phase
-- Team training recommendations and skill development paths
-- Cost analysis and ROI calculations for the migration
-- Timeline estimates for different complexity levels
-- Post-migration optimization and scaling strategies
-
-My current setup: [describe your current infrastructure - VMs, manual deployments, etc.]
+I'm using Cloudflare as my DNS provider and want DNS records created automatically when I add ingress rules.
 </LLMPrompt>
 
-### Phase 1: Containerization (Week 1-2)
-
-1. **Audit current dependencies**
-2. **Create Dockerfile**
-3. **Test locally with Docker Compose**
-4. **Set up container registry**
-
-### Phase 2: CI/CD Pipeline (Week 3)
-
-1. **Implement GitHub Actions**
-2. **Automated testing**
-3. **Container builds and pushes**
-4. **Staging deployments**
-
-### Phase 3: Kubernetes Migration (Week 4-5)
-
-1. **Create basic manifests**
-2. **Deploy to staging cluster**
-3. **Load testing and validation**
-4. **Production cutover**
-
-### Phase 4: GitOps Implementation (Week 6)
-
-1. **Install FluxCD**
-2. **Move to declarative deployments**
-3. **Implement monitoring**
-4. **Team training**
-
-## Advanced Patterns
-
-### Blue-Green Deployments
+### Installing external-dns
 
 ```yaml
-# k8s/blue-green.yaml
-apiVersion: argoproj.io/v1alpha1
-kind: Rollout
+# k8s/external-dns-namespace.yaml
+apiVersion: v1
+kind: Namespace
 metadata:
-  name: my-service
+  name: external-dns
+---
+# k8s/external-dns-helm-repo.yaml
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: external-dns
+  namespace: external-dns
 spec:
-  replicas: 3
-  strategy:
-    blueGreen:
-      activeService: my-service-active
-      previewService: my-service-preview
-      autoPromotionEnabled: false
-      scaleDownDelaySeconds: 30
+  interval: 1h
+  url: https://kubernetes-sigs.github.io/external-dns/
+---
+# k8s/external-dns.yaml
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: external-dns
+  namespace: external-dns
+spec:
+  interval: 30m
+  chart:
+    spec:
+      chart: external-dns
+      version: '1.14.x'
+      sourceRef:
+        kind: HelmRepository
+        name: external-dns
+        namespace: external-dns
+  values:
+    provider: cloudflare
+    env:
+      - name: CF_API_TOKEN
+        valueFrom:
+          secretKeyRef:
+            name: cloudflare-api-token
+            key: api-token
+    txtOwnerId: "my-cluster"
+    policy: sync  # or 'upsert-only' for safer operation
+    sources:
+      - ingress
+      - service
+    domainFilters:
+      - example.com  # Only manage records for this domain
+```
+
+### Creating DNS Provider Secrets
+
+```yaml
+# k8s/cloudflare-secret.yaml (encrypted with sealed-secrets)
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  name: cloudflare-api-token
+  namespace: external-dns
+spec:
+  encryptedData:
+    api-token: AgBy3i4OJSWK+PiTySYZZA9rO43cGDEQAx...
+  template:
+    metadata:
+      name: cloudflare-api-token
+      namespace: external-dns
+```
+
+### Using DNS Automation in Ingress
+
+```yaml
+# k8s/ingress-with-dns.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-app
+  annotations:
+    # cert-manager creates certificates
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    # external-dns creates DNS records
+    external-dns.alpha.kubernetes.io/hostname: myapp.example.com,api.myapp.example.com
+    external-dns.alpha.kubernetes.io/ttl: "300"
+spec:
+  tls:
+    - hosts:
+        - myapp.example.com
+        - api.myapp.example.com
+      secretName: myapp-tls
+  rules:
+    - host: myapp.example.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: my-app
+                port:
+                  number: 80
+    - host: api.myapp.example.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: my-api
+                port:
+                  number: 80
+```
+
+### Multi-Provider DNS Setup
+
+external-dns supports multiple DNS providers:
+
+```yaml
+# For AWS Route53
+values:
+  provider: aws
+  aws:
+    region: us-west-2
+    zoneType: public
+  serviceAccount:
+    annotations:
+      eks.amazonaws.com/role-arn: arn:aws:iam::ACCOUNT:role/external-dns
+
+# For Google Cloud DNS
+values:
+  provider: google
+  google:
+    project: my-project
+    serviceAccountSecret: google-service-account
+
+# For Azure DNS
+values:
+  provider: azure
+  azure:
+    resourceGroup: my-resource-group
+    tenantId: my-tenant-id
+    subscriptionId: my-subscription-id
+```
+
+## The Complete Automation Stack
+
+When you combine cert-manager and external-dns, deploying a new service becomes trivial:
+
+```yaml
+# k8s/new-service.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: new-service
+spec:
+  replicas: 2
   selector:
     matchLabels:
-      app: my-service
+      app: new-service
   template:
     metadata:
       labels:
-        app: my-service
+        app: new-service
     spec:
       containers:
         - name: app
-          image: ghcr.io/my-org/my-service:latest
-```
-
-### Canary Deployments
-
-```yaml
-# k8s/canary.yaml
-apiVersion: argoproj.io/v1alpha1
-kind: Rollout
+          image: my-org/new-service:latest
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
 metadata:
-  name: my-service
+  name: new-service
 spec:
-  replicas: 10
-  strategy:
-    canary:
-      steps:
-        - setWeight: 10
-        - pause: {duration: 1m}
-        - setWeight: 50
-        - pause: {duration: 2m}
-        - setWeight: 100
   selector:
-    matchLabels:
-      app: my-service
+    app: new-service
+  ports:
+    - port: 80
+      targetPort: 8080
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: new-service
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    external-dns.alpha.kubernetes.io/hostname: new.example.com
+spec:
+  tls:
+    - hosts:
+        - new.example.com
+      secretName: new-service-tls
+  rules:
+    - host: new.example.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: new-service
+                port:
+                  number: 80
 ```
 
-## The Complete Picture
+**Commit this to Git, and within minutes you have:**
+- A running service
+- Automatic DNS record creation
+- Automatic HTTPS certificate
+- Automatic certificate renewal
 
-With both parts of this guide, you now have:
+## Security Best Practices
 
-- **Automated CI/CD** that builds and deploys on every commit
-- **Automatic HTTPS** certificates that renew themselves
-- **DNS management** that updates when you change domains
-- **Auto-scaling** that handles traffic spikes without intervention
-- **Self-hosted backend** with database, auth, and storage
-- **Bulletproof secrets management** (see our [dedicated guide](/blog/kubernetes_secrets_management))
+### Certificate Security
+
+**Use Production Let's Encrypt**: The staging server has rate limits but issues untrusted certificates. Only use it for testing.
+
+**Monitor Certificate Health**: Set up alerts for certificate expiration and renewal failures.
+
+**Secure Private Keys**: cert-manager stores private keys in Kubernetes Secrets. Ensure your cluster has proper RBAC.
+
+### DNS Security
+
+**Limit Domain Scope**: Use `domainFilters` to prevent external-dns from managing unintended domains.
+
+**Use Least Privilege**: DNS provider API tokens should have minimal required permissions.
+
+**Monitor DNS Changes**: Set up alerts for unexpected DNS record changes.
+
+**Backup DNS Configuration**: Keep backups of your DNS zone files.
+
+## Troubleshooting Common Issues
+
+### Certificate Problems
+
+```bash
+# Check certificate status
+kubectl get certificates -A
+
+# Check certificate details
+kubectl describe certificate myapp-tls
+
+# Check cert-manager logs
+kubectl logs -n cert-manager deployment/cert-manager
+
+# Check certificate challenges
+kubectl get challenges -A
+```
+
+### DNS Problems
+
+```bash
+# Check external-dns logs
+kubectl logs -n external-dns deployment/external-dns
+
+# Verify DNS records were created
+dig myapp.example.com
+
+# Check external-dns events
+kubectl get events -n external-dns
+```
+
+## What's Next?
+
+With automatic HTTPS and DNS in place, you now have:
+
+- **Secure communications** with automatic HTTPS certificates
+- **Reliable DNS** that updates automatically with your services
+- **Zero-maintenance security** through automated certificate renewal
+- **Professional appearance** with proper SSL certificates and custom domains
+
+In **[Part 3](/blog/devops_holy_grail_part3)**, we'll add enterprise-grade features:
+
+- **Self-hosted backends** with Supabase
+- **Bulletproof secrets management** 
 - **Comprehensive monitoring** that prevents incidents
-- **Multi-environment** deployments with proper isolation
-- **Cost optimization** through resource management
-- **Advanced deployment** strategies for zero-risk releases
-
-All managed through code, all versioned in Git, all completely portable between clouds.
-
-## The Path Forward
-
-This isn't just about tools—it's about a mindset shift. Infrastructure as code isn't a nice-to-have anymore; it's the foundation that lets small teams move fast without breaking things.
-
-Start small. Add one piece at a time. Let your system grow with your needs, not against them.
-
-The holy grail isn't about finding the perfect tool. It's about building systems that adapt, scale, and heal themselves—so you can focus on building products that matter.
+- **Multi-environment deployments**
+- **Advanced deployment strategies**
 
 ---
 
-<LLMPrompt title="🚀 Complete Enterprise GitOps Stack" defaultExpanded={true}>
-I want to implement the complete GitOps stack from both Part 1 and Part 2. Help me create:
+<LLMPrompt title="🚀 Complete HTTPS and DNS Automation Setup" defaultExpanded={true}>
+I want to implement automatic HTTPS and DNS management for my Kubernetes cluster. Help me set up:
 
-1. Complete project structure with all necessary files
-2. GitHub Actions workflow for CI/CD with Docker builds
-3. Kubernetes manifests (deployment, service, ingress, HPA, VPA)
-4. FluxCD setup with GitOps automation
-5. cert-manager for automatic HTTPS
-6. external-dns for automatic DNS management
-7. sealed-secrets for secure secrets management
-8. Supabase deployment for backend services
-9. Comprehensive monitoring with Prometheus/Grafana
-10. Multi-environment setup (staging/production)
-11. Advanced deployment strategies (blue-green/canary)
-12. Cost optimization and resource management
-13. Complete documentation and runbooks
+1. cert-manager installation via Flux with Let's Encrypt integration
+2. ClusterIssuer configuration for both HTTP-01 and DNS-01 challenges
+3. external-dns installation and configuration for my DNS provider
+4. Proper secrets management for DNS provider API tokens
+5. Ingress manifests with automatic certificate and DNS record creation
+6. Monitoring and alerting for certificate and DNS health
+7. Troubleshooting procedures for common issues
+8. Integration with existing GitOps workflow
 
-Technology stack: [Node.js/Python/Go/etc.], [Cloudflare/Route53] for DNS
-Domain: [your-domain.com]
-Cloud provider: [AWS/GCP/DigitalOcean/etc.]
+My setup: [DNS provider - Cloudflare/Route53/etc.], [Domain name]
+Services to expose: [List your services and desired hostnames]
 
-Provide everything needed for enterprise-grade production deployment.
+Provide everything needed for production-ready HTTPS and DNS automation.
 </LLMPrompt>
 
-_Ready to implement the complete stack? You now have everything needed to build infrastructure that scales from prototype to enterprise without breaking._
+_Ready for Part 3? We'll add the enterprise features that scale your infrastructure from startup to enterprise without breaking._
