@@ -73,6 +73,7 @@ Secrets management is critical but complex enough to deserve its own deep dive. 
 **[Read our complete Secrets Management Guide](/blog/kubernetes_secrets_management)**
 
 This guide covers:
+
 - Sealed Secrets for Git-safe encryption
 - HashiCorp Vault for enterprise environments
 - Development workflows that developers actually use
@@ -147,18 +148,20 @@ const app = express()
 const httpRequestDuration = new promClient.Histogram({
   name: 'http_request_duration_seconds',
   help: 'Duration of HTTP requests in seconds',
-  labelNames: ['method', 'route', 'status_code']
+  labelNames: ['method', 'route', 'status_code'],
 })
 
 const httpRequestsTotal = new promClient.Counter({
   name: 'http_requests_total',
   help: 'Total number of HTTP requests',
-  labelNames: ['method', 'route', 'status_code']
+  labelNames: ['method', 'route', 'status_code'],
 })
 
 // Health check endpoint
 app.get('/health', (req, res) => {
-  res.status(200).json({ status: 'healthy', timestamp: new Date().toISOString() })
+  res
+    .status(200)
+    .json({ status: 'healthy', timestamp: new Date().toISOString() })
 })
 
 // Metrics endpoint
@@ -184,15 +187,15 @@ spec:
           expr: rate(http_requests_total{status_code=~"5.."}[5m]) > 0.1
           for: 2m
           annotations:
-            summary: "High error rate detected"
-            description: "Error rate is {{ $value }} errors per second"
-        
+            summary: 'High error rate detected'
+            description: 'Error rate is {{ $value }} errors per second'
+
         - alert: PodCrashLooping
           expr: rate(kube_pod_container_status_restarts_total[15m]) > 0
           for: 5m
           annotations:
-            summary: "Pod is crash looping"
-            description: "Pod {{ $labels.pod }} is restarting frequently"
+            summary: 'Pod is crash looping'
+            description: 'Pod {{ $labels.pod }} is restarting frequently'
 ```
 
 ## Multi-Environment Deployments
@@ -251,141 +254,6 @@ replicas:
     count: 3
 ```
 
-## Cost Optimization and Resource Management
-
-### Resource Quotas
-
-```yaml
-# k8s/resource-quota.yaml
-apiVersion: v1
-kind: ResourceQuota
-metadata:
-  name: compute-quota
-spec:
-  hard:
-    requests.cpu: "4"
-    requests.memory: 8Gi
-    limits.cpu: "8"
-    limits.memory: 16Gi
-    pods: "10"
-```
-
-### Vertical Pod Autoscaler
-
-```yaml
-# k8s/vpa.yaml
-apiVersion: autoscaling.k8s.io/v1
-kind: VerticalPodAutoscaler
-metadata:
-  name: my-service-vpa
-spec:
-  targetRef:
-    apiVersion: apps/v1
-    kind: Deployment
-    name: my-service
-  updatePolicy:
-    updateMode: "Auto"
-```
-
-## Migration Strategies
-
-Moving from your current setup to this GitOps paradise? Here's how:
-
-<LLMPrompt title="🤖 Migration Strategy Planning">
-Create a step-by-step migration plan to move my existing application to this GitOps setup. I need:
-- Assessment checklist for current infrastructure and dependencies
-- Phased migration strategy (containerization → CI/CD → Kubernetes → GitOps)
-- Risk mitigation strategies and rollback plans for each phase
-- Team training recommendations and skill development paths
-- Cost analysis and ROI calculations for the migration
-- Timeline estimates for different complexity levels
-- Post-migration optimization and scaling strategies
-
-My current setup: [describe your current infrastructure - VMs, manual deployments, etc.]
-</LLMPrompt>
-
-### Phase 1: Containerization (Week 1-2)
-
-1. **Audit current dependencies**
-2. **Create Dockerfile**
-3. **Test locally with Docker Compose**
-4. **Set up container registry**
-
-### Phase 2: CI/CD Pipeline (Week 3)
-
-1. **Implement GitHub Actions**
-2. **Automated testing**
-3. **Container builds and pushes**
-4. **Staging deployments**
-
-### Phase 3: Kubernetes Migration (Week 4-5)
-
-1. **Create basic manifests**
-2. **Deploy to staging cluster**
-3. **Load testing and validation**
-4. **Production cutover**
-
-### Phase 4: GitOps Implementation (Week 6)
-
-1. **Install FluxCD**
-2. **Move to declarative deployments**
-3. **Implement monitoring**
-4. **Team training**
-
-## Advanced Patterns
-
-### Blue-Green Deployments
-
-```yaml
-# k8s/blue-green.yaml
-apiVersion: argoproj.io/v1alpha1
-kind: Rollout
-metadata:
-  name: my-service
-spec:
-  replicas: 3
-  strategy:
-    blueGreen:
-      activeService: my-service-active
-      previewService: my-service-preview
-      autoPromotionEnabled: false
-      scaleDownDelaySeconds: 30
-  selector:
-    matchLabels:
-      app: my-service
-  template:
-    metadata:
-      labels:
-        app: my-service
-    spec:
-      containers:
-        - name: app
-          image: ghcr.io/my-org/my-service:latest
-```
-
-### Canary Deployments
-
-```yaml
-# k8s/canary.yaml
-apiVersion: argoproj.io/v1alpha1
-kind: Rollout
-metadata:
-  name: my-service
-spec:
-  replicas: 10
-  strategy:
-    canary:
-      steps:
-        - setWeight: 10
-        - pause: {duration: 1m}
-        - setWeight: 50
-        - pause: {duration: 2m}
-        - setWeight: 100
-  selector:
-    matchLabels:
-      app: my-service
-```
-
 ## The Complete Picture
 
 With all three parts of this guide, you now have:
@@ -398,7 +266,6 @@ With all three parts of this guide, you now have:
 - **Bulletproof secrets management** (see our [dedicated guide](/blog/kubernetes_secrets_management))
 - **Comprehensive monitoring** that prevents incidents
 - **Multi-environment** deployments with proper isolation
-- **Cost optimization** through resource management
 - **Advanced deployment** strategies for zero-risk releases
 
 All managed through code, all versioned in Git, all completely portable between clouds.
@@ -410,31 +277,3 @@ This isn't just about tools—it's about a mindset shift. Infrastructure as code
 Start small. Add one piece at a time. Let your system grow with your needs, not against them.
 
 The holy grail isn't about finding the perfect tool. It's about building systems that adapt, scale, and heal themselves—so you can focus on building products that matter.
-
----
-
-<LLMPrompt title="🚀 Complete Enterprise GitOps Stack" defaultExpanded={true}>
-I want to implement the complete GitOps stack from all three parts. Help me create:
-
-1. Complete project structure with all necessary files
-2. GitHub Actions workflow for CI/CD with Docker builds
-3. Kubernetes manifests (deployment, service, ingress, HPA, VPA)
-4. FluxCD setup with GitOps automation
-5. cert-manager for automatic HTTPS
-6. external-dns for automatic DNS management
-7. sealed-secrets for secure secrets management
-8. Supabase deployment for backend services
-9. Comprehensive monitoring with Prometheus/Grafana
-10. Multi-environment setup (staging/production)
-11. Advanced deployment strategies (blue-green/canary)
-12. Cost optimization and resource management
-13. Complete documentation and runbooks
-
-Technology stack: [Node.js/Python/Go/etc.], [Cloudflare/Route53] for DNS
-Domain: [your-domain.com]
-Cloud provider: [AWS/GCP/DigitalOcean/etc.]
-
-Provide everything needed for enterprise-grade production deployment.
-</LLMPrompt>
-
-_Ready to implement the complete stack? You now have everything needed to build infrastructure that scales from prototype to enterprise without breaking._
