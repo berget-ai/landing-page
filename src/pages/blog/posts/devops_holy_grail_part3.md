@@ -28,15 +28,20 @@ This isn't about over-engineering. It's about adding the pieces that become crit
 Most apps need a database, authentication, and file storage. Instead of cobbling together cloud services, deploy Supabase directly in your cluster:
 
 <LLMPrompt title="🤖 Self-Hosted Supabase Deployment">
-Help me deploy Supabase (open-source Firebase alternative) on Kubernetes using Helm. I need:
+First, ask me about my specific setup before generating any code:
+- What is your domain name?
+- What subdomain do you want for Supabase APIs?
+- What storage backend do you prefer (S3, MinIO, local storage)?
+- Do you have existing PostgreSQL or need a new instance?
+- What are your resource requirements (CPU/memory limits)?
+
+Then help me deploy Supabase (open-source Firebase alternative) on Kubernetes using Helm. I need:
 - Complete HelmRelease manifest for Supabase deployment via Flux
 - PostgreSQL configuration with persistent storage
 - Authentication service setup with proper secrets management
 - File storage configuration with S3-compatible backend
 - Real-time service configuration
 - Ingress configuration to expose Supabase APIs
-
-My app domain is myapp.example.com and I want Supabase APIs at api.myapp.example.com
 
 Important: All Kubernetes manifests should go in the /k8s directory and use FluxCD HelmRelease format for GitOps deployment.
 </LLMPrompt>
@@ -74,12 +79,20 @@ You now have Postgres, authentication, real-time subscriptions, and file storage
 Most monitoring tells you what broke after it's too late. Let's build monitoring that prevents incidents:
 
 <LLMPrompt title="🤖 Comprehensive Monitoring Setup">
-Help me create a comprehensive monitoring and observability setup for my GitOps Kubernetes application. I need:
+First, ask me about my monitoring requirements before generating any code:
+- What applications/services do you want to monitor?
+- Do you prefer Loki or ELK stack for log aggregation?
+- What alerting channels do you use (Slack, email, PagerDuty)?
+- Do you need distributed tracing (Jaeger/Zipkin)?
+- What are your retention requirements for metrics and logs?
+- Do you have existing monitoring tools to integrate with?
+
+Then help me create a comprehensive monitoring and observability setup for my GitOps Kubernetes application. I need:
 - Prometheus and Grafana installation via Helm/Flux
 - Pre-built dashboards for Kubernetes, application metrics, and business KPIs
 - Alerting rules for common failure scenarios (pod crashes, high CPU, disk space)
-- Log aggregation with Loki or ELK stack
-- Distributed tracing setup (Jaeger/Zipkin)
+- Log aggregation with chosen stack
+- Distributed tracing setup if needed
 - SLO/SLI monitoring for production services
 - Cost monitoring and optimization recommendations
 - Health check endpoints and uptime monitoring
@@ -249,16 +262,22 @@ replicas:
 Most applications need a reliable database. Here's how to deploy PostgreSQL with proper persistence and backups:
 
 <LLMPrompt title="🤖 PostgreSQL Database Setup">
-Help me deploy PostgreSQL on Kubernetes with production-ready configuration. I need:
+First, ask me about my database requirements before generating any code:
+- What is your expected database size and traffic?
+- Do you need high availability (multiple replicas)?
+- What are your backup retention requirements?
+- Do you have existing databases to migrate from?
+- What resource limits do you want (CPU/memory/storage)?
+- Do you need connection pooling with PgBouncer?
+
+Then help me deploy PostgreSQL on Kubernetes with production-ready configuration. I need:
 - PostgreSQL deployment with persistent storage
 - Proper resource limits and health checks
 - Database initialization with custom schemas
-- Connection pooling with PgBouncer
+- Connection pooling if needed
 - Monitoring integration with Prometheus
 - Backup and restore procedures
-- High availability configuration options
-
-Show me how to set up a production-ready PostgreSQL instance in my cluster.
+- High availability configuration if required
 
 Important: All Kubernetes manifests should go in the /k8s directory and use FluxCD HelmRelease format for GitOps deployment.
 </LLMPrompt>
@@ -335,16 +354,22 @@ spec:
 Velero is an open-source, free tool that provides backup and restore capabilities for your entire Kubernetes cluster, including persistent volumes. Originally developed by VMware (formerly Heptio), it's now a CNCF project with a strong community and enterprise support.
 
 <LLMPrompt title="🤖 Velero Backup Setup">
-Set up Velero for Kubernetes cluster backup and disaster recovery. I need:
+First, ask me about my backup requirements before generating any code:
+- What storage backend do you use (AWS S3, Google Cloud Storage, Azure, MinIO)?
+- What are your backup retention requirements (daily, weekly, monthly)?
+- Which namespaces/applications need backup?
+- Do you need cross-cluster disaster recovery?
+- What is your RTO/RPO requirements?
+- Do you have existing backup solutions to integrate with?
+
+Then set up Velero for Kubernetes cluster backup and disaster recovery. I need:
 - Complete Velero installation via Helm/Flux
-- Configuration for object storage backend (S3-compatible)
+- Configuration for your chosen storage backend
 - Scheduled backups for applications and persistent volumes
-- Backup retention policies
+- Backup retention policies matching your requirements
 - Restore procedures for different scenarios
 - Monitoring and alerting for backup failures
-- Cross-cluster disaster recovery setup
-
-Show me how to implement comprehensive backup and disaster recovery for my cluster.
+- Cross-cluster disaster recovery if needed
 
 Important: All Kubernetes manifests should go in the /k8s directory and use FluxCD HelmRelease format for GitOps deployment.
 </LLMPrompt>

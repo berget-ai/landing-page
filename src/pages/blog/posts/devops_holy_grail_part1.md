@@ -34,15 +34,20 @@ The secret weapon? **Kubernetes as your universal runtime**, with Git as the sin
 > **Pro tip:** Every code example in this guide works directly with AI coding assistants like Lovable, Bolt, or Aider. Even if you've never touched Kubernetes, you'll have a production-ready system running in minutes.
 
 <LLMPrompt title="🤖 GitHub Actions CI/CD Setup">
-Create a complete GitHub Actions CI/CD workflow for a Node.js application that:
+First, ask me about my application setup before generating any code:
+- What technology stack are you using (Node.js, Python, Go, etc.)?
+- What is your GitHub repository name and organization?
+- Do you want to publish to GitHub Container Registry or another registry?
+- What testing framework do you use?
+- Do you have any specific build requirements or dependencies?
+
+Then create a complete GitHub Actions CI/CD workflow for my application that:
 - Runs tests on every push to main
 - Builds a Docker image with automatic version tagging
-- Publishes to GitHub Container Registry (ghcr.io)
+- Publishes to your chosen container registry
 - Uses semantic versioning (auto-increment patch versions)
 - Includes a multi-stage Dockerfile optimized for production
 - Sets up proper caching for faster builds
-
-Please provide the complete .github/workflows/ci.yml file and a production-ready Dockerfile.
 
 Important: Any Kubernetes manifests should go in the /k8s directory for FluxCD GitOps deployment.
 </LLMPrompt>
@@ -82,15 +87,21 @@ No Jenkins sprawl. No YAML nightmares. Just clean automation that works.
 Forget everything you've heard about Kubernetes being complex. With the right setup, it's actually simpler than managing virtual machines.
 
 <LLMPrompt title="🤖 Kubernetes Manifests Setup">
-Create production-ready Kubernetes manifests for a web application with:
-- A Deployment with 2 replicas, proper resource limits (memory: 256Mi, CPU: 200m)
+First, ask me about my application before generating any code:
+- What is your application name?
+- What port does your application run on internally?
+- What domain name do you want to use?
+- What are your preferred resource limits (CPU/memory)?
+- How many replicas do you want to start with?
+- What health check endpoints does your app expose?
+
+Then create production-ready Kubernetes manifests for my web application with:
+- A Deployment with proper resource limits and replica count
 - Health checks (readiness and liveness probes)
 - A Service to expose the application internally
 - An Ingress for external HTTP/HTTPS traffic
 - Proper labels and selectors for everything
 - Rolling update strategy for zero-downtime deployments
-
-The app runs on port 3000 internally and should be accessible at myapp.example.com
 
 Important: All manifests should be placed in the /k8s directory for FluxCD GitOps deployment.
 Please provide separate YAML files: k8s/deployment.yaml, k8s/service.yaml, and k8s/ingress.yaml
@@ -167,15 +178,20 @@ That's it. Run `kubectl apply -f k8s/` and you're live on the internet.
 Manual deployments are where dreams go to die. Instead, we use FluxCD to make your Git repository the single source of truth for production.
 
 <LLMPrompt title="🤖 FluxCD GitOps Setup">
-Help me set up GitOps with FluxCD for my Kubernetes application. I need:
-- Step-by-step instructions to install Flux CLI on macOS/Linux
-- Complete bootstrap command for GitHub repository integration
+First, ask me about my repository setup before generating any code:
+- What is your GitHub username/organization and repository name?
+- What branch do you want to deploy from (main, production, etc.)?
+- What operating system are you using (macOS, Linux, Windows)?
+- Do you have kubectl already configured for your cluster?
+- Is this a personal or organization repository?
+
+Then help me set up GitOps with FluxCD for my Kubernetes application. I need:
+- Step-by-step instructions to install Flux CLI on your operating system
+- Complete bootstrap command for your GitHub repository integration
 - Explanation of how FluxCD monitors Git and applies changes automatically
 - Basic troubleshooting commands to check Flux status
 - How to structure my repository for GitOps (which files go where)
 - Examples of how deployments, rollbacks, and updates work with Git commits
-
-My repository is at github.com/myorg/myservice and I want to deploy from the main branch.
 
 Important: All Kubernetes manifests should be organized in the /k8s directory for FluxCD to monitor and deploy automatically.
 </LLMPrompt>
@@ -204,15 +220,21 @@ Now every commit to your `main` branch automatically deploys to production. Roll
 ### Automatic Scaling with HPA
 
 <LLMPrompt title="🤖 Horizontal Pod Autoscaler Setup">
-Create Kubernetes Horizontal Pod Autoscaler (HPA) configuration for production workloads. I need:
-- Complete HPA manifest with CPU and memory-based scaling
+First, ask me about my scaling requirements before generating any code:
+- What is your application name and deployment name?
+- What are your minimum and maximum pod counts?
+- What CPU utilization target do you prefer (50%, 70%, 80%)?
+- Do you want memory-based scaling as well?
+- Do you need custom metrics (HTTP requests, queue length, etc.)?
+- What are your current resource requests/limits?
+
+Then create Kubernetes Horizontal Pod Autoscaler (HPA) configuration for my production workloads. I need:
+- Complete HPA manifest with CPU and memory-based scaling if needed
 - Metrics server setup if required
 - Resource requests/limits in deployment for HPA to work properly
 - Advanced scaling policies (scale-up/down behavior, stabilization windows)
-- Custom metrics examples (HTTP requests, queue length, etc.)
+- Custom metrics examples if requested
 - Monitoring and alerting for scaling events
-
-Configure for: min 2 pods, max 10 pods, target 70% CPU utilization, with gradual scaling policies.
 
 Important: All manifests should be placed in the /k8s directory for FluxCD GitOps deployment.
 </LLMPrompt>
@@ -289,7 +311,16 @@ In **[Part 3](/blog/devops_holy_grail_part3)**, we'll add enterprise-grade featu
 _Ready for Part 2? We'll show you how to add automatic HTTPS and DNS management that makes your system production-ready._
 
 <LLMPrompt title="🚀 Complete Basic GitOps Stack" defaultExpanded={true}>
-I want to implement the basic GitOps stack from Part 1. Help me create:
+First, ask me about my specific setup before generating any code:
+- What technology stack are you using (Node.js, Python, Go, etc.)?
+- What is your domain name?
+- What DNS provider do you use (Cloudflare, Route53, etc.)?
+- What cloud provider are you using (AWS, GCP, DigitalOcean, etc.)?
+- What is your GitHub repository name and organization?
+- What is your application name and what port does it run on?
+- Do you have any specific resource requirements?
+
+Then help me implement the basic GitOps stack from Part 1:
 
 1. A complete project structure with all necessary files
 2. GitHub Actions workflow for CI/CD with Docker builds
@@ -297,10 +328,6 @@ I want to implement the basic GitOps stack from Part 1. Help me create:
 4. FluxCD setup with GitOps automation
 5. cert-manager for automatic HTTPS
 6. external-dns for automatic DNS management
-
-Technology stack: [Node.js/Python/Go/etc.], [Cloudflare/Route53] for DNS
-Domain: [your-domain.com]
-Cloud provider: [AWS/GCP/DigitalOcean/etc.]
 
 Important: All Kubernetes manifests should be organized in the /k8s directory for FluxCD GitOps deployment. Use HelmRelease format where applicable.
 

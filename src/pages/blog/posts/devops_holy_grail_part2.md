@@ -65,16 +65,21 @@ What makes cert-manager special:
 cert-manager brings Let's Encrypt automation to Kubernetes. Install it once, and never think about certificates again.
 
 <LLMPrompt title="🤖 cert-manager Setup with Let's Encrypt">
-Set up cert-manager in my Kubernetes cluster for automatic HTTPS certificates. I need:
+First, ask me about my certificate requirements before generating any code:
+- What is your email address for Let's Encrypt notifications?
+- What domains do you need certificates for?
+- Do you need wildcard certificates?
+- What DNS provider do you use (for DNS-01 challenges if needed)?
+- Do you have existing certificates to migrate from?
+
+Then set up cert-manager in my Kubernetes cluster for automatic HTTPS certificates. I need:
 - Complete cert-manager installation via Helm/Flux
 - ClusterIssuer configuration for Let's Encrypt production certificates
 - Updated Ingress manifests with TLS annotations for automatic certificate generation
 - Explanation of how cert-manager automatically renews certificates
 - Troubleshooting commands to check certificate status
-- Support for multiple domains and wildcard certificates
+- Support for multiple domains and wildcard certificates if needed
 - Integration with existing GitOps workflow
-
-My email is admin@example.com and I want certificates for myapp.example.com and \*.myapp.example.com
 
 Important: All Kubernetes manifests should go in the /k8s directory and use FluxCD HelmRelease format for GitOps deployment.
 </LLMPrompt>
@@ -265,16 +270,21 @@ Key features of external-dns:
 external-dns watches your Kubernetes Ingress and Service resources and automatically creates DNS records.
 
 <LLMPrompt title="🤖 external-dns Setup for Automatic DNS Management">
-Set up external-dns for automatic DNS management in my Kubernetes cluster. I need:
+First, ask me about my DNS setup before generating any code:
+- What DNS provider do you use (Cloudflare, Route53, Google DNS, Azure DNS, etc.)?
+- What domains do you want external-dns to manage?
+- Do you have API credentials/tokens for your DNS provider?
+- Do you want to manage all DNS records or only specific ones?
+- What is your preferred DNS record TTL?
+
+Then set up external-dns for automatic DNS management in my Kubernetes cluster. I need:
 - Complete external-dns installation via Helm/Flux
-- Configuration for Cloudflare DNS provider (include other popular providers as options)
+- Configuration for your specific DNS provider
 - Required API token setup and secret creation
 - Ingress annotations for automatic DNS record creation
-- Examples for different DNS providers (Route53, Google DNS, etc.)
+- Examples for your chosen DNS provider
 - Troubleshooting steps to verify DNS automation is working
 - Integration with existing GitOps workflow
-
-I'm using Cloudflare as my DNS provider and want DNS records created automatically when I add ingress rules.
 
 Important: All Kubernetes manifests should go in the /k8s directory and use FluxCD HelmRelease format for GitOps deployment.
 </LLMPrompt>
@@ -563,19 +573,24 @@ In **[Part 3](/blog/devops_holy_grail_part3)**, we'll add enterprise-grade featu
 ---
 
 <LLMPrompt title="🚀 Complete HTTPS and DNS Automation Setup" defaultExpanded={true}>
-I want to implement automatic HTTPS and DNS management for my Kubernetes cluster. Help me set up:
+First, ask me about my specific setup before generating any code:
+- What DNS provider do you use (Cloudflare, Route53, Google DNS, etc.)?
+- What is your domain name?
+- What services do you want to expose and their desired hostnames?
+- What is your email address for Let's Encrypt notifications?
+- Do you need wildcard certificates?
+- Do you have existing DNS records or certificates to migrate?
+
+Then help me implement automatic HTTPS and DNS management for my Kubernetes cluster:
 
 1. cert-manager installation via Flux with Let's Encrypt integration
 2. ClusterIssuer configuration for both HTTP-01 and DNS-01 challenges
-3. external-dns installation and configuration for my DNS provider
+3. external-dns installation and configuration for your DNS provider
 4. Proper secrets management for DNS provider API tokens
 5. Ingress manifests with automatic certificate and DNS record creation
 6. Monitoring and alerting for certificate and DNS health
 7. Troubleshooting procedures for common issues
 8. Integration with existing GitOps workflow
-
-My setup: [DNS provider - Cloudflare/Route53/etc.], [Domain name]
-Services to expose: [List your services and desired hostnames]
 
 Important: All Kubernetes manifests should go in the /k8s directory and use FluxCD HelmRelease format for GitOps deployment.
 

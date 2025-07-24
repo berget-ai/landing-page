@@ -70,15 +70,20 @@ kubectl get secret app-secrets -o jsonpath='{.data.database-url}' | base64 -d
 Sealed Secrets solve the "secrets in Git" problem by encrypting secrets that only your cluster can decrypt.
 
 <LLMPrompt title="🤖 Sealed Secrets Setup">
-Set up sealed-secrets for Kubernetes secrets management. I need:
+First, ask me about my secrets management needs before generating any code:
+- What types of secrets do you need to manage (database URLs, API keys, certificates, etc.)?
+- How many environments do you have (dev, staging, prod)?
+- What operating system are you using for the kubeseal CLI?
+- Do you have existing secrets to migrate?
+- What is your preferred backup strategy for encryption keys?
+
+Then set up sealed-secrets for Kubernetes secrets management. I need:
 - Complete installation via Helm/Flux
 - Step-by-step process to encrypt secrets for Git storage
 - Examples of converting environment files to encrypted secrets
 - Integration with application deployments
 - Backup and recovery procedures for encryption keys
 - Rotation strategies for both secrets and encryption keys
-
-Show me how to encrypt DATABASE_URL, API_KEYS, and other sensitive environment variables safely.
 
 Important: All Kubernetes manifests should go in the /k8s directory and use FluxCD HelmRelease format for GitOps deployment.
 </LLMPrompt>
@@ -225,16 +230,22 @@ rm .env.production
 For maximum security and compliance, Vault provides enterprise-grade secrets management with dynamic secrets, detailed auditing, and fine-grained access control.
 
 <LLMPrompt title="🤖 HashiCorp Vault Setup with FluxCD">
-Set up HashiCorp Vault in my Kubernetes cluster using FluxCD. I need:
+First, ask me about my Vault requirements before generating any code:
+- Do you need high availability (multiple Vault replicas)?
+- What storage backend do you prefer (integrated storage, Consul, etc.)?
+- What types of secrets will you store in Vault?
+- Do you have compliance requirements (audit logging, etc.)?
+- How many applications need to integrate with Vault?
+- What are your backup and disaster recovery requirements?
+
+Then set up HashiCorp Vault in my Kubernetes cluster using FluxCD. I need:
 - Complete Vault installation via Helm/Flux
-- Vault configuration for high availability
+- Vault configuration for your availability requirements
 - Kubernetes authentication setup
 - Vault Secrets Operator for automatic secret injection
 - Examples of storing and retrieving secrets
 - Backup and disaster recovery procedures
 - Integration with existing applications
-
-Show me how to deploy Vault in my cluster and use it for secrets management.
 
 Important: All Kubernetes manifests should go in the /k8s directory and use FluxCD HelmRelease format for GitOps deployment.
 </LLMPrompt>
@@ -629,20 +640,25 @@ With proper secrets management, you can build systems that are both secure and d
 ---
 
 <LLMPrompt title="🚀 Complete Secrets Management Setup" defaultExpanded={true}>
-I want to implement a complete secrets management solution for my Kubernetes cluster. Help me set up:
+First, ask me about my specific setup and requirements before generating any code:
+- What type of Kubernetes cluster are you using?
+- What CI/CD system do you currently use?
+- What types of secrets do you need to manage (database credentials, API keys, certificates, etc.)?
+- Do you have compliance requirements that might need HashiCorp Vault?
+- How many environments do you need (dev/staging/prod)?
+- Do you have existing secrets management to migrate from?
+
+Then help me implement a complete secrets management solution for my Kubernetes cluster:
 
 1. Sealed Secrets controller installation via Flux
 2. Development workflow for creating and encrypting secrets
-3. Multi-environment secret management (dev/staging/prod)
+3. Multi-environment secret management for your environments
 4. Secret rotation procedures and automation
 5. RBAC for least-privilege access
 6. Monitoring and alerting for secret access
 7. Backup and recovery procedures for encryption keys
 8. Integration with existing GitOps workflow
-9. Optional: HashiCorp Vault for enterprise requirements
-
-My setup: [Kubernetes cluster type], [Current CI/CD system]
-Secrets needed: [Database credentials, API keys, certificates, etc.]
+9. HashiCorp Vault setup if needed for enterprise requirements
 
 Important: All Kubernetes manifests should go in the /k8s directory and use FluxCD HelmRelease format for GitOps deployment.
 
