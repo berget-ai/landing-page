@@ -83,8 +83,9 @@ export default function BlogPostPage() {
       const markdownContent = content.replace(/^---\n[\s\S]*?\n---\n/, '') // Remove frontmatter
 
       // Use language from metadata or default to 'sv'
-      const language = metadata.language === 'en' ? 'en' as const : 'sv' as const;
-      
+      const language =
+        metadata.language === 'en' ? ('en' as const) : ('sv' as const)
+
       setPost({
         id: id || '',
         title: metadata.title || '',
@@ -96,7 +97,7 @@ export default function BlogPostPage() {
         tags: metadata.tags || [],
         image: metadata.image || '',
         imageAlt: metadata.imageAlt || '',
-        language
+        language,
       })
     }
 
@@ -106,9 +107,9 @@ export default function BlogPostPage() {
   if (!post) return <LoadingPlaceholder />
 
   return (
-    <main className="min-h-screen pt-24">
+    <main className="min-h-screen">
       {post && (
-        <Helmet 
+        <Helmet
           title={post.title}
           description={post.description}
           image={post.image}
@@ -116,19 +117,14 @@ export default function BlogPostPage() {
           language={post.language}
         />
       )}
-      <article className={post?.image ? "" : "container mx-auto px-4 py-8"}>
-        <div className={post?.image ? "" : "max-w-3xl mx-auto"}>
+      <article className={post?.image ? '' : 'container mx-auto px-4 py-8'}>
+        <div className={post?.image ? '' : 'max-w-3xl mx-auto'}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
             {!post.image && (
-              <Button
-                variant="ghost"
-                size="sm"
-                className="mb-8"
-                asChild
-              >
+              <Button variant="ghost" size="sm" className="mb-8" asChild>
                 <Link to="/blog">
                   <ArrowLeft className="mr-2 h-4 w-4" />
                   Back to Blog
@@ -160,9 +156,9 @@ export default function BlogPostPage() {
                 <div className="absolute inset-0 flex items-end">
                   <div className="container mx-auto px-4 pb-16">
                     <div className="max-w-3xl mx-auto">
-                      <AuthorByline 
-                        name={post.author} 
-                        email={post.email} 
+                      <AuthorByline
+                        name={post.author}
+                        email={post.email}
                         date={post.date}
                         size="lg"
                       />
@@ -177,33 +173,32 @@ export default function BlogPostPage() {
 
             {!post.image && (
               <>
-                <AuthorByline 
-                  name={post.author} 
-                  email={post.email} 
+                <AuthorByline
+                  name={post.author}
+                  email={post.email}
                   date={post.date}
                   size="lg"
                 />
-                <h1 className="text-4xl md:text-5xl font-medium mb-6">{post.title}</h1>
+                <h1 className="text-4xl md:text-5xl font-medium mb-6">
+                  {post.title}
+                </h1>
               </>
             )}
 
-            <div className={post.image ? "container mx-auto px-4" : ""}>
-              <div className={post.image ? "max-w-3xl mx-auto" : ""}>
-                <div className="flex flex-wrap gap-2 mb-12">
-                  {post.language && (
-                    <span className="px-3 py-1 rounded-full bg-[#52B788]/30 text-sm font-medium">
-                      {post.language === 'en' ? '🇬🇧 English' : '🇸🇪 Svenska'}
-                    </span>
-                  )}
-                  {post.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1 rounded-full bg-[#52B788]/20 text-sm"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+            <div className={post.image ? 'container mx-auto px-4' : ''}>
+              <div className={post.image ? 'max-w-3xl mx-auto' : ''}>
+                {post.tags.length ? (
+                  <div className="flex flex-wrap gap-2 mb-12">
+                    {post.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-3 py-1 rounded-full bg-[#52B788]/20 text-sm"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                ) : null}
 
                 <MarkdownRenderer content={post.content} />
               </div>
