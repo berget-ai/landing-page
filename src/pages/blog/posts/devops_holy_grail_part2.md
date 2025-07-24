@@ -52,6 +52,15 @@ HTTPS evolved from expensive, manual certificates that only large companies coul
 
 ## Automatic HTTPS with cert-manager: Set It and Forget It
 
+cert-manager is an open-source Kubernetes add-on that automates the management and issuance of TLS certificates. Originally created by Jetstack (now part of Venafi), it's a CNCF project with strong community support and is used by thousands of organizations worldwide.
+
+What makes cert-manager special:
+- **Fully automated** certificate lifecycle management
+- **Multiple certificate authorities** supported (Let's Encrypt, HashiCorp Vault, Venafi, self-signed)
+- **Kubernetes-native** with custom resources and operators
+- **Production-ready** with extensive monitoring and observability
+- **Free and open source** with commercial support available
+
 cert-manager brings Let's Encrypt automation to Kubernetes. Install it once, and never think about certificates again.
 
 <LLMPrompt title="🤖 cert-manager Setup with Let's Encrypt">
@@ -239,6 +248,15 @@ Managing DNS records manually doesn't scale. Here's why automation matters:
 **Cost Savings**: Less manual work means lower operational costs.
 
 ## Automatic DNS with external-dns
+
+external-dns is an open-source Kubernetes controller that automatically manages DNS records for your services. Originally developed by the Kubernetes community, it's now maintained by the Kubernetes SIG Network and is widely adopted across the ecosystem.
+
+Key features of external-dns:
+- **Multi-provider support** - Works with 20+ DNS providers (Cloudflare, Route53, Google DNS, Azure DNS, etc.)
+- **Kubernetes-native** - Watches Ingress, Service, and other Kubernetes resources
+- **Declarative** - DNS records are managed through Kubernetes annotations
+- **Safe by default** - Configurable policies prevent accidental changes
+- **Open source** with active community development
 
 external-dns watches your Kubernetes Ingress and Service resources and automatically creates DNS records.
 
