@@ -43,6 +43,8 @@ Create a complete GitHub Actions CI/CD workflow for a Node.js application that:
 - Sets up proper caching for faster builds
 
 Please provide the complete .github/workflows/ci.yml file and a production-ready Dockerfile.
+
+Important: Any Kubernetes manifests should go in the /k8s directory for FluxCD GitOps deployment.
 </LLMPrompt>
 
 ## The Golden Path: Build → Tag → Deploy → Scale → Sleep
@@ -89,7 +91,9 @@ Create production-ready Kubernetes manifests for a web application with:
 - Rolling update strategy for zero-downtime deployments
 
 The app runs on port 3000 internally and should be accessible at myapp.example.com
-Please provide separate YAML files: deployment.yaml, service.yaml, and ingress.yaml
+
+Important: All manifests should be placed in the /k8s directory for FluxCD GitOps deployment.
+Please provide separate YAML files: k8s/deployment.yaml, k8s/service.yaml, and k8s/ingress.yaml
 </LLMPrompt>
 
 Your entire application lives in three files:
@@ -172,6 +176,8 @@ Help me set up GitOps with FluxCD for my Kubernetes application. I need:
 - Examples of how deployments, rollbacks, and updates work with Git commits
 
 My repository is at github.com/myorg/myservice and I want to deploy from the main branch.
+
+Important: All Kubernetes manifests should be organized in the /k8s directory for FluxCD to monitor and deploy automatically.
 </LLMPrompt>
 
 Install the Flux CLI:
@@ -207,6 +213,8 @@ Create Kubernetes Horizontal Pod Autoscaler (HPA) configuration for production w
 - Monitoring and alerting for scaling events
 
 Configure for: min 2 pods, max 10 pods, target 70% CPU utilization, with gradual scaling policies.
+
+Important: All manifests should be placed in the /k8s directory for FluxCD GitOps deployment.
 </LLMPrompt>
 
 ```yaml
@@ -293,6 +301,8 @@ I want to implement the basic GitOps stack from Part 1. Help me create:
 Technology stack: [Node.js/Python/Go/etc.], [Cloudflare/Route53] for DNS
 Domain: [your-domain.com]
 Cloud provider: [AWS/GCP/DigitalOcean/etc.]
+
+Important: All Kubernetes manifests should be organized in the /k8s directory for FluxCD GitOps deployment. Use HelmRelease format where applicable.
 
 Provide everything needed to go from empty repository to production deployment.
 </LLMPrompt>

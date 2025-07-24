@@ -75,6 +75,8 @@ Set up cert-manager in my Kubernetes cluster for automatic HTTPS certificates. I
 - Integration with existing GitOps workflow
 
 My email is admin@example.com and I want certificates for myapp.example.com and \*.myapp.example.com
+
+Important: All Kubernetes manifests should go in the /k8s directory and use FluxCD HelmRelease format for GitOps deployment.
 </LLMPrompt>
 
 ### Installing cert-manager
@@ -273,6 +275,8 @@ Set up external-dns for automatic DNS management in my Kubernetes cluster. I nee
 - Integration with existing GitOps workflow
 
 I'm using Cloudflare as my DNS provider and want DNS records created automatically when I add ingress rules.
+
+Important: All Kubernetes manifests should go in the /k8s directory and use FluxCD HelmRelease format for GitOps deployment.
 </LLMPrompt>
 
 ### Installing external-dns
@@ -572,6 +576,8 @@ I want to implement automatic HTTPS and DNS management for my Kubernetes cluster
 
 My setup: [DNS provider - Cloudflare/Route53/etc.], [Domain name]
 Services to expose: [List your services and desired hostnames]
+
+Important: All Kubernetes manifests should go in the /k8s directory and use FluxCD HelmRelease format for GitOps deployment.
 
 Provide everything needed for production-ready HTTPS and DNS automation.
 </LLMPrompt>

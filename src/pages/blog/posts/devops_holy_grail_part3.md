@@ -37,6 +37,8 @@ Help me deploy Supabase (open-source Firebase alternative) on Kubernetes using H
 - Ingress configuration to expose Supabase APIs
 
 My app domain is myapp.example.com and I want Supabase APIs at api.myapp.example.com
+
+Important: All Kubernetes manifests should go in the /k8s directory and use FluxCD HelmRelease format for GitOps deployment.
 </LLMPrompt>
 
 ```yaml
@@ -83,6 +85,8 @@ Help me create a comprehensive monitoring and observability setup for my GitOps 
 - Health check endpoints and uptime monitoring
 
 Focus on actionable alerts that help prevent incidents rather than just reporting them.
+
+Important: All Kubernetes manifests should go in the /k8s directory and use FluxCD HelmRelease format for GitOps deployment.
 </LLMPrompt>
 
 ### Prometheus and Grafana Stack
@@ -255,6 +259,8 @@ Help me deploy PostgreSQL on Kubernetes with production-ready configuration. I n
 - High availability configuration options
 
 Show me how to set up a production-ready PostgreSQL instance in my cluster.
+
+Important: All Kubernetes manifests should go in the /k8s directory and use FluxCD HelmRelease format for GitOps deployment.
 </LLMPrompt>
 
 ### PostgreSQL Deployment
@@ -339,6 +345,8 @@ Set up Velero for Kubernetes cluster backup and disaster recovery. I need:
 - Cross-cluster disaster recovery setup
 
 Show me how to implement comprehensive backup and disaster recovery for my cluster.
+
+Important: All Kubernetes manifests should go in the /k8s directory and use FluxCD HelmRelease format for GitOps deployment.
 </LLMPrompt>
 
 ### Installing Velero

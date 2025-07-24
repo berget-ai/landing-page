@@ -79,6 +79,8 @@ Set up sealed-secrets for Kubernetes secrets management. I need:
 - Rotation strategies for both secrets and encryption keys
 
 Show me how to encrypt DATABASE_URL, API_KEYS, and other sensitive environment variables safely.
+
+Important: All Kubernetes manifests should go in the /k8s directory and use FluxCD HelmRelease format for GitOps deployment.
 </LLMPrompt>
 
 ### Installing Sealed Secrets
@@ -233,6 +235,8 @@ Set up HashiCorp Vault in my Kubernetes cluster using FluxCD. I need:
 - Integration with existing applications
 
 Show me how to deploy Vault in my cluster and use it for secrets management.
+
+Important: All Kubernetes manifests should go in the /k8s directory and use FluxCD HelmRelease format for GitOps deployment.
 </LLMPrompt>
 
 ### Installing Vault with FluxCD
@@ -639,6 +643,8 @@ I want to implement a complete secrets management solution for my Kubernetes clu
 
 My setup: [Kubernetes cluster type], [Current CI/CD system]
 Secrets needed: [Database credentials, API keys, certificates, etc.]
+
+Important: All Kubernetes manifests should go in the /k8s directory and use FluxCD HelmRelease format for GitOps deployment.
 
 Provide everything needed for production-ready secrets management.
 </LLMPrompt>
