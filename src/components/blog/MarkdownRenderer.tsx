@@ -18,7 +18,7 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
     // Process LLMPrompt components
     let processedMarkdown = content.replace(
       /<LLMPrompt([^>]*)>([\s\S]*?)<\/LLMPrompt>/g,
-      (match, attributes, innerContent) => {
+      (_, attributes, innerContent) => {
         // Parse attributes
         const titleMatch = attributes.match(/title="([^"]*)"/)
         const defaultExpandedMatch = attributes.match(/defaultExpanded={([^}]*)}/)
