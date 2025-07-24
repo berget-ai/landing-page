@@ -54,10 +54,10 @@ Everything you need to make your system production-ready and secure.
 Add advanced capabilities:
 
 - Self-hosted Supabase backend
-- Bulletproof secrets management (see our [dedicated guide](/blog/kubernetes_secrets_management))
 - Comprehensive monitoring and alerting
 - Multi-environment deployments
 - Migration strategies and advanced patterns
+- Bulletproof secrets management (see our [dedicated guide](/blog/kubernetes_secrets_management))
 
 Everything you need to scale from startup to enterprise.
 

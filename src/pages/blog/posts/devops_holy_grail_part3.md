@@ -66,20 +66,6 @@ spec:
 
 You now have Postgres, authentication, real-time subscriptions, and file storage—all running in your own infrastructure, managed through Git.
 
-## Bulletproof Secrets Management
-
-Secrets management is critical but complex enough to deserve its own deep dive. We've created a comprehensive guide that covers everything from basic sealed-secrets to enterprise Vault integration.
-
-**[Read our complete Secrets Management Guide](/blog/kubernetes_secrets_management)**
-
-This guide covers:
-
-- Sealed Secrets for Git-safe encryption
-- HashiCorp Vault for enterprise environments
-- Development workflows that developers actually use
-- Security best practices and compliance
-
-The secrets management patterns integrate seamlessly with the GitOps infrastructure we're building here.
 
 ## Monitoring That Prevents Incidents
 
@@ -495,11 +481,11 @@ With all three parts of this guide, you now have:
 - **DNS management** that updates when you change domains
 - **Auto-scaling** that handles traffic spikes without intervention
 - **Self-hosted backend** with database, auth, and storage
-- **Bulletproof secrets management** (see our [dedicated guide](/blog/kubernetes_secrets_management))
 - **Comprehensive monitoring** that prevents incidents
 - **Multi-environment** deployments with proper isolation
 - **Production database** with PostgreSQL and proper persistence
 - **Backup and disaster recovery** with Velero
+- **Bulletproof secrets management** (see our [dedicated guide](/blog/kubernetes_secrets_management))
 
 All managed through code, all versioned in Git, all completely portable between clouds.
 

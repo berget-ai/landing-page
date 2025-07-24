@@ -271,10 +271,10 @@ In **[Part 2](/blog/devops_holy_grail_part2)**, we'll add security and reliabili
 In **[Part 3](/blog/devops_holy_grail_part3)**, we'll add enterprise-grade features:
 
 - **Self-hosted Supabase** for database, auth, and storage
-- **Bulletproof secrets management** (with our [dedicated guide](/blog/kubernetes_secrets_management))
 - **Comprehensive monitoring** with Prometheus and Grafana
 - **Migration strategies** for existing applications
 - **Advanced patterns** for multi-environment deployments
+- **Bulletproof secrets management** (see our [dedicated guide](/blog/kubernetes_secrets_management))
 
 ---
 
