@@ -47,6 +47,7 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
         const anchor = `file-${filePath.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}`
         // Determine language from file extension if not provided
         const detectedLang = language || detectLanguageFromFilename(filePath)
+        console.log('Processing code block:', { match, language, filePath, detectedLang })
         return `<div id="${anchor}" class="code-block-anchor"></div>\n<div class="code-title">${filePath}</div>\n\`\`\`${detectedLang}\n`
       }
     )
@@ -78,6 +79,10 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
         'xml': 'xml',
         'sql': 'sql'
       }
+      
+      // Debug logging
+      console.log('Detecting language for:', filename, 'extension:', ext, 'mapped to:', langMap[ext || ''] || 'text')
+      
       return langMap[ext || ''] || 'text'
     }
     
