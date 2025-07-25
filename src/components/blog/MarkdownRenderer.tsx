@@ -7,6 +7,17 @@ const md = new MarkdownIt({
   html: true,
   linkify: true,
   typographer: true,
+  highlight: function (str, lang) {
+    if (lang && lang !== '') {
+      try {
+        const hljs = require('highlight.js')
+        return '<pre class="hljs"><code>' +
+               hljs.highlight(str, { language: lang, ignoreIllegals: true }).value +
+               '</code></pre>'
+      } catch (__) {}
+    }
+    return '<pre class="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>'
+  }
 })
 
 interface MarkdownRendererProps {
@@ -108,7 +119,8 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
       prose-a:text-[#52B788] hover:prose-a:text-[#74C69D] prose-a:no-underline hover:prose-a:underline
       prose-blockquote:border-l-[#52B788] prose-blockquote:bg-[#2D6A4F]/5 prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:rounded-r-lg
       prose-code:text-[#52B788] prose-code:bg-[#2D6A4F]/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md
-      prose-pre:bg-[#1A1A1A] prose-pre:border prose-pre:border-white/10"
+      prose-pre:bg-[#1A1A1A] prose-pre:border prose-pre:border-white/10 prose-pre:text-sm prose-pre:overflow-x-auto
+      [&_.hljs]:bg-transparent [&_.hljs]:text-white/90"
     >
       {renderedContent.map((item, index) => 
         typeof item === 'string' ? (
