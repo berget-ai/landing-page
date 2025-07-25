@@ -20,8 +20,8 @@ export function FileStructureNav({ content }: FileStructureNavProps) {
 
   useEffect(() => {
     const extractFileStructure = () => {
-      // Extract code blocks with file paths
-      const codeBlockRegex = /```[\w]*\n# ([^\n]+)\n/g
+      // Extract code blocks with file paths from markdown comments
+      const codeBlockRegex = /```[\w]*\n<!-- ([^\n]+) -->\n/g
       const files: string[] = []
       let match
 

@@ -44,12 +44,12 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
       }
     )
 
-    // Add anchors to code blocks with file paths
+    // Add anchors to code blocks with file paths from markdown comments
     processedMarkdown = processedMarkdown.replace(
-      /```(\w*)\n# ([^\n]+)\n/g,
+      /```(\w*)\n<!-- ([^\n]+) -->\n/g,
       (match, language, filePath) => {
         const anchor = `file-${filePath.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}`
-        return `<div id="${anchor}"></div>\n\`\`\`${language}\n# ${filePath}\n`
+        return `<div id="${anchor}"></div>\n\`\`\`${language}\n<!-- ${filePath} -->\n`
       }
     )
     
