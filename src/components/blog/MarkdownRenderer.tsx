@@ -11,12 +11,10 @@ const md = new MarkdownIt({
   highlight: function (str, lang) {
     if (lang && hljs.getLanguage(lang)) {
       try {
-        return '<pre class="hljs"><code>' +
-               hljs.highlight(str, { language: lang, ignoreIllegals: true }).value +
-               '</code></pre>'
+        return hljs.highlight(str, { language: lang, ignoreIllegals: true }).value
       } catch (__) {}
     }
-    return '<pre class="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>'
+    return md.utils.escapeHtml(str)
   }
 })
 
@@ -121,7 +119,6 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
       prose-blockquote:border-l-[#52B788] prose-blockquote:bg-[#2D6A4F]/5 prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:rounded-r-lg
       prose-code:text-[#52B788] prose-code:bg-[#2D6A4F]/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md
       prose-pre:bg-[#0d1117] prose-pre:border prose-pre:border-white/10 prose-pre:text-sm prose-pre:overflow-x-auto prose-pre:rounded-b-lg prose-pre:m-0 prose-pre:p-4
-      [&_.hljs]:bg-transparent [&_.hljs]:p-0
       [&_.code-title]:bg-[#2D6A4F] [&_.code-title]:text-white [&_.code-title]:px-4 [&_.code-title]:py-2 [&_.code-title]:text-sm [&_.code-title]:font-mono [&_.code-title]:rounded-t-lg [&_.code-title]:border-b [&_.code-title]:border-white/10 [&_.code-title]:mb-0 [&_.code-title]:block [&_.code-title]:font-medium
       [&_.code-block-anchor]:scroll-mt-24
       [&_pre+.code-title]:hidden
