@@ -44,7 +44,7 @@ Important: All Kubernetes manifests should go in the /k8s directory and use Flux
 </LLMPrompt>
 
 ```yaml
-# k8s/supabase.yaml
+<!-- k8s/supabase.yaml -->
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
@@ -102,7 +102,7 @@ Important: All Kubernetes manifests should go in the /k8s directory and use Flux
 ### Prometheus and Grafana Stack
 
 ```yaml
-# k8s/monitoring.yaml
+<!-- k8s/monitoring.yaml -->
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
@@ -138,7 +138,7 @@ spec:
 Add health checks and metrics to your application:
 
 ```typescript
-// src/metrics.ts
+<!-- src/metrics.ts -->
 import express from 'express'
 import promClient from 'prom-client'
 
@@ -174,7 +174,7 @@ app.get('/metrics', (req, res) => {
 ### Alerting Rules
 
 ```yaml
-# k8s/alerts.yaml
+<!-- k8s/alerts.yaml -->
 apiVersion: monitoring.coreos.com/v1
 kind: PrometheusRule
 metadata:
@@ -244,7 +244,7 @@ Important: All Kubernetes manifests should go in the /k8s directory and use Flux
 ### PostgreSQL Deployment
 
 ```yaml
-# k8s/postgresql.yaml
+<!-- k8s/postgresql.yaml -->
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
@@ -285,7 +285,7 @@ spec:
 ### Database Connection in Applications
 
 ```yaml
-# k8s/app-with-database.yaml
+<!-- k8s/app-with-database.yaml -->
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -337,13 +337,13 @@ Important: All Kubernetes manifests should go in the /k8s directory and use Flux
 ### Installing Velero
 
 ```yaml
-# k8s/velero-namespace.yaml
+<!-- k8s/velero-namespace.yaml -->
 apiVersion: v1
 kind: Namespace
 metadata:
   name: velero
 ---
-# k8s/velero.yaml
+<!-- k8s/velero.yaml -->
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
@@ -386,7 +386,7 @@ spec:
 ### Scheduled Backups
 
 ```yaml
-# k8s/backup-schedule.yaml
+<!-- k8s/backup-schedule.yaml -->
 apiVersion: velero.io/v1
 kind: Schedule
 metadata:
@@ -422,7 +422,7 @@ spec:
 ### Backup Monitoring
 
 ```yaml
-# k8s/backup-monitoring.yaml
+<!-- k8s/backup-monitoring.yaml -->
 apiVersion: monitoring.coreos.com/v1
 kind: PrometheusRule
 metadata:
