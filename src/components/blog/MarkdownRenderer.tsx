@@ -10,9 +10,7 @@ const md = new MarkdownIt({
   typographer: true,
   highlight: function (str, lang) {
     if (lang && hljs.getLanguage(lang)) {
-      try {
-        return hljs.highlight(str, { language: lang, ignoreIllegals: true }).value
-      } catch (__) {}
+      return hljs.highlight(str, { language: lang, ignoreIllegals: true }).value
     }
     return md.utils.escapeHtml(str)
   }
