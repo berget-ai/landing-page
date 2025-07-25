@@ -26,7 +26,7 @@ interface MarkdownRendererProps {
 
 export function MarkdownRenderer({ content }: MarkdownRendererProps) {
   const processedContent = useMemo(() => {
-    // Process LLMPrompt components
+    // Process LLMPrompt components first
     let processedMarkdown = content.replace(
       /<LLMPrompt([^>]*)>([\s\S]*?)<\/LLMPrompt>/g,
       (_, attributes, innerContent) => {
@@ -44,15 +44,16 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
       }
     )
 
-    // Add anchors to code blocks with file paths using :filename syntax
+    // Add anchors and titles to code blocks with file paths using :filename syntax
     processedMarkdown = processedMarkdown.replace(
       /```(\w*):([^\n]+)\n/g,
       (match, language, filePath) => {
         const anchor = `file-${filePath.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}`
-        return `<div id="${anchor}"></div>\n<div class="code-title">${filePath}</div>\n\`\`\`${language}\n`
+        return `<div id="${anchor}" class="code-block-anchor"></div>\n<div class="code-title">${filePath}</div>\n\`\`\`${language}\n`
       }
     )
     
+    // Render markdown with proper syntax highlighting
     return md.render(processedMarkdown)
   }, [content])
 
@@ -119,11 +120,12 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
       prose-a:text-[#52B788] hover:prose-a:text-[#74C69D] prose-a:no-underline hover:prose-a:underline
       prose-blockquote:border-l-[#52B788] prose-blockquote:bg-[#2D6A4F]/5 prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:rounded-r-lg
       prose-code:text-[#52B788] prose-code:bg-[#2D6A4F]/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md
-      prose-pre:bg-[#0d1117] prose-pre:border prose-pre:border-white/10 prose-pre:text-sm prose-pre:overflow-x-auto prose-pre:rounded-b-lg prose-pre:m-0
-      [&_.hljs]:bg-transparent [&_.hljs]:p-4
-      [&_.code-title]:bg-[#2D6A4F] [&_.code-title]:text-white [&_.code-title]:px-4 [&_.code-title]:py-2 [&_.code-title]:text-sm [&_.code-title]:font-mono [&_.code-title]:rounded-t-lg [&_.code-title]:border-b [&_.code-title]:border-white/10 [&_.code-title]:mb-0 [&_.code-title]:block
+      prose-pre:bg-[#0d1117] prose-pre:border prose-pre:border-white/10 prose-pre:text-sm prose-pre:overflow-x-auto prose-pre:rounded-b-lg prose-pre:m-0 prose-pre:p-4
+      [&_.hljs]:bg-transparent [&_.hljs]:p-0
+      [&_.code-title]:bg-[#2D6A4F] [&_.code-title]:text-white [&_.code-title]:px-4 [&_.code-title]:py-2 [&_.code-title]:text-sm [&_.code-title]:font-mono [&_.code-title]:rounded-t-lg [&_.code-title]:border-b [&_.code-title]:border-white/10 [&_.code-title]:mb-0 [&_.code-title]:block [&_.code-title]:font-medium
       [&_.code-block-anchor]:scroll-mt-24
-      [&_pre+.code-title]:hidden"
+      [&_pre+.code-title]:hidden
+      [&_code]:text-[#52B788] [&_code]:bg-[#2D6A4F]/10 [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:rounded-md [&_code]:text-sm"
     >
       {renderedContent.map((item, index) => 
         typeof item === 'string' ? (
