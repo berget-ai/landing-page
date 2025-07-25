@@ -16,10 +16,6 @@ email: christian@landgren.nu
 language: en
 ---
 
-_Building on Part 1's foundation, let's add automatic HTTPS and DNS management - the security and reliability features that separate hobby projects from production systems - Part 2_
-
----
-
 In [Part 1](/blog/devops_holy_grail_part1), we built the foundation: containerization, CI/CD, Kubernetes basics, and GitOps with FluxCD. Now it's time to add the security and reliability features that make your system production-ready.
 
 This isn't just about checking security boxes. It's about building systems that users trust and that scale without breaking.
@@ -73,6 +69,7 @@ First, ask me about my certificate requirements before generating any code:
 - Do you have existing certificates to migrate from?
 
 Then set up cert-manager in my Kubernetes cluster for automatic HTTPS certificates. I need:
+
 - Complete cert-manager installation via Helm/Flux
 - ClusterIssuer configuration for Let's Encrypt production certificates
 - Updated Ingress manifests with TLS annotations for automatic certificate generation
@@ -278,6 +275,7 @@ First, ask me about my DNS setup before generating any code:
 - What is your preferred DNS record TTL?
 
 Then set up external-dns for automatic DNS management in my Kubernetes cluster. I need:
+
 - Complete external-dns installation via Helm/Flux
 - Configuration for your specific DNS provider
 - Required API token setup and secret creation

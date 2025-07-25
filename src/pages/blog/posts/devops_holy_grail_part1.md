@@ -15,10 +15,6 @@ email: christian@landgren.nu
 language: en
 ---
 
-_How to create services that grow from weekend projects to enterprise platforms without breaking everything - Part 1_
-
----
-
 We've all been there. You start with a simple app, maybe a weekend project that shows promise. Before you know it, you're dealing with manual deployments, infrastructure that breaks when you look at it wrong, and a growing sense that you're one outage away from disaster.
 
 After years of building and breaking systems—from quick internal tools to massive production APIs—we've discovered something remarkable: it's possible to build infrastructure that starts simple but scales like a tech giant's platform. No rewrites. No migrations. No late-night panic deployments.
@@ -42,6 +38,7 @@ First, ask me about my application setup before generating any code:
 - Do you have any specific build requirements or dependencies?
 
 Then create a complete GitHub Actions CI/CD workflow for my application that:
+
 - Runs tests on every push to main
 - Builds a Docker image with automatic version tagging
 - Publishes to your chosen container registry
@@ -96,6 +93,7 @@ First, ask me about my application before generating any code:
 - What health check endpoints does your app expose?
 
 Then create production-ready Kubernetes manifests for my web application with:
+
 - A Deployment with proper resource limits and replica count
 - Health checks (readiness and liveness probes)
 - A Service to expose the application internally
@@ -186,6 +184,7 @@ First, ask me about my repository setup before generating any code:
 - Is this a personal or organization repository?
 
 Then help me set up GitOps with FluxCD for my Kubernetes application. I need:
+
 - Step-by-step instructions to install Flux CLI on your operating system
 - Complete bootstrap command for your GitHub repository integration
 - Explanation of how FluxCD monitors Git and applies changes automatically
@@ -229,6 +228,7 @@ First, ask me about my scaling requirements before generating any code:
 - What are your current resource requests/limits?
 
 Then create Kubernetes Horizontal Pod Autoscaler (HPA) configuration for my production workloads. I need:
+
 - Complete HPA manifest with CPU and memory-based scaling if needed
 - Metrics server setup if required
 - Resource requests/limits in deployment for HPA to work properly

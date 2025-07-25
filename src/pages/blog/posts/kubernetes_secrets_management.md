@@ -15,10 +15,6 @@ email: christian@landgren.nu
 language: en
 ---
 
-_A comprehensive guide to managing secrets in Kubernetes - from basic approaches to enterprise-grade solutions_
-
----
-
 Secrets management is where most Kubernetes deployments go wrong. You've probably seen it: passwords hardcoded in YAML files, API keys committed to Git, or worse—production credentials shared in Slack channels.
 
 This guide shows you how to build a secrets management system that's both secure and developer-friendly. No more choosing between security and productivity.

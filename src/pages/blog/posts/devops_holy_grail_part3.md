@@ -15,10 +15,6 @@ email: christian@landgren.nu
 language: en
 ---
 
-_Building on Parts 1 and 2, let's add enterprise-grade features that scale with your business - Part 3_
-
----
-
 In [Part 1](/blog/devops_holy_grail_part1), we built the foundation with CI/CD, Kubernetes, and GitOps. In [Part 2](/blog/devops_holy_grail_part2), we added automatic HTTPS and DNS management. Now it's time to add the enterprise-grade features that separate weekend projects from production platforms.
 
 This isn't about over-engineering. It's about adding the pieces that become critical as you grow—before you desperately need them.
@@ -36,6 +32,7 @@ First, ask me about my specific setup before generating any code:
 - What are your resource requirements (CPU/memory limits)?
 
 Then help me deploy Supabase (open-source Firebase alternative) on Kubernetes using Helm. I need:
+
 - Complete HelmRelease manifest for Supabase deployment via Flux
 - PostgreSQL configuration with persistent storage
 - Authentication service setup with proper secrets management
@@ -73,7 +70,6 @@ spec:
 
 You now have Postgres, authentication, real-time subscriptions, and file storage—all running in your own infrastructure, managed through Git.
 
-
 ## Monitoring That Prevents Incidents
 
 Most monitoring tells you what broke after it's too late. Let's build monitoring that prevents incidents:
@@ -88,6 +84,7 @@ First, ask me about my monitoring requirements before generating any code:
 - Do you have existing monitoring tools to integrate with?
 
 Then help me create a comprehensive monitoring and observability setup for my GitOps Kubernetes application. I need:
+
 - Prometheus and Grafana installation via Helm/Flux
 - Pre-built dashboards for Kubernetes, application metrics, and business KPIs
 - Alerting rules for common failure scenarios (pod crashes, high CPU, disk space)
@@ -232,6 +229,7 @@ First, ask me about my database requirements before generating any code:
 - Do you need connection pooling with PgBouncer?
 
 Then help me deploy PostgreSQL on Kubernetes with production-ready configuration. I need:
+
 - PostgreSQL deployment with persistent storage
 - Proper resource limits and health checks
 - Database initialization with custom schemas
@@ -324,6 +322,7 @@ First, ask me about my backup requirements before generating any code:
 - Do you have existing backup solutions to integrate with?
 
 Then set up Velero for Kubernetes cluster backup and disaster recovery. I need:
+
 - Complete Velero installation via Helm/Flux
 - Configuration for your chosen storage backend
 - Scheduled backups for applications and persistent volumes
