@@ -42,20 +42,22 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
 
     // Process code blocks with file paths using :filename syntax
     processedMarkdown = processedMarkdown.replace(
-      /```(\w*):([^\n]+)\n([\s\S]*?)\n```/g,
+      /```(\w*):([^\n]+)\n([\s\S]*?)```/g,
       (match, language, filePath, codeContent) => {
         const anchor = `file-${filePath.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}`
         // Determine language from file extension if not provided
         const detectedLang = language || detectLanguageFromFilename(filePath)
         
         // Apply syntax highlighting directly
-        let highlightedCode = codeContent
+        let highlightedCode = codeContent.trim()
         if (detectedLang && hljs.getLanguage(detectedLang)) {
           try {
-            highlightedCode = hljs.highlight(codeContent, { language: detectedLang, ignoreIllegals: true }).value
+            highlightedCode = hljs.highlight(highlightedCode, { language: detectedLang, ignoreIllegals: true }).value
           } catch (e) {
             console.warn('Syntax highlighting failed for', detectedLang, e)
           }
+        } else {
+          highlightedCode = md.utils.escapeHtml(highlightedCode)
         }
         
         return `<div id="${anchor}" class="code-block-anchor"></div>
