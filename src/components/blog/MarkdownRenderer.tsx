@@ -42,7 +42,7 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
 
     // Process code blocks with file paths using :filename syntax
     processedMarkdown = processedMarkdown.replace(
-      /```(\w*):([^\n]+)\n([\s\S]*?)```/g,
+      /```(\w*):([^\n]+)\n((?:(?!```)[\s\S])*?)```/g,
       (match, language, filePath, codeContent) => {
         const anchor = `file-${filePath.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}`
         // Determine language from file extension if not provided
