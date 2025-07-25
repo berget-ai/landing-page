@@ -9,9 +9,13 @@ const md = new MarkdownIt({
   linkify: true,
   typographer: true,
   highlight: function (str, lang) {
+    console.log('Highlighting:', { lang, hasLanguage: lang && hljs.getLanguage(lang) })
     if (lang && hljs.getLanguage(lang)) {
-      return hljs.highlight(str, { language: lang, ignoreIllegals: true }).value
+      const result = hljs.highlight(str, { language: lang, ignoreIllegals: true }).value
+      console.log('Highlight result:', result.substring(0, 100))
+      return result
     }
+    console.log('No highlighting for:', lang)
     return md.utils.escapeHtml(str)
   }
 })
@@ -45,7 +49,7 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
       /```(\w*):([^\n]+)\n/g,
       (match, language, filePath) => {
         const anchor = `file-${filePath.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}`
-        return `<div id="${anchor}" class="code-block-anchor"></div>\n<div class="code-title">${filePath}</div>\n\`\`\`${language}\n`
+        return `<div id="${anchor}" class="code-block-anchor"></div>\n<div class="code-title">${filePath}</div>\n\`\`\`${language || 'text'}\n`
       }
     )
     
