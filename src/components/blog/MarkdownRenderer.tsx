@@ -44,12 +44,12 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
       }
     )
 
-    // Add anchors to code blocks with file paths from markdown comments
+    // Add anchors to code blocks with file paths using :filename syntax
     processedMarkdown = processedMarkdown.replace(
-      /```(\w*)\n<!-- ([^\n]+) -->\n/g,
+      /```(\w*):([^\n]+)\n/g,
       (match, language, filePath) => {
         const anchor = `file-${filePath.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}`
-        return `<div id="${anchor}"></div>\n\`\`\`${language}\n<!-- ${filePath} -->\n`
+        return `<div id="${anchor}"></div>\n<div class="code-title">${filePath}</div>\n\`\`\`${language}\n`
       }
     )
     
@@ -120,7 +120,8 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
       prose-blockquote:border-l-[#52B788] prose-blockquote:bg-[#2D6A4F]/5 prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:rounded-r-lg
       prose-code:text-[#52B788] prose-code:bg-[#2D6A4F]/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md
       prose-pre:bg-[#1A1A1A] prose-pre:border prose-pre:border-white/10 prose-pre:text-sm prose-pre:overflow-x-auto
-      [&_.hljs]:bg-transparent [&_.hljs]:text-white/90"
+      [&_.hljs]:bg-transparent [&_.hljs]:text-white/90
+      [&_.code-title]:bg-[#2D6A4F] [&_.code-title]:text-white [&_.code-title]:px-4 [&_.code-title]:py-2 [&_.code-title]:text-sm [&_.code-title]:font-mono [&_.code-title]:border-b [&_.code-title]:border-white/10"
     >
       {renderedContent.map((item, index) => 
         typeof item === 'string' ? (
