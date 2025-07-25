@@ -40,14 +40,27 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
       }
     )
 
-    // Add anchors and titles to code blocks with file paths using :filename syntax
+    // Process code blocks with file paths using :filename syntax
     processedMarkdown = processedMarkdown.replace(
-      /```(\w*):([^\n]+)\n/g,
-      (match, language, filePath) => {
+      /```(\w*):([^\n]+)\n([\s\S]*?)\n```/g,
+      (match, language, filePath, codeContent) => {
         const anchor = `file-${filePath.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}`
         // Determine language from file extension if not provided
         const detectedLang = language || detectLanguageFromFilename(filePath)
-        return `<div id="${anchor}" class="code-block-anchor"></div>\n<div class="code-title">${filePath}</div>\n\`\`\`${detectedLang}\n`
+        
+        // Apply syntax highlighting directly
+        let highlightedCode = codeContent
+        if (detectedLang && hljs.getLanguage(detectedLang)) {
+          try {
+            highlightedCode = hljs.highlight(codeContent, { language: detectedLang, ignoreIllegals: true }).value
+          } catch (e) {
+            console.warn('Syntax highlighting failed for', detectedLang, e)
+          }
+        }
+        
+        return `<div id="${anchor}" class="code-block-anchor"></div>
+<div class="code-title">${filePath}</div>
+<pre class="hljs"><code>${highlightedCode}</code></pre>`
       }
     )
     
