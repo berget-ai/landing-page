@@ -9,13 +9,9 @@ const md = new MarkdownIt({
   linkify: true,
   typographer: true,
   highlight: function (str, lang) {
-    console.log('Highlighting:', { lang, hasLanguage: lang && hljs.getLanguage(lang) })
     if (lang && hljs.getLanguage(lang)) {
-      const result = hljs.highlight(str, { language: lang, ignoreIllegals: true }).value
-      console.log('Highlight result:', result.substring(0, 100))
-      return result
+      return hljs.highlight(str, { language: lang, ignoreIllegals: true }).value
     }
-    console.log('No highlighting for:', lang)
     return md.utils.escapeHtml(str)
   }
 })
@@ -49,9 +45,41 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
       /```(\w*):([^\n]+)\n/g,
       (match, language, filePath) => {
         const anchor = `file-${filePath.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}`
-        return `<div id="${anchor}" class="code-block-anchor"></div>\n<div class="code-title">${filePath}</div>\n\`\`\`${language || 'text'}\n`
+        // Determine language from file extension if not provided
+        const detectedLang = language || detectLanguageFromFilename(filePath)
+        return `<div id="${anchor}" class="code-block-anchor"></div>\n<div class="code-title">${filePath}</div>\n\`\`\`${detectedLang}\n`
       }
     )
+    
+    // Helper function to detect language from filename
+    function detectLanguageFromFilename(filename: string): string {
+      const ext = filename.split('.').pop()?.toLowerCase()
+      const langMap: { [key: string]: string } = {
+        'js': 'javascript',
+        'ts': 'typescript',
+        'jsx': 'javascript',
+        'tsx': 'typescript',
+        'py': 'python',
+        'yaml': 'yaml',
+        'yml': 'yaml',
+        'json': 'json',
+        'md': 'markdown',
+        'sh': 'bash',
+        'bash': 'bash',
+        'dockerfile': 'dockerfile',
+        'go': 'go',
+        'rs': 'rust',
+        'java': 'java',
+        'php': 'php',
+        'rb': 'ruby',
+        'css': 'css',
+        'scss': 'scss',
+        'html': 'html',
+        'xml': 'xml',
+        'sql': 'sql'
+      }
+      return langMap[ext || ''] || 'text'
+    }
     
     // Render markdown with proper syntax highlighting
     return md.render(processedMarkdown)
