@@ -1,5 +1,6 @@
 import { useMemo } from 'react'
 import MarkdownIt from 'markdown-it'
+import hljs from 'highlight.js'
 import { LLMPrompt } from './LLMPrompt'
 
 // Configure markdown parser
@@ -8,9 +9,8 @@ const md = new MarkdownIt({
   linkify: true,
   typographer: true,
   highlight: function (str, lang) {
-    if (lang && lang !== '') {
+    if (lang && hljs.getLanguage(lang)) {
       try {
-        const hljs = require('highlight.js')
         return '<pre class="hljs"><code>' +
                hljs.highlight(str, { language: lang, ignoreIllegals: true }).value +
                '</code></pre>'
@@ -119,9 +119,11 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
       prose-a:text-[#52B788] hover:prose-a:text-[#74C69D] prose-a:no-underline hover:prose-a:underline
       prose-blockquote:border-l-[#52B788] prose-blockquote:bg-[#2D6A4F]/5 prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:rounded-r-lg
       prose-code:text-[#52B788] prose-code:bg-[#2D6A4F]/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md
-      prose-pre:bg-[#1A1A1A] prose-pre:border prose-pre:border-white/10 prose-pre:text-sm prose-pre:overflow-x-auto
-      [&_.hljs]:bg-transparent [&_.hljs]:text-white/90
-      [&_.code-title]:bg-[#2D6A4F] [&_.code-title]:text-white [&_.code-title]:px-4 [&_.code-title]:py-2 [&_.code-title]:text-sm [&_.code-title]:font-mono [&_.code-title]:border-b [&_.code-title]:border-white/10"
+      prose-pre:bg-[#0d1117] prose-pre:border prose-pre:border-white/10 prose-pre:text-sm prose-pre:overflow-x-auto prose-pre:rounded-b-lg prose-pre:m-0
+      [&_.hljs]:bg-transparent [&_.hljs]:p-4
+      [&_.code-title]:bg-[#2D6A4F] [&_.code-title]:text-white [&_.code-title]:px-4 [&_.code-title]:py-2 [&_.code-title]:text-sm [&_.code-title]:font-mono [&_.code-title]:rounded-t-lg [&_.code-title]:border-b [&_.code-title]:border-white/10 [&_.code-title]:mb-0 [&_.code-title]:block
+      [&_.code-block-anchor]:scroll-mt-24
+      [&_pre+.code-title]:hidden"
     >
       {renderedContent.map((item, index) => 
         typeof item === 'string' ? (
