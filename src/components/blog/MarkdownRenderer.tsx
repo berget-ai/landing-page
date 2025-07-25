@@ -158,9 +158,9 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
     >
       {renderedContent.map((item, index) => 
         typeof item === 'string' ? (
-          <div key={index} dangerouslySetInnerHTML={{ __html: item }} />
+          <div key={`html-${index}`} dangerouslySetInnerHTML={{ __html: item }} />
         ) : (
-          item
+          <div key={`component-${index}`}>{item}</div>
         )
       )}
     </div>
