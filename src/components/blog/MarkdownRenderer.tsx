@@ -32,6 +32,15 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
         return `<div data-llm-prompt="${promptId}" data-title="${title}" data-default-expanded="${defaultExpanded}">${innerContent.trim()}</div>`
       }
     )
+
+    // Add anchors to code blocks with file paths
+    processedMarkdown = processedMarkdown.replace(
+      /```(\w*)\n# ([^\n]+)\n/g,
+      (match, language, filePath) => {
+        const anchor = `file-${filePath.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}`
+        return `<div id="${anchor}"></div>\n\`\`\`${language}\n# ${filePath}\n`
+      }
+    )
     
     return md.render(processedMarkdown)
   }, [content])
