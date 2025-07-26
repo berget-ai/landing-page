@@ -1,39 +1,8 @@
-import { useMemo, useState } from 'react'
+import { useMemo } from 'react'
 import MarkdownIt from 'markdown-it'
 import hljs from 'highlight.js'
-import { ChevronDown, ChevronRight } from 'lucide-react'
 import { LLMPrompt } from './LLMPrompt'
-
-// Expandable Code Block Component
-interface ExpandableCodeBlockProps {
-  filename: string
-  code: string
-}
-
-function ExpandableCodeBlock({ filename, code }: ExpandableCodeBlockProps) {
-  const [isExpanded, setIsExpanded] = useState(false)
-
-  return (
-    <div className="my-4">
-      <button
-        onClick={() => setIsExpanded(!isExpanded)}
-        className="w-full flex items-center gap-2 px-4 py-2 bg-[#2D6A4F] text-white text-sm font-mono rounded-t-lg border-b border-white/10 hover:bg-[#2D6A4F]/80 transition-colors"
-      >
-        <span className="flex-1 text-left font-medium">{filename}</span>
-        {isExpanded ? (
-          <ChevronDown className="w-4 h-4" />
-        ) : (
-          <ChevronRight className="w-4 h-4" />
-        )}
-      </button>
-      {isExpanded && (
-        <pre className="hljs bg-[#0d1117] border border-white/10 text-sm overflow-x-auto rounded-b-lg m-0 p-4">
-          <code dangerouslySetInnerHTML={{ __html: code }} />
-        </pre>
-      )}
-    </div>
-  )
-}
+import { ExpandableCodeBlock } from '../common/CodeBlock'
 
 // Configure markdown parser
 const md = new MarkdownIt({
