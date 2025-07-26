@@ -73,19 +73,46 @@ export function ExpandableCodeBlock({ filename, code, defaultExpanded = false }:
     return lines.slice(0, 3).join('\n') // Show first 3 lines
   }
 
+  // Get file type description for better UX
+  const getFileDescription = (filename: string) => {
+    const ext = filename.split('.').pop()?.toLowerCase()
+    const descriptions: { [key: string]: string } = {
+      'yaml': 'Konfigurationsfil',
+      'yml': 'Konfigurationsfil', 
+      'ts': 'TypeScript kod',
+      'js': 'JavaScript kod',
+      'tsx': 'React komponent',
+      'jsx': 'React komponent',
+      'py': 'Python skript',
+      'json': 'Data struktur',
+      'md': 'Dokumentation',
+      'dockerfile': 'Container konfiguration',
+      'sh': 'Shell skript',
+      'bash': 'Shell skript',
+      'css': 'Stilmall',
+      'html': 'Webbsida',
+      'sql': 'Databas fråga'
+    }
+    return descriptions[ext || ''] || 'Kodfil'
+  }
+
   const previewCode = getPreviewCode()
+  const fileDescription = getFileDescription(filename)
 
   return (
     <div className="my-4">
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="w-full flex items-center gap-2 px-4 py-2 bg-[#2D6A4F] text-white text-sm font-mono rounded-t-lg border-b border-white/10 hover:bg-[#2D6A4F]/80 transition-colors"
+        className="w-full flex items-center gap-3 px-4 py-3 bg-[#2D6A4F] text-white text-sm rounded-t-lg border-b border-white/10 hover:bg-[#2D6A4F]/80 transition-colors"
       >
-        <span className="flex-1 text-left font-medium">{filename}</span>
+        <div className="flex-1 text-left">
+          <div className="font-mono font-medium text-white">{filename}</div>
+          <div className="text-xs text-white/70 mt-0.5">{fileDescription}</div>
+        </div>
         {isExpanded ? (
-          <ChevronDown className="w-4 h-4" />
+          <ChevronDown className="w-4 h-4 flex-shrink-0" />
         ) : (
-          <ChevronRight className="w-4 h-4" />
+          <ChevronRight className="w-4 h-4 flex-shrink-0" />
         )}
       </button>
       
