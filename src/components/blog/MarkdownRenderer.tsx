@@ -1,7 +1,39 @@
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import MarkdownIt from 'markdown-it'
 import hljs from 'highlight.js'
+import { ChevronDown, ChevronRight } from 'lucide-react'
 import { LLMPrompt } from './LLMPrompt'
+
+// Expandable Code Block Component
+interface ExpandableCodeBlockProps {
+  filename: string
+  code: string
+}
+
+function ExpandableCodeBlock({ filename, code }: ExpandableCodeBlockProps) {
+  const [isExpanded, setIsExpanded] = useState(false)
+
+  return (
+    <div className="my-4">
+      <button
+        onClick={() => setIsExpanded(!isExpanded)}
+        className="w-full flex items-center gap-2 px-4 py-2 bg-[#2D6A4F] text-white text-sm font-mono rounded-t-lg border-b border-white/10 hover:bg-[#2D6A4F]/80 transition-colors"
+      >
+        <span className="flex-1 text-left font-medium">{filename}</span>
+        {isExpanded ? (
+          <ChevronDown className="w-4 h-4" />
+        ) : (
+          <ChevronRight className="w-4 h-4" />
+        )}
+      </button>
+      {isExpanded && (
+        <pre className="hljs bg-[#0d1117] border border-white/10 text-sm overflow-x-auto rounded-b-lg m-0 p-4">
+          <code dangerouslySetInnerHTML={{ __html: code }} />
+        </pre>
+      )}
+    </div>
+  )
+}
 
 // Configure markdown parser
 const md = new MarkdownIt({
@@ -60,9 +92,10 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
           highlightedCode = md.utils.escapeHtml(highlightedCode)
         }
         
-        return `<div id="${anchor}" class="code-block-anchor"></div>
-<div class="code-title">${filePath}</div>
-<pre class="hljs"><code>${highlightedCode}</code></pre>`
+        // Create a unique ID for this code block
+        const codeBlockId = Math.random().toString(36).substr(2, 9)
+        
+        return `<div data-expandable-code="${codeBlockId}" data-filename="${filePath}" data-anchor="${anchor}">${highlightedCode}</div>`
       }
     )
     
@@ -107,22 +140,44 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
     const parser = new DOMParser()
     const doc = parser.parseFromString(html, 'text/html')
     const promptElements = doc.querySelectorAll('[data-llm-prompt]')
+    const codeElements = doc.querySelectorAll('[data-expandable-code]')
     
     const components: JSX.Element[] = []
+    let componentIndex = 0
     
-    promptElements.forEach((element, index) => {
+    // Handle LLM Prompts
+    promptElements.forEach((element) => {
       const title = element.getAttribute('data-title') || '🤖 LLM Prompt'
       const defaultExpanded = element.getAttribute('data-default-expanded') === 'true'
       const content = element.textContent || ''
       
       components.push(
-        <LLMPrompt key={index} title={title} defaultExpanded={defaultExpanded}>
+        <LLMPrompt key={`prompt-${componentIndex}`} title={title} defaultExpanded={defaultExpanded}>
           {content}
         </LLMPrompt>
       )
       
       // Replace the element with a placeholder
-      element.outerHTML = `<div data-component-placeholder="${index}"></div>`
+      element.outerHTML = `<div data-component-placeholder="${componentIndex}"></div>`
+      componentIndex++
+    })
+    
+    // Handle Expandable Code Blocks
+    codeElements.forEach((element) => {
+      const filename = element.getAttribute('data-filename') || ''
+      const anchor = element.getAttribute('data-anchor') || ''
+      const highlightedCode = element.innerHTML
+      
+      components.push(
+        <div key={`code-${componentIndex}`}>
+          <div id={anchor} className="scroll-mt-24"></div>
+          <ExpandableCodeBlock filename={filename} code={highlightedCode} />
+        </div>
+      )
+      
+      // Replace the element with a placeholder
+      element.outerHTML = `<div data-component-placeholder="${componentIndex}"></div>`
+      componentIndex++
     })
     
     // Split HTML by component placeholders and interleave with components
