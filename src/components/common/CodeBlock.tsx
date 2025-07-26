@@ -103,22 +103,21 @@ export function ExpandableCodeBlock({ filename, code, defaultExpanded = false }:
     <div className="my-4">
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="w-full flex items-center gap-3 px-4 py-3 bg-[#2D6A4F] text-white text-sm rounded-t-lg border-b border-white/10 hover:bg-[#2D6A4F]/80 transition-colors"
+        className="w-full flex items-center gap-3 px-4 py-2 bg-gray-900/50 border border-[#2D6A4F]/30 text-white text-sm rounded-t-lg hover:border-[#2D6A4F]/50 hover:bg-gray-900/70 transition-colors"
       >
         <div className="flex-1 text-left">
           <div className="font-mono font-medium text-white">{filename}</div>
-          <div className="text-xs text-white/70 mt-0.5">{fileDescription}</div>
         </div>
         {isExpanded ? (
-          <ChevronDown className="w-4 h-4 flex-shrink-0" />
+          <ChevronDown className="w-4 h-4 flex-shrink-0 text-[#2D6A4F]" />
         ) : (
-          <ChevronRight className="w-4 h-4 flex-shrink-0" />
+          <ChevronRight className="w-4 h-4 flex-shrink-0 text-[#2D6A4F]" />
         )}
       </button>
       
       {/* Preview when collapsed */}
       {!isExpanded && (
-        <div className="relative bg-[#0d1117] border border-white/10 rounded-b-lg overflow-hidden">
+        <div className="relative bg-[#0d1117] border-x border-b border-[#2D6A4F]/30 rounded-b-lg overflow-hidden">
           <pre className="hljs text-sm m-0 p-4 pb-8">
             <code className="text-white/60">{previewCode}</code>
           </pre>
@@ -133,7 +132,7 @@ export function ExpandableCodeBlock({ filename, code, defaultExpanded = false }:
       
       {/* Full code when expanded */}
       {isExpanded && (
-        <pre className="hljs bg-[#0d1117] border border-white/10 text-sm overflow-x-auto rounded-b-lg m-0 p-4">
+        <pre className="hljs bg-[#0d1117] border-x border-b border-[#2D6A4F]/30 text-sm overflow-x-auto rounded-b-lg m-0 p-4">
           <code dangerouslySetInnerHTML={{ __html: code }} />
         </pre>
       )}
