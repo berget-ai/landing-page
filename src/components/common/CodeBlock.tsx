@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ChevronDown, ChevronRight } from 'lucide-react'
+import { ChevronDown, ChevronRight, Copy, Check } from 'lucide-react'
 
 interface CodeBlockProps {
   children: React.ReactNode
@@ -63,6 +63,7 @@ export function CodeBlock({ children, title, defaultExpanded = false }: CodeBloc
 
 export function ExpandableCodeBlock({ filename, code, defaultExpanded = false }: ExpandableCodeBlockProps) {
   const [isExpanded, setIsExpanded] = useState(defaultExpanded)
+  const [isCopied, setIsCopied] = useState(false)
 
   // Extract first few lines for preview
   const getPreviewCode = () => {
@@ -71,6 +72,21 @@ export function ExpandableCodeBlock({ filename, code, defaultExpanded = false }:
     const textContent = tempDiv.textContent || tempDiv.innerText || ''
     const lines = textContent.split('\n')
     return lines.slice(0, 3).join('\n') // Show first 3 lines
+  }
+
+  // Copy code to clipboard
+  const copyToClipboard = async () => {
+    const tempDiv = document.createElement('div')
+    tempDiv.innerHTML = code
+    const textContent = tempDiv.textContent || tempDiv.innerText || ''
+    
+    try {
+      await navigator.clipboard.writeText(textContent)
+      setIsCopied(true)
+      setTimeout(() => setIsCopied(false), 2000)
+    } catch (err) {
+      console.error('Failed to copy code:', err)
+    }
   }
 
   // Get file type description for better UX
@@ -101,19 +117,37 @@ export function ExpandableCodeBlock({ filename, code, defaultExpanded = false }:
 
   return (
     <div className="my-4">
-      <button
-        onClick={() => setIsExpanded(!isExpanded)}
-        className="w-full flex items-center gap-3 px-4 py-2 bg-gray-900/50 border border-[#2D6A4F]/30 text-white text-sm rounded-t-lg hover:border-[#2D6A4F]/50 hover:bg-gray-900/70 transition-colors"
-      >
-        <div className="flex-1 text-left">
-          <div className="font-mono font-medium text-white">{filename}</div>
-        </div>
-        {isExpanded ? (
-          <ChevronDown className="w-4 h-4 flex-shrink-0 text-[#2D6A4F]" />
-        ) : (
-          <ChevronRight className="w-4 h-4 flex-shrink-0 text-[#2D6A4F]" />
-        )}
-      </button>
+      <div className="relative">
+        <button
+          onClick={() => setIsExpanded(!isExpanded)}
+          className="w-full flex items-center gap-3 px-4 py-2 bg-gray-900/50 border border-[#2D6A4F]/30 text-white text-sm rounded-t-lg hover:border-[#2D6A4F]/50 hover:bg-gray-900/70 transition-colors"
+        >
+          <div className="flex-1 text-left">
+            <div className="font-mono font-medium text-white">{filename}</div>
+          </div>
+          {isExpanded ? (
+            <ChevronDown className="w-4 h-4 flex-shrink-0 text-[#2D6A4F]" />
+          ) : (
+            <ChevronRight className="w-4 h-4 flex-shrink-0 text-[#2D6A4F]" />
+          )}
+        </button>
+        
+        {/* Copy button */}
+        <button
+          onClick={(e) => {
+            e.stopPropagation()
+            copyToClipboard()
+          }}
+          className="absolute right-12 top-1/2 -translate-y-1/2 p-1.5 rounded-md bg-gray-800/50 hover:bg-gray-700/50 text-white/60 hover:text-white transition-colors"
+          title="Kopiera kod"
+        >
+          {isCopied ? (
+            <Check className="w-3.5 h-3.5 text-green-400" />
+          ) : (
+            <Copy className="w-3.5 h-3.5" />
+          )}
+        </button>
+      </div>
       
       {/* Preview when collapsed */}
       {!isExpanded && (
