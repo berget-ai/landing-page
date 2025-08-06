@@ -249,6 +249,7 @@
     "title": "Our Models",
     "description": "Access a broad selection of powerful open models to build diverse AI solutions.",
     "requestModel": "Request a Model",
+    "viewAll": "View all",
     "viewDocs": "View Model Documentation",
     "comprehensive": {
       "title": "Comprehensive Model Selection",
