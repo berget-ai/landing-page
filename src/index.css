@@ -1,5 +1,6 @@
 @import '@fontsource/dm-sans';
 @import '@fontsource/ovo';
+@import 'highlight.js/styles/github-dark.css';
 
 @tailwind base;
 @tailwind components;
