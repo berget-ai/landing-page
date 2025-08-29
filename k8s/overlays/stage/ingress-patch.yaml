@@ -20,7 +20,7 @@ spec:
               service:
                 name: berget-website
                 port:
-                  number: 80
+                  name: http
 ---
 apiVersion: v1
 kind: ConfigMap
