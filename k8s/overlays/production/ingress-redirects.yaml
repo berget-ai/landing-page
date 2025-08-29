@@ -39,7 +39,7 @@ spec:
               service:
                 name: berget-website
                 port:
-                  number: 80
+                  name: http
     - host: www.berget.cloud
       http:
         paths:
@@ -49,4 +49,4 @@ spec:
               service:
                 name: berget-website
                 port:
-                  number: 80
+                  name: http
