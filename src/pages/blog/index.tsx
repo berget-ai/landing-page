@@ -4,6 +4,7 @@ import { BlogList } from '@/components/blog/BlogList'
 import { Input } from '@/components/ui/input'
 import { Search } from 'lucide-react'
 import { Helmet } from '@/components/common/Helmet'
+import { useTranslation } from 'react-i18next'
 import type { BlogPost } from '@/types/blog'
 
 // Import all blog posts
@@ -15,6 +16,8 @@ const postModules = import.meta.glob('./posts/**/*.md', {
 export default function BlogPage() {
   const [posts, setPosts] = useState<BlogPost[]>([])
   const [searchTerm, setSearchTerm] = useState('')
+  const { i18n } = useTranslation()
+  const currentLanguage = i18n.language as 'en' | 'sv'
 
   useEffect(() => {
     const loadPosts = async () => {
@@ -84,7 +87,8 @@ export default function BlogPage() {
   const filteredPosts = posts.filter(post => {
     const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          post.description.toLowerCase().includes(searchTerm.toLowerCase())
-    return matchesSearch
+    const matchesLanguage = post.language === currentLanguage
+    return matchesSearch && matchesLanguage
   })
 
   return (
