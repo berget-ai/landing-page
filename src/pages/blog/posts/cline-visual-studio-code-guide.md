@@ -5,8 +5,8 @@ date: '2025-01-11'
 author: 'Andreas Lundmark'
 email: 'andreas@berget.ai'
 tags: ['utveckling', 'ai-kodning', 'visual-studio-code', 'cline', 'tutorial']
-image: /images/cline-vscode.png
-imageAlt: 'Cline extension i Visual Studio Code med Berget AI'
+image: /images/cline.png
+imageAlt: 'Cline AI-kodningsassistent med robot som pekar på kod'
 ---
 
 Cline är en kraftfull AI-kodningsassistent som kan hjälpa dig att skriva, refaktorera och förbättra din kod direkt i Visual Studio Code. I den här guiden visar vi hur du konfigurerar Cline för att använda Berget AI:s modeller, vilket ger dig tillgång till europeiska AI-modeller med hög prestanda för kodgenerering.
