@@ -2,8 +2,8 @@
 title: 'Så kör du Cline med Berget AI i Visual Studio Code'
 description: 'En steg-för-steg guide för att konfigurera Cline med Berget AI:s modeller för AI-assisterad kodning'
 date: '2025-01-11'
-author: 'Andreas Lundmark'
-email: 'andreas@berget.ai'
+author: 'Christian Landgren'
+email: 'christian@berget.ai'
 tags: ['utveckling', 'ai-kodning', 'visual-studio-code', 'cline', 'tutorial']
 image: /images/cline.png
 imageAlt: 'Cline AI-kodningsassistent med robot som pekar på kod'
