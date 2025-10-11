@@ -5,8 +5,8 @@ date: '2025-01-11'
 author: 'Andreas Lundmark'
 email: 'andreas@berget.ai'
 tags: ['development', 'ai-coding', 'visual-studio-code', 'cline', 'tutorial']
-image: /images/cline-vscode.png
-imageAlt: 'Cline extension in Visual Studio Code with Berget AI'
+image: /images/cline.png
+imageAlt: 'Cline AI coding assistant with robot pointing at code'
 language: en
 ---
 
