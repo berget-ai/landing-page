@@ -53,8 +53,8 @@ Börja med att installera Cline-extensionen:
 3. Sök efter "Cline"
 4. Klicka på "Install" för Cline-extensionen
 
-![Installera Cline extension](/images/cline-install-screenshot.png)
-*Installation av Cline-extensionen i VS Code*
+![Installera Cline extension](/images/cline_visual_studio_install.png)
+_Installation av Cline-extensionen i VS Code_
 
 ## Steg 2: Skapa en API-nyckel från Berget AI
 
@@ -72,9 +72,6 @@ berget auth login
 berget api-keys create --name "Cline Development"
 ```
 
-![Skapa API-nyckel via CLI](/images/berget-cli-api-key.png)
-*Skapa API-nyckel med Berget CLI*
-
 ### Alternativ B: Via Console
 
 1. Gå till [console.berget.ai](https://console.berget.ai)
@@ -85,7 +82,7 @@ berget api-keys create --name "Cline Development"
 6. Kopiera den genererade nyckeln
 
 ![Skapa API-nyckel i console](/images/console-api-key-creation.png)
-*Skapa API-nyckel i Berget AI Console*
+_Skapa API-nyckel i Berget AI Console_
 
 **Viktigt**: Spara din API-nyckel säkert - den visas bara en gång!
 
@@ -99,18 +96,20 @@ Nu ska vi konfigurera Cline att använda Berget AI:s API:
 4. Fyll i följande information:
 
 **API Configuration:**
+
 - **Base URL**: `https://api.berget.ai/v1`
 - **API Key**: Din API-nyckel från steg 2
 - **Model**: `glm-4.6` (rekommenderas för kodgenerering)
 
 ![Konfigurera Cline med Berget AI](/images/cline-berget-config.png)
-*Konfiguration av Cline med Berget AI:s API*
+_Konfiguration av Cline med Berget AI:s API_
 
 ## Steg 4: Välj rätt modell för kodgenerering
 
 Berget AI erbjuder flera modeller som fungerar utmärkt med Cline:
 
 ### GLM-4.6 (Rekommenderas för kodgenerering - State-of-the-art)
+
 - **Bäst för**: Kodgenerering, refaktorering, felsökning, komplexa programmeringsuppgifter, agentic workflows
 - **Styrkor**: 357B parametrar, överträffar Claude Sonnet 4 i många fall, utmärkt kodprestanda i Cline och andra kodverktyg
 - **Språkstöd**: Stöder alla populära programmeringsspråk inklusive Python, JavaScript, TypeScript, Go, Rust
@@ -119,6 +118,7 @@ Berget AI erbjuder flera modeller som fungerar utmärkt med Cline:
 - **Modell-ID**: `glm-4.6`
 
 ### Qwen 3.2 32B
+
 - **Bäst för**: Komplexa kodprojekt, arkitekturella beslut, kodgranskning
 - **Styrkor**: Mycket stark kodförståelse, utmärkt på reasoning och problemlösning
 - **Språkstöd**: Bred språkstöd med särskilt stark prestanda på Python och JavaScript
@@ -126,6 +126,7 @@ Berget AI erbjuder flera modeller som fungerar utmärkt med Cline:
 - **Modell-ID**: `qwen-3.2-32b`
 
 ### Magistral Small
+
 - **Bäst för**: Snabba kodförslag, mindre refaktoreringar, prototyping
 - **Styrkor**: Europeisk modell med god kodförståelse, snabba svar
 - **Fördelar**: Lägre latens, kostnadseffektiv, bra för iterativ utveckling
@@ -133,7 +134,7 @@ Berget AI erbjuder flera modeller som fungerar utmärkt med Cline:
 - **Modell-ID**: `magistral-small`
 
 ![Modellval i Cline](/images/cline-model-selection.png)
-*Val av AI-modell i Cline*
+_Val av AI-modell i Cline_
 
 ## Steg 5: Testa din konfiguration
 
@@ -142,6 +143,7 @@ Låt oss testa att allt fungerar:
 1. Öppna ett kodprojekt i VS Code
 2. Öppna Cline-panelen
 3. Skriv en enkel förfrågan, till exempel:
+
    ```
    Skapa en enkel HTTP-server i Node.js som svarar med "Hello World" på port 3000
    ```
@@ -149,7 +151,7 @@ Låt oss testa att allt fungerar:
 4. Cline bör nu generera kod och eventuellt skapa filer åt dig
 
 ![Första test med Cline](/images/cline-first-test.png)
-*Första test av Cline med Berget AI*
+_Första test av Cline med Berget AI_
 
 ## Avancerade konfigurationer
 
@@ -182,32 +184,37 @@ För olika projekt kan du vilja använda olika modeller baserat på dina behov:
 
 Baserat på benchmarks och verklig användning:
 
-| Modell | Kodkvalitet | Hastighet | Kostnad | Bäst för |
-|--------|-------------|-----------|---------|----------|
-| Qwen 3.2 32B | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐ | Komplexa projekt |
-| GLM-4.6 | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | Allmän kodning |
-| Magistral Small | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | Snabba uppgifter |
+| Modell          | Kodkvalitet | Hastighet  | Kostnad    | Bäst för         |
+| --------------- | ----------- | ---------- | ---------- | ---------------- |
+| Qwen 3.2 32B    | ⭐⭐⭐⭐⭐  | ⭐⭐⭐     | ⭐⭐⭐     | Komplexa projekt |
+| GLM-4.6         | ⭐⭐⭐⭐    | ⭐⭐⭐⭐   | ⭐⭐⭐⭐   | Allmän kodning   |
+| Magistral Small | ⭐⭐⭐      | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | Snabba uppgifter |
 
 ## Praktiska tips för att använda Cline effektivt
 
 ### 1. Var specifik i dina förfrågningar
+
 ```
 ❌ "Fixa den här funktionen"
 ✅ "Refaktorera getUserData-funktionen för att använda async/await istället för callbacks"
 ```
 
 ### 2. Ge kontext om ditt projekt
+
 ```
 ✅ "I det här React-projektet med TypeScript, skapa en ny komponent för användarprofilsida"
 ```
 
 ### 3. Använd Cline för hela arbetsflöden
+
 ```
 ✅ "Skapa en ny API-endpoint, lägg till tester, och uppdatera dokumentationen"
 ```
 
 ### 4. Låt Cline köra tester
+
 Cline kan köra dina tester och fixa problem automatiskt:
+
 ```
 ✅ "Kör testerna och fixa eventuella fel som uppstår"
 ```
@@ -215,6 +222,7 @@ Cline kan köra dina tester och fixa problem automatiskt:
 ## Felsökning
 
 ### Problem: "API Key Invalid"
+
 - Kontrollera att du kopierat hela API-nyckeln korrekt
 - Verifiera att nyckeln inte har gått ut
 - Testa nyckeln med ett enkelt curl-kommando:
@@ -226,31 +234,36 @@ curl -H "Authorization: Bearer din-api-nyckel" \
 ```
 
 ### Problem: "Model Not Found"
+
 - Kontrollera att modellnamnet är korrekt stavat
 - Använd `glm-4.6`, `qwen-3.2-32b` eller `magistral-small`
 - Verifiera att din API-nyckel har tillgång till modellen
 
 ### Problem: Långsamma svar
+
 - Prova att byta till `magistral-small` för snabbare svar
 - Minska `maxTokens` i konfigurationen
 - Kontrollera din internetanslutning
 
 ![Felsökning av Cline](/images/cline-troubleshooting.png)
-*Vanliga felsökningssteg för Cline*
+_Vanliga felsökningssteg för Cline_
 
 ## Säkerhet och bästa praxis
 
 ### Skydda din API-nyckel
+
 - Lagra aldrig API-nycklar i kod som committas till Git
 - Använd miljövariabler eller VS Code:s säkra lagring
 - Rotera nycklar regelbundet
 
 ### Granska genererad kod
+
 - Cline är kraftfull men inte felfri
 - Granska alltid kod innan du kör den i produktion
 - Använd dina vanliga kodgranskningsprocesser
 
 ### Begränsa åtkomst
+
 - Skapa separata API-nycklar för olika projekt
 - Använd nycklar med begränsade rättigheter när möjligt
 
@@ -269,4 +282,4 @@ Kom igång idag och upplev hur AI-assisterad kodning kan accelerera din utveckli
 
 ---
 
-*Behöver du hjälp med konfigurationen eller har frågor om våra modeller? [Kontakta oss](mailto:support@berget.ai) eller besök vår [dokumentation](https://docs.berget.ai).*
+_Behöver du hjälp med konfigurationen eller har frågor om våra modeller? [Kontakta oss](mailto:support@berget.ai) eller besök vår [dokumentation](https://docs.berget.ai)._
