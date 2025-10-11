@@ -110,11 +110,12 @@ Nu ska vi konfigurera Cline att använda Berget AI:s API:
 
 Berget AI erbjuder flera modeller som fungerar utmärkt med Cline:
 
-### GLM-4.6 (Rekommenderas för kodgenerering)
-- **Bäst för**: Kodgenerering, refaktorering, felsökning, komplexa programmeringsuppgifter
-- **Styrkor**: Utmärkt förståelse för programmeringskontext, stark prestanda på HumanEval benchmark
+### GLM-4.6 (Rekommenderas för kodgenerering - State-of-the-art)
+- **Bäst för**: Kodgenerering, refaktorering, felsökning, komplexa programmeringsuppgifter, agentic workflows
+- **Styrkor**: 357B parametrar, överträffar Claude Sonnet 4 i många fall, utmärkt kodprestanda i Cline och andra kodverktyg
 - **Språkstöd**: Stöder alla populära programmeringsspråk inklusive Python, JavaScript, TypeScript, Go, Rust
-- **Prestanda**: Hög kvalitet på kodgenerering, bra på att följa instruktioner
+- **Prestanda**: State-of-the-art kodgenerering, 200K tokens kontextfönster, avancerad reasoning
+- **Specialfunktioner**: Förbättrad prestanda för visuellt polerade frontend-sidor, starkare agent-kapaciteter
 - **Modell-ID**: `glm-4.6`
 
 ### Qwen 3.2 32B
@@ -262,7 +263,7 @@ Med Cline och Berget AI får du en kraftfull AI-kodningsassistent som:
 - **Integreras sömlöst** i din befintliga utvecklingsmiljö
 - **Skalas med dina behov** från prototyper till produktion
 
-GLM-4.6 är vår rekommendation för allmän kodgenerering, Qwen 3.2 32B för komplexa projekt som kräver djup förståelse, medan Magistral Small är perfekt när du behöver snabba svar för mindre uppgifter.
+GLM-4.6 är vår toppmodell för kodgenerering med state-of-the-art prestanda som överträffar Claude Sonnet 4 i många fall. Med sina 357B parametrar och 200K tokens kontextfönster är den perfekt för komplexa kodprojekt. Qwen 3.2 32B är ett utmärkt alternativ för djup kodförståelse, medan Magistral Small är perfekt när du behöver snabba svar för mindre uppgifter.
 
 Kom igång idag och upplev hur AI-assisterad kodning kan accelerera din utveckling!
 

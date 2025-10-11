@@ -111,11 +111,12 @@ Now let's configure Cline to use Berget AI's API:
 
 Berget AI offers several models that work excellently with Cline:
 
-### GLM-4.6 (Recommended for code generation)
-- **Best for**: Code generation, refactoring, debugging, complex programming tasks
-- **Strengths**: Excellent understanding of programming context, strong performance on HumanEval benchmark
+### GLM-4.6 (Recommended for code generation - State-of-the-art)
+- **Best for**: Code generation, refactoring, debugging, complex programming tasks, agentic workflows
+- **Strengths**: 357B parameters, outperforms Claude Sonnet 4 in many cases, excellent coding performance in Cline and other coding tools
 - **Language support**: Supports all popular programming languages including Python, JavaScript, TypeScript, Go, Rust
-- **Performance**: High quality code generation, good at following instructions
+- **Performance**: State-of-the-art code generation, 200K token context window, advanced reasoning capabilities
+- **Special features**: Enhanced performance for visually polished frontend pages, stronger agent capabilities
 - **Model ID**: `glm-4.6`
 
 ### Qwen 3.2 32B
@@ -263,7 +264,7 @@ With Cline and Berget AI, you get a powerful AI coding assistant that:
 - **Integrates seamlessly** into your existing development environment
 - **Scales with your needs** from prototypes to production
 
-GLM-4.6 is our recommendation for general code generation, Qwen 3.2 32B for complex projects requiring deep understanding, while Magistral Small is perfect when you need fast responses for smaller tasks.
+GLM-4.6 is our top model for code generation with state-of-the-art performance that outperforms Claude Sonnet 4 in many cases. With its 357B parameters and 200K token context window, it's perfect for complex coding projects. Qwen 3.2 32B is an excellent alternative for deep code understanding, while Magistral Small is perfect when you need fast responses for smaller tasks.
 
 Get started today and experience how AI-assisted coding can accelerate your development!
 
