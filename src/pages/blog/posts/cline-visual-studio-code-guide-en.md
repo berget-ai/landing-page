@@ -2,8 +2,8 @@
 title: 'How to Run Cline with Berget AI in Visual Studio Code'
 description: 'A step-by-step guide to configure Cline with Berget AI models for AI-assisted coding'
 date: '2025-01-11'
-author: 'Andreas Lundmark'
-email: 'andreas@berget.ai'
+author: 'Christian Landgren'
+email: 'christian@berget.ai'
 tags: ['development', 'ai-coding', 'visual-studio-code', 'cline', 'tutorial']
 image: /images/cline.png
 imageAlt: 'Cline AI coding assistant with robot pointing at code'
