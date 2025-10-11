@@ -24,12 +24,26 @@ Cline (formerly known as Claude Dev) is a Visual Studio Code extension that inte
 
 ## Why Use Berget AI with Cline?
 
-Berget AI offers several advantages for code generation:
+### The Problem with Foreign AI Coding Tools
 
-- **European AI sovereignty**: Your code and data stays within the EU
-- **Specialized code models**: GLM-4.6 and Magistral are optimized for code generation
+Many developers today use tools like Claude Code, GitHub Copilot, or Visual Studio IntelliCode without considering where their code and business secrets end up. When you use these services, your code is sent to servers in the US or other countries, creating several problems:
+
+- **Business secrets at risk**: Your proprietary code, API keys, and business logic are sent to foreign servers
+- **GDPR violations**: Personal data in code may be processed outside the EU without adequate protection
+- **Corporate policy violations**: Many organizations have policies prohibiting sensitive code from leaving the company
+- **Legal uncertainty**: The Cloud Act and FISA give US authorities the right to request data from US companies
+- **No control**: You don't know who has access to your code or how it's used to train future models
+
+### Berget AI - The Swedish Alternative
+
+Berget AI solves these problems by offering several advantages for code generation:
+
+- **European AI sovereignty**: Your code and data stays within the EU under European legislation
+- **Specialized code models**: GLM-4.6, Qwen 3.2 32B, and Magistral are optimized for code generation
 - **Transparent pricing**: No hidden costs or surprises
 - **High performance**: Fast responses and low latency from Swedish data centers
+- **No training data**: Your code is never used to train models or improve the service
+- **Full control**: You retain full control over your code and can be sure it never leaves Sweden
 
 ## Step 1: Install Cline in Visual Studio Code
 
