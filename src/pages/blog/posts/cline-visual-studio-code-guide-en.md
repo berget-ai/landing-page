@@ -104,7 +104,7 @@ Now let's configure Cline to use Berget AI's API:
 - **API Key**: Your API key from step 2
 - **Model**: `glm-4.6` (recommended for code generation)
 
-![Configure Cline with Berget AI](/images/cline-berget-config.png)
+![Configure Cline with Berget AI](/images/cline_configure.png)
 *Configuration of Cline with Berget AI's API*
 
 ## Step 4: Choose the Right Model for Code Generation

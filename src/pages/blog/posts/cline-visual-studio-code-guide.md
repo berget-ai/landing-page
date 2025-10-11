@@ -101,7 +101,7 @@ Nu ska vi konfigurera Cline att använda Berget AI:s API:
 - **API Key**: Din API-nyckel från steg 2
 - **Model**: `glm-4.6` (rekommenderas för kodgenerering)
 
-![Konfigurera Cline med Berget AI](/images/cline-berget-config.png)
+![Konfigurera Cline med Berget AI](/images/cline_configure.png)
 _Konfiguration av Cline med Berget AI:s API_
 
 ## Steg 4: Välj rätt modell för kodgenerering
