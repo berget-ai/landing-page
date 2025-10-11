@@ -54,7 +54,7 @@ Start by installing the Cline extension:
 3. Search for "Cline"
 4. Click "Install" for the Cline extension
 
-![Install Cline extension](/images/cline-install-screenshot.png)
+![Install Cline extension](/images/cline_visual_studio_install.png)
 *Installing the Cline extension in VS Code*
 
 ## Step 2: Create an API Key from Berget AI
