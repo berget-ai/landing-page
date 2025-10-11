@@ -96,16 +96,25 @@ Nu ska vi konfigurera Cline att använda Berget AI:s API:
 
 Berget AI erbjuder flera modeller som fungerar utmärkt med Cline:
 
-### GLM-4.6 (Rekommenderas)
-- **Bäst för**: Kodgenerering, refaktorering, felsökning
-- **Styrkor**: Utmärkt förståelse för programmeringskontext
-- **Språkstöd**: Stöder alla populära programmeringsspråk
+### GLM-4.6 (Rekommenderas för kodgenerering)
+- **Bäst för**: Kodgenerering, refaktorering, felsökning, komplexa programmeringsuppgifter
+- **Styrkor**: Utmärkt förståelse för programmeringskontext, stark prestanda på HumanEval benchmark
+- **Språkstöd**: Stöder alla populära programmeringsspråk inklusive Python, JavaScript, TypeScript, Go, Rust
+- **Prestanda**: Hög kvalitet på kodgenerering, bra på att följa instruktioner
 - **Modell-ID**: `glm-4.6`
 
+### Qwen 3.2 32B
+- **Bäst för**: Komplexa kodprojekt, arkitekturella beslut, kodgranskning
+- **Styrkor**: Mycket stark kodförståelse, utmärkt på reasoning och problemlösning
+- **Språkstöd**: Bred språkstöd med särskilt stark prestanda på Python och JavaScript
+- **Prestanda**: Topprestanda på kodrelaterade benchmarks, bra balans mellan hastighet och kvalitet
+- **Modell-ID**: `qwen-3.2-32b`
+
 ### Magistral Small
-- **Bäst för**: Snabba kodförslag, mindre refaktoreringar
-- **Styrkor**: Europeisk modell med god kodförståelse
-- **Fördelar**: Snabbare svar, lägre kostnad
+- **Bäst för**: Snabba kodförslag, mindre refaktoreringar, prototyping
+- **Styrkor**: Europeisk modell med god kodförståelse, snabba svar
+- **Fördelar**: Lägre latens, kostnadseffektiv, bra för iterativ utveckling
+- **Prestanda**: Solid prestanda för mindre koduppgifter, optimerad för hastighet
 - **Modell-ID**: `magistral-small`
 
 ![Modellval i Cline](/images/cline-model-selection.png)
@@ -145,11 +154,24 @@ Du kan finjustera modellens beteende genom att lägga till parametrar i konfigur
 
 ### Projektspecifika inställningar
 
-För olika projekt kan du vilja använda olika modeller:
+För olika projekt kan du vilja använda olika modeller baserat på dina behov:
 
-- **Stora projekt**: GLM-4.6 för bättre kontextförståelse
-- **Prototyping**: Magistral Small för snabbare iteration
-- **Produktionskod**: GLM-4.6 med låg temperature (0.1) för mer deterministiska resultat
+- **Stora, komplexa projekt**: Qwen 3.2 32B för djup kodförståelse och arkitekturella beslut
+- **Allmän kodgenerering**: GLM-4.6 för balanserad prestanda och kvalitet
+- **Snabb prototyping**: Magistral Small för snabba iterationer och kostnadseffektivitet
+- **Produktionskod**: GLM-4.6 eller Qwen 3.2 32B med låg temperature (0.1) för deterministiska resultat
+- **Kodgranskning**: Qwen 3.2 32B för djupgående analys och förslag på förbättringar
+- **Bugfixing**: GLM-4.6 för effektiv felsökning och problemlösning
+
+### Prestandajämförelse
+
+Baserat på benchmarks och verklig användning:
+
+| Modell | Kodkvalitet | Hastighet | Kostnad | Bäst för |
+|--------|-------------|-----------|---------|----------|
+| Qwen 3.2 32B | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐ | Komplexa projekt |
+| GLM-4.6 | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | Allmän kodning |
+| Magistral Small | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | Snabba uppgifter |
 
 ## Praktiska tips för att använda Cline effektivt
 
@@ -190,7 +212,7 @@ curl -H "Authorization: Bearer din-api-nyckel" \
 
 ### Problem: "Model Not Found"
 - Kontrollera att modellnamnet är korrekt stavat
-- Använd `glm-4.6` eller `magistral-small`
+- Använd `glm-4.6`, `qwen-3.2-32b` eller `magistral-small`
 - Verifiera att din API-nyckel har tillgång till modellen
 
 ### Problem: Långsamma svar
@@ -226,7 +248,7 @@ Med Cline och Berget AI får du en kraftfull AI-kodningsassistent som:
 - **Integreras sömlöst** i din befintliga utvecklingsmiljö
 - **Skalas med dina behov** från prototyper till produktion
 
-GLM-4.6 är vår rekommendation för de flesta kodgenereringsuppgifter, medan Magistral Small är perfekt när du behöver snabba svar för mindre uppgifter.
+GLM-4.6 är vår rekommendation för allmän kodgenerering, Qwen 3.2 32B för komplexa projekt som kräver djup förståelse, medan Magistral Small är perfekt när du behöver snabba svar för mindre uppgifter.
 
 Kom igång idag och upplev hur AI-assisterad kodning kan accelerera din utveckling!
 

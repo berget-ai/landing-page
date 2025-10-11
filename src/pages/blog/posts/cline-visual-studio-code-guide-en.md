@@ -97,16 +97,25 @@ Now let's configure Cline to use Berget AI's API:
 
 Berget AI offers several models that work excellently with Cline:
 
-### GLM-4.6 (Recommended)
-- **Best for**: Code generation, refactoring, debugging
-- **Strengths**: Excellent understanding of programming context
-- **Language support**: Supports all popular programming languages
+### GLM-4.6 (Recommended for code generation)
+- **Best for**: Code generation, refactoring, debugging, complex programming tasks
+- **Strengths**: Excellent understanding of programming context, strong performance on HumanEval benchmark
+- **Language support**: Supports all popular programming languages including Python, JavaScript, TypeScript, Go, Rust
+- **Performance**: High quality code generation, good at following instructions
 - **Model ID**: `glm-4.6`
 
+### Qwen 3.2 32B
+- **Best for**: Complex code projects, architectural decisions, code review
+- **Strengths**: Very strong code understanding, excellent at reasoning and problem-solving
+- **Language support**: Broad language support with particularly strong performance on Python and JavaScript
+- **Performance**: Top performance on code-related benchmarks, good balance of speed and quality
+- **Model ID**: `qwen-3.2-32b`
+
 ### Magistral Small
-- **Best for**: Quick code suggestions, smaller refactoring
-- **Strengths**: European model with good code understanding
-- **Advantages**: Faster responses, lower cost
+- **Best for**: Quick code suggestions, smaller refactoring, prototyping
+- **Strengths**: European model with good code understanding, fast responses
+- **Advantages**: Lower latency, cost-effective, good for iterative development
+- **Performance**: Solid performance for smaller coding tasks, optimized for speed
 - **Model ID**: `magistral-small`
 
 ![Model selection in Cline](/images/cline-model-selection.png)
@@ -146,11 +155,24 @@ You can fine-tune the model's behavior by adding parameters to the configuration
 
 ### Project-Specific Settings
 
-For different projects, you might want to use different models:
+For different projects, you might want to use different models based on your needs:
 
-- **Large projects**: GLM-4.6 for better context understanding
-- **Prototyping**: Magistral Small for faster iteration
-- **Production code**: GLM-4.6 with low temperature (0.1) for more deterministic results
+- **Large, complex projects**: Qwen 3.2 32B for deep code understanding and architectural decisions
+- **General code generation**: GLM-4.6 for balanced performance and quality
+- **Rapid prototyping**: Magistral Small for fast iterations and cost-effectiveness
+- **Production code**: GLM-4.6 or Qwen 3.2 32B with low temperature (0.1) for deterministic results
+- **Code review**: Qwen 3.2 32B for in-depth analysis and improvement suggestions
+- **Bug fixing**: GLM-4.6 for efficient debugging and problem-solving
+
+### Performance Comparison
+
+Based on benchmarks and real-world usage:
+
+| Model | Code Quality | Speed | Cost | Best For |
+|-------|--------------|-------|------|----------|
+| Qwen 3.2 32B | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐ | Complex projects |
+| GLM-4.6 | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | General coding |
+| Magistral Small | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | Quick tasks |
 
 ## Practical Tips for Using Cline Effectively
 
@@ -191,7 +213,7 @@ curl -H "Authorization: Bearer your-api-key" \
 
 ### Problem: "Model Not Found"
 - Check that the model name is spelled correctly
-- Use `glm-4.6` or `magistral-small`
+- Use `glm-4.6`, `qwen-3.2-32b` or `magistral-small`
 - Verify that your API key has access to the model
 
 ### Problem: Slow Responses
@@ -227,7 +249,7 @@ With Cline and Berget AI, you get a powerful AI coding assistant that:
 - **Integrates seamlessly** into your existing development environment
 - **Scales with your needs** from prototypes to production
 
-GLM-4.6 is our recommendation for most code generation tasks, while Magistral Small is perfect when you need fast responses for smaller tasks.
+GLM-4.6 is our recommendation for general code generation, Qwen 3.2 32B for complex projects requiring deep understanding, while Magistral Small is perfect when you need fast responses for smaller tasks.
 
 Get started today and experience how AI-assisted coding can accelerate your development!
 
