@@ -7,7 +7,7 @@ email: andreas@berget.ai
 tags:
   - partnerships
 image: /images/bergetdigitalist.png
-imageAlt: D and Berget AI
+imageAlt: Digitalist and Berget AI
 ---
 ## Digitalist och Berget AI inleder partnerskap för datasuverän AI
 
