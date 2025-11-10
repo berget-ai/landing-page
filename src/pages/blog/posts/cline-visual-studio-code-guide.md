@@ -53,7 +53,7 @@ Börja med att installera Cline-extensionen:
 3. Sök efter "Cline"
 4. Klicka på "Install" för Cline-extensionen
 
-![Installera Cline extension](/images/cline-install-screenshot.png)
+![Installera Cline extension](/images/cline.png)
 *Installation av Cline-extensionen i VS Code*
 
 ## Steg 2: Skapa en API-nyckel från Berget AI
