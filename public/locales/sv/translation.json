@@ -248,6 +248,7 @@
     "title": "Våra Modeller",
     "description": "Få tillgång till ett brett urval av kraftfulla öppna modeller för att bygga AI-lösningar.",
     "requestModel": "Önska en Modell",
+    "viewAll": "Se alla",
     "viewDocs": "Se Modelldokumentation",
     "comprehensive": {
       "title": "Omfattande Modellutbud",
