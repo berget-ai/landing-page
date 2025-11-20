@@ -16,6 +16,8 @@ The following domains redirect to `https://berget.ai/`:
 - **www.berget.ai** - WWW subdomain
 - **berget.cloud** - Alternative domain
 - **www.berget.cloud** - WWW subdomain of alternative domain
+- **bergetai.se** - Swedish domain
+- **www.bergetai.se** - WWW subdomain of Swedish domain
 
 Configuration:
 - Served via: `k8s/overlays/production/ingress-redirects.yaml`
