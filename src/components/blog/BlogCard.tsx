@@ -36,14 +36,6 @@ export function BlogCard({ post, index }: BlogCardProps) {
           <p className="text-white/60 mb-4 line-clamp-3">
             {post.description}
           </p>
-          
-          {post.language && (
-            <div className="mb-4">
-              <span className="px-2 py-1 text-xs rounded-full bg-[#52B788]/20 text-white/80">
-                {post.language === 'en' ? '🇬🇧 English' : '🇸🇪 Svenska'}
-              </span>
-            </div>
-          )}
         </Link>
         
         <AuthorByline 
