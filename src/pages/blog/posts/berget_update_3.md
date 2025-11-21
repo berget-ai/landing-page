@@ -1,6 +1,6 @@
 ---
 title: 'Berget AI Update #3 — November 2025'
-description: 'Plattformsuppdatering: Teamhantering, nya modeller och förbättrad prestanda'
+description: 'Platform update: Team management, new models, and performance improvements'
 date: '2025-11-21'
 author: 'Andreas Lundmark'
 email: 'andreas@berget.ai'
@@ -9,110 +9,110 @@ image: /images/update.png
 imageAlt: 'Berget AI Update'
 ---
 
-Hej igen!
+Hi again!
 
-Vi är glada att kunna dela med oss av vår **största plattformsuppdatering hittills**. Denna release fokuserar på att göra det enklare att hantera organisationer, betalningar och AI-workflows — samtidigt som vi levererar kraftfullare modeller och bättre prestanda.
-
----
-
-## 💼 Organisations- och faktureringhantering
-
-Vi har byggt om hela hanteringen av organisationer och betalningar från grunden:
-
-- **Teamhantering** – Bjud in kollegor och hantera teamåtkomst direkt från din workspace
-- **Företagsprofiler** – Centraliserad hantering av organisationsinformation
-- **Kreditkortsbetalningar & wallet-påfyllning** – Toppa enkelt upp ditt saldo eller betala direkt via Stripe
-- **Organisationsgemensamma wallets** – Dela kreditsaldo över hela teamet
-- **Realtidsövervakning av användning** – Transparent insikt i pågående konsumtion och wallet-saldo
-
-Dessa uppdateringar ger dig betydligt mer kontroll och tydlighet över hur din organisation använder Berget AI.
+We're excited to share our **biggest platform update yet**. This release focuses on making it easier to manage organizations, payments, and AI workflows — while delivering more powerful models and better performance.
 
 ---
 
-## ⚡ Snabbare och snyggare console
+## 💼 Subscription Management — Simpler, Smarter, Team-Ready
 
-Vi har gjort en omfattande städning och optimering:
+We've completely overhauled how you manage your organization and billing:
 
-- **Hastighetsoptimering** – Consolen är nu betydligt snabbare och mer responsiv
-- **UI-förbättringar** – Ett mer polerat, konsekvent utseende som förbättrar navigation och användarvänlighet
+- **Team management** – Invite colleagues and manage team access directly from your workspace
+- **Company profiles** – Keep your organization information centralized and up to date
+- **Credit card payments & wallet refill** – Easily top up your balance or pay directly via Stripe
+- **Organization-wide wallets** – Share credit balances across your entire team
+- **Real-time usage visibility** – Track ongoing consumption and wallet balance with transparent insights
 
----
-
-## 🔗 Starkare modell-endpoints
-
-Vi förstärker ryggraden i våra modell-API:er:
-
-- **Mer robust tool calling** – Förbättrad tillförlitlighet för multi-step workflows och agentliknande uppgifter
-- **Nya OCR-endpoints** – Inbyggt stöd för **DeepSeek-OCR** för snabb och precis textextraktion från dokument och bilder
+These updates give you more control and clarity over how your organization uses Berget AI.
 
 ---
 
-## 💳 Betalningar & compliance
+## ⚡ Console Clean-Up & Performance Boost
 
-Vi har utökat och förbättrat vårt betalningssystem:
+We've done a major clean-up under the hood:
 
-- **Förbättrad Stripe-integration** – Smidigare betalningar och bättre tillförlitlighet över valutor
-- **Stöd för icke-svenska VAT-nummer** – Problemfri fakturering för internationella kunder
-
----
-
-## 👥 Teamet växer - välkommen Hugo!
-
-Vi är glada att välkomna **Hugo Björk** till teamet som fullstackutvecklare! Hugo kommer senast från Netlight och Silo AI och blir en viktig del av vårt API-team. Med Hugos erfarenhet av både produktutveckling och AI ökar vi takten i vår utveckling ytterligare.
+- **Speed optimization** – The console is now significantly faster and more responsive
+- **UI clean-up** – A more polished, consistent look and feel that improves navigation and usability
 
 ---
 
-## 🎁 Enklare att komma igång - ingen kreditkort krävs
+## 🔗 Model Endpoints — More Power, More Reliability
 
-Vi vill göra det så enkelt som möjligt att testa våra modeller. Därför behöver du nu **inte längre ha kreditkort** för att komma igång! 
+We're strengthening the backbone of our model APIs:
 
-- Registrera ett konto på [console.berget.ai](https://console.berget.ai)
-- Välj **Free Trial** 
-- Få 5€ i credits på köpet
-- Börja bygga direkt
-
-Så enkelt är det! Vi vill att du ska kunna utvärdera våra tjänster utan några hinder.
+- **More robust tool calling** – Improved reliability for multi-step workflows and agent-like tasks
+- **New OCR endpoints** – Built-in support for **DeepSeek-OCR** for fast and accurate document and image text extraction
 
 ---
 
-## 🤖 Nya kraftfulla modeller
+## 💳 Payments & Compliance
 
-Vi har uppdaterat vår modell-lineup med två spännande nya modeller som höjer ribban för både kodgenerering och bildtolkning:
+We've expanded and refined our payment system:
 
-**GLM-4.6** - En otroligt kraftfull modell med 32B parametrar som på många plan slår kommersiella modeller som Claude Sonnet 3.5 och GPT-4o, särskilt inom kodgenerering och reasoning. Perfekt för komplexa uppgifter, agentic workflows och avancerad kodgenerering.
-
-**DeepSeek OCR** - En helt ny multimodal modell som kan tolka bilder och dokument väldigt snabbt och effektivt på många olika språk. Till skillnad från vår tidigare OCR-lösning når du denna via vårt vanliga chat API - dela bara upp en PDF i sidor och skicka dem som bilder. Vi kommer snart publicera en separat artikel med kodexempel och best practices för dessa modeller.
-
-**Modeller som avvecklas:**
-För att fortsätta leverera bästa möjliga prestanda kommer vi att avveckla följande modeller:
-- **DeepSeek-R1** - ersätts av GLM-4.6 som har bättre reasoning-kapacitet
-- **Devstral** - ersätts av GLM-4.6 för kodgenerering
-- **Magistral** - överträffad av de nya modellerna
-
-Dessa förändringar innebär bättre prestanda till lägre kostnad för er som kunder.
+- **Improved Stripe integration** – Smoother payments and better reliability across currencies
+- **Support for non-Swedish VAT numbers** – Seamless billing for international customers
 
 ---
 
-## 💻 Berget Code - ny produkt för utvecklare
+## 👥 Team Growth — Welcome Hugo!
 
-Vi lanserar snart **Berget Code** - vår nya produkt som hjälper utvecklare att underhålla och bygga kod utan att information lämnar Sverige. Med Berget Code får du AI-assisterad utveckling med full kontroll över din data.
+We're excited to welcome **Hugo Björk** to the team as a fullstack developer! Hugo joins us from Netlight and Silo AI and will be a key part of our API team. With Hugo's experience in both product development and AI, we're accelerating our development pace even further.
 
-Kom igång enkelt genom:
+---
+
+## 🎁 Easier to Get Started — No Credit Card Required
+
+We want to make it as easy as possible to try our models. That's why you **no longer need a credit card** to get started! 
+
+- Register an account at [console.berget.ai](https://console.berget.ai)
+- Choose **Free Trial** 
+- Get 5€ in credits
+- Start building immediately
+
+It's that simple! We want you to be able to evaluate our services without any barriers.
+
+---
+
+## 🤖 New Powerful Models
+
+We've updated our model lineup with two exciting new models that raise the bar for both code generation and image understanding:
+
+**GLM-4.6** - An incredibly powerful model with 32B parameters that outperforms commercial models like Claude Sonnet 3.5 and GPT-4o in many areas, especially in code generation and reasoning. Perfect for complex tasks, agentic workflows, and advanced code generation.
+
+**DeepSeek OCR** - A brand new multimodal model that can interpret images and documents very quickly and efficiently in many different languages. Unlike our previous OCR solution, you access this through our regular chat API - just split a PDF into pages and send them as images. We'll soon publish a separate article with code examples and best practices for these models.
+
+**Models being deprecated:**
+To continue delivering the best possible performance, we will deprecate the following models:
+- **DeepSeek-R1** - replaced by GLM-4.6 which has better reasoning capabilities
+- **Devstral** - replaced by GLM-4.6 for code generation
+- **Magistral** - outperformed by the new models
+
+These changes mean better performance at lower cost for you as customers.
+
+---
+
+## 💻 Berget Code — New Product for Developers
+
+We're soon launching **Berget Code** - our new product that helps developers maintain and build code without information leaving Sweden. With Berget Code, you get AI-assisted development with full control over your data.
+
+Get started easily:
 ```bash
 npm i -g berget
 berget code init
 ```
 
-Läs mer på [code.berget.ai](https://code.berget.ai) - en dedikerad artikel om Berget Code kommer inom kort!
+Learn more at [code.berget.ai](https://code.berget.ai) - a dedicated article about Berget Code is coming soon!
 
 ---
 
-## ✨ En bättre Berget AI-upplevelse
+## ✨ A Better Berget AI Experience
 
-Denna release fokuserar på **hastighet, kontroll och tydlighet** — oavsett om du hanterar ditt team, förfinar dina workflows eller bygger vidare på våra senaste modeller.
+This release focuses on **speed, control, and clarity** — whether you're managing your team, refining your workflows, or building on top of our latest models.
 
-Som alltid, tack för att ni bygger med oss. Vi ser fram emot att se vad ni skapar härnäst.
+As always, thank you for building with us. We can't wait to see what you create next.
 
-**Håll ögonen öppna och fortsätt ge oss feedback!**
+**Stay tuned and keep the feedback coming!**
 
 _Andreas Lundmark & Christian Landgren_
