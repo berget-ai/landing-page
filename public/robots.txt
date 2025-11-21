@@ -1,0 +1,24 @@
+# robots.txt för Berget AI
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://berget.ai/sitemap.xml
+
+# Rate limiting för att skydda servern
+Crawl-delay: 1
+
+# Block some paths
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /*?*debug=
+
+# Allow crawling of assets
+Allow: /assets/
+Allow: *.css
+Allow: *.js
+Allow: *.jpg
+Allow: *.jpeg
+Allow: *.png
+Allow: *.webp
+Allow: *.svg

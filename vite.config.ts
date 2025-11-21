@@ -3,9 +3,13 @@ import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 import { plugin, Mode } from 'vite-plugin-markdown'
 import { imagetools } from 'vite-imagetools'
+import vike from 'vike/plugin'
 
 export default defineConfig({
   plugins: [
+    vike({
+      prerender: true
+    }),
     react(),
     imagetools({
       defaultDirectives: new URLSearchParams([

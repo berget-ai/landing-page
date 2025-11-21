@@ -1,0 +1,308 @@
+/* Custom animations for presentation fragments */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+/* Transition classes */
+.transition-slide .slide-transition {
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.transition-fade .slide-transition {
+  transition: opacity 0.5s ease-in-out;
+}
+
+.transition-convex .slide-transition {
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.transition-concave .slide-transition {
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.transition-zoom .slide-transition {
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* Theme-specific styles */
+.theme-serif {
+  font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+.theme-simple {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Code block styling */
+.code-block {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* Table styling */
+.presentation-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.presentation-table th,
+.presentation-table td {
+  border: 1px solid #dee2e6;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.presentation-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+}
+
+/* Two column layout */
+.two-column {
+  display: grid;
+  gap: 2rem;
+}
+
+.two-column.col-50-50 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.two-column.col-60-40 {
+  grid-template-columns: 3fr 2fr;
+}
+
+.two-column.col-40-60 {
+  grid-template-columns: 2fr 3fr;
+}
+
+.two-column.col-70-30 {
+  grid-template-columns: 7fr 3fr;
+}
+
+.two-column.col-30-70 {
+  grid-template-columns: 3fr 7fr;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .two-column {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .code-block {
+    font-size: 0.75rem;
+    padding: 0.75rem;
+  }
+  
+  .presentation-table {
+    font-size: 0.875rem;
+  }
+  
+  .presentation-table th,
+  .presentation-table td {
+    padding: 0.5rem;
+  }
+}
+
+/* Highlight colors */
+.highlight-blue {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.highlight-green {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.highlight-red {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.highlight-yellow {
+  color: #ca8a04;
+  font-weight: 600;
+}
+
+.highlight-purple {
+  color: #9333ea;
+  font-weight: 600;
+}
+
+/* Fullscreen styling */
+.fullscreen-presentation {
+  background: white;
+  color: #1f2937;
+}
+
+.fullscreen-presentation.theme-black {
+  background: #000000;
+  color: #ffffff;
+}
+
+.fullscreen-presentation.theme-night {
+  background: #1e1b4b;
+  color: #ffffff;
+}
+
+/* Navigation controls */
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 50;
+}
+
+.nav-button:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.nav-button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.nav-button:disabled:hover {
+  transform: translateY(-50%) scale(1);
+}
+
+.nav-button.prev {
+  left: 1rem;
+}
+
+.nav-button.next {
+  right: 1rem;
+}
+
+/* Progress bar */
+.progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 50;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: #2563eb;
+  transition: width 0.3s ease;
+}
+
+/* Slide dots */
+.slide-dots {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 50;
+}
+
+.slide-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.3);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.slide-dot:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.slide-dot.active {
+  background: #2563eb;
+  width: 32px;
+  border-radius: 4px;
+}
+
+/* Slide counter */
+.slide-counter {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 0.875rem;
+  opacity: 0.5;
+  z-index: 50;
+}
+
+/* Fullscreen button */
+.fullscreen-button {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 50;
+}
+
+.fullscreen-button:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+/* Loading state */
+.loading-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  z-index: 100;
+}
+
+.loading-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid #e5e7eb;
+  border-top: 4px solid #2563eb;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
