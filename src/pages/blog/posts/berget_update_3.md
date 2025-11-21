@@ -1,10 +1,10 @@
 ---
 title: 'Berget AI Update #3 — November 2025'
-description: 'Platform update: Team management, new models, and performance improvements'
+description: 'Platform update: Team management, payments, and performance improvements'
 date: '2025-11-21'
 author: 'Andreas Lundmark'
 email: 'andreas@berget.ai'
-tags: ['newsletter', 'models', 'team', 'platform']
+tags: ['newsletter', 'team', 'platform']
 image: /images/update.png
 imageAlt: 'Berget AI Update'
 ---
@@ -75,41 +75,9 @@ It's that simple! We want you to be able to evaluate our services without any ba
 
 ---
 
-## 🤖 New Powerful Models
-
-We've updated our model lineup with two exciting new models that raise the bar for both code generation and image understanding:
-
-**GLM-4.6** - An incredibly powerful model with 32B parameters that outperforms commercial models like Claude Sonnet 3.5 and GPT-4o in many areas, especially in code generation and reasoning. Perfect for complex tasks, agentic workflows, and advanced code generation.
-
-**DeepSeek OCR** - A brand new multimodal model that can interpret images and documents very quickly and efficiently in many different languages. Unlike our previous OCR solution, you access this through our regular chat API - just split a PDF into pages and send them as images. We'll soon publish a separate article with code examples and best practices for these models.
-
-**Models being deprecated:**
-To continue delivering the best possible performance, we will deprecate the following models:
-- **DeepSeek-R1** - replaced by GLM-4.6 which has better reasoning capabilities
-- **Devstral** - replaced by GLM-4.6 for code generation
-- **Magistral** - outperformed by the new models
-
-These changes mean better performance at lower cost for you as customers.
-
----
-
-## 💻 Berget Code — New Product for Developers
-
-We're soon launching **Berget Code** - our new product that helps developers maintain and build code without information leaving Sweden. With Berget Code, you get AI-assisted development with full control over your data.
-
-Get started easily:
-```bash
-npm i -g berget
-berget code init
-```
-
-Learn more at [code.berget.ai](https://code.berget.ai) - a dedicated article about Berget Code is coming soon!
-
----
-
 ## ✨ A Better Berget AI Experience
 
-This release focuses on **speed, control, and clarity** — whether you're managing your team, refining your workflows, or building on top of our latest models.
+This release focuses on **speed, control, and clarity** — whether you're managing your team, refining your workflows, or building with our platform.
 
 As always, thank you for building with us. We can't wait to see what you create next.
 
