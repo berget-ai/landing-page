@@ -47,9 +47,43 @@ We're strengthening the backbone of our model APIs:
 
 ---
 
-## 💳 Payments & Compliance
+## 💳 New Subscription Tiers — Simple, Transparent, Fair
 
-We've expanded and refined our payment system:
+We're excited to re-launch our subscription system with **three clear tiers** designed to fit your needs:
+
+### 🎯 Subscription Plans
+
+- **Free Plan** – Perfect for trying out Berget AI
+- **€50/month** – For growing projects and regular usage
+- **€500/month** – For production workloads and teams
+
+**What makes our subscriptions great:**
+
+- 💰 **€5 starting balance** included with every plan
+- 🔄 **All unused credits roll over** to the next month — no loss, no rush
+- 📈 **Automatic monthly refills** keep your wallet topped up
+- 🧾 **Invoice included** with each renewal for your records
+- 📊 **Real-time tracking** of wallet balance and usage in the console
+
+### 🔄 Smooth Transition for Existing Users
+
+We want to make this as easy as possible for everyone:
+
+- Users on the **€1 tier** will be moved to the **Free plan** and receive **€5 in credits**
+- **Previous one-time payments** will be automatically added to your wallet
+- **All previous charges will be voided** for a clean, transparent start
+
+### 🚀 Coming Soon
+
+We're already working on improvements to make your experience even better:
+
+- **Auto top-up** when your balance drops below a threshold
+- **One-time payments** for flexible credit refills
+- **Detailed per API key metrics** for precise cost tracking
+
+### Payments & Compliance
+
+We've also expanded and refined our payment infrastructure:
 
 - **Improved Stripe integration** – Smoother payments and better reliability across currencies
 - **Support for non-Swedish VAT numbers** – Seamless billing for international customers
@@ -78,6 +112,10 @@ It's that simple! We want you to be able to evaluate our services without any ba
 ## ✨ A Better Berget AI Experience
 
 This release focuses on **speed, control, and clarity** — whether you're managing your team, refining your workflows, or building with our platform.
+
+We know that billing and payments can be confusing at times, and we truly appreciate your patience as we've refined this system. Our goal has always been to make Berget AI accessible, transparent, and easy to use — and this subscription relaunch is a big step toward that.
+
+If you have any questions or need help adjusting your plan, please don't hesitate to reach out — we're here to help every step of the way.
 
 As always, thank you for building with us. We can't wait to see what you create next.
 
