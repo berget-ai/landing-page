@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>CloudNativePG vs Bitnami PostgreSQL</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/white.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/monokai.css"
+    />
+
+    <style>
+      .reveal .slides section {
+        text-align: left;
+      }
+      .reveal .slides section h1,
+      .reveal .slides section h2,
+      .reveal .slides section h3 {
+        text-align: center;
+      }
+      .reveal .slides section.center {
+        text-align: center;
+      }
+      .reveal .slides section .fragment {
+        margin-bottom: 1em;
+      }
+      .reveal .slides section .code-block {
+        background: #f8f8f8;
+        padding: 1em;
+        border-radius: 5px;
+        margin: 1em 0;
+        font-family: monospace;
+        font-size: 0.8em;
+      }
+      .reveal .slides section .highlight {
+        color: #e91e63;
+        font-weight: bold;
+      }
+      .reveal .slides section .success {
+        color: #4caf50;
+        font-weight: bold;
+      }
+      .reveal .slides section .warning {
+        color: #ff9800;
+        font-weight: bold;
+      }
+      .reveal .slides section .danger {
+        color: #f44336;
+        font-weight: bold;
+      }
+      .reveal .slides table {
+        margin: 1em 0;
+      }
+      .reveal .slides table th,
+      .reveal .slides table td {
+        padding: 0.5em;
+        text-align: left;
+        border: 1px solid #ddd;
+      }
+      .reveal .slides table th {
+        background-color: #f2f2f2;
+      }
+      .reveal .slides .two-column {
+        display: flex;
+        justify-content: space-between;
+      }
+      .reveal .slides .two-column .column {
+        width: 48%;
+      }
+      .reveal .slides .architecture-diagram {
+        text-align: center;
+        font-family: monospace;
+        background: #f0f0f0;
+        padding: 1em;
+        border-radius: 5px;
+        margin: 1em 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <!-- Slide 1: Title -->
+        <section>
+          <h1>CloudNativePG vs Bitnami PostgreSQL</h1>
+          <h3>Varför välja en native operator för din databas</h3>
+          <p><small>Christian Landgren</small></p>
+        </section>
+
+        <!-- Slide 2: The Problem -->
+        <section>
+          <h2>Vad är problemet vi löser?</h2>
+          <div class="fragment">
+            <p class="highlight">
+              Att drifta en databas i produktion ≠ att starta en container
+            </p>
+          </div>
+          <div class="fragment">
+            <ul>
+              <li>🛡️ <strong>Driftsäkerhet</strong>: 24/7 tillgänglighet</li>
+              <li>🔄 <strong>Redundans</strong>: Inga enskilda fel punkter</li>
+              <li>
+                💾 <strong>Backup</strong>: Automatiska, testade återställningar
+              </li>
+              <li>🔧 <strong>Självhelande</strong>: Automatisk återhämtning</li>
+              <li>📈 <strong>Skalning</strong>: Väx med din applikation</li>
+              <li>🔒 <strong>Säkerhet</strong>: Kryptering och auditering</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Slide 3: Comparison Table -->
+        <section>
+          <h2>Jämförelse: PostgreSQL i Kubernetes</h2>
+          <table style="font-size: 0.7em">
+            <thead>
+              <tr>
+                <th>Funktion</th>
+                <th>Bitnami</th>
+                <th>CloudNativePG</th>
+                <th>CrunchyData</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Installation</strong></td>
+                <td>Helm, 5 min</td>
+                <td>Operator, 10 min</td>
+                <td>Operator, 15 min</td>
+              </tr>
+              <tr>
+                <td><strong>High Availability</strong></td>
+                <td class="danger">Manuell</td>
+                <td class="success">Automatisk</td>
+                <td class="success">Automatisk</td>
+              </tr>
+              <tr>
+                <td><strong>Backup/Restore</strong></td>
+                <td class="warning">Grundläggande</td>
+                <td class="success">Enterprise</td>
+                <td class="success">Inbyggd</td>
+              </tr>
+              <tr>
+                <td><strong>Version Support</strong></td>
+                <td class="danger">Endast senaste</td>
+                <td class="success">Multi-version</td>
+                <td class="success">Multi-version</td>
+              </tr>
+              <tr>
+                <td><strong>Production Ready</strong></td>
+                <td class="warning">Med konfig</td>
+                <td class="success">Out-of-the-box</td>
+                <td class="success">Enterprise</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Slide 4: Bitnami Problems -->
+        <section>
+          <h2>Bitnami-problemet: Version Lock-in</h2>
+          <div class="fragment">
+            <p class="danger">🚨 Endast senaste PostgreSQL versionen stöds!</p>
+          </div>
+          <div class="fragment">
+            <div class="code-block">
+              # Bitnami Docker Hub - endast PostgreSQL 16.x docker pull
+              bitnami/postgresql:latest # PostgreSQL 16.x docker pull
+              bitnami/postgresql:14 # ERROR: Tag not found!
+            </div>
+          </div>
+          <div class="fragment">
+            <h3>Konsekvenser:</h3>
+            <ul>
+              <li class="danger">
+                Tvingad uppgradering kan krossa din applikation
+              </li>
+              <li class="danger">Omöjligt att testa uppgraderingar gradvis</li>
+              <li class="danger">
+                Tredjepartsverktyg kanske inte stödjer senaste version
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Slide 5: Two Philosophies -->
+        <section>
+          <h2>Två olika filosofier</h2>
+          <div class="two-column">
+            <div class="column">
+              <h3>Bitnami PostgreSQL</h3>
+              <ul>
+                <li>StatefulSets</li>
+                <li>Generisk konfiguration</li>
+                <li>Manuell skalning</li>
+                <li>Begränsad automation</li>
+                <li>"One-size-fits-all"</li>
+              </ul>
+            </div>
+            <div class="column">
+              <h3>CloudNativePG</h3>
+              <ul>
+                <li>CRDs för deklarativ hantering</li>
+                <li>Automatisk failover</li>
+                <li>Native streaming replication</li>
+                <li>Inbyggd backup/restore</li>
+                <li>PostgreSQL-specifik optimering</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 6: Installation -->
+        <section>
+          <h2>Installation med Helm</h2>
+          <div class="two-column">
+            <div class="column">
+              <h3>Bitnami (snabb start)</h3>
+              <div class="code-block">
+                helm repo add bitnami https://charts.bitnami.com/bitnami helm
+                install postgres bitnami/postgresql \ --set
+                auth.postgresPassword=secret \ --set auth.database=myapp
+              </div>
+            </div>
+            <div class="column">
+              <h3>CloudNativePG (produktion)</h3>
+              <div class="code-block">
+                helm repo add cloudnative-pg \
+                https://cloudnative-pg.github.io/charts helm install cnpg
+                cloudnative-pg/cloudnative-pg \ --namespace cnpg-system
+                --create-namespace
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 7: Architecture Choices -->
+        <section>
+          <h2>Arkitekturval: Multi-tenancy</h2>
+          <div class="fragment">
+            <h3>Alternativ 1: Ett kluster per applikation</h3>
+            <div class="architecture-diagram">
+              ┌─────────────┐ ┌─────────────┐<br />
+              │ odoo-ns │ │ keycloak-ns │<br />
+              │ ┌─────────┐ │ │ ┌─────────┐ │<br />
+              │ │postgres │ │ │ │postgres │ │<br />
+              │ │ odoo │ │ │ │keycloak │ │<br />
+              │ └─────────┘ │ │ └─────────┘ │<br />
+              └─────────────┘ └─────────────┘
+            </div>
+            <p>
+              <span class="success">✅ Full isolering</span> |
+              <span class="warning">❌ Högre kostnad</span>
+            </p>
+          </div>
+        </section>
+
+        <!-- Slide 8: Architecture Choice 2 -->
+        <section>
+          <h2>Arkitekturval: Multi-tenancy</h2>
+          <div class="fragment">
+            <h3>Alternativ 2: En databas per applikation i delat kluster</h3>
+            <div class="architecture-diagram">
+              ┌─────────────────────────────────┐<br />
+              │ postgres-ns │<br />
+              │ ┌─────────────────────────┐ │<br />
+              │ │ shared-postgres │ │<br />
+              │ │ ┌─────┐ ┌─────────────┐ │ │<br />
+              │ │ │odoo │ │ keycloak │ │ │<br />
+              │ │ │ db │ │ db │ │ │<br />
+              │ │ └─────┘ └─────────────┘ │ │<br />
+              │ └─────────────────────────┘ │<br />
+              └─────────────────────────────────┘
+            </div>
+            <p>
+              <span class="success">✅ Resurseffektivt</span> |
+              <span class="warning">❌ Delad version</span>
+            </p>
+          </div>
+        </section>
+
+        <!-- Slide 9: Architecture Recommendation -->
+        <section>
+          <h2>Rekommendation: Välj baserat på behov</h2>
+          <table style="font-size: 0.8em">
+            <thead>
+              <tr>
+                <th>Scenario</th>
+                <th>Rekommendation</th>
+                <th>Anledning</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Små team, få appar</td>
+                <td class="success">Delat kluster</td>
+                <td>Kostnadseffektivt</td>
+              </tr>
+              <tr>
+                <td>Enterprise, många appar</td>
+                <td class="success">Ett kluster per app</td>
+                <td>Full isolering</td>
+              </tr>
+              <tr>
+                <td>Dev/Test miljöer</td>
+                <td class="success">Delat kluster</td>
+                <td>Snabbt och billigt</td>
+              </tr>
+              <tr>
+                <td>Produktion, kritiska appar</td>
+                <td class="success">Ett kluster per app</td>
+                <td>Zero blast radius</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Slide 10: Simple Setup -->
+        <section>
+          <h2>Enkel development setup</h2>
+          <div class="code-block">
+            apiVersion: postgresql.cnpg.io/v1 kind: Cluster metadata: name:
+            postgres-dev namespace: development spec: instances: 1 bootstrap:
+            initdb: database: app_dev owner: app_user secret: name:
+            postgres-credentials storage: size: 10Gi
+          </div>
+          <p class="success">✅ Klart på 2 minuter!</p>
+        </section>
+
+        <!-- Slide 11: Production Setup -->
+        <section>
+          <h2>Production setup med HA</h2>
+          <div class="code-block" style="font-size: 0.6em">
+            apiVersion: postgresql.cnpg.io/v1 kind: Cluster metadata: name:
+            postgres-prod namespace: production spec: instances: 3 # 1 primary +
+            2 replicas primaryUpdateStrategy: unsupervised # Automatisk failover
+            backup: retentionPolicy: "30d" barmanObjectStore: destinationPath:
+            "s3://company-backups/postgres-prod" monitoring: enabled: true
+          </div>
+          <p class="success">✅ Enterprise-grade på 5 minuter!</p>
+        </section>
+
+        <!-- Slide 12: Connection Strings -->
+        <section>
+          <h2>Connection strings</h2>
+          <div class="code-block">
+            # Standard format
+            postgresql://user:password@cluster-rw.namespace.svc.cluster.local:5432/database?sslmode=require
+            # Exempel för vår setup
+            postgresql://app_user:password@postgres-prod-rw.production.svc.cluster.local:5432/app_prod?sslmode=require
+          </div>
+          <div class="fragment">
+            <h3>Automatiskt skapade services:</h3>
+            <ul>
+              <li><code>postgres-prod-rw</code> - Primary för writes</li>
+              <li><code>postgres-prod-ro</code> - Load-balanced reads</li>
+              <li><code>postgres-prod-r</code> - Round-robin alla instanser</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Slide 13: Scaling -->
+        <section>
+          <h2>Skalning och read/write separation</h2>
+          <div class="code-block">
+            # Skala upp read replicas kubectl patch cluster postgres-prod
+            --type='merge' -p '{"spec":{"instances":5}}' # Skapar automatiskt: #
+            - 1 primary (writes) # - 4 replicas (reads)
+          </div>
+          <div class="fragment">
+            <h3>Application code:</h3>
+            <div class="code-block" style="font-size: 0.7em">
+              // Writes → postgres-prod-rw const writeUrl =
+              process.env.DATABASE_WRITE_URL // Reads → postgres-prod-ro const
+              readUrl = process.env.DATABASE_READ_URL
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 14: Backup -->
+        <section>
+          <h2>Automatisk backup och recovery</h2>
+          <div class="code-block">
+            # Schemalagd backup apiVersion: postgresql.cnpg.io/v1 kind:
+            ScheduledBackup metadata: name: daily-backup spec: schedule: "0 2 *
+            * *" # Varje natt kl 02:00 cluster: name: postgres-prod
+            retentionPolicy: "30d"
+          </div>
+          <div class="fragment">
+            <p class="success">✅ Continuous WAL archiving</p>
+            <p class="success">✅ Point-in-time recovery</p>
+            <p class="success">✅ Cross-region disaster recovery</p>
+          </div>
+        </section>
+
+        <!-- Slide 15: Monitoring -->
+        <section>
+          <h2>Monitoring och observability</h2>
+          <div class="fragment">
+            <h3>Inbyggda metrics:</h3>
+            <ul>
+              <li>📊 Connection count</li>
+              <li>📈 Transaction rates</li>
+              <li>⏱️ Replication lag</li>
+              <li>💾 Database size</li>
+              <li>🎯 Cache hit ratio</li>
+            </ul>
+          </div>
+          <div class="fragment">
+            <div class="code-block">
+              # Prometheus exporter kubectl get service postgres-prod -o
+              jsonpath='{.spec.metrics}'
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 16: Security -->
+        <section>
+          <h2>Security best practices</h2>
+          <div class="fragment">
+            <ul>
+              <li>
+                🔒 <strong>TLS encryption</strong> med cert-manager integration
+              </li>
+              <li>👥 <strong>RBAC</strong> för access control</li>
+              <li>📝 <strong>Audit logging</strong> med PGAudit</li>
+              <li>🌐 <strong>Network policies</strong> för isolering</li>
+              <li>🛡️ <strong>Pod security</strong> policies</li>
+            </ul>
+          </div>
+          <div class="fragment">
+            <div class="code-block">
+              # Enable TLS certificates: serverTLSSecret: postgres-server-tls
+              replicationTLSSecret: postgres-replication-tls
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 17: Migration -->
+        <section>
+          <h2>Migration från Bitnami</h2>
+          <div class="code-block" style="font-size: 0.7em">
+            # 1. Backup befintlig databas kubectl exec -it bitnami-postgresql-0
+            -- pg_dump > backup.sql # 2. Installera CloudNativePG helm install
+            cnpg cloudnative-pg/cloudnative-pg # 3. Skapa nytt cluster kubectl
+            apply -f cluster-prod.yaml # 4. Restore data kubectl exec -it
+            postgres-prod-1 -- psql < backup.sql # 5. Uppdatera connection
+            strings # Byt: bitnami-postgresql → postgres-prod-rw
+          </div>
+        </section>
+
+        <!-- Slide 18: Cost Comparison -->
+        <section>
+          <h2>Kostnadsjämförelse</h2>
+          <div class="fragment">
+            <table style="font-size: 0.8em">
+              <thead>
+                <tr>
+                  <th>Aspekt</th>
+                  <th>Bitnami</th>
+                  <th>CloudNativePG</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Initial setup</td>
+                  <td>2 timmar</td>
+                  <td>4 timmar</td>
+                </tr>
+                <tr>
+                  <td>Produktionssättning</td>
+                  <td class="danger">40 timmar</td>
+                  <td class="success">8 timmar</td>
+                </tr>
+                <tr>
+                  <td>Drift (1 år)</td>
+                  <td class="danger">200 timmar</td>
+                  <td class="success">20 timmar</td>
+                </tr>
+                <tr>
+                  <td><strong>Totalt första året</strong></td>
+                  <td class="danger">242 timmar</td>
+                  <td class="success">32 timmar</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="fragment">
+            <p class="success">
+              💰 CloudNativePG betalar sig efter första månaden!
+            </p>
+          </div>
+        </section>
+
+        <!-- Slide 19: When to Choose What -->
+        <section>
+          <h2>När ska du välja vad?</h2>
+          <div class="two-column">
+            <div class="column">
+              <h3 class="success">✅ Välj CloudNativePG</h3>
+              <ul>
+                <li>Produktionsklar HA</li>
+                <li>Enterprise backup</li>
+                <li>Declarative management</li>
+                <li>Native K8s integration</li>
+                <li>Multi-version support</li>
+                <li>Skalbarhet från dev→prod</li>
+              </ul>
+            </div>
+            <div class="column">
+              <h3 class="warning">⚠️ Välj Bitnami</h3>
+              <ul>
+                <li>Snabb prototype</li>
+                <li>Enkel installation</li>
+                <li>Accepterar version lock-in</li>
+                <li>Generisk databas</li>
+                <li><strong>Byt innan produktion!</strong></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 20: Key Takeaways -->
+        <section>
+          <h2>Key Takeaways</h2>
+          <div class="fragment">
+            <p class="highlight">
+              🎯 Frågan är inte OM du ska använda en PostgreSQL operator, utan
+              NÄR
+            </p>
+          </div>
+          <div class="fragment">
+            <ul>
+              <li>
+                🚀 <strong>CloudNativePG</strong> = Arkitektonisk uppgradering
+              </li>
+              <li>
+                💡 <strong>Bitnami</strong> = Bra för prototyping, dåligt för
+                produktion
+              </li>
+              <li>
+                ⚡ <strong>Version lock-in</strong> kan kosta mer än hela
+                implementationen
+              </li>
+              <li>
+                🏗️ <strong>Hybrid approach</strong> = Bästa av två världar
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Slide 21: Future -->
+        <section class="center">
+          <h2>The future of database operations is...</h2>
+          <div class="fragment">
+            <h1 class="success">Declarative</h1>
+          </div>
+          <div class="fragment">
+            <h1 class="success">Automated</h1>
+          </div>
+          <div class="fragment">
+            <h1 class="success">Cloud-native</h1>
+          </div>
+          <div class="fragment">
+            <p class="highlight">
+              CloudNativePG isn't just keeping up with that future—it's defining
+              it.
+            </p>
+          </div>
+        </section>
+
+        <!-- Slide 22: Questions -->
+        <section class="center">
+          <h1>Frågor?</h1>
+          <div class="fragment">
+            <p>📧 christian@landgren.nu</p>
+          </div>
+        </section>
+
+        <!-- Slide 23: Thank You -->
+        <section class="center">
+          <h1>Tack!</h1>
+          <div class="fragment">
+            <p>Läs hela blogginlägget på:</p>
+            <p class="highlight">
+              berget.ai/blog/cloudnativepg-vs-bitnami-postgresql
+            </p>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        controls: true,
+        progress: true,
+        center: false,
+        transition: 'slide',
+        plugins: [RevealHighlight],
+      })
+    </script>
+  </body>
+</html>
