@@ -4,7 +4,7 @@ import { ProductFeatures } from '@/components/sections/ProductFeatures'
 import { PricingSection } from '@/components/sections/PricingSection'
 import { PartnerQuotes } from '@/components/sections/PartnerQuotes'
 import { KeyBenefitsSection } from '@/components/sections/KeyBenefitsSection'
-import { Helmet } from '@/components/common/Helmet'
+import { SEOHelmet } from '@/components/common/Helmet'
 
 export default function Page() {
   const jsonLd = {
@@ -28,7 +28,7 @@ export default function Page() {
 
   return (
     <>
-      <Helmet
+      <SEOHelmet
         title="Berget AI - Säker och Hållbar AI för Svenska Företag"
         description="Berget AI erbjuder en säker, GDPR-kompatibel AI-plattform byggd för svenska och europeiska företag. Kraftfull AI som respekterar din data och miljön."
         language="sv"

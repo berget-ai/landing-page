@@ -9,7 +9,7 @@ import {
 } from '@/components/ui/tooltip'
 import { DetailedPricing } from '@/components/sections/pricing/DetailedPricing'
 import { Info } from 'lucide-react'
-import { Helmet } from '@/components/common/Helmet'
+import { SEOHelmet } from '@/components/common/Helmet'
 
 export default function Page() {
   const { t } = useTranslation()
@@ -29,7 +29,7 @@ export default function Page() {
 
   return (
     <>
-      <Helmet
+      <SEOHelmet
         title="Priser - Berget AI | Transparent och Flexibel Prismodell"
         description="Utforska Berget AI:s transparenta och flexibla prismodell. Betala endast för det du använder med vår användningsbaserade prissättning."
         language="sv"

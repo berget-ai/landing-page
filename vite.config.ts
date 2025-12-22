@@ -111,43 +111,6 @@ export default defineConfig({
           // Standardchunk för övrig kod
           return 'app-core';
         },
-        // Förenklade filnamn och struktur
-        assetFileNames: (assetInfo) => {
-          if (!assetInfo.name) return 'assets/[name].[hash][extname]';
-          
-          const info = assetInfo.name.split('.');
-          const ext = info[info.length - 1].toLowerCase();
-          
-          // Organize assets by file type
-          if (ext === 'css') {
-            return `assets/css/[name].[hash][extname]`;
-          }
-          
-          // Image files
-          if (['png', 'jpg', 'jpeg', 'gif', 'svg', 'webp'].includes(ext)) {
-            return `assets/images/[name].[hash][extname]`;
-          }
-          
-          // Font files
-          if (['woff', 'woff2', 'ttf', 'otf', 'eot'].includes(ext)) {
-            return `assets/fonts/[name].[hash][extname]`;
-          }
-          
-          // Video files
-          if (['mp4', 'webm'].includes(ext)) {
-            return `assets/videos/[name].[hash][extname]`;
-          }
-          
-          // Audio files
-          if (['mp3', 'wav'].includes(ext)) {
-            return `assets/audio/[name].[hash][extname]`;
-          }
-          
-          // Default for other file types
-          return `assets/[name].[hash][extname]`;
-        },
-        // Konsekvent namngivning
-        entryFileNames: 'assets/js/[name].[hash].js',
         chunkFileNames: 'assets/js/[name].[hash].js',
       }
     },
