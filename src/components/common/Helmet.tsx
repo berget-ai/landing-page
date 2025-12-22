@@ -1,4 +1,4 @@
-import { Helmet as ReactHelmet } from 'react-helmet-async';
+import { Helmet } from 'react-helmet-async';
 
 interface HelmetProps {
   title: string;
@@ -14,7 +14,7 @@ interface HelmetProps {
   jsonLd?: Record<string, any>;
 }
 
-export function Helmet({ 
+export function SEOHelmet({ 
   title, 
   description, 
   image, 
@@ -68,7 +68,7 @@ export function Helmet({
   };
   
   return (
-    <ReactHelmet>
+    <Helmet>
       {/* Basic metadata */}
       <html lang={language} />
       <title>{title}</title>
@@ -120,6 +120,6 @@ export function Helmet({
           {JSON.stringify(jsonLd)}
         </script>
       )}
-    </ReactHelmet>
+    </Helmet>
   );
 }

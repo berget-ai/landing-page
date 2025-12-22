@@ -5,7 +5,7 @@ import { ArrowLeft } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import { AuthorByline } from '@/components/blog/AuthorByline'
-import { Helmet } from '@/components/common/Helmet'
+import { SEOHelmet } from '@/components/common/Helmet'
 import type { BlogPost } from '@/types/blog'
 import { MarkdownRenderer } from '@/components/blog/MarkdownRenderer'
 
@@ -109,7 +109,7 @@ export default function BlogPostPage() {
   return (
     <main className="min-h-screen">
       {post && (
-        <Helmet
+        <SEOHelmet
           title={post.title}
           description={post.description}
           image={post.image}

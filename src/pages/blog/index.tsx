@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { BlogList } from '@/components/blog/BlogList'
 import { Input } from '@/components/ui/input'
 import { Search } from 'lucide-react'
-import { Helmet } from '@/components/common/Helmet'
+import { SEOHelmet } from '@/components/common/Helmet'
 import type { BlogPost } from '@/types/blog'
 
 // Import all blog posts
@@ -89,7 +89,7 @@ export default function BlogPage() {
 
   return (
     <main className="min-h-screen pt-24">
-      <Helmet 
+      <SEOHelmet 
         title="Berget AI Blog"
         description="Insights and updates about AI infrastructure, European tech innovation, and industry best practices"
         image="/logos/berget-logo-white.png"

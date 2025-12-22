@@ -3,7 +3,6 @@ import { Button } from '@/components/ui/button'
 import { GradientBackground } from '@/components/common/GradientBackground'
 import { NetworkBackground } from '../common/NetworkBackground'
 import { ArrowRight, Shield } from 'lucide-react'
-import { Link } from 'react-router-dom'
 import { useEnvironment } from '@/hooks/use-environment'
 
 export function Hero() {
@@ -31,9 +30,9 @@ export function Hero() {
             </p>
             <div className="flex gap-4 justify-center">
               <Button size="lg" variant="default" asChild>
-                <Link to={consoleUrl}>
+                <a href={consoleUrl}>
                   {t('hero.getStarted')} <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
+                </a>
               </Button>
             </div>
           </div>

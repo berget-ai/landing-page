@@ -7,6 +7,8 @@ COPY . .
 
 RUN npm run build
 
+RUN npm audit
+
 FROM nginx:alpine AS production
 COPY --from=builder /app/dist /usr/share/nginx/html
 COPY k8s/base/nginx.conf /etc/nginx/conf.d/default.conf
