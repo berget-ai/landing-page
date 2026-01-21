@@ -138,7 +138,7 @@ Our **core lineup** remains as solid as ever — from **Llama 3.1-8B** and **Lla
 ## 🚀 Getting Started
 
 1. **Sign up** at [console.berget.ai](https://console.berget.ai) and get 5€ in free credits
-2. **Check the documentation** at [docs.berget.ai](https://docs.berget.ai)
+2. **Check the documentation** at [api.berget.ai](https://api.berget.ai)
 
 We can't wait to see what you build with these powerful new models!
 
