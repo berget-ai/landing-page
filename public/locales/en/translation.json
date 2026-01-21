@@ -446,7 +446,6 @@
           "55€ monthly wallet refill",
           "10% Extra Credits",
           "Priority support",
-          "Access to all models",
           "Best value for money"
         ]
       },
@@ -455,7 +454,8 @@
         "description": "When you need scale",
         "price": "€500 / month",
         "features": [
-          "Custom models",
+          "550€ monthly wallet refill",
+          "+10% Extra Credits",
           "No rate limits",
           "Dedicated support"
         ]
