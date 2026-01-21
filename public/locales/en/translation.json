@@ -408,7 +408,7 @@
       "Invoice and Peppol avaibale for Enterprise customers",
       "Automatic top-up of wallet at a set threshold"
     ],
-    "moneyBackNote": "Prices above are for monthly pre-payments. Yearly payments come with a 10% extra discount to the above price plans.",
+    "moneyBackNote": "Prices above are for monthly pre-payments",
     "section": {
       "title": "Plans for Every Need",
       "description": "Choose the plan that works best for you",
@@ -416,11 +416,11 @@
     },
     "tiers": {
       "payg": {
-        "name": "Get started",
+        "name": "Free",
         "description": "API access",
-        "price": "€1",
+        "price": "Free",
         "features": [
-          "€5 Wallet credits",
+          "€5 Free Wallet credits",
           "Pay as you go",
           "Some Rate limit",
           "Community support",
@@ -428,13 +428,12 @@
         ]
       },
       "starter": {
-        "name": "Developer",
+        "name": "Starter",
         "description": "For the small team",
-        "price": "€50 / month",
+        "price": "€25 / month",
         "features": [
-          "50€ monthly wallet refill",
+          "25€ monthly wallet refill",
           "Automatic billing",
-          "Less rate limits",
           "Email support",
           "Cancel any time"
         ]
@@ -442,9 +441,9 @@
       "developer": {
         "name": "Team",
         "description": "For developer teams",
-        "price": "€500 / month",
+        "price": "€50 / month",
         "features": [
-          "550€ monthly wallet refill",
+          "55€ monthly wallet refill",
           "10% Extra Credits",
           "Priority support",
           "Access to all models",
@@ -454,12 +453,11 @@
       "enterprise": {
         "name": "Enterprise",
         "description": "When you need scale",
-        "price": "Custom",
+        "price": "€500 / month",
         "features": [
           "Custom models",
           "No rate limits",
-          "Dedicated support",
-          "API SLA guarantees"
+          "Dedicated support"
         ]
       }
     },
