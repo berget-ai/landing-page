@@ -415,23 +415,22 @@
     },
     "tiers": {
       "payg": {
-        "name": "Get started",
+        "name": "Trial",
         "description": "API access",
-        "price": "€1",
+        "price": "Free",
         "features": [
           "€5 initial wallet credits",
           "Pay as you go (listpris)",
           "Tillgång till alla modeller",
-          "Community support",
-          "Inga commitments"
+          "Community support"
         ]
       },
       "starter": {
-        "name": "Developer",
+        "name": "Starter",
         "description": "För det lilla projektet",
-        "price": "€50 / månad",
+        "price": "€25 / månad",
         "features": [
-          "50€ refill per månad",
+          "25€ refill per månad",
           "Automatisk billing",
           "Email-support",
           "Tillgång till alla modeller",
@@ -439,11 +438,11 @@
         ]
       },
       "developer": {
-        "name": "Team",
+        "name": "Developer",
         "description": "För utvecklarteams",
-        "price": "€500 / månad",
+        "price": "€50 / månad",
         "features": [
-          "550€ refill per månad",
+          "55€ refill per månad",
           "+10% extra Credits",
           "Prioriterad support",
           "Tillgång till alla modeller",
@@ -453,12 +452,12 @@
       "enterprise": {
         "name": "Enterprise",
         "description": "När du ska skala upp",
-        "price": "På förfrågan",
+        "price": "€500 / månad",
         "features": [
-          "Egna modeller",
-          "Inga rate limits",
-          "Dedikerad support",
-          "SLA-garantier på API"
+          "550€ refill per månad",
+          "+10% extra Credits",
+          "Tillgång till alla modeller",          
+          "Dedikerad support"
         ]
       }
     },
