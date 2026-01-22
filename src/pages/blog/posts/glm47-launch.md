@@ -22,7 +22,7 @@ We have tested GLM-4.7 extensively on our own coding, testing and ticketing work
 - **Exceptional code generation**: Outperforms GTP-5.2 and Opus 4.5 on Livebench Coding benchmark
 - **Strong reasoning capabilities**: Perfect for agentic workflows and complex problem-solving - outperforming Gemini 3 Pro and Cloude Sonnet 4.5 in AA benchmarks
 - **Multilingual support**: Excellent performance across European languages including Swedish
-- **Extended context length**: Native 200 000 tokens context legnth
+- **Extended context length**: 128k tokens context length
 
 ### Benchmarks
 
@@ -32,7 +32,7 @@ GLM-4.7 consistently outperforms open weitght and larger commercial models on ke
 
 ### Example Usage
 
-Here's how to use GLM-4.6 for code generation:
+Here's how to use GLM-4.7 for code generation:
 
 ```python
 import requests
@@ -44,7 +44,7 @@ response = requests.post(
         'Content-Type': 'application/json'
     },
     json={
-        'model': 'zai-org/GLM-4.6',
+        'model': 'zai-org/GLM-4.7',
         'messages': [
             {
                 'role': 'user',
@@ -69,7 +69,7 @@ const response = await fetch('https://api.berget.ai/v1/chat/completions', {
     'Content-Type': 'application/json'
   },
   body: JSON.stringify({
-    model: 'zai-org/GLM-4.6',
+    model: 'zai-org/GLM-4.7',
     messages: [
       {
         role: 'user',
@@ -87,7 +87,7 @@ console.log(data.choices[0].message.content);
 
 ## 🔄 Streamlining Our Lineup
 
-As we continue to evolve, we're saying goodbye to **DeepSeek R1 MAI** and **Magistral Small**. Both have been great performers, but their capabilities are now fully covered — and exceeded — by newer models like **GLM-4.6** and **GPT-OSS-120B**. Retiring them helps us focus GPU resources on the models our users love most.
+As we continue to evolve, we're saying goodbye to **DeepSeek R1 MAI** and **Magistral Small**. Both have been great performers, but their capabilities are now fully covered — and exceeded — by newer models like **GLM-4.7** and **GPT-OSS-120B**. Retiring them helps us focus GPU resources on the models our users love most.
 
 ### Migration Guide
 
