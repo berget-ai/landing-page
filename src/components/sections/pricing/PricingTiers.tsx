@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button'
 import { Check } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
-import { Link } from 'react-router-dom'
+import { Link } from '@/components/ui/link'
 
 export function PricingTiers() {
   const { t } = useTranslation()

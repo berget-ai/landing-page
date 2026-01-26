@@ -5,22 +5,19 @@ import type { Config } from 'vike/types'
 export default {
   // Extend from vike-react preset
   extends: vikeReact,
-  
+
   // Enable SSR
   ssr: true,
-  
-  // Enable pre-rendering for static pages
-  prerender: true,
-  
+
   // Pass page context to client
   passToClient: ['pageProps', 'urlPathname', 'locale'],
-  
+
   // Client routing for better UX
   clientRouting: true,
-  
+
   // Hydration strategy
   hydrationCanBeAborted: true,
-  
+
   // Meta tags
   meta: {
     title: {

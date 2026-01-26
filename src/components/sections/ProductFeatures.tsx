@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { Cloud, Server, Cpu, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { Link } from 'react-router-dom'
+import { Link } from '@/components/ui/link'
 import { useTranslation } from 'react-i18next'
 
 export function ProductFeatures() {

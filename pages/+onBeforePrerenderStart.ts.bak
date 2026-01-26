@@ -1,0 +1,24 @@
+// Define all static pages to pre-render (SSG)
+const staticPages = [
+  '/pricing',
+  '/simple',
+  '/about',
+  '/products',
+  '/contact',
+  '/why-berget',
+  '/developers',
+  '/open-source',
+  '/status',
+  '/saas',
+]
+
+export default async function onBeforePrerenderStart() {
+  const pageContexts = staticPages.map((url) => ({ url }))
+
+  console.log(`[SSG] Pre-rendering ${pageContexts.length} pages:`)
+  pageContexts.forEach((pageContext) => {
+    console.log(`  - ${pageContext.url}`)
+  })
+
+  return pageContexts
+}

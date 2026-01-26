@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import { Link } from '@/components/ui/link'
 import type { BlogPost } from '@/types/blog'
 import { AuthorByline } from './AuthorByline'
 
