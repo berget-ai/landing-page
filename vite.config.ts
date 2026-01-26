@@ -7,9 +7,7 @@ import vike from 'vike/plugin'
 
 export default defineConfig({
   plugins: [
-    vike({
-      prerender: true
-    }),
+    vike(),
     react(),
     imagetools({
       defaultDirectives: new URLSearchParams([
@@ -134,6 +132,9 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    include: ['vite-imagetools'],
+    include: ['vite-imagetools', 'react-helmet-async'],
+  },
+  ssr: {
+    noExternal: ['react-helmet-async'],
   },
 })

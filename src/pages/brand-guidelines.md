@@ -126,16 +126,65 @@ Animated network visualizations with nodes and connecting lines represent AI con
 
 We use Lucide icons throughout our interface for their clean, consistent style.
 
-- **Icon Sizes**: 
-  - Small: 16px (text-level icons)
-  - Medium: 20px (button icons, UI elements)
-  - Large: 24px (feature icons, navigation)
-  - Extra Large: 32px+ (hero sections, feature highlights)
+> **Philosophy**: Icons complement text, they don't compete with it. Icons guide the eye without stealing attention.
 
-- **Icon Style**:
-  - Stroke width: 1.5px (consistent across all icons)
-  - Rounded caps and joins
-  - Consistent padding within containers
+#### Icon Principles
+
+1. **Monochrome First**: Icons inherit text color by default - no arbitrary colors
+2. **Contextual**: In alerts and status messages, icons match the semantic color
+3. **Functional**: Every icon serves a purpose, never purely decorative
+4. **Consistent**: Same icon for same meaning across the entire system
+5. **Minimal**: Clean designs without backgrounds or borders
+
+#### Icon Colors
+
+- **Default**: Icons inherit surrounding text color
+  ```
+  text-white, text-muted-foreground, etc.
+  ```
+
+- **Alerts & Status**: Icons match semantic context
+  ```
+  Success alerts: green
+  Error alerts: red
+  Warning alerts: yellow
+  Info alerts: blue
+  ```
+
+- **Marketing Context** (only): Brand colors for emphasis
+  ```
+  Moss: #52B788
+  Sage: #74C69D
+  Gold: #FFB700
+  ```
+
+#### Icon Sizes
+
+- **Small** (12px / w-3 h-3): Inline with small text, badges
+- **Medium** (16px / w-4 h-4): Inline with body text, alerts
+- **Standard** (20px / w-5 h-5): Buttons, navigation
+- **Large** (24px / w-6 h-6): Emphasized elements
+- **X-Large** (32px / w-8 h-8): Feature cards, marketing
+- **2X-Large** (48px / w-12 h-12): Hero sections
+
+#### Standard Icon Mappings
+
+Always use these icons for consistency:
+
+- **Status**: CheckCircle (success), XCircle (error), AlertTriangle (warning), Info (info)
+- **Actions**: Plus (add), X (close), Pencil (edit), Trash2 (delete)
+- **Features**: Cloud (serverless), Zap (speed), Shield (security), Database (data)
+- **Navigation**: ArrowRight (forward), ArrowLeft (back), ChevronDown (expand)
+
+See complete icon guide in design system documentation.
+
+#### What NOT to Do
+
+- ❌ Don't add backgrounds or borders to icons
+- ❌ Don't use random colors (purple, pink, etc.)
+- ❌ Don't use decorative icons without functional purpose
+- ❌ Don't mix different icons for the same meaning
+- ❌ Don't wrap icons in unnecessary containers
 
 ## Photography & Imagery
 

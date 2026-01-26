@@ -1,7 +1,7 @@
-import { Github, Linkedin, Twitter } from 'lucide-react'
+import { Github, Linkedin, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useTranslation } from 'react-i18next'
-import { Link } from 'react-router-dom'
+import { Link } from '@/components/ui/link'
 import logo from '@/assets/logo.svg'
 
 const footerLinks = {
@@ -48,7 +48,7 @@ export function Footer() {
                 className="hover:bg-white/10"
                 onClick={() => window.open('https://x.com/BergetAi87840', '_blank')}
               >
-                <Twitter className="h-5 w-5" />
+                <X className="h-5 w-5" />
               </Button>
               <Button variant="ghost" size="icon" className="hover:bg-white/10"
               onClick={() => window.open('https://www.github.com/berget-ai/', '_blank')}

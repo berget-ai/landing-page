@@ -2,7 +2,7 @@ import { useMemo } from 'react'
 import { motion } from 'framer-motion'
 import { Bot, ArrowRight, AlertCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { Link } from 'react-router-dom'
+import { Link } from '@/components/ui/link'
 import { useModels } from '@/hooks/use-models'
 import {
   Table,
