@@ -470,6 +470,16 @@
     "compareWithAlternatives": "Jämför med Alternativ",
     "comparisonTooltip": "Baserat på offentlig prissättning"
   },
+  "status": {
+    "title": "Systemstatus",
+    "critical": "Vi har hårdvaruproblem med en av våra GPU:er och förväntar oss utbyte snarast. Besök https://berget.ai/status för mer information.",
+    "degraded": "Vissa tjänster har problem just nu. Besök https://berget.ai/status för mer information.",
+    "reportIssues": {
+      "title": "Rapportera problem eller få uppdateringar",
+      "description": "Om du upplever problem eller behöver mer detaljerade uppdateringar, besök vårt {{forum}} för att rapportera problem och få information i realtid.",
+      "forum": "communityforum"
+    }
+  },
   "footer": {
     "description": "Berget AI främjar AI-suveränitet för att möjliggöra innovation och tillväxt i Europa. Berget AI grundades i Sverige 2024 och erbjuder inferens- och AI-infrastruktur för organisationer inom både offentlig och privat sektor.",
     "product": {

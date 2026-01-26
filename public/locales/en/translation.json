@@ -471,6 +471,16 @@
     "compareWithAlternatives": "Compare with Alternatives",
     "comparisonTooltip": "Based on public pricing"
   },
+  "status": {
+    "title": "System Status",
+    "critical": "We are having hardware problems with one of our GPU:s, expecting replacement ASAP. Please visit https://berget.ai/status for more information.",
+    "degraded": "Some services are experiencing issues. Please visit https://berget.ai/status for more information.",
+    "reportIssues": {
+      "title": "Report Issues or Get Updates",
+      "description": "If you're experiencing problems or need more detailed updates, please visit our {{forum}} to report issues and get real-time information.",
+      "forum": "community forum"
+    }
+  },
   "footer": {
     "description": "Berget AI champions AI sovereignty to unlock innovation and growth in Europe. Founded in Sweden in 2024, Berget AI offers inference and AI infrastructure for private and public sector organisations.",
     "product": {
