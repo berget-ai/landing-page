@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, AlertCircle, AlertTriangle } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import { LanguageSwitcher } from '../ui/LanguageSwitcher'
@@ -7,11 +7,13 @@ import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'framer-motion'
 import logo from '@/assets/logo.svg'
 import { useEnvironment } from '@/hooks/use-environment'
+import { useHealth } from '@/hooks/use-health'
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { t } = useTranslation()
   const { isStage, consoleUrl } = useEnvironment()
+  const health = useHealth()
 
   return (
     <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-lg border-b border-white/5">
@@ -19,6 +21,22 @@ export function Header() {
         <div className="bg-red-500/90 text-white text-center py-px text-[4pt] font-medium leading-none">
           STAGE
         </div>
+      )}
+      {health.status === 'critical' && health.messageKey && (
+        <Link to="/status" className="block bg-red-500/90 hover:bg-red-500 text-white text-center py-2 px-4 text-xs font-medium transition-colors">
+          <div className="flex items-center justify-center gap-2">
+            <AlertCircle className="w-4 h-4" />
+            <span>{t(health.messageKey, 'We are having hardware problems with one of our GPU:s, expecting replacement ASAP. Please visit https://berget.ai/status for more information.')}</span>
+          </div>
+        </Link>
+      )}
+      {health.status === 'degraded' && health.messageKey && (
+        <Link to="/status" className="block bg-yellow-500/90 hover:bg-yellow-500 text-black text-center py-2 px-4 text-xs font-medium transition-colors">
+          <div className="flex items-center justify-center gap-2">
+            <AlertTriangle className="w-4 h-4" />
+            <span>{t(health.messageKey, 'Some services are experiencing issues. Please visit https://berget.ai/status for more information.')}</span>
+          </div>
+        </Link>
       )}
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center space-x-2">

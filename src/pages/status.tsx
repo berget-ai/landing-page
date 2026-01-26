@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Activity, CheckCircle, XCircle, Server, AlertTriangle, Clock, Lock, AlertOctagon, Rabbit, Snail } from 'lucide-react'
 import { useModels } from '@/hooks/use-models'
+import { useTranslation, Trans } from 'react-i18next'
 
 interface SystemStatus {
   status: string
@@ -18,6 +19,7 @@ interface SystemStatus {
 }
 
 export default function StatusPage() {
+  const { t } = useTranslation()
   const { models, loading, error } = useModels()
   const [systemStatus, setSystemStatus] = useState<SystemStatus | null>(null)
   const [statusLoading, setStatusLoading] = useState(true)
@@ -102,7 +104,27 @@ export default function StatusPage() {
               <div className="w-12 h-12 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center">
                 <Activity className="w-6 h-6 text-[#52B788]" />
               </div>
-              <h1 className="text-4xl font-ovo">System Status</h1>
+              <h1 className="text-4xl font-ovo">{t('status.title', 'System Status')}</h1>
+            </div>
+
+            <div className="bg-blue-900/20 border border-blue-900/30 rounded-lg p-6 mb-8">
+              <h2 className="text-lg font-medium mb-2 text-blue-400">{t('status.reportIssues.title', 'Report Issues or Get Updates')}</h2>
+              <p className="text-white/80">
+                <Trans
+                  i18nKey="status.reportIssues.description"
+                  defaults="If you're experiencing problems or need more detailed updates, please visit our <forum>community forum</forum> to report issues and get real-time information."
+                  components={{
+                    forum: (
+                      <a 
+                        href="https://odoo.berget.ai/forum" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-[#52B788] hover:text-[#74C69D] underline transition-colors"
+                      />
+                    )
+                  }}
+                />
+              </p>
             </div>
 
             {(loading || statusLoading) ? (
