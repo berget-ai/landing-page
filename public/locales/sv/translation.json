@@ -487,7 +487,8 @@
       "features": "Funktionalitet",
       "pricing": "Priser",
       "documentation": "Dokumentation",
-      "security": "Säkerhet"
+      "security": "Säkerhet",
+      "status": "Servicestatus"
     },
     "solutions": {
       "title": "Lösningar",

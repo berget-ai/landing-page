@@ -488,7 +488,8 @@
       "features": "Features",
       "pricing": "Pricing",
       "api": "API",
-      "security": "Security"
+      "security": "Security",
+      "status": "Service Status"
     },
     "solutions": {
       "title": "Solutions",
