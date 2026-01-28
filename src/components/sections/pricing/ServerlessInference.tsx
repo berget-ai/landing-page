@@ -13,7 +13,7 @@ import { useModels } from '@/hooks/use-models'
 
 function ModelTable({ title, description, models }: { title: string; description: string; models: PricingRow[] }) {
   if (models.length === 0) return null;
-  
+
   return (
     <div className="space-y-4">
       <div>
@@ -42,9 +42,9 @@ function ModelTable({ title, description, models }: { title: string; description
   )
 }
 
-function ImageModelTable({ title, description, models }: { title: string; description: string; models: PricingRow[] }) {
+function SinglePriceModelTable({ title, description, models, unitLabel }: { title: string; description: string; models: PricingRow[]; unitLabel: string }) {
   if (models.length === 0) return null;
-  
+
   return (
     <div className="space-y-4">
       <div>
@@ -55,7 +55,7 @@ function ImageModelTable({ title, description, models }: { title: string; descri
         <TableHeader>
           <TableRow className="hover:bg-transparent">
             <TableHead className="w-[200px]">Model</TableHead>
-            <TableHead className="w-[60px]">€ / step</TableHead>
+            <TableHead className="w-[60px]">{unitLabel}</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -70,65 +70,6 @@ function ImageModelTable({ title, description, models }: { title: string; descri
     </div>
   )
 }
-
-function STTModelTable({ title, description, models }: { title: string; description: string; models: PricingRow[] }) {
-  if (models.length === 0) return null;
-  
-  return (
-    <div className="space-y-4">
-      <div>
-        <h4 className="text-lg font-ovo">{title}</h4>
-        <p className="text-sm text-white/80 mt-1">{description}</p>
-      </div>
-      <Table>
-        <TableHeader>
-          <TableRow className="hover:bg-transparent">
-            <TableHead className="w-[200px]">Model</TableHead>
-            <TableHead className="w-[60px]">€ / 1000 mins</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {models.map((model) => (
-            <TableRow key={model.name} className="group">
-              <TableCell className="font-medium w-[200px]">{model.name}</TableCell>
-              <TableCell className="w-[60px]">{model.inputprice}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </div>
-  )
-}
-
-function TTSModelTable({ title, description, models }: { title: string; description: string; models: PricingRow[] }) {
-  if (models.length === 0) return null;
-  
-  return (
-    <div className="space-y-4">
-      <div>
-        <h4 className="text-lg font-ovo">{title}</h4>
-        <p className="text-sm text-white/80 mt-1">{description}</p>
-      </div>
-      <Table>
-        <TableHeader>
-          <TableRow className="hover:bg-transparent">
-            <TableHead className="w-[200px]">Model</TableHead>
-            <TableHead className="w-[60px]">€/M Characters</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {models.map((model) => (
-            <TableRow key={model.name} className="group">
-              <TableCell className="font-medium w-[200px]">{model.name}</TableCell>
-              <TableCell className="w-[60px]">{model.inputprice}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </div>
-  )
-}
-
 
 export function ServerlessInference() {
   const { t } = useTranslation()
@@ -136,37 +77,17 @@ export function ServerlessInference() {
 
   const textModels = useMemo(() => {
     return models
-      .filter(model => model.owned_by === 'Meta' || model.owned_by === 'Mistral' || model.owned_by === 'Google' || model.owned_by === 'Qwen')
+      .filter(model => model.model_type === 'text')
       .map(model => ({
         name: model.name,
         inputprice: model.pricing?.input ? `${model.pricing.input} ${model.pricing.currency || 'EUR'}/${model.pricing.unit?.split('/').pop() || 'M Token'}` : '-',
         outputprice: model.pricing?.output ? `${model.pricing.output} ${model.pricing.currency || 'EUR'}/${model.pricing.unit?.split('/').pop() || 'M Token'}` : '-',
-      }))
-  }, [models])
-
-  const multimodalModels = useMemo(() => {
-    return models
-      .filter(model => model.capabilities?.vision === true)
-      .map(model => ({
-        name: model.name,
-        inputprice: model.pricing?.input ? `${model.pricing.input} ${model.pricing.currency || 'EUR'}/${model.pricing.unit?.split('/').pop() || 'M Token'}` : '-',
-        outputprice: model.pricing?.output ? `${model.pricing.output} ${model.pricing.currency || 'EUR'}/${model.pricing.unit?.split('/').pop() || 'M Token'}` : '-',
-      }))
-  }, [models])
-
-  const rerankModels = useMemo(() => {
-    return models
-      .filter(model => model.id.includes('rerank') || model.id.includes('Rerank'))
-      .map(model => ({
-        name: model.name,
-        inputprice: model.pricing?.input ? `${model.pricing.input} ${model.pricing.currency || 'EUR'}/${model.pricing.unit?.split('/').pop() || 'M Token'}` : '-',
-        outputprice: '-',
       }))
   }, [models])
 
   const embeddingModels = useMemo(() => {
     return models
-      .filter(model => model.capabilities?.embeddings === true || model.id.includes('E5') || model.id.includes('e5'))
+      .filter(model => model.model_type === 'embedding')
       .map(model => ({
         name: model.name,
         inputprice: model.pricing?.input ? `${model.pricing.input} ${model.pricing.currency || 'EUR'}/${model.pricing.unit?.split('/').pop() || 'M Token'}` : '-',
@@ -174,9 +95,19 @@ export function ServerlessInference() {
       }))
   }, [models])
 
-  const STTModels = useMemo(() => {
+  const rerankModels = useMemo(() => {
     return models
-      .filter(model => model.id.includes('whisper') || model.id.includes('Whisper'))
+      .filter(model => model.model_type === 'rerank')
+      .map(model => ({
+        name: model.name,
+        inputprice: model.pricing?.input ? `${model.pricing.input} ${model.pricing.currency || 'EUR'}/${model.pricing.unit?.split('/').pop() || 'M Token'}` : '-',
+        outputprice: '-',
+      }))
+  }, [models])
+
+  const speechToTextModels = useMemo(() => {
+    return models
+      .filter(model => model.model_type === 'speech-to-text')
       .map(model => ({
         name: model.name,
         inputprice: model.pricing?.input ? `${model.pricing.input} ${model.pricing.currency || 'EUR'}/${model.pricing.unit?.split('/').pop() || 'mins'}` : '-',
@@ -184,9 +115,9 @@ export function ServerlessInference() {
       }))
   }, [models])
 
-  const TTSModels = useMemo(() => {
+  const textToSpeechModels = useMemo(() => {
     return models
-      .filter(model => model.id.includes('tts') || model.id.includes('TTS') || model.id.includes('Kokoro') || model.id.includes('CSM'))
+      .filter(model => model.model_type === 'text-to-speech')
       .map(model => ({
         name: model.name,
         inputprice: model.pricing?.input ? `${model.pricing.input} ${model.pricing.currency || 'EUR'}/${model.pricing.unit?.split('/').pop() || 'M Chars'}` : '-',
@@ -196,21 +127,11 @@ export function ServerlessInference() {
 
   const imageModels = useMemo(() => {
     return models
-      .filter(model => model.id.includes('diffusion') || model.id.includes('Diffusion') || model.id.includes('Flux'))
+      .filter(model => model.model_type === 'image' || model.model_type === 'text-to-image')
       .map(model => ({
         name: model.name,
         inputprice: model.pricing?.input ? `${model.pricing.input} ${model.pricing.currency || 'EUR'}/${model.pricing.unit?.split('/').pop() || 'step'}` : '-',
         outputprice: '-',
-      }))
-  }, [models])
-
-  const moderationModels = useMemo(() => {
-    return models
-      .filter(model => model.id.includes('guard') || model.id.includes('Guard') || model.id.includes('Shield'))
-      .map(model => ({
-        name: model.name,
-        inputprice: model.pricing?.input ? `${model.pricing.input} ${model.pricing.currency || 'EUR'}/${model.pricing.unit?.split('/').pop() || 'M Token'}` : '-',
-        outputprice: model.pricing?.output ? `${model.pricing.output} ${model.pricing.currency || 'EUR'}/${model.pricing.unit?.split('/').pop() || 'M Token'}` : '-',
       }))
   }, [models])
 
@@ -219,54 +140,47 @@ export function ServerlessInference() {
       <h3 className="text-xl font-ovo">{t('serverlesspricing.title')}</h3>
       <p className="text-white/80">{t('serverlesspricing.intro')}</p>
 
-      <ModelTable 
-        title={t('serverlesspricing.text.title')} 
+      <ModelTable
+        title={t('serverlesspricing.text.title')}
         description={t('serverlesspricing.text.description')}
         models={textModels}
       />
 
-      <ModelTable 
-        title={t('serverlesspricing.multimodal.title')} 
-        description={t('serverlesspricing.multimodal.description')}
-        models={multimodalModels}
-      />
-
-      <ModelTable 
-        title={t('serverlesspricing.rerank.title')} 
-        description={t('serverlesspricing.rerank.description')}
-        models={rerankModels}
-      />
-
-      <ModelTable 
-        title={t('serverlesspricing.embedding.title')} 
+      <SinglePriceModelTable
+        title={t('serverlesspricing.embedding.title')}
         description={t('serverlesspricing.embedding.description')}
         models={embeddingModels}
+        unitLabel="€ / M Token"
       />
 
-      <ModelTable 
-        title={t('serverlesspricing.moderation.title')} 
-        description={t('serverlesspricing.moderation.description')}
-        models={moderationModels}
+      <SinglePriceModelTable
+        title={t('serverlesspricing.rerank.title')}
+        description={t('serverlesspricing.rerank.description')}
+        models={rerankModels}
+        unitLabel="€ / M Token"
       />
 
-      <STTModelTable 
-        title={t('serverlesspricing.stt.title')} 
+      <SinglePriceModelTable
+        title={t('serverlesspricing.stt.title')}
         description={t('serverlesspricing.stt.description')}
-        models={STTModels}
+        models={speechToTextModels}
+        unitLabel="€ / 1000 mins"
       />
-      {STTModels.length > 0 && <p className="text-sm text-white/60 mt-1">{t('serverlesspricing.stt.note')}</p>}
+      {speechToTextModels.length > 0 && <p className="text-sm text-white/60 mt-1">{t('serverlesspricing.stt.note')}</p>}
 
-      <TTSModelTable 
-        title={t('serverlesspricing.tts.title')} 
+      <SinglePriceModelTable
+        title={t('serverlesspricing.tts.title')}
         description={t('serverlesspricing.tts.description')}
-        models={TTSModels}
+        models={textToSpeechModels}
+        unitLabel="€ / M Characters"
       />
-      {TTSModels.length > 0 && <p className="text-sm text-white/60 mt-1">{t('serverlesspricing.tts.note')}</p>}
+      {textToSpeechModels.length > 0 && <p className="text-sm text-white/60 mt-1">{t('serverlesspricing.tts.note')}</p>}
 
-      <ImageModelTable 
-        title={t('serverlesspricing.image.title')} 
+      <SinglePriceModelTable
+        title={t('serverlesspricing.image.title')}
         description={t('serverlesspricing.image.description')}
         models={imageModels}
+        unitLabel="€ / step"
       />
       {imageModels.length > 0 && <p className="text-sm text-white/60 mt-1">{t('serverlesspricing.image.note')}</p>}
 
