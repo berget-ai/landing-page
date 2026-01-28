@@ -11,6 +11,7 @@ export interface ModelData {
   permission: any[]
   root: string
   parent: string | null
+  model_type: string
   pricing: {
     input: number
     output: number
