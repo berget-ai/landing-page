@@ -49,7 +49,7 @@ async function getBlogPosts() {
       const date = dateMatch ? dateMatch[1].trim().replace(/^["']|["']$/g, '') : null;
       
       blogPosts.push({
-        url: `/blog/${postId}`,
+        url: `/blog/${encodeURIComponent(postId)}`,
         changefreq: 'monthly',
         priority: '0.6',
         lastmod: date || null,
