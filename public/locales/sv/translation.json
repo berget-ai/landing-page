@@ -103,7 +103,9 @@
     "buttons": {
       "signIn": "Logga in",
       "getStarted": "Kom igång"
-    }
+    },
+    "openMenu": "Öppna navigeringsmeny",
+    "closeMenu": "Stäng navigeringsmeny"
   },
   "products": {
     "hero": {
@@ -125,7 +127,11 @@
         },
         "usage": {
           "title": "Kostnadseffektivt",
-          "items": ["Betala per token", "Prisvärda modeller", "Stöd för batch"]
+          "items": [
+            "Betala per token",
+            "Prisvärda modeller",
+            "Stöd för batch"
+          ]
         },
         "infrastructure": {
           "title": "Robust Infrastruktur",
@@ -203,7 +209,12 @@
       "layers": {
         "tools": {
           "title": "Verktyg",
-          "items": ["Databas", "Vektor-DB", "DevOps", "Agent-ramverk"]
+          "items": [
+            "Databas",
+            "Vektor-DB",
+            "DevOps",
+            "Agent-ramverk"
+          ]
         },
         "llm": {
           "title": "Språkmodeller",
@@ -216,11 +227,20 @@
         },
         "compute": {
           "title": "Lagring och Compute",
-          "items": ["CPU", "GPU", "Lokal lagring", "Premium lagring"]
+          "items": [
+            "CPU",
+            "GPU",
+            "Lokal lagring",
+            "Premium lagring"
+          ]
         },
         "connectivity": {
           "title": "Nätverk",
-          "items": ["Isolerade Nätverk", "VPN", "Hybridmoln"]
+          "items": [
+            "Isolerade Nätverk",
+            "VPN",
+            "Hybridmoln"
+          ]
         },
         "management": {
           "title": "Hantering",
@@ -348,7 +368,11 @@
       "flexible": {
         "title": "(verkligt) Öppen AI",
         "description": "Vi är förespråkare för öppen innovation och vi driftar och tillhandahåller öppna modeller. Våra tjänster är helt byggda på öppen källkod.",
-        "features": ["Öppna modeller", "Öppen källkod", "Öppen innovation"]
+        "features": [
+          "Öppna modeller",
+          "Öppen källkod",
+          "Öppen innovation"
+        ]
       }
     },
     "features": {
@@ -456,7 +480,7 @@
         "features": [
           "550€ refill per månad",
           "+10% extra Credits",
-          "Tillgång till alla modeller",          
+          "Tillgång till alla modeller",
           "Dedikerad support"
         ]
       }
@@ -465,7 +489,6 @@
     "contactSales": "Kontakta Försäljning",
     "getStartedlink": "https://console.berget.ai",
     "contactSaleslink": "/contact",
-
     "moneyBackGuarantee": "30 dagars pengarna-tillbaka-garanti",
     "compareWithAlternatives": "Jämför med Alternativ",
     "comparisonTooltip": "Baserat på offentlig prissättning"
@@ -515,7 +538,12 @@
     },
     "copyright": "© 2025 Berget AI. Med ensamrätt.",
     "status": "Status",
-    "support": "Support"
+    "support": "Support",
+    "social": {
+      "twitter": "Följ oss på Twitter",
+      "github": "Besök vår GitHub",
+      "linkedin": "Anslut på LinkedIn"
+    }
   },
   "compliance": {
     "tagline": "Ingen data lämnar Sverige",
@@ -778,11 +806,9 @@
       "deepcoder": "Preview version of advanced code generation model."
     }
   },
-
   "serverlesspricing": {
     "title": "Serverlös inferens",
     "intro": "Få tillgång till vårt omfattande urval av AI-modeller genom vårt OpenAI-kompatibla API. Betala endast för det du använder utan förhandsåtaganden.",
-
     "text": {
       "title": "Textgenereringsmodeller",
       "description": "Högpresterande språkmodeller för textgenerering, chatt och kompletteringsuppgifter"
@@ -819,5 +845,24 @@
       "note": "SDXL standard är 30 steg per bild. Flux.1 [schnell] standard är 4 steg per bild. Flux.1 Dev är 28 steg per bild"
     },
     "footer": "Alla priser är i EUR och exklusive moms."
+  },
+  "languageSwitcher": {
+    "label": "Byt språk",
+    "title": "Växla mellan engelska och svenska"
+  },
+  "notFound": {
+    "title": "Sidan hittades inte",
+    "description": "Sidan du söker efter kunde inte hittas",
+    "heading": "Sidan hittades inte",
+    "message": "Tyvärr kunde vi inte hitta sidan du söker efter. Den kan ha flyttats eller existerar inte.",
+    "buttons": {
+      "home": "Gå hem",
+      "products": "Bläddra bland produkter",
+      "contact": "Kontakta oss"
+    },
+    "help": {
+      "title": "Behöver du hjälp?",
+      "description": "Om du tror att detta är ett fel eller behöver hjälp, kontakta vårt supportteam."
+    }
   }
 }

@@ -21,6 +21,7 @@ import ModelsPage from './pages/models'
 import StatusPage from './pages/status'
 import VisualIdentityGuide from './pages/VisualIdentityGuide'
 import OpenSourcePage from './pages/open-source'
+import NotFoundPage from './pages/404'
 
 // Markdown content
 import { html as termsHtml } from '@/pages/terms.md'
@@ -62,6 +63,7 @@ function App() {
           <Route path="/blog/:id" element={<BlogPostPage />} />
           <Route path="/vig" element={<VisualIdentityGuide />} />
           <Route path="/open-source" element={<OpenSourcePage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
           <Footer />
         </div>
