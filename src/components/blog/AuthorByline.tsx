@@ -70,6 +70,7 @@ export function AuthorByline({ email, name, date, size = 'md' }: AuthorBylinePro
                 rel="noopener noreferrer"
                 className="text-white/60 hover:text-[#52B788] transition-colors"
                 title="Twitter"
+                aria-label={`${author.name} on Twitter`}
               >
                 <Twitter className="w-4 h-4" />
               </a>
@@ -81,6 +82,7 @@ export function AuthorByline({ email, name, date, size = 'md' }: AuthorBylinePro
                 rel="noopener noreferrer"
                 className="text-white/60 hover:text-[#52B788] transition-colors"
                 title="LinkedIn"
+                aria-label={`${author.name} on LinkedIn`}
               >
                 <Linkedin className="w-4 h-4" />
               </a>
@@ -92,6 +94,7 @@ export function AuthorByline({ email, name, date, size = 'md' }: AuthorBylinePro
                 rel="noopener noreferrer"
                 className="text-white/60 hover:text-[#52B788] transition-colors"
                 title="Bluesky"
+                aria-label={`${author.name} on Bluesky`}
               >
                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12.001 2C6.47598 2 2.00098 6.475 2.00098 12C2.00098 17.525 6.47598 22 12.001 22C17.526 22 22.001 17.525 22.001 12C22.001 6.475 17.526 2 12.001 2ZM15.501 15.5C14.851 16.15 14.001 16.5 13.001 16.5H9.00098C8.45098 16.5 8.00098 16.05 8.00098 15.5V8.5C8.00098 7.95 8.45098 7.5 9.00098 7.5H13.001C14.001 7.5 14.851 7.85 15.501 8.5C16.151 9.15 16.501 10 16.501 11C16.501 12 16.151 12.85 15.501 13.5C16.151 14.15 16.501 15 16.501 16C16.501 17 16.151 17.85 15.501 18.5V15.5Z" />
