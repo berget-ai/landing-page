@@ -43,8 +43,7 @@ Then help me deploy Supabase (open-source Firebase alternative) on Kubernetes us
 Important: All Kubernetes manifests should go in the /k8s directory and use FluxCD HelmRelease format for GitOps deployment.
 </LLMPrompt>
 
-```yaml
-# k8s/supabase.yaml
+```yaml:k8s/supabase.yaml
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
@@ -101,8 +100,7 @@ Important: All Kubernetes manifests should go in the /k8s directory and use Flux
 
 ### Prometheus and Grafana Stack
 
-```yaml
-# k8s/monitoring.yaml
+```yaml:k8s/monitoring.yaml
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
@@ -137,8 +135,7 @@ spec:
 
 Add health checks and metrics to your application:
 
-```typescript
-// src/metrics.ts
+```typescript:src/metrics.ts
 import express from 'express'
 import promClient from 'prom-client'
 
@@ -173,8 +170,7 @@ app.get('/metrics', (req, res) => {
 
 ### Alerting Rules
 
-```yaml
-# k8s/alerts.yaml
+```yaml:k8s/alerts.yaml
 apiVersion: monitoring.coreos.com/v1
 kind: PrometheusRule
 metadata:
@@ -243,8 +239,7 @@ Important: All Kubernetes manifests should go in the /k8s directory and use Flux
 
 ### PostgreSQL Deployment
 
-```yaml
-# k8s/postgresql.yaml
+```yaml:k8s/postgresql.yaml
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
@@ -284,8 +279,7 @@ spec:
 
 ### Database Connection in Applications
 
-```yaml
-# k8s/app-with-database.yaml
+```yaml:k8s/app-with-database.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -336,14 +330,15 @@ Important: All Kubernetes manifests should go in the /k8s directory and use Flux
 
 ### Installing Velero
 
-```yaml
-# k8s/velero-namespace.yaml
+```yaml:k8s/velero-namespace.yaml
 apiVersion: v1
 kind: Namespace
 metadata:
   name: velero
 ---
-# k8s/velero.yaml
+```
+
+```yaml:k8s/velero.yaml
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
@@ -385,8 +380,7 @@ spec:
 
 ### Scheduled Backups
 
-```yaml
-# k8s/backup-schedule.yaml
+```yaml:k8s/backup-schedule.yaml
 apiVersion: velero.io/v1
 kind: Schedule
 metadata:
@@ -421,8 +415,7 @@ spec:
 
 ### Backup Monitoring
 
-```yaml
-# k8s/backup-monitoring.yaml
+```yaml:k8s/backup-monitoring.yaml
 apiVersion: monitoring.coreos.com/v1
 kind: PrometheusRule
 metadata:
