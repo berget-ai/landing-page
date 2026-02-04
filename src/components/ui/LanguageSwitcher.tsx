@@ -10,12 +10,16 @@ export function LanguageSwitcher() {
     i18n.changeLanguage(newLang)
   }
 
+  const { t } = useTranslation()
+  
   return (
     <Button
       variant="ghost"
       size="icon"
       onClick={toggleLanguage}
       className="w-10 h-10 rounded-full"
+      aria-label={t('languageSwitcher.label')}
+      title={t('languageSwitcher.title')}
     >
       {i18n.language === 'en' ? (
         <CountryFlag code="se" size="md" />

@@ -89,7 +89,6 @@
       }
     }
   },
-
   "header": {
     "navigation": {
       "products": "Products",
@@ -103,7 +102,9 @@
     "buttons": {
       "signIn": "Sign In",
       "getStarted": "Get Started"
-    }
+    },
+    "openMenu": "Open navigation menu",
+    "closeMenu": "Close navigation menu"
   },
   "products": {
     "hero": {
@@ -192,7 +193,11 @@
         },
         "infrastructure": {
           "title": "All infra as Code",
-          "items": ["Persistent clusters", "Simple setup", "GitHub integration"]
+          "items": [
+            "Persistent clusters",
+            "Simple setup",
+            "GitHub integration"
+          ]
         }
       }
     },
@@ -202,7 +207,12 @@
       "layers": {
         "tools": {
           "title": "Tools & Marketplace",
-          "items": ["Databases", "Vector DB", "DevOps", "Agentic Frameworks"]
+          "items": [
+            "Databases",
+            "Vector DB",
+            "DevOps",
+            "Agentic Frameworks"
+          ]
         },
         "llm": {
           "title": "LLM",
@@ -215,11 +225,20 @@
         },
         "compute": {
           "title": "Storage & Compute",
-          "items": ["CPU", "GPU", "Local Storage", "Premium Storage"]
+          "items": [
+            "CPU",
+            "GPU",
+            "Local Storage",
+            "Premium Storage"
+          ]
         },
         "connectivity": {
           "title": "Connectivity",
-          "items": ["Isolated Network", "VPN", "Cloud Connectors"]
+          "items": [
+            "Isolated Network",
+            "VPN",
+            "Cloud Connectors"
+          ]
         },
         "management": {
           "title": "Management",
@@ -232,7 +251,6 @@
         }
       }
     },
-
     "cta": {
       "title": "Ready to Start Building?",
       "description": "Get started today and discover the benefits of a secure, compliant, and sustainable AI infrastructure.",
@@ -244,7 +262,6 @@
       "requestModel": "Request a Model"
     }
   },
-
   "models": {
     "title": "Our Models",
     "description": "Access a broad selection of powerful open models to build diverse AI solutions.",
@@ -351,7 +368,11 @@
       "flexible": {
         "title": "(truly) Open AI",
         "description": "We are champions of open innovation and we host and serve open models. Our services are fully built on open source.",
-        "features": ["Open Models", "Open Source", "Open Innovation"]
+        "features": [
+          "Open Models",
+          "Open Source",
+          "Open Innovation"
+        ]
       }
     },
     "features": {
@@ -516,7 +537,12 @@
     },
     "copyright": "© 2025 Berget AI. All rights reserved.",
     "status": "Status",
-    "support": "Support"
+    "support": "Support",
+    "social": {
+      "twitter": "Follow us on Twitter",
+      "github": "View our GitHub",
+      "linkedin": "Connect on LinkedIn"
+    }
   },
   "compliance": {
     "tagline": "No data leaves Sweden",
@@ -746,12 +772,10 @@
     "filter": "Filter by type",
     "all": "All",
     "view": "View on HF",
-
     "pricing": "Pricing",
     "input": "Input",
     "output": "Output",
     "noModels": "No models found matching your filter criteria.",
-
     "models": {
       "llama_1b": "Compact instruction-tuned language model for high speed and low cost...",
       "llama_3b": "Instruction-tuned variant of Llama 3 optimized for task completion...",
@@ -784,7 +808,6 @@
   "serverlesspricing": {
     "title": "Serverless Inference",
     "intro": "Access our comprehensive selection of AI models through our OpenAI compliant API. Pay only for what you use with no upfront commitments.",
-
     "text": {
       "title": "Text Generation Models",
       "description": "High-performance language models for text generation, chat, and completion tasks"
@@ -821,5 +844,24 @@
       "note": "SDXL standard is 30 steps per image. Flux.1 [schnell] standard is 4 steps per image. Flux.1 Dev is 28 steps per image"
     },
     "footer": "All prices are in EUR and exclude VAT."
+  },
+  "languageSwitcher": {
+    "label": "Change language",
+    "title": "Switch between English and Swedish"
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "The page you are looking for could not be found",
+    "heading": "Page Not Found",
+    "message": "Sorry, we could not find the page you are looking for. It may have been moved or does not exist.",
+    "buttons": {
+      "home": "Go Home",
+      "products": "Browse Products",
+      "contact": "Contact Us"
+    },
+    "help": {
+      "title": "Need Help?",
+      "description": "If you believe this is an error or need assistance, please contact our support team."
+    }
   }
 }
