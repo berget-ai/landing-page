@@ -55,12 +55,12 @@ export default function ProductsPage() {
       {/* Hero Section */}
       <div className="relative overflow-hidden bg-gradient-to-b from-background to-background/50">
         <div className="absolute inset-0 bg-grid-white/5 bg-[size:32px_32px] pointer-events-none" />
-        <div className="container mx-auto px-4 py-24">
+        <div className="container mx-auto px-4 py-12 sm:py-16 lg:py-24">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-5xl font-ovo mb-6">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-ovo mb-6">
               {t('products.hero.title')}
             </h1>
-            <p className="text-xl text-white/80 mb-8 leading-relaxed">
+            <p className="text-base sm:text-lg lg:text-xl text-white/80 mb-8 leading-relaxed">
               {t('products.hero.description')}
             </p>
           </div>
@@ -68,25 +68,25 @@ export default function ProductsPage() {
       </div>
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 py-24">
-        <div className="space-y-32">
+      <div className="container mx-auto px-4 py-12 sm:py-16 lg:py-24">
+        <div className="space-y-16 sm:space-y-24 lg:space-y-32">
           {/* Serverless Inference */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             <div className="lg:col-span-4 lg:sticky lg:top-24">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-3xl font-medium mb-4">
+                <h2 className="text-2xl sm:text-3xl font-medium mb-4">
                   {t('products.serverless.title')}
                 </h2>
-                <p className="text-lg text-white/60">
+                <p className="text-base sm:text-lg text-white/60">
                   {t('products.serverless.description')}
                 </p>
               </motion.div>
             </div>
-            <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -155,27 +155,27 @@ export default function ProductsPage() {
           </div>
 
           {/* Dedicated Inference */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             <div className="lg:col-span-4 lg:sticky lg:top-24">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
               >
-                <div className="flex items-center gap-3 mb-4">
-                  <h2 className="text-3xl font-medium">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
+                  <h2 className="text-2xl sm:text-3xl font-medium">
                     {t('products.dedicated.title')}
                   </h2>
-                  <span className="px-4 py-1 text-xs font-medium bg-[#52B788]/10 text-[#52B788] rounded-full whitespace-nowrap">
+                  <span className="px-4 py-1 text-xs font-medium bg-[#52B788]/10 text-[#52B788] rounded-full whitespace-nowrap w-fit">
                     Coming Soon
                   </span>
                 </div>
-                <p className="text-lg text-white/60">
+                <p className="text-base sm:text-lg text-white/60">
                   {t('products.dedicated.description')}
                 </p>
               </motion.div>
             </div>
-            <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -244,27 +244,27 @@ export default function ProductsPage() {
           </div>
 
           {/* Berget AI Platform */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             <div className="lg:col-span-4 lg:sticky lg:top-24">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
               >
-                <div className="flex items-center gap-3 mb-4">
-                  <h2 className="text-3xl font-medium">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
+                  <h2 className="text-2xl sm:text-3xl font-medium">
                     {t('products.platform.title')}
                   </h2>
-                  <span className="px-4 py-1 text-xs font-medium bg-[#52B788]/10 text-[#52B788] rounded-full whitespace-nowrap">
+                  <span className="px-4 py-1 text-xs font-medium bg-[#52B788]/10 text-[#52B788] rounded-full whitespace-nowrap w-fit">
                     Coming Soon
                   </span>
                 </div>
-                <p className="text-lg text-white/60">
+                <p className="text-base sm:text-lg text-white/60">
                   {t('products.platform.description')}
                 </p>
               </motion.div>
             </div>
-            <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -333,18 +333,18 @@ export default function ProductsPage() {
           </div>
 
           {/* Platform Stack Illustration */}
-          <div className="container mx-auto px-4 py-24 border-t border-white/5">
+          <div className="container mx-auto px-4 py-12 sm:py-16 lg:py-24 border-t border-white/5">
             <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16">
+              <div className="text-center mb-8 sm:mb-12 lg:mb-16">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                 >
-                  <h2 className="text-3xl font-medium mb-4">
+                  <h2 className="text-2xl sm:text-3xl font-medium mb-4">
                     {t('products.architecture.title')}
                   </h2>
-                  <p className="text-lg text-white/60">
+                  <p className="text-base sm:text-lg text-white/60">
                     {t('products.architecture.description')}
                   </p>
                 </motion.div>
@@ -355,9 +355,9 @@ export default function ProductsPage() {
                 <div className="absolute inset-0 bg-gradient-to-b from-background via-background/50 to-background pointer-events-none" />
 
                 {/* Main layout container */}
-                <div className="relative grid grid-cols-12 gap-6">
+                <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6">
                   {/* Stack layers - Left side */}
-                  <div className="col-span-9">
+                  <div className="lg:col-span-9">
                     <div className="space-y-4">
                       {Object.entries(
                         t('products.architecture.layers', {
@@ -379,24 +379,24 @@ export default function ProductsPage() {
                               <div
                                 className={`absolute inset-0 rounded-2xl bg-gradient-to-r from-[#2D6A4F]/5 via-[#40916C]/5 to-[#FFB700]/5 opacity-5 group-hover:opacity-10 transition-opacity duration-300`}
                               />
-                              <div className="relative p-6 rounded-2xl border border-[#40916C]/20 bg-[#2D6A4F]/5">
-                                <div className="flex items-center gap-4 mb-6">
+                              <div className="relative p-4 sm:p-6 rounded-2xl border border-[#40916C]/20 bg-[#2D6A4F]/5">
+                                <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
                                   <div
-                                    className={`w-12 h-12 rounded-xl bg-gradient-to-br from-[#2D6A4F] to-[#40916C] flex items-center justify-center`}
+                                    className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-[#2D6A4F] to-[#40916C] flex items-center justify-center flex-shrink-0`}
                                   >
-                                    <IconComponent className="w-6 h-6 text-white" />
+                                    <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                                   </div>
                                   <div>
-                                    <h3 className="text-xl font-medium">
+                                    <h3 className="text-lg sm:text-xl font-medium">
                                       {layer.title}
                                     </h3>
                                   </div>
                                 </div>
-                                <div className="grid grid-cols-4 gap-4">
+                                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
                                   {layer.items.map((item: string) => (
                                     <div
                                       key={item}
-                                      className="px-4 py-3 rounded-lg bg-[#2D6A4F]/5 text-sm text-center border border-[#40916C]/20 hover:bg-[#2D6A4F]/10 transition-colors"
+                                      className="px-3 py-2 sm:px-4 sm:py-3 rounded-lg bg-[#2D6A4F]/5 text-xs sm:text-sm text-center border border-[#40916C]/20 hover:bg-[#2D6A4F]/10 transition-colors"
                                     >
                                       {item}
                                     </div>
@@ -414,28 +414,28 @@ export default function ProductsPage() {
                     initial={{ opacity: 0, x: 20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    className="col-span-3"
+                    className="lg:col-span-3"
                   >
                     <div className={`relative h-full group`}>
                       <div
                         className={`absolute inset-0 rounded-2xl bg-gradient-to-b from-[#FFB700]/5 to-[#2D6A4F]/5 opacity-5 group-hover:opacity-10 transition-opacity duration-300`}
                       />
-                      <div className="relative h-full p-6 rounded-2xl border border-[#40916C]/20 bg-[#2D6A4F]/5 flex flex-col">
-                        <div className="flex items-center gap-4 mb-8">
+                      <div className="relative h-full p-4 sm:p-6 rounded-2xl border border-[#40916C]/20 bg-[#2D6A4F]/5 flex flex-col">
+                        <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
                           <div
-                            className={`w-12 h-12 rounded-xl bg-gradient-to-br from-[#FFB700] to-[#FFB700]/80 flex items-center justify-center`}
+                            className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-[#FFB700] to-[#FFB700]/80 flex items-center justify-center flex-shrink-0`}
                           >
-                            <managementStack.icon className="w-6 h-6 text-[#1A1A1A]" />
+                            <managementStack.icon className="w-5 h-5 sm:w-6 sm:h-6 text-[#1A1A1A]" />
                           </div>
                           <div>
-                            <h3 className="text-xl font-medium">
+                            <h3 className="text-lg sm:text-xl font-medium">
                               {t(
                                 'products.architecture.layers.management.title'
                               )}
                             </h3>
                           </div>
                         </div>
-                        <div className="flex-1 flex flex-col justify-center space-y-4">
+                        <div className="flex-1 flex flex-col justify-center space-y-3 sm:space-y-4">
                           {(
                             t('products.architecture.layers.management.items', {
                               returnObjects: true,
@@ -443,7 +443,7 @@ export default function ProductsPage() {
                           ).map((item: string) => (
                             <div
                               key={item}
-                              className="p-4 rounded-lg bg-[#2D6A4F]/5 text-sm text-center border border-[#40916C]/20 hover:bg-[#2D6A4F]/10 transition-colors"
+                              className="p-3 sm:p-4 rounded-lg bg-[#2D6A4F]/5 text-xs sm:text-sm text-center border border-[#40916C]/20 hover:bg-[#2D6A4F]/10 transition-colors"
                             >
                               {item}
                             </div>
@@ -465,17 +465,17 @@ export default function ProductsPage() {
           </div>
 
           {/* Models Section */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             <div className="lg:col-span-4 lg:sticky lg:top-24">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-3xl font-medium mb-4">
+                <h2 className="text-2xl sm:text-3xl font-medium mb-4">
                   {t('products.models.title')}
                 </h2>
-                <p className="text-lg text-white/60">
+                <p className="text-base sm:text-lg text-white/60">
                   {t('products.models.description')}
                 </p>
                 <Button className="mt-6" asChild>
@@ -498,10 +498,10 @@ export default function ProductsPage() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <h2 className="text-3xl font-medium mb-6">
+            <h2 className="text-2xl sm:text-3xl font-medium mb-6">
               {t('products.cta.title')}
             </h2>
-            <p className="text-xl text-white/60 mb-8 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-white/60 mb-8 max-w-2xl mx-auto">
               {t('products.cta.description')}
             </p>
             <div className="flex gap-4 justify-center">
