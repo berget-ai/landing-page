@@ -1,12 +1,20 @@
 import { useMemo } from 'react'
 import MarkdownIt from 'markdown-it'
+import hljs from 'highlight.js'
 import { LLMPrompt } from './LLMPrompt'
+import { ExpandableCodeBlock } from '../common/CodeBlock'
 
 // Configure markdown parser
 const md = new MarkdownIt({
   html: true,
   linkify: true,
   typographer: true,
+  highlight: function (str, lang) {
+    if (lang && hljs.getLanguage(lang)) {
+      return hljs.highlight(str, { language: lang, ignoreIllegals: true }).value
+    }
+    return md.utils.escapeHtml(str)
+  }
 })
 
 interface MarkdownRendererProps {
@@ -15,7 +23,7 @@ interface MarkdownRendererProps {
 
 export function MarkdownRenderer({ content }: MarkdownRendererProps) {
   const processedContent = useMemo(() => {
-    // Process LLMPrompt components
+    // Process LLMPrompt components first
     let processedMarkdown = content.replace(
       /<LLMPrompt([^>]*)>([\s\S]*?)<\/LLMPrompt>/g,
       (_, attributes, innerContent) => {
@@ -32,7 +40,67 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
         return `<div data-llm-prompt="${promptId}" data-title="${title}" data-default-expanded="${defaultExpanded}">${innerContent.trim()}</div>`
       }
     )
+
+    // First, let's handle code blocks with filenames separately from regular markdown processing
+    processedMarkdown = processedMarkdown.replace(
+      /```(\w*):([^\n]+)\n([\s\S]*?)\n```/g,
+      (match, language, filePath, codeContent) => {
+        const anchor = `file-${filePath.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}`
+        // Determine language from file extension if not provided
+        const detectedLang = language || detectLanguageFromFilename(filePath)
+        
+        // Apply syntax highlighting directly
+        let highlightedCode = codeContent.trim()
+        if (detectedLang && hljs.getLanguage(detectedLang)) {
+          try {
+            highlightedCode = hljs.highlight(highlightedCode, { language: detectedLang, ignoreIllegals: true }).value
+          } catch (e) {
+            console.warn('Syntax highlighting failed for', detectedLang, e)
+          }
+        } else {
+          highlightedCode = md.utils.escapeHtml(highlightedCode)
+        }
+        
+        // Create a unique ID for this code block
+        const codeBlockId = Math.random().toString(36).substr(2, 9)
+        
+        return `<div data-expandable-code="${codeBlockId}" data-filename="${filePath}" data-anchor="${anchor}">${highlightedCode}</div>`
+      }
+    )
     
+    // Helper function to detect language from filename
+    function detectLanguageFromFilename(filename: string): string {
+      const ext = filename.split('.').pop()?.toLowerCase()
+      const langMap: { [key: string]: string } = {
+        'js': 'javascript',
+        'ts': 'typescript',
+        'jsx': 'javascript',
+        'tsx': 'typescript',
+        'py': 'python',
+        'yaml': 'yaml',
+        'yml': 'yaml',
+        'json': 'json',
+        'md': 'markdown',
+        'sh': 'bash',
+        'bash': 'bash',
+        'dockerfile': 'dockerfile',
+        'go': 'go',
+        'rs': 'rust',
+        'java': 'java',
+        'php': 'php',
+        'rb': 'ruby',
+        'css': 'css',
+        'scss': 'scss',
+        'html': 'html',
+        'xml': 'xml',
+        'sql': 'sql'
+      }
+      
+      
+      return langMap[ext || ''] || 'text'
+    }
+    
+    // Render markdown with proper syntax highlighting
     return md.render(processedMarkdown)
   }, [content])
 
@@ -41,22 +109,44 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
     const parser = new DOMParser()
     const doc = parser.parseFromString(html, 'text/html')
     const promptElements = doc.querySelectorAll('[data-llm-prompt]')
+    const codeElements = doc.querySelectorAll('[data-expandable-code]')
     
     const components: JSX.Element[] = []
+    let componentIndex = 0
     
-    promptElements.forEach((element, index) => {
+    // Handle LLM Prompts
+    promptElements.forEach((element) => {
       const title = element.getAttribute('data-title') || '🤖 LLM Prompt'
       const defaultExpanded = element.getAttribute('data-default-expanded') === 'true'
       const content = element.textContent || ''
       
       components.push(
-        <LLMPrompt key={index} title={title} defaultExpanded={defaultExpanded}>
+        <LLMPrompt key={`prompt-${componentIndex}`} title={title} defaultExpanded={defaultExpanded}>
           {content}
         </LLMPrompt>
       )
       
       // Replace the element with a placeholder
-      element.outerHTML = `<div data-component-placeholder="${index}"></div>`
+      element.outerHTML = `<div data-component-placeholder="${componentIndex}"></div>`
+      componentIndex++
+    })
+    
+    // Handle Expandable Code Blocks
+    codeElements.forEach((element) => {
+      const filename = element.getAttribute('data-filename') || ''
+      const anchor = element.getAttribute('data-anchor') || ''
+      const highlightedCode = element.innerHTML
+      
+      components.push(
+        <div key={`code-${componentIndex}`}>
+          <div id={anchor} className="scroll-mt-24"></div>
+          <ExpandableCodeBlock filename={filename} code={highlightedCode} />
+        </div>
+      )
+      
+      // Replace the element with a placeholder
+      element.outerHTML = `<div data-component-placeholder="${componentIndex}"></div>`
+      componentIndex++
     })
     
     // Split HTML by component placeholders and interleave with components
@@ -99,13 +189,17 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
       prose-a:text-[#52B788] hover:prose-a:text-[#74C69D] prose-a:no-underline hover:prose-a:underline
       prose-blockquote:border-l-[#52B788] prose-blockquote:bg-[#2D6A4F]/5 prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:rounded-r-lg
       prose-code:text-[#52B788] prose-code:bg-[#2D6A4F]/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md
-      prose-pre:bg-[#1A1A1A] prose-pre:border prose-pre:border-white/10"
+      prose-pre:bg-[#0d1117] prose-pre:border prose-pre:border-white/10 prose-pre:text-sm prose-pre:overflow-x-auto prose-pre:rounded-b-lg prose-pre:m-0 prose-pre:p-4
+      [&_.code-title]:bg-[#2D6A4F] [&_.code-title]:text-white [&_.code-title]:px-4 [&_.code-title]:py-2 [&_.code-title]:text-sm [&_.code-title]:font-mono [&_.code-title]:rounded-t-lg [&_.code-title]:border-b [&_.code-title]:border-white/10 [&_.code-title]:mb-0 [&_.code-title]:block [&_.code-title]:font-medium
+      [&_.code-block-anchor]:scroll-mt-24
+      [&_pre+.code-title]:hidden
+      [&_code]:text-[#52B788] [&_code]:bg-[#2D6A4F]/10 [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:rounded-md [&_code]:text-sm"
     >
       {renderedContent.map((item, index) => 
         typeof item === 'string' ? (
-          <div key={index} dangerouslySetInnerHTML={{ __html: item }} />
+          <div key={`html-${index}`} dangerouslySetInnerHTML={{ __html: item }} />
         ) : (
-          item
+          <div key={`component-${index}`}>{item}</div>
         )
       )}
     </div>
