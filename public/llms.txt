@@ -1,0 +1,194 @@
+# Berget AI
+
+> Berget AI is a Swedish AI inference platform offering inference and AI infrastructure for private and public sector organisations. Berget is incorporated in Sweden with 100% Swedish ownership — data never leaves Sweden and is fully protected from US Cloud Act and FISA 702.
+
+## Use Cases
+
+- **GDPR-compliant chatbot:** Deploy a customer-facing assistant where all data stays in Sweden — suitable for HR, legal, and healthcare applications.
+- **EU-sovereign RAG pipeline:** Combine Berget's embeddings, reranking, and chat endpoints to build retrieval-augmented generation entirely within Swedish infrastructure.
+- **OpenAI migration:** Replace OpenAI with one line of code for teams that need EU data residency without rewriting existing applications.
+- **Swedish speech-to-text:** Transcribe Swedish-language audio with KB-Whisper-Large, optimized for Swedish by the National Library of Sweden.
+- **Document intelligence:** Extract structured data from PDFs, Word files, and images — all processed in Sweden.
+
+## Getting Started
+
+[Create an account](https://console.berget.ai/auth) and then create API key:
+
+```bash
+npx berget auth login
+npx berget api-keys create --name my-key
+```
+
+Or manage keys at `https://console.berget.ai`.
+
+Use OpenAI-compatible tools and SDKs by setting base URL to `https://api.berget.ai/v1`:
+
+```python
+from openai import OpenAI
+
+client = OpenAI(
+    base_url="https://api.berget.ai/v1",
+    api_key="your-berget-api-key"
+)
+```
+
+## Compliance
+
+- **GDPR**: Compliant. Data processed and stored exclusively in Sweden.
+- **US Cloud Act / FISA 702**: Protected — 100% Swedish ownership, no US parent company, no US jurisdiction.
+- **EU AI Act**: Compliant.
+- **DORA**: Suitable for financial sector use.
+- **NIS2**: Suitable for critical infrastructure operators.
+
+## Plans
+
+| Plan       | Price      | Wallet Refill                   | Notes                                                                        |
+| ---------- | ---------- | ------------------------------- | ---------------------------------------------------------------------------- |
+| Free       | €0/month   | €5 signup bonus (one-time)      | Pay as you go, rate limited, community support                               |
+| Starter    | €25/month  | €25/month                       | Automatic billing, email support, cancel any time                            |
+| Team       | €50/month  | €55/month (+10% extra credits)  | Priority support                                                             |
+| Enterprise | €500/month | €550/month (+10% extra credits) | No rate limits, dedicated support, invoice + Peppol (EU e-invoicing) billing |
+
+Usage above the included amount is charged on top. Unused balance rolls over monthly. All plans support credit card pre-payment.
+
+## Models
+
+For full model catalogue and pricing, see [Models](https://console.berget.ai/models).
+
+List available models via API: `GET /v1/models` (public, no auth required).
+
+To test and evaluate model capabilities, use the [Testmatris](https://berget-models.lovable.app/) — Berget's official model evaluation tool.
+
+### Chat and Coding
+
+| Model                  | ID                                              | Price (EUR/M tokens in/out) |
+| ---------------------- | ----------------------------------------------- | --------------------------- |
+| Llama 3.1 8B Instruct  | `meta-llama/Llama-3.1-8B-Instruct`              | €0.20 / €0.20               |
+| Llama 3.3 70B Instruct | `meta-llama/Llama-3.3-70B-Instruct`             | €0.90 / €0.90               |
+| Mistral Small 3.2 24B  | `mistralai/Mistral-Small-3.2-24B-Instruct-2506` | €0.30 / €0.30               |
+| GPT-OSS-120B           | `openai/gpt-oss-120b`                           | €0.30 / €0.90               |
+| GLM 4.7 (358B MoE)     | `zai-org/GLM-4.7`                               | €0.70 / €2.30               |
+
+### Embedding
+
+| Model                          | ID                                        | Price   |
+| ------------------------------ | ----------------------------------------- | ------- |
+| Multilingual-E5-large-instruct | `intfloat/multilingual-e5-large-instruct` | €0.03/M |
+| Multilingual-E5-large          | `intfloat/multilingual-e5-large`          | €0.03/M |
+
+### Reranking
+
+| Model           | ID                        | Price   |
+| --------------- | ------------------------- | ------- |
+| bge-reranker-v2 | `BAAI/bge-reranker-v2-m3` | €0.10/M |
+
+### Speech-to-Text
+
+| Model            | ID                       | Price                |
+| ---------------- | ------------------------ | -------------------- |
+| KB-Whisper-Large | `KBLab/kb-whisper-large` | €3.00 / 1000 minutes |
+
+### OCR
+
+| Model        | ID                         | Price              |
+| ------------ | -------------------------- | ------------------ |
+| DeepSeek-OCR | `deepseek-ai/DeepSeek-OCR` | €0.40/M OCR tokens |
+
+## API Endpoints
+
+All endpoints at `https://api.berget.ai/v1`. Auth: `Authorization: Bearer <api-key>`.
+
+- `POST /v1/chat/completions` — OpenAI-compatible chat. Supports streaming, tool/function calling, vision (base64 or URL), JSON mode, structured output.
+- `POST /v1/embeddings` — Vector embeddings.
+- `POST /v1/rerank` — Rerank documents by relevance.
+- `POST /v1/audio/transcriptions` — Speech-to-text, Swedish-optimised. Max 100 MB. Formats: json, srt, vtt.
+- `POST /v1/ocr` — Extract text from PDF, DOCX, PPTX, HTML, images. Output: Markdown or JSON. Supports async for large documents.
+- `GET /v1/models` — List available models with capabilities and pricing (public).
+
+For full API documentation, see [Berget API docs](https://api.berget.ai).
+
+For current status of our services, see [status page](https://status.berget.ai).
+
+### Chat Example
+
+```bash
+curl https://api.berget.ai/v1/chat/completions \
+  -H 'Authorization: Bearer BERGET_API_KEY' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "model": "openai/gpt-oss-120b",
+    "messages": [
+      {"role": "system", "content": "You are a helpful assistant."},
+      {"role": "user", "content": "Hello!"}
+    ]
+  }'
+```
+
+### Embeddings Example
+
+```bash
+curl https://api.berget.ai/v1/embeddings \
+  -H 'Authorization: Bearer BERGET_API_KEY' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "model": "intfloat/multilingual-e5-large-instruct",
+    "input": "This is a sample text to create embeddings for."
+  }'
+```
+
+### Rerank Example
+
+```bash
+curl https://api.berget.ai/v1/rerank \
+  -H 'Authorization: Bearer BERGET_API_KEY' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "model": "BAAI/bge-reranker-v2-m3",
+    "query": "What is machine learning?",
+    "documents": [
+      "Machine learning is a branch of artificial intelligence.",
+      "Natural language processing is used in many applications.",
+      "Deep learning is a subset of machine learning."
+    ],
+    "top_n": 2,
+    "return_documents": true
+  }'
+```
+
+### Speech-to-text Example
+
+```bash
+# Upload a file
+curl https://api.berget.ai/v1/audio/transcriptions \
+  -H 'Authorization: Bearer BERGET_API_KEY' \
+  -F 'file=@audio.mp3' \
+  -F 'model=KBLab/kb-whisper-large'
+
+# Or pass a URL
+curl https://api.berget.ai/v1/audio/transcriptions \
+  -H 'Authorization: Bearer BERGET_API_KEY' \
+  -H 'Content-Type: application/json' \
+  -d '{"file_url": "https://example.com/audio.mp3"}'
+```
+
+### OCR Example
+
+```bash
+curl https://api.berget.ai/v1/ocr \
+  -H 'Authorization: Bearer BERGET_API_KEY' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "model": "deepseek-ai/DeepSeek-OCR",
+    "document": {"url": "https://example.com/document.pdf", "type": "document"},
+    "options": {"outputFormat": "md"}
+  }'
+```
+
+For large documents, add `"async": true` — the response returns a job ID. Poll `GET /v1/ocr/{job_id}` for the result.
+
+## Questions and Support
+
+- [Community forum](https://odoo.berget.ai/forum)
+- [Support](mailto:support@berget.ai)
+- [Sales / DPA enquiries](mailto:sales@berget.ai)
+- [Privacy](mailto:privacy@berget.ai)
