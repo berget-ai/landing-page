@@ -499,8 +499,7 @@
     "degraded": "Vissa tjänster har problem just nu. Besök https://berget.ai/status för mer information.",
     "reportIssues": {
       "title": "Rapportera problem eller få uppdateringar",
-      "description": "Om du upplever problem eller behöver mer detaljerade uppdateringar, besök vårt {{forum}} för att rapportera problem och få information i realtid.",
-      "forum": "communityforum"
+      "description": "Om du upplever problem eller behöver mer detaljerade uppdateringar, besök vårt <forum>communityforum</forum> för att rapportera problem och få information i realtid."
     }
   },
   "footer": {
