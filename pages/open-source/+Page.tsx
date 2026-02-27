@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { Shield, Github, ArrowRight, Check, FileCode, Users, Heart } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { Link } from 'react-router-dom'
+import { Link } from '@/components/ui/link'
 import { SEOHelmet } from '@/components/common/Helmet'
 
 export default function Page() {

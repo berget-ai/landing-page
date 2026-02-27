@@ -6,8 +6,9 @@ export default {
   // Extend from vike-react preset
   extends: vikeReact,
 
-  // Enable SSR
+  // Enable SSR + SSG prerendering
   ssr: true,
+  prerender: true,
 
   // Pass page context to client
   passToClient: ['pageProps', 'urlPathname', 'locale'],

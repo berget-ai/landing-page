@@ -14,7 +14,7 @@ import {
   Layers,
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { Link } from 'react-router-dom'
+import { Link } from '@/components/ui/link'
 import { ModelsSection } from '@/components/sections/ModelsSection'
 import { useTranslation } from 'react-i18next'
 import { SEOHelmet } from '@/components/common/Helmet'

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { Shield, Lock, Database, Server, Bot, ArrowRight, Check } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { Link } from 'react-router-dom'
+import { Link } from '@/components/ui/link'
 import { ComplianceSection } from '@/components/sections/ComplianceSection'
 import { PricingTiers } from '@/components/sections/pricing/PricingTiers'
 import { ProductFeatures } from '@/components/sections/ProductFeatures'
