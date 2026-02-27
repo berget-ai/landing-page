@@ -59,7 +59,7 @@ List available models via API: `GET /v1/models` (public, no auth required).
 
 To test and evaluate model capabilities, use the [Testmatris](https://berget-models.lovable.app/) — Berget's official model evaluation tool.
 
-### Chat / Completion
+### Chat and Coding
 
 | Model                  | ID                                              | Price (EUR/M tokens in/out) |
 | ---------------------- | ----------------------------------------------- | --------------------------- |
@@ -109,7 +109,7 @@ For full API documentation, see [Berget API docs](https://api.berget.ai).
 
 For current status of our services, see [status page](https://status.berget.ai).
 
-### Chat example
+### Chat Example
 
 ```bash
 curl https://api.berget.ai/v1/chat/completions \
@@ -124,7 +124,7 @@ curl https://api.berget.ai/v1/chat/completions \
   }'
 ```
 
-### Embeddings example
+### Embeddings Example
 
 ```bash
 curl https://api.berget.ai/v1/embeddings \
@@ -136,7 +136,7 @@ curl https://api.berget.ai/v1/embeddings \
   }'
 ```
 
-### Rerank example
+### Rerank Example
 
 ```bash
 curl https://api.berget.ai/v1/rerank \
@@ -155,7 +155,7 @@ curl https://api.berget.ai/v1/rerank \
   }'
 ```
 
-### Speech-to-text example
+### Speech-to-text Example
 
 ```bash
 # Upload a file
@@ -171,7 +171,7 @@ curl https://api.berget.ai/v1/audio/transcriptions \
   -d '{"file_url": "https://example.com/audio.mp3"}'
 ```
 
-### OCR example
+### OCR Example
 
 ```bash
 curl https://api.berget.ai/v1/ocr \
@@ -186,7 +186,7 @@ curl https://api.berget.ai/v1/ocr \
 
 For large documents, add `"async": true` — the response returns a job ID. Poll `GET /v1/ocr/{job_id}` for the result.
 
-## Questions and support
+## Questions and Support
 
 - [Community forum](https://odoo.berget.ai/forum)
 - [Support](mailto:support@berget.ai)
