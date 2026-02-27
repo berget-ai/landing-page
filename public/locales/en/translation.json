@@ -498,8 +498,7 @@
     "degraded": "Some services are experiencing issues. Please visit https://berget.ai/status for more information.",
     "reportIssues": {
       "title": "Report Issues or Get Updates",
-      "description": "If you're experiencing problems or need more detailed updates, please visit our {{forum}} to report issues and get real-time information.",
-      "forum": "community forum"
+      "description": "If you're experiencing problems or need more detailed updates, please visit our <forum>community forum</forum> to report issues and get real-time information."
     }
   },
   "footer": {
