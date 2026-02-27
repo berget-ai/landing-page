@@ -13,28 +13,31 @@ SSG (Static Site Generation) pre-renders HTML at build-time instead of request-t
 
 ### Pre-rendered Pages
 
-The following pages are pre-rendered at build-time:
+Vike auto-discovers all pages under `pages/` and pre-renders them at build-time:
 
-- `/` - Homepage
+- `/` - Homepage (`pages/index/+Page.tsx`)
 - `/pricing` - Pricing page
-- `/simple` - Simple page
-
-### SSR Pages (Not Pre-rendered)
-
-These pages use React Router and are rendered at request-time:
-
-- `/blog` - Blog listing
-- `/blog/*` - Blog posts
 - `/about` - About page
 - `/products` - Products page
 - `/contact` - Contact page
-- `/signup` - Signup page
+- `/why-berget` - Why Berget page
 - `/developers` - Developers page
-- `/models` - Models page
+- `/open-source` - Open Source page
 - `/status` - Status page
-- And other React Router pages
+- `/saas` - SaaS page
+- `/simple` - Simple page
 
-**Note:** This is a hybrid SSG + SSR setup. Marketing pages are pre-rendered for performance, while dynamic content (blog, user-facing pages) uses SSR.
+### SPA Pages (React Router — not pre-rendered)
+
+These pages use the existing React Router app and are **not** pre-rendered:
+
+- `/blog` - Blog listing
+- `/blog/*` - Blog posts
+- `/signup` - Signup page
+- `/models` - Models page
+- And other React Router pages in `src/pages/`
+
+**Note:** This is a hybrid architecture. Marketing pages under `pages/` are pre-rendered as static HTML via Vike. The React Router SPA (`src/App.tsx`) handles dynamic/authenticated routes.
 
 ### Configuration
 
@@ -42,20 +45,13 @@ SSG is enabled in `pages/+config.ts`:
 
 ```typescript
 export default {
-  prerender: true,  // Enable SSG
+  prerender: true,  // Enable SSG — Vike auto-discovers all pages/*/+Page.tsx
   ssr: true,        // Enable SSR for pre-rendering
   // ...
 }
 ```
 
-### Blog Post Discovery
-
-Blog posts are automatically discovered using `pages/+onBeforePrerenderStart.ts`:
-
-```typescript
-// Scans src/pages/blog/posts/**/*.md
-// Generates routes for each post
-```
+Pages are auto-discovered by Vike's file-based routing — no explicit route list needed.
 
 ## Build Commands
 
@@ -115,29 +111,24 @@ Deploy to Node.js hosting (AWS, Heroku, Railway, etc.)
 
 ### Static Pages
 
-Add to `pages/+onBeforePrerenderStart.ts`:
+Create a new directory under `pages/` with a `+Page.tsx` file. Vike auto-discovers it:
 
-```typescript
-const staticPages = [
-  '/',
-  '/pricing',
-  '/your-new-page',  // Add here
-]
+```
+pages/
+  your-new-page/
+    +Page.tsx     ← Vike auto-discovers and pre-renders this
 ```
 
 ### Dynamic Routes
 
-For parameterized routes (e.g., `/products/:id`), add to `+onBeforePrerenderStart.ts`:
+For parameterized routes (e.g., `/products/:id`), create a `pages/products/@id/+Page.tsx` and add a `+onBeforePrerenderStart.ts` in that directory to enumerate the IDs:
 
 ```typescript
-const productIds = await getProductIds()
-
-return [
-  ...productIds.map((id) => ({
-    url: `/products/${id}`,
-    pageContext: { data: { id } }
-  }))
-]
+// pages/products/@id/+onBeforePrerenderStart.ts
+export default async function onBeforePrerenderStart() {
+  const productIds = await getProductIds()
+  return productIds.map((id) => ({ url: `/products/${id}` }))
+}
 ```
 
 ## Hybrid SSG + SSR
@@ -181,7 +172,7 @@ description: Post description
 ```
 
 ### Dynamic routes not pre-rendering
-Verify `+onBeforePrerenderStart.ts` returns the correct URLs.
+For dynamic routes, add a `+onBeforePrerenderStart.ts` next to the `+Page.tsx` that enumerates all URLs to pre-render.
 
 ## Resources
 

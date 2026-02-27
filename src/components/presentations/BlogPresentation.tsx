@@ -56,7 +56,7 @@ export const BlogPresentation: React.FC<BlogPresentationProps> = ({
     if (!enableTouch) return;
     touchEndX.current = e.changedTouches[0].clientX;
     
-    if (touchStartX.current && touchEndX.current) {
+    if (touchStartX.current !== null && touchEndX.current !== null) {
       const diff = touchStartX.current - touchEndX.current;
       if (Math.abs(diff) > 50) { // Minimum swipe distance
         if (diff > 0) {
@@ -94,13 +94,22 @@ export const BlogPresentation: React.FC<BlogPresentationProps> = ({
     }
   };
 
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
+  }, []);
+
   const toggleFullscreen = () => {
-    if (!isFullscreen) {
-      containerRef.current?.requestFullscreen?.();
+    if (!document.fullscreenElement) {
+      containerRef.current?.requestFullscreen?.().catch(() => {
+        // requestFullscreen may fail (e.g. not allowed by browser policy)
+      });
     } else {
       document.exitFullscreen?.();
     }
-    setIsFullscreen(!isFullscreen);
   };
 
   useEffect(() => {

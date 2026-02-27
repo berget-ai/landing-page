@@ -15,10 +15,10 @@ Disallow: /*?*debug=
 
 # Allow crawling of assets
 Allow: /assets/
-Allow: *.css
-Allow: *.js
-Allow: *.jpg
-Allow: *.jpeg
-Allow: *.png
-Allow: *.webp
-Allow: *.svg
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.webp$
+Allow: /*.svg$

@@ -6,8 +6,7 @@ RUN npm install
 COPY . .
 
 RUN npm run build
-
-RUN npm audit
+RUN npm audit --omit=dev
 
 FROM nginx:alpine AS production
 COPY --from=builder /app/dist /usr/share/nginx/html

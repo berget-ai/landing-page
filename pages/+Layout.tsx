@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { HelmetProvider } from 'react-helmet-async'
 import { HeaderVike } from '@/components/layout/HeaderVike'
 import { Footer } from '@/components/layout/Footer'
 import '@/index.css'
-import '@/i18n'
+// SSR-safe: initialize SSR i18n synchronously for pre-rendering
+import '@/i18n-ssr'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
+  useEffect(() => {
+    // On the client, re-initialize with browser-aware i18n (language detection etc.)
+    import('@/i18n').catch(() => {})
+  }, [])
+
   return (
     <HelmetProvider>
       <div className="min-h-screen bg-background text-white antialiased">

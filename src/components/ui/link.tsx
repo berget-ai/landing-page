@@ -5,6 +5,14 @@ interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   children: React.ReactNode
 }
 
-export function Link({ to, children, ...props }: LinkProps) {
-  return <a href={to} {...props}>{children}</a>
-}
+export const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(
+  ({ to, children, ...props }, ref) => {
+    return (
+      <a ref={ref} href={to} {...props}>
+        {children}
+      </a>
+    )
+  }
+)
+
+Link.displayName = 'Link'

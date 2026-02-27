@@ -10,7 +10,8 @@
     "build:ssg": "npm run generate:sitemap && tsc -b && vike build",
     "preview": "vite preview",
     "preview:ssg": "vike preview",
-    "generate:sitemap": "node scripts/generate-sitemap.mjs"
+    "generate:sitemap": "node scripts/generate-sitemap.mjs",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@fontsource/dm-sans": "^5.1.1",
