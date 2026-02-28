@@ -8,6 +8,7 @@
     "dev": "vite",
     "build": "npm run generate:sitemap && tsc -b && vite build",
     "build:ssg": "npm run generate:sitemap && tsc -b && vike build",
+    "build:spa": "vite build --config vite.config.spa.ts",
     "preview": "vite preview",
     "preview:ssg": "vike preview",
     "generate:sitemap": "node scripts/generate-sitemap.mjs",
