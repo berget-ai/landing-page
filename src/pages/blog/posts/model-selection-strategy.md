@@ -2,6 +2,7 @@
 title: 'Our Model Strategy: Balance Between Power and Precision'
 description: 'How we select and combine AI models to maximize performance and sustainability'
 date: '2025-05-23'
+language: en
 author: 'Andreas Lundmark'
 email: 'andreas@berget.ai'
 tags: ['ai-models', 'strategy', 'sustainability', 'technology']

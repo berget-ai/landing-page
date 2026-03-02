@@ -2,6 +2,7 @@
 title: 'Model drop: Mistral small 3.2'
 description: 'An update on our model setup'
 date: '2025-07-04'
+language: en
 author: 'Andreas Lundmark'
 email: 'andreas@berget.ai'
 tags: ['models', 'llm']

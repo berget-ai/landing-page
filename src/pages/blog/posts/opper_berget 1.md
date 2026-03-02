@@ -2,6 +2,7 @@
 title: Announcing Berget AI partnership with Opper AI
 description: Partnership update
 date: 2025-09-02
+language: en
 author: Andreas Lundmark
 email: andreas@berget.ai
 tags:

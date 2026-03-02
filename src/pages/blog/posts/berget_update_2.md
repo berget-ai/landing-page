@@ -2,6 +2,7 @@
 title: 'Newsletter #2 - summer edition'
 description: 'Newsletter'
 date: '2025-07-17'
+language: en
 author: 'Andreas Lundmark'
 email: 'andreas@berget.ai'
 tags: ['newsletter']

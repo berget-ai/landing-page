@@ -2,6 +2,7 @@
 title: Berget AI update #1
 description: We have been cooking new things!
 date: 2025-05-19
+language: en
 author: 'Andreas Lundmark'
 email: 'andreas@berget.ai'
 tags:
