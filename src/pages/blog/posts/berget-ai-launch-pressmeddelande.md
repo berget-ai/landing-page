@@ -2,6 +2,7 @@
 title: 'AI Made in Sweden: Svenska Berget AI utmanar amerikanska moln-tjänster'
 description: Berget AI lanserar den första svenska tjänsten med AI-infrastruktur och inferenstjänster i samma plattform
 date: 2025-04-23
+language: sv
 author: Berget Team
 tags:
   - announcement

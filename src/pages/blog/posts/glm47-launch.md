@@ -2,6 +2,7 @@
 title: 'Introducing GLM-4.7'
 description: 'A powerful model that raise the bar for performance, efficiency, and capability'
 date: '2026-01-21'
+language: en
 author: 'Andreas Lundmark'
 email: 'andreas@berget.ai'
 tags: ['models', 'llm']

@@ -2,6 +2,7 @@
 title: 'Vår modellstrategi: Balans mellan kraft och precision'
 description: 'Hur vi väljer och kombinerar AI-modeller för att maximera prestanda och hållbarhet'
 date: '2025-05-23'
+language: sv
 author: 'Andreas Lundmark'
 email: 'andreas@berget.ai'
 tags: ['ai-modeller', 'strategi', 'hållbarhet', 'teknik']

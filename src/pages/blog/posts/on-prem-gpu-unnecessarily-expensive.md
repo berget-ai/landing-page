@@ -2,6 +2,7 @@
 title: 'On-prem för AI-inferens? Därför är det oftast fel väg – och vad du kan göra istället'
 description: 'Varför on-prem GPU kan vara en onödigt dyr idé och vilka bättre alternativ som finns för suverän AI-infrastruktur'
 date: '2026-02-04'
+language: sv
 author: 'Christian Landgren'
 email: 'christian@berget.ai'
 tags: ['teknik', 'infrastruktur', 'suveränitet', 'ai']

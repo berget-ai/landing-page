@@ -2,6 +2,7 @@
 title: 'Behind the Scenes: How We Optimize Our AI Models'
 description: 'A deep dive into how we balance performance and memory usage to get the most out of our AMD MI300x infrastructure'
 date: '2025-05-23'
+language: en
 author: 'Christian Landgren'
 email: 'christian@berget.ai'
 tags: ['technology', 'infrastructure', 'optimization', 'llm']

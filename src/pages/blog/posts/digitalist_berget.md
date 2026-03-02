@@ -2,6 +2,7 @@
 title: Digitalist och Berget AI inleder partnerskap
 description: Partnership update
 date: 2025-10-27
+language: sv
 author: Andreas Lundmark
 email: andreas@berget.ai
 tags:

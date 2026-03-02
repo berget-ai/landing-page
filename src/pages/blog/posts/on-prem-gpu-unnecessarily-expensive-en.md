@@ -2,6 +2,7 @@
 title: 'On-prem for AI Inference? Why It’s Often the Wrong Path – and What to Do Instead'
 description: 'Why on-prem GPU can be an unnecessarily expensive idea and what better alternatives exist for sovereign AI infrastructure'
 date: '2026-02-04'
+language: en
 author: 'Christian Landgren'
 email: 'christian@berget.ai'
 tags: ['technology', 'infrastructure', 'sovereignty', 'ai']
