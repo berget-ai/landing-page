@@ -11,11 +11,9 @@ imageAlt: 'Server rack with AMD MI300x accelerators in a modern data center'
 
 It's been a busy week, but we're excited to finally share what we've been up to.
 
-We've successfully launched our second data center in Southern Stockholm. We've moved all production traffic to the new site while we upgrade the network infrastructure at our original location — after which both will run simultaneously. And with it, two things are now true that weren't before:
+We've successfully launched our second data center in Southern Stockholm. We've moved all production traffic to the new site while we upgrade the network infrastructure at our original location — after which both will run simultaneously. It also marks an important shift:
 
 **Berget owns its own IP address space.** Previously, our IP prefixes belonged to a third party. That meant our network reachability depended partly on someone else's operations. That dependency is gone. We now announce our own prefixes from infrastructure we control.
-
-**Dedicated fiber into the new site.** We're no longer sharing bandwidth with other tenants. The capacity belongs to us, regardless of what else is happening on the network.
 
 It's the difference between owning your infrastructure and renting it from someone who does.
 
