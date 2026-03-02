@@ -1,7 +1,7 @@
 ---
 title: 'Our second data center is live — here's what it took'
 description: 'A deep dive into how we balance performance and memory usage to get the most out of our AMD MI300x infrastructure'
-date: '2026-03-01'
+date: '2026-03-02'
 author: 'Marcus Olsson'
 email: 'marcus@berget.ai'
 tags: ['technology', 'infrastructure']
