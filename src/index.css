@@ -84,6 +84,12 @@
     --berget-success: 151 44% 52%;
     --berget-warning: 71 100% 75%;
     --berget-info: 217 68% 53%;
+
+    /* Alert border colors (used by @berget-ai/ui Alert component) */
+    --border-info: 217 68% 53% / 0.3;
+    --border-success: 151 44% 52% / 0.3;
+    --border-warning: 71 100% 75% / 0.3;
+    --border-destructive: 6 74% 50% / 0.3;
   }
 }
 
