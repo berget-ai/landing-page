@@ -71,3 +71,5 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
           target: production
+          build-args: |
+            NODE_AUTH_TOKEN=${{ secrets.GITHUB_TOKEN }}
