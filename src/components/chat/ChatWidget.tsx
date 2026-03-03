@@ -9,8 +9,7 @@ import {
   AlertCircle,
   RefreshCw,
 } from 'lucide-react'
-import { Button } from '@berget-ai/ui'
-import { Input } from '@/components/ui/input'
+import { Button, Input } from '@berget-ai/ui'
 import { cn } from '@/lib/utils'
 import { useChat } from '@/hooks/use-chat'
 
