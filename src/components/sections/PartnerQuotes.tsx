@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
+import { Card } from '@berget-ai/ui'
 
 interface Quote {
   name: string;
@@ -28,7 +29,7 @@ export function PartnerQuotes() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {(Array.isArray(t('partnerQuotes.quotes', { returnObjects: true })) 
+          {(Array.isArray(t('partnerQuotes.quotes', { returnObjects: true }))
             ? t('partnerQuotes.quotes', { returnObjects: true }) as Quote[]
             : [] as Quote[]
           ).map((quote: Quote, index: number) => (
@@ -41,17 +42,19 @@ export function PartnerQuotes() {
               className="relative group"
             >
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-green/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative p-8 rounded-2xl bg-white/[0.02] backdrop-blur-sm border border-[#74C69D]/20 h-full flex flex-col">
-                <p className="text-white/80 text-sm leading-relaxed flex-grow">
-                  "{quote.quote}"
-                </p>
-                <div className="pt-8 border-t border-white/10 mt-8">
-                  <h3 className="text-lg font-medium">{quote.name}</h3>
-                  <p className="text-white/60 text-sm min-h-[2.5rem] leading-snug">
-                    {quote.title}
+              <Card variant="glass" padding="lg" className="h-full">
+                <div className="flex flex-col h-full">
+                  <p className="text-white/80 text-sm leading-relaxed flex-grow">
+                    "{quote.quote}"
                   </p>
+                  <div className="pt-8 border-t border-white/10 mt-8">
+                    <h3 className="text-lg font-medium">{quote.name}</h3>
+                    <p className="text-white/60 text-sm min-h-[2.5rem] leading-snug">
+                      {quote.title}
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </Card>
             </motion.div>
           ))}
         </div>
