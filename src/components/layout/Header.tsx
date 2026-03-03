@@ -1,11 +1,10 @@
 import { useState } from 'react'
 import { Menu, X, AlertCircle, AlertTriangle } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { Button } from '@berget-ai/ui'
+import { Button, BergetSymbol } from '@berget-ai/ui'
 import { LanguageSwitcher } from '../ui/LanguageSwitcher'
 import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'framer-motion'
-import logo from '@/assets/logo.svg'
 import { useEnvironment } from '@/hooks/use-environment'
 import { useHealth } from '@/hooks/use-health'
 
@@ -41,7 +40,7 @@ export function Header() {
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center space-x-2">
           <Link to="/" className="flex items-center gap-2 hover:text-white/90 transition-colors">
-            <img src={logo} alt="Berget AI Logo" className="h-8 w-auto" />
+            <BergetSymbol size={32} variant="light" />
             <span className="text-xl font-semibold">Berget AI</span>
           </Link>
         </div>
