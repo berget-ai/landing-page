@@ -1,4 +1,4 @@
-import { Button } from '@berget-ai/ui'
+import { Button, Card } from '@berget-ai/ui'
 import { Check } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
@@ -7,7 +7,7 @@ export function PricingTiers() {
   const { t } = useTranslation()
 
   const plans = ['payg', 'starter', 'developer', 'enterprise'] as const
-  
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       {plans.map((plan) => {
@@ -15,7 +15,7 @@ export function PricingTiers() {
         if (!Array.isArray(features)) return null
 
         return (
-          <div key={plan} className="rounded-xl border border-white/10 bg-white/5 p-8">
+          <Card key={plan} variant="glass" padding="lg">
             <h3 className="text-xl font-medium mb-2">
               {t(`pricing.tiers.${plan}.name`)}
             </h3>
@@ -27,8 +27,8 @@ export function PricingTiers() {
                 {t(`pricing.tiers.${plan}.price`)}
               </p>
             </div>
-            <Button 
-              className="w-full mb-8" 
+            <Button
+              className="w-full mb-8"
               variant={plan === 'enterprise' ? 'secondary' : 'default'} >
               <Link to= {plan === 'enterprise' ? t('pricing.contactSaleslink') : t('pricing.getStartedlink')} >
               {plan === 'enterprise' ? t('pricing.contactSales') : t('pricing.getStarted')}
@@ -44,7 +44,7 @@ export function PricingTiers() {
                 </div>
               ))}
             </div>
-          </div>
+          </Card>
         )
       })}
     </div>

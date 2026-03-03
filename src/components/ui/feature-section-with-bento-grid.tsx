@@ -53,9 +53,9 @@ function Feature({ title, description, badge, items = [] }: FeatureProps) {
                 {item.icon || <User className="w-8 h-8 stroke-1" />}
                 <div className="flex flex-col">
                   <h3 className="text-xl tracking-tight">{item.title}</h3>
-                  <p className="text-muted-foreground max-w-xs text-base">
+                  <div className="text-muted-foreground max-w-xs text-base">
                     {item.description}
-                  </p>
+                  </div>
                 </div>
               </div>
             ))}
