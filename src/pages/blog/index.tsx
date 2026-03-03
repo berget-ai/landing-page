@@ -7,9 +7,10 @@ import { Helmet } from '@/components/common/Helmet'
 import type { BlogPost } from '@/types/blog'
 
 // Import all blog posts
-const postModules = import.meta.glob('./posts/**/*.md', { 
+const postModules = import.meta.glob('./posts/**/*.md', {
   eager: true,
-  as: 'raw'
+  query: '?raw',
+  import: 'default'
 })
 
 export default function BlogPage() {
