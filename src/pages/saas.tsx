@@ -1,11 +1,10 @@
 import { motion } from 'framer-motion'
 import { Shield, Lock, Database, Server, Bot, ArrowRight, Check } from 'lucide-react'
-import { Button } from '@berget-ai/ui'
+import { Button, NetworkBackground } from '@berget-ai/ui'
 import { Link } from 'react-router-dom'
 import { ComplianceSection } from '@/components/sections/ComplianceSection'
 import { PricingTiers } from '@/components/sections/pricing/PricingTiers'
 import { ProductFeatures } from '@/components/sections/ProductFeatures'
-import { NetworkBackground } from '@/components/common/NetworkBackground'
 import { PartnerQuotes } from '@/components/sections/PartnerQuotes'
 import { useTranslation } from 'react-i18next'
 
@@ -78,7 +77,7 @@ export default function SaaSPage() {
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#2D6A4F] via-[#40916C] to-[#FFB700]">
-          <NetworkBackground />
+          <NetworkBackground color={[255, 255, 255]} />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
         </div>
         

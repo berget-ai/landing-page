@@ -1,7 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { Button } from '@berget-ai/ui'
-import { GradientBackground } from '@/components/common/GradientBackground'
-import { NetworkBackground } from '../common/NetworkBackground'
+import { Button, GradientBackground, NetworkBackground } from '@berget-ai/ui'
 import { ArrowRight, Shield } from 'lucide-react'
 import { useEnvironment } from '@/hooks/use-environment'
 
@@ -11,8 +9,8 @@ export function Hero() {
 
   return (
     <>
-      <GradientBackground>
-        <NetworkBackground />
+      <GradientBackground variant="berget">
+        <NetworkBackground color={[255, 255, 255]} />
         <div className="relative z-10 flex items-center justify-center min-h-screen">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8">

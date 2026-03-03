@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Button } from '@berget-ai/ui'
-import { GradientBackground } from '@/components/common/GradientBackground'
+import { Button, GradientBackground } from '@berget-ai/ui'
 import { RecipeCard } from './RecipeCard'
 import { recipes } from '@/lib/recipes'
 import { useTranslation } from 'react-i18next'
@@ -33,7 +32,7 @@ export function RagRecipes() {
   }
 
   return (
-    <GradientBackground className="py-24 text-white">
+    <GradientBackground variant="berget" className="py-24 text-white">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between mb-12">
           <div>
