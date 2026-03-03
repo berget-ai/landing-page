@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Shield, Network, Lock } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
+import { Card } from '@berget-ai/ui'
 
 export function ComplianceSection() {
   const { t } = useTranslation()
@@ -39,7 +40,7 @@ export function ComplianceSection() {
             className="relative group"
           >
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-green/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="relative p-8 rounded-2xl bg-white/[0.02] backdrop-blur-sm border border-[#74C69D]/20 h-full">
+            <Card variant="glass" padding="lg" className="h-full">
               <div className="w-14 h-14 rounded-2xl bg-muted flex items-center justify-center mb-8">
                 <Shield className="w-7 h-7 text-white" />
               </div>
@@ -58,7 +59,7 @@ export function ComplianceSection() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </Card>
           </motion.div>
 
           {/* NIS2 Ready */}
@@ -70,7 +71,7 @@ export function ComplianceSection() {
             className="relative group"
           >
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-green/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="relative p-8 rounded-2xl bg-white/[0.02] backdrop-blur-sm border border-[#74C69D]/20 h-full">
+            <Card variant="glass" padding="lg" className="h-full">
               <div className="w-14 h-14 rounded-2xl bg-muted flex items-center justify-center mb-8">
                 <Network className="w-7 h-7 text-white" />
               </div>
@@ -89,7 +90,7 @@ export function ComplianceSection() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </Card>
           </motion.div>
 
           {/* Schrems II */}
@@ -101,7 +102,7 @@ export function ComplianceSection() {
             className="relative group"
           >
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-green/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="relative p-8 rounded-2xl bg-white/[0.02] backdrop-blur-sm border border-[#74C69D]/20 h-full">
+            <Card variant="glass" padding="lg" className="h-full">
               <div className="w-14 h-14 rounded-2xl bg-muted flex items-center justify-center mb-8">
                 <Lock className="w-7 h-7 text-white" />
               </div>
@@ -120,7 +121,7 @@ export function ComplianceSection() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </Card>
           </motion.div>
         </div>
       </div>
