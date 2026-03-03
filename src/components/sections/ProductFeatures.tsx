@@ -9,7 +9,7 @@ export function ProductFeatures() {
 
   return (
     <section className="py-32 relative bg-[#2D6A4F]/5 border-y border-[#40916C]/20">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/50 to-background opacity-30" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/50 to-background opacity-30 pointer-events-none" />
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.div

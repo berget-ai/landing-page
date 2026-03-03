@@ -199,6 +199,18 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://berget.ai/blog/on-prem-gpu-unnecessarily-expensive-en</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://berget.ai/blog/on-prem-gpu-unnecessarily-expensive</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://berget.ai/blog/opper_berget%201</loc>
     <lastmod>2025-09-02</lastmod>
     <changefreq>monthly</changefreq>
@@ -213,6 +225,12 @@
   <url>
     <loc>https://berget.ai/blog/optimizing-llm-models</loc>
     <lastmod>2025-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://berget.ai/blog/second-datacenter-is-live</loc>
+    <lastmod>2026-03-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
