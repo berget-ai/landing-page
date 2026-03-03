@@ -1,8 +1,7 @@
 import { Github, Linkedin, Twitter } from 'lucide-react'
-import { Button } from '@berget-ai/ui'
+import { Button, BergetSymbol } from '@berget-ai/ui'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
-import logo from '@/assets/logo.svg'
 
 const footerLinks = {
   product: [
@@ -37,7 +36,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <img src={logo} alt="Berget AI Logo" className="h-8 w-auto" />
+              <BergetSymbol size={32} variant="light" />
               <span className="text-xl font-semibold">Berget AI</span>
             </div>
             <p className="text-sm text-white/60 mb-4">
