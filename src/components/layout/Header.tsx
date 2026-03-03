@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Menu, X, AlertCircle, AlertTriangle } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { Button } from '@/components/ui/button'
+import { Button } from '@berget-ai/ui'
 import { LanguageSwitcher } from '../ui/LanguageSwitcher'
 import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'framer-motion'

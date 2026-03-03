@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Button } from '@/components/ui/button'
+import { Button } from '@berget-ai/ui'
 import { GradientBackground } from '@/components/common/GradientBackground'
 import { RecipeCard } from './RecipeCard'
 import { recipes } from '@/lib/recipes'

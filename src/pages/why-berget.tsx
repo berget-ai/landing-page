@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Shield, ArrowRight } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { Button } from '@berget-ai/ui'
 import { ComplianceSection } from '@/components/sections/ComplianceSection'
 import { SustainabilitySection } from '@/components/sections/SustainabilitySection'
 import { PartnerQuotes } from '@/components/sections/PartnerQuotes'

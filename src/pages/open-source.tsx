@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Shield, Github, ArrowRight, Check, FileCode, Users, Heart } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { Button } from '@berget-ai/ui'
 import { Link } from 'react-router-dom'
 
 export default function OpenSourcePage() {

@@ -1,5 +1,5 @@
 import { Github, Linkedin, Twitter } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { Button } from '@berget-ai/ui'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import logo from '@/assets/logo.svg'
