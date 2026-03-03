@@ -79,6 +79,11 @@
     --berget-slate: 0 0% 10%;
     --berget-night: 0 0% 4%;
     --berget-error: 6 74% 50%;
+
+    /* Semantic status colors */
+    --berget-success: 151 44% 52%;
+    --berget-warning: 71 100% 75%;
+    --berget-info: 217 68% 53%;
   }
 }
 

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Cloud, Server, Cpu, ArrowRight } from 'lucide-react'
-import { Button } from '@berget-ai/ui'
+import { Badge, Button } from '@berget-ai/ui'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
@@ -79,9 +79,7 @@ export function ProductFeatures() {
                 <h3 className="text-xl font-ovo">
                   {t('products.dedicated.title')}
                 </h3>
-                <span className="px-4 py-1 text-xs font-medium bg-white/10 text-green rounded-full whitespace-nowrap">
-                  Coming Soon
-                </span>
+                <Badge variant="tag" status="tagDefault" size="sm">Coming Soon</Badge>
               </div>
               <p className="text-white/80 mb-6">
                 {t('products.dedicated.description')}
@@ -120,9 +118,7 @@ export function ProductFeatures() {
                 <h3 className="text-xl font-ovo">
                   {t('products.platform.title')}
                 </h3>
-                <span className="px-4 py-1 text-xs font-medium bg-white/10 text-white rounded-full whitespace-nowrap">
-                  Coming Soon
-                </span>
+                <Badge variant="tag" status="tagDefault" size="sm">Coming Soon</Badge>
               </div>
               <p className="text-white/80 mb-6">
                 {t('products.platform.description')}

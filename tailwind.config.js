@@ -65,6 +65,9 @@ export default {
         slate: 'hsl(var(--berget-slate) / <alpha-value>)',
         night: 'hsl(var(--berget-night) / <alpha-value>)',
         error: 'hsl(var(--berget-error) / <alpha-value>)',
+        success: 'hsl(var(--berget-success) / <alpha-value>)',
+        warning: 'hsl(var(--berget-warning) / <alpha-value>)',
+        info: 'hsl(var(--berget-info) / <alpha-value>)',
         chart: {
           1: 'hsl(var(--chart-1))',
           2: 'hsl(var(--chart-2))',

@@ -9,8 +9,8 @@ import { t } from 'i18next'
 
 // Helper function to safely get array from i18n
 const getFeatures = (key: string): string[] => {
-  const result = t(key, { returnObjects: true })
-  return Array.isArray(result) ? result : []
+  const result = t(key, { returnObjects: true }) as string[] | string
+  return Array.isArray(result) ? result.filter((item): item is string => typeof item === 'string') : []
 }
 
 export function KeyBenefitsSection() {

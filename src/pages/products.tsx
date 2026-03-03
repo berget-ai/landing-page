@@ -13,7 +13,7 @@ import {
   Users,
   Layers,
 } from 'lucide-react'
-import { Button } from '@berget-ai/ui'
+import { Badge, Button } from '@berget-ai/ui'
 import { Link } from 'react-router-dom'
 import { ModelsSection } from '@/components/sections/ModelsSection'
 import { useTranslation } from 'react-i18next'
@@ -166,9 +166,7 @@ export default function ProductsPage() {
                   <h2 className="text-2xl sm:text-3xl font-medium">
                     {t('products.dedicated.title')}
                   </h2>
-                  <span className="px-4 py-1 text-xs font-medium bg-[#52B788]/10 text-[#52B788] rounded-full whitespace-nowrap w-fit">
-                    Coming Soon
-                  </span>
+                  <Badge variant="tag" status="tagDefault" size="sm">Coming Soon</Badge>
                 </div>
                 <p className="text-base sm:text-lg text-white/60">
                   {t('products.dedicated.description')}
@@ -255,9 +253,7 @@ export default function ProductsPage() {
                   <h2 className="text-2xl sm:text-3xl font-medium">
                     {t('products.platform.title')}
                   </h2>
-                  <span className="px-4 py-1 text-xs font-medium bg-[#52B788]/10 text-[#52B788] rounded-full whitespace-nowrap w-fit">
-                    Coming Soon
-                  </span>
+                  <Badge variant="tag" status="tagDefault" size="sm">Coming Soon</Badge>
                 </div>
                 <p className="text-base sm:text-lg text-white/60">
                   {t('products.platform.description')}
