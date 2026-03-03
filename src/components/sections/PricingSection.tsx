@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui/button'
+import { Button } from '@berget-ai/ui'
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import { useTranslation } from 'react-i18next'

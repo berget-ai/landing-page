@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Sparkles } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { Button } from '@berget-ai/ui'
 import { cn } from '@/lib/utils'
 import type { Recipe } from '@/types/recipes'
 

@@ -1,5 +1,5 @@
 import { PricingTiers } from '@/components/sections/pricing/PricingTiers'
-import { Button } from '@/components/ui/button'
+import { Button } from '@berget-ai/ui'
 import { useTranslation } from 'react-i18next'
 import {
   Tooltip,
