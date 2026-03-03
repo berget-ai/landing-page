@@ -68,6 +68,17 @@
     --ring: 0 0% 100%;
 
     --radius: 0.75rem;
+
+    /* Brand colors */
+    --berget-moss: 151 44% 52%;
+    --berget-lichen: 151 37% 63%;
+    --berget-spruce: 153 38% 30%;
+    --berget-fjord: 204 67% 21%;
+    --berget-peak: 0 0% 100%;
+    --berget-cloud: 25 10% 84%;
+    --berget-slate: 0 0% 10%;
+    --berget-night: 0 0% 4%;
+    --berget-error: 6 74% 50%;
   }
 }
 

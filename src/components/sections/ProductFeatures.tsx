@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Cloud, Server, Cpu, ArrowRight } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { Button } from '@berget-ai/ui'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 

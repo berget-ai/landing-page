@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Github, Lock, Server, Database } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { Button } from '@berget-ai/ui'
 import { useTranslation } from 'react-i18next'
 import { TerminalCarousel } from '@/components/terminal/TerminalCarousel'
 import { Link } from 'react-router-dom'

@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Filter, ExternalLink, AlertCircle, Euro } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { Button } from '@berget-ai/ui'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { useModels } from '@/hooks/use-models'
 

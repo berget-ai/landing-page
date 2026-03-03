@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Menu, X, AlertCircle, AlertTriangle } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { Button } from '@/components/ui/button'
+import { Button } from '@berget-ai/ui'
 import { LanguageSwitcher } from '../ui/LanguageSwitcher'
 import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -79,7 +79,7 @@ export function Header() {
 
           <LanguageSwitcher />
 
-          <Button variant="secondary" size="sm" asChild>
+          <Button variant="outline" size="sm" asChild>
             <Link to={consoleUrl}>{t('header.buttons.signIn')}</Link>
           </Button>
 
@@ -159,7 +159,7 @@ export function Header() {
 
               <div className="pt-4 space-y-4">
                 <LanguageSwitcher />
-                <Button variant="secondary" size="lg" className="w-full text-xl" asChild>
+                <Button variant="outline" size="lg" className="w-full text-xl" asChild>
                   <Link to={consoleUrl} onClick={() => setIsMenuOpen(false)}>
                     {t('header.buttons.signIn')}
                   </Link>

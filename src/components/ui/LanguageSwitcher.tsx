@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { Button } from '@/components/ui/button'
+import { Button } from '@berget-ai/ui'
 import { CountryFlag } from '@/components/ui/country-flag'
 
 export function LanguageSwitcher() {

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Shield, Lock, Database, Server, Bot, ArrowRight, Check } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { Button } from '@berget-ai/ui'
 import { Link } from 'react-router-dom'
 import { ComplianceSection } from '@/components/sections/ComplianceSection'
 import { PricingTiers } from '@/components/sections/pricing/PricingTiers'

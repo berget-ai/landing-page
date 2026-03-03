@@ -6,6 +6,7 @@ export default {
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
+    './node_modules/@berget-ai/ui/dist/**/*.{js,cjs}',
   ],
   theme: {
     extend: {
@@ -55,6 +56,15 @@ export default {
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
         green: '#52B788',
+        moss: 'hsl(var(--berget-moss) / <alpha-value>)',
+        lichen: 'hsl(var(--berget-lichen) / <alpha-value>)',
+        spruce: 'hsl(var(--berget-spruce) / <alpha-value>)',
+        fjord: 'hsl(var(--berget-fjord) / <alpha-value>)',
+        peak: 'hsl(var(--berget-peak) / <alpha-value>)',
+        cloud: 'hsl(var(--berget-cloud) / <alpha-value>)',
+        slate: 'hsl(var(--berget-slate) / <alpha-value>)',
+        night: 'hsl(var(--berget-night) / <alpha-value>)',
+        error: 'hsl(var(--berget-error) / <alpha-value>)',
         chart: {
           1: 'hsl(var(--chart-1))',
           2: 'hsl(var(--chart-2))',
