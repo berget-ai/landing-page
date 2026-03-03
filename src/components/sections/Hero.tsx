@@ -30,7 +30,7 @@ export function Hero() {
             </p>
             <div className="flex gap-4 justify-center">
               <a href={consoleUrl}>
-                <Button variant="default">
+                <Button variant="default" size="lg">
                   {t('hero.getStarted')} <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </a>
