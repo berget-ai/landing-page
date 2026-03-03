@@ -1,13 +1,13 @@
-FROM node:22-alpine AS builder
+# syntax=docker/dockerfile:1
 
-ARG NODE_AUTH_TOKEN
-ENV NODE_AUTH_TOKEN=$NODE_AUTH_TOKEN
+FROM node:22-alpine AS builder
 
 WORKDIR /app
 COPY package*.json .npmrc ./
-RUN npm install
-COPY . .
+RUN --mount=type=secret,id=NODE_AUTH_TOKEN \
+    NODE_AUTH_TOKEN=$(cat /run/secrets/NODE_AUTH_TOKEN) npm ci
 
+COPY . .
 RUN npm run build
 
 FROM nginx:alpine AS production

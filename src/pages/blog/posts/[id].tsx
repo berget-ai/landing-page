@@ -12,7 +12,8 @@ import { MarkdownRenderer } from '@/components/blog/MarkdownRenderer'
 // Import all blog posts at build time
 const postModules = import.meta.glob('./**/*.md', {
   eager: true,
-  as: 'raw',
+  query: '?raw',
+  import: 'default',
 })
 
 // Helper function to parse YAML frontmatter
@@ -74,7 +75,7 @@ export default function BlogPostPage() {
         return
       }
 
-      const content = postModules[postPath]
+      const content = postModules[postPath] as string
 
       // Extract metadata from frontmatter
       const metadataMatch = content.match(/^---\n([\s\S]*?)\n---\n/)
