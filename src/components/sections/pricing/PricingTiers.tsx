@@ -1,4 +1,4 @@
-import { Button } from '@berget-ai/ui'
+import { Button, Card } from '@berget-ai/ui'
 import { Check } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
@@ -15,7 +15,7 @@ export function PricingTiers() {
         if (!Array.isArray(features)) return null
 
         return (
-          <div key={plan} className="rounded-xl border border-white/10 bg-white/5 p-8">
+          <Card key={plan} variant="glass" padding="lg">
             <h3 className="text-xl font-medium mb-2">
               {t(`pricing.tiers.${plan}.name`)}
             </h3>
@@ -44,7 +44,7 @@ export function PricingTiers() {
                 </div>
               ))}
             </div>
-          </div>
+          </Card>
         )
       })}
     </div>
