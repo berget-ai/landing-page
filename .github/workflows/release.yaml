@@ -85,6 +85,7 @@ jobs:
           cache-to: type=gha,mode=max
           build-args: |
             VITE_STRIPE_PUBLIC_KEY=${{ secrets.VITE_STRIPE_PUBLIC_KEY }}
+            NODE_AUTH_TOKEN=${{ secrets.GITHUB_TOKEN }}
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
