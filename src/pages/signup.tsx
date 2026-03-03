@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Button } from '@berget-ai/ui'
-import { Input } from '@/components/ui/input'
+import { Button, Input } from '@berget-ai/ui'
 import { Label } from '@/components/ui/label'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Shield, Mail, Lock, ArrowRight } from 'lucide-react'
@@ -49,52 +48,43 @@ export default function SignupPage() {
                 {/* Email */}
                 <div className="space-y-2">
                   <Label htmlFor="email">Email address</Label>
-                  <div className="relative">
-                    <Mail className="absolute left-3 top-2.5 h-5 w-5 text-white/40" />
-                    <Input
-                      id="email"
-                      type="email"
-                      placeholder="you@company.com"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="pl-10"
-                      required
-                    />
-                  </div>
+                  <Input
+                    id="email"
+                    type="email"
+                    placeholder="you@company.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    icon={<Mail className="h-5 w-5 text-white/40" />}
+                    required
+                  />
                 </div>
 
                 {/* Password */}
                 <div className="space-y-2">
                   <Label htmlFor="password">Password</Label>
-                  <div className="relative">
-                    <Lock className="absolute left-3 top-2.5 h-5 w-5 text-white/40" />
-                    <Input
-                      id="password"
-                      type="password"
-                      placeholder="••••••••"
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                      className="pl-10"
-                      required
-                    />
-                  </div>
+                  <Input
+                    id="password"
+                    type="password"
+                    placeholder="••••••••"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    icon={<Lock className="h-5 w-5 text-white/40" />}
+                    required
+                  />
                 </div>
 
                 {/* Confirm Password */}
                 <div className="space-y-2">
                   <Label htmlFor="confirmPassword">Confirm password</Label>
-                  <div className="relative">
-                    <Lock className="absolute left-3 top-2.5 h-5 w-5 text-white/40" />
-                    <Input
-                      id="confirmPassword"
-                      type="password"
-                      placeholder="••••••••"
-                      value={confirmPassword}
-                      onChange={(e) => setConfirmPassword(e.target.value)}
-                      className="pl-10"
-                      required
-                    />
-                  </div>
+                  <Input
+                    id="confirmPassword"
+                    type="password"
+                    placeholder="••••••••"
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    icon={<Lock className="h-5 w-5 text-white/40" />}
+                    required
+                  />
                 </div>
 
                 {/* Terms Checkbox */}

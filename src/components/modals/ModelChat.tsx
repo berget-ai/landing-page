@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import { Bot, Send, X, Loader2 } from 'lucide-react'
 import { Dialog, DialogContent, DialogHeader } from '@/components/ui/dialog'
-import { Button } from '@berget-ai/ui'
-import { Input } from '@/components/ui/input'
+import { Button, Input } from '@berget-ai/ui'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { cn } from '@/lib/utils'
 

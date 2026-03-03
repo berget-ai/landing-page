@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { BlogList } from '@/components/blog/BlogList'
-import { Input } from '@/components/ui/input'
+import { Input } from '@berget-ai/ui'
 import { Search } from 'lucide-react'
 import { Helmet } from '@/components/common/Helmet'
 import type { BlogPost } from '@/types/blog'
@@ -112,13 +112,12 @@ export default function BlogPage() {
 
         <div className="max-w-5xl mx-auto mb-12">
           <div className="flex flex-col md:flex-row gap-4 mb-8">
-            <div className="relative flex-1">
-              <Search className="absolute left-3 top-2.5 h-5 w-5 text-white/40" />
+            <div className="flex-1">
               <Input
                 placeholder="Search articles..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10"
+                icon={<Search className="h-5 w-5 text-white/40" />}
               />
             </div>
           </div>
