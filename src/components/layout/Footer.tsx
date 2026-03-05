@@ -43,21 +43,23 @@ export function Footer() {
             </p>
             <div className="flex space-x-4">
               <Button
-                variant="ghost"
+                variant="outline"
                 size="icon"
                 onClick={() => window.open('https://x.com/BergetAi87840', '_blank')}
                 aria-label={t('footer.social.twitter')}
               >
                 <Twitter className="h-5 w-5" />
               </Button>
-              <Button variant="ghost" size="icon"
-              onClick={() => window.open('https://www.github.com/berget-ai/', '_blank')}
-              aria-label={t('footer.social.github')}
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={() => window.open('https://www.github.com/berget-ai/', '_blank')}
+                aria-label={t('footer.social.github')}
               >
-              <Github className="h-5 w-5" />
+                <Github className="h-5 w-5" />
               </Button>
               <Button
-                variant="ghost"
+                variant="outline"
                 size="icon"
                 onClick={() => window.open('https://www.linkedin.com/company/bergetai/', '_blank')}
                 aria-label={t('footer.social.linkedin')}
