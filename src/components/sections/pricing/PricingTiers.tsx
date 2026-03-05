@@ -17,9 +17,14 @@ export function PricingTiers() {
       features: Array.isArray(features) ? features : [],
       ctaText: plan === 'enterprise' ? t('pricing.contactSales') : t('pricing.getStarted'),
       ctaVariant: (plan === 'enterprise' ? 'secondary' : 'default') as 'secondary' | 'default',
-      onCtaClick: () => navigate(
-        plan === 'enterprise' ? t('pricing.contactSaleslink') : t('pricing.getStartedlink')
-      ),
+      onCtaClick: () => {
+        const link = plan === 'enterprise' ? t('pricing.contactSaleslink') : t('pricing.getStartedlink')
+        if (link.startsWith('http')) {
+          window.location.href = link
+        } else {
+          navigate(link)
+        }
+      },
     }
   })
 
