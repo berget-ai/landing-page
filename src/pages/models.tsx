@@ -66,7 +66,6 @@ export default function ModelsPage() {
                   variant={selectedType === null ? 'default' : 'secondary'}
                   size="sm"
                   onClick={() => setSelectedType(null)}
-                  className="rounded-full"
                 >
                   {t('all')}
                 </Button>
@@ -76,7 +75,6 @@ export default function ModelsPage() {
                     variant={selectedType === type ? 'default' : 'secondary'}
                     size="sm"
                     onClick={() => setSelectedType(type)}
-                    className="rounded-full"
                   >
                     {type}
                   </Button>

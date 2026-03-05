@@ -13,7 +13,6 @@ export function PricingSection() {
         title={t('pricing.section.title')}
         description={t('pricing.section.description')}
         maxWidth="sm"
-        className="mb-16"
       />
 
       <div className="mb-12">

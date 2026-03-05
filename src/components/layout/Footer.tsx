@@ -46,13 +46,12 @@ export function Footer() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="hover:bg-white/10"
                 onClick={() => window.open('https://x.com/BergetAi87840', '_blank')}
                 aria-label={t('footer.social.twitter')}
               >
                 <Twitter className="h-5 w-5" />
               </Button>
-              <Button variant="ghost" size="icon" className="hover:bg-white/10"
+              <Button variant="ghost" size="icon"
               onClick={() => window.open('https://www.github.com/berget-ai/', '_blank')}
               aria-label={t('footer.social.github')}
               >
@@ -61,7 +60,6 @@ export function Footer() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="hover:bg-white/10"
                 onClick={() => window.open('https://www.linkedin.com/company/bergetai/', '_blank')}
                 aria-label={t('footer.social.linkedin')}
               >

@@ -45,7 +45,6 @@ export function LLMPrompt({ title = "🤖 LLM Prompt", children, defaultExpanded
                 e.stopPropagation()
                 handleCopy()
               }}
-              className="text-white/60 hover:text-white"
             >
               {isCopied ? (
                 <Check className="w-4 h-4" />

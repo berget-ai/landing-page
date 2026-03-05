@@ -9,16 +9,14 @@ export function ProductFeatures() {
   const { t } = useTranslation()
 
   return (
-    <Section padding="xl" className="bg-[#2D6A4F]/5 border-y border-[#40916C]/20">
+    <Section padding="xl" background="muted">
       <SectionHeader
         title={t('products.hero.title')}
         description={t('products.hero.description')}
-        className="mb-16"
       />
 
       <FeatureCards
         columns={3}
-        className="max-w-7xl mx-auto"
         features={[
           {
             icon: Cloud as Icon,

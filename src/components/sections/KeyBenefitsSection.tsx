@@ -15,12 +15,10 @@ export function KeyBenefitsSection() {
       <SectionHeader
         title={t('whyBerget.benefits.title')}
         description={t('whyBerget.benefits.description')}
-        className="mb-20"
       />
 
       <FeatureCards
         columns={3}
-        className="max-w-7xl mx-auto mb-32"
         features={[
           {
             icon: Library as Icon,

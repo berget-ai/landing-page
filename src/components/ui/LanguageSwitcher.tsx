@@ -17,7 +17,6 @@ export function LanguageSwitcher() {
       variant="ghost"
       size="icon"
       onClick={toggleLanguage}
-      className="w-10 h-10 rounded-full"
       aria-label={t('languageSwitcher.label')}
       title={t('languageSwitcher.title')}
     >

@@ -58,7 +58,6 @@ export default function ProductsPage() {
         withPattern
         title={t('products.hero.title')}
         description={t('products.hero.description')}
-        className="min-h-0 py-12 sm:py-16 lg:py-24"
       />
 
       {/* Main Content */}

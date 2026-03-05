@@ -17,7 +17,6 @@ export function Hero() {
       tagline={t('hero.tagline')}
       title={`${t('hero.title.part1')} ${t('hero.title.part2')}`}
       description={t('hero.description')}
-      className="min-h-screen"
       actions={
         <a href={consoleUrl}>
           <Button variant="default" size="lg">

@@ -108,7 +108,7 @@ export default function SignupPage() {
                 </div>
 
                 {/* Submit Button */}
-                <Button type="submit" className="w-full group" size="lg">
+                <Button type="submit" className="w-full" size="lg">
                   Create Account
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
