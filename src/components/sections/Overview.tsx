@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import { GitBranch, Cloud, Link2, Cpu, Network, Shield } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Section, SectionHeader } from '@berget-ai/ui'

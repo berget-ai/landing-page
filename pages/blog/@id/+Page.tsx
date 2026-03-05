@@ -1,6 +1,6 @@
 import { usePageContext } from 'vike-react/usePageContext'
 import { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import { ArrowLeft } from 'lucide-react'
 import { Button } from '@berget-ai/ui'
 import { AuthorByline } from '@/components/blog/AuthorByline'

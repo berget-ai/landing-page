@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import { Mail } from 'lucide-react'
 import { Card } from '@berget-ai/ui'
 import { useTranslation } from 'react-i18next'

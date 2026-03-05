@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import { Shield, Lock, Database, Server, Bot, ArrowRight, Check } from 'lucide-react'
 import { Button, Card, HeroBlock, Section, SectionHeader } from '@berget-ai/ui'
 import { ComplianceSection } from '@/components/sections/ComplianceSection'

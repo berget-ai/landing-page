@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import { BlogList } from '@/components/blog/BlogList'
 import { Input } from '@berget-ai/ui'
 import { Search } from 'lucide-react'

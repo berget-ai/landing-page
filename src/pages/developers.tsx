@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import { Github, Lock, Server, Database } from 'lucide-react'
 import { Button, HeroBlock, TerminalCarousel } from '@berget-ai/ui'
 import { useTranslation } from 'react-i18next'
