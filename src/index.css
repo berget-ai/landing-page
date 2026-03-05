@@ -1,13 +1,193 @@
-@import '@fontsource/dm-sans';
-@import '@fontsource/ovo';
+@import "tailwindcss";
+@import "@fontsource/dm-sans";
+@import "@fontsource/ovo";
+@import "tw-animate-css";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@plugin "@tailwindcss/typography";
+@source "../node_modules/@berget-ai/ui/dist/**/*.{js,cjs}";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: hsl(0 0% 4%);
+  --foreground: hsl(0 0% 100%);
+
+  --card: hsl(0 0% 7%);
+  --card-foreground: hsl(0 0% 100%);
+
+  --popover: hsl(0 0% 8%);
+  --popover-foreground: hsl(0 0% 100%);
+
+  --primary: hsl(151 44% 52%);
+  --primary-foreground: hsl(0 0% 100%);
+
+  --secondary: hsl(151 37% 63%);
+  --secondary-foreground: hsl(0 0% 4%);
+
+  --muted: hsl(0 0% 10%);
+  --muted-foreground: hsl(25 10% 84% / 0.6);
+
+  --accent: hsl(204 67% 21%);
+  --accent-foreground: hsl(0 0% 100%);
+
+  --destructive: hsl(6 74% 50%);
+  --destructive-foreground: hsl(0 0% 100%);
+
+  --border: hsl(25 10% 84% / 0.05);
+  --border-hover: hsl(25 10% 84% / 0.1);
+  --border-strong: hsl(25 10% 84% / 0.08);
+  --input: hsl(0 0% 15%);
+  --ring: hsl(151 44% 52%);
+
+  --radius: 0.5rem;
+
+  /* Brand colors */
+  --moss: hsl(151 44% 52%);
+  --lichen: hsl(151 37% 63%);
+  --spruce: hsl(153 38% 30%);
+  --fjord: hsl(204 67% 21%);
+  --peak: hsl(0 0% 100%);
+  --cloud: hsl(25 10% 84%);
+  --slate: hsl(0 0% 10%);
+  --night: hsl(0 0% 4%);
+
+  /* Legacy aliases */
+  --berget-moss: hsl(151 44% 52%);
+  --berget-lichen: hsl(151 37% 63%);
+  --berget-spruce: hsl(153 38% 30%);
+  --berget-fjord: hsl(204 67% 21%);
+  --berget-peak: hsl(0 0% 100%);
+  --berget-cloud: hsl(25 10% 84%);
+  --berget-slate: hsl(0 0% 10%);
+  --berget-night: hsl(0 0% 4%);
+  --berget-error: hsl(6 74% 50%);
+
+  /* Semantic status colors */
+  --success: hsl(151 44% 52%);
+  --success-foreground: hsl(0 0% 100%);
+  --warning: hsl(71 100% 75%);
+  --warning-foreground: hsl(0 0% 10%);
+  --error: hsl(6 74% 50%);
+  --info: hsl(217 68% 53%);
+  --info-foreground: hsl(0 0% 100%);
+  --berget-success: hsl(151 44% 52%);
+  --berget-warning: hsl(71 100% 75%);
+  --berget-info: hsl(217 68% 53%);
+
+  /* Themed borders */
+  --border-moss: hsl(151 44% 52% / 0.2);
+  --border-lichen: hsl(151 37% 63% / 0.2);
+  --border-spruce: hsl(153 38% 30% / 0.2);
+  --border-fjord: hsl(204 67% 21% / 0.2);
+  --border-cloud: hsl(25 10% 84% / 0.2);
+
+  /* Alert border colors */
+  --border-info: hsl(217 68% 53% / 0.5);
+  --border-success: hsl(151 44% 52% / 0.5);
+  --border-warning: hsl(71 100% 75% / 0.5);
+  --border-destructive: hsl(6 74% 50% / 0.5);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: var(--border);
+  --color-border-hover: var(--border-hover);
+  --color-border-strong: var(--border-strong);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-moss: var(--moss);
+  --color-lichen: var(--lichen);
+  --color-spruce: var(--spruce);
+  --color-fjord: var(--fjord);
+  --color-peak: var(--peak);
+  --color-cloud: var(--cloud);
+  --color-slate: var(--slate);
+  --color-night: var(--night);
+
+  --color-error: var(--error);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+
+  --color-border-moss: var(--border-moss);
+  --color-border-lichen: var(--border-lichen);
+  --color-border-spruce: var(--border-spruce);
+  --color-border-fjord: var(--border-fjord);
+  --color-border-cloud: var(--border-cloud);
+  --color-border-info: var(--border-info);
+  --color-border-success: var(--border-success);
+  --color-border-warning: var(--border-warning);
+  --color-border-destructive: var(--border-destructive);
+
+  --color-green: #52B788;
+
+  --color-chart-1: hsl(151 44% 52%);
+  --color-chart-2: hsl(151 37% 63%);
+  --color-chart-3: hsl(153 38% 30%);
+  --color-chart-4: hsl(204 67% 21%);
+  --color-chart-5: hsl(25 10% 84%);
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --text-4xl: 2.5rem;
+  --text-4xl--line-height: 1;
+  --text-3xl: 2rem;
+  --text-3xl--line-height: 1;
+  --text-2xl: 1.5rem;
+  --text-2xl--line-height: 2rem;
+  --text-xl: 1.25rem;
+  --text-xl--line-height: 1.75rem;
+
+  --animate-blink: blink 1s step-end infinite;
+  --animate-skew-scroll: skew-scroll 20s linear infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes skew-scroll {
+  0% {
+    transform: translateY(0) skewY(0deg);
+  }
+  100% {
+    transform: translateY(calc(-100% + 250px)) skewY(0deg);
+  }
+}
 
 @layer base {
   body {
     font-family: 'DM Sans', sans-serif;
+    font-feature-settings: 'ss01', 'ss02', 'cv01', 'cv02';
   }
 
   h1 {
@@ -35,97 +215,13 @@
     font-family: 'Ovo', serif;
     letter-spacing: -0.05em;
   }
-}
 
-@layer base {
-  :root {
-    --background: 0 0% 4%;
-    --foreground: 0 0% 100%;
-
-    --card: 0 0% 7%;
-    --card-foreground: 0 0% 100%;
-
-    --popover: 0 0% 8%;
-    --popover-foreground: 0 0% 100%;
-
-    --primary: 151 44% 52%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 151 37% 63%;
-    --secondary-foreground: 0 0% 4%;
-
-    --muted: 0 0% 10%;
-    --muted-foreground: 25 10% 84% / 0.6;
-
-    --accent: 204 67% 21%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 6 74% 50%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 25 10% 84% / 0.05;
-    --border-hover: 25 10% 84% / 0.1;
-    --border-strong: 25 10% 84% / 0.08;
-    --input: 0 0% 15%;
-    --ring: 151 44% 52%;
-
-    --radius: 0.5rem;
-
-    /* Brand colors */
-    --moss: 151 44% 52%;
-    --lichen: 151 37% 63%;
-    --spruce: 153 38% 30%;
-    --fjord: 204 67% 21%;
-    --peak: 0 0% 100%;
-    --cloud: 25 10% 84%;
-    --slate: 0 0% 10%;
-    --night: 0 0% 4%;
-
-    /* Legacy aliases */
-    --berget-moss: 151 44% 52%;
-    --berget-lichen: 151 37% 63%;
-    --berget-spruce: 153 38% 30%;
-    --berget-fjord: 204 67% 21%;
-    --berget-peak: 0 0% 100%;
-    --berget-cloud: 25 10% 84%;
-    --berget-slate: 0 0% 10%;
-    --berget-night: 0 0% 4%;
-    --berget-error: 6 74% 50%;
-
-    /* Semantic status colors */
-    --success: 151 44% 52%;
-    --success-foreground: 0 0% 100%;
-    --warning: 71 100% 75%;
-    --warning-foreground: 0 0% 10%;
-    --error: 6 74% 50%;
-    --info: 217 68% 53%;
-    --info-foreground: 0 0% 100%;
-    --berget-success: 151 44% 52%;
-    --berget-warning: 71 100% 75%;
-    --berget-info: 217 68% 53%;
-
-    /* Themed borders */
-    --border-moss: 151 44% 52% / 0.2;
-    --border-lichen: 151 37% 63% / 0.2;
-    --border-spruce: 153 38% 30% / 0.2;
-    --border-fjord: 204 67% 21% / 0.2;
-    --border-cloud: 25 10% 84% / 0.2;
-
-    /* Alert border colors */
-    --border-info: 217 68% 53% / 0.5;
-    --border-success: 151 44% 52% / 0.5;
-    --border-warning: 71 100% 75% / 0.5;
-    --border-destructive: 6 74% 50% / 0.5;
-  }
-}
-
-@layer base {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: 'ss01', 'ss02', 'cv01', 'cv02';
   }
 }
 
