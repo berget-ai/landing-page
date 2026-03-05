@@ -1,5 +1,4 @@
 import React from 'react'
-import { useTheme } from 'next-themes'
 
 interface LogoComponentProps {
   className?: string
@@ -18,11 +17,7 @@ export function LogoComponent({
   withText = false,
   backgroundColor,
 }: LogoComponentProps) {
-  const { theme } = useTheme()
-
-  // If inverted is explicitly set, use that value
-  // Otherwise, determine based on theme
-  const shouldInvert = inverted !== undefined ? inverted : isDarkTheme(theme)
+  const shouldInvert = inverted
 
   // Calculate size in pixels
   const sizeInPx =
@@ -74,14 +69,5 @@ export function LogoComponent({
         />
       )}
     </div>
-  )
-}
-
-// Helper function to determine if theme is dark
-function isDarkTheme(theme: string | undefined): boolean {
-  return (
-    theme === 'dark' ||
-    (theme === 'system' &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches)
   )
 }
