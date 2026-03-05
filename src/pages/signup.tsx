@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Button, Input } from '@berget-ai/ui'
+import { Button, Card, Input } from '@berget-ai/ui'
 import { Label } from '@/components/ui/label'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Shield, Mail, Lock, ArrowRight } from 'lucide-react'
@@ -31,13 +31,10 @@ export default function SignupPage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="relative"
           >
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-[#52B788]/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            
-            <div className="relative p-8 rounded-2xl border border-[#74C69D]/20 bg-black/20 backdrop-blur-sm space-y-6">
+            <Card variant="glass" padding="lg" className="space-y-6">
               {/* Security Notice */}
-              <div className="flex items-center gap-2 p-3 rounded-lg bg-[#52B788]/5 border border-[#74C69D]/20 mb-6">
+              <div className="flex items-center gap-2 p-3 rounded-lg bg-muted mb-6">
                 <Shield className="w-5 h-5 text-[#52B788]" />
                 <span className="text-sm text-white/80">
                   Your data never leaves our EU-based infrastructure
@@ -121,7 +118,7 @@ export default function SignupPage() {
                   Sign in
                 </Link>
               </div>
-            </div>
+            </Card>
           </motion.div>
         </div>
       </div>

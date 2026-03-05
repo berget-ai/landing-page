@@ -13,7 +13,7 @@ import {
   Users,
   Layers,
 } from 'lucide-react'
-import { Badge, Button, HeroBlock } from '@berget-ai/ui'
+import { Badge, Button, Card, HeroBlock } from '@berget-ai/ui'
 import { Link } from 'react-router-dom'
 import { ModelsSection } from '@/components/sections/ModelsSection'
 import { useTranslation } from 'react-i18next'
@@ -84,21 +84,22 @@ export default function ProductsPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="p-6 rounded-xl bg-[#52B788]/5 border border-[#74C69D]/20 hover:bg-[#52B788]/10 transition-colors"
               >
-                <Cloud className="w-8 h-8 mb-4 text-[#52B788]" />
-                <h3 className="text-xl font-medium mb-3">
-                  {t('products.serverless.features.integration.title')}
-                </h3>
-                <ul className="space-y-3 text-white/60">
-                  {(
-                    t('products.serverless.features.integration.items', {
-                      returnObjects: true,
-                    }) as string[]
-                  ).map((item: string) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
+                <Card variant="highlight" padding="md">
+                  <Cloud className="w-8 h-8 mb-4 text-[#52B788]" />
+                  <h3 className="text-xl font-medium mb-3">
+                    {t('products.serverless.features.integration.title')}
+                  </h3>
+                  <ul className="space-y-3 text-white/60">
+                    {(
+                      t('products.serverless.features.integration.items', {
+                        returnObjects: true,
+                      }) as string[]
+                    ).map((item: string) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </Card>
               </motion.div>
 
               <motion.div
@@ -106,21 +107,22 @@ export default function ProductsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="p-6 rounded-xl bg-[#52B788]/5 border border-[#74C69D]/20 hover:bg-[#52B788]/10 transition-colors"
               >
-                <Zap className="w-8 h-8 mb-4 text-[#74C69D]" />
-                <h3 className="text-xl font-medium mb-3">
-                  {t('products.serverless.features.usage.title')}
-                </h3>
-                <ul className="space-y-3 text-white/60">
-                  {(
-                    t('products.serverless.features.usage.items', {
-                      returnObjects: true,
-                    }) as string[]
-                  ).map((item: string) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
+                <Card variant="highlight" padding="md">
+                  <Zap className="w-8 h-8 mb-4 text-[#74C69D]" />
+                  <h3 className="text-xl font-medium mb-3">
+                    {t('products.serverless.features.usage.title')}
+                  </h3>
+                  <ul className="space-y-3 text-white/60">
+                    {(
+                      t('products.serverless.features.usage.items', {
+                        returnObjects: true,
+                      }) as string[]
+                    ).map((item: string) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </Card>
               </motion.div>
 
               <motion.div
@@ -128,21 +130,22 @@ export default function ProductsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="p-6 rounded-xl bg-[#2D6A4F]/5 border border-[#40916C]/20 hover:bg-[#2D6A4F]/10 transition-colors"
               >
-                <Server className="w-8 h-8 mb-4 text-[#FFB700]" />
-                <h3 className="text-xl font-medium mb-3">
-                  {t('products.serverless.features.infrastructure.title')}
-                </h3>
-                <ul className="space-y-3 text-white/60">
-                  {(
-                    t('products.serverless.features.infrastructure.items', {
-                      returnObjects: true,
-                    }) as string[]
-                  ).map((item: string) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
+                <Card variant="highlight" padding="md">
+                  <Server className="w-8 h-8 mb-4 text-[#FFB700]" />
+                  <h3 className="text-xl font-medium mb-3">
+                    {t('products.serverless.features.infrastructure.title')}
+                  </h3>
+                  <ul className="space-y-3 text-white/60">
+                    {(
+                      t('products.serverless.features.infrastructure.items', {
+                        returnObjects: true,
+                      }) as string[]
+                    ).map((item: string) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </Card>
               </motion.div>
             </div>
           </div>
@@ -171,21 +174,22 @@ export default function ProductsPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="p-6 rounded-xl bg-[#52B788]/5 border border-[#74C69D]/20 hover:bg-[#52B788]/10 transition-colors"
               >
-                <Cpu className="w-8 h-8 mb-4 text-[#52B788]" />
-                <h3 className="text-xl font-medium mb-3">
-                  {t('products.dedicated.features.deployment.title')}
-                </h3>
-                <ul className="space-y-3 text-white/60">
-                  {(
-                    t('products.dedicated.features.deployment.items', {
-                      returnObjects: true,
-                    }) as string[]
-                  ).map((item: string) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
+                <Card variant="highlight" padding="md">
+                  <Cpu className="w-8 h-8 mb-4 text-[#52B788]" />
+                  <h3 className="text-xl font-medium mb-3">
+                    {t('products.dedicated.features.deployment.title')}
+                  </h3>
+                  <ul className="space-y-3 text-white/60">
+                    {(
+                      t('products.dedicated.features.deployment.items', {
+                        returnObjects: true,
+                      }) as string[]
+                    ).map((item: string) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </Card>
               </motion.div>
 
               <motion.div
@@ -193,21 +197,22 @@ export default function ProductsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="p-6 rounded-xl bg-[#52B788]/5 border border-[#74C69D]/20 hover:bg-[#52B788]/10 transition-colors"
               >
-                <Bot className="w-8 h-8 mb-4 text-[#74C69D]" />
-                <h3 className="text-xl font-medium mb-3">
-                  {t('products.dedicated.features.control.title')}
-                </h3>
-                <ul className="space-y-3 text-white/60">
-                  {(
-                    t('products.dedicated.features.control.items', {
-                      returnObjects: true,
-                    }) as string[]
-                  ).map((item: string) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
+                <Card variant="highlight" padding="md">
+                  <Bot className="w-8 h-8 mb-4 text-[#74C69D]" />
+                  <h3 className="text-xl font-medium mb-3">
+                    {t('products.dedicated.features.control.title')}
+                  </h3>
+                  <ul className="space-y-3 text-white/60">
+                    {(
+                      t('products.dedicated.features.control.items', {
+                        returnObjects: true,
+                      }) as string[]
+                    ).map((item: string) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </Card>
               </motion.div>
 
               <motion.div
@@ -215,21 +220,22 @@ export default function ProductsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="p-6 rounded-xl bg-[#2D6A4F]/5 border border-[#40916C]/20 hover:bg-[#2D6A4F]/10 transition-colors"
               >
-                <Sparkles className="w-8 h-8 mb-4 text-[#FFB700]" />
-                <h3 className="text-xl font-medium mb-3">
-                  {t('products.dedicated.features.performance.title')}
-                </h3>
-                <ul className="space-y-3 text-white/60">
-                  {(
-                    t('products.dedicated.features.performance.items', {
-                      returnObjects: true,
-                    }) as string[]
-                  ).map((item: string) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
+                <Card variant="highlight" padding="md">
+                  <Sparkles className="w-8 h-8 mb-4 text-[#FFB700]" />
+                  <h3 className="text-xl font-medium mb-3">
+                    {t('products.dedicated.features.performance.title')}
+                  </h3>
+                  <ul className="space-y-3 text-white/60">
+                    {(
+                      t('products.dedicated.features.performance.items', {
+                        returnObjects: true,
+                      }) as string[]
+                    ).map((item: string) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </Card>
               </motion.div>
             </div>
           </div>
@@ -258,21 +264,22 @@ export default function ProductsPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="p-6 rounded-xl bg-[#52B788]/5 border border-[#74C69D]/20 hover:bg-[#52B788]/10 transition-colors"
               >
-                <Database className="w-8 h-8 mb-4 text-[#52B788]" />
-                <h3 className="text-xl font-medium mb-3">
-                  {t('products.platform.features.toolset.title')}
-                </h3>
-                <ul className="space-y-3 text-white/60">
-                  {(
-                    t('products.platform.features.toolset.items', {
-                      returnObjects: true,
-                    }) as string[]
-                  ).map((item: string) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
+                <Card variant="highlight" padding="md">
+                  <Database className="w-8 h-8 mb-4 text-[#52B788]" />
+                  <h3 className="text-xl font-medium mb-3">
+                    {t('products.platform.features.toolset.title')}
+                  </h3>
+                  <ul className="space-y-3 text-white/60">
+                    {(
+                      t('products.platform.features.toolset.items', {
+                        returnObjects: true,
+                      }) as string[]
+                    ).map((item: string) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </Card>
               </motion.div>
 
               <motion.div
@@ -280,21 +287,22 @@ export default function ProductsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="p-6 rounded-xl bg-[#52B788]/5 border border-[#74C69D]/20 hover:bg-[#52B788]/10 transition-colors"
               >
-                <Box className="w-8 h-8 mb-4 text-[#74C69D]" />
-                <h3 className="text-xl font-medium mb-3">
-                  {t('products.platform.features.services.title')}
-                </h3>
-                <ul className="space-y-3 text-white/60">
-                  {(
-                    t('products.platform.features.services.items', {
-                      returnObjects: true,
-                    }) as string[]
-                  ).map((item: string) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
+                <Card variant="highlight" padding="md">
+                  <Box className="w-8 h-8 mb-4 text-[#74C69D]" />
+                  <h3 className="text-xl font-medium mb-3">
+                    {t('products.platform.features.services.title')}
+                  </h3>
+                  <ul className="space-y-3 text-white/60">
+                    {(
+                      t('products.platform.features.services.items', {
+                        returnObjects: true,
+                      }) as string[]
+                    ).map((item: string) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </Card>
               </motion.div>
 
               <motion.div
@@ -302,21 +310,22 @@ export default function ProductsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="p-6 rounded-xl bg-[#2D6A4F]/5 border border-[#40916C]/20 hover:bg-[#2D6A4F]/10 transition-colors"
               >
-                <Layers className="w-8 h-8 mb-4 text-[#FFB700]" />
-                <h3 className="text-xl font-medium mb-3">
-                  {t('products.platform.features.infrastructure.title')}
-                </h3>
-                <ul className="space-y-3 text-white/60">
-                  {(
-                    t('products.platform.features.infrastructure.items', {
-                      returnObjects: true,
-                    }) as string[]
-                  ).map((item: string) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
+                <Card variant="highlight" padding="md">
+                  <Layers className="w-8 h-8 mb-4 text-[#FFB700]" />
+                  <h3 className="text-xl font-medium mb-3">
+                    {t('products.platform.features.infrastructure.title')}
+                  </h3>
+                  <ul className="space-y-3 text-white/60">
+                    {(
+                      t('products.platform.features.infrastructure.items', {
+                        returnObjects: true,
+                      }) as string[]
+                    ).map((item: string) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </Card>
               </motion.div>
             </div>
           </div>
@@ -363,15 +372,11 @@ export default function ProductsPage() {
                               whileInView={{ opacity: 1, x: 0 }}
                               viewport={{ once: true }}
                               transition={{ delay: index * 0.1 }}
-                              className="relative group"
                             >
-                              <div
-                                className={`absolute inset-0 rounded-2xl bg-gradient-to-r from-[#2D6A4F]/5 via-[#40916C]/5 to-[#FFB700]/5 opacity-5 group-hover:opacity-10 transition-opacity duration-300`}
-                              />
-                              <div className="relative p-4 sm:p-6 rounded-2xl border border-[#40916C]/20 bg-[#2D6A4F]/5">
+                              <Card variant="solid" padding="md">
                                 <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
                                   <div
-                                    className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-[#2D6A4F] to-[#40916C] flex items-center justify-center flex-shrink-0`}
+                                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-[#2D6A4F] to-[#40916C] flex items-center justify-center flex-shrink-0"
                                   >
                                     <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                                   </div>
@@ -385,13 +390,13 @@ export default function ProductsPage() {
                                   {layer.items.map((item: string) => (
                                     <div
                                       key={item}
-                                      className="px-3 py-2 sm:px-4 sm:py-3 rounded-lg bg-[#2D6A4F]/5 text-xs sm:text-sm text-center border border-[#40916C]/20 hover:bg-[#2D6A4F]/10 transition-colors"
+                                      className="px-3 py-2 sm:px-4 sm:py-3 rounded-lg bg-muted text-xs sm:text-sm text-center border border-border hover:bg-muted/80 transition-colors"
                                     >
                                       {item}
                                     </div>
                                   ))}
                                 </div>
-                              </div>
+                              </Card>
                             </motion.div>
                           )
                         })}
@@ -405,42 +410,36 @@ export default function ProductsPage() {
                     viewport={{ once: true }}
                     className="lg:col-span-3"
                   >
-                    <div className={`relative h-full group`}>
-                      <div
-                        className={`absolute inset-0 rounded-2xl bg-gradient-to-b from-[#FFB700]/5 to-[#2D6A4F]/5 opacity-5 group-hover:opacity-10 transition-opacity duration-300`}
-                      />
-                      <div className="relative h-full p-4 sm:p-6 rounded-2xl border border-[#40916C]/20 bg-[#2D6A4F]/5 flex flex-col">
-                        <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
-                          <div
-                            className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-[#FFB700] to-[#FFB700]/80 flex items-center justify-center flex-shrink-0`}
-                          >
-                            <managementStack.icon className="w-5 h-5 sm:w-6 sm:h-6 text-[#1A1A1A]" />
-                          </div>
-                          <div>
-                            <h3 className="text-lg sm:text-xl font-medium">
-                              {t(
-                                'products.architecture.layers.management.title'
-                              )}
-                            </h3>
-                          </div>
+                    <Card variant="solid" padding="md" className="h-full flex flex-col">
+                      <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
+                        <div
+                          className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-[#FFB700] to-[#FFB700]/80 flex items-center justify-center flex-shrink-0"
+                        >
+                          <managementStack.icon className="w-5 h-5 sm:w-6 sm:h-6 text-[#1A1A1A]" />
                         </div>
-                        <div className="flex-1 flex flex-col justify-center space-y-3 sm:space-y-4">
-                          {(
-                            t('products.architecture.layers.management.items', {
-                              returnObjects: true,
-                            }) as string[]
-                          ).map((item: string) => (
-                            <div
-                              key={item}
-                              className="p-3 sm:p-4 rounded-lg bg-[#2D6A4F]/5 text-xs sm:text-sm text-center border border-[#40916C]/20 hover:bg-[#2D6A4F]/10 transition-colors"
-                            >
-                              {item}
-                            </div>
-                          ))}
+                        <div>
+                          <h3 className="text-lg sm:text-xl font-medium">
+                            {t(
+                              'products.architecture.layers.management.title'
+                            )}
+                          </h3>
                         </div>
-                        <div className="absolute left-0 top-1/2 w-6 h-0.5 bg-gradient-to-r from-transparent to-white/20" />
                       </div>
-                    </div>
+                      <div className="flex-1 flex flex-col justify-center space-y-3 sm:space-y-4">
+                        {(
+                          t('products.architecture.layers.management.items', {
+                            returnObjects: true,
+                          }) as string[]
+                        ).map((item: string) => (
+                          <div
+                            key={item}
+                            className="p-3 sm:p-4 rounded-lg bg-muted text-xs sm:text-sm text-center border border-border hover:bg-muted/80 transition-colors"
+                          >
+                            {item}
+                          </div>
+                        ))}
+                      </div>
+                    </Card>
                   </motion.div>
                 </div>
 

@@ -29,9 +29,7 @@ export function PartnerQuotes() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
-            className="relative group"
           >
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-green/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <Card variant="glass" padding="lg" className="h-full">
               <div className="flex flex-col h-full">
                 <p className="text-white/80 text-sm leading-relaxed flex-grow">

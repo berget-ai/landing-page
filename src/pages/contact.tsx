@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Mail } from 'lucide-react'
-
+import { Card } from '@berget-ai/ui'
 import { useTranslation } from 'react-i18next'
 
 export default function ContactPage() {
@@ -33,10 +33,8 @@ export default function ContactPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="relative group"
             >
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-[#52B788]/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative p-6 rounded-2xl border border-[#74C69D]/20 bg-black/20 backdrop-blur-sm">
+              <Card variant="glass" padding="md">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-24 h-24 rounded-full overflow-hidden">
                     <img
@@ -57,18 +55,16 @@ export default function ContactPage() {
                   <Mail className="w-4 h-4" />
                   {t('contact.team.emailCeo')}
                 </a>
-              </div>
+              </Card>
             </motion.div>
-            
+
             {/* Christian */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="relative group"
             >
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-[#52B788]/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative p-6 rounded-2xl border border-[#74C69D]/20 bg-black/20 backdrop-blur-sm">
+              <Card variant="glass" padding="md">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-24 h-24 rounded-full overflow-hidden">
                     <img
@@ -89,7 +85,7 @@ export default function ContactPage() {
                   <Mail className="w-4 h-4" />
                   {t('contact.team.emailCpto')}
                 </a>
-              </div>
+              </Card>
             </motion.div>
 
 
