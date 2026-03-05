@@ -92,8 +92,8 @@ export default function Page() {
 
   return (
     <main className="min-h-screen">
-      <article className={post?.image ? '' : 'container mx-auto px-4 py-8'}>
-        <div className={post?.image ? '' : 'max-w-3xl mx-auto'}>
+      <article className={post?.image ? '' : 'container mx-auto px-4 py-12'}>
+        <div className={post?.image ? '' : 'max-w-prose mx-auto'}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -130,7 +130,7 @@ export default function Page() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                 <div className="absolute inset-0 flex items-end">
                   <div className="container mx-auto px-4 pb-16">
-                    <div className="max-w-3xl mx-auto">
+                    <div className="max-w-prose mx-auto">
                       <AuthorByline
                         name={post.author}
                         email={post.email}
@@ -154,14 +154,14 @@ export default function Page() {
                   date={post.date}
                   size="lg"
                 />
-                <h1 className="text-4xl md:text-5xl font-medium mb-6">
+                <h1 className="text-3xl md:text-5xl font-medium mb-8 leading-tight">
                   {post.title}
                 </h1>
               </>
             )}
 
             <div className={post.image ? 'container mx-auto px-4' : ''}>
-              <div className={post.image ? 'max-w-3xl mx-auto' : ''}>
+              <div className={post.image ? 'max-w-prose mx-auto' : ''}>
                 {post.tags.length ? (
                   <div className="flex flex-wrap gap-2 mb-12">
                     {post.tags.map((tag) => (
