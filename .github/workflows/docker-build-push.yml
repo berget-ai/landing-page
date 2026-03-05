@@ -48,6 +48,11 @@ jobs:
         with:
           string: ${{ github.repository }}
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: latest
+
       - name: 🎫 Update version for release
         if: github.ref == 'refs/heads/main' && !startsWith(github.ref, 'refs/tags/')
         run: |

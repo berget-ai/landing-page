@@ -35,6 +35,11 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "github-actions@github.com"
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: latest
+
       - name: Bump version and create tag
         id: version
         run: |
@@ -46,7 +51,7 @@ jobs:
             new_version=$(node -p "require('./package.json').version")
           fi
 
-          git add package.json package-lock.json
+          git add package.json pnpm-lock.yaml
           git commit -m "chore: bump version to $new_version"
           git tag "v$new_version"
           git push origin main
