@@ -16,7 +16,6 @@ export default function OpenSourcePage() {
             tagline="We Love Open Source"
             title="Berget AI Open Source Program"
             description="Supporting the open source community with free resources and infrastructure! We love the power of open-source based innovation and never cease to be amazed by the things that come out of the community, many of which power our everyday lives. Berget AI is built on open-source and we want to contribute back to the community by providing access to resources for projects that are truly open-source and demonstrate how to use service such as Berget AI. Read more below and apply by contacting us!"
-            className="min-h-0 py-0"
           />
 
           {/* Program Details */}

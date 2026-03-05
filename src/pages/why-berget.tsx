@@ -24,7 +24,7 @@ function WhyBergetPage() {
         description={t('whyBerget.hero.description')}
         actions={
           <>
-            <Button size="lg" className="px-8 py-6 text-lg" asChild>
+            <Button size="lg" asChild>
               <Link to="/signup">
                 {t('whyBerget.hero.getStarted')}
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -33,7 +33,6 @@ function WhyBergetPage() {
             <Button
               size="lg"
               variant="outline"
-              className="px-8 py-6 text-lg"
               asChild
             >
               <Link to="/contact">{t('whyBerget.hero.bookDemo')}</Link>
@@ -61,10 +60,9 @@ function WhyBergetPage() {
         <SectionHeader
           title={t('whyBerget.cta.title')}
           description={t('whyBerget.cta.description')}
-          className="mb-8"
         />
         <div className="flex flex-wrap gap-4 justify-center">
-          <Button size="lg" className="px-8 py-6 text-lg" asChild>
+          <Button size="lg" asChild>
             <Link to="/signup">
               {t('whyBerget.cta.createAccount')}
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -73,7 +71,6 @@ function WhyBergetPage() {
           <Button
             size="lg"
             variant="outline"
-            className="px-8 py-6 text-lg"
             asChild
           >
             <Link to="/contact">{t('whyBerget.cta.contactSales')}</Link>

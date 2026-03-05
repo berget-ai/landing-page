@@ -8,17 +8,15 @@ export function ComplianceSection() {
   const { t } = useTranslation()
 
   return (
-    <Section padding="xl" className="bg-[#2D6A4F]/5 border-y border-[#40916C]/20">
+    <Section padding="xl" background="muted">
       <SectionHeader
         title={t('compliance.title')}
         description={t('compliance.description')}
         tagline={t('compliance.tagline')}
-        className="mb-16"
       />
 
       <FeatureCards
         columns={3}
-        className="max-w-7xl mx-auto"
         features={[
           {
             icon: Shield as Icon,

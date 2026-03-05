@@ -13,7 +13,6 @@ export function Overview() {
         tagline="GitOps Architecture"
         title={t('overview.whatIsGitOps.title')}
         description={t('overview.whatIsGitOps.description')}
-        className="mb-16"
       />
 
         <div className="relative">

@@ -158,12 +158,12 @@ export function Header() {
 
               <div className="pt-4 space-y-4">
                 <LanguageSwitcher />
-                <Button variant="outline" size="lg" className="w-full text-xl" asChild>
+                <Button variant="outline" size="lg" className="w-full" asChild>
                   <Link to={consoleUrl} onClick={() => setIsMenuOpen(false)}>
                     {t('header.buttons.signIn')}
                   </Link>
                 </Button>
-                <Button size="lg" className="w-full text-xl" asChild>
+                <Button size="lg" className="w-full" asChild>
                   <Link to={consoleUrl} onClick={() => setIsMenuOpen(false)}>
                     {t('header.buttons.getStarted')}
                   </Link>

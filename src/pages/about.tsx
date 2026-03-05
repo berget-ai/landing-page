@@ -12,7 +12,6 @@ export default function AboutPage() {
         withPattern
         title={t('about.hero.title')}
         description={t('about.hero.description')}
-        className="min-h-0 py-24"
       />
 
       {/* Origin Story */}
@@ -31,9 +30,9 @@ export default function AboutPage() {
       </Section>
 
       {/* Values */}
-      <Section padding="xl" className="bg-white/[0.02] border-y border-white/5">
+      <Section padding="xl" background="muted">
         <div className="max-w-3xl mx-auto">
-          <SectionHeader title={t('about.values.title')} className="mb-12" />
+          <SectionHeader title={t('about.values.title')} />
           <div className="space-y-16">
             {['openSource', 'european', 'integrity'].map((value) => (
               <div key={value} className="space-y-4">
@@ -53,7 +52,6 @@ export default function AboutPage() {
           <SectionHeader
             title={t('about.promises.title')}
             description={t('about.promises.description')}
-            className="mb-8"
           />
           <div className="grid gap-4">
             {(t('about.promises.list', { returnObjects: true }) as string[]).map((promise, index) => (
@@ -70,12 +68,11 @@ export default function AboutPage() {
       </Section>
 
       {/* Team Section */}
-      <Section padding="xl" className="bg-white/[0.02] border-y border-white/5">
+      <Section padding="xl" background="muted">
         <div className="max-w-4xl mx-auto">
           <SectionHeader
             title={t('about.team.title')}
             description={t('about.team.description')}
-            className="mb-16"
           />
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

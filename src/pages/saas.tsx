@@ -96,7 +96,7 @@ export default function SaaSPage() {
       />
 
       {/* Questions Section */}
-      <Section padding="xl" className="bg-white/[0.02] border-y border-white/5">
+      <Section padding="xl" background="muted">
         <div className="max-w-4xl mx-auto space-y-12">
             {questions.map((item, index) => (
               <motion.div
@@ -132,7 +132,6 @@ export default function SaaSPage() {
         <SectionHeader
           title="Everything You Need to Scale"
           description="Built specifically for SaaS companies who need to move fast while staying compliant"
-          className="mb-16"
         />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
@@ -171,7 +170,6 @@ export default function SaaSPage() {
         <SectionHeader
           title="Simple, Transparent Pricing"
           description="Start small and scale as you grow. No upfront commitments, pay only for what you use."
-          className="mb-16"
         />
 
         <div className="mb-12">

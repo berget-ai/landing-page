@@ -19,12 +19,11 @@ export function SustainabilitySection() {
   }
 
   return (
-    <Section padding="xl" className="bg-[#2D6A4F]/5 border-y border-[#40916C]/20">
+    <Section padding="xl" background="muted">
       <SectionHeader
         title={section.title}
         description={section.description}
         tagline={section.badge}
-        className="mb-16"
       />
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
