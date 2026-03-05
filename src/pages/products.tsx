@@ -13,7 +13,7 @@ import {
   Users,
   Layers,
 } from 'lucide-react'
-import { Badge, Button } from '@berget-ai/ui'
+import { Badge, Button, HeroBlock } from '@berget-ai/ui'
 import { Link } from 'react-router-dom'
 import { ModelsSection } from '@/components/sections/ModelsSection'
 import { useTranslation } from 'react-i18next'
@@ -53,19 +53,13 @@ export default function ProductsPage() {
   return (
     <main className="min-h-screen pt-24">
       {/* Hero Section */}
-      <div className="relative overflow-hidden bg-gradient-to-b from-background to-background/50">
-        <div className="absolute inset-0 bg-grid-white/5 bg-[size:32px_32px] pointer-events-none" />
-        <div className="container mx-auto px-4 py-12 sm:py-16 lg:py-24">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-ovo mb-6">
-              {t('products.hero.title')}
-            </h1>
-            <p className="text-base sm:text-lg lg:text-xl text-white/80 mb-8 leading-relaxed">
-              {t('products.hero.description')}
-            </p>
-          </div>
-        </div>
-      </div>
+      <HeroBlock
+        variant="default"
+        withPattern
+        title={t('products.hero.title')}
+        description={t('products.hero.description')}
+        className="min-h-0 py-12 sm:py-16 lg:py-24"
+      />
 
       {/* Main Content */}
       <div className="container mx-auto px-4 py-12 sm:py-16 lg:py-24">

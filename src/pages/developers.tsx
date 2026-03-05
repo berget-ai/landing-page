@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Github, Lock, Server, Database } from 'lucide-react'
-import { Button } from '@berget-ai/ui'
+import { Button, HeroBlock } from '@berget-ai/ui'
 import { useTranslation } from 'react-i18next'
 import { TerminalCarousel } from '@/components/terminal/TerminalCarousel'
 import { Link } from 'react-router-dom'
@@ -30,35 +30,19 @@ export default function DevelopersPage() {
   return (
     <main className="min-h-screen">
       {/* Hero */}
-      <section className="relative overflow-hidden min-h-[80vh] flex items-center">
-        {/* Background image */}
-        <div className="text-center">
-          {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/20" />
-          <div className="absolute inset-0 bg-grid-white/5 bg-[size:32px_32px] pointer-events-none" />
-        </div>
+      <HeroBlock
+        variant="default"
+        withPattern
+        title={t('DevelopersPage.hero.title')}
+        description={t('DevelopersPage.hero.description')}
+      />
 
-        {/* Content */}
-        <div className="container relative z-10 mx-auto px-4 py-24">
-          <div className="max-w-3xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-            >
-              <h1 className="text-5xl font-ovo mb-6">
-                {t('DevelopersPage.hero.title')}
-              </h1>
-              <p className="text-xl text-white/80 mb-8 max-w-2xl leading-relaxed">
-                {t('DevelopersPage.hero.description')}
-              </p>
-              <div className="mt-8">
-                <TerminalCarousel />
-              </div>
-            </motion.div>
-          </div>
+      {/* Terminal Demo */}
+      <div className="container mx-auto px-4 -mt-16 relative z-10 mb-8">
+        <div className="max-w-3xl mx-auto">
+          <TerminalCarousel />
         </div>
-      </section>
+      </div>
 
       {/* Features */}
       <div className="container mx-auto px-4 py-24">

@@ -1,38 +1,30 @@
-import { motion } from 'framer-motion'
 import { Shield, Github, ArrowRight, Check, FileCode, Users, Heart } from 'lucide-react'
-import { Button } from '@berget-ai/ui'
+import { HeroBlock, Button, type HeroBlockProps } from '@berget-ai/ui'
 import { Link } from 'react-router-dom'
+
+type TaglineIcon = HeroBlockProps['taglineIcon']
 
 export default function OpenSourcePage() {
   return (
     <main className="min-h-screen pt-24">
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto">
-          {/* Hero Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center mb-16"
-          >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#40916C]/15 text-[#52B788] mb-6">
-              <Heart className="w-4 h-4" />
-              <span className="text-sm">We Love Open Source</span>
-            </div>
-            <h1 className="text-4xl font-ovo mb-6">
-              Berget AI Open Source Program
-            </h1>
-            <p className="text-xl text-white/80">
-              Supporting the open source community with free resources and infrastructure! We love the power of open-source based innovation and never cease to be amazed by the things that come out of the community, many of which power our everyday lives. Berget AI is built on open-source and we want to contribute back to the community by providing access to resources for projects that are truly open-source and demonstrate how to use service such as Berget AI. Read more below and apply by contacting us! 
-
-            </p>
-          </motion.div>
+          <HeroBlock
+            variant="default"
+            withPattern={false}
+            taglineIcon={Heart as TaglineIcon}
+            tagline="We Love Open Source"
+            title="Berget AI Open Source Program"
+            description="Supporting the open source community with free resources and infrastructure! We love the power of open-source based innovation and never cease to be amazed by the things that come out of the community, many of which power our everyday lives. Berget AI is built on open-source and we want to contribute back to the community by providing access to resources for projects that are truly open-source and demonstrate how to use service such as Berget AI. Read more below and apply by contacting us!"
+            className="min-h-0 py-0"
+          />
 
           {/* Program Details */}
-          <div className="space-y-16">
+          <div className="space-y-16 mt-16">
             {/* Core Principles */}
             <section>
               <h2 className="text-2xl font-ovo mb-6">What we offer</h2>
-                
+
                 <div className="p-6 rounded-xl bg-white/[0.02] border border-[#74C69D]/20">
                   <Shield className="w-8 h-8 mb-4 text-[#52B788]" />
                   <h3 className="text-xl font-medium mb-3">Free Resources</h3>
@@ -98,7 +90,7 @@ export default function OpenSourcePage() {
                   </ul>
                 </div>
               </div>
-            
+
             </section>
 
             {/* Benefits & Growth */}

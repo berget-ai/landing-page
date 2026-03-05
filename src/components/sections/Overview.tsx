@@ -1,26 +1,20 @@
 import { motion } from 'framer-motion'
 import { GitBranch, Cloud, Link2, Cpu, Network, Shield } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
+import { Section, SectionHeader } from '@berget-ai/ui'
 
 export function Overview() {
   const { t } = useTranslation()
 
   return (
-    <section className="py-32 relative overflow-hidden ">
+    <Section padding="xl" className="overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background opacity-50" />
-      <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/5 text-white mb-6">
-            <GitBranch className="w-4 h-4 mr-2 text-white" />
-            <span className="text-sm">GitOps Architecture</span>
-          </div>
-          <h2 className="text-4xl font-ovo mb-6">
-            {t('overview.whatIsGitOps.title')}
-          </h2>
-          <p className="text-xl text-white/80">
-            {t('overview.whatIsGitOps.description')}
-          </p>
-        </div>
+      <SectionHeader
+        tagline="GitOps Architecture"
+        title={t('overview.whatIsGitOps.title')}
+        description={t('overview.whatIsGitOps.description')}
+        className="mb-16"
+      />
 
         <div className="relative">
           {/* GitOps SVG Illustration */}
@@ -107,7 +101,6 @@ export function Overview() {
             </div>
           </div>
         </div>
-      </div>
-    </section>
+    </Section>
   )
 }

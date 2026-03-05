@@ -1,16 +1,27 @@
-import { BlogCard } from './BlogCard'
+import { BlogGrid } from '@berget-ai/ui'
 import type { BlogPost } from '@/types/blog'
+import { useNavigate } from 'react-router-dom'
 
 interface BlogListProps {
   posts: BlogPost[]
 }
 
 export function BlogList({ posts }: BlogListProps) {
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {posts.map((post, index) => (
-        <BlogCard key={post.id} post={post} index={index} />
-      ))}
-    </div>
-  )
+  const navigate = useNavigate()
+
+  const uiPosts = posts.map((post) => ({
+    id: post.id,
+    title: post.title,
+    excerpt: post.description,
+    author: post.author,
+    email: post.email,
+    date: post.date,
+    image: post.image,
+    imageAlt: post.imageAlt || post.title,
+    language: post.language,
+    tags: post.tags,
+    onClick: () => navigate(`/blog/${post.id}`),
+  }))
+
+  return <BlogGrid posts={uiPosts} columns={3} />
 }

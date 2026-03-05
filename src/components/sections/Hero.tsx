@@ -1,43 +1,30 @@
 import { useTranslation } from 'react-i18next'
-import { Button } from '@berget-ai/ui'
-import { GradientBackground } from '@/components/common/GradientBackground'
-import { NetworkBackground } from '../common/NetworkBackground'
+import { HeroBlock, Button, type HeroBlockProps } from '@berget-ai/ui'
 import { ArrowRight, Shield } from 'lucide-react'
 import { useEnvironment } from '@/hooks/use-environment'
+
+type TaglineIcon = HeroBlockProps['taglineIcon']
 
 export function Hero() {
   const { t } = useTranslation()
   const { consoleUrl } = useEnvironment()
 
   return (
-    <>
-      <GradientBackground>
-        <NetworkBackground />
-        <div className="relative z-10 flex items-center justify-center min-h-screen">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8">
-              <Shield className="w-4 h-4 mr-2" />
-              <span className="text-sm">{t('hero.tagline')}</span>
-            </div>
-
-            <h1 className="text-4xl md:text-6xl text-white mb-6 font-ovo">
-              {t('hero.title.part1')}
-              <br />
-              {t('hero.title.part2')}
-            </h1>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto mb-8 leading-relaxed">
-              {t('hero.description')}
-            </p>
-            <div className="flex gap-4 justify-center">
-              <a href={consoleUrl}>
-                <Button variant="default" size="lg">
-                  {t('hero.getStarted')} <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </GradientBackground>
-    </>
+    <HeroBlock
+      variant="moss"
+      withPattern
+      taglineIcon={Shield as TaglineIcon}
+      tagline={t('hero.tagline')}
+      title={`${t('hero.title.part1')} ${t('hero.title.part2')}`}
+      description={t('hero.description')}
+      className="min-h-screen"
+      actions={
+        <a href={consoleUrl}>
+          <Button variant="default" size="lg">
+            {t('hero.getStarted')} <ArrowRight className="ml-2 h-5 w-5" />
+          </Button>
+        </a>
+      }
+    />
   )
 }
