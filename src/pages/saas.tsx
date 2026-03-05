@@ -1,11 +1,10 @@
 import { motion } from 'framer-motion'
 import { Shield, Lock, Database, Server, Bot, ArrowRight, Check } from 'lucide-react'
-import { Button } from '@berget-ai/ui'
+import { Button, HeroBlock, Section, SectionHeader } from '@berget-ai/ui'
 import { Link } from 'react-router-dom'
 import { ComplianceSection } from '@/components/sections/ComplianceSection'
 import { PricingTiers } from '@/components/sections/pricing/PricingTiers'
 import { ProductFeatures } from '@/components/sections/ProductFeatures'
-import { NetworkBackground } from '@/components/common/NetworkBackground'
 import { PartnerQuotes } from '@/components/sections/PartnerQuotes'
 import { useTranslation } from 'react-i18next'
 
@@ -76,45 +75,29 @@ export default function SaaSPage() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#2D6A4F] via-[#40916C] to-[#FFB700]">
-          <NetworkBackground />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
-        </div>
-        
-        <div className="relative z-10 container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <h1 className="text-5xl font-ovo mb-6">
-                {t('saas.hero.title')}
-              </h1>
-              <p className="text-xl text-white/80 mb-8">
-                {t('saas.hero.description')}
-              </p>
-              <div className="flex gap-4 justify-center">
-                <Button size="lg" asChild>
-                  <Link to="/signup">
-                    {t('saas.hero.startBuilding')}
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
-                <Button size="lg" variant="secondary" asChild>
-                  <Link to="/contact">{t('saas.hero.bookDemo')}</Link>
-                </Button>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+      <HeroBlock
+        variant="gradient"
+        withPattern
+        title={t('saas.hero.title')}
+        description={t('saas.hero.description')}
+        actions={
+          <>
+            <Button size="lg" asChild>
+              <Link to="/signup">
+                {t('saas.hero.startBuilding')}
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+            <Button size="lg" variant="secondary" asChild>
+              <Link to="/contact">{t('saas.hero.bookDemo')}</Link>
+            </Button>
+          </>
+        }
+      />
 
       {/* Questions Section */}
-      <section className="py-24 relative bg-white/[0.02] border-y border-white/5">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto space-y-12">
+      <Section padding="xl" className="bg-white/[0.02] border-y border-white/5">
+        <div className="max-w-4xl mx-auto space-y-12">
             {questions.map((item, index) => (
               <motion.div
                 key={index}
@@ -138,22 +121,19 @@ export default function SaaSPage() {
                 </div>
               </motion.div>
             ))}
-          </div>
         </div>
-      </section>
+      </Section>
 
       {/* Expert Opinions */}
       <PartnerQuotes />
 
       {/* Benefits Section */}
-      <section className="py-24 relative">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl font-ovo mb-4">Everything You Need to Scale</h2>
-            <p className="text-xl text-white/60">
-              Built specifically for SaaS companies who need to move fast while staying compliant
-            </p>
-          </div>
+      <Section padding="xl">
+        <SectionHeader
+          title="Everything You Need to Scale"
+          description="Built specifically for SaaS companies who need to move fast while staying compliant"
+          className="mb-16"
+        />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             {benefits.map((benefit, index) => (
@@ -178,8 +158,7 @@ export default function SaaSPage() {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
+      </Section>
 
       {/* Products Overview */}
       <ProductFeatures />
@@ -188,29 +167,26 @@ export default function SaaSPage() {
       <ComplianceSection />
 
       {/* Pricing Section */}
-      <section className="py-24 relative">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl font-ovo mb-4">Simple, Transparent Pricing</h2>
-            <p className="text-xl text-white/60">
-              Start small and scale as you grow. No upfront commitments, pay only for what you use.
-            </p>
-          </div>
+      <Section padding="xl">
+        <SectionHeader
+          title="Simple, Transparent Pricing"
+          description="Start small and scale as you grow. No upfront commitments, pay only for what you use."
+          className="mb-16"
+        />
 
-          <div className="mb-12">
-            <PricingTiers />
-          </div>
-
-          <div className="text-center">
-            <Button asChild size="lg">
-              <Link to="/signup">
-                Start Building Now
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
+        <div className="mb-12">
+          <PricingTiers />
         </div>
-      </section>
+
+        <div className="text-center">
+          <Button asChild size="lg">
+            <Link to="/signup">
+              Start Building Now
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
+        </div>
+      </Section>
     </main>
   )
 }
