@@ -786,11 +786,11 @@ With proper multi-environment deployments, you now have:
 - **Compliance-ready** audit trails
 - **Scalable processes** that work for any number of environments
 
-This foundation integrates perfectly with the GitOps infrastructure from our [DevOps Holy Grail series](/blog/devops_holy_grail):
+This foundation integrates perfectly with the GitOps infrastructure from our [DevOps Holy Grail series](/blog/devops-holy-grail):
 
-- **[Part 1](/blog/devops_holy_grail_part1)** - Basic GitOps setup with CI/CD
-- **[Part 2](/blog/devops_holy_grail_part2)** - HTTPS and DNS automation
-- **[Part 3](/blog/devops_holy_grail_part3)** - Enterprise features and monitoring
+- **[Part 1](/blog/devops-holy-grail-part1)** - Basic GitOps setup with CI/CD
+- **[Part 2](/blog/devops-holy-grail-part2)** - HTTPS and DNS automation
+- **[Part 3](/blog/devops-holy-grail-part3)** - Enterprise features and monitoring
 
 With multi-environment deployments, you can ship faster while breaking less—the true goal of modern DevOps.
 

@@ -11,6 +11,11 @@
 - Merging to `main` triggers GitHub Actions to build and deploy to stage.berget.ai. Production release is triggered manually via the "Release to Product" workflow. Flux CD pulls new Docker images.
 - `src/lib/api.ts` calls the production Berget API in both staging and production.
 
+## URL Management
+
+- Always use **kebab-case** for filenames that produce URL slugs (e.g. blog post markdown files, page directories). Never use underscores or spaces.
+- When renaming a route or file that changes a URL, always add a redirect from the old URL to the new one in `pages/+config.ts` using the `redirects` config, and update `public/sitemap.xml`.
+
 ## @berget-ai/ui
 
 Source in `../ui/packages/ui/`. Uses a brand color palette (moss, lichen, spruce, fjord, peak, cloud, slate, night) and CVA for component variants. Exports CSS via `@berget-ai/ui/styles`.

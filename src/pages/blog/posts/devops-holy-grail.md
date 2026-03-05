@@ -23,7 +23,7 @@ This comprehensive guide has been split into two focused parts for better readab
 
 ## Part 1: From Zero to Production
 
-**[Read Part 1: The DevOps Holy Grail - From Zero to Production](/blog/devops_holy_grail_part1)**
+**[Read Part 1: The DevOps Holy Grail - From Zero to Production](/blog/devops-holy-grail-part1)**
 
 Learn the fundamentals:
 
@@ -36,7 +36,7 @@ Perfect for getting your first deployment running quickly.
 
 ## Part 2: HTTPS and DNS Automation
 
-**[Read Part 2: The DevOps Holy Grail - HTTPS and DNS Automation](/blog/devops_holy_grail_part2)**
+**[Read Part 2: The DevOps Holy Grail - HTTPS and DNS Automation](/blog/devops-holy-grail-part2)**
 
 Add security and reliability:
 
@@ -49,15 +49,15 @@ Everything you need to make your system production-ready and secure.
 
 ## Part 3: Enterprise-Grade Features
 
-**[Read Part 3: The DevOps Holy Grail - Enterprise-Grade Features](/blog/devops_holy_grail_part3)**
+**[Read Part 3: The DevOps Holy Grail - Enterprise-Grade Features](/blog/devops-holy-grail-part3)**
 
 Add advanced capabilities:
 
 - Self-hosted Supabase backend
 - Comprehensive monitoring and alerting
 - Migration strategies and advanced patterns
-- Bulletproof secrets management (see our [dedicated guide](/blog/kubernetes_secrets_management))
-- Multi-environment deployments (see our [dedicated guide](/blog/kubernetes_multi_environment_deployments))
+- Bulletproof secrets management (see our [dedicated guide](/blog/kubernetes-secrets-management))
+- Multi-environment deployments (see our [dedicated guide](/blog/kubernetes-multi-environment-deployments))
 
 Everything you need to scale from startup to enterprise.
 

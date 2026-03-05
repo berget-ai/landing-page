@@ -15,7 +15,7 @@ email: christian@landgren.nu
 language: en
 ---
 
-In [Part 1](/blog/devops_holy_grail_part1), we built the foundation with CI/CD, Kubernetes, and GitOps. In [Part 2](/blog/devops_holy_grail_part2), we added automatic HTTPS and DNS management. Now it's time to add the enterprise-grade features that separate weekend projects from production platforms.
+In [Part 1](/blog/devops-holy-grail-part1), we built the foundation with CI/CD, Kubernetes, and GitOps. In [Part 2](/blog/devops-holy-grail-part2), we added automatic HTTPS and DNS management. Now it's time to add the enterprise-grade features that separate weekend projects from production platforms.
 
 This isn't about over-engineering. It's about adding the pieces that become critical as you grow—before you desperately need them.
 
@@ -202,7 +202,7 @@ spec:
 
 Managing multiple environments (staging, production, testing) is complex enough to deserve its own comprehensive guide. We've created a detailed walkthrough that covers everything from single-environment migration to advanced deployment strategies.
 
-**[Read our complete Multi-Environment Deployments Guide](/blog/kubernetes_multi_environment_deployments)**
+**[Read our complete Multi-Environment Deployments Guide](/blog/kubernetes-multi-environment-deployments)**
 
 This guide covers:
 
@@ -478,7 +478,7 @@ With all three parts of this guide, you now have:
 - **Multi-environment** deployments with proper isolation
 - **Production database** with PostgreSQL and proper persistence
 - **Backup and disaster recovery** with Velero
-- **Bulletproof secrets management** (see our [dedicated guide](/blog/kubernetes_secrets_management))
+- **Bulletproof secrets management** (see our [dedicated guide](/blog/kubernetes-secrets-management))
 
 All managed through code, all versioned in Git, all completely portable between clouds.
 

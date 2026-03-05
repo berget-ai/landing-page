@@ -91,7 +91,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://berget.ai/blog/ai_in_swedish</loc>
+    <loc>https://berget.ai/blog/ai-in-swedish</loc>
     <lastmod>2025-06-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -103,13 +103,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://berget.ai/blog/berget_update_1</loc>
+    <loc>https://berget.ai/blog/berget-update-1</loc>
     <lastmod>2025-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://berget.ai/blog/berget_update_2</loc>
+    <loc>https://berget.ai/blog/berget-update-2</loc>
     <lastmod>2025-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -127,31 +127,31 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://berget.ai/blog/devops_holy_grail</loc>
+    <loc>https://berget.ai/blog/devops-holy-grail</loc>
     <lastmod>2025-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://berget.ai/blog/devops_holy_grail_part1</loc>
+    <loc>https://berget.ai/blog/devops-holy-grail-part1</loc>
     <lastmod>2025-07-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://berget.ai/blog/devops_holy_grail_part2</loc>
+    <loc>https://berget.ai/blog/devops-holy-grail-part2</loc>
     <lastmod>2025-07-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://berget.ai/blog/devops_holy_grail_part3</loc>
+    <loc>https://berget.ai/blog/devops-holy-grail-part3</loc>
     <lastmod>2025-07-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://berget.ai/blog/digitalist_berget</loc>
+    <loc>https://berget.ai/blog/digitalist-berget</loc>
     <lastmod>2025-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -163,13 +163,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://berget.ai/blog/kubernetes_multi_environment_deployments</loc>
+    <loc>https://berget.ai/blog/kubernetes-multi-environment-deployments</loc>
     <lastmod>2025-07-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://berget.ai/blog/kubernetes_secrets_management</loc>
+    <loc>https://berget.ai/blog/kubernetes-secrets-management</loc>
     <lastmod>2025-07-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -211,7 +211,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://berget.ai/blog/opper_berget%201</loc>
+    <loc>https://berget.ai/blog/opper-berget-1</loc>
     <lastmod>2025-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

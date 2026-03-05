@@ -628,10 +628,10 @@ Manual secrets don't work with GitOps since secrets can't be stored in Git repos
 
 ## What's Next?
 
-This secrets management foundation integrates perfectly with the GitOps infrastructure from our [DevOps Holy Grail series](/blog/devops_holy_grail):
+This secrets management foundation integrates perfectly with the GitOps infrastructure from our [DevOps Holy Grail series](/blog/devops-holy-grail):
 
-- **[Part 1](/blog/devops_holy_grail_part1)** - Basic GitOps setup with CI/CD
-- **[Part 2](/blog/devops_holy_grail_part2)** - Enterprise features and monitoring
+- **[Part 1](/blog/devops-holy-grail-part1)** - Basic GitOps setup with CI/CD
+- **[Part 2](/blog/devops-holy-grail-part2)** - Enterprise features and monitoring
 
 With proper secrets management, you can build systems that are both secure and developer-friendly—no more choosing between the two.
 
