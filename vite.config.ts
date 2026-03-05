@@ -32,6 +32,9 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  ssr: {
+    noExternal: ['@berget-ai/ui'],
+  },
   build: {
     sourcemap: true,
   },
