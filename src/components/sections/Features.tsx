@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import { Globe, Shield, Server, Lock, Check } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Feature } from '@/components/ui/feature-section-with-bento-grid'

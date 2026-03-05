@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import { Zap, Recycle, BarChart } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Card, Section, SectionHeader } from '@berget-ai/ui'

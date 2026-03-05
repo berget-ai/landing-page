@@ -3,7 +3,7 @@ import { Menu, X, AlertCircle, AlertTriangle } from 'lucide-react'
 import { Button, BergetSymbol } from '@berget-ai/ui'
 import { LanguageSwitcher } from '../ui/LanguageSwitcher'
 import { useTranslation } from 'react-i18next'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence } from 'motion/react'
 import { useEnvironment } from '@/hooks/use-environment'
 import { useHealth } from '@/hooks/use-health'
 

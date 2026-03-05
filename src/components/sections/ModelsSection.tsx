@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import { Bot, ArrowRight, AlertCircle } from 'lucide-react'
 import { Button, Card } from '@berget-ai/ui'
 import { useModels } from '@/hooks/use-models'

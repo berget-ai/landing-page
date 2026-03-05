@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import { Activity, CheckCircle, XCircle, Server, AlertTriangle, Clock, Lock, AlertOctagon, Rabbit, Snail } from 'lucide-react'
 import { useModels } from '@/hooks/use-models'
 import { useTranslation, Trans } from 'react-i18next'
