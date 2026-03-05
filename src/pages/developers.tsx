@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion'
 import { Github, Lock, Server, Database } from 'lucide-react'
-import { Button, HeroBlock } from '@berget-ai/ui'
+import { Button, HeroBlock, TerminalCarousel } from '@berget-ai/ui'
 import { useTranslation } from 'react-i18next'
-import { TerminalCarousel } from '@/components/terminal/TerminalCarousel'
+import { terminalExamples } from '@/components/terminal/terminal-examples'
 import { ModelsSection } from '@/components/sections/ModelsSection'
 import { Overview } from '@/components/sections/Overview'
 import { Feature } from '@/components/ui/feature-section-with-bento-grid'
@@ -39,7 +39,7 @@ export default function DevelopersPage() {
       {/* Terminal Demo */}
       <div className="container mx-auto px-4 -mt-16 relative z-10 mb-8">
         <div className="max-w-3xl mx-auto">
-          <TerminalCarousel />
+          <TerminalCarousel examples={terminalExamples} />
         </div>
       </div>
 
