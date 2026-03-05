@@ -16,6 +16,7 @@ export function LanguageSwitcher() {
     <Button
       variant="ghost"
       size="icon"
+      className="bg-transparent"
       onClick={toggleLanguage}
       aria-label={t('languageSwitcher.label')}
       title={t('languageSwitcher.title')}

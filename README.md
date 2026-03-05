@@ -1,55 +1,75 @@
-# Berget AI Platform
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="public/logos/berget-logo-white.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="public/logos/berget-logo-black.svg" />
+    <img src="public/logos/berget-logo-black.svg" alt="Berget AI" width="300" />
+  </picture>
 
-En säker och hållbar AI-plattform byggd för svenska och europeiska företag.
+  <h3>Secure & Sustainable AI Infrastructure for Europe</h3>
 
-## Funktioner
+  <p>
+    <a href="https://berget.ai">Website</a> ·
+    <a href="https://api.berget.ai">Documentation</a> ·
+    <a href="https://berget.ai/blog">Blog</a>
+  </p>
+</div>
 
-- 🔒 **Säker & Compliant**: All data stannar inom EU och följer GDPR, NIS-2 och DORA
-- 🚀 **Serverless Inference**: Över 50 förkonfigurerade open source-modeller
-- 💻 **Modern Developer Experience**: GitOps-arkitektur och intuitiva utvecklarverktyg
-- ♻️ **Hållbar**: 100% förnybar energi och återanvänd hårdvara
+---
 
-## Kom igång
+Berget AI provides a secure, GDPR-compliant AI platform built for European businesses. All data stays within the EU, powered by 100% renewable energy.
+
+## Getting Started
+
+Install dependencies and start the development server.
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
-## Utveckling
+## Development
 
-### Förutsättningar
+Set up your local environment and work with the codebase.
+
+### Prerequisites
+
+Make sure you have the following installed.
 
 - Node.js 18+
-- npm 9+
+- pnpm
 
-### Installation
+### Working with `@berget-ai/ui`
 
-1. Klona repot
-
-```bash
-git clone https://github.com/bergetai/platform
-cd platform
-```
-
-2. Installera dependencies
+The landing page depends on the [`@berget-ai/ui`](https://github.com/berget-ai/ui) package. To develop against a local copy:
 
 ```bash
-npm install
+# Build the UI package
+cd ../ui
+pnpm build
+
+# Link it into the landing page
+cd ../landing-page
+pnpm link ../ui/packages/ui
 ```
 
-3. Starta utvecklingsservern
+> **Important:** Linking adds a `pnpm.overrides` entry to `package.json`. Never commit this change — it will break Docker and CI builds. To revert, remove the override and run `pnpm install`.
+
+### Build for Production
+
+Generate a production-ready build with SSR support.
 
 ```bash
-npm run dev
+pnpm build
 ```
 
-### Bygga för produktion
+### Run Production Server
+
+Start the Express SSR server locally.
 
 ```bash
-npm run build
+pnpm server:prod
 ```
 
-## Licens
+## License
 
-Copyright © 2024 Berget AI AB. Alla rättigheter förbehållna.
+Copyright © 2026 Berget AI AB. All rights reserved.

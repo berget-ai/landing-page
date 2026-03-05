@@ -87,7 +87,7 @@ export function Header() {
         </nav>
 
         <Button 
-          variant="ghost" 
+          variant="outline"
           size="icon" 
           className="md:hidden"
           onClick={() => setIsMenuOpen(!isMenuOpen)}

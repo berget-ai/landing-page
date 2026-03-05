@@ -50,7 +50,7 @@ export default function PricingPage() {
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Button variant="ghost" size="icon">
+                  <Button variant="outline" size="icon">
                     <Info className="w-5 h-5" />
                   </Button>
                 </TooltipTrigger>

@@ -15,9 +15,3 @@
 
 - Always use **kebab-case** for filenames that produce URL slugs (e.g. blog post markdown files, page directories). Never use underscores or spaces.
 - When renaming a route or file that changes a URL, always add a redirect from the old URL to the new one in `pages/+config.ts` using the `redirects` config, and update `public/sitemap.xml`.
-
-## @berget-ai/ui
-
-Source in `../ui/packages/ui/`. Uses a brand color palette (moss, lichen, spruce, fjord, peak, cloud, slate, night) and CVA for component variants. Exports CSS via `@berget-ai/ui/styles`.
-
-**Local dev:** `cd ../ui && pnpm build`, then `pnpm link ../ui/packages/ui`. **Never commit `package.json` with the resulting `pnpm.overrides`** — it breaks Docker/CI. Revert by removing the override and running `pnpm install`.
