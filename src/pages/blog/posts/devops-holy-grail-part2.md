@@ -16,7 +16,7 @@ email: christian@landgren.nu
 language: en
 ---
 
-In [Part 1](/blog/devops_holy_grail_part1), we built the foundation: containerization, CI/CD, Kubernetes basics, and GitOps with FluxCD. Now it's time to add the security and reliability features that make your system production-ready.
+In [Part 1](/blog/devops-holy-grail-part1), we built the foundation: containerization, CI/CD, Kubernetes basics, and GitOps with FluxCD. Now it's time to add the security and reliability features that make your system production-ready.
 
 This isn't just about checking security boxes. It's about building systems that users trust and that scale without breaking.
 
@@ -560,7 +560,7 @@ With automatic HTTPS and DNS in place, you now have:
 - **Zero-maintenance security** through automated certificate renewal
 - **Professional appearance** with proper SSL certificates and custom domains
 
-In **[Part 3](/blog/devops_holy_grail_part3)**, we'll add enterprise-grade features:
+In **[Part 3](/blog/devops-holy-grail-part3)**, we'll add enterprise-grade features:
 
 - **Self-hosted backends** with Supabase
 - **Bulletproof secrets management**

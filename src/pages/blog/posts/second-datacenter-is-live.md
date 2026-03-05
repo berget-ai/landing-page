@@ -7,6 +7,7 @@ email: 'marcus@berget.ai'
 tags: ['technology', 'infrastructure']
 image: /images/founders-rack-selfie.png
 imageAlt: 'Server rack with AMD MI300x accelerators in a modern data center'
+language: en
 ---
 
 It's been a busy week, but we're excited to finally share what we've been up to.
