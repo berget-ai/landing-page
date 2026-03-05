@@ -3,7 +3,6 @@ import { Github, Lock, Server, Database } from 'lucide-react'
 import { Button, HeroBlock } from '@berget-ai/ui'
 import { useTranslation } from 'react-i18next'
 import { TerminalCarousel } from '@/components/terminal/TerminalCarousel'
-import { Link } from 'react-router-dom'
 import { ModelsSection } from '@/components/sections/ModelsSection'
 import { Overview } from '@/components/sections/Overview'
 import { Feature } from '@/components/ui/feature-section-with-bento-grid'
@@ -110,7 +109,7 @@ export default function DevelopersPage() {
             </p>
             <div className="flex gap-4 justify-center">
               <Button size="lg" asChild>
-                <Link to={consoleUrl}>{t('DevelopersPage.cta.signup')}</Link>
+                <a href={consoleUrl}>{t('DevelopersPage.cta.signup')}</a>
               </Button>
 
             </div>

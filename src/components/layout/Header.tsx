@@ -72,18 +72,18 @@ export function Header() {
           </Link>
 
           {/* Documentation */}
-          <Link to="https://api.berget.ai" className="text-sm text-white/60 hover:text-white transition-colors">
+          <a href="https://api.berget.ai" className="text-sm text-white/60 hover:text-white transition-colors">
             {t('header.navigation.api')}
-          </Link>
+          </a>
 
           <LanguageSwitcher />
 
           <Button variant="outline" size="sm" asChild>
-            <Link to={consoleUrl}>{t('header.buttons.signIn')}</Link>
+            <a href={consoleUrl}>{t('header.buttons.signIn')}</a>
           </Button>
 
           <Button size="sm" asChild>
-            <Link to={consoleUrl}>{t('header.buttons.getStarted')}</Link>
+            <a href={consoleUrl}>{t('header.buttons.getStarted')}</a>
           </Button>
         </nav>
 
@@ -146,27 +146,27 @@ export function Header() {
                   >
                     {t('header.navigation.pricing')}
                   </Link>
-                  <Link 
-                    to="https://api.berget.ai" 
+                  <a
+                    href="https://api.berget.ai"
                     className="text-2xl text-white hover:text-white/80 transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {t('header.navigation.api')}
-                  </Link>
+                  </a>
                 </div>
               </div>
 
               <div className="pt-4 space-y-4">
                 <LanguageSwitcher />
                 <Button variant="outline" size="lg" className="w-full" asChild>
-                  <Link to={consoleUrl} onClick={() => setIsMenuOpen(false)}>
+                  <a href={consoleUrl} onClick={() => setIsMenuOpen(false)}>
                     {t('header.buttons.signIn')}
-                  </Link>
+                  </a>
                 </Button>
                 <Button size="lg" className="w-full" asChild>
-                  <Link to={consoleUrl} onClick={() => setIsMenuOpen(false)}>
+                  <a href={consoleUrl} onClick={() => setIsMenuOpen(false)}>
                     {t('header.buttons.getStarted')}
-                  </Link>
+                  </a>
                 </Button>
               </div>
             </nav>
