@@ -1,5 +1,4 @@
 import { Button, Section, SectionHeader } from '@berget-ai/ui'
-import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { PricingTiers } from './pricing/PricingTiers'
@@ -21,10 +20,10 @@ export function PricingSection() {
 
       <div className="text-center">
         <Button asChild size="lg">
-          <Link to="/pricing">
+          <a href="/pricing">
             {t('pricing.section.viewPricing')}
             <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-          </Link>
+          </a>
         </Button>
       </div>
     </Section>

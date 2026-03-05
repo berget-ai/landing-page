@@ -1,6 +1,5 @@
 import { Cloud, Server, Cpu, ArrowRight } from 'lucide-react'
 import { FeatureCards, Button, Section, SectionHeader, type FeatureCardProps } from '@berget-ai/ui'
-import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
 type Icon = FeatureCardProps['icon']
@@ -43,10 +42,10 @@ export function ProductFeatures() {
 
       <div className="text-center mt-12">
         <Button asChild size="lg">
-          <Link to="/products">
+          <a href="/products">
             {t('products.hero.exploreMore')}
             <ArrowRight className="ml-2 h-4 w-4" />
-          </Link>
+          </a>
         </Button>
       </div>
     </Section>

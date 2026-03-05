@@ -1,6 +1,5 @@
 import { BlogGrid } from '@berget-ai/ui'
 import type { BlogPost } from '@/types/blog'
-import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
 interface BlogListProps {
@@ -8,7 +7,6 @@ interface BlogListProps {
 }
 
 export function BlogList({ posts }: BlogListProps) {
-  const navigate = useNavigate()
   const { t } = useTranslation()
   const teamMembers = t('about.team.members', { returnObjects: true }) as Record<string, { name: string; email?: string; image?: string }>
 
@@ -32,7 +30,7 @@ export function BlogList({ posts }: BlogListProps) {
     imageAlt: post.imageAlt || post.title,
     language: post.language,
     tags: post.tags,
-    onClick: () => navigate(`/blog/${post.id}`),
+    onClick: () => { window.location.href = `/blog/${post.id}` },
   }))
 
   return <BlogGrid posts={uiPosts} columns={3} />

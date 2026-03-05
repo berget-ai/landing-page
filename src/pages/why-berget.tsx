@@ -3,7 +3,6 @@ import { HeroBlock, Button, Section, SectionHeader, type HeroBlockProps } from '
 import { ComplianceSection } from '@/components/sections/ComplianceSection'
 import { SustainabilitySection } from '@/components/sections/SustainabilitySection'
 import { PartnerQuotes } from '@/components/sections/PartnerQuotes'
-import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { KeyBenefitsSection } from '@/components/sections/KeyBenefitsSection'
 import Features from '@/components/sections/Features'
@@ -25,17 +24,17 @@ function WhyBergetPage() {
         actions={
           <>
             <Button size="lg" asChild>
-              <Link to="/signup">
+              <a href="/signup">
                 {t('whyBerget.hero.getStarted')}
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
+              </a>
             </Button>
             <Button
               size="lg"
               variant="outline"
               asChild
             >
-              <Link to="/contact">{t('whyBerget.hero.bookDemo')}</Link>
+              <a href="/contact">{t('whyBerget.hero.bookDemo')}</a>
             </Button>
           </>
         }
@@ -63,17 +62,17 @@ function WhyBergetPage() {
         />
         <div className="flex flex-wrap gap-4 justify-center">
           <Button size="lg" asChild>
-            <Link to="/signup">
+            <a href="/signup">
               {t('whyBerget.cta.createAccount')}
               <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
+            </a>
           </Button>
           <Button
             size="lg"
             variant="outline"
             asChild
           >
-            <Link to="/contact">{t('whyBerget.cta.contactSales')}</Link>
+            <a href="/contact">{t('whyBerget.cta.contactSales')}</a>
           </Button>
         </div>
       </Section>

@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
 import { Button, Card, Input } from '@berget-ai/ui'
 import { Label } from '@/components/ui/label'
 import { Checkbox } from '@/components/ui/checkbox'
@@ -94,13 +93,13 @@ export default function SignupPage() {
                   />
                   <Label htmlFor="terms" className="text-sm leading-relaxed">
                     I agree to Berget's{' '}
-                    <Link to="/terms" className="text-[#52B788] hover:underline">
+                    <a href="/terms" className="text-[#52B788] hover:underline">
                       Terms of Service
-                    </Link>{' '}
+                    </a>{' '}
                     and{' '}
-                    <Link to="/privacy" className="text-[#52B788] hover:underline">
+                    <a href="/privacy" className="text-[#52B788] hover:underline">
                       Privacy Policy
-                    </Link>
+                    </a>
                   </Label>
                 </div>
 
@@ -114,9 +113,9 @@ export default function SignupPage() {
               {/* Sign In Link */}
               <div className="text-center text-sm text-white/60">
                 Already have an account?{' '}
-                <Link to="/login" className="text-[#52B788] hover:underline">
+                <a href="/login" className="text-[#52B788] hover:underline">
                   Sign in
-                </Link>
+                </a>
               </div>
             </Card>
           </motion.div>

@@ -1,6 +1,5 @@
 import { Shield, Github, ArrowRight, Check, FileCode, Users, Heart } from 'lucide-react'
 import { Card, HeroBlock, Button, type HeroBlockProps } from '@berget-ai/ui'
-import { Link } from 'react-router-dom'
 
 type TaglineIcon = HeroBlockProps['taglineIcon']
 
@@ -173,10 +172,10 @@ export default function OpenSourcePage() {
                 </div>
                 <div className="text-center">
                   <Button size="lg" asChild>
-                    <Link to="/contact">
+                    <a href="/contact">
                       Apply for Open Source Program
                       <ArrowRight className="ml-2 h-5 w-5" />
-                    </Link>
+                    </a>
                   </Button>
                 </div>
               </Card>

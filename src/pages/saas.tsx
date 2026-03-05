@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
 import { Shield, Lock, Database, Server, Bot, ArrowRight, Check } from 'lucide-react'
 import { Button, Card, HeroBlock, Section, SectionHeader } from '@berget-ai/ui'
-import { Link } from 'react-router-dom'
 import { ComplianceSection } from '@/components/sections/ComplianceSection'
 import { PricingTiers } from '@/components/sections/pricing/PricingTiers'
 import { ProductFeatures } from '@/components/sections/ProductFeatures'
@@ -83,13 +82,13 @@ export default function SaaSPage() {
         actions={
           <>
             <Button size="lg" asChild>
-              <Link to="/signup">
+              <a href="/signup">
                 {t('saas.hero.startBuilding')}
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
+              </a>
             </Button>
             <Button size="lg" variant="secondary" asChild>
-              <Link to="/contact">{t('saas.hero.bookDemo')}</Link>
+              <a href="/contact">{t('saas.hero.bookDemo')}</a>
             </Button>
           </>
         }
@@ -177,10 +176,10 @@ export default function SaaSPage() {
 
         <div className="text-center">
           <Button asChild size="lg">
-            <Link to="/signup">
+            <a href="/signup">
               Start Building Now
               <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
+            </a>
           </Button>
         </div>
       </Section>

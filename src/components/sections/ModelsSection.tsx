@@ -2,7 +2,6 @@ import { useMemo } from 'react'
 import { motion } from 'framer-motion'
 import { Bot, ArrowRight, AlertCircle } from 'lucide-react'
 import { Button, Card } from '@berget-ai/ui'
-import { Link } from 'react-router-dom'
 import { useModels } from '@/hooks/use-models'
 import {
   Table,
@@ -47,10 +46,10 @@ export function ModelsSection() {
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-2xl font-ovo">{t('models.title')}</h2>
           <Button asChild variant="ghost" size="sm" className="group">
-            <Link to="/models">
+            <a href="/models">
               {t('models.viewAll')}
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
+            </a>
           </Button>
         </div>
         <p className="text-white/80 mb-6">{t('models.description')}</p>

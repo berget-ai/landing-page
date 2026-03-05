@@ -1,10 +1,8 @@
 import { PricingCards } from '@berget-ai/ui'
 import { useTranslation } from 'react-i18next'
-import { useNavigate } from 'react-router-dom'
 
 export function PricingTiers() {
   const { t } = useTranslation()
-  const navigate = useNavigate()
   const plans = ['payg', 'starter', 'developer', 'enterprise'] as const
 
   const tiers = plans.map((plan) => {
@@ -19,11 +17,7 @@ export function PricingTiers() {
       ctaVariant: (plan === 'enterprise' ? 'secondary' : 'default') as 'secondary' | 'default',
       onCtaClick: () => {
         const link = plan === 'enterprise' ? t('pricing.contactSaleslink') : t('pricing.getStartedlink')
-        if (link.startsWith('http')) {
-          window.location.href = link
-        } else {
-          navigate(link)
-        }
+        window.location.href = link
       },
     }
   })

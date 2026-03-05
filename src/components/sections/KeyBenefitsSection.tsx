@@ -1,15 +1,17 @@
 import { Heart, Leaf, Library } from 'lucide-react'
-import { t } from 'i18next'
+import { useTranslation } from 'react-i18next'
 import { FeatureCards, Section, SectionHeader, type FeatureCardProps } from '@berget-ai/ui'
 
 type Icon = FeatureCardProps['icon']
 
-const getFeatures = (key: string): string[] => {
-  const result = t(key, { returnObjects: true }) as string[] | string
-  return Array.isArray(result) ? result.filter((item): item is string => typeof item === 'string') : []
-}
-
 export function KeyBenefitsSection() {
+  const { t } = useTranslation()
+
+  const getFeatures = (key: string): string[] => {
+    const result = t(key, { returnObjects: true }) as string[] | string
+    return Array.isArray(result) ? result.filter((item): item is string => typeof item === 'string') : []
+  }
+
   return (
     <Section padding="xl" background="muted" className="overflow-hidden">
       <SectionHeader

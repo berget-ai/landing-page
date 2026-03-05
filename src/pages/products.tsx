@@ -14,7 +14,6 @@ import {
   Layers,
 } from 'lucide-react'
 import { Badge, Button, Card, HeroBlock } from '@berget-ai/ui'
-import { Link } from 'react-router-dom'
 import { ModelsSection } from '@/components/sections/ModelsSection'
 import { useTranslation } from 'react-i18next'
 
@@ -467,10 +466,10 @@ export default function ProductsPage() {
                   {t('products.models.description')}
                 </p>
                 <Button className="mt-6" asChild>
-                  <Link to="/contact">
+                  <a href="/contact">
                     {t('products.models.requestModel')}
                     <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
+                  </a>
                 </Button>
               </motion.div>
             </div>
@@ -494,7 +493,7 @@ export default function ProductsPage() {
             </p>
             <div className="flex gap-4 justify-center">
               <Button size="lg" asChild>
-                <Link to="/signup">{t('products.cta.getStarted')}</Link>
+                <a href="/signup">{t('products.cta.getStarted')}</a>
               </Button>
             </div>
           </motion.div>
