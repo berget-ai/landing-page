@@ -57,7 +57,7 @@ async function startServer() {
   app.use(express.static(join(root, isProduction ? 'client' : 'public'), { maxAge: '1d' }))
 
   // Vike SSR handler
-  app.get('*', async (req, res) => {
+  app.get('/{*path}', async (req, res) => {
     const pageContextInit = {
       urlOriginal: req.originalUrl,
       headersOriginal: req.headers,
