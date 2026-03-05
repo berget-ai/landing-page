@@ -1,15 +1,12 @@
 import express from 'express'
 import compression from 'compression'
 import { renderPage } from 'vike/server'
-import { dirname, join } from 'path'
-import { fileURLToPath } from 'url'
-
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
+import { join } from 'path'
 
 const isProduction = process.env.NODE_ENV === 'production'
 const port = parseInt(process.env.PORT || '3000', 10)
-const root = isProduction ? join(__dirname, '..') : process.cwd()
+const root = process.cwd()
+const clientDir = isProduction ? join(root, 'dist/client') : join(root, 'public')
 
 async function startServer() {
   const app = express()
@@ -38,12 +35,12 @@ async function startServer() {
     // Serve static client assets with long-term caching
     app.use(
       '/assets',
-      express.static(join(root, 'client/assets'), {
+      express.static(join(clientDir, 'assets'), {
         maxAge: '1y',
         immutable: true,
       })
     )
-    app.use(express.static(join(root, 'client'), { maxAge: '1h' }))
+    app.use(express.static(clientDir, { maxAge: '1h' }))
   } else {
     const vite = await import('vite')
     const server = await vite.createServer({
@@ -54,7 +51,7 @@ async function startServer() {
   }
 
   // Serve public directory for locales, logos, etc.
-  app.use(express.static(join(root, isProduction ? 'client' : 'public'), { maxAge: '1d' }))
+  app.use(express.static(clientDir, { maxAge: '1d' }))
 
   // Vike SSR handler
   app.get('/{*path}', async (req, res) => {
