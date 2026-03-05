@@ -5,8 +5,7 @@
 // Base URL for the Berget API - constructed dynamically from current domain
 export const getApiUrl = (): string => {
   if (typeof window === 'undefined') {
-    // Server-side rendering fallback
-    return 'http://localhost:3000/v1'
+    return process.env.API_URL || 'https://api.berget.ai/v1'
   }
 
   const hostname = window.location.hostname

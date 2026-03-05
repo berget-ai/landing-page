@@ -20,9 +20,8 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
-    "outDir": "./dist",
-    "rootDir": "./src"
+    "outDir": "./dist"
   },
-  "include": ["src/**/*", "src/pages/blog"],
+  "include": ["src/**/*", "src/pages/blog", "pages/**/*", "server/**/*"],
   "exclude": ["node_modules"]
 }

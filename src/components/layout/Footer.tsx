@@ -1,7 +1,6 @@
 import { Github, Linkedin, Twitter } from 'lucide-react'
 import { Button, BergetSymbol } from '@berget-ai/ui'
 import { useTranslation } from 'react-i18next'
-import { Link } from 'react-router-dom'
 
 const footerLinks = {
   product: [
@@ -73,12 +72,12 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.product.map((link) => (
                 <li key={link.key}>
-                  <Link
-                    to={link.href}
+                  <a
+                    href={link.href}
                     className="text-sm text-white/60 hover:text-white transition-colors"
                   >
                     {link.key === 'models' ? 'Models' : t(`footer.product.${link.key}`)}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -89,12 +88,12 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.key}>
-                  <Link
-                    to={link.href}
+                  <a
+                    href={link.href}
                     className="text-sm text-white/60 hover:text-white transition-colors"
                   >
                     {link.key === 'open-source' ? 'Open Source Program' : t(`footer.company.${link.key}`)}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -105,12 +104,12 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.key}>
-                  <Link
-                    to={link.href}
+                  <a
+                    href={link.href}
                     className="text-sm text-white/60 hover:text-white transition-colors"
                   >
                     {t(`footer.legal.${link.key}`)}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
