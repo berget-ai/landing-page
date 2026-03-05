@@ -1,25 +1,19 @@
-import { useMemo } from 'react'
+import { useState, useEffect } from 'react'
+
+function isStageHostname(hostname: string) {
+  return hostname === 'stage.berget.ai' || hostname === 'localhost' || hostname === '127.0.0.1'
+}
 
 export function useEnvironment() {
-  const isStage = useMemo(() => {
-    if (typeof window === 'undefined') {
-      return false
-    }
-    const hostname = window.location.hostname
-    return hostname === 'stage.berget.ai' || hostname === 'localhost' || hostname === '127.0.0.1'
-  }, [])
+  const [isStage, setIsStage] = useState(false)
+  const [consoleUrl, setConsoleUrl] = useState('https://console.berget.ai')
 
-  const consoleUrl = useMemo(() => {
-    if (typeof window === 'undefined') {
-      return 'https://console.berget.ai'
-    }
-    
+  useEffect(() => {
     const hostname = window.location.hostname
-    if (hostname === 'stage.berget.ai' || hostname === 'localhost' || hostname === '127.0.0.1') {
-      return 'https://console.stage.berget.ai'
+    if (isStageHostname(hostname)) {
+      setIsStage(true)
+      setConsoleUrl('https://console.stage.berget.ai')
     }
-    
-    return 'https://console.berget.ai'
   }, [])
 
   return {
