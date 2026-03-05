@@ -1,20 +1,18 @@
-# Agents
+# AGENTS.md
 
-## Local Development Setup
+## Architecture Overview
 
-This project uses pnpm. To develop against a local checkout of `@berget-ai/ui` (at `../ui`):
+**SSR with Vike** — This is not a SPA. The app uses Vike for server-side rendering with file-system routing in `pages/`. Each route is a subdirectory with `+Page.tsx`. Vike special files (`+Layout.tsx`, `+Wrapper.tsx`, `+onBeforeRoute.ts`, etc.) use the `+` prefix convention. The Express server in `server/index.ts` handles SSR in production.
 
-1. Build the UI package:
-   ```bash
-   cd ../ui && pnpm build
-   ```
-2. Link it locally:
-   ```bash
-   pnpm link ../ui/packages/ui
-   ```
-   This adds a `pnpm.overrides` entry to `package.json` pointing `@berget-ai/ui` to the local path.
-3. Run `pnpm dev` to verify.
+**i18n** — Locale (en/sv) is detected server-side from the `Accept-Language` header in `+onBeforeRoute.ts`, passed through Vike page context, and provided to react-i18next in `+Wrapper.tsx`. Translation files live in `public/locales/{en,sv}/translation.json`.
 
-To revert, remove the `pnpm.overrides` entry from `package.json` and run `pnpm install`.
+## Build & Deploy
 
-**IMPORTANT:** Never commit `package.json` with the local `pnpm.overrides` link. It breaks Docker and CI builds.
+- Merging to `main` triggers GitHub Actions to build and deploy to stage.berget.ai. Production release is triggered manually via the "Release to Product" workflow. Flux CD pulls new Docker images.
+- `src/lib/api.ts` calls the production Berget API in both staging and production.
+
+## @berget-ai/ui
+
+Source in `../ui/packages/ui/`. Uses a brand color palette (moss, lichen, spruce, fjord, peak, cloud, slate, night) and CVA for component variants. Exports CSS via `@berget-ai/ui/styles`.
+
+**Local dev:** `cd ../ui && pnpm build`, then `pnpm link ../ui/packages/ui`. **Never commit `package.json` with the resulting `pnpm.overrides`** — it breaks Docker/CI. Revert by removing the override and running `pnpm install`.
