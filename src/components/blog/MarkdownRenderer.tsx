@@ -85,21 +85,22 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
   const renderedContent = renderWithComponents(processedContent)
 
   return (
-    <div className="prose prose-invert 
+    <div className="prose prose-invert prose-lg
       max-w-none
-      prose-headings:font-medium 
-      prose-h1:text-6xl prose-h1:mb-12 prose-h1:font-normal
-      prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4
-      prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-4
-      prose-p:text-sm prose-p:leading-relaxed prose-p:text-white/80
+      prose-headings:font-medium
+      prose-h1:text-4xl prose-h1:mb-8 prose-h1:font-normal
+      prose-h2:text-3xl prose-h2:mt-14 prose-h2:mb-6
+      prose-h3:text-2xl prose-h3:mt-10 prose-h3:mb-4
+      prose-p:text-base prose-p:leading-7 prose-p:text-white/85
       prose-ul:my-6 prose-ul:list-disc prose-ul:pl-6
       prose-ol:my-6 prose-ol:pl-6
-      prose-li:text-sm prose-li:text-white/80 prose-li:my-2
+      prose-li:text-base prose-li:text-white/85 prose-li:my-2 prose-li:leading-7
       prose-strong:text-white prose-strong:font-medium
       prose-a:text-[#52B788] hover:prose-a:text-[#74C69D] prose-a:no-underline hover:prose-a:underline
-      prose-blockquote:border-l-[#52B788] prose-blockquote:bg-[#2D6A4F]/5 prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:rounded-r-lg
-      prose-code:text-[#52B788] prose-code:bg-[#2D6A4F]/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md
-      prose-pre:bg-[#1A1A1A] prose-pre:border prose-pre:border-white/10"
+      prose-blockquote:border-l-[#52B788] prose-blockquote:bg-[#2D6A4F]/5 prose-blockquote:py-3 prose-blockquote:px-6 prose-blockquote:rounded-r-lg prose-blockquote:text-base prose-blockquote:text-white/80
+      prose-code:text-[#52B788] prose-code:bg-[#2D6A4F]/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md prose-code:text-sm
+      prose-pre:bg-[#1A1A1A] prose-pre:border prose-pre:border-white/10
+      prose-img:rounded-lg prose-img:my-8"
     >
       {renderedContent.map((item, index) => 
         typeof item === 'string' ? (
