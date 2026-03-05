@@ -17,6 +17,6 @@ export default {
     '/blog/digitalist_berget': '/blog/digitalist-berget',
     '/blog/kubernetes_multi_environment_deployments': '/blog/kubernetes-multi-environment-deployments',
     '/blog/kubernetes_secrets_management': '/blog/kubernetes-secrets-management',
-    '/blog/opper_berget%201': '/blog/opper-berget-1',
+    '/blog/opper_berget 1': '/blog/opper-berget-1',
   },
 }
