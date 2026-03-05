@@ -1,5 +1,5 @@
 import { Shield, Github, ArrowRight, Check, FileCode, Users, Heart } from 'lucide-react'
-import { HeroBlock, Button, type HeroBlockProps } from '@berget-ai/ui'
+import { Card, HeroBlock, Button, type HeroBlockProps } from '@berget-ai/ui'
 import { Link } from 'react-router-dom'
 
 type TaglineIcon = HeroBlockProps['taglineIcon']
@@ -24,7 +24,7 @@ export default function OpenSourcePage() {
             <section>
               <h2 className="text-2xl font-ovo mb-6">What we offer</h2>
 
-                <div className="p-6 rounded-xl bg-white/[0.02] border border-[#74C69D]/20">
+                <Card variant="glass" padding="md">
                   <Shield className="w-8 h-8 mb-4 text-[#52B788]" />
                   <h3 className="text-xl font-medium mb-3">Free Resources</h3>
                   <ul className="space-y-3">
@@ -41,14 +41,14 @@ export default function OpenSourcePage() {
                       <span className="text-white/80">Technical support and guidance</span>
                     </li>
                   </ul>
-                </div>
+                </Card>
             </section>
 
             {/* Project Requirements */}
             <section>
               <h2 className="text-2xl font-ovo mb-6">Project Requirements</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="p-6 rounded-xl bg-white/[0.02] border border-[#74C69D]/20">
+                <Card variant="glass" padding="md">
                 <FileCode className="w-8 h-8 mb-4 text-[#52B788]" />
                 <h3 className="text-xl font-medium mb-3">Eligibility Criteria</h3>
                   <ul className="space-y-3">
@@ -69,8 +69,8 @@ export default function OpenSourcePage() {
                       <span className="text-white/80">Clear use case for Berget AI services</span>
                     </li>
                   </ul>
-                </div>
-                <div className="p-6 rounded-xl bg-white/[0.02] border border-[#74C69D]/20">
+                </Card>
+                <Card variant="glass" padding="md">
                   <Github className="w-8 h-8 mb-4 text-[#52B788]" />
                   <h3 className="text-xl font-medium mb-3">100% Open Source</h3>
                   <ul className="space-y-3">
@@ -87,7 +87,7 @@ export default function OpenSourcePage() {
                       <span className="text-white/80">Clear project documentation and purpose</span>
                     </li>
                   </ul>
-                </div>
+                </Card>
               </div>
 
             </section>
@@ -97,7 +97,7 @@ export default function OpenSourcePage() {
               <h2 className="text-2xl font-ovo mb-6">Benefits & Growth</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Benefits */}
-                <div className="p-6 rounded-xl bg-white/[0.02] border border-[#74C69D]/20">
+                <Card variant="glass" padding="md">
                   <h3 className="text-xl font-medium mb-4">Program Benefits</h3>
                   <ul className="space-y-3">
                     <li className="flex items-start gap-3">
@@ -117,10 +117,10 @@ export default function OpenSourcePage() {
                       <span className="text-white/80">Technical collaboration opportunities</span>
                     </li>
                   </ul>
-                </div>
+                </Card>
 
                 {/* Growth */}
-                <div className="p-6 rounded-xl bg-white/[0.02] border border-[#74C69D]/20">
+                <Card variant="glass" padding="md">
                   <h3 className="text-xl font-medium mb-4">Growth & Scaling</h3>
                   <p className="text-white/80 mb-4">
                     As your project grows, we grow with you. Projects that evolve into products can benefit from:
@@ -139,14 +139,14 @@ export default function OpenSourcePage() {
                       <span className="text-white/80">Community-based pricing models</span>
                     </li>
                   </ul>
-                </div>
+                </Card>
               </div>
             </section>
 
             {/* Application Process */}
             <section>
               <h2 className="text-2xl font-ovo mb-6">Application Process</h2>
-              <div className="p-6 rounded-xl bg-white/[0.02] border border-[#74C69D]/20">
+              <Card variant="glass" padding="md">
                 <Users className="w-8 h-8 mb-4 text-[#52B788]" />
                 <h3 className="text-xl font-medium mb-4">How to Apply</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
@@ -179,7 +179,7 @@ export default function OpenSourcePage() {
                     </Link>
                   </Button>
                 </div>
-              </div>
+              </Card>
             </section>
           </div>
         </div>

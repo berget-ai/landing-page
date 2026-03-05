@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import { motion } from 'framer-motion'
 import { Bot, ArrowRight, AlertCircle } from 'lucide-react'
-import { Button } from '@berget-ai/ui'
+import { Button, Card } from '@berget-ai/ui'
 import { Link } from 'react-router-dom'
 import { useModels } from '@/hooks/use-models'
 import {
@@ -39,10 +39,8 @@ export function ModelsSection() {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="relative group"
     >
-      <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-[#52B788]/5 via-[#74C69D]/5 to-[#FFB700]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      <div className="relative p-8 rounded-3xl border border-[#74C69D]/20 h-full">
+      <Card variant="highlight" padding="lg" className="h-full">
         <div className="w-12 h-12 rounded-2xl bg-muted flex items-center justify-center mb-6">
           <Bot className="w-6 h-6" />
         </div>
@@ -146,7 +144,7 @@ export function ModelsSection() {
             </Table>
           )}
         </div>
-      </div>
+      </Card>
     </motion.div>
   )
 }

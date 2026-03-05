@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { ArrowRight } from 'lucide-react'
-import { HeroBlock, Section, SectionHeader } from '@berget-ai/ui'
+import { Card, HeroBlock, Section, SectionHeader } from '@berget-ai/ui'
 
 export default function AboutPage() {
   const { t } = useTranslation()
@@ -77,34 +77,28 @@ export default function AboutPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {['christian', 'andreas', 'john', 'johan','sara', 'oscar'].map((member) => (
-                <div
-                  key={member}
-                  className="relative group"
-                >
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-[#2D6A4F]/5 to-transparent group-hover:from-[#2D6A4F]/10 transition-colors" />
-                  <div className="relative p-6 rounded-2xl border border-[#40916C]/20 group-hover:border-[#40916C]/30 transition-colors">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-16 h-16 rounded-full overflow-hidden bg-[#2D6A4F]/10">
-                        <img
-                          src={t(`about.team.members.${member}.image`)}
-                          alt={t(`about.team.members.${member}.name`)}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-medium">
-                          {t(`about.team.members.${member}.name`)}
-                        </h3>
-                        <p className="text-white/60">
-                          {t(`about.team.members.${member}.role`)}
-                        </p>
-                      </div>
+                <Card key={member} variant="highlight" padding="md">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-16 h-16 rounded-full overflow-hidden bg-muted">
+                      <img
+                        src={t(`about.team.members.${member}.image`)}
+                        alt={t(`about.team.members.${member}.name`)}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
-                    <p className="text-white/80 text-sm leading-relaxed">
-                      {t(`about.team.members.${member}.bio`)}
-                    </p>
+                    <div>
+                      <h3 className="text-xl font-medium">
+                        {t(`about.team.members.${member}.name`)}
+                      </h3>
+                      <p className="text-white/60">
+                        {t(`about.team.members.${member}.role`)}
+                      </p>
+                    </div>
                   </div>
-                </div>
+                  <p className="text-white/80 text-sm leading-relaxed">
+                    {t(`about.team.members.${member}.bio`)}
+                  </p>
+                </Card>
               ))}
             </div>
         </div>

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Shield, Lock, Database, Server, Bot, ArrowRight, Check } from 'lucide-react'
-import { Button, HeroBlock, Section, SectionHeader } from '@berget-ai/ui'
+import { Button, Card, HeroBlock, Section, SectionHeader } from '@berget-ai/ui'
 import { Link } from 'react-router-dom'
 import { ComplianceSection } from '@/components/sections/ComplianceSection'
 import { PricingTiers } from '@/components/sections/pricing/PricingTiers'
@@ -105,12 +105,10 @@ export default function SaaSPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="relative group"
               >
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-[#2D6A4F]/5 to-transparent group-hover:from-[#2D6A4F]/10 transition-colors" />
-                <div className="relative p-8 rounded-3xl border border-[#40916C]/20 group-hover:border-[#40916C]/30 transition-colors">
+                <Card variant="highlight" padding="lg">
                   <div className="flex gap-6">
-                    <div className="w-12 h-12 rounded-xl bg-[#2D6A4F]/10 flex items-center justify-center shrink-0">
+                    <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center shrink-0">
                       <item.icon className="w-6 h-6" />
                     </div>
                     <div>
@@ -118,7 +116,7 @@ export default function SaaSPage() {
                       <p className="text-white/60">{item.answer}</p>
                     </div>
                   </div>
-                </div>
+                </Card>
               </motion.div>
             ))}
         </div>
@@ -142,18 +140,19 @@ export default function SaaSPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="p-6 rounded-xl bg-[#2D6A4F]/5 border border-[#40916C]/20 hover:bg-[#2D6A4F]/10 transition-colors"
               >
-                <h3 className="text-xl font-medium mb-3">{benefit.title}</h3>
-                <p className="text-white/60 mb-6">{benefit.description}</p>
-                <ul className="space-y-3">
-                  {benefit.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-3">
-                      <Check className="w-5 h-5 text-[#FFB700]" />
-                      <span className="text-sm">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+                <Card variant="highlight" padding="md">
+                  <h3 className="text-xl font-medium mb-3">{benefit.title}</h3>
+                  <p className="text-white/60 mb-6">{benefit.description}</p>
+                  <ul className="space-y-3">
+                    {benefit.features.map((feature) => (
+                      <li key={feature} className="flex items-center gap-3">
+                        <Check className="w-5 h-5 text-[#FFB700]" />
+                        <span className="text-sm">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </Card>
               </motion.div>
             ))}
           </div>

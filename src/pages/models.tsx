@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Filter, ExternalLink, AlertCircle, Euro } from 'lucide-react'
-import { Alert, AlertDescription, Button } from '@berget-ai/ui'
+import { Alert, AlertDescription, Button, Card } from '@berget-ai/ui'
 import { useModels } from '@/hooks/use-models'
 
 export default function ModelsPage() {
@@ -91,9 +91,10 @@ export default function ModelsPage() {
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
               {filteredModels.map((model) => {
                 return (
-                  <div
+                  <Card
                     key={model.name}
-                    className="p-6 rounded-xl bg-white/[0.02] backdrop-blur-sm border border-white/10 hover:bg-white/[0.04] transition-colors"
+                    variant="glass"
+                    padding="md"
                   >
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center gap-2">
@@ -171,7 +172,7 @@ export default function ModelsPage() {
                         </div>
                       </div>
                     )}
-                  </div>
+                  </Card>
                 )
               })}
             </div>
