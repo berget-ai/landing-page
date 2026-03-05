@@ -102,7 +102,8 @@ We see no reason whatsoever to transfer data outside of the EEA, but in the case
 
 If you believe we have violated GDPR, you can contact us at gdpr@berget.ai to resolve the issue.
 
-File a complaint with your local **Data Protection Authority (DPA)**, datainspektionen@datainspektionen.se  
+File a complaint with your local **Data Protection Authority (DPA)**, Integritetsskyddsmyndigheten (IMY)
+Email: imy@imy.se
 Phone: \+46(0)‭8-657 61 00
 
 ## 12\. Changes to This Policy
