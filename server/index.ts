@@ -36,7 +36,7 @@ async function startServer() {
         immutable: true,
       })
     )
-    app.use(express.static(clientDir, { maxAge: '1h' }))
+    app.use(express.static(clientDir, { maxAge: '1h', redirect: false }))
   } else {
     const vite = await import('vite')
     const server = await vite.createServer({
@@ -45,9 +45,6 @@ async function startServer() {
     })
     app.use(server.middlewares)
   }
-
-  // Serve public directory for locales, logos, etc.
-  app.use(express.static(clientDir, { maxAge: '1d' }))
 
   // Vike SSR handler
   app.get('/{*path}', async (req, res) => {

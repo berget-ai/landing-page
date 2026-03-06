@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { motion } from 'motion/react'
 import { BlogList } from '@/components/blog/BlogList'
 import { Input } from '@berget-ai/ui'
@@ -12,76 +12,62 @@ const postModules = import.meta.glob('./posts/**/*.md', {
   import: 'default'
 })
 
+function parseYamlMetadata(yaml: string) {
+  const metadata: Record<string, any> = {}
+  const lines = yaml.split('\n')
+
+  lines.forEach((line) => {
+    const match = line.match(/^(\w+):\s*(.+)$/)
+    if (match) {
+      const [_, key, value] = match
+      if (key === 'tags') {
+        metadata[key] = value
+          .trim()
+          .replace(/^\[|\]$/g, '')
+          .split(',')
+          .map(t => t.trim())
+          .filter(Boolean)
+      } else {
+        metadata[key] = value.trim().replace(/^["']|["']$/g, '')
+      }
+    }
+  })
+
+  return metadata
+}
+
+// Parse posts at module scope so they're available during SSR/prerender
+const allPosts: BlogPost[] = Object.entries(postModules)
+  .filter(([path]) => !path.includes('/arguments/'))
+  .map(([path, content]: [string, string]) => {
+    const fileName = path.split('/').pop()?.replace('.md', '') || ''
+    const id = fileName
+
+    const metadataMatch = content.match(/^---\n([\s\S]*?)\n---\n/)
+    const metadata = metadataMatch
+      ? parseYamlMetadata(metadataMatch[1])
+      : {}
+
+    return {
+      id,
+      title: metadata.title || '',
+      description: metadata.description || '',
+      date: metadata.date || '',
+      author: metadata.author || 'Berget Team',
+      email: metadata.email || '',
+      content: content.replace(/^---\n[\s\S]*?\n---\n/, ''),
+      tags: metadata.tags || [],
+      image: metadata.image || '',
+      imageAlt: metadata.imageAlt || '',
+      language: metadata.language === 'en' ? 'en' : 'sv' as 'en' | 'sv'
+    }
+  })
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+
 export default function BlogPage() {
-  const [posts, setPosts] = useState<BlogPost[]>([])
   const [searchTerm, setSearchTerm] = useState('')
 
-  useEffect(() => {
-    const loadPosts = async () => {
-      // Filter out argument files
-      const blogPosts = Object.entries(postModules)
-        .filter(([path]) => !path.includes('/arguments/'))
-        .map(([path, content]: [string, string]) => {
-          const fileName = path.split('/').pop()?.replace('.md', '') || ''
-          const id = fileName
-
-          // Extract metadata from frontmatter
-          const metadataMatch = content.match(/^---\n([\s\S]*?)\n---\n/)
-          const metadata = metadataMatch
-            ? parseYamlMetadata(metadataMatch[1])
-            : {}
-
-          return {
-            id,
-            title: metadata.title || '',
-            description: metadata.description || '',
-            date: metadata.date || '',
-            author: metadata.author || 'Berget Team',
-            email: metadata.email || '',
-            content: content.replace(/^---\n[\s\S]*?\n---\n/, ''), // Remove frontmatter
-            tags: metadata.tags || [],
-            image: metadata.image || '',
-            imageAlt: metadata.imageAlt || '',
-            language: metadata.language === 'en' ? 'en' : 'sv' as 'en' | 'sv'
-          }
-        })
-
-      // Sort by date descending
-      const sortedPosts = blogPosts.sort(
-        (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-      )
-
-      setPosts(sortedPosts)
-    }
-
-    loadPosts()
-  }, [])
-
-  const parseYamlMetadata = (yaml: string) => {
-    const metadata: Record<string, any> = {}
-    const lines = yaml.split('\n')
-
-    lines.forEach((line) => {
-      const match = line.match(/^(\w+):\s*(.+)$/)
-      if (match) {
-        const [_, key, value] = match
-        if (key === 'tags') {
-          metadata[key] = value
-            .trim()
-            .replace(/^\[|\]$/g, '')
-            .split(',')
-            .map(t => t.trim())
-            .filter(Boolean)
-        } else {
-          metadata[key] = value.trim().replace(/^["']|["']$/g, '')
-        }
-      }
-    })
-
-    return metadata
-  }
-
-  const filteredPosts = posts.filter(post => {
+  const filteredPosts = allPosts.filter(post => {
     const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          post.description.toLowerCase().includes(searchTerm.toLowerCase())
     return matchesSearch
