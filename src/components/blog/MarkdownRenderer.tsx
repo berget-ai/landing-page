@@ -1,42 +1,16 @@
-import { useMemo, useState, useEffect } from 'react'
-import MarkdownIt from 'markdown-it'
-import { fromHighlighter } from '@shikijs/markdown-it/core'
+import { useMemo } from 'react'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+import rehypeRaw from 'rehype-raw'
+import { CodeBlock } from '@berget-ai/ui'
+// Eagerly import getHighlighter so Vite traces and bundles the Shiki WASM engine
+// and language grammars. CodeBlock calls this internally but its dynamic import()
+// calls live inside a pre-bundled dependency that Vite can't trace on its own.
 import { getHighlighter } from '@berget-ai/ui/shiki'
-
-// Base markdown-it instance (no highlighting, used for initial render)
-const baseMd = new MarkdownIt({
-  html: true,
-  linkify: true,
-  typographer: true,
-})
+getHighlighter() // warm the singleton cache
 
 interface MarkdownRendererProps {
   content: string
-}
-
-// Singleton promise so we only init Shiki markdown-it once
-let shikiMdPromise: Promise<MarkdownIt> | null = null
-
-function getShikiMd(): Promise<MarkdownIt> {
-  if (!shikiMdPromise) {
-    shikiMdPromise = getHighlighter().then((highlighter) => {
-      const md = new MarkdownIt({
-        html: true,
-        linkify: true,
-        typographer: true,
-      })
-
-      md.use(
-        fromHighlighter(highlighter, {
-          theme: 'berget',
-          defaultLanguage: 'text',
-        })
-      )
-
-      return md
-    })
-  }
-  return shikiMdPromise
 }
 
 function preprocessLLMPrompts(markdown: string): string {
@@ -55,17 +29,20 @@ function preprocessLLMPrompts(markdown: string): string {
   )
 }
 
+const components = {
+  code({ className, children, ...props }: React.ComponentProps<'code'>) {
+    const match = /language-(\w+)/.exec(className || '')
+    const isInline = !match && !String(children).includes('\n')
+    if (isInline) return <code className={className} {...props}>{children}</code>
+    return <CodeBlock code={String(children).replace(/\n$/, '')} language={match?.[1]} />
+  },
+  pre({ children }: React.ComponentProps<'pre'>) {
+    return <>{children}</>
+  },
+}
+
 export function MarkdownRenderer({ content }: MarkdownRendererProps) {
-  const [md, setMd] = useState<MarkdownIt>(baseMd)
-
-  useEffect(() => {
-    getShikiMd().then(setMd)
-  }, [])
-
-  const html = useMemo(() => {
-    const processed = preprocessLLMPrompts(content)
-    return md.render(processed)
-  }, [content, md])
+  const processed = useMemo(() => preprocessLLMPrompts(content), [content])
 
   return (
     <div
@@ -83,18 +60,18 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
         prose-a:text-moss hover:prose-a:text-lichen prose-a:no-underline hover:prose-a:underline
         prose-blockquote:border-l-moss prose-blockquote:bg-spruce/5 prose-blockquote:py-3 prose-blockquote:px-6 prose-blockquote:rounded-r-lg prose-blockquote:text-base prose-blockquote:text-white/80
         prose-code:text-moss prose-code:bg-spruce/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md prose-code:text-sm
-        prose-pre:bg-slate prose-pre:border prose-pre:border-white/10 prose-pre:p-0
+        [&_.shiki_code]:bg-transparent [&_.shiki_code]:p-0 [&_.shiki_code]:rounded-none [&_.shiki_code]:text-inherit
         prose-img:rounded-lg prose-img:my-8
-        [&_pre_code]:bg-transparent [&_pre_code]:p-0 [&_pre_code]:text-inherit
-        [&_.shiki]:p-4 [&_.shiki]:overflow-x-auto [&_.shiki]:text-sm [&_.shiki]:leading-relaxed
         [&_.llm-prompt]:my-6 [&_.llm-prompt]:border [&_.llm-prompt]:border-moss/30 [&_.llm-prompt]:rounded-lg [&_.llm-prompt]:bg-gradient-to-r [&_.llm-prompt]:from-moss/5 [&_.llm-prompt]:to-lichen/5 [&_.llm-prompt]:overflow-hidden
         [&_.llm-prompt_summary]:cursor-pointer [&_.llm-prompt_summary]:p-4 [&_.llm-prompt_summary]:font-medium [&_.llm-prompt_summary]:text-white [&_.llm-prompt_summary]:list-none [&_.llm-prompt_summary]:hover:bg-white/5 [&_.llm-prompt_summary]:transition-colors [&_.llm-prompt_summary]:flex [&_.llm-prompt_summary]:items-center [&_.llm-prompt_summary]:justify-between
         [&_.llm-prompt_summary::-webkit-details-marker]:hidden
         [&_.llm-prompt[open]_summary]:border-b [&_.llm-prompt[open]_summary]:border-moss/20
         [&_.llm-prompt_summary_.chevron]:transition-transform [&_.llm-prompt_summary_.chevron]:duration-200 [&_.llm-prompt_summary_.chevron]:text-white/60
-        [&_.llm-prompt[open]_summary_.chevron]:rotate-180
-        [&_.llm-prompt_pre]:my-0 [&_.llm-prompt_pre]:border-0 [&_.llm-prompt_pre]:rounded-none [&_.llm-prompt_pre]:rounded-b-lg"
-      dangerouslySetInnerHTML={{ __html: html }}
-    />
+        [&_.llm-prompt[open]_summary_.chevron]:rotate-180"
+    >
+      <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} components={components}>
+        {processed}
+      </ReactMarkdown>
+    </div>
   )
 }
