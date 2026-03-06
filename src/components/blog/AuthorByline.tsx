@@ -58,7 +58,7 @@ export function AuthorByline({ email, name, date, size = 'md' }: AuthorBylinePro
         <div className={`flex items-center gap-2 ${dateSize} text-white/60`}>
           <Calendar className="w-4 h-4" />
           <time dateTime={date}>
-            {new Date(date).toLocaleDateString()}
+            {new Date(date).toLocaleDateString('en-GB', { year: 'numeric', month: 'short', day: 'numeric' })}
           </time>
         </div>
         {author?.social && (
