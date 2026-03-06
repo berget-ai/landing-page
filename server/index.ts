@@ -13,16 +13,12 @@ async function startServer() {
 
   app.use(compression())
 
-  // Security headers
+  // Security headers (CSP is managed by nginx ingress configmap per environment)
   app.use((_req, res, next) => {
     res.setHeader('X-Frame-Options', 'SAMEORIGIN')
     res.setHeader('X-Content-Type-Options', 'nosniff')
     res.setHeader('X-XSS-Protection', '1; mode=block')
     res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin')
-    res.setHeader(
-      'Content-Security-Policy',
-      "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://api.berget.ai https://api.stage.berget.ai; frame-ancestors 'self';"
-    )
     next()
   })
 

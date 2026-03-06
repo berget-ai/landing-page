@@ -43,7 +43,7 @@ function preprocessLLMPrompts(markdown: string): string {
 }
 
 const components = {
-  code({ className, children, ...props }: any) {
+  code({ className, children, node, ...props }: any) {
     const match = /language-(\w+)/.exec(className || '')
     const isInline = !match && !String(children).includes('\n')
     if (isInline) return <code className={className} {...props}>{children}</code>
