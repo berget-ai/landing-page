@@ -8,7 +8,7 @@ patchesStrategicMerge:
   - ingress-patch.yaml
 images:
   - name: ghcr.io/berget-ai/landing-page
-    newTag: '1.3.122' # {"$imagepolicy": "flux-system:landingpage:tag"}
+    newTag: '1.3.123' # {"$imagepolicy": "flux-system:landingpage:tag"}
 labels:
   - pairs:
       environment: production
