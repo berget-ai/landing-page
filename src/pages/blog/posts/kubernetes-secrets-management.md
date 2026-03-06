@@ -87,8 +87,7 @@ Important: All Kubernetes manifests should go in the /k8s directory and use Flux
 
 ### Installing Sealed Secrets
 
-```yaml
-# k8s/sealed-secrets.yaml
+```yaml title="k8s/sealed-secrets.yaml"
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
@@ -145,8 +144,7 @@ rm .env.production
 
 The result is a SealedSecret that's safe to commit:
 
-```yaml
-# k8s/secrets/app-secrets-sealed.yaml
+```yaml title="k8s/secrets/app-secrets-sealed.yaml"
 apiVersion: bitnami.com/v1alpha1
 kind: SealedSecret
 metadata:
@@ -165,8 +163,7 @@ spec:
 
 ### Using Encrypted Secrets in Deployments
 
-```yaml
-# k8s/deployment.yaml
+```yaml title="k8s/deployment.yaml"
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -250,8 +247,7 @@ Important: All Kubernetes manifests should go in the /k8s directory and use Flux
 
 ### Installing Vault with FluxCD
 
-```yaml
-# k8s/vault-namespace.yaml
+```yaml title="k8s/vault-namespace.yaml"
 apiVersion: v1
 kind: Namespace
 metadata:
@@ -303,8 +299,7 @@ spec:
 
 ### Vault Secrets Operator
 
-```yaml
-# k8s/vault-secrets-operator.yaml
+```yaml title="k8s/vault-secrets-operator.yaml"
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
@@ -328,8 +323,7 @@ spec:
 
 ### Using Vault Secrets in Applications
 
-```yaml
-# k8s/vault-secret.yaml
+```yaml title="k8s/vault-secret.yaml"
 apiVersion: secrets.hashicorp.com/v1beta1
 kind: VaultStaticSecret
 metadata:
@@ -395,8 +389,7 @@ kubectl create secret generic app-secrets \
 
 ### 1. Principle of Least Privilege
 
-```yaml
-# k8s/rbac.yaml
+```yaml title="k8s/rbac.yaml"
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
@@ -424,8 +417,7 @@ roleRef:
 
 Automate secret rotation with CronJobs:
 
-```yaml
-# k8s/secret-rotation.yaml
+```yaml title="k8s/secret-rotation.yaml"
 apiVersion: batch/v1
 kind: CronJob
 metadata:
@@ -451,8 +443,7 @@ spec:
 
 Monitor secret access:
 
-```yaml
-# k8s/secret-monitoring.yaml
+```yaml title="k8s/secret-monitoring.yaml"
 apiVersion: monitoring.coreos.com/v1
 kind: PrometheusRule
 metadata:

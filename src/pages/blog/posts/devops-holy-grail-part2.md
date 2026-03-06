@@ -83,8 +83,7 @@ Important: All Kubernetes manifests should go in the /k8s directory and use Flux
 
 ### Installing cert-manager
 
-```yaml
-# k8s/cert-manager-namespace.yaml
+```yaml title="k8s/cert-manager-namespace.yaml"
 apiVersion: v1
 kind: Namespace
 metadata:
@@ -125,8 +124,7 @@ spec:
 
 ### Creating a Certificate Issuer
 
-```yaml
-# k8s/cluster-issuer.yaml
+```yaml title="k8s/cluster-issuer.yaml"
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
@@ -157,8 +155,7 @@ spec:
 
 ### Using Certificates in Ingress
 
-```yaml
-# k8s/ingress.yaml
+```yaml title="k8s/ingress.yaml"
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -201,8 +198,7 @@ cert-manager handles the entire certificate lifecycle:
 
 ### Monitoring Certificate Health
 
-```yaml
-# k8s/certificate-monitoring.yaml
+```yaml title="k8s/certificate-monitoring.yaml"
 apiVersion: monitoring.coreos.com/v1
 kind: PrometheusRule
 metadata:
@@ -289,8 +285,7 @@ Important: All Kubernetes manifests should go in the /k8s directory and use Flux
 
 ### Installing external-dns
 
-```yaml
-# k8s/external-dns-namespace.yaml
+```yaml title="k8s/external-dns-namespace.yaml"
 apiVersion: v1
 kind: Namespace
 metadata:
@@ -341,8 +336,8 @@ spec:
 
 ### Creating DNS Provider Secrets
 
-```yaml
-# k8s/cloudflare-secret.yaml (encrypted with sealed-secrets)
+```yaml title="k8s/cloudflare-secret.yaml"
+# encrypted with sealed-secrets
 apiVersion: bitnami.com/v1alpha1
 kind: SealedSecret
 metadata:
@@ -359,8 +354,7 @@ spec:
 
 ### Using DNS Automation in Ingress
 
-```yaml
-# k8s/ingress-with-dns.yaml
+```yaml title="k8s/ingress-with-dns.yaml"
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -435,8 +429,7 @@ values:
 
 When you combine cert-manager and external-dns, deploying a new service becomes trivial:
 
-```yaml
-# k8s/new-service.yaml
+```yaml title="k8s/new-service.yaml"
 apiVersion: apps/v1
 kind: Deployment
 metadata:

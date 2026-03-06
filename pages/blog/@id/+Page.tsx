@@ -1,5 +1,4 @@
 import { usePageContext } from 'vike-react/usePageContext'
-import { useEffect, useState } from 'react'
 import { motion } from 'motion/react'
 import { ArrowLeft } from 'lucide-react'
 import { Button } from '@berget-ai/ui'
@@ -55,38 +54,38 @@ function LoadingPlaceholder() {
   )
 }
 
+function getPost(id: string | undefined): BlogPost | null {
+  if (!id) return null
+  const postPath = Object.keys(postModules).find((path) =>
+    path.includes(`/${id}.md`)
+  )
+  if (!postPath || !postModules[postPath]) return null
+
+  const content = postModules[postPath] as string
+  const metadataMatch = content.match(/^---\n([\s\S]*?)\n---\n/)
+  const metadata = metadataMatch ? parseYamlMetadata(metadataMatch[1]) : {}
+  const markdownContent = content.replace(/^---\n[\s\S]*?\n---\n/, '')
+  const language = metadata.language === 'en' ? ('en' as const) : ('sv' as const)
+
+  return {
+    id,
+    title: metadata.title || '',
+    description: metadata.description || '',
+    date: metadata.date || '',
+    author: metadata.author || 'Berget Team',
+    email: metadata.email || '',
+    content: markdownContent,
+    tags: metadata.tags || [],
+    image: metadata.image || '',
+    imageAlt: metadata.imageAlt || '',
+    language,
+  }
+}
+
 export default function Page() {
   const pageContext = usePageContext()
   const id = pageContext.routeParams?.id
-  const [post, setPost] = useState<BlogPost | null>(null)
-
-  useEffect(() => {
-    const postPath = Object.keys(postModules).find((path) =>
-      path.includes(`/${id}.md`)
-    )
-
-    if (!postPath || !postModules[postPath]) return
-
-    const content = postModules[postPath] as string
-    const metadataMatch = content.match(/^---\n([\s\S]*?)\n---\n/)
-    const metadata = metadataMatch ? parseYamlMetadata(metadataMatch[1]) : {}
-    const markdownContent = content.replace(/^---\n[\s\S]*?\n---\n/, '')
-    const language = metadata.language === 'en' ? ('en' as const) : ('sv' as const)
-
-    setPost({
-      id: id || '',
-      title: metadata.title || '',
-      description: metadata.description || '',
-      date: metadata.date || '',
-      author: metadata.author || 'Berget Team',
-      email: metadata.email || '',
-      content: markdownContent,
-      tags: metadata.tags || [],
-      image: metadata.image || '',
-      imageAlt: metadata.imageAlt || '',
-      language,
-    })
-  }, [id])
+  const post = getPost(id)
 
   if (!post) return <LoadingPlaceholder />
 

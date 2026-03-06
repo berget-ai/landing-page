@@ -2,12 +2,25 @@ import { useMemo } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
+import { visit } from 'unist-util-visit'
 import { CodeBlock } from '@berget-ai/ui'
 // Eagerly import getHighlighter so Vite traces and bundles the Shiki WASM engine
 // and language grammars. CodeBlock calls this internally but its dynamic import()
 // calls live inside a pre-bundled dependency that Vite can't trace on its own.
 import { getHighlighter } from '@berget-ai/ui/shiki'
 getHighlighter() // warm the singleton cache
+
+function remarkCodeMeta() {
+  return (tree: any) => {
+    visit(tree, 'code', (node: any) => {
+      if (node.meta) {
+        node.data = node.data || {}
+        node.data.hProperties = node.data.hProperties || {}
+        node.data.hProperties['data-meta'] = node.meta
+      }
+    })
+  }
+}
 
 interface MarkdownRendererProps {
   content: string
@@ -30,11 +43,21 @@ function preprocessLLMPrompts(markdown: string): string {
 }
 
 const components = {
-  code({ className, children, ...props }: React.ComponentProps<'code'>) {
+  code({ className, children, ...props }: any) {
     const match = /language-(\w+)/.exec(className || '')
     const isInline = !match && !String(children).includes('\n')
     if (isInline) return <code className={className} {...props}>{children}</code>
-    return <CodeBlock code={String(children).replace(/\n$/, '')} language={match?.[1]} />
+
+    const meta = props['data-meta'] || ''
+    const titleMatch = /title="([^"]*)"/.exec(meta)
+
+    return (
+      <CodeBlock
+        code={String(children).replace(/\n$/, '')}
+        language={match?.[1]}
+        title={titleMatch?.[1]}
+      />
+    )
   },
   pre({ children }: React.ComponentProps<'pre'>) {
     return <>{children}</>
@@ -69,7 +92,7 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
         [&_.llm-prompt_summary_.chevron]:transition-transform [&_.llm-prompt_summary_.chevron]:duration-200 [&_.llm-prompt_summary_.chevron]:text-white/60
         [&_.llm-prompt[open]_summary_.chevron]:rotate-180"
     >
-      <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} components={components}>
+      <ReactMarkdown remarkPlugins={[remarkGfm, remarkCodeMeta]} rehypePlugins={[rehypeRaw]} components={components}>
         {processed}
       </ReactMarkdown>
     </div>

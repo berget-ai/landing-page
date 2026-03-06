@@ -239,8 +239,7 @@ Then create Kubernetes Horizontal Pod Autoscaler (HPA) configuration for my prod
 Important: All manifests should be placed in the /k8s directory for FluxCD GitOps deployment.
 </LLMPrompt>
 
-```yaml
-# k8s/hpa.yaml
+```yaml title="k8s/hpa.yaml"
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
