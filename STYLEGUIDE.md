@@ -1,10 +1,12 @@
-# Style Guide
+# Style guide
 
-Writing guidelines for berget.ai marketing copy, landing pages, and blog posts.
+Rules for all Berget AI marketing copy, landing pages, and blog posts.
 
-## Language
+## 1. Language
 
-Use **British English** for all English copy. This aligns with our European positioning.
+All copy MUST exist in both Swedish and British English.
+
+USE British English for all English copy:
 
 - colour, not color
 - organisation, not organization
@@ -12,95 +14,61 @@ Use **British English** for all English copy. This aligns with our European posi
 - licence (noun), license (verb)
 - favour, not favor
 
-When in doubt, defer to the Oxford English Dictionary.
+Fallback: defer to the Oxford English Dictionary.
 
-## Brand name
+## 2. Capitalisation
 
-Write **Berget AI** in full where space allows. In space-constrained contexts (navigation labels, tabs, badges), "Berget" on its own is acceptable. Never use "berget", "Berget.ai", or "BERGET".
+USE sentence case for ALL of the following: headings, page titles, section titles, CTAs, navigation labels, UI labels, table headers, status badges, model type filters.
 
-- Correct: "Berget AI provides sovereign infrastructure."
-- Correct: "Why Berget" (navigation label)
-- Incorrect: "berget provides sovereign infrastructure."
+- CORRECT: "Available models", "Text generation", "Coming soon"
+- WRONG: "Available Models", "Text Generation", "Coming Soon"
 
-## Capitalisation
+Exceptions that keep their own casing:
 
-Use **sentence case** everywhere — headings, page titles, section titles, CTAs, navigation labels, UI labels, table headers, status badges, and model type filters. This applies to both English and Swedish.
+- Proper nouns and brand names (Berget AI, Kubernetes, GitHub)
+- Abbreviations and acronyms (API, GPU, LLM, GDPR, NIS2, CI/CD)
+- Product names — use Title Case: Serverless Inference, Dedicated Inference, Berget Code
+- Legal document names — use Title Case: Data Privacy, Acceptable Use, Service Level Agreement, Responsible Disclosure
 
-- Correct: "Available models", "Text generation", "Coming soon"
-- Incorrect: "Available Models", "Text Generation", "Coming Soon"
+## 3. Brand name
 
-Proper nouns, brand names, and abbreviations remain capitalised as normal.
+DEFAULT to "Berget AI" in running text.
 
-- "Kubernetes without the complexity"
-- "GDPR compliance made simple"
-- "Getting started with Berget AI"
+Use "Berget" alone ONLY in navigation labels, tabs, badges, or other UI elements with a hard character limit (roughly ≤15 characters).
 
-### Exceptions
+- CORRECT: "Berget AI provides sovereign infrastructure."
+- CORRECT: "Why Berget" (navigation label)
+- WRONG: "Berget provides sovereign infrastructure." (running text)
 
-**Product tier names** are named products and use Title Case:
+## 4. Punctuation
 
-- **Serverless Inference**
-- **Dedicated Inference**
-- **Berget AI Platform**
+| Rule         | Do                                                            | Don't                                |
+| ------------ | ------------------------------------------------------------- | ------------------------------------ |
+| Oxford comma | "Sovereign, open, and sustainable AI"                         | "Sovereign, open and sustainable AI" |
+| Ampersands   | "Security and privacy"                                        | "Security & Privacy"                 |
+| Headlines    | No trailing full stop. Question marks and colons are allowed. | "Sovereign AI for Europe."           |
+| Emoji        | Never use emoji in any copy.                                  | Any emoji anywhere.                  |
+| Euro sign    | Symbol before number: "€25", "€500 / month"                   | "25€", "500€ / month"                |
 
-**Footer links** use Title Case since they function as page names:
+## 5. Technical terms
 
-- "Data Privacy", "Service Status", "Responsible Disclosure"
+DO NOT quote, italicise, or format technical terms — use them naturally in prose.
 
-Everything else uses sentence case — including card labels, diagram labels, and messaging phrases.
+Acronyms stay uppercase: API, GPU, LLM, GDPR, NIS2, CI/CD.
 
-### Swedish
+Technical proper nouns keep standard casing: Kubernetes, GitHub, OpenAI, Terraform, Prometheus.
 
-Swedish copy must follow Swedish capitalisation conventions, which are sentence case. Do not carry over English title case patterns.
+## 6. CTAs and buttons
 
-- Correct: "Serverlös inferens"
-- Incorrect: "Serverlös Inferens"
-
-## Ampersands
-
-Do not use ampersands in copy. Always write "and".
-
-- Correct: "Security and privacy"
-- Incorrect: "Security & Privacy"
-
-Exception: ampersands are acceptable in job titles ("Co-founder & CEO").
-
-## Technical terms
-
-Abbreviations and acronyms stay uppercase: API, GPU, LLM, GDPR, NIS2, CI/CD.
-
-Technical proper nouns keep their standard casing: Kubernetes, GitHub, OpenAI, Terraform, Prometheus.
-
-Do not quote, italicise, or otherwise format technical terms — use them naturally in prose.
-
-## Loanwords in Swedish
-
-English technical loanwords are acceptable in Swedish copy. There is no need to translate terms like "open source", "serverless", or "GPU" if they are widely understood. Use Swedish grammar rules when inflecting them (e.g., "GPU:er" for plural).
-
-## Punctuation
-
-### Oxford comma
-
-Use the Oxford comma (serial comma) in lists of three or more items.
-
-- Correct: "Sovereign, open, and sustainable AI"
-- Incorrect: "Sovereign, open and sustainable AI"
-
-### Headlines
-
-Do not end headlines with full stops. Question marks and colons are fine.
-
-### Emoji
-
-Do not use emoji in any copy — headings, body text, CTAs, or blog posts.
-
-## CTAs and buttons
-
-Use verb-first phrasing in sentence case.
+USE verb-first phrasing in sentence case. Aim for three words or fewer.
 
 - "Get started"
 - "Contact sales"
 - "Book a demo"
 - "Learn more"
 
-Keep CTAs to three words or fewer when possible.
+## 7. Swedish-specific rules
+
+English technical loanwords (serverless, GPU, API, cloud) DO NOT need translation when widely understood in Swedish tech contexts.
+
+USE Swedish grammar for inflection of English loanwords: "GPU:er" (plural), "API:et" (definite).
