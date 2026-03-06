@@ -1,29 +1,29 @@
-import { useState, useMemo } from 'react'
-import { useTranslation } from 'react-i18next'
-import { Filter, ExternalLink, AlertCircle, Euro } from 'lucide-react'
-import { Alert, AlertDescription, Button, Card } from '@berget-ai/ui'
-import { useModels } from '@/hooks/use-models'
+import { useState, useMemo } from "react";
+import { useTranslation } from "react-i18next";
+import { Filter, ExternalLink, AlertCircle, Euro } from "lucide-react";
+import { Alert, AlertDescription, Button, Card } from "@berget-ai/ui";
+import { useModels } from "@/hooks/use-models";
 
 export default function ModelsPage() {
-  const { t } = useTranslation()
-  const [selectedType, setSelectedType] = useState<string | null>(null)
-  const { loading, error, getModelsByType, getModelTypes } = useModels()
+  const { t } = useTranslation();
+  const [selectedType, setSelectedType] = useState<string | null>(null);
+  const { loading, error, getModelsByType, getModelTypes } = useModels();
 
   const modelTypes = useMemo(() => {
-    return getModelTypes()
-  }, [getModelTypes])
+    return getModelTypes();
+  }, [getModelTypes]);
 
   const filteredModels = useMemo(() => {
-    return getModelsByType(selectedType)
-  }, [selectedType, getModelsByType])
+    return getModelsByType(selectedType);
+  }, [selectedType, getModelsByType]);
 
   return (
     <div className="container mx-auto py-24">
       <div className="max-w-4xl mx-auto mb-16">
-        <h1 className="text-5xl font-medium mb-6">{t('modelPage.title')}</h1>
+        <h1 className="text-5xl font-medium mb-6">{t("modelPage.title")}</h1>
         <div className="prose prose-invert max-w-none">
           <p className="text-xl text-white/80 leading-relaxed mb-6">
-            {t('modelPage.intro')}
+            {t("modelPage.intro")}
           </p>
           <ul className="space-y-4 mb-8">
             {[...Array(4)].map((_, i) => (
@@ -37,8 +37,8 @@ export default function ModelsPage() {
               </li>
             ))}
           </ul>
-          <p className="text-white/80 mb-4">{t('modelPage.continuous')}</p>
-          <p className="text-white/60 italic">{t('modelPage.suggestion')}</p>
+          <p className="text-white/80 mb-4">{t("modelPage.continuous")}</p>
+          <p className="text-white/60 italic">{t("modelPage.suggestion")}</p>
         </div>
       </div>
 
@@ -59,20 +59,20 @@ export default function ModelsPage() {
             <div className="w-full">
               <div className="flex items-center gap-2 mb-4">
                 <Filter className="w-4 h-4 text-[#52B788]" />
-                <span className="text-sm text-white/60">{t('filter')}</span>
+                <span className="text-sm text-white/60">{t("filter")}</span>
               </div>
               <div className="flex flex-wrap gap-2">
                 <Button
-                  variant={selectedType === null ? 'default' : 'secondary'}
+                  variant={selectedType === null ? "default" : "secondary"}
                   size="sm"
                   onClick={() => setSelectedType(null)}
                 >
-                  {t('all')}
+                  {t("all")}
                 </Button>
                 {modelTypes.map((type) => (
                   <Button
                     key={type}
-                    variant={selectedType === type ? 'default' : 'secondary'}
+                    variant={selectedType === type ? "default" : "secondary"}
                     size="sm"
                     onClick={() => setSelectedType(type)}
                   >
@@ -85,7 +85,7 @@ export default function ModelsPage() {
 
           {filteredModels.length === 0 ? (
             <div className="text-center py-12">
-              <p className="text-white/60">{t('modelPage.noModels')}</p>
+              <p className="text-white/60">{t("modelPage.noModels")}</p>
             </div>
           ) : (
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
@@ -96,12 +96,12 @@ export default function ModelsPage() {
                       <div className="flex items-center gap-2">
                         <div
                           className={`w-2 h-2 rounded-full ${
-                            model.isLive ? 'bg-green-500' : 'bg-red-500'
+                            model.isLive ? "bg-green-500" : "bg-red-500"
                           }`}
                           title={
                             model.isLive
                               ? `Online (${model.latency}ms)`
-                              : `Offline: ${model.error || 'Unknown error'}`
+                              : `Offline: ${model.error || "Unknown error"}`
                           }
                         />
                         <h3 className="text-xl font-medium">{model.name}</h3>
@@ -113,7 +113,7 @@ export default function ModelsPage() {
                           rel="noopener noreferrer"
                           className="text-[#52B788] hover:text-[#74C69D] transition-colors flex items-center gap-1"
                         >
-                          <span className="text-sm">{t('view')}</span>
+                          <span className="text-sm">{t("view")}</span>
                           <ExternalLink className="w-4 h-4" />
                         </a>
                       )}
@@ -128,7 +128,7 @@ export default function ModelsPage() {
                     </p>
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-[#52B788]">
-                        {model.isLive ? 'Available' : 'Not ready'}
+                        {model.isLive ? "Available" : "Not ready"}
                       </span>
                     </div>
 
@@ -137,44 +137,44 @@ export default function ModelsPage() {
                         <div className="flex items-center gap-1 mb-2">
                           <Euro className="w-3 h-3 text-white/60" />
                           <span className="text-xs text-white/60">
-                            {t('modelPage.pricing')}
+                            {t("modelPage.pricing")}
                           </span>
                         </div>
                         <div className="grid grid-cols-2 gap-2">
                           <div className="text-xs">
                             <span className="text-white/40">
-                              {t('modelPage.input')}:{' '}
+                              {t("modelPage.input")}:{" "}
                             </span>
                             <span className="text-white/80">
-                              {model.pricing.input}{' '}
-                              {model.pricing.currency || 'EUR'}/
+                              {model.pricing.input}{" "}
+                              {model.pricing.currency || "EUR"}/
                               {model.pricing.unit
-                                ? model.pricing.unit.split('/').pop()
-                                : 'M Token'}
+                                ? model.pricing.unit.split("/").pop()
+                                : "M Token"}
                             </span>
                           </div>
                           <div className="text-xs">
                             <span className="text-white/40">
-                              {t('modelPage.output')}:{' '}
+                              {t("modelPage.output")}:{" "}
                             </span>
                             <span className="text-white/80">
-                              {model.pricing.output}{' '}
-                              {model.pricing.currency || 'EUR'}/
+                              {model.pricing.output}{" "}
+                              {model.pricing.currency || "EUR"}/
                               {model.pricing.unit
-                                ? model.pricing.unit.split('/').pop()
-                                : 'M Token'}
+                                ? model.pricing.unit.split("/").pop()
+                                : "M Token"}
                             </span>
                           </div>
                         </div>
                       </div>
                     )}
                   </Card>
-                )
+                );
               })}
             </div>
           )}
         </>
       )}
     </div>
-  )
+  );
 }

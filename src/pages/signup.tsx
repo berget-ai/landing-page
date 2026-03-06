@@ -1,20 +1,20 @@
-import { useState } from 'react'
-import { motion } from 'motion/react'
-import { Button, Card, Input } from '@berget-ai/ui'
-import { Label } from '@/components/ui/label'
-import { Checkbox } from '@/components/ui/checkbox'
-import { Shield, Mail, Lock, ArrowRight } from 'lucide-react'
+import { useState } from "react";
+import { motion } from "motion/react";
+import { Button, Card, Input } from "@berget-ai/ui";
+import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Shield, Mail, Lock, ArrowRight } from "lucide-react";
 
 export default function SignupPage() {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [confirmPassword, setConfirmPassword] = useState('')
-  const [acceptTerms, setAcceptTerms] = useState(false)
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [acceptTerms, setAcceptTerms] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     // Handle signup logic here
-  }
+  };
 
   return (
     <main className="min-h-screen pt-24">
@@ -94,11 +94,11 @@ export default function SignupPage() {
                     className="mt-1"
                   />
                   <Label htmlFor="terms" className="text-sm leading-relaxed">
-                    I agree to Berget's{' '}
+                    I agree to Berget's{" "}
                     <a href="/terms" className="text-[#52B788] hover:underline">
                       Terms of Service
-                    </a>{' '}
-                    and{' '}
+                    </a>{" "}
+                    and{" "}
                     <a
                       href="/privacy"
                       className="text-[#52B788] hover:underline"
@@ -117,7 +117,7 @@ export default function SignupPage() {
 
               {/* Sign In Link */}
               <div className="text-center text-sm text-white/60">
-                Already have an account?{' '}
+                Already have an account?{" "}
                 <a href="/login" className="text-[#52B788] hover:underline">
                   Sign in
                 </a>
@@ -127,5 +127,5 @@ export default function SignupPage() {
         </div>
       </div>
     </main>
-  )
+  );
 }

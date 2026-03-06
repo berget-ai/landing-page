@@ -178,16 +178,16 @@ spec:
             - containerPort: 3000
           resources:
             requests:
-              memory: '128Mi'
-              cpu: '100m'
+              memory: "128Mi"
+              cpu: "100m"
             limits:
-              memory: '256Mi' # Staging-appropriate limits
-              cpu: '200m'
+              memory: "256Mi" # Staging-appropriate limits
+              cpu: "200m"
           env:
             - name: ENVIRONMENT
-              value: 'staging' # Default environment
+              value: "staging" # Default environment
             - name: LOG_LEVEL
-              value: 'debug' # More verbose by default
+              value: "debug" # More verbose by default
           envFrom:
             - configMapRef:
                 name: app-config
@@ -233,11 +233,11 @@ metadata:
   name: app-config
 data:
   # Common configuration for all environments
-  APP_NAME: 'my-service'
-  PORT: '3000'
+  APP_NAME: "my-service"
+  PORT: "3000"
   # These can be overridden in overlays
-  DATABASE_POOL_SIZE: '10'
-  CACHE_TTL: '300'
+  DATABASE_POOL_SIZE: "10"
+  CACHE_TTL: "300"
 ```
 
 ## Step 2: Create Staging Overlay
@@ -293,11 +293,11 @@ spec:
         - name: app
           env:
             - name: ENVIRONMENT
-              value: 'staging'
+              value: "staging"
             - name: LOG_LEVEL
-              value: 'debug' # More verbose logging in staging
+              value: "debug" # More verbose logging in staging
             - name: DEBUG_MODE
-              value: 'true' # Enable debug features
+              value: "true" # Enable debug features
 ```
 
 ### Staging Ingress
@@ -392,18 +392,18 @@ spec:
         - name: app
           resources:
             requests:
-              memory: '256Mi'
-              cpu: '200m'
+              memory: "256Mi"
+              cpu: "200m"
             limits:
-              memory: '512Mi' # Higher limits for production
-              cpu: '500m'
+              memory: "512Mi" # Higher limits for production
+              cpu: "500m"
           env:
             - name: ENVIRONMENT
-              value: 'production'
+              value: "production"
             - name: LOG_LEVEL
-              value: 'info' # Less verbose in production
+              value: "info" # Less verbose in production
             - name: DEBUG_MODE
-              value: 'false' # No debug features in production
+              value: "false" # No debug features in production
       # Production-specific security context
       securityContext:
         runAsNonRoot: true
@@ -422,9 +422,9 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     external-dns.alpha.kubernetes.io/hostname: app.example.com
     # Production-specific annotations
-    nginx.ingress.kubernetes.io/rate-limit: '100'
-    nginx.ingress.kubernetes.io/rate-limit-window: '1m'
-    nginx.ingress.kubernetes.io/ssl-redirect: 'true'
+    nginx.ingress.kubernetes.io/rate-limit: "100"
+    nginx.ingress.kubernetes.io/rate-limit-window: "1m"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
 spec:
   tls:
     - hosts:
@@ -529,7 +529,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 5m # Frequent updates for staging
-  path: './k8s/overlays/staging'
+  path: "./k8s/overlays/staging"
   prune: true
   sourceRef:
     kind: GitRepository
@@ -558,7 +558,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m # Less frequent updates in production
-  path: './k8s/overlays/production'
+  path: "./k8s/overlays/production"
   prune: true
   sourceRef:
     kind: GitRepository
@@ -692,10 +692,10 @@ metadata:
   name: app-config
 data:
   # Same across environments
-  APP_NAME: 'my-service'
+  APP_NAME: "my-service"
   # Different per environment (overridden in overlays)
-  LOG_LEVEL: 'info'
-  DEBUG_MODE: 'false'
+  LOG_LEVEL: "info"
+  DEBUG_MODE: "false"
 ```
 
 ### Secret Management

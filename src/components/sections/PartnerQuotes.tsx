@@ -1,26 +1,26 @@
-import { motion } from 'motion/react'
-import { useTranslation } from 'react-i18next'
-import { Card, Section, SectionHeader } from '@berget-ai/ui'
+import { motion } from "motion/react";
+import { useTranslation } from "react-i18next";
+import { Card, Section, SectionHeader } from "@berget-ai/ui";
 
 interface Quote {
-  name: string
-  title: string
-  quote: string
+  name: string;
+  title: string;
+  quote: string;
 }
 
 export function PartnerQuotes() {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   return (
     <Section padding="xl" background="muted">
       <SectionHeader
-        title={t('partnerQuotes.title')}
-        description={t('partnerQuotes.description')}
+        title={t("partnerQuotes.title")}
+        description={t("partnerQuotes.description")}
       />
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-        {(Array.isArray(t('partnerQuotes.quotes', { returnObjects: true }))
-          ? (t('partnerQuotes.quotes', { returnObjects: true }) as Quote[])
+        {(Array.isArray(t("partnerQuotes.quotes", { returnObjects: true }))
+          ? (t("partnerQuotes.quotes", { returnObjects: true }) as Quote[])
           : ([] as Quote[])
         ).map((quote: Quote, index: number) => (
           <motion.div
@@ -47,5 +47,5 @@ export function PartnerQuotes() {
         ))}
       </div>
     </Section>
-  )
+  );
 }

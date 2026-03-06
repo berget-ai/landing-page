@@ -1,22 +1,22 @@
-import { motion } from 'motion/react'
-import { Zap, Recycle, BarChart } from 'lucide-react'
-import { useTranslation } from 'react-i18next'
-import { Card, Section, SectionHeader } from '@berget-ai/ui'
+import { motion } from "motion/react";
+import { Zap, Recycle, BarChart } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { Card, Section, SectionHeader } from "@berget-ai/ui";
 
-const iconMap = [Zap, Recycle, BarChart]
+const iconMap = [Zap, Recycle, BarChart];
 
 export function SustainabilitySection() {
-  const { t } = useTranslation()
-  const section = t('SustainabilitySection', { returnObjects: true }) as {
-    badge: string
-    title: string
-    description: string
+  const { t } = useTranslation();
+  const section = t("SustainabilitySection", { returnObjects: true }) as {
+    badge: string;
+    title: string;
+    description: string;
     points: {
-      title: string
-      description: string
-      stats: string
-    }[]
-  }
+      title: string;
+      description: string;
+      stats: string;
+    }[];
+  };
 
   return (
     <Section padding="xl" background="muted">
@@ -28,7 +28,7 @@ export function SustainabilitySection() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
         {section.points.map((point, index) => {
-          const Icon = iconMap[index % iconMap.length]
+          const Icon = iconMap[index % iconMap.length];
           return (
             <motion.div
               key={point.title}
@@ -48,9 +48,9 @@ export function SustainabilitySection() {
                 <div className="text-sm font-medium">{point.stats}</div>
               </Card>
             </motion.div>
-          )
+          );
         })}
       </div>
     </Section>
-  )
+  );
 }

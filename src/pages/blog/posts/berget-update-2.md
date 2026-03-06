@@ -1,13 +1,13 @@
 ---
-title: 'Newsletter #2 - summer edition'
-description: 'Newsletter'
-date: '2025-07-17'
+title: "Newsletter #2 - summer edition"
+description: "Newsletter"
+date: "2025-07-17"
 language: en
-author: 'Andreas Lundmark'
-email: 'andreas@berget.ai'
-tags: ['newsletter']
+author: "Andreas Lundmark"
+email: "andreas@berget.ai"
+tags: ["newsletter"]
 image: /images/update.png
-imageAlt: 'Newsletter'
+imageAlt: "Newsletter"
 ---
 
 Hi again!

@@ -1,5 +1,5 @@
 interface MarkdownPageProps {
-  html: string
+  html: string;
 }
 
 export function MarkdownPage({ html }: MarkdownPageProps) {
@@ -24,5 +24,5 @@ export function MarkdownPage({ html }: MarkdownPageProps) {
         />
       </div>
     </main>
-  )
+  );
 }

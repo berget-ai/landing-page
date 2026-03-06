@@ -1,13 +1,13 @@
 ---
-title: 'Vår modellstrategi: Balans mellan kraft och precision'
-description: 'Hur vi väljer och kombinerar AI-modeller för att maximera prestanda och hållbarhet'
-date: '2025-05-23'
+title: "Vår modellstrategi: Balans mellan kraft och precision"
+description: "Hur vi väljer och kombinerar AI-modeller för att maximera prestanda och hållbarhet"
+date: "2025-05-23"
 language: sv
-author: 'Andreas Lundmark'
-email: 'andreas@berget.ai'
-tags: ['ai-modeller', 'strategi', 'hållbarhet', 'teknik']
+author: "Andreas Lundmark"
+email: "andreas@berget.ai"
+tags: ["ai-modeller", "strategi", "hållbarhet", "teknik"]
 image: /images/ai-robot.png
-imageAlt: 'Serverrum med modern AI-infrastruktur'
+imageAlt: "Serverrum med modern AI-infrastruktur"
 ---
 
 I en värld där AI-modeller blir allt större och mer resurskrävande, har vi på Berget AI valt en annan väg. Vi tror inte att framtidens AI handlar om att ha de största modellerna, utan om att skapa de smartaste kombinationerna av specialiserade verktyg. Denna artikel förklarar vår filosofi kring modellval, de centrala begreppen inom modern AI, och varför vi har valt just de modeller som utgör vår infrastruktur.

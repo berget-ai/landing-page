@@ -110,7 +110,7 @@ spec:
   chart:
     spec:
       chart: cert-manager
-      version: '1.13.x'
+      version: "1.13.x"
       sourceRef:
         kind: HelmRepository
         name: jetstack
@@ -150,7 +150,7 @@ spec:
               key: api-token
         selector:
           dnsNames:
-            - '*.example.com'
+            - "*.example.com"
 ```
 
 ### Using Certificates in Ingress
@@ -164,7 +164,7 @@ metadata:
     # Tell cert-manager to create a certificate
     cert-manager.io/cluster-issuer: letsencrypt-prod
     # Force HTTPS redirects
-    nginx.ingress.kubernetes.io/ssl-redirect: 'true'
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
 spec:
   tls:
     - hosts:
@@ -211,15 +211,15 @@ spec:
           expr: certmanager_certificate_expiration_timestamp_seconds - time() < 7 * 24 * 3600
           for: 1h
           annotations:
-            summary: 'Certificate expiring soon'
-            description: 'Certificate {{ $labels.name }} expires in less than 7 days'
+            summary: "Certificate expiring soon"
+            description: "Certificate {{ $labels.name }} expires in less than 7 days"
 
         - alert: CertificateNotReady
           expr: certmanager_certificate_ready_status == 0
           for: 10m
           annotations:
-            summary: 'Certificate not ready'
-            description: 'Certificate {{ $labels.name }} is not ready'
+            summary: "Certificate not ready"
+            description: "Certificate {{ $labels.name }} is not ready"
 ```
 
 ## DNS Automation: Why Manual DNS is a Liability
@@ -312,7 +312,7 @@ spec:
   chart:
     spec:
       chart: external-dns
-      version: '1.14.x'
+      version: "1.14.x"
       sourceRef:
         kind: HelmRepository
         name: external-dns
@@ -325,7 +325,7 @@ spec:
           secretKeyRef:
             name: cloudflare-api-token
             key: api-token
-    txtOwnerId: 'my-cluster'
+    txtOwnerId: "my-cluster"
     policy: sync # or 'upsert-only' for safer operation
     sources:
       - ingress
@@ -364,7 +364,7 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     # external-dns creates DNS records
     external-dns.alpha.kubernetes.io/hostname: myapp.example.com,api.myapp.example.com
-    external-dns.alpha.kubernetes.io/ttl: '300'
+    external-dns.alpha.kubernetes.io/ttl: "300"
 spec:
   tls:
     - hosts:

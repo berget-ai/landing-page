@@ -1,1 +1,1 @@
-export { default } from '@/pages/responsible-disclosure'
+export { default } from "@/pages/responsible-disclosure";

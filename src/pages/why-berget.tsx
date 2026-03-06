@@ -1,22 +1,22 @@
-import { Shield, ArrowRight } from 'lucide-react'
+import { Shield, ArrowRight } from "lucide-react";
 import {
   HeroBlock,
   Button,
   Section,
   SectionHeader,
   type HeroBlockProps,
-} from '@berget-ai/ui'
-import { ComplianceSection } from '@/components/sections/ComplianceSection'
-import { SustainabilitySection } from '@/components/sections/SustainabilitySection'
-import { PartnerQuotes } from '@/components/sections/PartnerQuotes'
-import { useTranslation } from 'react-i18next'
-import { KeyBenefitsSection } from '@/components/sections/KeyBenefitsSection'
-import Features from '@/components/sections/Features'
+} from "@berget-ai/ui";
+import { ComplianceSection } from "@/components/sections/ComplianceSection";
+import { SustainabilitySection } from "@/components/sections/SustainabilitySection";
+import { PartnerQuotes } from "@/components/sections/PartnerQuotes";
+import { useTranslation } from "react-i18next";
+import { KeyBenefitsSection } from "@/components/sections/KeyBenefitsSection";
+import Features from "@/components/sections/Features";
 
-type TaglineIcon = HeroBlockProps['taglineIcon']
+type TaglineIcon = HeroBlockProps["taglineIcon"];
 
 function WhyBergetPage() {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   return (
     <main className="min-h-screen">
@@ -24,19 +24,19 @@ function WhyBergetPage() {
         variant="moss"
         withPattern
         taglineIcon={Shield as TaglineIcon}
-        tagline={t('whyBerget.hero.tagline')}
-        title={t('whyBerget.hero.title')}
-        description={t('whyBerget.hero.description')}
+        tagline={t("whyBerget.hero.tagline")}
+        title={t("whyBerget.hero.title")}
+        description={t("whyBerget.hero.description")}
         actions={
           <>
             <Button size="lg" asChild>
               <a href="/signup">
-                {t('whyBerget.hero.getStarted')}
+                {t("whyBerget.hero.getStarted")}
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>
             </Button>
             <Button size="lg" variant="outline" asChild>
-              <a href="/contact">{t('whyBerget.hero.bookDemo')}</a>
+              <a href="/contact">{t("whyBerget.hero.bookDemo")}</a>
             </Button>
           </>
         }
@@ -59,23 +59,23 @@ function WhyBergetPage() {
       {/* Call to Action */}
       <Section padding="xl">
         <SectionHeader
-          title={t('whyBerget.cta.title')}
-          description={t('whyBerget.cta.description')}
+          title={t("whyBerget.cta.title")}
+          description={t("whyBerget.cta.description")}
         />
         <div className="flex flex-wrap gap-4 justify-center">
           <Button size="lg" asChild>
             <a href="/signup">
-              {t('whyBerget.cta.createAccount')}
+              {t("whyBerget.cta.createAccount")}
               <ArrowRight className="ml-2 h-5 w-5" />
             </a>
           </Button>
           <Button size="lg" variant="outline" asChild>
-            <a href="/contact">{t('whyBerget.cta.contactSales')}</a>
+            <a href="/contact">{t("whyBerget.cta.contactSales")}</a>
           </Button>
         </div>
       </Section>
     </main>
-  )
+  );
 }
 
-export default WhyBergetPage
+export default WhyBergetPage;

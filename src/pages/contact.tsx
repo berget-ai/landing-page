@@ -1,10 +1,10 @@
-import { motion } from 'motion/react'
-import { Mail } from 'lucide-react'
-import { Card } from '@berget-ai/ui'
-import { useTranslation } from 'react-i18next'
+import { motion } from "motion/react";
+import { Mail } from "lucide-react";
+import { Card } from "@berget-ai/ui";
+import { useTranslation } from "react-i18next";
 
 export default function ContactPage() {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   return (
     <main className="min-h-screen pt-24">
@@ -17,13 +17,13 @@ export default function ContactPage() {
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-muted text-sm mb-6">
               <Mail className="w-4 h-4" />
-              <span>{t('contact.hero.getInTouch')}</span>
+              <span>{t("contact.hero.getInTouch")}</span>
             </div>
             <h1 className="text-5xl font-medium mb-4">
-              {t('contact.hero.title')}
+              {t("contact.hero.title")}
             </h1>
             <p className="text-xl text-white/60">
-              {t('contact.hero.description')}
+              {t("contact.hero.description")}
             </p>
           </motion.div>
 
@@ -45,7 +45,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="text-xl font-medium">Andreas Lundmark</h3>
-                    <p className="text-white/60">{t('contact.team.ceo')}</p>
+                    <p className="text-white/60">{t("contact.team.ceo")}</p>
                   </div>
                 </div>
                 <a
@@ -53,7 +53,7 @@ export default function ContactPage() {
                   className="inline-flex items-center gap-2 text-[#52B788] hover:text-[#74C69D] transition-colors"
                 >
                   <Mail className="w-4 h-4" />
-                  {t('contact.team.emailCeo')}
+                  {t("contact.team.emailCeo")}
                 </a>
               </Card>
             </motion.div>
@@ -75,7 +75,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="text-xl font-medium">Christian Landgren</h3>
-                    <p className="text-white/60">{t('contact.team.cpto')}</p>
+                    <p className="text-white/60">{t("contact.team.cpto")}</p>
                   </div>
                 </div>
                 <a
@@ -83,7 +83,7 @@ export default function ContactPage() {
                   className="inline-flex items-center gap-2 text-[#52B788] hover:text-[#74C69D] transition-colors"
                 >
                   <Mail className="w-4 h-4" />
-                  {t('contact.team.emailCpto')}
+                  {t("contact.team.emailCpto")}
                 </a>
               </Card>
             </motion.div>
@@ -91,5 +91,5 @@ export default function ContactPage() {
         </div>
       </div>
     </main>
-  )
+  );
 }

@@ -1,8 +1,8 @@
-import { useMemo } from 'react'
-import { motion } from 'motion/react'
-import { Bot, ArrowRight, AlertCircle } from 'lucide-react'
-import { Button, Card } from '@berget-ai/ui'
-import { useModels } from '@/hooks/use-models'
+import { useMemo } from "react";
+import { motion } from "motion/react";
+import { Bot, ArrowRight, AlertCircle } from "lucide-react";
+import { Button, Card } from "@berget-ai/ui";
+import { useModels } from "@/hooks/use-models";
 import {
   Table,
   TableBody,
@@ -10,33 +10,33 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@/components/ui/table'
-import { useTranslation } from 'react-i18next'
+} from "@/components/ui/table";
+import { useTranslation } from "react-i18next";
 
 export function ModelsSection() {
-  const { t } = useTranslation()
-  const { models, loading, error } = useModels()
+  const { t } = useTranslation();
+  const { models, loading, error } = useModels();
 
   const displayModels = useMemo(() => {
     return models.slice(0, 8).map((model) => ({
       name: model.name,
-      type: model.owned_by || 'Unknown',
+      type: model.owned_by || "Unknown",
       context: model.capabilities?.function_calling
-        ? 'Function Calling'
+        ? "Function Calling"
         : model.capabilities?.vision
-          ? 'Vision'
-          : 'N/A',
+          ? "Vision"
+          : "N/A",
       performance: model.capabilities?.json_mode
-        ? 'State-of-the-Art'
+        ? "State-of-the-Art"
         : model.capabilities?.formatted_output
-          ? 'Advanced'
-          : 'High',
-      status: model.isLive ? 'Available' : 'Unavailable',
+          ? "Advanced"
+          : "High",
+      status: model.isLive ? "Available" : "Unavailable",
       isLive: model.isLive,
       latency: model.latency,
       error: model.error,
-    }))
-  }, [models])
+    }));
+  }, [models]);
 
   return (
     <motion.div
@@ -49,33 +49,33 @@ export function ModelsSection() {
           <Bot className="w-6 h-6" />
         </div>
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-2xl font-ovo">{t('models.title')}</h2>
+          <h2 className="text-2xl font-ovo">{t("models.title")}</h2>
           <Button asChild variant="ghost" size="sm" className="group">
             <a href="/models">
-              {t('models.viewAll')}
+              {t("models.viewAll")}
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </a>
           </Button>
         </div>
-        <p className="text-white/80 mb-6">{t('models.description')}</p>
+        <p className="text-white/80 mb-6">{t("models.description")}</p>
 
         <div className="space-y-6">
           <div className="space-y-2">
             <h3 className="text-lg font-ovo">
-              {t('models.comprehensive.title')}
+              {t("models.comprehensive.title")}
             </h3>
             <ul className="space-y-2">
               <li className="flex items-center gap-3">
                 <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
-                <span>{t('models.comprehensive.point1')}</span>
+                <span>{t("models.comprehensive.point1")}</span>
               </li>
               <li className="flex items-center gap-3">
                 <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
-                <span>{t('models.comprehensive.point2')}</span>
+                <span>{t("models.comprehensive.point2")}</span>
               </li>
               <li className="flex items-center gap-3">
                 <div className="w-1.5 h-1.5 rounded-full bg-foreground/50" />
-                <span>{t('models.comprehensive.point3')}</span>
+                <span>{t("models.comprehensive.point3")}</span>
               </li>
             </ul>
           </div>
@@ -97,10 +97,10 @@ export function ModelsSection() {
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>{t('models.table.model')}</TableHead>
-                  <TableHead>{t('models.table.type')}</TableHead>
-                  <TableHead>{t('models.table.context')}</TableHead>
-                  <TableHead>{t('models.table.status')}</TableHead>
+                  <TableHead>{t("models.table.model")}</TableHead>
+                  <TableHead>{t("models.table.type")}</TableHead>
+                  <TableHead>{t("models.table.context")}</TableHead>
+                  <TableHead>{t("models.table.status")}</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -108,15 +108,15 @@ export function ModelsSection() {
                   <TableRow key={model.name}>
                     <TableCell className="font-medium">
                       <div className="flex items-center gap-2">
-                        {typeof model.isLive !== 'undefined' && (
+                        {typeof model.isLive !== "undefined" && (
                           <div
-                            className={`w-2 h-2 rounded-full ${model.isLive ? 'bg-green-500' : 'bg-red-500'}`}
+                            className={`w-2 h-2 rounded-full ${model.isLive ? "bg-green-500" : "bg-red-500"}`}
                             title={
                               model.isLive
                                 ? model.latency
                                   ? `Online (${model.latency}ms)`
-                                  : 'Online'
-                                : `Offline: ${model.error || 'Unknown error'}`
+                                  : "Online"
+                                : `Offline: ${model.error || "Unknown error"}`
                             }
                           />
                         )}
@@ -127,7 +127,7 @@ export function ModelsSection() {
                       {t(
                         `models.types.${model.type
                           .toLowerCase()
-                          .replace(/\s+/g, '-')}`,
+                          .replace(/\s+/g, "-")}`,
                         model.type,
                       )}
                     </TableCell>
@@ -135,15 +135,15 @@ export function ModelsSection() {
                     <TableCell>
                       <span
                         className={`inline-flex items-center px-2 py-1 rounded-full text-xs ${
-                          model.status === 'Available'
-                            ? 'bg-white/20 text-white'
-                            : 'bg-muted text-muted-foreground'
+                          model.status === "Available"
+                            ? "bg-white/20 text-white"
+                            : "bg-muted text-muted-foreground"
                         }`}
                       >
                         {t(
                           `models.status.${model.status
                             .toLowerCase()
-                            .replace(/\s+/g, '-')}`,
+                            .replace(/\s+/g, "-")}`,
                           model.status,
                         )}
                       </span>
@@ -156,5 +156,5 @@ export function ModelsSection() {
         </div>
       </Card>
     </motion.div>
-  )
+  );
 }

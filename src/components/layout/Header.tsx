@@ -1,17 +1,17 @@
-import { useState } from 'react'
-import { Menu, X, AlertCircle, AlertTriangle } from 'lucide-react'
-import { Button, BergetSymbol } from '@berget-ai/ui'
-import { LanguageSwitcher } from '../ui/LanguageSwitcher'
-import { useTranslation } from 'react-i18next'
-import { motion, AnimatePresence } from 'motion/react'
-import { useEnvironment } from '@/hooks/use-environment'
-import { useHealth } from '@/hooks/use-health'
+import { useState } from "react";
+import { Menu, X, AlertCircle, AlertTriangle } from "lucide-react";
+import { Button, BergetSymbol } from "@berget-ai/ui";
+import { LanguageSwitcher } from "../ui/LanguageSwitcher";
+import { useTranslation } from "react-i18next";
+import { motion, AnimatePresence } from "motion/react";
+import { useEnvironment } from "@/hooks/use-environment";
+import { useHealth } from "@/hooks/use-health";
 
 export function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const { t } = useTranslation()
-  const { isStage, consoleUrl } = useEnvironment()
-  const health = useHealth()
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t } = useTranslation();
+  const { isStage, consoleUrl } = useEnvironment();
+  const health = useHealth();
 
   return (
     <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-lg border-b border-white/5">
@@ -20,7 +20,7 @@ export function Header() {
           STAGE
         </div>
       )}
-      {health.status === 'critical' && health.messageKey && (
+      {health.status === "critical" && health.messageKey && (
         <a
           href="/status"
           className="block bg-red-500/90 hover:bg-red-500 text-white text-center py-2 px-4 text-xs font-medium transition-colors"
@@ -30,13 +30,13 @@ export function Header() {
             <span>
               {t(
                 health.messageKey,
-                'We are having hardware problems with one of our GPU:s, expecting replacement ASAP. Please visit https://berget.ai/status for more information.',
+                "We are having hardware problems with one of our GPU:s, expecting replacement ASAP. Please visit https://berget.ai/status for more information.",
               )}
             </span>
           </div>
         </a>
       )}
-      {health.status === 'degraded' && health.messageKey && (
+      {health.status === "degraded" && health.messageKey && (
         <a
           href="/status"
           className="block bg-yellow-500/90 hover:bg-yellow-500 text-black text-center py-2 px-4 text-xs font-medium transition-colors"
@@ -46,7 +46,7 @@ export function Header() {
             <span>
               {t(
                 health.messageKey,
-                'Some services are experiencing issues. Please visit https://berget.ai/status for more information.',
+                "Some services are experiencing issues. Please visit https://berget.ai/status for more information.",
               )}
             </span>
           </div>
@@ -69,7 +69,7 @@ export function Header() {
             href="/products"
             className="text-sm text-white/60 hover:text-white transition-colors"
           >
-            {t('header.navigation.products')}
+            {t("header.navigation.products")}
           </a>
 
           {/* Models */}
@@ -77,7 +77,7 @@ export function Header() {
             href="/models"
             className="text-sm text-white/60 hover:text-white transition-colors"
           >
-            {t('header.navigation.models')}
+            {t("header.navigation.models")}
           </a>
 
           {/* Why Berget */}
@@ -85,7 +85,7 @@ export function Header() {
             href="/why-berget"
             className="text-sm text-white/60 hover:text-white transition-colors"
           >
-            {t('header.navigation.whyBerget')}
+            {t("header.navigation.whyBerget")}
           </a>
 
           {/* For Developers */}
@@ -93,7 +93,7 @@ export function Header() {
             href="/developers"
             className="text-sm text-white/60 hover:text-white transition-colors"
           >
-            {t('header.navigation.developers')}
+            {t("header.navigation.developers")}
           </a>
 
           {/* Pricing */}
@@ -101,7 +101,7 @@ export function Header() {
             href="/pricing"
             className="text-sm text-white/60 hover:text-white transition-colors"
           >
-            {t('header.navigation.pricing')}
+            {t("header.navigation.pricing")}
           </a>
 
           {/* Documentation */}
@@ -109,17 +109,17 @@ export function Header() {
             href="https://api.berget.ai"
             className="text-sm text-white/60 hover:text-white transition-colors"
           >
-            {t('header.navigation.api')}
+            {t("header.navigation.api")}
           </a>
 
           <LanguageSwitcher />
 
           <Button variant="outline" size="sm" asChild>
-            <a href={consoleUrl}>{t('header.buttons.signIn')}</a>
+            <a href={consoleUrl}>{t("header.buttons.signIn")}</a>
           </Button>
 
           <Button size="sm" asChild>
-            <a href={consoleUrl}>{t('header.buttons.getStarted')}</a>
+            <a href={consoleUrl}>{t("header.buttons.getStarted")}</a>
           </Button>
         </nav>
 
@@ -128,7 +128,7 @@ export function Header() {
           size="icon"
           className="md:hidden"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label={isMenuOpen ? t('header.closeMenu') : t('header.openMenu')}
+          aria-label={isMenuOpen ? t("header.closeMenu") : t("header.openMenu")}
           aria-expanded={isMenuOpen}
         >
           {isMenuOpen ? (
@@ -156,42 +156,42 @@ export function Header() {
                     className="text-2xl text-white hover:text-white/80 transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    {t('header.navigation.products')}
+                    {t("header.navigation.products")}
                   </a>
                   <a
                     href="/models"
                     className="text-2xl text-white hover:text-white/80 transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    {t('header.navigation.models')}
+                    {t("header.navigation.models")}
                   </a>
                   <a
                     href="/why-berget"
                     className="text-2xl text-white hover:text-white/80 transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    {t('header.navigation.whyBerget')}
+                    {t("header.navigation.whyBerget")}
                   </a>
                   <a
                     href="/developers"
                     className="text-2xl text-white hover:text-white/80 transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    {t('header.navigation.developers')}
+                    {t("header.navigation.developers")}
                   </a>
                   <a
                     href="/pricing"
                     className="text-2xl text-white hover:text-white/80 transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    {t('header.navigation.pricing')}
+                    {t("header.navigation.pricing")}
                   </a>
                   <a
                     href="https://api.berget.ai"
                     className="text-2xl text-white hover:text-white/80 transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    {t('header.navigation.api')}
+                    {t("header.navigation.api")}
                   </a>
                 </div>
               </div>
@@ -200,12 +200,12 @@ export function Header() {
                 <LanguageSwitcher />
                 <Button variant="outline" size="lg" className="w-full" asChild>
                   <a href={consoleUrl} onClick={() => setIsMenuOpen(false)}>
-                    {t('header.buttons.signIn')}
+                    {t("header.buttons.signIn")}
                   </a>
                 </Button>
                 <Button size="lg" className="w-full" asChild>
                   <a href={consoleUrl} onClick={() => setIsMenuOpen(false)}>
-                    {t('header.buttons.getStarted')}
+                    {t("header.buttons.getStarted")}
                   </a>
                 </Button>
               </div>
@@ -214,5 +214,5 @@ export function Header() {
         )}
       </AnimatePresence>
     </header>
-  )
+  );
 }

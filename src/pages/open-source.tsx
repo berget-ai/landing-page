@@ -6,10 +6,10 @@ import {
   FileCode,
   Users,
   Heart,
-} from 'lucide-react'
-import { Card, HeroBlock, Button, type HeroBlockProps } from '@berget-ai/ui'
+} from "lucide-react";
+import { Card, HeroBlock, Button, type HeroBlockProps } from "@berget-ai/ui";
 
-type TaglineIcon = HeroBlockProps['taglineIcon']
+type TaglineIcon = HeroBlockProps["taglineIcon"];
 
 export default function OpenSourcePage() {
   return (
@@ -234,5 +234,5 @@ export default function OpenSourcePage() {
         </div>
       </div>
     </main>
-  )
+  );
 }

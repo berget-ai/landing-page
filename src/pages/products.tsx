@@ -1,4 +1,4 @@
-import { motion } from 'motion/react'
+import { motion } from "motion/react";
 import {
   Cloud,
   Server,
@@ -12,42 +12,42 @@ import {
   Box,
   Users,
   Layers,
-} from 'lucide-react'
-import { Badge, Button, Card, HeroBlock } from '@berget-ai/ui'
-import { ModelsSection } from '@/components/sections/ModelsSection'
-import { useTranslation } from 'react-i18next'
+} from "lucide-react";
+import { Badge, Button, Card, HeroBlock } from "@berget-ai/ui";
+import { ModelsSection } from "@/components/sections/ModelsSection";
+import { useTranslation } from "react-i18next";
 
 const platformStack = [
   {
-    name: 'Tools & Marketplace',
+    name: "Tools & Marketplace",
     icon: Box,
-    color: 'from-blue-500 to-purple-500',
+    color: "from-blue-500 to-purple-500",
   },
   {
-    name: 'LLM',
+    name: "LLM",
     icon: Bot,
-    color: 'from-purple-500 to-pink-500',
+    color: "from-purple-500 to-pink-500",
   },
   {
-    name: 'Compute',
+    name: "Compute",
     icon: Cpu,
-    color: 'from-pink-500 to-rose-500',
+    color: "from-pink-500 to-rose-500",
   },
   {
-    name: 'Connectivity',
+    name: "Connectivity",
     icon: Network,
-    color: 'from-orange-500 to-amber-500',
+    color: "from-orange-500 to-amber-500",
   },
-]
+];
 
 const managementStack = {
-  name: 'Management',
+  name: "Management",
   icon: Users,
-  color: 'from-rose-500 to-orange-500',
-}
+  color: "from-rose-500 to-orange-500",
+};
 
 export default function ProductsPage() {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   return (
     <main className="min-h-screen pt-24">
@@ -55,8 +55,8 @@ export default function ProductsPage() {
       <HeroBlock
         variant="default"
         withPattern
-        title={t('products.hero.title')}
-        description={t('products.hero.description')}
+        title={t("products.hero.title")}
+        description={t("products.hero.description")}
       />
 
       {/* Main Content */}
@@ -71,10 +71,10 @@ export default function ProductsPage() {
                 viewport={{ once: true }}
               >
                 <h2 className="text-2xl sm:text-3xl font-medium mb-4">
-                  {t('products.serverless.title')}
+                  {t("products.serverless.title")}
                 </h2>
                 <p className="text-base sm:text-lg text-white/60">
-                  {t('products.serverless.description')}
+                  {t("products.serverless.description")}
                 </p>
               </motion.div>
             </div>
@@ -87,11 +87,11 @@ export default function ProductsPage() {
                 <Card variant="highlight" padding="md">
                   <Cloud className="w-8 h-8 mb-4 text-[#52B788]" />
                   <h3 className="text-xl font-medium mb-3">
-                    {t('products.serverless.features.integration.title')}
+                    {t("products.serverless.features.integration.title")}
                   </h3>
                   <ul className="space-y-3 text-white/60">
                     {(
-                      t('products.serverless.features.integration.items', {
+                      t("products.serverless.features.integration.items", {
                         returnObjects: true,
                       }) as string[]
                     ).map((item: string) => (
@@ -110,11 +110,11 @@ export default function ProductsPage() {
                 <Card variant="highlight" padding="md">
                   <Zap className="w-8 h-8 mb-4 text-[#74C69D]" />
                   <h3 className="text-xl font-medium mb-3">
-                    {t('products.serverless.features.usage.title')}
+                    {t("products.serverless.features.usage.title")}
                   </h3>
                   <ul className="space-y-3 text-white/60">
                     {(
-                      t('products.serverless.features.usage.items', {
+                      t("products.serverless.features.usage.items", {
                         returnObjects: true,
                       }) as string[]
                     ).map((item: string) => (
@@ -133,11 +133,11 @@ export default function ProductsPage() {
                 <Card variant="highlight" padding="md">
                   <Server className="w-8 h-8 mb-4 text-[#FFB700]" />
                   <h3 className="text-xl font-medium mb-3">
-                    {t('products.serverless.features.infrastructure.title')}
+                    {t("products.serverless.features.infrastructure.title")}
                   </h3>
                   <ul className="space-y-3 text-white/60">
                     {(
-                      t('products.serverless.features.infrastructure.items', {
+                      t("products.serverless.features.infrastructure.items", {
                         returnObjects: true,
                       }) as string[]
                     ).map((item: string) => (
@@ -159,14 +159,14 @@ export default function ProductsPage() {
               >
                 <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
                   <h2 className="text-2xl sm:text-3xl font-medium">
-                    {t('products.dedicated.title')}
+                    {t("products.dedicated.title")}
                   </h2>
                   <Badge variant="tag" status="tagDefault" size="sm">
                     Coming Soon
                   </Badge>
                 </div>
                 <p className="text-base sm:text-lg text-white/60">
-                  {t('products.dedicated.description')}
+                  {t("products.dedicated.description")}
                 </p>
               </motion.div>
             </div>
@@ -179,11 +179,11 @@ export default function ProductsPage() {
                 <Card variant="highlight" padding="md">
                   <Cpu className="w-8 h-8 mb-4 text-[#52B788]" />
                   <h3 className="text-xl font-medium mb-3">
-                    {t('products.dedicated.features.deployment.title')}
+                    {t("products.dedicated.features.deployment.title")}
                   </h3>
                   <ul className="space-y-3 text-white/60">
                     {(
-                      t('products.dedicated.features.deployment.items', {
+                      t("products.dedicated.features.deployment.items", {
                         returnObjects: true,
                       }) as string[]
                     ).map((item: string) => (
@@ -202,11 +202,11 @@ export default function ProductsPage() {
                 <Card variant="highlight" padding="md">
                   <Bot className="w-8 h-8 mb-4 text-[#74C69D]" />
                   <h3 className="text-xl font-medium mb-3">
-                    {t('products.dedicated.features.control.title')}
+                    {t("products.dedicated.features.control.title")}
                   </h3>
                   <ul className="space-y-3 text-white/60">
                     {(
-                      t('products.dedicated.features.control.items', {
+                      t("products.dedicated.features.control.items", {
                         returnObjects: true,
                       }) as string[]
                     ).map((item: string) => (
@@ -225,11 +225,11 @@ export default function ProductsPage() {
                 <Card variant="highlight" padding="md">
                   <Sparkles className="w-8 h-8 mb-4 text-[#FFB700]" />
                   <h3 className="text-xl font-medium mb-3">
-                    {t('products.dedicated.features.performance.title')}
+                    {t("products.dedicated.features.performance.title")}
                   </h3>
                   <ul className="space-y-3 text-white/60">
                     {(
-                      t('products.dedicated.features.performance.items', {
+                      t("products.dedicated.features.performance.items", {
                         returnObjects: true,
                       }) as string[]
                     ).map((item: string) => (
@@ -251,14 +251,14 @@ export default function ProductsPage() {
               >
                 <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
                   <h2 className="text-2xl sm:text-3xl font-medium">
-                    {t('products.platform.title')}
+                    {t("products.platform.title")}
                   </h2>
                   <Badge variant="tag" status="tagDefault" size="sm">
                     Coming Soon
                   </Badge>
                 </div>
                 <p className="text-base sm:text-lg text-white/60">
-                  {t('products.platform.description')}
+                  {t("products.platform.description")}
                 </p>
               </motion.div>
             </div>
@@ -271,11 +271,11 @@ export default function ProductsPage() {
                 <Card variant="highlight" padding="md">
                   <Database className="w-8 h-8 mb-4 text-[#52B788]" />
                   <h3 className="text-xl font-medium mb-3">
-                    {t('products.platform.features.toolset.title')}
+                    {t("products.platform.features.toolset.title")}
                   </h3>
                   <ul className="space-y-3 text-white/60">
                     {(
-                      t('products.platform.features.toolset.items', {
+                      t("products.platform.features.toolset.items", {
                         returnObjects: true,
                       }) as string[]
                     ).map((item: string) => (
@@ -294,11 +294,11 @@ export default function ProductsPage() {
                 <Card variant="highlight" padding="md">
                   <Box className="w-8 h-8 mb-4 text-[#74C69D]" />
                   <h3 className="text-xl font-medium mb-3">
-                    {t('products.platform.features.services.title')}
+                    {t("products.platform.features.services.title")}
                   </h3>
                   <ul className="space-y-3 text-white/60">
                     {(
-                      t('products.platform.features.services.items', {
+                      t("products.platform.features.services.items", {
                         returnObjects: true,
                       }) as string[]
                     ).map((item: string) => (
@@ -317,11 +317,11 @@ export default function ProductsPage() {
                 <Card variant="highlight" padding="md">
                   <Layers className="w-8 h-8 mb-4 text-[#FFB700]" />
                   <h3 className="text-xl font-medium mb-3">
-                    {t('products.platform.features.infrastructure.title')}
+                    {t("products.platform.features.infrastructure.title")}
                   </h3>
                   <ul className="space-y-3 text-white/60">
                     {(
-                      t('products.platform.features.infrastructure.items', {
+                      t("products.platform.features.infrastructure.items", {
                         returnObjects: true,
                       }) as string[]
                     ).map((item: string) => (
@@ -343,10 +343,10 @@ export default function ProductsPage() {
                   viewport={{ once: true }}
                 >
                   <h2 className="text-2xl sm:text-3xl font-medium mb-4">
-                    {t('products.architecture.title')}
+                    {t("products.architecture.title")}
                   </h2>
                   <p className="text-base sm:text-lg text-white/60">
-                    {t('products.architecture.description')}
+                    {t("products.architecture.description")}
                   </p>
                 </motion.div>
               </div>
@@ -361,13 +361,13 @@ export default function ProductsPage() {
                   <div className="lg:col-span-9">
                     <div className="space-y-4">
                       {Object.entries(
-                        t('products.architecture.layers', {
+                        t("products.architecture.layers", {
                           returnObjects: true,
                         }) as Record<string, any>,
                       )
                         .slice(0, 4)
                         .map(([key, layer]: [string, any], index) => {
-                          const IconComponent = platformStack[index].icon
+                          const IconComponent = platformStack[index].icon;
                           return (
                             <motion.div
                               key={key}
@@ -399,7 +399,7 @@ export default function ProductsPage() {
                                 </div>
                               </Card>
                             </motion.div>
-                          )
+                          );
                         })}
                     </div>
                   </div>
@@ -422,13 +422,13 @@ export default function ProductsPage() {
                         </div>
                         <div>
                           <h3 className="text-lg sm:text-xl font-medium">
-                            {t('products.architecture.layers.management.title')}
+                            {t("products.architecture.layers.management.title")}
                           </h3>
                         </div>
                       </div>
                       <div className="flex-1 flex flex-col justify-center space-y-3 sm:space-y-4">
                         {(
-                          t('products.architecture.layers.management.items', {
+                          t("products.architecture.layers.management.items", {
                             returnObjects: true,
                           }) as string[]
                         ).map((item: string) => (
@@ -462,14 +462,14 @@ export default function ProductsPage() {
                 viewport={{ once: true }}
               >
                 <h2 className="text-2xl sm:text-3xl font-medium mb-4">
-                  {t('products.models.title')}
+                  {t("products.models.title")}
                 </h2>
                 <p className="text-base sm:text-lg text-white/60">
-                  {t('products.models.description')}
+                  {t("products.models.description")}
                 </p>
                 <Button className="mt-6" asChild>
                   <a href="/contact">
-                    {t('products.models.requestModel')}
+                    {t("products.models.requestModel")}
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
@@ -488,19 +488,19 @@ export default function ProductsPage() {
             className="text-center"
           >
             <h2 className="text-2xl sm:text-3xl font-medium mb-6">
-              {t('products.cta.title')}
+              {t("products.cta.title")}
             </h2>
             <p className="text-base sm:text-lg lg:text-xl text-white/60 mb-8 max-w-2xl mx-auto">
-              {t('products.cta.description')}
+              {t("products.cta.description")}
             </p>
             <div className="flex gap-4 justify-center">
               <Button size="lg" asChild>
-                <a href="/signup">{t('products.cta.getStarted')}</a>
+                <a href="/signup">{t("products.cta.getStarted")}</a>
               </Button>
             </div>
           </motion.div>
         </div>
       </div>
     </main>
-  )
+  );
 }

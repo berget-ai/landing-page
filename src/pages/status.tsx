@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
-import { motion } from 'motion/react'
+import { useState, useEffect } from "react";
+import { motion } from "motion/react";
 import {
   Activity,
   CheckCircle,
@@ -11,126 +11,126 @@ import {
   AlertOctagon,
   Rabbit,
   Snail,
-} from 'lucide-react'
-import { useModels } from '@/hooks/use-models'
-import { useTranslation, Trans } from 'react-i18next'
+} from "lucide-react";
+import { useModels } from "@/hooks/use-models";
+import { useTranslation, Trans } from "react-i18next";
 
 interface SystemStatus {
-  status: string
-  lastChecked: string
-  lago: { status: string }
-  odoo: { status: string }
-  keycloak: { status: string; error?: string }
+  status: string;
+  lastChecked: string;
+  lago: { status: string };
+  odoo: { status: string };
+  keycloak: { status: string; error?: string };
   chatEndpoints: Array<{
-    model: string
-    status: string
-    latency?: number
-    error?: string
-  }>
+    model: string;
+    status: string;
+    latency?: number;
+    error?: string;
+  }>;
 }
 
 export default function StatusPage() {
-  const { t } = useTranslation()
-  const { models, loading, error } = useModels()
-  const [systemStatus, setSystemStatus] = useState<SystemStatus | null>(null)
-  const [statusLoading, setStatusLoading] = useState(true)
-  const [statusError, setStatusError] = useState<string | null>(null)
+  const { t } = useTranslation();
+  const { models, loading, error } = useModels();
+  const [systemStatus, setSystemStatus] = useState<SystemStatus | null>(null);
+  const [statusLoading, setStatusLoading] = useState(true);
+  const [statusError, setStatusError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchSystemStatus = async () => {
       try {
-        setStatusLoading(true)
+        setStatusLoading(true);
 
         // Hämta svaret från health-routen
-        const response = await fetch('https://api.berget.ai/health')
+        const response = await fetch("https://api.berget.ai/health");
 
         // Ignorera response.ok och försök alltid parsa JSON
         // Health-routen returnerar alltid valid JSON även vid 503-fel
-        const data = await response.json()
-        setSystemStatus(data)
-        setStatusError(null)
+        const data = await response.json();
+        setSystemStatus(data);
+        setStatusError(null);
       } catch (err) {
-        console.error('Failed to fetch system status:', err)
+        console.error("Failed to fetch system status:", err);
         // Visa en varning men blockera inte hela sidan
-        setStatusError('System status information is currently unavailable.')
+        setStatusError("System status information is currently unavailable.");
       } finally {
-        setStatusLoading(false)
+        setStatusLoading(false);
       }
-    }
+    };
 
-    fetchSystemStatus()
+    fetchSystemStatus();
 
     // Refresh status every 60 seconds
-    const intervalId = setInterval(fetchSystemStatus, 60000)
+    const intervalId = setInterval(fetchSystemStatus, 60000);
 
-    return () => clearInterval(intervalId)
-  }, [])
+    return () => clearInterval(intervalId);
+  }, []);
 
   const getStatusIcon = (status: string, error?: string) => {
     // Om status är "down" och felmeddelandet innehåller en HTTP-statuskod
-    if (status === 'down' && error) {
+    if (status === "down" && error) {
       if (
-        error.includes('400') ||
-        error.includes('401') ||
-        error.includes('403') ||
-        error.includes('404')
+        error.includes("400") ||
+        error.includes("401") ||
+        error.includes("403") ||
+        error.includes("404")
       ) {
         return (
           <div title="Authentication/Permission error">
             <Lock className="w-5 h-5 text-yellow-500" />
           </div>
-        )
+        );
       } else if (
-        error.includes('500') ||
-        error.includes('502') ||
-        error.includes('503') ||
-        error.includes('504')
+        error.includes("500") ||
+        error.includes("502") ||
+        error.includes("503") ||
+        error.includes("504")
       ) {
         return (
           <div title="Server error">
             <AlertOctagon className="w-5 h-5 text-red-500" />
           </div>
-        )
+        );
       }
     }
 
     switch (status) {
-      case 'up':
-      case 'healthy':
-        return <CheckCircle className="w-5 h-5 text-green-500" />
-      case 'down':
-      case 'unhealthy':
-        return <XCircle className="w-5 h-5 text-red-500" />
-      case 'unknown':
-        return <AlertTriangle className="w-5 h-5 text-yellow-500" />
+      case "up":
+      case "healthy":
+        return <CheckCircle className="w-5 h-5 text-green-500" />;
+      case "down":
+      case "unhealthy":
+        return <XCircle className="w-5 h-5 text-red-500" />;
+      case "unknown":
+        return <AlertTriangle className="w-5 h-5 text-yellow-500" />;
       default:
-        return <Clock className="w-5 h-5 text-gray-400" />
+        return <Clock className="w-5 h-5 text-gray-400" />;
     }
-  }
+  };
 
   const getLatencyIcon = (latency?: number) => {
-    if (!latency) return null
+    if (!latency) return null;
 
     if (latency < 100) {
       return (
         <div title="Fast response (<100ms)">
           <Rabbit className="w-5 h-5 text-green-500" />
         </div>
-      )
+      );
     } else if (latency > 200) {
       return (
         <div title="Slow response (>200ms)">
           <Snail className="w-5 h-5 text-yellow-500" />
         </div>
-      )
+      );
     } else {
       return (
         <div title="Normal response time">
           <CheckCircle className="w-5 h-5 text-blue-500" />
         </div>
-      )
+      );
     }
-  }
+  };
 
   return (
     <main className="min-h-screen pt-24 pb-24">
@@ -146,13 +146,13 @@ export default function StatusPage() {
                 <Activity className="w-6 h-6 text-[#52B788]" />
               </div>
               <h1 className="text-4xl font-ovo">
-                {t('status.title', 'System Status')}
+                {t("status.title", "System Status")}
               </h1>
             </div>
 
             <div className="bg-blue-900/20 border border-blue-900/30 rounded-lg p-6 mb-8">
               <h2 className="text-lg font-medium mb-2 text-blue-400">
-                {t('status.reportIssues.title', 'Report Issues or Get Updates')}
+                {t("status.reportIssues.title", "Report Issues or Get Updates")}
               </h2>
               <p className="text-white/80">
                 <Trans
@@ -209,7 +209,7 @@ export default function StatusPage() {
 
                       <div className="text-sm text-white/60 mb-6">
                         <div>
-                          <span className="font-medium">Last Updated:</span>{' '}
+                          <span className="font-medium">Last Updated:</span>{" "}
                           {new Date(systemStatus.lastChecked).toLocaleString()}
                         </div>
                       </div>
@@ -301,7 +301,7 @@ export default function StatusPage() {
                                       <span>
                                         {endpoint.latency
                                           ? `${endpoint.latency}ms`
-                                          : '-'}
+                                          : "-"}
                                       </span>
                                     </div>
                                   </td>
@@ -345,13 +345,13 @@ export default function StatusPage() {
                                   <td className="py-3 px-4">
                                     <div className="flex items-center gap-2">
                                       {getStatusIcon(
-                                        model.isLive ? 'up' : 'down',
+                                        model.isLive ? "up" : "down",
                                         model.error,
                                       )}
                                       <span className="capitalize">
                                         {model.isLive
-                                          ? 'Available'
-                                          : 'Unavailable'}
+                                          ? "Available"
+                                          : "Unavailable"}
                                       </span>
                                     </div>
                                   </td>
@@ -361,7 +361,7 @@ export default function StatusPage() {
                                       <span>
                                         {model.latency
                                           ? `${model.latency}ms`
-                                          : '-'}
+                                          : "-"}
                                       </span>
                                     </div>
                                   </td>
@@ -391,5 +391,5 @@ export default function StatusPage() {
         </div>
       </div>
     </main>
-  )
+  );
 }

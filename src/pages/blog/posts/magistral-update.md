@@ -1,13 +1,13 @@
 ---
-title: 'Model drop: Magistral Small'
-description: 'An update on our model setup'
-date: '2025-06-16'
+title: "Model drop: Magistral Small"
+description: "An update on our model setup"
+date: "2025-06-16"
 language: en
-author: 'Andreas Lundmark'
-email: 'andreas@berget.ai'
-tags: ['models', 'llm']
+author: "Andreas Lundmark"
+email: "andreas@berget.ai"
+tags: ["models", "llm"]
 image: /images/magistralsmall.jpg
-imageAlt: 'Magistral and Berget'
+imageAlt: "Magistral and Berget"
 ---
 
 New model drop! Mistral released it last week and now we have it.

@@ -1,23 +1,23 @@
-import { Shield, Network, Lock } from 'lucide-react'
-import { useTranslation } from 'react-i18next'
+import { Shield, Network, Lock } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import {
   FeatureCards,
   Section,
   SectionHeader,
   type FeatureCardProps,
-} from '@berget-ai/ui'
+} from "@berget-ai/ui";
 
-type Icon = FeatureCardProps['icon']
+type Icon = FeatureCardProps["icon"];
 
 export function ComplianceSection() {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   return (
     <Section padding="xl" background="muted">
       <SectionHeader
-        title={t('compliance.title')}
-        description={t('compliance.description')}
-        tagline={t('compliance.tagline')}
+        title={t("compliance.title")}
+        description={t("compliance.description")}
+        tagline={t("compliance.tagline")}
       />
 
       <FeatureCards
@@ -25,42 +25,42 @@ export function ComplianceSection() {
         features={[
           {
             icon: Shield as Icon,
-            title: t('compliance.regulations.gdpr.name'),
-            description: t('compliance.regulations.gdpr.description'),
+            title: t("compliance.regulations.gdpr.name"),
+            description: t("compliance.regulations.gdpr.description"),
             items: Array.isArray(
-              t('compliance.regulations.gdpr.benefits', {
+              t("compliance.regulations.gdpr.benefits", {
                 returnObjects: true,
               }),
             )
-              ? (t('compliance.regulations.gdpr.benefits', {
+              ? (t("compliance.regulations.gdpr.benefits", {
                   returnObjects: true,
                 }) as string[])
               : [],
           },
           {
             icon: Network as Icon,
-            title: t('compliance.regulations.nis2.name'),
-            description: t('compliance.regulations.nis2.description'),
+            title: t("compliance.regulations.nis2.name"),
+            description: t("compliance.regulations.nis2.description"),
             items: Array.isArray(
-              t('compliance.regulations.nis2.benefits', {
+              t("compliance.regulations.nis2.benefits", {
                 returnObjects: true,
               }),
             )
-              ? (t('compliance.regulations.nis2.benefits', {
+              ? (t("compliance.regulations.nis2.benefits", {
                   returnObjects: true,
                 }) as string[])
               : [],
           },
           {
             icon: Lock as Icon,
-            title: t('compliance.regulations.schrems2.name'),
-            description: t('compliance.regulations.schrems2.description'),
+            title: t("compliance.regulations.schrems2.name"),
+            description: t("compliance.regulations.schrems2.description"),
             items: Array.isArray(
-              t('compliance.regulations.schrems2.benefits', {
+              t("compliance.regulations.schrems2.benefits", {
                 returnObjects: true,
               }),
             )
-              ? (t('compliance.regulations.schrems2.benefits', {
+              ? (t("compliance.regulations.schrems2.benefits", {
                   returnObjects: true,
                 }) as string[])
               : [],
@@ -68,5 +68,5 @@ export function ComplianceSection() {
         ]}
       />
     </Section>
-  )
+  );
 }

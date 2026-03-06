@@ -1,13 +1,13 @@
-import { usePageContext } from 'vike-react/usePageContext'
+import { usePageContext } from "vike-react/usePageContext";
 
 export default function Head() {
-  const pageContext = usePageContext() as any
-  const locale = pageContext.locale || 'en'
-  const urlPathname = pageContext.urlPathname || '/'
+  const pageContext = usePageContext() as any;
+  const locale = pageContext.locale || "en";
+  const urlPathname = pageContext.urlPathname || "/";
   const siteUrl =
-    typeof process !== 'undefined' && process.env?.SITE_URL
+    typeof process !== "undefined" && process.env?.SITE_URL
       ? process.env.SITE_URL
-      : 'https://berget.ai'
+      : "https://berget.ai";
 
   return (
     <>
@@ -38,16 +38,16 @@ export default function Head() {
       <meta
         property="og:type"
         content={
-          urlPathname.startsWith('/blog/') && urlPathname !== '/blog/'
-            ? 'article'
-            : 'website'
+          urlPathname.startsWith("/blog/") && urlPathname !== "/blog/"
+            ? "article"
+            : "website"
         }
       />
       <meta property="og:site_name" content="Berget AI" />
       <meta
         property="og:locale"
-        content={locale === 'sv' ? 'sv_SE' : 'en_US'}
+        content={locale === "sv" ? "sv_SE" : "en_US"}
       />
     </>
-  )
+  );
 }

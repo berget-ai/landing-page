@@ -126,11 +126,11 @@ spec:
           image: ghcr.io/my-org/my-service:latest
           resources:
             requests:
-              memory: '128Mi'
-              cpu: '100m'
+              memory: "128Mi"
+              cpu: "100m"
             limits:
-              memory: '256Mi'
-              cpu: '200m'
+              memory: "256Mi"
+              cpu: "200m"
 ```
 
 **service.yaml** - Makes your app reachable within the cluster

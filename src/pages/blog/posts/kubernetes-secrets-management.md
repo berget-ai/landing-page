@@ -98,7 +98,7 @@ spec:
   chart:
     spec:
       chart: sealed-secrets
-      version: '2.15.x'
+      version: "2.15.x"
       sourceRef:
         kind: HelmRepository
         name: sealed-secrets
@@ -274,7 +274,7 @@ spec:
   chart:
     spec:
       chart: vault
-      version: '0.27.x'
+      version: "0.27.x"
       sourceRef:
         kind: HelmRepository
         name: hashicorp
@@ -310,7 +310,7 @@ spec:
   chart:
     spec:
       chart: vault-secrets-operator
-      version: '0.4.x'
+      version: "0.4.x"
       sourceRef:
         kind: HelmRepository
         name: hashicorp
@@ -318,7 +318,7 @@ spec:
   values:
     defaultVaultConnection:
       enabled: true
-      address: 'http://vault.vault.svc.cluster.local:8200'
+      address: "http://vault.vault.svc.cluster.local:8200"
 ```
 
 ### Using Vault Secrets in Applications
@@ -395,10 +395,10 @@ kind: Role
 metadata:
   name: app-secrets-reader
 rules:
-  - apiGroups: ['']
-    resources: ['secrets']
-    resourceNames: ['app-secrets']
-    verbs: ['get']
+  - apiGroups: [""]
+    resources: ["secrets"]
+    resourceNames: ["app-secrets"]
+    verbs: ["get"]
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
@@ -423,7 +423,7 @@ kind: CronJob
 metadata:
   name: rotate-database-password
 spec:
-  schedule: '0 2 * * 0' # Weekly at 2 AM Sunday
+  schedule: "0 2 * * 0" # Weekly at 2 AM Sunday
   jobTemplate:
     spec:
       template:
@@ -433,9 +433,9 @@ spec:
               image: my-secret-rotator:latest
               env:
                 - name: SECRET_NAME
-                  value: 'app-secrets'
+                  value: "app-secrets"
                 - name: SECRET_KEY
-                  value: 'database-password'
+                  value: "database-password"
           restartPolicy: OnFailure
 ```
 
@@ -456,7 +456,7 @@ spec:
           expr: increase(apiserver_audit_total{verb="get",objectRef_resource="secrets"}[5m]) > 10
           for: 2m
           annotations:
-            summary: 'High number of secret access failures'
+            summary: "High number of secret access failures"
 ```
 
 ## Choosing the Right Solution

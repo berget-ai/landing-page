@@ -1,13 +1,13 @@
 ---
-title: 'On-prem for AI Inference? Why It’s Often the Wrong Path – and What to Do Instead'
-description: 'Why on-prem GPU can be an unnecessarily expensive idea and what better alternatives exist for sovereign AI infrastructure'
-date: '2026-02-04'
+title: "On-prem for AI Inference? Why It’s Often the Wrong Path – and What to Do Instead"
+description: "Why on-prem GPU can be an unnecessarily expensive idea and what better alternatives exist for sovereign AI infrastructure"
+date: "2026-02-04"
 language: en
-author: 'Christian Landgren'
-email: 'christian@berget.ai'
-tags: ['technology', 'infrastructure', 'sovereignty', 'ai']
+author: "Christian Landgren"
+email: "christian@berget.ai"
+tags: ["technology", "infrastructure", "sovereignty", "ai"]
 image: /images/on-prem.jpg
-imageAlt: 'Illustration showing different alternatives for AI inference and their costs/benefits'
+imageAlt: "Illustration showing different alternatives for AI inference and their costs/benefits"
 ---
 
 **Sovereignty** is one of the strongest driving forces in AI today. After years of dependence on American cloud providers, companies, government agencies, and developers are realizing that the future of AI must run differently – with control, transparency, and sustainability. But for many, the answer is wrong: they think the solution is _on-prem_.
@@ -81,9 +81,9 @@ If you're already using `api.openai.com/v1` or `api.anthropic.com/v1` – you ca
 ```ts
 // Just change your base URL:
 const client = new OpenAI({
-  baseURL: 'https://api.berget.ai/v1',
+  baseURL: "https://api.berget.ai/v1",
   apiKey: process.env.BERGET_API_KEY,
-})
+});
 ```
 
 Same models. Same protocol. But with Swedish sovereignty and full control.

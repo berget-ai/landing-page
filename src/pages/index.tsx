@@ -1,9 +1,9 @@
-import { Hero } from '@/components/sections/Hero'
-import { ComplianceSection } from '@/components/sections/ComplianceSection'
-import { ProductFeatures } from '@/components/sections/ProductFeatures'
-import { PricingSection } from '@/components/sections/PricingSection'
-import { PartnerQuotes } from '@/components/sections/PartnerQuotes'
-import { KeyBenefitsSection } from '@/components/sections/KeyBenefitsSection'
+import { Hero } from "@/components/sections/Hero";
+import { ComplianceSection } from "@/components/sections/ComplianceSection";
+import { ProductFeatures } from "@/components/sections/ProductFeatures";
+import { PricingSection } from "@/components/sections/PricingSection";
+import { PartnerQuotes } from "@/components/sections/PartnerQuotes";
+import { KeyBenefitsSection } from "@/components/sections/KeyBenefitsSection";
 
 export default function HomePage() {
   return (
@@ -26,5 +26,5 @@ export default function HomePage() {
       {/* Pricing Section */}
       <PricingSection />
     </main>
-  )
+  );
 }

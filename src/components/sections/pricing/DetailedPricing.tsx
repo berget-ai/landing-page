@@ -1,8 +1,8 @@
-import { ServerlessInference } from './ServerlessInference'
-import { useModels } from '@/hooks/use-models'
+import { ServerlessInference } from "./ServerlessInference";
+import { useModels } from "@/hooks/use-models";
 
 export function DetailedPricing() {
-  const { loading } = useModels()
+  const { loading } = useModels();
 
   return (
     <div className="space-y-12">
@@ -14,5 +14,5 @@ export function DetailedPricing() {
         <ServerlessInference />
       )}
     </div>
-  )
+  );
 }

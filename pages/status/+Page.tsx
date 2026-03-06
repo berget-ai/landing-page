@@ -1,1 +1,1 @@
-export { default } from '@/pages/status'
+export { default } from "@/pages/status";

@@ -1,11 +1,11 @@
-import path from 'path'
-import tailwindcss from '@tailwindcss/vite'
-import react from '@vitejs/plugin-react'
-import { defineConfig } from 'vite'
-import { plugin, Mode } from 'vite-plugin-markdown'
-import { imagetools } from 'vite-imagetools'
-import vike from 'vike/plugin'
-import { ogImagePlugin } from './server/og/og-plugin'
+import path from "path";
+import tailwindcss from "@tailwindcss/vite";
+import react from "@vitejs/plugin-react";
+import { defineConfig } from "vite";
+import { plugin, Mode } from "vite-plugin-markdown";
+import { imagetools } from "vite-imagetools";
+import vike from "vike/plugin";
+import { ogImagePlugin } from "./server/og/og-plugin";
 
 export default defineConfig({
   plugins: [
@@ -14,9 +14,9 @@ export default defineConfig({
     react(),
     imagetools({
       defaultDirectives: new URLSearchParams([
-        ['format', 'webp'],
-        ['quality', '80'],
-        ['progressive', 'true'],
+        ["format", "webp"],
+        ["quality", "80"],
+        ["progressive", "true"],
       ]),
     }),
     plugin({
@@ -31,17 +31,17 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      "@": path.resolve(__dirname, "./src"),
     },
   },
   ssr: {
-    noExternal: ['@berget-ai/ui'],
+    noExternal: ["@berget-ai/ui"],
   },
   build: {
     sourcemap: true,
   },
   optimizeDeps: {
-    include: ['vite-imagetools'],
-    exclude: ['lightningcss', 'fsevents'],
+    include: ["vite-imagetools"],
+    exclude: ["lightningcss", "fsevents"],
   },
-})
+});
