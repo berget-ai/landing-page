@@ -321,7 +321,7 @@
   "whyBerget": {
     "hero": {
       "tagline": "No data leaves Sweden",
-      "title": "Why Choose Berget AI?",
+      "title": "Why choose Berget AI?",
       "description": "No dependencies, no legal exposure, no data retention",
       "getStarted": "Get started",
       "bookDemo": "Book demo"
@@ -580,7 +580,7 @@
     }
   },
   "whyBergetSection": {
-    "title": "Why Choose Berget",
+    "title": "Why choose Berget?",
     "description": "No dependencies, no legal exposure, no data retention.",
     "features": {
       "european": {
