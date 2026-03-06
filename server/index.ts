@@ -2,6 +2,7 @@ import express from 'express'
 import compression from 'compression'
 import { renderPage } from 'vike/server'
 import { join } from 'path'
+import { handleOgImage } from './og/og-route'
 
 const isProduction = process.env.NODE_ENV === 'production'
 const port = parseInt(process.env.PORT || '3000', 10)
@@ -28,6 +29,8 @@ async function startServer() {
   app.get('/healthz', (_req, res) => {
     res.status(200).json({ status: 'ok' })
   })
+
+  app.get('/api/og', handleOgImage)
 
   if (isProduction) {
     // Serve static client assets with long-term caching

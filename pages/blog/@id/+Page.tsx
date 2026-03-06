@@ -101,7 +101,13 @@ export default function Page() {
       <Config
         title={`${post.title} - Berget AI`}
         description={post.description}
-        image={post.image ? `${siteUrl}${post.image}` : undefined}
+        image={(() => {
+          const ogParams = new URLSearchParams({
+            title: post.title,
+            ...(post.image && { image: `${siteUrl}${post.image}` }),
+          })
+          return `${siteUrl}/api/og?${ogParams.toString()}`
+        })()}
       />
       <article className={post?.image ? '' : 'container mx-auto px-4 py-12'}>
         <div className={post?.image ? '' : 'max-w-prose mx-auto'}>
