@@ -12,13 +12,13 @@ imageAlt: Nordic Flags
 email: andreas@berget.ai
 ---
 
-
 imageAlt: 'Server room with modern AI infrastructure'
+
 # 🇸🇪 Building AI in Swedish? Here’s How to Pick the Right Models — with Help from SEB, EuroEval & Berget AI
 
 Let’s face it: building AI apps in Swedish isn’t always smooth sailing. While the big models dominate in English, **Scandinavian languages often get less love** — which can lead to quirky outputs, underperforming features, and lots of trial and error.
 
-But it doesn’t have to be that way. With the right tools, you can build apps that truly *get* Swedish — and we’re here to show you how.
+But it doesn’t have to be that way. With the right tools, you can build apps that truly _get_ Swedish — and we’re here to show you how.
 
 ---
 
@@ -26,9 +26,9 @@ But it doesn’t have to be that way. With the right tools, you can build apps t
 
 Most LLMs are trained on oceans of English data — but when it comes to Swedish, the waters get a bit shallower. That can lead to:
 
-- Misunderstood context and idioms  
-- Lower accuracy in tasks like summarization, Q&A, or classification  
-- Head-scratching moments when the model just… doesn’t get it  
+- Misunderstood context and idioms
+- Lower accuracy in tasks like summarization, Q&A, or classification
+- Head-scratching moments when the model just… doesn’t get it
 
 So how do you know what model is actually good in Swedish?
 
@@ -51,6 +51,7 @@ Whether you're building chatbots, document understanding tools, or summarization
 SEB offers a detailed leaderboard that makes it easy to see which embedding models really “get” the nuances of Scandinavian languages.
 
 **In short:**
+
 - 🧠 Use **EuroEval** to benchmark language understanding and generation.
 - 🧭 Use **SEB** to evaluate embeddings for search and semantic tasks.
 
@@ -68,12 +69,13 @@ Berget AI now offers **KBWhisper Large** for inference — a powerful model trai
 
 Whether you’re building a chatbot, a semantic search engine, or a custom voice assistant — working in Swedish just got a whole lot easier.
 
-- 🧪 Use **EuroEval** to evaluate general model quality  
-- 🔍 Use **SEB** to choose the best embeddings for your app  
+- 🧪 Use **EuroEval** to evaluate general model quality
+- 🔍 Use **SEB** to choose the best embeddings for your app
 - 🔊 Use **Berget AI** to access Swedish inference APIs and speech models
 
 **Explore the tools:**
-- 📊 [euroeval.com](https://euroeval.com)  
-- 🔍 [Scandinavian Embedding Benchmark](https://kennethenevoldsen.github.io/scandinavian-embedding-benchmark)  
 
-Let’s build great AI — *på svenska!* 🇸🇪✨
+- 📊 [euroeval.com](https://euroeval.com)
+- 🔍 [Scandinavian Embedding Benchmark](https://kennethenevoldsen.github.io/scandinavian-embedding-benchmark)
+
+Let’s build great AI — _på svenska!_ 🇸🇪✨

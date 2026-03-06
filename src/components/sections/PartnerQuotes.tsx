@@ -3,9 +3,9 @@ import { useTranslation } from 'react-i18next'
 import { Card, Section, SectionHeader } from '@berget-ai/ui'
 
 interface Quote {
-  name: string;
-  title: string;
-  quote: string;
+  name: string
+  title: string
+  quote: string
 }
 
 export function PartnerQuotes() {
@@ -20,8 +20,8 @@ export function PartnerQuotes() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
         {(Array.isArray(t('partnerQuotes.quotes', { returnObjects: true }))
-          ? t('partnerQuotes.quotes', { returnObjects: true }) as Quote[]
-          : [] as Quote[]
+          ? (t('partnerQuotes.quotes', { returnObjects: true }) as Quote[])
+          : ([] as Quote[])
         ).map((quote: Quote, index: number) => (
           <motion.div
             key={quote.name}

@@ -13,7 +13,7 @@ imageAlt: 'Server rack with AMD MI300x accelerators in a modern data center'
 When we at Berget AI build our infrastructure to run large language models (LLMs), we face an interesting challenge: How do we fit as many powerful models as possible on our hardware, while ensuring fast response times and high availability? In this article, we share our experiences and techniques for optimizing memory usage for our AI models.
 
 ![GPU configuration for our models](/images/gpu-configurator.png)
-*Our current GPU configuration with model placement and memory usage*
+_Our current GPU configuration with model placement and memory usage_
 
 ## Our Hardware Infrastructure: AMD MI300x
 
@@ -108,6 +108,7 @@ This combination gives us redundancy for code generation tasks and enables A/B t
 Some models are so large that they need a dedicated GPU. Our Llama-3.3-70B model uses 97% of the memory on GPU 2, which doesn't leave room for other models.
 
 On GPU 3, we run several smaller but important models:
+
 - **Mistral-Small-24B**: ~24 GB
 - **Docling**: ~1 GB
 - **BGE-Reranker**: ~3 GB
@@ -152,4 +153,4 @@ Our journey with memory optimization continues, and we look forward to sharing m
 
 ---
 
-*Want to know more about our technical infrastructure or how we can help your company with AI implementations? [Contact us](mailto:contact@berget.ai) for a discussion.*
+_Want to know more about our technical infrastructure or how we can help your company with AI implementations? [Contact us](mailto:contact@berget.ai) for a discussion._

@@ -21,24 +21,43 @@ export function Header() {
         </div>
       )}
       {health.status === 'critical' && health.messageKey && (
-        <a href="/status" className="block bg-red-500/90 hover:bg-red-500 text-white text-center py-2 px-4 text-xs font-medium transition-colors">
+        <a
+          href="/status"
+          className="block bg-red-500/90 hover:bg-red-500 text-white text-center py-2 px-4 text-xs font-medium transition-colors"
+        >
           <div className="flex items-center justify-center gap-2">
             <AlertCircle className="w-4 h-4" />
-            <span>{t(health.messageKey, 'We are having hardware problems with one of our GPU:s, expecting replacement ASAP. Please visit https://berget.ai/status for more information.')}</span>
+            <span>
+              {t(
+                health.messageKey,
+                'We are having hardware problems with one of our GPU:s, expecting replacement ASAP. Please visit https://berget.ai/status for more information.',
+              )}
+            </span>
           </div>
         </a>
       )}
       {health.status === 'degraded' && health.messageKey && (
-        <a href="/status" className="block bg-yellow-500/90 hover:bg-yellow-500 text-black text-center py-2 px-4 text-xs font-medium transition-colors">
+        <a
+          href="/status"
+          className="block bg-yellow-500/90 hover:bg-yellow-500 text-black text-center py-2 px-4 text-xs font-medium transition-colors"
+        >
           <div className="flex items-center justify-center gap-2">
             <AlertTriangle className="w-4 h-4" />
-            <span>{t(health.messageKey, 'Some services are experiencing issues. Please visit https://berget.ai/status for more information.')}</span>
+            <span>
+              {t(
+                health.messageKey,
+                'Some services are experiencing issues. Please visit https://berget.ai/status for more information.',
+              )}
+            </span>
           </div>
         </a>
       )}
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center space-x-2">
-          <a href="/" className="flex items-center gap-2 hover:text-white/90 transition-colors">
+          <a
+            href="/"
+            className="flex items-center gap-2 hover:text-white/90 transition-colors"
+          >
             <BergetSymbol size={32} variant="light" />
             <span className="text-xl font-semibold">Berget AI</span>
           </a>
@@ -46,32 +65,50 @@ export function Header() {
 
         <nav className="hidden md:flex items-center space-x-8">
           {/* Products */}
-          <a href="/products" className="text-sm text-white/60 hover:text-white transition-colors">
+          <a
+            href="/products"
+            className="text-sm text-white/60 hover:text-white transition-colors"
+          >
             {t('header.navigation.products')}
           </a>
 
           {/* Models */}
-          <a href="/models" className="text-sm text-white/60 hover:text-white transition-colors">
-          {t('header.navigation.models')}
+          <a
+            href="/models"
+            className="text-sm text-white/60 hover:text-white transition-colors"
+          >
+            {t('header.navigation.models')}
           </a>
 
           {/* Why Berget */}
-          <a href="/why-berget" className="text-sm text-white/60 hover:text-white transition-colors">
+          <a
+            href="/why-berget"
+            className="text-sm text-white/60 hover:text-white transition-colors"
+          >
             {t('header.navigation.whyBerget')}
           </a>
 
           {/* For Developers */}
-          <a href="/developers" className="text-sm text-white/60 hover:text-white transition-colors">
+          <a
+            href="/developers"
+            className="text-sm text-white/60 hover:text-white transition-colors"
+          >
             {t('header.navigation.developers')}
           </a>
 
           {/* Pricing */}
-          <a href="/pricing" className="text-sm text-white/60 hover:text-white transition-colors">
+          <a
+            href="/pricing"
+            className="text-sm text-white/60 hover:text-white transition-colors"
+          >
             {t('header.navigation.pricing')}
           </a>
 
           {/* Documentation */}
-          <a href="https://api.berget.ai" className="text-sm text-white/60 hover:text-white transition-colors">
+          <a
+            href="https://api.berget.ai"
+            className="text-sm text-white/60 hover:text-white transition-colors"
+          >
             {t('header.navigation.api')}
           </a>
 
@@ -86,15 +123,19 @@ export function Header() {
           </Button>
         </nav>
 
-        <Button 
+        <Button
           variant="outline"
-          size="icon" 
+          size="icon"
           className="md:hidden"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label={isMenuOpen ? t('header.closeMenu') : t('header.openMenu')}
           aria-expanded={isMenuOpen}
         >
-          {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          {isMenuOpen ? (
+            <X className="h-5 w-5" />
+          ) : (
+            <Menu className="h-5 w-5" />
+          )}
         </Button>
       </div>
 
@@ -111,35 +152,35 @@ export function Header() {
                 {/* Mobile Navigation Links */}
                 <div className="flex flex-col space-y-4">
                   <a
-                    href="/products" 
+                    href="/products"
                     className="text-2xl text-white hover:text-white/80 transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {t('header.navigation.products')}
                   </a>
                   <a
-                    href="/models" 
+                    href="/models"
                     className="text-2xl text-white hover:text-white/80 transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {t('header.navigation.models')}
                   </a>
                   <a
-                    href="/why-berget" 
+                    href="/why-berget"
                     className="text-2xl text-white hover:text-white/80 transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {t('header.navigation.whyBerget')}
                   </a>
                   <a
-                    href="/developers" 
+                    href="/developers"
                     className="text-2xl text-white hover:text-white/80 transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {t('header.navigation.developers')}
                   </a>
                   <a
-                    href="/pricing" 
+                    href="/pricing"
                     className="text-2xl text-white hover:text-white/80 transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >

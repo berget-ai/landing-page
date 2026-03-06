@@ -20,9 +20,9 @@ spec:
             - containerPort: 3000
           env:
             - name: API_URL
-              value: "https://api.berget.ai/v1"
+              value: 'https://api.berget.ai/v1'
             - name: SITE_URL
-              value: "https://berget.ai"
+              value: 'https://berget.ai'
           resources:
             requests:
               cpu: 100m

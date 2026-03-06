@@ -1,5 +1,11 @@
 import { Shield, ArrowRight } from 'lucide-react'
-import { HeroBlock, Button, Section, SectionHeader, type HeroBlockProps } from '@berget-ai/ui'
+import {
+  HeroBlock,
+  Button,
+  Section,
+  SectionHeader,
+  type HeroBlockProps,
+} from '@berget-ai/ui'
 import { ComplianceSection } from '@/components/sections/ComplianceSection'
 import { SustainabilitySection } from '@/components/sections/SustainabilitySection'
 import { PartnerQuotes } from '@/components/sections/PartnerQuotes'
@@ -29,11 +35,7 @@ function WhyBergetPage() {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              asChild
-            >
+            <Button size="lg" variant="outline" asChild>
               <a href="/contact">{t('whyBerget.hero.bookDemo')}</a>
             </Button>
           </>
@@ -67,11 +69,7 @@ function WhyBergetPage() {
               <ArrowRight className="ml-2 h-5 w-5" />
             </a>
           </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            asChild
-          >
+          <Button size="lg" variant="outline" asChild>
             <a href="/contact">{t('whyBerget.cta.contactSales')}</a>
           </Button>
         </div>

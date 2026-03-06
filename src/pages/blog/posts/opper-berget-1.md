@@ -10,9 +10,11 @@ tags:
 image: /images/opperberget.png
 imageAlt: Opper AI and Berget AI
 ---
+
 ## Berget AI partners with Opper AI to bring EU-hosted serverless inference to one API
 
 **Stockholm, Sweden, September 2025**. Opper AI and Berget AI are partnering to make EU-hosted, pay-as-you-go inference available directly inside Opper’s Task-Completion API. Teams can now select Berget’s models in the Opper console, keep data inside the EU, and use Opper’s model-agnostic routing, evaluations, and observability to ship reliable AI agents.
+
 ## Why this matters
 
 EU data residency and sovereignty. [Berget AI](https://berget.ai/) provides EU-hosted inference for private and public sector organizations. It is built to ensure that data remains on sovereign infrastructure within EU borders and to enable AI applications to also handle sensitive data.
@@ -26,10 +28,11 @@ Reliability in production. Opper adds built-in evaluations, routing, and fallbac
 ## What’s available today
 
 At launch, the following Berget-hosted models are live in Opper with EU residency:
-* GPT-OSS 120B
-* Llama 3.3 70B Instruct
-* Mistral Small 3.1 24B Instruct
-* Qwen3 32B
+
+- GPT-OSS 120B
+- Llama 3.3 70B Instruct
+- Mistral Small 3.1 24B Instruct
+- Qwen3 32B
 
 “Customers want choice, sovereignty, and reliability. Berget brings EU-hosted inference, and Opper adds task contracts, evals, and switching so teams can deliver with confidence,” said **Göran Sandahl,** Co-founder and CEO, Opper AI.
 

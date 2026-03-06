@@ -61,13 +61,11 @@ Sverige har en unik position med starka institutioner som kompletterar varandra:
 ### Automatiserad pipeline
 
 1. **Datainsamling**
-
    - API-integration med KB:s arkiv
    - Automatisk metadata-extraktion
    - Kvalitetskontroll och filtrering
 
 2. **Fine-tuning process**
-
    - Distribuerad beräkning
    - Kontinuerlig utvärdering
    - Versionshantering

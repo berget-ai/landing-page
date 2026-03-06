@@ -6,7 +6,9 @@ import { join } from 'path'
 const isProduction = process.env.NODE_ENV === 'production'
 const port = parseInt(process.env.PORT || '3000', 10)
 const root = process.cwd()
-const clientDir = isProduction ? join(root, 'dist/client') : join(root, 'public')
+const clientDir = isProduction
+  ? join(root, 'dist/client')
+  : join(root, 'public')
 
 async function startServer() {
   const app = express()
@@ -34,7 +36,7 @@ async function startServer() {
       express.static(join(clientDir, 'assets'), {
         maxAge: '1y',
         immutable: true,
-      })
+      }),
     )
     app.use(express.static(clientDir, { maxAge: '1h', redirect: false }))
   } else {

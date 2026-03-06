@@ -6,7 +6,7 @@
 
 1.2. If the Customer Data contains personal data, the provisions of this DPA shall govern the processing of that personal data by Berget.
 
-#### 
+####
 
 ## 2\. Definitions
 
@@ -24,7 +24,7 @@ Unless otherwise defined, the capitalised terms defined in the Terms of Service 
 
 **“Supervisory Authority”** means (i) an independent public authority which is established by an EU/EEA member state pursuant to Article 51 of GDPR; and (ii) any similar regulatory authority responsible for the enforcement of Data Protection Laws.
 
-#### 
+####
 
 ## 3\. Processing of Personal Data
 
@@ -44,7 +44,7 @@ f) Categories of data subjects: The categories of data subjects may include the 
 
 3.2. Berget processes certain personal data also as data controller. Such personal data may include, inter alia, data of the Customer’s contact persons, users of the Services, credit card information, and other personal data of the Customer’s personnel which Berget processes in order to provide the Services, collect payments, and maintain and develop the customer relationship. Processing of this type of personal data is outside the scope of this DPA. For more information on how Berget processes personal data as data controller, please see Berget’s Privacy Policy available on Berget’s website at https://berget.ai
 
-#### 
+####
 
 ### 4\. General Obligations of the Customer
 
@@ -56,7 +56,7 @@ The Customer is fully responsible for ensuring that all personal data transferre
 
 4.3. The Customer shall ensure that the Customer is entitled to process the Relevant Personal Data and to disclose, transfer or otherwise make it available to Berget for lawful processing hereunder. The Customer acknowledges that due to the nature of the Service, Berget cannot control and has no obligation to verify what types of personal data the Customer transfers to Berget for processing in connection with the Service.
 
-#### 
+####
 
 ## 5\. General Obligations of Berget
 
@@ -66,7 +66,7 @@ The Customer is fully responsible for ensuring that all personal data transferre
 
 5.3. Berget shall not use the Relevant Personal Data for any other purposes other than that of providing the Service, and shall not process, transfer, modify, amend, assert liens or other right over or alter the Relevant Personal Data. Berget shall not disclose or permit the disclosure of the Relevant Personal Data to any third party without the Customer’s prior written approval, unless such disclosure is required by applicable laws or an order of Governmental Authority, in which case Berget shall, to the extent legally permitted, inform the Customer of the disclosure.
 
-#### 
+####
 
 ## 6\. Berget’s Assistance Obligations
 
@@ -76,7 +76,7 @@ The Customer is fully responsible for ensuring that all personal data transferre
 
 6.3. If the Customer requires assistance from Berget, Berget shall be entitled to a reasonable remuneration for providing the assistance. The amount of remuneration will be agreed upon between the Parties in advance.
 
-#### 
+####
 
 ## 7\. Berget’s Personnel
 
@@ -86,7 +86,7 @@ The Customer is fully responsible for ensuring that all personal data transferre
 (iii) are under confidentiality undertakings or an appropriate statutory obligation of confidentiality; and  
 (iv) have undertaken appropriate training in relation to the processing of the Relevant Personal Data.
 
-#### 
+####
 
 ## 8\. Security Measures
 
@@ -97,7 +97,7 @@ The Customer is fully responsible for ensuring that all personal data transferre
 (iv) the ability to restore the availability and access to the Relevant Personal Data in a timely manner in the event of a physical or technical incident; and  
 (v) a process for regularly testing, assessing and evaluating the effectiveness of technical and organisational measures for ensuring the security of the processing.
 
-#### 
+####
 
 ## 9\. Subprocessors
 
@@ -107,13 +107,13 @@ The Customer is fully responsible for ensuring that all personal data transferre
 
 9.3. Berget is entitled to change its subprocessors. Berget shall inform the Customer regarding changes (additions or replacements) in the subprocessors by providing at least 30 (thirty) days’ advance notice, giving the Customer the opportunity to object to such change. The Customer may object to the change by providing a written notice thereof to Berget within thirty (30) days after being informed of the change. In such case, the Parties shall strive to find an alternative solution. If such a solution is not found, the Customer may terminate the Agreement without any liability to Berget.
 
-### 
+###
 
 ## 10\. International Transfers
 
 10.1. The Customer may choose in which Berget data centre(s) the Relevant Personal Data will be processed. All our data centres are within the European Economic Area (“EEA”). Berget shall not move the Relevant Personal Data from the selected data centre unless explicitly instructed to do so by the Customer.
 
-#### 
+####
 
 ## 11\. Audits
 
@@ -123,7 +123,7 @@ The Customer is fully responsible for ensuring that all personal data transferre
 
 11.3. Unless otherwise agreed between the Parties, the Customer is allowed to conduct one (1) audit in every twelve (12) months. Any audit must be conducted during the normal business hours of Berget and in a way that does not cause substantial disturbance to Berget’s business operations. The Customer shall bear all costs and expenses relating to the audits conducted hereunder and pay a reasonable compensation to Berget for the work required to assist in the audits.
 
-#### 
+####
 
 ## 12\. Data Breaches
 
@@ -137,7 +137,7 @@ The Customer is fully responsible for ensuring that all personal data transferre
 
 12.2. Berget shall cooperate with the Customer and, where relevant, the End-Customer, and take commercially reasonable steps to assist in the investigation, mitigation and remediation of the Data Breach.
 
-#### 
+####
 
 ## 13\. Deletion and Return of Personal Data
 
@@ -145,7 +145,7 @@ The Customer is fully responsible for ensuring that all personal data transferre
 
 13.2. The Customer agrees that within a reasonable time after the termination or expiry of the Agreement, or after the Customer has permanently ceased to use the Services, Berget shall delete and procure deletion of all copies of the Relevant Personal Data processed by Berget or any subprocessor, unless Berget is obliged to retain copies of the Relevant Personal Data pursuant to applicable laws or orders of Governmental Authority.
 
-#### 
+####
 
 ## 14\. Liability
 
@@ -153,7 +153,7 @@ The Customer is fully responsible for ensuring that all personal data transferre
 
 14.2. Otherwise the Parties’ liability for a breach of the DPA shall be subject to Section 19 (Limitation of Liability) of the main body of the Terms of Service.
 
-#### 
+####
 
 ## 15\. Term
 
@@ -163,12 +163,12 @@ APPENDIX 1 – Berget Subprocessors
 
 Berget may utilise its Affiliates in the provision of the Service, as may be necessary for the provision of the Services ordered by the Customer.
 
-Berget’s Operations Team members may need to work with or handle resources containing Customer Data when maintaining Berget’s data centre infrastructure or resolving issues reported by the Customer (e.g. moving storages from one physical host machine to another physical host machine in the same data centre). As the Article 4 of the GDPR provides a very extensive definition for ‘processing‘, such actions can be deemed as processing under the GDPR even though they do not entail accessing the Customer Data. 
+Berget’s Operations Team members may need to work with or handle resources containing Customer Data when maintaining Berget’s data centre infrastructure or resolving issues reported by the Customer (e.g. moving storages from one physical host machine to another physical host machine in the same data centre). As the Article 4 of the GDPR provides a very extensive definition for ‘processing‘, such actions can be deemed as processing under the GDPR even though they do not entail accessing the Customer Data.
 
 Therefore Berget considers some of its Affiliates as subprocessors regardless of the data centre(s) the Customer has selected. However, Berget personnel will never take actions to access the Customer Data, unless specifically requested by and agreed in advance with the Customer.
 
 The following list describes in which cases Berget Affiliates will be utilised in the provision of the Services:
 
-* GetGeek AB (Org nr: 559073-1039), provides services to Berget AI AB with regards to network and server design and operations and support  
-    
-* Acebit AB (Org nr: 559265-3538), provides services to Berget AI AB with regards to network and server design and operations and support
+- GetGeek AB (Org nr: 559073-1039), provides services to Berget AI AB with regards to network and server design and operations and support
+
+- Acebit AB (Org nr: 559265-3538), provides services to Berget AI AB with regards to network and server design and operations and support

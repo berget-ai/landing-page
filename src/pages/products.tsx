@@ -161,7 +161,9 @@ export default function ProductsPage() {
                   <h2 className="text-2xl sm:text-3xl font-medium">
                     {t('products.dedicated.title')}
                   </h2>
-                  <Badge variant="tag" status="tagDefault" size="sm">Coming Soon</Badge>
+                  <Badge variant="tag" status="tagDefault" size="sm">
+                    Coming Soon
+                  </Badge>
                 </div>
                 <p className="text-base sm:text-lg text-white/60">
                   {t('products.dedicated.description')}
@@ -251,7 +253,9 @@ export default function ProductsPage() {
                   <h2 className="text-2xl sm:text-3xl font-medium">
                     {t('products.platform.title')}
                   </h2>
-                  <Badge variant="tag" status="tagDefault" size="sm">Coming Soon</Badge>
+                  <Badge variant="tag" status="tagDefault" size="sm">
+                    Coming Soon
+                  </Badge>
                 </div>
                 <p className="text-base sm:text-lg text-white/60">
                   {t('products.platform.description')}
@@ -359,7 +363,7 @@ export default function ProductsPage() {
                       {Object.entries(
                         t('products.architecture.layers', {
                           returnObjects: true,
-                        }) as Record<string, any>
+                        }) as Record<string, any>,
                       )
                         .slice(0, 4)
                         .map(([key, layer]: [string, any], index) => {
@@ -374,9 +378,7 @@ export default function ProductsPage() {
                             >
                               <Card variant="solid" padding="md">
                                 <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-                                  <div
-                                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-[#2D6A4F] to-[#40916C] flex items-center justify-center flex-shrink-0"
-                                  >
+                                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-[#2D6A4F] to-[#40916C] flex items-center justify-center flex-shrink-0">
                                     <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                                   </div>
                                   <div>
@@ -409,18 +411,18 @@ export default function ProductsPage() {
                     viewport={{ once: true }}
                     className="lg:col-span-3"
                   >
-                    <Card variant="solid" padding="md" className="h-full flex flex-col">
+                    <Card
+                      variant="solid"
+                      padding="md"
+                      className="h-full flex flex-col"
+                    >
                       <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
-                        <div
-                          className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-[#FFB700] to-[#FFB700]/80 flex items-center justify-center flex-shrink-0"
-                        >
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-[#FFB700] to-[#FFB700]/80 flex items-center justify-center flex-shrink-0">
                           <managementStack.icon className="w-5 h-5 sm:w-6 sm:h-6 text-[#1A1A1A]" />
                         </div>
                         <div>
                           <h3 className="text-lg sm:text-xl font-medium">
-                            {t(
-                              'products.architecture.layers.management.title'
-                            )}
+                            {t('products.architecture.layers.management.title')}
                           </h3>
                         </div>
                       </div>

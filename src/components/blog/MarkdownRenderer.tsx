@@ -34,11 +34,14 @@ function preprocessLLMPrompts(markdown: string): string {
       const defaultExpandedMatch = attributes.match(/defaultExpanded={([^}]*)}/)
 
       const title = titleMatch ? titleMatch[1] : 'LLM Prompt'
-      const isOpen = defaultExpandedMatch ? defaultExpandedMatch[1] === 'true' : false
+      const isOpen = defaultExpandedMatch
+        ? defaultExpandedMatch[1] === 'true'
+        : false
 
-      const chevron = '<svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>'
+      const chevron =
+        '<svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>'
       return `<details class="llm-prompt"${isOpen ? ' open' : ''}>\n<summary><span>${title}</span>${chevron}</summary>\n\n\`\`\`\n${innerContent.trim()}\n\`\`\`\n\n</details>`
-    }
+    },
   )
 }
 
@@ -46,7 +49,12 @@ const components = {
   code({ className, children, node, ...props }: any) {
     const match = /language-(\w+)/.exec(className || '')
     const isInline = !match && !String(children).includes('\n')
-    if (isInline) return <code className={className} {...props}>{children}</code>
+    if (isInline)
+      return (
+        <code className={className} {...props}>
+          {children}
+        </code>
+      )
 
     const meta = props['data-meta'] || ''
     const titleMatch = /title="([^"]*)"/.exec(meta)
@@ -92,7 +100,11 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
         [&_.llm-prompt_summary_.chevron]:transition-transform [&_.llm-prompt_summary_.chevron]:duration-200 [&_.llm-prompt_summary_.chevron]:text-white/60
         [&_.llm-prompt[open]_summary_.chevron]:rotate-180"
     >
-      <ReactMarkdown remarkPlugins={[remarkGfm, remarkCodeMeta]} rehypePlugins={[rehypeRaw]} components={components}>
+      <ReactMarkdown
+        remarkPlugins={[remarkGfm, remarkCodeMeta]}
+        rehypePlugins={[rehypeRaw]}
+        components={components}
+      >
         {processed}
       </ReactMarkdown>
     </div>

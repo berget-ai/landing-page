@@ -21,7 +21,9 @@ function Feature({ title, description, badge, items = [] }: FeatureProps) {
         <div className="flex flex-col gap-10">
           <div className="flex gap-4 flex-col items-start">
             <div>
-              <Badge variant="tag" status="tagDefault">{badge}</Badge>
+              <Badge variant="tag" status="tagDefault">
+                {badge}
+              </Badge>
             </div>
             <div className="flex gap-2 flex-col">
               <h2 className="text-3xl md:text-5xl tracking-tighter max-w-xl font-regular text-left">

@@ -45,9 +45,7 @@ export function SustainabilitySection() {
                 <p className="text-white/80 mb-4 text-sm leading-relaxed">
                   {point.description}
                 </p>
-                <div className="text-sm font-medium">
-                  {point.stats}
-                </div>
+                <div className="text-sm font-medium">{point.stats}</div>
               </Card>
             </motion.div>
           )

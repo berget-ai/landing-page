@@ -45,7 +45,9 @@ export function Footer() {
               <Button
                 variant="outline"
                 size="icon"
-                onClick={() => window.open('https://x.com/BergetAi87840', '_blank')}
+                onClick={() =>
+                  window.open('https://x.com/BergetAi87840', '_blank')
+                }
                 aria-label={t('footer.social.twitter')}
               >
                 <Twitter className="h-5 w-5" />
@@ -53,7 +55,9 @@ export function Footer() {
               <Button
                 variant="outline"
                 size="icon"
-                onClick={() => window.open('https://www.github.com/berget-ai/', '_blank')}
+                onClick={() =>
+                  window.open('https://www.github.com/berget-ai/', '_blank')
+                }
                 aria-label={t('footer.social.github')}
               >
                 <Github className="h-5 w-5" />
@@ -61,7 +65,12 @@ export function Footer() {
               <Button
                 variant="outline"
                 size="icon"
-                onClick={() => window.open('https://www.linkedin.com/company/bergetai/', '_blank')}
+                onClick={() =>
+                  window.open(
+                    'https://www.linkedin.com/company/bergetai/',
+                    '_blank',
+                  )
+                }
                 aria-label={t('footer.social.linkedin')}
               >
                 <Linkedin className="h-5 w-5" />
@@ -78,7 +87,9 @@ export function Footer() {
                     href={link.href}
                     className="text-sm text-white/60 hover:text-white transition-colors"
                   >
-                    {link.key === 'models' ? 'Models' : t(`footer.product.${link.key}`)}
+                    {link.key === 'models'
+                      ? 'Models'
+                      : t(`footer.product.${link.key}`)}
                   </a>
                 </li>
               ))}
@@ -94,7 +105,9 @@ export function Footer() {
                     href={link.href}
                     className="text-sm text-white/60 hover:text-white transition-colors"
                   >
-                    {link.key === 'open-source' ? 'Open Source Program' : t(`footer.company.${link.key}`)}
+                    {link.key === 'open-source'
+                      ? 'Open Source Program'
+                      : t(`footer.company.${link.key}`)}
                   </a>
                 </li>
               ))}

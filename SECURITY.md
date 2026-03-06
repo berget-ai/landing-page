@@ -19,6 +19,7 @@ For vulnerabilities that cannot be reported through GitHub, or for general secur
 **https://berget.ai/responsible-disclosure**
 
 This page includes:
+
 - Direct contact information
 - PGP key for encrypted communication
 - Signal contact for secure messaging
@@ -34,6 +35,7 @@ This page includes:
 ### Safe Harbor
 
 We will not take legal action against security researchers who:
+
 - Act in good faith
 - Avoid privacy violations and destruction of data
 - Do not exploit vulnerabilities beyond demonstration

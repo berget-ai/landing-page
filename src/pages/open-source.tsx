@@ -1,4 +1,12 @@
-import { Shield, Github, ArrowRight, Check, FileCode, Users, Heart } from 'lucide-react'
+import {
+  Shield,
+  Github,
+  ArrowRight,
+  Check,
+  FileCode,
+  Users,
+  Heart,
+} from 'lucide-react'
 import { Card, HeroBlock, Button, type HeroBlockProps } from '@berget-ai/ui'
 
 type TaglineIcon = HeroBlockProps['taglineIcon']
@@ -23,24 +31,28 @@ export default function OpenSourcePage() {
             <section>
               <h2 className="text-2xl font-ovo mb-6">What we offer</h2>
 
-                <Card variant="glass" padding="md">
-                  <Shield className="w-8 h-8 mb-4 text-[#52B788]" />
-                  <h3 className="text-xl font-medium mb-3">Free Resources</h3>
-                  <ul className="space-y-3">
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-[#52B788] mt-0.5" />
-                      <span className="text-white/80">100,000 monthly tokens for prompts/responses</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-[#52B788] mt-0.5" />
-                      <span className="text-white/80">Fair API rate limits</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-[#52B788] mt-0.5" />
-                      <span className="text-white/80">Technical support and guidance</span>
-                    </li>
-                  </ul>
-                </Card>
+              <Card variant="glass" padding="md">
+                <Shield className="w-8 h-8 mb-4 text-[#52B788]" />
+                <h3 className="text-xl font-medium mb-3">Free Resources</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-[#52B788] mt-0.5" />
+                    <span className="text-white/80">
+                      100,000 monthly tokens for prompts/responses
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-[#52B788] mt-0.5" />
+                    <span className="text-white/80">Fair API rate limits</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-[#52B788] mt-0.5" />
+                    <span className="text-white/80">
+                      Technical support and guidance
+                    </span>
+                  </li>
+                </ul>
+              </Card>
             </section>
 
             {/* Project Requirements */}
@@ -48,24 +60,34 @@ export default function OpenSourcePage() {
               <h2 className="text-2xl font-ovo mb-6">Project Requirements</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Card variant="glass" padding="md">
-                <FileCode className="w-8 h-8 mb-4 text-[#52B788]" />
-                <h3 className="text-xl font-medium mb-3">Eligibility Criteria</h3>
+                  <FileCode className="w-8 h-8 mb-4 text-[#52B788]" />
+                  <h3 className="text-xl font-medium mb-3">
+                    Eligibility Criteria
+                  </h3>
                   <ul className="space-y-3">
                     <li className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-[#52B788] mt-0.5" />
-                      <span className="text-white/80">Active development (regular commits)</span>
+                      <span className="text-white/80">
+                        Active development (regular commits)
+                      </span>
                     </li>
                     <li className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-[#52B788] mt-0.5" />
-                      <span className="text-white/80">Comprehensive README.md</span>
+                      <span className="text-white/80">
+                        Comprehensive README.md
+                      </span>
                     </li>
                     <li className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-[#52B788] mt-0.5" />
-                      <span className="text-white/80">No commercial paywalls</span>
+                      <span className="text-white/80">
+                        No commercial paywalls
+                      </span>
                     </li>
                     <li className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-[#52B788] mt-0.5" />
-                      <span className="text-white/80">Clear use case for Berget AI services</span>
+                      <span className="text-white/80">
+                        Clear use case for Berget AI services
+                      </span>
                     </li>
                   </ul>
                 </Card>
@@ -75,20 +97,25 @@ export default function OpenSourcePage() {
                   <ul className="space-y-3">
                     <li className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-[#52B788] mt-0.5" />
-                      <span className="text-white/80">Publicly accessible code repository</span>
+                      <span className="text-white/80">
+                        Publicly accessible code repository
+                      </span>
                     </li>
                     <li className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-[#52B788] mt-0.5" />
-                      <span className="text-white/80">Recognized open source license (MIT, Apache 2.0, GPLv3)</span>
+                      <span className="text-white/80">
+                        Recognized open source license (MIT, Apache 2.0, GPLv3)
+                      </span>
                     </li>
                     <li className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-[#52B788] mt-0.5" />
-                      <span className="text-white/80">Clear project documentation and purpose</span>
+                      <span className="text-white/80">
+                        Clear project documentation and purpose
+                      </span>
                     </li>
                   </ul>
                 </Card>
               </div>
-
             </section>
 
             {/* Benefits & Growth */}
@@ -101,19 +128,27 @@ export default function OpenSourcePage() {
                   <ul className="space-y-3">
                     <li className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-[#52B788] mt-0.5" />
-                      <span className="text-white/80">Infrastructure support and guidance</span>
+                      <span className="text-white/80">
+                        Infrastructure support and guidance
+                      </span>
                     </li>
                     <li className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-[#52B788] mt-0.5" />
-                      <span className="text-white/80">Featured project promotion</span>
+                      <span className="text-white/80">
+                        Featured project promotion
+                      </span>
                     </li>
                     <li className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-[#52B788] mt-0.5" />
-                      <span className="text-white/80">"Verified Open Source Project" badge</span>
+                      <span className="text-white/80">
+                        "Verified Open Source Project" badge
+                      </span>
                     </li>
                     <li className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-[#52B788] mt-0.5" />
-                      <span className="text-white/80">Technical collaboration opportunities</span>
+                      <span className="text-white/80">
+                        Technical collaboration opportunities
+                      </span>
                     </li>
                   </ul>
                 </Card>
@@ -122,20 +157,27 @@ export default function OpenSourcePage() {
                 <Card variant="glass" padding="md">
                   <h3 className="text-xl font-medium mb-4">Growth & Scaling</h3>
                   <p className="text-white/80 mb-4">
-                    As your project grows, we grow with you. Projects that evolve into products can benefit from:
+                    As your project grows, we grow with you. Projects that
+                    evolve into products can benefit from:
                   </p>
                   <ul className="space-y-3">
                     <li className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-[#52B788] mt-0.5" />
-                      <span className="text-white/80">Gradual token quota increases</span>
+                      <span className="text-white/80">
+                        Gradual token quota increases
+                      </span>
                     </li>
                     <li className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-[#52B788] mt-0.5" />
-                      <span className="text-white/80">First-year discounted pricing</span>
+                      <span className="text-white/80">
+                        First-year discounted pricing
+                      </span>
                     </li>
                     <li className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-[#52B788] mt-0.5" />
-                      <span className="text-white/80">Community-based pricing models</span>
+                      <span className="text-white/80">
+                        Community-based pricing models
+                      </span>
                     </li>
                   </ul>
                 </Card>
@@ -152,21 +194,29 @@ export default function OpenSourcePage() {
                   <ul className="space-y-3">
                     <li className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-[#52B788] mt-0.5" />
-                      <span className="text-white/80">Submit project repository link</span>
+                      <span className="text-white/80">
+                        Submit project repository link
+                      </span>
                     </li>
                     <li className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-[#52B788] mt-0.5" />
-                      <span className="text-white/80">Describe project purpose and goals</span>
+                      <span className="text-white/80">
+                        Describe project purpose and goals
+                      </span>
                     </li>
                   </ul>
                   <ul className="space-y-3">
                     <li className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-[#52B788] mt-0.5" />
-                      <span className="text-white/80">Provide team background</span>
+                      <span className="text-white/80">
+                        Provide team background
+                      </span>
                     </li>
                     <li className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-[#52B788] mt-0.5" />
-                      <span className="text-white/80">Explain planned API usage</span>
+                      <span className="text-white/80">
+                        Explain planned API usage
+                      </span>
                     </li>
                   </ul>
                 </div>

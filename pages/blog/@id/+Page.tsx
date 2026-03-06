@@ -58,7 +58,7 @@ function LoadingPlaceholder() {
 function getPost(id: string | undefined): BlogPost | null {
   if (!id) return null
   const postPath = Object.keys(postModules).find((path) =>
-    path.includes(`/${id}.md`)
+    path.includes(`/${id}.md`),
   )
   if (!postPath || !postModules[postPath]) return null
 
@@ -66,7 +66,8 @@ function getPost(id: string | undefined): BlogPost | null {
   const metadataMatch = content.match(/^---\n([\s\S]*?)\n---\n/)
   const metadata = metadataMatch ? parseYamlMetadata(metadataMatch[1]) : {}
   const markdownContent = content.replace(/^---\n[\s\S]*?\n---\n/, '')
-  const language = metadata.language === 'en' ? ('en' as const) : ('sv' as const)
+  const language =
+    metadata.language === 'en' ? ('en' as const) : ('sv' as const)
 
   return {
     id,
@@ -90,7 +91,10 @@ export default function Page() {
 
   if (!post) return <LoadingPlaceholder />
 
-  const siteUrl = typeof process !== 'undefined' && process.env?.SITE_URL ? process.env.SITE_URL : 'https://berget.ai'
+  const siteUrl =
+    typeof process !== 'undefined' && process.env?.SITE_URL
+      ? process.env.SITE_URL
+      : 'https://berget.ai'
 
   return (
     <main className="min-h-screen">

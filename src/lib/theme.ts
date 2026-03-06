@@ -14,5 +14,5 @@ export const themeColors = {
   foreground: '#FFFFFF',
   muted: '#2D6A4F',
   border: '#40916C',
-  green: '#52B788'
+  green: '#52B788',
 }

@@ -10,7 +10,7 @@ image: /images/on-prem.jpg
 imageAlt: 'Illustration showing different alternatives for AI inference and their costs/benefits'
 ---
 
-**Sovereignty** is one of the strongest driving forces in AI today. After years of dependence on American cloud providers, companies, government agencies, and developers are realizing that the future of AI must run differently – with control, transparency, and sustainability. But for many, the answer is wrong: they think the solution is *on-prem*.
+**Sovereignty** is one of the strongest driving forces in AI today. After years of dependence on American cloud providers, companies, government agencies, and developers are realizing that the future of AI must run differently – with control, transparency, and sustainability. But for many, the answer is wrong: they think the solution is _on-prem_.
 
 Here we explain why it's usually a bad choice, what better alternatives exist – and how you can easily switch from OpenAI or Anthropic without sending data abroad.
 
@@ -20,7 +20,7 @@ Here we explain why it's usually a bad choice, what better alternatives exist �
 
 Using large language models is now business-critical: they write, understand, translate, summarize, code, analyze, and interact. But if the infrastructure behind these models is in another country, governed by different laws, and lacks transparency – then we give up control.
 
-Sovereignty doesn't mean everything has to be built from scratch, but that you know *where*, *how*, and *under what rules* your AI runs.
+Sovereignty doesn't mean everything has to be built from scratch, but that you know _where_, _how_, and _under what rules_ your AI runs.
 
 ---
 
@@ -50,25 +50,25 @@ You use a ready-made API – fast, easy, and well-packaged.
 
 ## Here’s How the Alternatives Compare – at a Glance
 
-| **Alternative**                  | **Advantages**                                                                 | **Disadvantages**                                                                                   | **Sovereignty**              |
-|--------------------------------|------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|------------------------------|
-| **On-prem inference**           | Full control over hardware and network<br>No data leaves local network       | High hardware costs<br>Large operational responsibility<br>Need to build and maintain entire platform | Maximum, but heavy lifting   |
-| **Rent GPU**                   | Flexible GPU access<br>No responsibility for physical hardware              | Still need to build and operate model API, billing, logging etc.<br>Often high standby costs        | High, but requires expertise |
-| **Serverless API (OpenAI etc.)** | Easy integration<br>Quick to get started<br>No operations                  | Low transparency<br>Dependence on foreign cloud provider<br>Limited control over data              | Low, no local control        |
-| **Local AI inference as a service** | No operations<br>Full API access<br>Runs under Swedish law<br>Built for AI Act | Smaller providers may have limited model breadth compared to Big Tech                              | High – local, open, traceable |
+| **Alternative**                     | **Advantages**                                                                 | **Disadvantages**                                                                                     | **Sovereignty**               |
+| ----------------------------------- | ------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------- | ----------------------------- |
+| **On-prem inference**               | Full control over hardware and network<br>No data leaves local network         | High hardware costs<br>Large operational responsibility<br>Need to build and maintain entire platform | Maximum, but heavy lifting    |
+| **Rent GPU**                        | Flexible GPU access<br>No responsibility for physical hardware                 | Still need to build and operate model API, billing, logging etc.<br>Often high standby costs          | High, but requires expertise  |
+| **Serverless API (OpenAI etc.)**    | Easy integration<br>Quick to get started<br>No operations                      | Low transparency<br>Dependence on foreign cloud provider<br>Limited control over data                 | Low, no local control         |
+| **Local AI inference as a service** | No operations<br>Full API access<br>Runs under Swedish law<br>Built for AI Act | Smaller providers may have limited model breadth compared to Big Tech                                 | High – local, open, traceable |
 
 ---
 
 ## The Smart Way: AI Inference as a Local Service
 
-Instead of going *all in* on on-prem – with your own servers, operations team, monitoring, and AI Act compliance – you can use Swedish AI infrastructure that gives you:
+Instead of going _all in_ on on-prem – with your own servers, operations team, monitoring, and AI Act compliance – you can use Swedish AI infrastructure that gives you:
 
-* Full OpenAI compatibility (same API surface)
-* No data sent outside Sweden
-* Access to open models (e.g., Mistral, LLaMA, Whisper, CLIP)
-* Support for tools, embeddings, RAG, and multimodal
-* Built for compliance and logging from the start
-* Transparent pricing
+- Full OpenAI compatibility (same API surface)
+- No data sent outside Sweden
+- Access to open models (e.g., Mistral, LLaMA, Whisper, CLIP)
+- Support for tools, embeddings, RAG, and multimodal
+- Built for compliance and logging from the start
+- Transparent pricing
 
 All of this – without needing to become an operations company.
 
@@ -81,9 +81,9 @@ If you're already using `api.openai.com/v1` or `api.anthropic.com/v1` – you ca
 ```ts
 // Just change your base URL:
 const client = new OpenAI({
-  baseURL: "https://api.berget.ai/v1",
+  baseURL: 'https://api.berget.ai/v1',
   apiKey: process.env.BERGET_API_KEY,
-});
+})
 ```
 
 Same models. Same protocol. But with Swedish sovereignty and full control.
@@ -98,4 +98,4 @@ Try `https://api.berget.ai` and run AI inference with full transparency, local c
 
 ---
 
-*Want to know more about how we can help your company with sovereign AI infrastructure? [Contact us](mailto:contact@berget.ai) for a discussion.*
+_Want to know more about how we can help your company with sovereign AI infrastructure? [Contact us](mailto:contact@berget.ai) for a discussion._

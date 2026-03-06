@@ -112,4 +112,4 @@ This is not just a technical strategy but also an ethical stance. AI should be d
 
 ---
 
-*Want to learn more about how our model strategy can help your organization? [Contact us](mailto:contact@berget.ai) for a discussion about your specific needs.*
+_Want to learn more about how our model strategy can help your organization? [Contact us](mailto:contact@berget.ai) for a discussion about your specific needs._

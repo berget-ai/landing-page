@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react'
 
 function isStageHostname(hostname: string) {
-  return hostname === 'stage.berget.ai' || hostname === 'localhost' || hostname === '127.0.0.1'
+  return (
+    hostname === 'stage.berget.ai' ||
+    hostname === 'localhost' ||
+    hostname === '127.0.0.1'
+  )
 }
 
 export function useEnvironment() {
@@ -19,6 +23,6 @@ export function useEnvironment() {
   return {
     isStage,
     consoleUrl,
-    isProd: !isStage
+    isProd: !isStage,
   }
 }

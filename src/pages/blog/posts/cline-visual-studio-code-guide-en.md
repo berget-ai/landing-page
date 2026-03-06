@@ -55,7 +55,7 @@ Start by installing the Cline extension:
 4. Click "Install" for the Cline extension
 
 ![Install Cline extension](/images/cline-install-screenshot.png)
-*Installing the Cline extension in VS Code*
+_Installing the Cline extension in VS Code_
 
 ## Step 2: Create an API Key from Berget AI
 
@@ -74,7 +74,7 @@ berget api-keys create --name "Cline Development"
 ```
 
 ![Create API key via CLI](/images/berget-cli-api-key.png)
-*Create API key with Berget CLI*
+_Create API key with Berget CLI_
 
 ### Option B: Via Console
 
@@ -86,7 +86,7 @@ berget api-keys create --name "Cline Development"
 6. Copy the generated key
 
 ![Create API key in console](/images/console-api-key-creation.png)
-*Create API key in Berget AI Console*
+_Create API key in Berget AI Console_
 
 **Important**: Save your API key securely - it's only shown once!
 
@@ -100,18 +100,20 @@ Now let's configure Cline to use Berget AI's API:
 4. Fill in the following information:
 
 **API Configuration:**
+
 - **Base URL**: `https://api.berget.ai/v1`
 - **API Key**: Your API key from step 2
 - **Model**: `glm-4.6` (recommended for code generation)
 
 ![Configure Cline with Berget AI](/images/cline-berget-config.png)
-*Configuration of Cline with Berget AI's API*
+_Configuration of Cline with Berget AI's API_
 
 ## Step 4: Choose the Right Model for Code Generation
 
 Berget AI offers several models that work excellently with Cline:
 
 ### GLM-4.6 (Recommended for code generation)
+
 - **Best for**: Code generation, refactoring, debugging, complex programming tasks
 - **Strengths**: Excellent understanding of programming context, strong performance on HumanEval benchmark
 - **Language support**: Supports all popular programming languages including Python, JavaScript, TypeScript, Go, Rust
@@ -119,6 +121,7 @@ Berget AI offers several models that work excellently with Cline:
 - **Model ID**: `glm-4.6`
 
 ### Qwen 3.2 32B
+
 - **Best for**: Complex code projects, architectural decisions, code review
 - **Strengths**: Very strong code understanding, excellent at reasoning and problem-solving
 - **Language support**: Broad language support with particularly strong performance on Python and JavaScript
@@ -126,6 +129,7 @@ Berget AI offers several models that work excellently with Cline:
 - **Model ID**: `qwen-3.2-32b`
 
 ### Magistral Small
+
 - **Best for**: Quick code suggestions, smaller refactoring, prototyping
 - **Strengths**: European model with good code understanding, fast responses
 - **Advantages**: Lower latency, cost-effective, good for iterative development
@@ -133,7 +137,7 @@ Berget AI offers several models that work excellently with Cline:
 - **Model ID**: `magistral-small`
 
 ![Model selection in Cline](/images/cline-model-selection.png)
-*AI model selection in Cline*
+_AI model selection in Cline_
 
 ## Step 5: Test Your Configuration
 
@@ -142,6 +146,7 @@ Let's test that everything works:
 1. Open a code project in VS Code
 2. Open the Cline panel
 3. Write a simple request, for example:
+
    ```
    Create a simple HTTP server in Node.js that responds with "Hello World" on port 3000
    ```
@@ -149,7 +154,7 @@ Let's test that everything works:
 4. Cline should now generate code and possibly create files for you
 
 ![First test with Cline](/images/cline-first-test.png)
-*First test of Cline with Berget AI*
+_First test of Cline with Berget AI_
 
 ## Advanced Configurations
 
@@ -182,32 +187,37 @@ For different projects, you might want to use different models based on your nee
 
 Based on benchmarks and real-world usage:
 
-| Model | Code Quality | Speed | Cost | Best For |
-|-------|--------------|-------|------|----------|
-| Qwen 3.2 32B | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐ | Complex projects |
-| GLM-4.6 | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | General coding |
-| Magistral Small | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | Quick tasks |
+| Model           | Code Quality | Speed      | Cost       | Best For         |
+| --------------- | ------------ | ---------- | ---------- | ---------------- |
+| Qwen 3.2 32B    | ⭐⭐⭐⭐⭐   | ⭐⭐⭐     | ⭐⭐⭐     | Complex projects |
+| GLM-4.6         | ⭐⭐⭐⭐     | ⭐⭐⭐⭐   | ⭐⭐⭐⭐   | General coding   |
+| Magistral Small | ⭐⭐⭐       | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | Quick tasks      |
 
 ## Practical Tips for Using Cline Effectively
 
 ### 1. Be Specific in Your Requests
+
 ```
 ❌ "Fix this function"
 ✅ "Refactor the getUserData function to use async/await instead of callbacks"
 ```
 
 ### 2. Give Context About Your Project
+
 ```
 ✅ "In this React project with TypeScript, create a new component for user profile page"
 ```
 
 ### 3. Use Cline for Entire Workflows
+
 ```
 ✅ "Create a new API endpoint, add tests, and update the documentation"
 ```
 
 ### 4. Let Cline Run Tests
+
 Cline can run your tests and fix problems automatically:
+
 ```
 ✅ "Run the tests and fix any errors that occur"
 ```
@@ -215,6 +225,7 @@ Cline can run your tests and fix problems automatically:
 ## Troubleshooting
 
 ### Problem: "API Key Invalid"
+
 - Check that you copied the entire API key correctly
 - Verify that the key hasn't expired
 - Test the key with a simple curl command:
@@ -226,31 +237,36 @@ curl -H "Authorization: Bearer your-api-key" \
 ```
 
 ### Problem: "Model Not Found"
+
 - Check that the model name is spelled correctly
 - Use `glm-4.6`, `qwen-3.2-32b` or `magistral-small`
 - Verify that your API key has access to the model
 
 ### Problem: Slow Responses
+
 - Try switching to `magistral-small` for faster responses
 - Reduce `maxTokens` in the configuration
 - Check your internet connection
 
 ![Troubleshooting Cline](/images/cline-troubleshooting.png)
-*Common troubleshooting steps for Cline*
+_Common troubleshooting steps for Cline_
 
 ## Security and Best Practices
 
 ### Protect Your API Key
+
 - Never store API keys in code that's committed to Git
 - Use environment variables or VS Code's secure storage
 - Rotate keys regularly
 
 ### Review Generated Code
+
 - Cline is powerful but not infallible
 - Always review code before running it in production
 - Use your usual code review processes
 
 ### Limit Access
+
 - Create separate API keys for different projects
 - Use keys with limited permissions when possible
 
@@ -269,4 +285,4 @@ Get started today and experience how AI-assisted coding can accelerate your deve
 
 ---
 
-*Need help with configuration or have questions about our models? [Contact us](mailto:support@berget.ai) or visit our [documentation](https://docs.berget.ai).*
+_Need help with configuration or have questions about our models? [Contact us](mailto:support@berget.ai) or visit our [documentation](https://docs.berget.ai)._

@@ -14,7 +14,7 @@ interface SystemStatus {
   lastChecked: string
   lago: { status: string }
   odoo: { status: string }
-  keycloak: { status: string, error?: string }
+  keycloak: { status: string; error?: string }
   chatEndpoints: Array<{
     model: string
     status: string
@@ -26,7 +26,7 @@ interface SystemStatus {
 /**
  * Hook to monitor system and model health status
  * Polls /health endpoint every 60 seconds
- * 
+ *
  * Priority levels:
  * - critical: All models are down (GPU hardware issue)
  * - degraded: Some models or systems are having issues
@@ -39,7 +39,7 @@ export function useHealth() {
     allModelsDown: false,
     someModelsDown: false,
     systemIssues: false,
-    lastChecked: null
+    lastChecked: null,
   })
 
   useEffect(() => {
@@ -50,14 +50,17 @@ export function useHealth() {
 
         // Check model status
         const models = data.chatEndpoints || []
-        const downModels = models.filter(m => m.status === 'down' || m.status === 'unhealthy')
-        const allModelsDown = models.length > 0 && downModels.length === models.length
+        const downModels = models.filter(
+          (m) => m.status === 'down' || m.status === 'unhealthy',
+        )
+        const allModelsDown =
+          models.length > 0 && downModels.length === models.length
         const someModelsDown = downModels.length > 0 && !allModelsDown
 
         // Check system status (Lago, Odoo, Keycloak)
-        const systemIssues = 
-          data.lago?.status === 'down' || 
-          data.odoo?.status === 'down' || 
+        const systemIssues =
+          data.lago?.status === 'down' ||
+          data.odoo?.status === 'down' ||
           data.keycloak?.status === 'down'
 
         // Determine overall health status
@@ -78,7 +81,7 @@ export function useHealth() {
           allModelsDown,
           someModelsDown,
           systemIssues,
-          lastChecked: new Date(data.lastChecked)
+          lastChecked: new Date(data.lastChecked),
         })
       } catch (error) {
         console.error('Failed to fetch health status:', error)
@@ -87,7 +90,7 @@ export function useHealth() {
           allModelsDown: false,
           someModelsDown: false,
           systemIssues: false,
-          lastChecked: null
+          lastChecked: null,
         })
       }
     }

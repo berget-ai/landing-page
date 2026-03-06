@@ -91,11 +91,7 @@ export default function ModelsPage() {
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
               {filteredModels.map((model) => {
                 return (
-                  <Card
-                    key={model.name}
-                    variant="glass"
-                    padding="md"
-                  >
+                  <Card key={model.name} variant="glass" padding="md">
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center gap-2">
                         <div

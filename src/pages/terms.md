@@ -1,24 +1,24 @@
 # Terms of Service
 
-#### 
+####
 
 **Latest updated:** 2025-03-24
 
 1. ## Scope
 
-1. These Terms of Service govern the use of Services provided by Berget AI AB, a Swedish limited liability company with Organizational Number 559504-7522 with address Götgatan 18, Stockholm, Sweden (“Berget”, “we”).  
-     
-2. The Service is intended for purchase and use by entities, organisations and private entrepreneurs for their business and professional purposes. The Service is not fit or intended for use by, and Berget is not obliged to provide it for consumers or private persons for their personal use.  
-     
-3. If you are accepting these Terms of Service on behalf of your employer or another entity, you represent and warrant that: (i) you have full legal authority to bind your employer or such entity to these Terms of Service; (ii) you have read and understand these Terms of Service; and (iii) you agree to these Terms of Service on behalf of the party that you represent.
+1. These Terms of Service govern the use of Services provided by Berget AI AB, a Swedish limited liability company with Organizational Number 559504-7522 with address Götgatan 18, Stockholm, Sweden (“Berget”, “we”).
 
-#### 
+1. The Service is intended for purchase and use by entities, organisations and private entrepreneurs for their business and professional purposes. The Service is not fit or intended for use by, and Berget is not obliged to provide it for consumers or private persons for their personal use.
+
+1. If you are accepting these Terms of Service on behalf of your employer or another entity, you represent and warrant that: (i) you have full legal authority to bind your employer or such entity to these Terms of Service; (ii) you have read and understand these Terms of Service; and (iii) you agree to these Terms of Service on behalf of the party that you represent.
+
+####
 
 ## 2\. Definitions
 
 When used in these Terms of Service, the definitions below have the following meaning:
 
-**“Affiliate”** means any entity that either directly or indirectly (a) controls, or (b) is controlled by, or (c) is under common control with, the subject entity. 
+**“Affiliate”** means any entity that either directly or indirectly (a) controls, or (b) is controlled by, or (c) is under common control with, the subject entity.
 
 **“Control”** for purposes of this definition, means direct or indirect ownership or control of more than 50% of the voting interests of the subject entity.
 
@@ -46,29 +46,29 @@ When used in these Terms of Service, the definitions below have the following me
 
 **“Third-Party Products”** means any service, product, software, platform or other component (such as an operating system, application, firewall) that is offered, provided, licensed, developed or owned by the Customer or a third party and interoperates with the Service.
 
-#### 
+####
 
 ## 3\. Agreement Documents
 
-3.1 These Terms of Service consists of: 
+3.1 These Terms of Service consists of:
 
-(1) this main body of Terms of Service and the following supplements: 
+(1) this main body of Terms of Service and the following supplements:
 
-(2) Data Processing Agreement (“DPA”), 
+(2) Data Processing Agreement (“DPA”),
 
-(3) Service Level Agreement (“SLA”), 
+(3) Service Level Agreement (“SLA”),
 
-(4) Acceptable Use Policy (“AUP”) and 
+(4) Acceptable Use Policy (“AUP”) and
 
 (5) the Service Descriptions (https://berget.ai/docs)
 
-1–5 together are the “Terms”.  All agreement documents are available on Berget AI website:  https://berget.ai
+1–5 together are the “Terms”. All agreement documents are available on Berget AI website: https://berget.ai
 
 3.2. In case of a conflict or ambiguity between the agreement documents, the order of precedence shall be: (1.) DPA, (2.) the main body of Terms of Service, (3.) SLA, (4.) AUP, (5.) Service Descriptions.
 
 3.3. You accept these Terms, and enter into an agreement with Berget AI AB (“Agreement”) by: (1) registering to use the Service through Berget’s website, (2) executing a contract or an order form with Berget that references these Terms, or (3) using the Service.
 
-#### 
+####
 
 ## 4\. Service Account
 
@@ -80,7 +80,7 @@ When used in these Terms of Service, the definitions below have the following me
 
 4.4. You must safeguard, and ensure that any Users safeguard, the usernames and passwords of your Account. You must promptly inform us if you suspect that an unauthorised third party is using, or may have an access to, the Service or your Account. We reserve the right to temporarily suspend your Account if we have reasonable grounds to believe that the Account has been compromised and is used by an unauthorised third party.
 
-#### 
+####
 
 ## 5\. Right to Access the Service
 
@@ -88,7 +88,7 @@ When used in these Terms of Service, the definitions below have the following me
 
 5.2. You are allowed to utilise the Service in the provision of your own services to your End-Customers. However, you remain fully liable to us for any actions your End-Customers take in, and for the content they upload to, the Service. Under no circumstances will Berget have any liability to your End-Customers.
 
-#### 
+####
 
 ## 6\. Provision of the Service, Service Levels, Warranties & Security
 
@@ -106,40 +106,40 @@ When used in these Terms of Service, the definitions below have the following me
 
 6.7 Berget applies industry-standard technical and organizational measures to secure its infrastructure, including encryption in transit, network isolation, access controls, and system monitoring. Berget is actively working toward ISO 27001 certification to formalize its information security management system. More information about our security practices is available upon request.
 
-## 7\. Data Retention 
+## 7\. Data Retention
 
-For the provisioning of services as well as improving our service offering, optimize our performance and charge correctly for our service \- we might collect data such as 
+For the provisioning of services as well as improving our service offering, optimize our performance and charge correctly for our service \- we might collect data such as
 
-* Detailed service logs  
-* API request metadata (HTTP Calls, status codes, time stamps)  
-* Compute resource token counts   
-* Inference token input and output counts for LLMs  
-* User defined parameters
+- Detailed service logs
+- API request metadata (HTTP Calls, status codes, time stamps)
+- Compute resource token counts
+- Inference token input and output counts for LLMs
+- User defined parameters
 
 For the avoidance of doubt \- Berget will never store any of the actual prompt content used as model input, or any of the output content generated by the LLMs we host.
 
-#### 
+####
 
 ## 8\. Support
 
-We will provide technical support for your dedicated administrative users. 
+We will provide technical support for your dedicated administrative users.
 
 Support access channels are depending on your monthly plan and we provide support through the following channels
 
-* Community support  
-* Email  
-* Chat   
-* Dedicated support hours are included in specific plans
+- Community support
+- Email
+- Chat
+- Dedicated support hours are included in specific plans
 
-#### 
+####
 
 ## 9\. Third-Party Products
 
-9.1. If you use Third-Party Products  in connection with the Service, you must comply with the contract and licence terms of the Third-Party Products. We are responsible only for the provision of the Service. Any Third-Party Products are provided by the relevant third parties and covered by their terms of service or licence agreements. We do not assume any liability with regard to Third-Party Products or their use, whether or not they are linked to the Service.
+9.1. If you use Third-Party Products in connection with the Service, you must comply with the contract and licence terms of the Third-Party Products. We are responsible only for the provision of the Service. Any Third-Party Products are provided by the relevant third parties and covered by their terms of service or licence agreements. We do not assume any liability with regard to Third-Party Products or their use, whether or not they are linked to the Service.
 
 9.2. Certain Third-Party Products, such as licenced products, cannot be used in the Service unless licensed from Berget. We will provide additional information regarding such Third-Party Products upon request.
 
-#### 
+####
 
 ## 10\. Changes to the Service
 
@@ -147,29 +147,29 @@ Support access channels are depending on your monthly plan and we provide suppor
 
 10.2. If we consider implementing a change in the Service that will have a material adverse effect in your use of the Service, we will notify you at least 30 (thirty) days before the change will be effected and reserve you a possibility to terminate the Agreement.
 
-#### 
+####
 
 ## 11\. Prices
 
-11.1. The rates applicable to the Service are available on Berget’s website at https://berget.ai and shown in the Control Panel when ordering the Service. 
+11.1. The rates applicable to the Service are available on Berget’s website at https://berget.ai and shown in the Control Panel when ordering the Service.
 
 The actual service fee will be determined based on your use of the Service as defined by reserved resources. Unless otherwise agreed, we will charge the Service on an hourly basis, meaning you will pay a service fee in advance for each 60-minute period that you use the Service.
 
-Serverless Inference services are charged on a per token basis, prices are on a per model basis \- updated prices for API calls are always available at https://berget.ai/pricing/ 
+Serverless Inference services are charged on a per token basis, prices are on a per model basis \- updated prices for API calls are always available at https://berget.ai/pricing/
 
 11.2. Applicable value added tax (VAT) and other applicable duties and taxes will be added to the prices, unless the prices are specified “VAT inclusive”.
 
 11.3. Berget has the right to increase the prices at any time by providing at least 30 (thirty) days’ advance notice to the Customer.
 
-#### 
+####
 
 ## 12\. Payment Terms and Service Credits
 
 12.1. Unless otherwise agreed in writing, we will charge the Service by debiting prepaid Credits from your Account. The Credits are non-refundable and non-transferable unless otherwise decided by Berget at its sole discretion. Through your Account, you can download invoices for the Credits you have purchased.
 
-12.2. To use the Service, you must have a positive Credit balance on your Account. It is your responsibility to ensure that you have sufficient amount of Credits deposited on your Account at all times to cover the service fees associated with the Service you have subscribed for. 
+12.2. To use the Service, you must have a positive Credit balance on your Account. It is your responsibility to ensure that you have sufficient amount of Credits deposited on your Account at all times to cover the service fees associated with the Service you have subscribed for.
 
-If your Credit balance runs out (zero or negative balance), we have the right to suspend your use of the Service. If you do not remedy the negative or zero balance and deposit Credits to your Account within a reasonable time determined by Berget (at a minimum fourteen (14) days), we will consider the Agreement terminated and will close your Account. 
+If your Credit balance runs out (zero or negative balance), we have the right to suspend your use of the Service. If you do not remedy the negative or zero balance and deposit Credits to your Account within a reasonable time determined by Berget (at a minimum fourteen (14) days), we will consider the Agreement terminated and will close your Account.
 
 Unless otherwise required by law, we will retain your Customer Data for a period of thirty (30) days following termination to allow for data export or recovery. After this period, Customer Data will be irreversibly deleted, unless longer retention is required by applicable law or Governmental Authority. You are obliged to pay applicable service fees (e.g. for storage and IP addresses) even during the suspension until the Agreement is terminated.
 
@@ -181,7 +181,7 @@ Unless otherwise required by law, we will retain your Customer Data for a period
 
 13.3. If you do not wish to continue using the Service subject to the applicable service fees, you must terminate the subscription to the Service through your Account’s subscription page before the expiry of the Free Trial.
 
-#### 
+####
 
 ## 14\. Illegal Content, Suspensions, Termination
 
@@ -193,11 +193,11 @@ Unless otherwise required by law, we will retain your Customer Data for a period
 
 (iii) If we have reasonable grounds to believe that the Customer Data contains Illegal Content, we have the right to take measures to remove or disable access to such Customer Data. Where required by law or Governmental Authority’s order, we may do this without providing you an advance notice.
 
-14.2.  You are obliged to provide us reasonable assistance with regard to possible investigations on suspected breaches of the Agreement.
+14.2. You are obliged to provide us reasonable assistance with regard to possible investigations on suspected breaches of the Agreement.
 
 14.3. Berget shall have no liability to the Customer or any third party for any Account suspension, termination of the Agreement, or removal of or disablement of access to the Customer Data initiated pursuant to this Section 14\.
 
-#### 
+####
 
 ## 15\. Use Restrictions
 
@@ -228,7 +228,7 @@ Unless otherwise required by law, we will retain your Customer Data for a period
 
 15.2. If you wish to use the Service for sending bulk e-mail or other mass communications, you must seek Berget’s prior approval for such activities. Berget has the right to approve or reject your request at its sole discretion.
 
-#### 
+####
 
 ## 16\. Indemnifications
 
@@ -245,7 +245,7 @@ If neither of the aforementioned alternatives are reasonably possible, Berget ha
 16.3. Berget shall not, however, be liable for any infringement of third-party intellectual property rights or claim thereof if the claim:  
 (i) is made by an Affiliate of the Customer;  
 (ii) results from a modification of or an addition to the Service done by the Customer, a User, or any third-party at the Customer’s request;  
-(iii) results  from the use of the Service in combination with any product or service not provided or approved by Berget;  
+(iii) results from the use of the Service in combination with any product or service not provided or approved by Berget;  
 (iv) could have been avoided by using the latest available version of the Service provided by Berget; or  
 (v) is not related to the Service, or is related to a part of the Service for which Berget is not responsible for pursuant to the Agreement.
 
@@ -255,19 +255,19 @@ If neither of the aforementioned alternatives are reasonably possible, Berget ha
 
 16.6. The Customer shall, at its own expense, defend and hold Berget harmless against any third-party claims, including investigations by Governmental Authorities, brought against Berget (“Claim”) as a result of any breach of the Agreement by the Customer and/or User, and indemnify Berget against: (i) any damages awarded by a court of law to the third-party claimant; (ii) any liabilities imposed on Berget as a result of the Claim; (iii) any settlement costs and fees approved by the Customer and paid by Berget to the third-party claimant; and (iv) any costs and expenses (including reasonable attorneys’ fees) suffered or incurred by Berget as a result of the Claim.
 
-#### 
+####
 
 ## 17\. Customer Data
 
 17.1. As between Berget and the Customer, the Customer retains all title and intellectual property rights in and to the Customer Data. You grant Berget the right to host, use, process, display and transmit Customer Data to provide the Service in accordance with the Agreement. You have sole responsibility for the accuracy, quality, integrity, legality, reliability, and appropriateness of Customer Data, and for obtaining necessary rights and consents related to Customer Data to allow Berget to perform the Service. If you do not have necessary rights or consents related to the Customer Data, you are not allowed to upload or store such Customer Data in the Service. Within a reasonable time after the termination or expiry of the Agreement, or after you have permanently ceased using the Services, Berget will delete all Customer Data under your Account, unless Berget is obliged to retain copies of the Customer Data pursuant to applicable laws or orders of Governmental Authority.
 
-17.2. If the Customer Data contains personal data, the provisions of the DPA shall govern the processing of that personal data by Berget.  With the exception of obligations relating to the personal data set forth in the DPA, we do not assume any liability with respect to the Customer Data, nor do we endorse any opinion contained in the Customer Data.
+17.2. If the Customer Data contains personal data, the provisions of the DPA shall govern the processing of that personal data by Berget. With the exception of obligations relating to the personal data set forth in the DPA, we do not assume any liability with respect to the Customer Data, nor do we endorse any opinion contained in the Customer Data.
 
 17.3. You must ensure that the Customer Data does not infringe any third-party intellectual property rights or violate any applicable laws or regulations. You shall not upload or store any Illegal Content, or any infringing, offensive, threatening, libellous, defamatory, or otherwise inappropriate data or content to the Service.
 
 17.4. You are responsible for making necessary and appropriate backup copies of the Customer Data stored in the Service. Such backup copies must be stored outside the Service.
 
-#### 
+####
 
 ## 18\. Confidentiality
 
@@ -286,7 +286,7 @@ If neither of the aforementioned alternatives are reasonably possible, Berget ha
 
 18.5. Each Party shall promptly upon termination of the Agreement cease using Confidential Information of the other Party and use reasonable means to destroy such Confidential Information. Each Party shall, however, be entitled to retain the copies of Confidential Information which: (i) the Party is required to retain by applicable laws; and (ii) are generated pursuant to the receiving Party’s electronic backup system if destroying such copies would be unreasonable taking into account the costs and effort required to do so.
 
-#### 
+####
 
 ## 19\. Intellectual Property Rights
 
@@ -294,7 +294,7 @@ If neither of the aforementioned alternatives are reasonably possible, Berget ha
 
 19.2 The Customer grants Berget a royalty free, worldwide, perpetual, irrevocable, transferable right to use, modify, distribute and incorporate into the Service (without attribution of any kind) any suggestions, enhancement request, recommendations, proposals, correction or other feedback or information provided by the Customer or any User relating to the operation or functionality of the Service.
 
-#### 
+####
 
 ## 20\. Limitation of Liability
 
@@ -312,7 +312,7 @@ If neither of the aforementioned alternatives are reasonably possible, Berget ha
 
 21.2. If a Party is prevented from fulfilling its duties due to Force Majeure for more than 60 (sixty) days, the other Party has the right to terminate the Agreement with immediate effect.
 
-#### 
+####
 
 ## 22\. Export Control and Sanctions
 
@@ -322,7 +322,7 @@ If neither of the aforementioned alternatives are reasonably possible, Berget ha
 
 22.3. You are not allowed to use, distribute, transfer or transmit the Service or related technical information (even if incorporated into other services or products) in violation of the Sanction Regulations, and in particular you will not permit any User to access or use the Service in a country or region subject to Sanction Regulations (such as Cuba, Iran, North Korea, Syria or the Crimea Region).
 
-#### 
+####
 
 ## 23\. References
 
@@ -330,13 +330,13 @@ If neither of the aforementioned alternatives are reasonably possible, Berget ha
 
 23.2. Berget may ask the Customer to participate in a case study about the Customer’s use of the Service. Berget is not allowed to publish the case study without the Customer’s prior approval. Provided that the Customer approves the case study, Berget shall have a royalty-free, perpetual, worldwide right and licence to reproduce, publish, distribute, and translate the case study, whether in written or recorded form. The case study may be used on Berget’s website, Berget’s social media channels (such as YouTube, and LinkedIn), and other sales and marketing presentations and materials.
 
-#### 
+####
 
 ## 24\. Termination for Convenience
 
 You have the right to terminate the Agreement for any reason by issuing at least five (5) days’ written notice to us and we have the right to terminate the Agreement for any reason by issuing at least 30 (thirty) days’ written notice to you. However, if the Parties have signed a separate fixed-term contract by which you commit to using the Service for a fixed contract period, then the Parties’ right to terminate the Agreement shall be controlled by the terms of that separate contract.
 
-#### 
+####
 
 ## 25\. Termination for Cause
 
@@ -344,7 +344,7 @@ Either Party may terminate the Agreement with immediate effect if the other Part
 (i) has materially breached the Agreement and has not remedied the breach within 10 (ten) business days from the receipt of a written notice thereof from the other Party; or  
 (ii) files for bankruptcy or debt rescheduling program, is put into liquidation, or is made subject to any other similar procedures, ceases its payments, or fails to pay its invoices when due.
 
-#### 
+####
 
 ## 26\. Entire Agreement and Amendments
 
@@ -352,13 +352,13 @@ Either Party may terminate the Agreement with immediate effect if the other Part
 
 26.2. All amendments to the Agreement must be made in writing. We have the right to modify these Terms by posting a revised version of the Terms on Berget’s website. If we consider the revision to be material, we will notify you in writing at least 30 (thirty) days before the revision will be effected and reserve you a possibility to terminate the Agreement, unless the revision is implemented due to changes in legislation, in which case we may effect it without an advance notice. If you continue using the Service, you will be deemed to have accepted the revised Terms as part of the Agreement.
 
-#### 
+####
 
 ## 27\. Non-Waiver
 
 A failure by either Party to enforce any provision of the Agreement will not be deemed to constitute a present or future waiver of such provision. All waivers must be made in writing.
 
-#### 
+####
 
 ## 28\. Assignment and Third-Party Beneficiaries
 
@@ -366,13 +366,13 @@ A failure by either Party to enforce any provision of the Agreement will not be 
 
 28.2. The Customer’s obligations towards Berget and the provisions regarding Berget’s limitations of liability are in place also for the benefit of Berget’s Affiliates, subcontractors, personnel and owners. Otherwise the Agreement does not create any third-party beneficiary rights in any third party.
 
-#### 
+####
 
 ## 29\. Severability
 
 If any provision of the Agreement is ruled unenforceable by a court of competent jurisdiction, the remaining provisions of the Agreement will remain in full force and effect to the fullest extent permitted by law. The Parties shall attempt through negotiation in good faith to replace the unenforceable provision with such provisions that correspond as closely as possible to the original intention of the Parties.
 
-#### 
+####
 
 ## 30\. Notices
 
@@ -387,7 +387,7 @@ Customer: the customer contact email provided when creating the Account.
 
 30.3. This Section 30 does not apply to the service of any proceedings or other documents in any legal action, arbitration or any other method of dispute resolution.
 
-#### 
+####
 
 ## 31\. Governing Law and Arbitration
 

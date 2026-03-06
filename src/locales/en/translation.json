@@ -193,11 +193,7 @@
         },
         "infrastructure": {
           "title": "All infra as Code",
-          "items": [
-            "Persistent clusters",
-            "Simple setup",
-            "GitHub integration"
-          ]
+          "items": ["Persistent clusters", "Simple setup", "GitHub integration"]
         }
       }
     },
@@ -207,12 +203,7 @@
       "layers": {
         "tools": {
           "title": "Tools & Marketplace",
-          "items": [
-            "Databases",
-            "Vector DB",
-            "DevOps",
-            "Agentic Frameworks"
-          ]
+          "items": ["Databases", "Vector DB", "DevOps", "Agentic Frameworks"]
         },
         "llm": {
           "title": "LLM",
@@ -225,20 +216,11 @@
         },
         "compute": {
           "title": "Storage & Compute",
-          "items": [
-            "CPU",
-            "GPU",
-            "Local Storage",
-            "Premium Storage"
-          ]
+          "items": ["CPU", "GPU", "Local Storage", "Premium Storage"]
         },
         "connectivity": {
           "title": "Connectivity",
-          "items": [
-            "Isolated Network",
-            "VPN",
-            "Cloud Connectors"
-          ]
+          "items": ["Isolated Network", "VPN", "Cloud Connectors"]
         },
         "management": {
           "title": "Management",
@@ -368,11 +350,7 @@
       "flexible": {
         "title": "(truly) Open AI",
         "description": "We are champions of open innovation and we host and serve open models. Our services are fully built on open source.",
-        "features": [
-          "Open Models",
-          "Open Source",
-          "Open Innovation"
-        ]
+        "features": ["Open Models", "Open Source", "Open Innovation"]
       }
     },
     "features": {

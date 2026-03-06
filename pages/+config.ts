@@ -4,8 +4,10 @@ export default {
   extends: [vikeReact],
   ssr: true,
   prerender: false,
-  title: 'Berget AI - We champion AI sovereignty to unlock innovation and growth in Europe',
-  description: 'EU-compliant inference service and AI infrastructure built by developers for developers.',
+  title:
+    'Berget AI - We champion AI sovereignty to unlock innovation and growth in Europe',
+  description:
+    'EU-compliant inference service and AI infrastructure built by developers for developers.',
   // image is set in +image.ts to support runtime SITE_URL
   redirects: {
     '/blog/ai_in_swedish': '/blog/ai-in-swedish',
@@ -16,8 +18,10 @@ export default {
     '/blog/devops_holy_grail_part2': '/blog/devops-holy-grail-part2',
     '/blog/devops_holy_grail_part3': '/blog/devops-holy-grail-part3',
     '/blog/digitalist_berget': '/blog/digitalist-berget',
-    '/blog/kubernetes_multi_environment_deployments': '/blog/kubernetes-multi-environment-deployments',
-    '/blog/kubernetes_secrets_management': '/blog/kubernetes-secrets-management',
+    '/blog/kubernetes_multi_environment_deployments':
+      '/blog/kubernetes-multi-environment-deployments',
+    '/blog/kubernetes_secrets_management':
+      '/blog/kubernetes-secrets-management',
     '/blog/opper_berget 1': '/blog/opper-berget-1',
   },
 }

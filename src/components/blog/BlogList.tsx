@@ -8,9 +8,14 @@ interface BlogListProps {
 
 export function BlogList({ posts }: BlogListProps) {
   const { t } = useTranslation()
-  const teamMembers = t('about.team.members', { returnObjects: true }) as Record<string, { name: string; email?: string; image?: string }>
+  const teamMembers = t('about.team.members', {
+    returnObjects: true,
+  }) as Record<string, { name: string; email?: string; image?: string }>
 
-  const findAuthorImage = (name: string, email?: string): string | undefined => {
+  const findAuthorImage = (
+    name: string,
+    email?: string,
+  ): string | undefined => {
     const key = Object.keys(teamMembers).find((k) => {
       const member = teamMembers[k]
       return member.name === name || (email && member.email === email)
@@ -30,7 +35,9 @@ export function BlogList({ posts }: BlogListProps) {
     imageAlt: post.imageAlt || post.title,
     language: post.language,
     tags: post.tags,
-    onClick: () => { window.location.href = `/blog/${post.id}` },
+    onClick: () => {
+      window.location.href = `/blog/${post.id}`
+    },
   }))
 
   return <BlogGrid posts={uiPosts} columns={3} />

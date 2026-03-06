@@ -11,7 +11,7 @@ export function LanguageSwitcher() {
   }
 
   const { t } = useTranslation()
-  
+
   return (
     <Button
       variant="ghost"
