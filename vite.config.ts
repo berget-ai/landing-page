@@ -5,9 +5,11 @@ import { defineConfig } from 'vite'
 import { plugin, Mode } from 'vite-plugin-markdown'
 import { imagetools } from 'vite-imagetools'
 import vike from 'vike/plugin'
+import { ogImagePlugin } from './server/og/og-plugin'
 
 export default defineConfig({
   plugins: [
+    ogImagePlugin(),
     tailwindcss(),
     react(),
     imagetools({
