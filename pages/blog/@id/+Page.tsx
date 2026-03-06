@@ -90,12 +90,14 @@ export default function Page() {
 
   if (!post) return <LoadingPlaceholder />
 
+  const siteUrl = typeof process !== 'undefined' && process.env?.SITE_URL ? process.env.SITE_URL : 'https://berget.ai'
+
   return (
     <main className="min-h-screen">
       <Config
         title={`${post.title} - Berget AI`}
         description={post.description}
-        image={post.image ? `https://berget.ai${post.image}` : undefined}
+        image={post.image ? `${siteUrl}${post.image}` : undefined}
       />
       <article className={post?.image ? '' : 'container mx-auto px-4 py-12'}>
         <div className={post?.image ? '' : 'max-w-prose mx-auto'}>

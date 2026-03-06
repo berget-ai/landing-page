@@ -4,6 +4,7 @@ export default function Head() {
   const pageContext = usePageContext() as any
   const locale = pageContext.locale || 'en'
   const urlPathname = pageContext.urlPathname || '/'
+  const siteUrl = typeof process !== 'undefined' && process.env?.SITE_URL ? process.env.SITE_URL : 'https://berget.ai'
 
   return (
     <>
@@ -29,8 +30,8 @@ export default function Head() {
       <meta httpEquiv="x-dns-prefetch-control" content="on" />
       <link rel="dns-prefetch" href="//api.berget.ai" />
       <link rel="preconnect" href="//api.berget.ai" crossOrigin="" />
-      <link rel="canonical" href={`https://berget.ai${urlPathname}`} />
-      <meta property="og:url" content={`https://berget.ai${urlPathname}`} />
+      <link rel="canonical" href={`${siteUrl}${urlPathname}`} />
+      <meta property="og:url" content={`${siteUrl}${urlPathname}`} />
       <meta property="og:type" content={urlPathname.startsWith('/blog/') && urlPathname !== '/blog/' ? 'article' : 'website'} />
       <meta property="og:site_name" content="Berget AI" />
       <meta property="og:locale" content={locale === 'sv' ? 'sv_SE' : 'en_US'} />

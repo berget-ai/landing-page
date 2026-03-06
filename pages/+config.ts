@@ -6,7 +6,7 @@ export default {
   prerender: false,
   title: 'Berget AI - We champion AI sovereignty to unlock innovation and growth in Europe',
   description: 'EU-compliant inference service and AI infrastructure built by developers for developers.',
-  image: 'https://berget.ai/images/social-default.webp',
+  // image is set in +image.ts to support runtime SITE_URL
   redirects: {
     '/blog/ai_in_swedish': '/blog/ai-in-swedish',
     '/blog/berget_update_1': '/blog/berget-update-1',
