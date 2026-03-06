@@ -15,15 +15,15 @@
       "description": "We champion AI sovereignty to unlock innovation and growth."
     },
     "origin": {
-      "title": "Our Story",
+      "title": "Our story",
       "description": "We realised that many organisations are held back in their pursuit of AI by a range of obstacles. Some struggle with legal and regulatory challenges, others simply don’t have the skills or capital to train, host and serve their own AI models. Many are reluctant to invest upfront in GPUs or lack access to local language-capable large language models. That’s why we built Berget AI – to unlock the full potential of AI for innovation and growth by championing sovereign, open, and sustainable AI.",
-      "nameOrigin": "The name is Swedish for \"mountain\", which we have plenty of in Sweden, many of which host underground Data Centers. So why have your data in the cloud when you can have in \"Berget\"?"
+      "nameOrigin": "The name is Swedish for \"mountain\", which we have plenty of in Sweden, many of which host underground Data Centers. So why have your data in the cloud when you can have it in \"Berget\"?"
     },
     "values": {
-      "title": "Our Values",
+      "title": "Our values",
       "openSource": {
         "title": "Open source",
-        "description": "We are passionate about Open Source and Community Driven Innovation and are true believers that open source is key for safe, transparent and cost efficient AI in the future. History has plenty of examples where a determined community can overcome seemingly impossible obstacles, innovate new tools and create worldwide standards, that are open, interoperable, accessible, and affordable for all."
+        "description": "We are passionate about open source and community-driven innovation and are true believers that open source is key for safe, transparent and cost efficient AI in the future. History has plenty of examples where a determined community can overcome seemingly impossible obstacles, innovate new tools and create worldwide standards, that are open, interoperable, accessible, and affordable for all."
       },
       "european": {
         "title": "European innovation",
@@ -35,7 +35,7 @@
       }
     },
     "promises": {
-      "title": "Our Customer Promises",
+      "title": "Our customer promises",
       "description": "What you can expect when working with us",
       "list": [
         "An easy way to build AI applications",
@@ -129,7 +129,7 @@
           "items": [
             "Pay-as-you-go pricing",
             "Rich selection of models",
-            "On-demand and Batch"
+            "On-demand and batch"
           ]
         },
         "infrastructure": {
@@ -203,7 +203,7 @@
       "layers": {
         "tools": {
           "title": "Tools and marketplace",
-          "items": ["Databases", "Vector DB", "DevOps", "Agentic Frameworks"]
+          "items": ["Databases", "Vector DB", "DevOps", "Agentic frameworks"]
         },
         "llm": {
           "title": "LLM",
@@ -215,7 +215,7 @@
           ]
         },
         "compute": {
-          "title": "Storage and Compute",
+          "title": "Storage and compute",
           "items": ["CPU", "GPU", "Local storage", "Premium storage"]
         },
         "connectivity": {
@@ -236,7 +236,7 @@
     "cta": {
       "title": "Ready to start building?",
       "description": "Get started today and discover the benefits of a secure, compliant, and sustainable AI infrastructure.",
-      "getStarted": "Sign up!"
+      "getStarted": "Sign up"
     },
     "models": {
       "title": "Access the latest and most powerful open LLMs",
@@ -419,7 +419,7 @@
         "description": "API access",
         "price": "Free",
         "features": [
-          "€5 Free Wallet credits",
+          "€5 free wallet credits",
           "Pay as you go",
           "Some Rate limit",
           "Community support",
@@ -431,7 +431,7 @@
         "description": "For the small team",
         "price": "€25 / month",
         "features": [
-          "25€ monthly wallet refill",
+          "€25 monthly wallet refill",
           "Automatic billing",
           "Email support",
           "Cancel any time"
@@ -442,7 +442,7 @@
         "description": "For developer teams",
         "price": "€50 / month",
         "features": [
-          "55€ monthly wallet refill",
+          "€55 monthly wallet refill",
           "10% extra credits",
           "Priority support",
           "Best value for money"
@@ -453,7 +453,7 @@
         "description": "When you need scale",
         "price": "€500 / month",
         "features": [
-          "550€ monthly wallet refill",
+          "€550 monthly wallet refill",
           "+10% extra credits",
           "No rate limits",
           "Dedicated support"
@@ -487,7 +487,7 @@
       "pricing": "Pricing",
       "api": "API",
       "security": "Security",
-      "status": "Service Status"
+      "status": "Service status"
     },
     "solutions": {
       "title": "Solutions",
@@ -580,7 +580,7 @@
     }
   },
   "whyBergetSection": {
-    "title": "Why choose Berget?",
+    "title": "Why choose Berget AI?",
     "description": "No dependencies, no legal exposure, no data retention.",
     "features": {
       "european": {
@@ -771,13 +771,13 @@
       "shieldgemma": "Specialised model for content moderation...",
       "qwen_vl_72b": "Large-scale vision-language model with advanced multimodal capabilities...",
       "qwen_vl_7b": "Efficient vision-language model optimised for real-time applications.",
-      "rerank_base": "Reranking model for search result optimization...",
+      "rerank_base": "Reranking model for search result optimisation...",
       "bge_reranker": "Lightweight reranker model, possesses strong multilingual capabilities.",
       "whisper_large": "Large speech recognition and transcription model...",
       "kb_whisper": "Customised Whisper model optimised for Swedish language...",
       "whisper_turbo": "Optimised version of Whisper with improved speed and efficiency.",
       "kokoro": "Lightweight text-to-speech model optimised for efficiency.",
-      "csm_1b": "Compact text-to-speech model with specialized capabilities.",
+      "csm_1b": "Compact text-to-speech model with specialised capabilities.",
       "qwen_coder": "Specialised model for code generation and software development.",
       "deepcoder": "Preview version of advanced code generation model."
     }

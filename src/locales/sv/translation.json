@@ -23,7 +23,7 @@
       "title": "Våra värderingar",
       "openSource": {
         "title": "Open source",
-        "description": "Vi brinner för Open Source och Community-driven Innovation och är övertygade om att öppen källkod är nyckeln till säker, transparent och kostnadseffektiv AI i framtiden. Historien har många exempel där en målmedveten community kan övervinna till synes omöjliga hinder, innovera nya verktyg och skapa globala standarder som är öppna, interoperabla och tillgängliga för alla."
+        "description": "Vi brinner för open source och community-driven innovation och är övertygade om att öppen källkod är nyckeln till säker, transparent och kostnadseffektiv AI i framtiden. Historien har många exempel där en målmedveten community kan övervinna till synes omöjliga hinder, innovera nya verktyg och skapa globala standarder som är öppna, interoperabla och tillgängliga för alla."
       },
       "european": {
         "title": "Europeisk innovation",
@@ -238,12 +238,12 @@
     "models": {
       "title": "De mest kraftfulla öppna modellerna",
       "description": "Modeller för att driva dina agent-baserade applikationer",
-      "requestModel": "Önska en modell!"
+      "requestModel": "Önska en modell"
     },
     "cta": {
       "title": "Redo att börja?",
       "description": "Kom igång och börja bygga med våra APIer redan idag",
-      "getStarted": "Skaffa konto!"
+      "getStarted": "Skaffa konto"
     }
   },
   "models": {
@@ -432,7 +432,7 @@
         "description": "För det lilla projektet",
         "price": "€25 / månad",
         "features": [
-          "25€ refill per månad",
+          "€25 refill per månad",
           "Automatisk billing",
           "Email-support",
           "Tillgång till alla modeller",
@@ -444,8 +444,8 @@
         "description": "För utvecklarteams",
         "price": "€50 / månad",
         "features": [
-          "55€ refill per månad",
-          "+10% extra Credits",
+          "€55 refill per månad",
+          "+10% extra credits",
           "Prioriterad support",
           "Tillgång till alla modeller",
           "Bäst värde för pengarna"
@@ -456,8 +456,8 @@
         "description": "När du ska skala upp",
         "price": "€500 / månad",
         "features": [
-          "550€ refill per månad",
-          "+10% extra Credits",
+          "€550 refill per månad",
+          "+10% extra credits",
           "Tillgång till alla modeller",
           "Dedikerad support"
         ]
