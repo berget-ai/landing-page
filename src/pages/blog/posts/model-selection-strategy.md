@@ -1,13 +1,13 @@
 ---
-title: 'Our Model Strategy: Balance Between Power and Precision'
-description: 'How we select and combine AI models to maximize performance and sustainability'
-date: '2025-05-23'
+title: "Our Model Strategy: Balance Between Power and Precision"
+description: "How we select and combine AI models to maximize performance and sustainability"
+date: "2025-05-23"
 language: en
-author: 'Andreas Lundmark'
-email: 'andreas@berget.ai'
-tags: ['ai-models', 'strategy', 'sustainability', 'technology']
+author: "Andreas Lundmark"
+email: "andreas@berget.ai"
+tags: ["ai-models", "strategy", "sustainability", "technology"]
 image: /images/ai-robot.png
-imageAlt: 'Server room with modern AI infrastructure'
+imageAlt: "Server room with modern AI infrastructure"
 ---
 
 In a world where AI models are becoming increasingly larger and more resource-intensive, we at Berget AI have chosen a different path. We don't believe that the future of AI is about having the largest models, but rather about creating the smartest combinations of specialized tools. This article explains our philosophy around model selection, the central concepts in modern AI, and why we have chosen the specific models that make up our infrastructure.

@@ -1,4 +1,4 @@
-import { VisualIdentityGuide } from '@/pages/VisualIdentityGuide'
+import { VisualIdentityGuide } from "@/pages/VisualIdentityGuide";
 export default function Page() {
-  return <VisualIdentityGuide />
+  return <VisualIdentityGuide />;
 }

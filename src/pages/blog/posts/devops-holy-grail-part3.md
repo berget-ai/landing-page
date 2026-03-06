@@ -136,36 +136,36 @@ spec:
 Add health checks and metrics to your application:
 
 ```typescript title="src/metrics.ts"
-import express from 'express'
-import promClient from 'prom-client'
+import express from "express";
+import promClient from "prom-client";
 
-const app = express()
+const app = express();
 
 // Create metrics
 const httpRequestDuration = new promClient.Histogram({
-  name: 'http_request_duration_seconds',
-  help: 'Duration of HTTP requests in seconds',
-  labelNames: ['method', 'route', 'status_code'],
-})
+  name: "http_request_duration_seconds",
+  help: "Duration of HTTP requests in seconds",
+  labelNames: ["method", "route", "status_code"],
+});
 
 const httpRequestsTotal = new promClient.Counter({
-  name: 'http_requests_total',
-  help: 'Total number of HTTP requests',
-  labelNames: ['method', 'route', 'status_code'],
-})
+  name: "http_requests_total",
+  help: "Total number of HTTP requests",
+  labelNames: ["method", "route", "status_code"],
+});
 
 // Health check endpoint
-app.get('/health', (req, res) => {
+app.get("/health", (req, res) => {
   res
     .status(200)
-    .json({ status: 'healthy', timestamp: new Date().toISOString() })
-})
+    .json({ status: "healthy", timestamp: new Date().toISOString() });
+});
 
 // Metrics endpoint
-app.get('/metrics', (req, res) => {
-  res.set('Content-Type', promClient.register.contentType)
-  res.end(promClient.register.metrics())
-})
+app.get("/metrics", (req, res) => {
+  res.set("Content-Type", promClient.register.contentType);
+  res.end(promClient.register.metrics());
+});
 ```
 
 ### Alerting Rules
@@ -183,15 +183,15 @@ spec:
           expr: rate(http_requests_total{status_code=~"5.."}[5m]) > 0.1
           for: 2m
           annotations:
-            summary: 'High error rate detected'
-            description: 'Error rate is {{ $value }} errors per second'
+            summary: "High error rate detected"
+            description: "Error rate is {{ $value }} errors per second"
 
         - alert: PodCrashLooping
           expr: rate(kube_pod_container_status_restarts_total[15m]) > 0
           for: 5m
           annotations:
-            summary: 'Pod is crash looping'
-            description: 'Pod {{ $labels.pod }} is restarting frequently'
+            summary: "Pod is crash looping"
+            description: "Pod {{ $labels.pod }} is restarting frequently"
 ```
 
 ## Multi-Environment Deployments
@@ -250,7 +250,7 @@ spec:
   chart:
     spec:
       chart: postgresql
-      version: '13.x.x'
+      version: "13.x.x"
       sourceRef:
         kind: HelmRepository
         name: bitnami
@@ -299,7 +299,7 @@ spec:
             - name: DB_HOST
               value: postgresql.database.svc.cluster.local
             - name: DB_PORT
-              value: '5432'
+              value: "5432"
 ```
 
 ## Backup and Disaster Recovery with Velero
@@ -347,7 +347,7 @@ spec:
   chart:
     spec:
       chart: velero
-      version: '5.x.x'
+      version: "5.x.x"
       sourceRef:
         kind: HelmRepository
         name: vmware-tanzu
@@ -385,7 +385,7 @@ metadata:
   name: daily-backup
   namespace: velero
 spec:
-  schedule: '0 2 * * *' # Daily at 2 AM
+  schedule: "0 2 * * *" # Daily at 2 AM
   template:
     includedNamespaces:
       - default
@@ -403,10 +403,10 @@ metadata:
   name: weekly-full-backup
   namespace: velero
 spec:
-  schedule: '0 1 * * 0' # Weekly on Sunday at 1 AM
+  schedule: "0 1 * * 0" # Weekly on Sunday at 1 AM
   template:
     includedNamespaces:
-      - '*'
+      - "*"
     storageLocation: default
     ttl: 2160h0m0s # 90 days retention
 ```
@@ -427,15 +427,15 @@ spec:
           expr: increase(velero_backup_failure_total[1h]) > 0
           for: 5m
           annotations:
-            summary: 'Velero backup failed'
-            description: 'Backup {{ $labels.schedule }} has failed'
+            summary: "Velero backup failed"
+            description: "Backup {{ $labels.schedule }} has failed"
 
         - alert: VeleroBackupPartialFailure
           expr: increase(velero_backup_partial_failure_total[1h]) > 0
           for: 5m
           annotations:
-            summary: 'Velero backup partially failed'
-            description: 'Backup {{ $labels.schedule }} has partial failures'
+            summary: "Velero backup partially failed"
+            description: "Backup {{ $labels.schedule }} has partial failures"
 ```
 
 ### Restore Procedures

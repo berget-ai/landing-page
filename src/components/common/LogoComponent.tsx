@@ -1,47 +1,47 @@
-import React from 'react'
+import React from "react";
 
 interface LogoComponentProps {
-  className?: string
-  size?: 'sm' | 'md' | 'lg' | number
-  inverted?: boolean
-  variant?: 'icon' | 'full' | 'horizontal'
-  withText?: boolean
-  backgroundColor?: string
+  className?: string;
+  size?: "sm" | "md" | "lg" | number;
+  inverted?: boolean;
+  variant?: "icon" | "full" | "horizontal";
+  withText?: boolean;
+  backgroundColor?: string;
 }
 
 export function LogoComponent({
-  className = '',
-  size = 'md',
+  className = "",
+  size = "md",
   inverted = false,
-  variant = 'icon',
+  variant = "icon",
   withText = false,
   backgroundColor,
 }: LogoComponentProps) {
-  const shouldInvert = inverted
+  const shouldInvert = inverted;
 
   // Calculate size in pixels
   const sizeInPx =
-    typeof size === 'number'
+    typeof size === "number"
       ? size
-      : size === 'sm'
+      : size === "sm"
         ? 24
-        : size === 'md'
+        : size === "md"
           ? 32
-          : 48
+          : 48;
 
   // Calculate aspect ratio based on variant
-  const aspectRatio = variant === 'horizontal' ? 3 : 0.9
+  const aspectRatio = variant === "horizontal" ? 3 : 0.9;
 
   // Determine container style
   const containerStyle: React.CSSProperties = {
     width: sizeInPx,
     height: sizeInPx * aspectRatio,
-    backgroundColor: backgroundColor || 'transparent',
-    display: 'inline-flex',
-    alignItems: 'center',
-    justifyContent: withText ? 'flex-start' : 'center',
-    padding: withText ? '0.5rem' : 0,
-  }
+    backgroundColor: backgroundColor || "transparent",
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: withText ? "flex-start" : "center",
+    padding: withText ? "0.5rem" : 0,
+  };
 
   // Logo should only be black or white based on inversion
   return (
@@ -50,14 +50,14 @@ export function LogoComponent({
         <img
           src={
             shouldInvert
-              ? '/logos/berget-icon-black.svg'
-              : '/logos/berget-icon-white.svg'
+              ? "/logos/berget-icon-black.svg"
+              : "/logos/berget-icon-white.svg"
           }
           alt="Berget AI Logo"
           style={{
-            height: '100%',
-            width: 'auto',
-            objectFit: 'contain',
+            height: "100%",
+            width: "auto",
+            objectFit: "contain",
           }}
         />
       )}
@@ -65,17 +65,17 @@ export function LogoComponent({
         <img
           src={
             shouldInvert
-              ? '/logos/berget-logo-black.svg'
-              : '/logos/berget-logo-white.svg'
+              ? "/logos/berget-logo-black.svg"
+              : "/logos/berget-logo-white.svg"
           }
           alt="Berget AI Logo with Text"
           style={{
-            width: variant === 'horizontal' ? '300px' : '100%',
-            height: '100%',
-            objectFit: 'contain',
+            width: variant === "horizontal" ? "300px" : "100%",
+            height: "100%",
+            objectFit: "contain",
           }}
         />
       )}
     </div>
-  )
+  );
 }

@@ -1,6 +1,6 @@
 export default {
   prerender: true,
-  title: 'Products - Berget AI',
+  title: "Products - Berget AI",
   description:
-    'Explore Berget AI products: inference API, managed Kubernetes, and AI infrastructure.',
-}
+    "Explore Berget AI products: inference API, managed Kubernetes, and AI infrastructure.",
+};

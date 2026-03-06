@@ -1,44 +1,44 @@
-import { useParams } from 'react-router-dom'
-import { useEffect, useState } from 'react'
-import { motion } from 'motion/react'
-import { ArrowLeft } from 'lucide-react'
-import { Link } from 'react-router-dom'
-import { Button } from '@berget-ai/ui'
-import { AuthorByline } from '@/components/blog/AuthorByline'
-import { Helmet } from '@/components/common/Helmet'
-import type { BlogPost } from '@/types/blog'
-import { MarkdownRenderer } from '@/components/blog/MarkdownRenderer'
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { motion } from "motion/react";
+import { ArrowLeft } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "@berget-ai/ui";
+import { AuthorByline } from "@/components/blog/AuthorByline";
+import { Helmet } from "@/components/common/Helmet";
+import type { BlogPost } from "@/types/blog";
+import { MarkdownRenderer } from "@/components/blog/MarkdownRenderer";
 
 // Import all blog posts at build time
-const postModules = import.meta.glob('./**/*.md', {
+const postModules = import.meta.glob("./**/*.md", {
   eager: true,
-  query: '?raw',
-  import: 'default',
-})
+  query: "?raw",
+  import: "default",
+});
 
 // Helper function to parse YAML frontmatter
 function parseYamlMetadata(yaml: string) {
-  const metadata: Record<string, any> = {}
-  const lines = yaml.split('\n')
+  const metadata: Record<string, any> = {};
+  const lines = yaml.split("\n");
 
   lines.forEach((line) => {
-    const match = line.match(/^(\w+):\s*(.+)$/)
+    const match = line.match(/^(\w+):\s*(.+)$/);
     if (match) {
-      const [_, key, value] = match
-      if (key === 'tags') {
+      const [_, key, value] = match;
+      if (key === "tags") {
         metadata[key] = value
           .trim()
-          .replace(/^\[|\]$/g, '')
-          .split(',')
+          .replace(/^\[|\]$/g, "")
+          .split(",")
           .map((t) => t.trim())
-          .filter(Boolean)
+          .filter(Boolean);
       } else {
-        metadata[key] = value.trim().replace(/^["']|["']$/g, '')
+        metadata[key] = value.trim().replace(/^["']|["']$/g, "");
       }
     }
-  })
+  });
 
-  return metadata
+  return metadata;
 }
 
 // Loading placeholder component
@@ -57,55 +57,55 @@ function LoadingPlaceholder() {
         </div>
       </div>
     </main>
-  )
+  );
 }
 
 export default function BlogPostPage() {
-  const { id } = useParams()
-  const [post, setPost] = useState<BlogPost | null>(null)
+  const { id } = useParams();
+  const [post, setPost] = useState<BlogPost | null>(null);
 
   useEffect(() => {
     const loadPost = async () => {
       // Find the post content by ID
       const postPath = Object.keys(postModules).find((path) =>
         path.includes(`/${id}.md`),
-      )
+      );
 
       if (!postPath || !postModules[postPath]) {
-        return
+        return;
       }
 
-      const content = postModules[postPath] as string
+      const content = postModules[postPath] as string;
 
       // Extract metadata from frontmatter
-      const metadataMatch = content.match(/^---\n([\s\S]*?)\n---\n/)
-      const metadata = metadataMatch ? parseYamlMetadata(metadataMatch[1]) : {}
+      const metadataMatch = content.match(/^---\n([\s\S]*?)\n---\n/);
+      const metadata = metadataMatch ? parseYamlMetadata(metadataMatch[1]) : {};
 
-      const markdownContent = content.replace(/^---\n[\s\S]*?\n---\n/, '') // Remove frontmatter
+      const markdownContent = content.replace(/^---\n[\s\S]*?\n---\n/, ""); // Remove frontmatter
 
       // Use language from metadata or default to 'sv'
       const language =
-        metadata.language === 'en' ? ('en' as const) : ('sv' as const)
+        metadata.language === "en" ? ("en" as const) : ("sv" as const);
 
       setPost({
-        id: id || '',
-        title: metadata.title || '',
-        description: metadata.description || '',
-        date: metadata.date || '',
-        author: metadata.author || 'Berget Team',
-        email: metadata.email || '',
+        id: id || "",
+        title: metadata.title || "",
+        description: metadata.description || "",
+        date: metadata.date || "",
+        author: metadata.author || "Berget Team",
+        email: metadata.email || "",
         content: markdownContent,
         tags: metadata.tags || [],
-        image: metadata.image || '',
-        imageAlt: metadata.imageAlt || '',
+        image: metadata.image || "",
+        imageAlt: metadata.imageAlt || "",
         language,
-      })
-    }
+      });
+    };
 
-    loadPost()
-  }, [id])
+    loadPost();
+  }, [id]);
 
-  if (!post) return <LoadingPlaceholder />
+  if (!post) return <LoadingPlaceholder />;
 
   return (
     <main className="min-h-screen">
@@ -118,8 +118,8 @@ export default function BlogPostPage() {
           language={post.language}
         />
       )}
-      <article className={post?.image ? '' : 'container mx-auto px-4 py-8'}>
-        <div className={post?.image ? '' : 'max-w-3xl mx-auto'}>
+      <article className={post?.image ? "" : "container mx-auto px-4 py-8"}>
+        <div className={post?.image ? "" : "max-w-3xl mx-auto"}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -186,8 +186,8 @@ export default function BlogPostPage() {
               </>
             )}
 
-            <div className={post.image ? 'container mx-auto px-4' : ''}>
-              <div className={post.image ? 'max-w-3xl mx-auto' : ''}>
+            <div className={post.image ? "container mx-auto px-4" : ""}>
+              <div className={post.image ? "max-w-3xl mx-auto" : ""}>
                 {post.tags.length ? (
                   <div className="flex flex-wrap gap-2 mb-12">
                     {post.tags.map((tag) => (
@@ -208,5 +208,5 @@ export default function BlogPostPage() {
         </div>
       </article>
     </main>
-  )
+  );
 }

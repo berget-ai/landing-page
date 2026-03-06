@@ -1,5 +1,5 @@
-import { Shield, Check, X, ArrowRight, Download } from 'lucide-react'
-import { LogoComponent } from '@/components/common/LogoComponent'
+import { Shield, Check, X, ArrowRight, Download } from "lucide-react";
+import { LogoComponent } from "@/components/common/LogoComponent";
 
 export function VisualIdentityGuide() {
   return (
@@ -337,7 +337,7 @@ export function VisualIdentityGuide() {
                       <span>
                         <code className="bg-black/30 px-1 rounded">
                           inverted
-                        </code>{' '}
+                        </code>{" "}
                         - boolean (force inversion)
                       </span>
                     </li>
@@ -346,7 +346,7 @@ export function VisualIdentityGuide() {
                       <span>
                         <code className="bg-black/30 px-1 rounded">
                           variant
-                        </code>{' '}
+                        </code>{" "}
                         - 'icon' | 'full' | 'horizontal'
                       </span>
                     </li>
@@ -355,7 +355,7 @@ export function VisualIdentityGuide() {
                       <span>
                         <code className="bg-black/30 px-1 rounded">
                           withText
-                        </code>{' '}
+                        </code>{" "}
                         - boolean (add company name)
                       </span>
                     </li>
@@ -364,7 +364,7 @@ export function VisualIdentityGuide() {
                       <span>
                         <code className="bg-black/30 px-1 rounded">
                           backgroundColor
-                        </code>{' '}
+                        </code>{" "}
                         - optional background
                       </span>
                     </li>
@@ -391,20 +391,20 @@ export function VisualIdentityGuide() {
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
                       <span>
-                        Use{' '}
+                        Use{" "}
                         <code className="bg-black/30 px-1 rounded">
                           withText
-                        </code>{' '}
+                        </code>{" "}
                         for logo with company name
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2" />
                       <span>
-                        Use{' '}
+                        Use{" "}
                         <code className="bg-black/30 px-1 rounded">
                           variant
-                        </code>{' '}
+                        </code>{" "}
                         to control layout
                       </span>
                     </li>
@@ -554,7 +554,7 @@ export function VisualIdentityGuide() {
               <h4 className="text-lg font-medium mb-4">Icon Guidelines</h4>
               <p className="mb-4">
                 Icons should be used consistently throughout the interface to
-                enhance usability and visual appeal. All icons should use the{' '}
+                enhance usability and visual appeal. All icons should use the{" "}
                 <code>text-white</code> class by default, regardless of the
                 context.
               </p>
@@ -570,7 +570,7 @@ export function VisualIdentityGuide() {
                       <span>
                         <strong>
                           Always use <code>text-white</code>
-                        </strong>{' '}
+                        </strong>{" "}
                         for all icons, even in warnings, errors, and success
                         states
                       </span>
@@ -773,7 +773,7 @@ export function VisualIdentityGuide() {
                       className="w-full h-full"
                       style={{
                         backgroundImage: `radial-gradient(circle, rgba(82, 183, 136, 0.1) 1px, transparent 1px)`,
-                        backgroundSize: '30px 30px',
+                        backgroundSize: "30px 30px",
                       }}
                     ></div>
                   </div>
@@ -794,7 +794,7 @@ export function VisualIdentityGuide() {
         </div>
       </div>
     </main>
-  )
+  );
 }
 
-export default VisualIdentityGuide
+export default VisualIdentityGuide;

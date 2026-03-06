@@ -1,13 +1,13 @@
 ---
-title: 'Bakom kulisserna: Så optimerar vi våra AI-modeller'
-description: 'En djupdykning i hur vi balanserar prestanda och minnesanvändning för att få ut maximalt av vår AMD MI300x-infrastruktur'
-date: '2025-05-23'
+title: "Bakom kulisserna: Så optimerar vi våra AI-modeller"
+description: "En djupdykning i hur vi balanserar prestanda och minnesanvändning för att få ut maximalt av vår AMD MI300x-infrastruktur"
+date: "2025-05-23"
 language: sv
-author: 'Christian Landgren'
-email: 'christian@berget.ai'
-tags: ['teknik', 'infrastruktur', 'optimering', 'llm']
+author: "Christian Landgren"
+email: "christian@berget.ai"
+tags: ["teknik", "infrastruktur", "optimering", "llm"]
 image: /images/mi300.png
-imageAlt: 'Serverrack med AMD MI300x-acceleratorer i ett modernt datacenter'
+imageAlt: "Serverrack med AMD MI300x-acceleratorer i ett modernt datacenter"
 ---
 
 När vi på Berget AI bygger vår infrastruktur för att köra stora språkmodeller (LLMs) står vi inför en intressant utmaning: Hur får vi plats med så många kraftfulla modeller som möjligt på vår hårdvara, samtidigt som vi säkerställer snabb responstid och hög tillgänglighet? I denna artikel delar vi med oss av våra erfarenheter och tekniker för att optimera minnesanvändningen för våra AI-modeller.

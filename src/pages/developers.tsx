@@ -1,30 +1,30 @@
-import { motion } from 'motion/react'
-import { Github, Lock, Server, Database } from 'lucide-react'
-import { Button, HeroBlock, TerminalCarousel } from '@berget-ai/ui'
-import { useTranslation } from 'react-i18next'
-import { terminalExamples } from '@/components/terminal/terminal-examples'
-import { ModelsSection } from '@/components/sections/ModelsSection'
-import { Overview } from '@/components/sections/Overview'
-import { Feature } from '@/components/ui/feature-section-with-bento-grid'
-import { useEnvironment } from '@/hooks/use-environment'
+import { motion } from "motion/react";
+import { Github, Lock, Server, Database } from "lucide-react";
+import { Button, HeroBlock, TerminalCarousel } from "@berget-ai/ui";
+import { useTranslation } from "react-i18next";
+import { terminalExamples } from "@/components/terminal/terminal-examples";
+import { ModelsSection } from "@/components/sections/ModelsSection";
+import { Overview } from "@/components/sections/Overview";
+import { Feature } from "@/components/ui/feature-section-with-bento-grid";
+import { useEnvironment } from "@/hooks/use-environment";
 
 const iconMap = {
   github: Github,
   lock: Lock,
   server: Server,
   database: Database,
-}
+};
 
 export default function DevelopersPage() {
-  const { t } = useTranslation()
-  const { consoleUrl } = useEnvironment()
+  const { t } = useTranslation();
+  const { consoleUrl } = useEnvironment();
   const sections =
-    (t('DevelopersPage.sections', { returnObjects: true }) as {
-      icon: keyof typeof iconMap
-      title: string
-      description: string
-      bullets: string[]
-    }[]) || []
+    (t("DevelopersPage.sections", { returnObjects: true }) as {
+      icon: keyof typeof iconMap;
+      title: string;
+      description: string;
+      bullets: string[];
+    }[]) || [];
 
   return (
     <main className="min-h-screen">
@@ -32,8 +32,8 @@ export default function DevelopersPage() {
       <HeroBlock
         variant="default"
         withPattern
-        title={t('DevelopersPage.hero.title')}
-        description={t('DevelopersPage.hero.description')}
+        title={t("DevelopersPage.hero.title")}
+        description={t("DevelopersPage.hero.description")}
       />
 
       {/* Terminal Demo */}
@@ -52,13 +52,13 @@ export default function DevelopersPage() {
             transition={{ duration: 0.5 }}
           >
             <Feature
-              title={t('DevelopersPage.hero.title')}
-              description={t('DevelopersPage.hero.description')}
+              title={t("DevelopersPage.hero.title")}
+              description={t("DevelopersPage.hero.description")}
               badge="For Developers"
               items={
                 Array.isArray(sections)
                   ? sections.map((section, index) => {
-                      const Icon = iconMap[section.icon]
+                      const Icon = iconMap[section.icon];
                       return {
                         icon: <Icon className="w-8 h-8 stroke-1 text-white" />,
                         title: section.title,
@@ -73,7 +73,7 @@ export default function DevelopersPage() {
                                     className="flex items-start gap-3 text-sm"
                                   >
                                     <span className=" text-[#52B788] mt-0.5 flex-shrink-0">
-                                      {bullet.split('–')[0]}
+                                      {bullet.split("–")[0]}
                                     </span>
                                   </li>
                                 ))}
@@ -81,8 +81,8 @@ export default function DevelopersPage() {
                             </div>
                           </>
                         ),
-                        span: index % 3 === 0 ? 'col' : 'none',
-                      }
+                        span: index % 3 === 0 ? "col" : "none",
+                      };
                     })
                   : []
               }
@@ -102,14 +102,14 @@ export default function DevelopersPage() {
             className="text-center mt-32"
           >
             <h2 className="text-3xl font-medium mb-6">
-              {t('DevelopersPage.cta.title')}
+              {t("DevelopersPage.cta.title")}
             </h2>
             <p className="text-xl text-white/60 mb-8 max-w-2xl mx-auto">
-              {t('DevelopersPage.cta.description')}
+              {t("DevelopersPage.cta.description")}
             </p>
             <div className="flex gap-4 justify-center">
               <Button size="lg" asChild>
-                <a href={consoleUrl}>{t('DevelopersPage.cta.signup')}</a>
+                <a href={consoleUrl}>{t("DevelopersPage.cta.signup")}</a>
               </Button>
             </div>
           </motion.div>
@@ -120,5 +120,5 @@ export default function DevelopersPage() {
         <ModelsSection />
       </div>
     </main>
-  )
+  );
 }

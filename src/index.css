@@ -1,7 +1,7 @@
-@import 'tailwindcss';
-@import '@fontsource/dm-sans';
-@import '@fontsource/ovo';
-@import 'tw-animate-css';
+@import "tailwindcss";
+@import "@fontsource/dm-sans";
+@import "@fontsource/ovo";
+@import "tw-animate-css";
 
 @plugin "@tailwindcss/typography";
 @source "../node_modules/@berget-ai/ui/dist/**/*.{js,cjs}";
@@ -191,26 +191,26 @@
 
 @layer base {
   body {
-    font-family: 'DM Sans', sans-serif;
-    font-feature-settings: 'ss01', 'ss02', 'cv01', 'cv02';
+    font-family: "DM Sans", sans-serif;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
   }
 
   h1 {
-    font-family: 'Ovo', serif;
+    font-family: "Ovo", serif;
     letter-spacing: -0.05em;
     font-size: 2.5rem;
     line-height: 1.2;
   }
 
   h2 {
-    font-family: 'Ovo', serif;
+    font-family: "Ovo", serif;
     letter-spacing: -0.05em;
     font-size: 2rem;
     line-height: 1.25;
   }
 
   h3 {
-    font-family: 'Ovo', serif;
+    font-family: "Ovo", serif;
     letter-spacing: -0.05em;
     font-size: 1.5rem;
     line-height: 1.3;
@@ -219,7 +219,7 @@
   h4,
   h5,
   h6 {
-    font-family: 'Ovo', serif;
+    font-family: "Ovo", serif;
     letter-spacing: -0.05em;
   }
 

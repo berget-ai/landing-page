@@ -1,4 +1,4 @@
-import { motion } from 'motion/react'
+import { motion } from "motion/react";
 import {
   Shield,
   Lock,
@@ -7,30 +7,30 @@ import {
   Bot,
   ArrowRight,
   Check,
-} from 'lucide-react'
-import { Button, Card, HeroBlock, Section, SectionHeader } from '@berget-ai/ui'
-import { ComplianceSection } from '@/components/sections/ComplianceSection'
-import { PricingTiers } from '@/components/sections/pricing/PricingTiers'
-import { ProductFeatures } from '@/components/sections/ProductFeatures'
-import { PartnerQuotes } from '@/components/sections/PartnerQuotes'
-import { useTranslation } from 'react-i18next'
+} from "lucide-react";
+import { Button, Card, HeroBlock, Section, SectionHeader } from "@berget-ai/ui";
+import { ComplianceSection } from "@/components/sections/ComplianceSection";
+import { PricingTiers } from "@/components/sections/pricing/PricingTiers";
+import { ProductFeatures } from "@/components/sections/ProductFeatures";
+import { PartnerQuotes } from "@/components/sections/PartnerQuotes";
+import { useTranslation } from "react-i18next";
 
 export default function SaaSPage() {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   const questions = [
     {
       question:
-        'Is AI at the core of your product innovation, but you are concerned about the costs when you scale?',
+        "Is AI at the core of your product innovation, but you are concerned about the costs when you scale?",
       answer:
-        'Our pay-as-you-go pricing and dedicated GPU options ensure you only pay for what you use, with significant discounts as you scale.',
+        "Our pay-as-you-go pricing and dedicated GPU options ensure you only pay for what you use, with significant discounts as you scale.",
       icon: Bot,
     },
     {
       question:
-        'Do you want complete control of the models you use and be able to use your own models, fine-tuned or trained, in your applications, but do not want to have your own GPU cluster?',
+        "Do you want complete control of the models you use and be able to use your own models, fine-tuned or trained, in your applications, but do not want to have your own GPU cluster?",
       answer:
-        'Deploy any model - open source, fine-tuned, or custom trained - on our infrastructure. No need to manage your own GPU cluster.',
+        "Deploy any model - open source, fine-tuned, or custom trained - on our infrastructure. No need to manage your own GPU cluster.",
       icon: Server,
     },
     {
@@ -42,53 +42,53 @@ export default function SaaSPage() {
     },
     {
       question:
-        'Do you get stuck in complicated legal discussions about your cloud partners and reviewing endless Data Processing Agreements?',
+        "Do you get stuck in complicated legal discussions about your cloud partners and reviewing endless Data Processing Agreements?",
       answer:
-        'Our EU-based infrastructure and comprehensive compliance framework simplifies legal requirements. One agreement covers all your needs.',
+        "Our EU-based infrastructure and comprehensive compliance framework simplifies legal requirements. One agreement covers all your needs.",
       icon: Lock,
     },
     {
       question:
-        'Do your developer teams want full freedom on how they setup their environments, and not have to get limited by cloud providers PaaS straightjackets?',
+        "Do your developer teams want full freedom on how they setup their environments, and not have to get limited by cloud providers PaaS straightjackets?",
       answer:
-        'Full flexibility in how you set up your environment. No vendor lock-in, no forced PaaS solutions - just the tools you need.',
+        "Full flexibility in how you set up your environment. No vendor lock-in, no forced PaaS solutions - just the tools you need.",
       icon: Database,
     },
-  ]
+  ];
 
   const benefits = [
     {
-      title: 'Simplified Compliance',
+      title: "Simplified Compliance",
       description:
-        'One agreement covers GDPR, NIS2, and EU AI Act requirements',
+        "One agreement covers GDPR, NIS2, and EU AI Act requirements",
       features: [
-        'Built-in GDPR compliance',
-        'NIS2-ready infrastructure',
-        'EU AI Act alignment',
-        'Data stays in EU',
+        "Built-in GDPR compliance",
+        "NIS2-ready infrastructure",
+        "EU AI Act alignment",
+        "Data stays in EU",
       ],
     },
     {
-      title: 'Cost-Effective Scaling',
-      description: 'Pay only for what you use with predictable pricing',
+      title: "Cost-Effective Scaling",
+      description: "Pay only for what you use with predictable pricing",
       features: [
-        'No upfront investments',
-        'Volume-based discounts',
-        'Reserved capacity options',
-        'Transparent pricing',
+        "No upfront investments",
+        "Volume-based discounts",
+        "Reserved capacity options",
+        "Transparent pricing",
       ],
     },
     {
-      title: 'Developer Freedom',
-      description: 'Give your team the tools they need without restrictions',
+      title: "Developer Freedom",
+      description: "Give your team the tools they need without restrictions",
       features: [
-        'Any framework or tool',
-        'Full infrastructure control',
-        'GitOps workflows',
-        'No vendor lock-in',
+        "Any framework or tool",
+        "Full infrastructure control",
+        "GitOps workflows",
+        "No vendor lock-in",
       ],
     },
-  ]
+  ];
 
   return (
     <main>
@@ -96,18 +96,18 @@ export default function SaaSPage() {
       <HeroBlock
         variant="gradient"
         withPattern
-        title={t('saas.hero.title')}
-        description={t('saas.hero.description')}
+        title={t("saas.hero.title")}
+        description={t("saas.hero.description")}
         actions={
           <>
             <Button size="lg" asChild>
               <a href="/signup">
-                {t('saas.hero.startBuilding')}
+                {t("saas.hero.startBuilding")}
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>
             </Button>
             <Button size="lg" variant="secondary" asChild>
-              <a href="/contact">{t('saas.hero.bookDemo')}</a>
+              <a href="/contact">{t("saas.hero.bookDemo")}</a>
             </Button>
           </>
         }
@@ -205,5 +205,5 @@ export default function SaaSPage() {
         </div>
       </Section>
     </main>
-  )
+  );
 }

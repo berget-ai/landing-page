@@ -1,1 +1,1 @@
-export { default } from '@/pages/why-berget'
+export { default } from "@/pages/why-berget";

@@ -1,51 +1,51 @@
-import { Calendar, Twitter, Linkedin } from 'lucide-react'
-import { useTranslation } from 'react-i18next'
+import { Calendar, Twitter, Linkedin } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 interface AuthorBylineProps {
-  email?: string
-  name: string
-  date: string
-  size?: 'sm' | 'md' | 'lg'
+  email?: string;
+  name: string;
+  date: string;
+  size?: "sm" | "md" | "lg";
 }
 
 export function AuthorByline({
   email,
   name,
   date,
-  size = 'md',
+  size = "md",
 }: AuthorBylineProps) {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   // Get team members from translations
-  const teamMembers = t('about.team.members', {
+  const teamMembers = t("about.team.members", {
     returnObjects: true,
-  }) as Record<string, any>
+  }) as Record<string, any>;
 
   // Find team member by name or email
   const memberKey = Object.keys(teamMembers).find((key) => {
-    const member = teamMembers[key]
-    return member.name === name || (email && member.email === email)
-  })
+    const member = teamMembers[key];
+    return member.name === name || (email && member.email === email);
+  });
 
-  const author = memberKey ? teamMembers[memberKey] : null
+  const author = memberKey ? teamMembers[memberKey] : null;
 
   const imageSize = {
-    sm: 'w-8 h-8',
-    md: 'w-12 h-12',
-    lg: 'w-16 h-16',
-  }[size]
+    sm: "w-8 h-8",
+    md: "w-12 h-12",
+    lg: "w-16 h-16",
+  }[size];
 
   const nameSize = {
-    sm: 'text-sm',
-    md: 'text-base',
-    lg: 'text-lg',
-  }[size]
+    sm: "text-sm",
+    md: "text-base",
+    lg: "text-lg",
+  }[size];
 
   const dateSize = {
-    sm: 'text-xs',
-    md: 'text-sm',
-    lg: 'text-base',
-  }[size]
+    sm: "text-xs",
+    md: "text-sm",
+    lg: "text-base",
+  }[size];
 
   return (
     <div className="flex items-center gap-4 mb-6">
@@ -65,10 +65,10 @@ export function AuthorByline({
         <div className={`flex items-center gap-2 ${dateSize} text-white/60`}>
           <Calendar className="w-4 h-4" />
           <time dateTime={date}>
-            {new Date(date).toLocaleDateString('en-GB', {
-              year: 'numeric',
-              month: 'short',
-              day: 'numeric',
+            {new Date(date).toLocaleDateString("en-GB", {
+              year: "numeric",
+              month: "short",
+              day: "numeric",
             })}
           </time>
         </div>
@@ -120,5 +120,5 @@ export function AuthorByline({
         )}
       </div>
     </div>
-  )
+  );
 }

@@ -1,5 +1,5 @@
-import { motion } from 'motion/react'
-import { Shield, Mail, Lock } from 'lucide-react'
+import { motion } from "motion/react";
+import { Shield, Mail, Lock } from "lucide-react";
 
 export default function ResponsibleDisclosurePage() {
   return (
@@ -88,7 +88,7 @@ export default function ResponsibleDisclosurePage() {
                   Contact Information
                 </h3>
                 <p>
-                  Please send your findings to:{' '}
+                  Please send your findings to:{" "}
                   <strong>
                     <a href="mailto:abuse-reporting@berget.ai">
                       abuse-reporting@berget.ai
@@ -254,5 +254,5 @@ lHM=
         </div>
       </div>
     </main>
-  )
+  );
 }

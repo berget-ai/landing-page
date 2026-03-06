@@ -1,17 +1,17 @@
-import { ReactNode } from 'react'
-import { User } from 'lucide-react'
-import { Badge } from '@berget-ai/ui'
+import { ReactNode } from "react";
+import { User } from "lucide-react";
+import { Badge } from "@berget-ai/ui";
 
 interface FeatureProps {
-  title?: string
-  description?: string
-  badge?: string
+  title?: string;
+  description?: string;
+  badge?: string;
   items?: {
-    icon: ReactNode
-    title: string
-    description: ReactNode
-    span?: 'col' | 'row' | 'both' | 'none'
-  }[]
+    icon: ReactNode;
+    title: string;
+    description: ReactNode;
+    span?: "col" | "row" | "both" | "none";
+  }[];
 }
 
 function Feature({ title, description, badge, items = [] }: FeatureProps) {
@@ -39,17 +39,17 @@ function Feature({ title, description, badge, items = [] }: FeatureProps) {
               <div
                 key={index}
                 className={`bg-muted/60 rounded-md p-6 flex justify-between flex-col ${
-                  item.span === 'col' || item.span === 'both'
-                    ? 'lg:col-span-2'
-                    : ''
+                  item.span === "col" || item.span === "both"
+                    ? "lg:col-span-2"
+                    : ""
                 } ${
-                  item.span === 'row' || item.span === 'both'
-                    ? 'lg:row-span-2'
-                    : ''
+                  item.span === "row" || item.span === "both"
+                    ? "lg:row-span-2"
+                    : ""
                 } ${
-                  item.span === 'none'
-                    ? 'aspect-square'
-                    : 'aspect-square lg:aspect-auto'
+                  item.span === "none"
+                    ? "aspect-square"
+                    : "aspect-square lg:aspect-auto"
                 }`}
               >
                 {item.icon || <User className="w-8 h-8 stroke-1" />}
@@ -65,7 +65,7 @@ function Feature({ title, description, badge, items = [] }: FeatureProps) {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export { Feature }
+export { Feature };

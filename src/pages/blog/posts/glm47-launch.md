@@ -1,13 +1,13 @@
 ---
-title: 'Introducing GLM-4.7'
-description: 'A powerful model that raise the bar for performance, efficiency, and capability'
-date: '2026-01-21'
+title: "Introducing GLM-4.7"
+description: "A powerful model that raise the bar for performance, efficiency, and capability"
+date: "2026-01-21"
 language: en
-author: 'Andreas Lundmark'
-email: 'andreas@berget.ai'
-tags: ['models', 'llm']
+author: "Andreas Lundmark"
+email: "andreas@berget.ai"
+tags: ["models", "llm"]
 image: /images/glm47-splash.png
-imageAlt: 'New AI Models at Berget AI'
+imageAlt: "New AI Models at Berget AI"
 ---
 
 We're excited to roll out **GLM-4.7** that raise the bar for performance, efficiency, and capability at Berget AI.
@@ -63,28 +63,28 @@ print(response.json()['choices'][0]['message']['content'])
 And in TypeScript:
 
 ```typescript
-const response = await fetch('https://api.berget.ai/v1/chat/completions', {
-  method: 'POST',
+const response = await fetch("https://api.berget.ai/v1/chat/completions", {
+  method: "POST",
   headers: {
     Authorization: `Bearer ${process.env.BERGET_API_KEY}`,
-    'Content-Type': 'application/json',
+    "Content-Type": "application/json",
   },
   body: JSON.stringify({
-    model: 'zai-org/GLM-4.7',
+    model: "zai-org/GLM-4.7",
     messages: [
       {
-        role: 'user',
+        role: "user",
         content:
-          'Create a TypeScript interface for a user profile with validation using Zod. Include nested objects for address and preferences.',
+          "Create a TypeScript interface for a user profile with validation using Zod. Include nested objects for address and preferences.",
       },
     ],
     temperature: 0.7,
     max_tokens: 2000,
   }),
-})
+});
 
-const data = await response.json()
-console.log(data.choices[0].message.content)
+const data = await response.json();
+console.log(data.choices[0].message.content);
 ```
 
 ## 🔄 Streamlining Our Lineup

@@ -1,13 +1,13 @@
 ---
-title: 'On-prem för AI-inferens? Därför är det oftast fel väg – och vad du kan göra istället'
-description: 'Varför on-prem GPU kan vara en onödigt dyr idé och vilka bättre alternativ som finns för suverän AI-infrastruktur'
-date: '2026-02-04'
+title: "On-prem för AI-inferens? Därför är det oftast fel väg – och vad du kan göra istället"
+description: "Varför on-prem GPU kan vara en onödigt dyr idé och vilka bättre alternativ som finns för suverän AI-infrastruktur"
+date: "2026-02-04"
 language: sv
-author: 'Christian Landgren'
-email: 'christian@berget.ai'
-tags: ['teknik', 'infrastruktur', 'suveränitet', 'ai']
+author: "Christian Landgren"
+email: "christian@berget.ai"
+tags: ["teknik", "infrastruktur", "suveränitet", "ai"]
 image: /images/on-prem.jpg
-imageAlt: 'Illustration som visar olika alternativ för AI-inferens och deras kostnader/nyttor'
+imageAlt: "Illustration som visar olika alternativ för AI-inferens och deras kostnader/nyttor"
 ---
 
 **Suveränitet** är en av vår tids starkaste drivkrafter inom AI. Efter flera år av beroende av amerikanska molnleverantörer, börjar nu företag, myndigheter och utvecklare inse att framtidens AI måste köras på ett annat sätt – med kontroll, insyn och hållbarhet. Men för många blir svaret fel: de tänker att lösningen är _on-prem_.
@@ -81,9 +81,9 @@ Om du redan använder `api.openai.com/v1` eller `api.anthropic.com/v1` – då k
 ```ts
 // Byt bara din base URL:
 const client = new OpenAI({
-  baseURL: 'https://api.berget.ai/v1',
+  baseURL: "https://api.berget.ai/v1",
   apiKey: process.env.BERGET_API_KEY,
-})
+});
 ```
 
 Samma modeller. Samma protokoll. Men med svensk suveränitet och full kontroll.

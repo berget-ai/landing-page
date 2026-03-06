@@ -1,26 +1,26 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react";
 
 export interface HealthStatus {
-  status: 'healthy' | 'degraded' | 'critical' | 'unknown'
-  messageKey?: 'status.critical' | 'status.degraded'
-  allModelsDown: boolean
-  someModelsDown: boolean
-  systemIssues: boolean
-  lastChecked: Date | null
+  status: "healthy" | "degraded" | "critical" | "unknown";
+  messageKey?: "status.critical" | "status.degraded";
+  allModelsDown: boolean;
+  someModelsDown: boolean;
+  systemIssues: boolean;
+  lastChecked: Date | null;
 }
 
 interface SystemStatus {
-  status: string
-  lastChecked: string
-  lago: { status: string }
-  odoo: { status: string }
-  keycloak: { status: string; error?: string }
+  status: string;
+  lastChecked: string;
+  lago: { status: string };
+  odoo: { status: string };
+  keycloak: { status: string; error?: string };
   chatEndpoints: Array<{
-    model: string
-    status: string
-    latency?: number
-    error?: string
-  }>
+    model: string;
+    status: string;
+    latency?: number;
+    error?: string;
+  }>;
 }
 
 /**
@@ -35,44 +35,44 @@ interface SystemStatus {
  */
 export function useHealth() {
   const [health, setHealth] = useState<HealthStatus>({
-    status: 'unknown',
+    status: "unknown",
     allModelsDown: false,
     someModelsDown: false,
     systemIssues: false,
     lastChecked: null,
-  })
+  });
 
   useEffect(() => {
     const fetchHealth = async () => {
       try {
-        const response = await fetch('https://api.berget.ai/health')
-        const data: SystemStatus = await response.json()
+        const response = await fetch("https://api.berget.ai/health");
+        const data: SystemStatus = await response.json();
 
         // Check model status
-        const models = data.chatEndpoints || []
+        const models = data.chatEndpoints || [];
         const downModels = models.filter(
-          (m) => m.status === 'down' || m.status === 'unhealthy',
-        )
+          (m) => m.status === "down" || m.status === "unhealthy",
+        );
         const allModelsDown =
-          models.length > 0 && downModels.length === models.length
-        const someModelsDown = downModels.length > 0 && !allModelsDown
+          models.length > 0 && downModels.length === models.length;
+        const someModelsDown = downModels.length > 0 && !allModelsDown;
 
         // Check system status (Lago, Odoo, Keycloak)
         const systemIssues =
-          data.lago?.status === 'down' ||
-          data.odoo?.status === 'down' ||
-          data.keycloak?.status === 'down'
+          data.lago?.status === "down" ||
+          data.odoo?.status === "down" ||
+          data.keycloak?.status === "down";
 
         // Determine overall health status
-        let status: HealthStatus['status'] = 'healthy'
-        let messageKey: HealthStatus['messageKey'] | undefined
+        let status: HealthStatus["status"] = "healthy";
+        let messageKey: HealthStatus["messageKey"] | undefined;
 
         if (allModelsDown) {
-          status = 'critical'
-          messageKey = 'status.critical'
+          status = "critical";
+          messageKey = "status.critical";
         } else if (someModelsDown || systemIssues) {
-          status = 'degraded'
-          messageKey = 'status.degraded'
+          status = "degraded";
+          messageKey = "status.degraded";
         }
 
         setHealth({
@@ -82,27 +82,27 @@ export function useHealth() {
           someModelsDown,
           systemIssues,
           lastChecked: new Date(data.lastChecked),
-        })
+        });
       } catch (error) {
-        console.error('Failed to fetch health status:', error)
+        console.error("Failed to fetch health status:", error);
         setHealth({
-          status: 'unknown',
+          status: "unknown",
           allModelsDown: false,
           someModelsDown: false,
           systemIssues: false,
           lastChecked: null,
-        })
+        });
       }
-    }
+    };
 
     // Fetch immediately
-    fetchHealth()
+    fetchHealth();
 
     // Then poll every 60 seconds
-    const intervalId = setInterval(fetchHealth, 60000)
+    const intervalId = setInterval(fetchHealth, 60000);
 
-    return () => clearInterval(intervalId)
-  }, [])
+    return () => clearInterval(intervalId);
+  }, []);
 
-  return health
+  return health;
 }

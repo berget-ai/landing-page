@@ -1,7 +1,7 @@
-import '@/index.css'
-import { Header } from '@/components/layout/Header'
-import { Footer } from '@/components/layout/Footer'
-import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher'
+import "@/index.css";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -13,5 +13,5 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       {children}
       <Footer />
     </div>
-  )
+  );
 }

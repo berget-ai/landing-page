@@ -1,79 +1,81 @@
-import { useMemo } from 'react'
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
-import rehypeRaw from 'rehype-raw'
-import { visit } from 'unist-util-visit'
-import { CodeBlock } from '@berget-ai/ui'
+import { useMemo } from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
+import { visit } from "unist-util-visit";
+import { CodeBlock } from "@berget-ai/ui";
 // Eagerly import getHighlighter so Vite traces and bundles the Shiki WASM engine
 // and language grammars. CodeBlock calls this internally but its dynamic import()
 // calls live inside a pre-bundled dependency that Vite can't trace on its own.
-import { getHighlighter } from '@berget-ai/ui/shiki'
-getHighlighter() // warm the singleton cache
+import { getHighlighter } from "@berget-ai/ui/shiki";
+getHighlighter(); // warm the singleton cache
 
 function remarkCodeMeta() {
   return (tree: any) => {
-    visit(tree, 'code', (node: any) => {
+    visit(tree, "code", (node: any) => {
       if (node.meta) {
-        node.data = node.data || {}
-        node.data.hProperties = node.data.hProperties || {}
-        node.data.hProperties['data-meta'] = node.meta
+        node.data = node.data || {};
+        node.data.hProperties = node.data.hProperties || {};
+        node.data.hProperties["data-meta"] = node.meta;
       }
-    })
-  }
+    });
+  };
 }
 
 interface MarkdownRendererProps {
-  content: string
+  content: string;
 }
 
 function preprocessLLMPrompts(markdown: string): string {
   return markdown.replace(
     /<LLMPrompt([^>]*)>([\s\S]*?)<\/LLMPrompt>/g,
     (_, attributes, innerContent) => {
-      const titleMatch = attributes.match(/title="([^"]*)"/)
-      const defaultExpandedMatch = attributes.match(/defaultExpanded={([^}]*)}/)
+      const titleMatch = attributes.match(/title="([^"]*)"/);
+      const defaultExpandedMatch = attributes.match(
+        /defaultExpanded={([^}]*)}/,
+      );
 
-      const title = titleMatch ? titleMatch[1] : 'LLM Prompt'
+      const title = titleMatch ? titleMatch[1] : "LLM Prompt";
       const isOpen = defaultExpandedMatch
-        ? defaultExpandedMatch[1] === 'true'
-        : false
+        ? defaultExpandedMatch[1] === "true"
+        : false;
 
       const chevron =
-        '<svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>'
-      return `<details class="llm-prompt"${isOpen ? ' open' : ''}>\n<summary><span>${title}</span>${chevron}</summary>\n\n\`\`\`\n${innerContent.trim()}\n\`\`\`\n\n</details>`
+        '<svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>';
+      return `<details class="llm-prompt"${isOpen ? " open" : ""}>\n<summary><span>${title}</span>${chevron}</summary>\n\n\`\`\`\n${innerContent.trim()}\n\`\`\`\n\n</details>`;
     },
-  )
+  );
 }
 
 const components = {
   code({ className, children, node, ...props }: any) {
-    const match = /language-(\w+)/.exec(className || '')
-    const isInline = !match && !String(children).includes('\n')
+    const match = /language-(\w+)/.exec(className || "");
+    const isInline = !match && !String(children).includes("\n");
     if (isInline)
       return (
         <code className={className} {...props}>
           {children}
         </code>
-      )
+      );
 
-    const meta = props['data-meta'] || ''
-    const titleMatch = /title="([^"]*)"/.exec(meta)
+    const meta = props["data-meta"] || "";
+    const titleMatch = /title="([^"]*)"/.exec(meta);
 
     return (
       <CodeBlock
-        code={String(children).replace(/\n$/, '')}
+        code={String(children).replace(/\n$/, "")}
         language={match?.[1]}
         title={titleMatch?.[1]}
       />
-    )
+    );
   },
-  pre({ children }: React.ComponentProps<'pre'>) {
-    return <>{children}</>
+  pre({ children }: React.ComponentProps<"pre">) {
+    return <>{children}</>;
   },
-}
+};
 
 export function MarkdownRenderer({ content }: MarkdownRendererProps) {
-  const processed = useMemo(() => preprocessLLMPrompts(content), [content])
+  const processed = useMemo(() => preprocessLLMPrompts(content), [content]);
 
   return (
     <div
@@ -108,5 +110,5 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
         {processed}
       </ReactMarkdown>
     </div>
-  )
+  );
 }

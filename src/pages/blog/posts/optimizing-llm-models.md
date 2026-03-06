@@ -1,13 +1,13 @@
 ---
-title: 'Behind the Scenes: How We Optimize Our AI Models'
-description: 'A deep dive into how we balance performance and memory usage to get the most out of our AMD MI300x infrastructure'
-date: '2025-05-23'
+title: "Behind the Scenes: How We Optimize Our AI Models"
+description: "A deep dive into how we balance performance and memory usage to get the most out of our AMD MI300x infrastructure"
+date: "2025-05-23"
 language: en
-author: 'Christian Landgren'
-email: 'christian@berget.ai'
-tags: ['technology', 'infrastructure', 'optimization', 'llm']
+author: "Christian Landgren"
+email: "christian@berget.ai"
+tags: ["technology", "infrastructure", "optimization", "llm"]
 image: /images/mi300.png
-imageAlt: 'Server rack with AMD MI300x accelerators in a modern data center'
+imageAlt: "Server rack with AMD MI300x accelerators in a modern data center"
 ---
 
 When we at Berget AI build our infrastructure to run large language models (LLMs), we face an interesting challenge: How do we fit as many powerful models as possible on our hardware, while ensuring fast response times and high availability? In this article, we share our experiences and techniques for optimizing memory usage for our AI models.

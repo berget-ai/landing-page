@@ -1,34 +1,34 @@
-import { Github, Linkedin, Twitter } from 'lucide-react'
-import { Button, BergetSymbol } from '@berget-ai/ui'
-import { useTranslation } from 'react-i18next'
+import { Github, Linkedin, Twitter } from "lucide-react";
+import { Button, BergetSymbol } from "@berget-ai/ui";
+import { useTranslation } from "react-i18next";
 
 const footerLinks = {
   product: [
-    { key: 'features', href: '/products' },
-    { key: 'pricing', href: '/pricing' },
-    { key: 'models', href: '/models' },
-    { key: 'api', href: 'https://api.berget.ai' },
-    { key: 'status', href: 'https://berget.ai/status' },
+    { key: "features", href: "/products" },
+    { key: "pricing", href: "/pricing" },
+    { key: "models", href: "/models" },
+    { key: "api", href: "https://api.berget.ai" },
+    { key: "status", href: "https://berget.ai/status" },
   ],
   company: [
-    { key: 'about', href: '/about' },
-    { key: 'blog', href: '/blog' },
-    { key: 'contact', href: '/contact' },
-    { key: 'open-source', href: '/open-source' },
+    { key: "about", href: "/about" },
+    { key: "blog", href: "/blog" },
+    { key: "contact", href: "/contact" },
+    { key: "open-source", href: "/open-source" },
   ],
   legal: [
-    { key: 'privacy', href: '/privacy' },
-    { key: 'dpa', href: '/dpa' },
-    { key: 'terms', href: '/terms' },
-    { key: 'acceptableUse', href: '/acceptable-use' },
-    { key: 'sla', href: '/sla' },
-    { key: 'security', href: '/security' },
+    { key: "privacy", href: "/privacy" },
+    { key: "dpa", href: "/dpa" },
+    { key: "terms", href: "/terms" },
+    { key: "acceptableUse", href: "/acceptable-use" },
+    { key: "sla", href: "/sla" },
+    { key: "security", href: "/security" },
   ],
-}
+};
 
 export function Footer() {
-  const { t } = useTranslation()
-  const currentYear = new Date().getFullYear()
+  const { t } = useTranslation();
+  const currentYear = new Date().getFullYear();
   return (
     <footer className="border-t border-white/5 bg-background/80 backdrop-blur-lg">
       <div className="container mx-auto px-4 py-12">
@@ -39,16 +39,16 @@ export function Footer() {
               <span className="text-xl font-semibold">Berget AI</span>
             </div>
             <p className="text-sm text-white/60 mb-4">
-              {t('footer.description')}
+              {t("footer.description")}
             </p>
             <div className="flex space-x-4">
               <Button
                 variant="outline"
                 size="icon"
                 onClick={() =>
-                  window.open('https://x.com/BergetAi87840', '_blank')
+                  window.open("https://x.com/BergetAi87840", "_blank")
                 }
-                aria-label={t('footer.social.twitter')}
+                aria-label={t("footer.social.twitter")}
               >
                 <Twitter className="h-5 w-5" />
               </Button>
@@ -56,9 +56,9 @@ export function Footer() {
                 variant="outline"
                 size="icon"
                 onClick={() =>
-                  window.open('https://www.github.com/berget-ai/', '_blank')
+                  window.open("https://www.github.com/berget-ai/", "_blank")
                 }
-                aria-label={t('footer.social.github')}
+                aria-label={t("footer.social.github")}
               >
                 <Github className="h-5 w-5" />
               </Button>
@@ -67,11 +67,11 @@ export function Footer() {
                 size="icon"
                 onClick={() =>
                   window.open(
-                    'https://www.linkedin.com/company/bergetai/',
-                    '_blank',
+                    "https://www.linkedin.com/company/bergetai/",
+                    "_blank",
                   )
                 }
-                aria-label={t('footer.social.linkedin')}
+                aria-label={t("footer.social.linkedin")}
               >
                 <Linkedin className="h-5 w-5" />
               </Button>
@@ -79,7 +79,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-medium mb-4">{t('footer.product.title')}</h3>
+            <h3 className="font-medium mb-4">{t("footer.product.title")}</h3>
             <ul className="space-y-3">
               {footerLinks.product.map((link) => (
                 <li key={link.key}>
@@ -87,8 +87,8 @@ export function Footer() {
                     href={link.href}
                     className="text-sm text-white/60 hover:text-white transition-colors"
                   >
-                    {link.key === 'models'
-                      ? 'Models'
+                    {link.key === "models"
+                      ? "Models"
                       : t(`footer.product.${link.key}`)}
                   </a>
                 </li>
@@ -97,7 +97,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-medium mb-4">{t('footer.company.title')}</h3>
+            <h3 className="font-medium mb-4">{t("footer.company.title")}</h3>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.key}>
@@ -105,8 +105,8 @@ export function Footer() {
                     href={link.href}
                     className="text-sm text-white/60 hover:text-white transition-colors"
                   >
-                    {link.key === 'open-source'
-                      ? 'Open Source Program'
+                    {link.key === "open-source"
+                      ? "Open Source Program"
                       : t(`footer.company.${link.key}`)}
                   </a>
                 </li>
@@ -115,7 +115,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-medium mb-4">{t('footer.legal.title')}</h3>
+            <h3 className="font-medium mb-4">{t("footer.legal.title")}</h3>
             <ul className="space-y-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.key}>
@@ -134,11 +134,11 @@ export function Footer() {
         <div className="mt-12 pt-8 border-t border-white/5">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-white/60">
-              {t('footer.copyright', { year: currentYear })}
+              {t("footer.copyright", { year: currentYear })}
             </p>
           </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }

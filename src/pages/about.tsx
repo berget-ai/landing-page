@@ -1,29 +1,29 @@
-import { useTranslation } from 'react-i18next'
-import { ArrowRight } from 'lucide-react'
-import { Card, HeroBlock, Section, SectionHeader } from '@berget-ai/ui'
+import { useTranslation } from "react-i18next";
+import { ArrowRight } from "lucide-react";
+import { Card, HeroBlock, Section, SectionHeader } from "@berget-ai/ui";
 
 export default function AboutPage() {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   return (
     <main className="min-h-screen pt-24">
       <HeroBlock
         variant="default"
         withPattern
-        title={t('about.hero.title')}
-        description={t('about.hero.description')}
+        title={t("about.hero.title")}
+        description={t("about.hero.description")}
       />
 
       {/* Origin Story */}
       <Section padding="xl">
         <div className="max-w-3xl mx-auto">
           <div className="space-y-6">
-            <h2 className="text-3xl font-medium">{t('about.origin.title')}</h2>
+            <h2 className="text-3xl font-medium">{t("about.origin.title")}</h2>
             <p className="text-lg text-white/60 leading-relaxed">
-              {t('about.origin.description')}
+              {t("about.origin.description")}
             </p>
             <p className="text-lg text-white/60 leading-relaxed">
-              {t('about.origin.nameOrigin')}
+              {t("about.origin.nameOrigin")}
             </p>
           </div>
         </div>
@@ -32,9 +32,9 @@ export default function AboutPage() {
       {/* Values */}
       <Section padding="xl" background="muted">
         <div className="max-w-3xl mx-auto">
-          <SectionHeader title={t('about.values.title')} />
+          <SectionHeader title={t("about.values.title")} />
           <div className="space-y-16">
-            {['openSource', 'european', 'integrity'].map((value) => (
+            {["openSource", "european", "integrity"].map((value) => (
               <div key={value} className="space-y-4">
                 <h3 className="text-2xl font-medium">
                   {t(`about.values.${value}.title`)}
@@ -52,12 +52,12 @@ export default function AboutPage() {
       <Section padding="xl">
         <div className="max-w-3xl mx-auto">
           <SectionHeader
-            title={t('about.promises.title')}
-            description={t('about.promises.description')}
+            title={t("about.promises.title")}
+            description={t("about.promises.description")}
           />
           <div className="grid gap-4">
             {(
-              t('about.promises.list', { returnObjects: true }) as string[]
+              t("about.promises.list", { returnObjects: true }) as string[]
             ).map((promise, index) => (
               <div
                 key={index}
@@ -75,12 +75,12 @@ export default function AboutPage() {
       <Section padding="xl" background="muted">
         <div className="max-w-4xl mx-auto">
           <SectionHeader
-            title={t('about.team.title')}
-            description={t('about.team.description')}
+            title={t("about.team.title")}
+            description={t("about.team.description")}
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {['christian', 'andreas', 'john', 'johan', 'sara', 'oscar'].map(
+            {["christian", "andreas", "john", "johan", "sara", "oscar"].map(
               (member) => (
                 <Card key={member} variant="highlight" padding="md">
                   <div className="flex items-center gap-4 mb-4">
@@ -110,5 +110,5 @@ export default function AboutPage() {
         </div>
       </Section>
     </main>
-  )
+  );
 }

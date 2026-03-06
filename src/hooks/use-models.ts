@@ -1,38 +1,38 @@
-import { useState, useEffect } from 'react'
-import { fetchModels } from '@/lib/api'
+import { useState, useEffect } from "react";
+import { fetchModels } from "@/lib/api";
 
 export interface ModelData {
-  id: string
-  normalizedId: string
-  name: string
-  object: string
-  created: number
-  owned_by: string
-  permission: any[]
-  root: string
-  parent: string | null
-  model_type: string
+  id: string;
+  normalizedId: string;
+  name: string;
+  object: string;
+  created: number;
+  owned_by: string;
+  permission: any[];
+  root: string;
+  parent: string | null;
+  model_type: string;
   pricing: {
-    input: number
-    output: number
-    unit: string
-    currency: string
-  }
+    input: number;
+    output: number;
+    unit: string;
+    currency: string;
+  };
   capabilities: {
-    vision: boolean
-    function_calling: boolean
-    json_mode: boolean
-    classification: boolean
-    embeddings: boolean
-    formatted_output: boolean
-    streaming: boolean
-  }
+    vision: boolean;
+    function_calling: boolean;
+    json_mode: boolean;
+    classification: boolean;
+    embeddings: boolean;
+    formatted_output: boolean;
+    streaming: boolean;
+  };
   status: {
-    up: boolean
-  }
-  isLive?: boolean
-  latency?: number
-  error?: string
+    up: boolean;
+  };
+  isLive?: boolean;
+  latency?: number;
+  error?: string;
 }
 
 /**
@@ -41,9 +41,9 @@ export interface ModelData {
 function transformModelData(model: any): ModelData {
   // Return the model directly as it already matches our interface
   // Just ensure normalizedId is set for consistent identification
-  const normalizedId = model.id.includes('/')
-    ? model.id.split('/').pop()?.toLowerCase().replace(/[-\s]/g, '')
-    : model.id.toLowerCase().replace(/[-\s]/g, '')
+  const normalizedId = model.id.includes("/")
+    ? model.id.split("/").pop()?.toLowerCase().replace(/[-\s]/g, "")
+    : model.id.toLowerCase().replace(/[-\s]/g, "");
 
   // Ensure all required fields are present
   return {
@@ -67,16 +67,16 @@ function transformModelData(model: any): ModelData {
       ? {
           input: model.pricing.input || 0,
           output: model.pricing.output || 0,
-          unit: model.pricing.unit || '€ / M Token',
-          currency: model.pricing.currency || 'EUR',
+          unit: model.pricing.unit || "€ / M Token",
+          currency: model.pricing.currency || "EUR",
         }
       : {
           input: 0,
           output: 0,
-          unit: '€ / M Token',
-          currency: 'EUR',
+          unit: "€ / M Token",
+          currency: "EUR",
         },
-  }
+  };
 }
 
 /**
@@ -84,61 +84,61 @@ function transformModelData(model: any): ModelData {
  * @returns Object containing models, loading state, and error state
  */
 export function useModels() {
-  const [models, setModels] = useState<ModelData[]>([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
+  const [models, setModels] = useState<ModelData[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const getModels = async () => {
       try {
-        setLoading(true)
-        const modelsResponse = await fetchModels()
+        setLoading(true);
+        const modelsResponse = await fetchModels();
 
         if (modelsResponse.data && Array.isArray(modelsResponse.data)) {
           // Transform API data to our model format
-          const transformedModels = modelsResponse.data.map(transformModelData)
+          const transformedModels = modelsResponse.data.map(transformModelData);
 
           // Set live status directly from the model API
           transformedModels.forEach((model) => {
-            model.isLive = model.status?.up || false
+            model.isLive = model.status?.up || false;
             if (!model.status?.up) {
-              model.error = 'Model unavailable'
+              model.error = "Model unavailable";
             }
-          })
+          });
 
-          console.log('Transformed models:', transformedModels)
-          setModels(transformedModels)
+          console.log("Transformed models:", transformedModels);
+          setModels(transformedModels);
         } else {
-          throw new Error('Invalid API response format')
+          throw new Error("Invalid API response format");
         }
 
-        setError(null)
+        setError(null);
       } catch (err) {
-        console.error('Failed to fetch models:', err)
-        setError('Failed to load models. Please try again later.')
+        console.error("Failed to fetch models:", err);
+        setError("Failed to load models. Please try again later.");
         // Fallback to empty array if API fails
-        setModels([])
+        setModels([]);
       } finally {
-        setLoading(false)
+        setLoading(false);
       }
-    }
+    };
 
-    getModels()
-  }, [])
+    getModels();
+  }, []);
 
   const getModelsByType = (type: string | null) => {
-    if (!type) return models
-    return models.filter((model) => model.owned_by === type)
-  }
+    if (!type) return models;
+    return models.filter((model) => model.owned_by === type);
+  };
 
   const getModelById = (id: string) => {
-    return models.find((model) => model.id === id)
-  }
+    return models.find((model) => model.id === id);
+  };
 
   const getModelTypes = () => {
-    const types = Array.from(new Set(models.map((model) => model.owned_by)))
-    return types
-  }
+    const types = Array.from(new Set(models.map((model) => model.owned_by)));
+    return types;
+  };
 
   return {
     models,
@@ -147,5 +147,5 @@ export function useModels() {
     getModelsByType,
     getModelById,
     getModelTypes,
-  }
+  };
 }

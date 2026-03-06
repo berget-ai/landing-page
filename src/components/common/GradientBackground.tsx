@@ -1,11 +1,11 @@
 interface GradientBackgroundProps {
-  children: React.ReactNode
-  className?: string
+  children: React.ReactNode;
+  className?: string;
 }
 
 export function GradientBackground({
   children,
-  className = '',
+  className = "",
 }: GradientBackgroundProps) {
   return (
     <div
@@ -13,5 +13,5 @@ export function GradientBackground({
     >
       {children}
     </div>
-  )
+  );
 }
