@@ -128,8 +128,7 @@ Start by moving your existing manifests to the `base/` directory. This becomes y
 
 ### Base Kustomization
 
-```yaml
-# k8s/base/kustomization.yaml
+```yaml title="k8s/base/kustomization.yaml"
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
@@ -157,8 +156,7 @@ replicas:
 
 ### Base Deployment
 
-```yaml
-# k8s/base/deployment.yaml
+```yaml title="k8s/base/deployment.yaml"
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -211,8 +209,7 @@ spec:
 
 ### Base Service
 
-```yaml
-# k8s/base/service.yaml
+```yaml title="k8s/base/service.yaml"
 apiVersion: v1
 kind: Service
 metadata:
@@ -229,8 +226,7 @@ spec:
 
 ### Base ConfigMap
 
-```yaml
-# k8s/base/configmap.yaml
+```yaml title="k8s/base/configmap.yaml"
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -250,8 +246,7 @@ Staging should be as close to production as possible, but with some differences 
 
 ### Staging Kustomization
 
-```yaml
-# k8s/overlays/staging/kustomization.yaml
+```yaml title="k8s/overlays/staging/kustomization.yaml"
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
@@ -286,8 +281,7 @@ configMapGenerator:
 
 ### Staging Deployment Patch
 
-```yaml
-# k8s/overlays/staging/deployment-patch.yaml
+```yaml title="k8s/overlays/staging/deployment-patch.yaml"
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -308,8 +302,7 @@ spec:
 
 ### Staging Ingress
 
-```yaml
-# k8s/overlays/staging/ingress.yaml
+```yaml title="k8s/overlays/staging/ingress.yaml"
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -344,8 +337,7 @@ Production needs higher resource limits, more replicas, stricter security, and p
 
 ### Production Kustomization
 
-```yaml
-# k8s/overlays/production/kustomization.yaml
+```yaml title="k8s/overlays/production/kustomization.yaml"
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
@@ -388,8 +380,7 @@ configMapGenerator:
 
 ### Production Deployment Patch
 
-```yaml
-# k8s/overlays/production/deployment-patch.yaml
+```yaml title="k8s/overlays/production/deployment-patch.yaml"
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -422,8 +413,7 @@ spec:
 
 ### Production Ingress
 
-```yaml
-# k8s/overlays/production/ingress.yaml
+```yaml title="k8s/overlays/production/ingress.yaml"
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -455,8 +445,7 @@ spec:
 
 ### Production Auto-Scaling
 
-```yaml
-# k8s/overlays/production/hpa.yaml
+```yaml title="k8s/overlays/production/hpa.yaml"
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
@@ -532,8 +521,7 @@ Configure FluxCD to manage both environments with different policies.
 
 ### Staging FluxCD Configuration
 
-```yaml
-# k8s/flux/staging.yaml
+```yaml title="k8s/flux/staging.yaml"
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
@@ -562,8 +550,7 @@ spec:
 
 ### Production FluxCD Configuration
 
-```yaml
-# k8s/flux/production.yaml
+```yaml title="k8s/flux/production.yaml"
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
@@ -599,8 +586,7 @@ Create a deployment workflow that promotes changes from staging to production.
 
 ### GitHub Actions Workflow
 
-```yaml
-# .github/workflows/deploy.yml
+```yaml title=".github/workflows/deploy.yml"
 name: Deploy
 on:
   push:
@@ -698,8 +684,7 @@ images:
 
 Use environment variables for differences:
 
-```yaml
-# k8s/base/configmap.yaml
+```yaml title="k8s/base/configmap.yaml"
 apiVersion: v1
 kind: ConfigMap
 metadata:
