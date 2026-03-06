@@ -1,4 +1,5 @@
 import { usePageContext } from 'vike-react/usePageContext'
+import { Config } from 'vike-react/Config'
 import { motion } from 'motion/react'
 import { ArrowLeft } from 'lucide-react'
 import { Button } from '@berget-ai/ui'
@@ -91,6 +92,11 @@ export default function Page() {
 
   return (
     <main className="min-h-screen">
+      <Config
+        title={`${post.title} - Berget AI`}
+        description={post.description}
+        image={post.image ? `https://berget.ai${post.image}` : undefined}
+      />
       <article className={post?.image ? '' : 'container mx-auto px-4 py-12'}>
         <div className={post?.image ? '' : 'max-w-prose mx-auto'}>
           <motion.div
