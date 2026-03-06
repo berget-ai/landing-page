@@ -137,11 +137,9 @@ The LED indicators feature:
 
 ```css
 body {
-  background-image: linear-gradient(
-      to bottom,
-      rgba(229, 221, 213, 0.02) 1px,
-      transparent 1px
-    ), linear-gradient(to right, rgba(229, 221, 213, 0.02) 1px, transparent 1px);
+  background-image:
+    linear-gradient(to bottom, rgba(229, 221, 213, 0.02) 1px, transparent 1px),
+    linear-gradient(to right, rgba(229, 221, 213, 0.02) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 ```

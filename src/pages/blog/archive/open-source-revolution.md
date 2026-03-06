@@ -26,16 +26,19 @@ Framgången för öppna AI-modeller bygger på tre grundläggande fördelar:
 ## Konkreta exempel på framgångar
 
 ### DeepSeek
+
 - Överträffar GPT-4 på flera standardtester
 - Använder innovativa träningsmetoder
 - Öppen källkod möjliggör vidareutveckling
 
 ### Mistral AI
+
 - Europeiskt ledarskap inom öppen AI
 - Effektiva mindre modeller
 - Stark position inom företagsmarknaden
 
 ### Svenska bidrag
+
 - Active participation in model improvement
 - Specialisering inom nordiska språk
 - Fokus på industriella tillämpningar
@@ -43,16 +46,19 @@ Framgången för öppna AI-modeller bygger på tre grundläggande fördelar:
 ## Implikationer för framtiden
 
 ### För utvecklare
+
 - Lägre barriärer för AI-innovation
 - Möjlighet att bygga specialiserade lösningar
 - Ökad kontroll över AI-stacken
 
 ### För företag
+
 - Minskade kostnader för AI-implementation
 - Bättre anpassning till specifika behov
 - Reducerat beroende av stora tech-företag
 
 ### För samhället
+
 - Mer demokratisk AI-utveckling
 - Bättre hänsyn till lokala värderingar
 - Ökad transparens och ansvarighet

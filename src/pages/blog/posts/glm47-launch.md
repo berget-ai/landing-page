@@ -66,24 +66,25 @@ And in TypeScript:
 const response = await fetch('https://api.berget.ai/v1/chat/completions', {
   method: 'POST',
   headers: {
-    'Authorization': `Bearer ${process.env.BERGET_API_KEY}`,
-    'Content-Type': 'application/json'
+    Authorization: `Bearer ${process.env.BERGET_API_KEY}`,
+    'Content-Type': 'application/json',
   },
   body: JSON.stringify({
     model: 'zai-org/GLM-4.7',
     messages: [
       {
         role: 'user',
-        content: 'Create a TypeScript interface for a user profile with validation using Zod. Include nested objects for address and preferences.'
-      }
+        content:
+          'Create a TypeScript interface for a user profile with validation using Zod. Include nested objects for address and preferences.',
+      },
     ],
     temperature: 0.7,
-    max_tokens: 2000
-  })
-});
+    max_tokens: 2000,
+  }),
+})
 
-const data = await response.json();
-console.log(data.choices[0].message.content);
+const data = await response.json()
+console.log(data.choices[0].message.content)
 ```
 
 ## 🔄 Streamlining Our Lineup
@@ -95,16 +96,19 @@ As we continue to evolve, we're saying goodbye to **DeepSeek R1 MAI** and **Magi
 If you're currently using these deprecated models, here's how to migrate:
 
 **DeepSeek-R1** → **GLM-4.7** or **GPT-OSS-120B**
+
 - For reasoning tasks: Use GLM-4.7 with higher temperature (0.7-0.9)
 - For code generation: GLM-4.7 performs significantly better
 - For general chat: Both GLM-4.7 and GPT-OSS-120B are excellent alternatives
 
 **Magistral Small** → **GLM-4.7**
+
 - GLM-4.7 offers superior performance across all tasks
 - Similar inference speed with better quality
 - Drop-in replacement for most use cases
 
 **Devstral** → **GLM-4.7**
+
 - Enhanced code generation capabilities
 - Better multilingual support
 - Improved instruction following
@@ -118,6 +122,7 @@ Our **core lineup** remains as solid as ever — from **Llama 3.1-8B** and **Lla
 ### Current Model Lineup at Berget AI
 
 #### 🧠 Reasoning & Instruction Models
+
 - `meta-llama/Llama-3.1-8B-Instruct` - Fast and efficient for simpler tasks
 - `meta-llama/Llama-3.3-70B-Instruct` - Powerful flagship model
 - `openai/gpt-oss-120b` - Advanced reasoning and generation
@@ -126,11 +131,13 @@ Our **core lineup** remains as solid as ever — from **Llama 3.1-8B** and **Lla
 - `Qwen/Qwen3-32B` - Strong multilingual capabilities
 
 #### 🔤 Embeddings & Rerankers
+
 - `intfloat/multilingual-e5-large-instruct` - Best for RAG applications
 - `intfloat/multilingual-e5-large` - General-purpose embeddings
 - `BAAI/bge-reranker-v2-m3` - Precise result ranking
 
 #### 🎙️ Speech & OCR
+
 - `KBLab/kb-whisper-large` - Best-in-class Swedish speech-to-text
 - **Docling OCR endpoint** - Traditional OCR for simple use cases
 
@@ -145,4 +152,4 @@ We can't wait to see what you build with these powerful new models!
 
 ---
 
-*Questions about migrating from deprecated models or integrating the new ones? [Contact our support team](mailto:support@berget.ai)*
+_Questions about migrating from deprecated models or integrating the new ones? [Contact our support team](mailto:support@berget.ai)_

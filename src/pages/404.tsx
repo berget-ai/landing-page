@@ -13,10 +13,8 @@ export default function NotFoundPage() {
           <h2 className="text-4xl font-bold text-white mb-6">
             {t('notFound.heading')}
           </h2>
-          <p className="text-xl text-white/60 mb-8">
-            {t('notFound.message')}
-          </p>
-          
+          <p className="text-xl text-white/60 mb-8">{t('notFound.message')}</p>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button size="lg" asChild>
               <a href="/">
@@ -24,14 +22,14 @@ export default function NotFoundPage() {
                 {t('notFound.buttons.home')}
               </a>
             </Button>
-            
+
             <Button variant="secondary" size="lg" asChild>
               <a href="/products">
                 <Search className="mr-2 h-5 w-5" />
                 {t('notFound.buttons.products')}
               </a>
             </Button>
-            
+
             <Button variant="outline" size="lg" asChild>
               <a href="/contact">
                 <Mail className="mr-2 h-5 w-5" />
@@ -39,7 +37,7 @@ export default function NotFoundPage() {
               </a>
             </Button>
           </div>
-          
+
           <div className="mt-12 p-6 bg-white/5 rounded-lg border border-white/10">
             <h3 className="text-lg font-semibold text-white mb-2">
               {t('notFound.help.title')}

@@ -14,13 +14,13 @@ export function getConsoleUrl(): string {
     // Server-side rendering - returnera production URL som fallback
     return 'https://console.berget.ai'
   }
-  
+
   const hostname = window.location.hostname
-  
+
   if (hostname === 'stage.berget.ai') {
     return 'https://console.stage.berget.ai'
   }
-  
+
   // Production eller andra miljöer
   return 'https://console.berget.ai'
 }
@@ -33,6 +33,6 @@ export function isStageEnvironment(): boolean {
   if (typeof window === 'undefined') {
     return false
   }
-  
+
   return window.location.hostname === 'stage.berget.ai'
 }

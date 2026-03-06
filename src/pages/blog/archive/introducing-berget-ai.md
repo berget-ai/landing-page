@@ -26,13 +26,11 @@ The AI landscape is rapidly evolving, and European businesses need infrastructur
 Berget AI provides a comprehensive suite of tools and services:
 
 1. **Compute Infrastructure**
-
    - High-performance GPU clusters
    - Optimized for AI/ML workloads
    - Flexible scaling options
 
 2. **Security Features**
-
    - End-to-end encryption
    - Advanced access controls
    - Regular security audits

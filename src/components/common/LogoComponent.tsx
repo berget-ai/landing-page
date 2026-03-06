@@ -24,10 +24,10 @@ export function LogoComponent({
     typeof size === 'number'
       ? size
       : size === 'sm'
-      ? 24
-      : size === 'md'
-      ? 32
-      : 48
+        ? 24
+        : size === 'md'
+          ? 32
+          : 48
 
   // Calculate aspect ratio based on variant
   const aspectRatio = variant === 'horizontal' ? 3 : 0.9
@@ -48,7 +48,11 @@ export function LogoComponent({
     <div className={`inline-block ${className}`} style={containerStyle}>
       {!withText && (
         <img
-          src={shouldInvert ? "/logos/berget-icon-black.svg" : "/logos/berget-icon-white.svg"}
+          src={
+            shouldInvert
+              ? '/logos/berget-icon-black.svg'
+              : '/logos/berget-icon-white.svg'
+          }
           alt="Berget AI Logo"
           style={{
             height: '100%',
@@ -59,12 +63,16 @@ export function LogoComponent({
       )}
       {withText && (
         <img
-          src={shouldInvert ? "/logos/berget-logo-black.svg" : "/logos/berget-logo-white.svg"}
+          src={
+            shouldInvert
+              ? '/logos/berget-logo-black.svg'
+              : '/logos/berget-logo-white.svg'
+          }
           alt="Berget AI Logo with Text"
-          style={{ 
+          style={{
             width: variant === 'horizontal' ? '300px' : '100%',
             height: '100%',
-            objectFit: 'contain' 
+            objectFit: 'contain',
           }}
         />
       )}

@@ -10,6 +10,7 @@ tags:
 image: /images/bergetdigitalist.png
 imageAlt: Digitalist and Berget AI
 ---
+
 ## Digitalist och Berget AI inleder partnerskap för datasuverän AI
 
 Digitalist Open Tech AB har inlett ett partnerskap med Berget AI för att ge svenska organisationer bättre förutsättningar att införa säker och hållbar AI.

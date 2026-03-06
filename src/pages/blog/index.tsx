@@ -9,7 +9,7 @@ import type { BlogPost } from '@/types/blog'
 const postModules = import.meta.glob('./posts/**/*.md', {
   eager: true,
   query: '?raw',
-  import: 'default'
+  import: 'default',
 })
 
 function parseYamlMetadata(yaml: string) {
@@ -25,7 +25,7 @@ function parseYamlMetadata(yaml: string) {
           .trim()
           .replace(/^\[|\]$/g, '')
           .split(',')
-          .map(t => t.trim())
+          .map((t) => t.trim())
           .filter(Boolean)
       } else {
         metadata[key] = value.trim().replace(/^["']|["']$/g, '')
@@ -44,9 +44,7 @@ const allPosts: BlogPost[] = Object.entries(postModules)
     const id = fileName
 
     const metadataMatch = content.match(/^---\n([\s\S]*?)\n---\n/)
-    const metadata = metadataMatch
-      ? parseYamlMetadata(metadataMatch[1])
-      : {}
+    const metadata = metadataMatch ? parseYamlMetadata(metadataMatch[1]) : {}
 
     return {
       id,
@@ -59,7 +57,7 @@ const allPosts: BlogPost[] = Object.entries(postModules)
       tags: metadata.tags || [],
       image: metadata.image || '',
       imageAlt: metadata.imageAlt || '',
-      language: metadata.language === 'en' ? 'en' : 'sv' as 'en' | 'sv'
+      language: metadata.language === 'en' ? 'en' : ('sv' as 'en' | 'sv'),
     }
   })
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
@@ -67,9 +65,10 @@ const allPosts: BlogPost[] = Object.entries(postModules)
 export default function BlogPage() {
   const [searchTerm, setSearchTerm] = useState('')
 
-  const filteredPosts = allPosts.filter(post => {
-    const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         post.description.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredPosts = allPosts.filter((post) => {
+    const matchesSearch =
+      post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      post.description.toLowerCase().includes(searchTerm.toLowerCase())
     return matchesSearch
   })
 
@@ -81,11 +80,10 @@ export default function BlogPage() {
           animate={{ opacity: 1, y: 0 }}
           className="max-w-2xl mx-auto text-center mb-16"
         >
-          <h1 className="text-4xl font-medium mb-4">
-            Berget AI Blog
-          </h1>
+          <h1 className="text-4xl font-medium mb-4">Berget AI Blog</h1>
           <p className="text-lg text-white/60">
-            Insights and updates about AI infrastructure, European tech innovation, and industry best practices
+            Insights and updates about AI infrastructure, European tech
+            innovation, and industry best practices
           </p>
         </motion.div>
 
@@ -105,7 +103,9 @@ export default function BlogPage() {
             <BlogList posts={filteredPosts} />
           ) : (
             <div className="text-center py-12">
-              <p className="text-white/60">No posts found matching your criteria.</p>
+              <p className="text-white/60">
+                No posts found matching your criteria.
+              </p>
             </div>
           )}
         </div>

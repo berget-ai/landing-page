@@ -111,13 +111,12 @@ export default function DevelopersPage() {
               <Button size="lg" asChild>
                 <a href={consoleUrl}>{t('DevelopersPage.cta.signup')}</a>
               </Button>
-
             </div>
           </motion.div>
         </div>
 
         {/* Models Section (already localized?) */}
-      
+
         <ModelsSection />
       </div>
     </main>

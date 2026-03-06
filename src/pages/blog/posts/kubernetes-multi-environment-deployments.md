@@ -675,6 +675,7 @@ images:
   - name: my-app
     newTag: v1.2.3 # Same version across environments
 
+
 # Scale resources proportionally, not differently
 # Production: 4 CPUs, 8GB RAM
 # Staging: 1 CPU, 2GB RAM (1/4 of production)

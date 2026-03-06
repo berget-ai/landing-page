@@ -16,9 +16,7 @@ export default function Page() {
           <h2 className="text-4xl font-bold text-white mb-6">
             {t('notFound.heading')}
           </h2>
-          <p className="text-xl text-white/60 mb-8">
-            {t('notFound.message')}
-          </p>
+          <p className="text-xl text-white/60 mb-8">{t('notFound.message')}</p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button size="lg" asChild>

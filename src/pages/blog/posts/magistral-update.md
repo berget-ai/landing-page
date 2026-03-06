@@ -10,8 +10,8 @@ image: /images/magistralsmall.jpg
 imageAlt: 'Magistral and Berget'
 ---
 
-New model drop! Mistral released it last week and now we have it. 
+New model drop! Mistral released it last week and now we have it.
 
-We try to be fast and are now offering the latest reasoning model from Mistral in our serverless API - small, fast and reasoning. 
+We try to be fast and are now offering the latest reasoning model from Mistral in our serverless API - small, fast and reasoning.
 
 Try it out in our APIs!

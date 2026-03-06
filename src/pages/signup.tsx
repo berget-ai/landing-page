@@ -88,7 +88,9 @@ export default function SignupPage() {
                   <Checkbox
                     id="terms"
                     checked={acceptTerms}
-                    onCheckedChange={(checked) => setAcceptTerms(checked as boolean)}
+                    onCheckedChange={(checked) =>
+                      setAcceptTerms(checked as boolean)
+                    }
                     className="mt-1"
                   />
                   <Label htmlFor="terms" className="text-sm leading-relaxed">
@@ -97,7 +99,10 @@ export default function SignupPage() {
                       Terms of Service
                     </a>{' '}
                     and{' '}
-                    <a href="/privacy" className="text-[#52B788] hover:underline">
+                    <a
+                      href="/privacy"
+                      className="text-[#52B788] hover:underline"
+                    >
                       Privacy Policy
                     </a>
                   </Label>

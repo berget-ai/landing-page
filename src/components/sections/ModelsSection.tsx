@@ -23,13 +23,18 @@ export function ModelsSection() {
       type: model.owned_by || 'Unknown',
       context: model.capabilities?.function_calling
         ? 'Function Calling'
-        : (model.capabilities?.vision ? 'Vision' : 'N/A'),
-      performance: model.capabilities?.json_mode ? 'State-of-the-Art' : 
-                  (model.capabilities?.formatted_output ? 'Advanced' : 'High'),
+        : model.capabilities?.vision
+          ? 'Vision'
+          : 'N/A',
+      performance: model.capabilities?.json_mode
+        ? 'State-of-the-Art'
+        : model.capabilities?.formatted_output
+          ? 'Advanced'
+          : 'High',
       status: model.isLive ? 'Available' : 'Unavailable',
       isLive: model.isLive,
       latency: model.latency,
-      error: model.error
+      error: model.error,
     }))
   }, [models])
 
@@ -104,9 +109,15 @@ export function ModelsSection() {
                     <TableCell className="font-medium">
                       <div className="flex items-center gap-2">
                         {typeof model.isLive !== 'undefined' && (
-                          <div 
+                          <div
                             className={`w-2 h-2 rounded-full ${model.isLive ? 'bg-green-500' : 'bg-red-500'}`}
-                            title={model.isLive ? (model.latency ? `Online (${model.latency}ms)` : 'Online') : `Offline: ${model.error || 'Unknown error'}`} 
+                            title={
+                              model.isLive
+                                ? model.latency
+                                  ? `Online (${model.latency}ms)`
+                                  : 'Online'
+                                : `Offline: ${model.error || 'Unknown error'}`
+                            }
                           />
                         )}
                         {model.name}
@@ -117,7 +128,7 @@ export function ModelsSection() {
                         `models.types.${model.type
                           .toLowerCase()
                           .replace(/\s+/g, '-')}`,
-                        model.type
+                        model.type,
                       )}
                     </TableCell>
                     <TableCell>{model.context}</TableCell>
@@ -133,7 +144,7 @@ export function ModelsSection() {
                           `models.status.${model.status
                             .toLowerCase()
                             .replace(/\s+/g, '-')}`,
-                          model.status
+                          model.status,
                         )}
                       </span>
                     </TableCell>

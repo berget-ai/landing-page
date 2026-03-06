@@ -68,7 +68,7 @@ export default function BlogPostPage() {
     const loadPost = async () => {
       // Find the post content by ID
       const postPath = Object.keys(postModules).find((path) =>
-        path.includes(`/${id}.md`)
+        path.includes(`/${id}.md`),
       )
 
       if (!postPath || !postModules[postPath]) {

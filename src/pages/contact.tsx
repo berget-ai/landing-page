@@ -6,7 +6,6 @@ import { useTranslation } from 'react-i18next'
 export default function ContactPage() {
   const { t } = useTranslation()
 
-  
   return (
     <main className="min-h-screen pt-24">
       <div className="container mx-auto px-4 py-12">
@@ -20,14 +19,15 @@ export default function ContactPage() {
               <Mail className="w-4 h-4" />
               <span>{t('contact.hero.getInTouch')}</span>
             </div>
-            <h1 className="text-5xl font-medium mb-4">{t('contact.hero.title')}</h1>
+            <h1 className="text-5xl font-medium mb-4">
+              {t('contact.hero.title')}
+            </h1>
             <p className="text-xl text-white/60">
               {t('contact.hero.description')}
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-
             {/* Andreas */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -87,8 +87,6 @@ export default function ContactPage() {
                 </a>
               </Card>
             </motion.div>
-
-
           </div>
         </div>
       </div>

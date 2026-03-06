@@ -36,7 +36,9 @@ export default function AboutPage() {
           <div className="space-y-16">
             {['openSource', 'european', 'integrity'].map((value) => (
               <div key={value} className="space-y-4">
-                <h3 className="text-2xl font-medium">{t(`about.values.${value}.title`)}</h3>
+                <h3 className="text-2xl font-medium">
+                  {t(`about.values.${value}.title`)}
+                </h3>
                 <p className="text-lg text-white/60 leading-relaxed">
                   {t(`about.values.${value}.description`)}
                 </p>
@@ -54,7 +56,9 @@ export default function AboutPage() {
             description={t('about.promises.description')}
           />
           <div className="grid gap-4">
-            {(t('about.promises.list', { returnObjects: true }) as string[]).map((promise, index) => (
+            {(
+              t('about.promises.list', { returnObjects: true }) as string[]
+            ).map((promise, index) => (
               <div
                 key={index}
                 className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10"
@@ -75,8 +79,9 @@ export default function AboutPage() {
             description={t('about.team.description')}
           />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {['christian', 'andreas', 'john', 'johan','sara', 'oscar'].map((member) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {['christian', 'andreas', 'john', 'johan', 'sara', 'oscar'].map(
+              (member) => (
                 <Card key={member} variant="highlight" padding="md">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-16 h-16 rounded-full overflow-hidden bg-muted">
@@ -99,8 +104,9 @@ export default function AboutPage() {
                     {t(`about.team.members.${member}.bio`)}
                   </p>
                 </Card>
-              ))}
-            </div>
+              ),
+            )}
+          </div>
         </div>
       </Section>
     </main>

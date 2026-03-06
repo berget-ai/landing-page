@@ -26,23 +26,23 @@ async function generatePNG(svgPath, outputPath, size) {
 async function main() {
   const __dirname = path.dirname(new URL(import.meta.url).pathname)
   const logosDir = path.join(__dirname, '../public/logos')
-  
+
   // Generate general logo sizes (for favicon)
   const generalSizes = [16, 32, 64, 128]
   const generalSvgPath = path.join(logosDir, 'logo.svg')
-  
+
   for (const size of generalSizes) {
     const outputPath = path.join(logosDir, `logo-${size}.png`)
     await generatePNG(generalSvgPath, outputPath, size)
   }
-  
+
   // Generate colored logo sizes (for brand guidelines)
   const coloredSizes = [128, 256]
   const coloredLogos = [
     { svg: 'berget-logo-black.svg', prefix: 'berget-logo-black' },
-    { svg: 'berget-logo-white.svg', prefix: 'berget-logo-white' }
+    { svg: 'berget-logo-white.svg', prefix: 'berget-logo-white' },
   ]
-  
+
   for (const logo of coloredLogos) {
     const svgPath = path.join(logosDir, logo.svg)
     for (const size of coloredSizes) {
@@ -50,12 +50,12 @@ async function main() {
       await generatePNG(svgPath, outputPath, size)
     }
   }
-  
+
   // Generate standard size for general use
   await generatePNG(
     path.join(logosDir, 'berget-logo-white.svg'),
     path.join(logosDir, 'berget-logo-white.png'),
-    256
+    256,
   )
 }
 

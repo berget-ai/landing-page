@@ -112,4 +112,4 @@ Detta är inte bara en teknisk strategi utan också ett etiskt ställningstagand
 
 ---
 
-*Vill du veta mer om hur vår modellstrategi kan hjälpa din organisation? [Kontakta oss](mailto:contact@berget.ai) för en diskussion om dina specifika behov.*
+_Vill du veta mer om hur vår modellstrategi kan hjälpa din organisation? [Kontakta oss](mailto:contact@berget.ai) för en diskussion om dina specifika behov._

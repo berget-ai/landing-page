@@ -13,7 +13,7 @@ imageAlt: 'Serverrack med AMD MI300x-acceleratorer i ett modernt datacenter'
 När vi på Berget AI bygger vår infrastruktur för att köra stora språkmodeller (LLMs) står vi inför en intressant utmaning: Hur får vi plats med så många kraftfulla modeller som möjligt på vår hårdvara, samtidigt som vi säkerställer snabb responstid och hög tillgänglighet? I denna artikel delar vi med oss av våra erfarenheter och tekniker för att optimera minnesanvändningen för våra AI-modeller.
 
 ![GPU-konfiguration för våra modeller](/images/gpu-configurator.png)
-*Vår nuvarande GPU-konfiguration med modellplacering och minnesanvändning*
+_Vår nuvarande GPU-konfiguration med modellplacering och minnesanvändning_
 
 ## Vår hårdvaruinfrastruktur: AMD MI300x
 
@@ -108,6 +108,7 @@ Denna kombination ger oss redundans för kodgenereringsuppgifter och möjliggör
 Vissa modeller är så stora att de behöver en dedikerad GPU. Vår Llama-3.3-70B-modell använder 97% av minnet på GPU 2, vilket inte lämnar utrymme för andra modeller.
 
 På GPU 3 kör vi flera mindre men viktiga modeller:
+
 - **Mistral-Small-24B**: ~24 GB
 - **Docling**: ~1 GB
 - **BGE-Reranker**: ~3 GB
@@ -152,4 +153,4 @@ Vår resa med minnesoptimering fortsätter, och vi ser fram emot att dela fler i
 
 ---
 
-*Vill du veta mer om vår tekniska infrastruktur eller hur vi kan hjälpa ditt företag med AI-implementationer? [Kontakta oss](mailto:contact@berget.ai) för en diskussion.*
+_Vill du veta mer om vår tekniska infrastruktur eller hur vi kan hjälpa ditt företag med AI-implementationer? [Kontakta oss](mailto:contact@berget.ai) för en diskussion._

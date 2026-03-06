@@ -3,7 +3,7 @@ import { useModels } from '@/hooks/use-models'
 
 export function DetailedPricing() {
   const { loading } = useModels()
-  
+
   return (
     <div className="space-y-12">
       {loading ? (

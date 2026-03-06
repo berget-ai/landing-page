@@ -127,11 +127,7 @@
         },
         "usage": {
           "title": "Kostnadseffektivt",
-          "items": [
-            "Betala per token",
-            "Prisvärda modeller",
-            "Stöd för batch"
-          ]
+          "items": ["Betala per token", "Prisvärda modeller", "Stöd för batch"]
         },
         "infrastructure": {
           "title": "Robust Infrastruktur",
@@ -209,12 +205,7 @@
       "layers": {
         "tools": {
           "title": "Verktyg",
-          "items": [
-            "Databas",
-            "Vektor-DB",
-            "DevOps",
-            "Agent-ramverk"
-          ]
+          "items": ["Databas", "Vektor-DB", "DevOps", "Agent-ramverk"]
         },
         "llm": {
           "title": "Språkmodeller",
@@ -227,20 +218,11 @@
         },
         "compute": {
           "title": "Lagring och Compute",
-          "items": [
-            "CPU",
-            "GPU",
-            "Lokal lagring",
-            "Premium lagring"
-          ]
+          "items": ["CPU", "GPU", "Lokal lagring", "Premium lagring"]
         },
         "connectivity": {
           "title": "Nätverk",
-          "items": [
-            "Isolerade Nätverk",
-            "VPN",
-            "Hybridmoln"
-          ]
+          "items": ["Isolerade Nätverk", "VPN", "Hybridmoln"]
         },
         "management": {
           "title": "Hantering",
@@ -368,11 +350,7 @@
       "flexible": {
         "title": "(verkligt) Öppen AI",
         "description": "Vi är förespråkare för öppen innovation och vi driftar och tillhandahåller öppna modeller. Våra tjänster är helt byggda på öppen källkod.",
-        "features": [
-          "Öppna modeller",
-          "Öppen källkod",
-          "Öppen innovation"
-        ]
+        "features": ["Öppna modeller", "Öppen källkod", "Öppen innovation"]
       }
     },
     "features": {

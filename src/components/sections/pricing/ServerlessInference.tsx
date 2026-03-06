@@ -11,8 +11,16 @@ import { PricingRow } from './types'
 import { useTranslation } from 'react-i18next'
 import { useModels } from '@/hooks/use-models'
 
-function ModelTable({ title, description, models }: { title: string; description: string; models: PricingRow[] }) {
-  if (models.length === 0) return null;
+function ModelTable({
+  title,
+  description,
+  models,
+}: {
+  title: string
+  description: string
+  models: PricingRow[]
+}) {
+  if (models.length === 0) return null
 
   return (
     <div className="space-y-4">
@@ -31,7 +39,9 @@ function ModelTable({ title, description, models }: { title: string; description
         <TableBody>
           {models.map((model) => (
             <TableRow key={model.name} className="group">
-              <TableCell className="font-medium w-[200px]">{model.name}</TableCell>
+              <TableCell className="font-medium w-[200px]">
+                {model.name}
+              </TableCell>
               <TableCell className="w-[60px]">{model.inputprice}</TableCell>
               <TableCell className="w-[60px]">{model.outputprice}</TableCell>
             </TableRow>
@@ -42,8 +52,18 @@ function ModelTable({ title, description, models }: { title: string; description
   )
 }
 
-function SinglePriceModelTable({ title, description, models, unitLabel }: { title: string; description: string; models: PricingRow[]; unitLabel: string }) {
-  if (models.length === 0) return null;
+function SinglePriceModelTable({
+  title,
+  description,
+  models,
+  unitLabel,
+}: {
+  title: string
+  description: string
+  models: PricingRow[]
+  unitLabel: string
+}) {
+  if (models.length === 0) return null
 
   return (
     <div className="space-y-4">
@@ -61,7 +81,9 @@ function SinglePriceModelTable({ title, description, models, unitLabel }: { titl
         <TableBody>
           {models.map((model) => (
             <TableRow key={model.name} className="group">
-              <TableCell className="font-medium w-[200px]">{model.name}</TableCell>
+              <TableCell className="font-medium w-[200px]">
+                {model.name}
+              </TableCell>
               <TableCell className="w-[60px]">{model.inputprice}</TableCell>
             </TableRow>
           ))}
@@ -77,60 +99,77 @@ export function ServerlessInference() {
 
   const textModels = useMemo(() => {
     return models
-      .filter(model => model.model_type === 'text')
-      .map(model => ({
+      .filter((model) => model.model_type === 'text')
+      .map((model) => ({
         name: model.name,
-        inputprice: model.pricing?.input ? `${model.pricing.input} ${model.pricing.currency || 'EUR'}/${model.pricing.unit?.split('/').pop() || 'M Token'}` : '-',
-        outputprice: model.pricing?.output ? `${model.pricing.output} ${model.pricing.currency || 'EUR'}/${model.pricing.unit?.split('/').pop() || 'M Token'}` : '-',
+        inputprice: model.pricing?.input
+          ? `${model.pricing.input} ${model.pricing.currency || 'EUR'}/${model.pricing.unit?.split('/').pop() || 'M Token'}`
+          : '-',
+        outputprice: model.pricing?.output
+          ? `${model.pricing.output} ${model.pricing.currency || 'EUR'}/${model.pricing.unit?.split('/').pop() || 'M Token'}`
+          : '-',
       }))
   }, [models])
 
   const embeddingModels = useMemo(() => {
     return models
-      .filter(model => model.model_type === 'embedding')
-      .map(model => ({
+      .filter((model) => model.model_type === 'embedding')
+      .map((model) => ({
         name: model.name,
-        inputprice: model.pricing?.input ? `${model.pricing.input} ${model.pricing.currency || 'EUR'}/${model.pricing.unit?.split('/').pop() || 'M Token'}` : '-',
+        inputprice: model.pricing?.input
+          ? `${model.pricing.input} ${model.pricing.currency || 'EUR'}/${model.pricing.unit?.split('/').pop() || 'M Token'}`
+          : '-',
         outputprice: '-',
       }))
   }, [models])
 
   const rerankModels = useMemo(() => {
     return models
-      .filter(model => model.model_type === 'rerank')
-      .map(model => ({
+      .filter((model) => model.model_type === 'rerank')
+      .map((model) => ({
         name: model.name,
-        inputprice: model.pricing?.input ? `${model.pricing.input} ${model.pricing.currency || 'EUR'}/${model.pricing.unit?.split('/').pop() || 'M Token'}` : '-',
+        inputprice: model.pricing?.input
+          ? `${model.pricing.input} ${model.pricing.currency || 'EUR'}/${model.pricing.unit?.split('/').pop() || 'M Token'}`
+          : '-',
         outputprice: '-',
       }))
   }, [models])
 
   const speechToTextModels = useMemo(() => {
     return models
-      .filter(model => model.model_type === 'speech-to-text')
-      .map(model => ({
+      .filter((model) => model.model_type === 'speech-to-text')
+      .map((model) => ({
         name: model.name,
-        inputprice: model.pricing?.input ? `${model.pricing.input} ${model.pricing.currency || 'EUR'}/${model.pricing.unit?.split('/').pop() || 'mins'}` : '-',
+        inputprice: model.pricing?.input
+          ? `${model.pricing.input} ${model.pricing.currency || 'EUR'}/${model.pricing.unit?.split('/').pop() || 'mins'}`
+          : '-',
         outputprice: '-',
       }))
   }, [models])
 
   const textToSpeechModels = useMemo(() => {
     return models
-      .filter(model => model.model_type === 'text-to-speech')
-      .map(model => ({
+      .filter((model) => model.model_type === 'text-to-speech')
+      .map((model) => ({
         name: model.name,
-        inputprice: model.pricing?.input ? `${model.pricing.input} ${model.pricing.currency || 'EUR'}/${model.pricing.unit?.split('/').pop() || 'M Chars'}` : '-',
+        inputprice: model.pricing?.input
+          ? `${model.pricing.input} ${model.pricing.currency || 'EUR'}/${model.pricing.unit?.split('/').pop() || 'M Chars'}`
+          : '-',
         outputprice: '-',
       }))
   }, [models])
 
   const imageModels = useMemo(() => {
     return models
-      .filter(model => model.model_type === 'image' || model.model_type === 'text-to-image')
-      .map(model => ({
+      .filter(
+        (model) =>
+          model.model_type === 'image' || model.model_type === 'text-to-image',
+      )
+      .map((model) => ({
         name: model.name,
-        inputprice: model.pricing?.input ? `${model.pricing.input} ${model.pricing.currency || 'EUR'}/${model.pricing.unit?.split('/').pop() || 'step'}` : '-',
+        inputprice: model.pricing?.input
+          ? `${model.pricing.input} ${model.pricing.currency || 'EUR'}/${model.pricing.unit?.split('/').pop() || 'step'}`
+          : '-',
         outputprice: '-',
       }))
   }, [models])
@@ -166,7 +205,11 @@ export function ServerlessInference() {
         models={speechToTextModels}
         unitLabel="€ / 1000 mins"
       />
-      {speechToTextModels.length > 0 && <p className="text-sm text-white/60 mt-1">{t('serverlesspricing.stt.note')}</p>}
+      {speechToTextModels.length > 0 && (
+        <p className="text-sm text-white/60 mt-1">
+          {t('serverlesspricing.stt.note')}
+        </p>
+      )}
 
       <SinglePriceModelTable
         title={t('serverlesspricing.tts.title')}
@@ -174,7 +217,11 @@ export function ServerlessInference() {
         models={textToSpeechModels}
         unitLabel="€ / M Characters"
       />
-      {textToSpeechModels.length > 0 && <p className="text-sm text-white/60 mt-1">{t('serverlesspricing.tts.note')}</p>}
+      {textToSpeechModels.length > 0 && (
+        <p className="text-sm text-white/60 mt-1">
+          {t('serverlesspricing.tts.note')}
+        </p>
+      )}
 
       <SinglePriceModelTable
         title={t('serverlesspricing.image.title')}
@@ -182,7 +229,11 @@ export function ServerlessInference() {
         models={imageModels}
         unitLabel="€ / step"
       />
-      {imageModels.length > 0 && <p className="text-sm text-white/60 mt-1">{t('serverlesspricing.image.note')}</p>}
+      {imageModels.length > 0 && (
+        <p className="text-sm text-white/60 mt-1">
+          {t('serverlesspricing.image.note')}
+        </p>
+      )}
 
       <div className="rounded-lg bg-white/5 p-4 text-sm text-white/60">
         <p>{t('serverlesspricing.footer')}</p>

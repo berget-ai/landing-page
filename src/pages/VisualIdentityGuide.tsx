@@ -40,7 +40,12 @@ export function VisualIdentityGuide() {
                   Logo on Dark Background
                 </h3>
                 <div className="p-6 rounded-lg bg-[#1A1A1A] border border-white/10 flex justify-center items-center">
-                  <LogoComponent size={96} className="h-24" inverted={false} variant="icon" />
+                  <LogoComponent
+                    size={96}
+                    className="h-24"
+                    inverted={false}
+                    variant="icon"
+                  />
                 </div>
                 <div className="text-sm text-white/60 mt-2">
                   White logo for dark backgrounds
@@ -52,7 +57,12 @@ export function VisualIdentityGuide() {
                   Logo on Light Background
                 </h3>
                 <div className="p-6 rounded-lg bg-white border border-gray-200 flex justify-center items-center">
-                  <LogoComponent size={96} className="h-24" inverted={true} variant="icon" />
+                  <LogoComponent
+                    size={96}
+                    className="h-24"
+                    inverted={true}
+                    variant="icon"
+                  />
                 </div>
                 <div className="text-sm text-white/60 mt-2">
                   Black logo for light backgrounds
@@ -137,9 +147,7 @@ export function VisualIdentityGuide() {
                         className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
                       >
                         <Download className="w-5 h-5 text-white" />
-                        <span className="text-sm">
-                          Icon Only - White (SVG)
-                        </span>
+                        <span className="text-sm">Icon Only - White (SVG)</span>
                       </a>
                       <a
                         href="/logos/berget-icon-black.svg"
@@ -147,9 +155,7 @@ export function VisualIdentityGuide() {
                         className="flex items-center gap-2 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
                       >
                         <Download className="w-5 h-5 text-white" />
-                        <span className="text-sm">
-                          Icon Only - Black (SVG)
-                        </span>
+                        <span className="text-sm">Icon Only - Black (SVG)</span>
                       </a>
                       <a
                         href="/logos/berget-logo-white.svg"
@@ -177,7 +183,9 @@ export function VisualIdentityGuide() {
                     <h4 className="text-lg font-medium mb-3">PNG Format</h4>
                     <div className="space-y-3">
                       <div className="grid grid-cols-1 gap-3">
-                        <h5 className="text-sm font-medium">Icon Only - White</h5>
+                        <h5 className="text-sm font-medium">
+                          Icon Only - White
+                        </h5>
                         <div className="grid grid-cols-2 gap-3">
                           <a
                             href="/logos/berget-icon-white-64.png"
@@ -196,8 +204,10 @@ export function VisualIdentityGuide() {
                             <span className="text-sm">128px</span>
                           </a>
                         </div>
-                        
-                        <h5 className="text-sm font-medium mt-2">Icon Only - Black</h5>
+
+                        <h5 className="text-sm font-medium mt-2">
+                          Icon Only - Black
+                        </h5>
                         <div className="grid grid-cols-2 gap-3">
                           <a
                             href="/logos/berget-icon-black-64.png"
@@ -216,8 +226,10 @@ export function VisualIdentityGuide() {
                             <span className="text-sm">128px</span>
                           </a>
                         </div>
-                        
-                        <h5 className="text-sm font-medium mt-2">Logo with Text - White</h5>
+
+                        <h5 className="text-sm font-medium mt-2">
+                          Logo with Text - White
+                        </h5>
                         <div className="grid grid-cols-2 gap-3">
                           <a
                             href="/logos/berget-logo-white-128.png"
@@ -236,8 +248,10 @@ export function VisualIdentityGuide() {
                             <span className="text-sm">256px</span>
                           </a>
                         </div>
-                        
-                        <h5 className="text-sm font-medium mt-2">Logo with Text - Black</h5>
+
+                        <h5 className="text-sm font-medium mt-2">
+                          Logo with Text - Black
+                        </h5>
                         <div className="grid grid-cols-2 gap-3">
                           <a
                             href="/logos/berget-logo-black-128.png"
