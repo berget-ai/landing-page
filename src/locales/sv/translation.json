@@ -15,27 +15,27 @@
       "description": "Vi främjar AI-suveränitet för att möjliggöra innovation och tillväxt i Europa"
     },
     "origin": {
-      "title": "Vår Historia",
+      "title": "Vår historia",
       "description": "Vi insåg att många organisationer hålls tillbaka i sin satsning på AI av en rad olika hinder. Vissa kämpar med juridiska och regulatoriska utmaningar, andra saknar helt enkelt kompetens eller kapital för att träna, hosta och tillhandahålla egna AI-modeller. Många är tveksamma till att investera i GPU:er i förväg eller saknar tillgång till stora språkmodeller med stöd för lokala språk. Därför skapade vi Berget AI – för att frigöra AI:s fulla potential för innovation och tillväxt genom att främja suverän, öppen och hållbar AI.",
       "nameOrigin": "Namnet är svenska för \"berg\", som vi har gott om i Sverige, och många av dem huserar underjordiska datacenter. Så varför ha din data i molnet när du kan ha den i \"Berget\"?"
     },
     "values": {
-      "title": "Våra Värderingar",
+      "title": "Våra värderingar",
       "openSource": {
-        "title": "Open Source & Community",
+        "title": "Open source",
         "description": "Vi brinner för Open Source och Community-driven Innovation och är övertygade om att öppen källkod är nyckeln till säker, transparent och kostnadseffektiv AI i framtiden. Historien har många exempel där en målmedveten community kan övervinna till synes omöjliga hinder, innovera nya verktyg och skapa globala standarder som är öppna, interoperabla och tillgängliga för alla."
       },
       "european": {
-        "title": "Europeisk Innovation",
+        "title": "Europeisk innovation",
         "description": "Vi är passionerade kring europeisk konkurrenskraft överlag, och särskilt inom AI. Europa behöver ha sin egen AI-agenda, innovationssystem och suveränitet, särskilt i en alltmer volatil geopolitisk kontext. Det behöver möjliggöras av EU och dess medlemsstater, och drivas av företag, organisationer och communities."
       },
       "integrity": {
-        "title": "Integritet & Sekretess",
+        "title": "Integritet och sekretess",
         "description": "Vi anser att integritet, dataskydd och regleringar är bra så länge de säkerställer lika villkor, främjar enkelhet framför komplexitet och säkerställer öppenhet och bred delaktighet. Vi vill vara en nyckelaktör för svenska organisationer och låsa upp AI-innovationer på ett säkert och ansvarsfullt sätt."
       }
     },
     "promises": {
-      "title": "Våra Kundlöften",
+      "title": "Våra kundlöften",
       "description": "Vad du kan förvänta dig när du arbetar med oss",
       "list": [
         "Ett enkelt sätt att bygga AI-applikationer",
@@ -47,7 +47,7 @@
       ]
     },
     "team": {
-      "title": "Vårt Team",
+      "title": "Teamet",
       "description": "Vi är entreprenörer och grundare med decenniers erfarenhet inom teknik och AI",
       "members": {
         "christian": {
@@ -93,12 +93,12 @@
     "navigation": {
       "products": "Produkter",
       "whyBerget": "Varför Berget",
-      "developers": "För Utvecklare",
+      "developers": "Utvecklare",
       "pricing": "Priser",
       "documentation": "Dokumentation",
       "api": "API",
       "blog": "Blogg",
-      "models": "Våra modeller"
+      "models": "Modeller"
     },
     "buttons": {
       "signIn": "Logga in",
@@ -110,11 +110,11 @@
   "products": {
     "hero": {
       "title": "Inferens och AI-infrastruktur i en och samma tjänst",
-      "description": "Suverän, Öppen och Hållbar AI - redo att skala upp.",
+      "description": "Suverän, öppen och hållbar AI - redo att skala upp",
       "exploreMore": "Läs mer"
     },
     "serverless": {
-      "title": "Serverlös Inferens",
+      "title": "Serverlös inferens",
       "description": "Utnyttja kraften i världens ledande öppna språkmodeller utan att hantera infrastruktur.",
       "features": {
         "integration": {
@@ -130,7 +130,7 @@
           "items": ["Betala per token", "Prisvärda modeller", "Stöd för batch"]
         },
         "infrastructure": {
-          "title": "Robust Infrastruktur",
+          "title": "Robust infrastruktur",
           "items": [
             "Dedikerade GPU-kluster",
             "Svenska datacenter",
@@ -140,7 +140,7 @@
       }
     },
     "dedicated": {
-      "title": "Dedikerad Inferens",
+      "title": "Dedikerad inferens",
       "description": "Kör valfri modell, inklusive dina egna finetunade modeller på dedikerad kapacitet.",
       "features": {
         "deployment": {
@@ -160,7 +160,7 @@
           ]
         },
         "performance": {
-          "title": "Optimerad Prestanda",
+          "title": "Optimerad prestanda",
           "items": [
             "Kraftfulla GPUer",
             "Flexibel skalning",
@@ -174,7 +174,7 @@
       "description": "Ta full kontroll med en intuitiv plattform designad för utveckling och driftsättning av AI-applikationer.",
       "features": {
         "toolset": {
-          "title": "Komplett Verktygslåda",
+          "title": "Komplett verktygslåda",
           "items": [
             "Enkel användarupplevelse",
             "Transparent resurshantering",
@@ -190,7 +190,7 @@
           ]
         },
         "infrastructure": {
-          "title": "Flexibel Infrastruktur",
+          "title": "Flexibel infrastruktur",
           "items": [
             "Persistenta kluster",
             "Enkel uppsättning",
@@ -212,7 +212,7 @@
           "items": [
             "Inferens",
             "Modellhantering",
-            "Dedikerad Inferens",
+            "Dedikerad inferens",
             "Finetuning"
           ]
         },
@@ -222,15 +222,15 @@
         },
         "connectivity": {
           "title": "Nätverk",
-          "items": ["Isolerade Nätverk", "VPN", "Hybridmoln"]
+          "items": ["Isolerade nätverk", "VPN", "Hybridmoln"]
         },
         "management": {
           "title": "Hantering",
           "items": [
-            "Managementkonsoll",
-            "Användar- och Teamhantering",
+            "Managementkonsol",
+            "Användar- och teamhantering",
             "Tjänstehantering",
-            "Resurs- och Kostnadshantering"
+            "Resurs- och kostnadshantering"
           ]
         }
       }
@@ -247,13 +247,13 @@
     }
   },
   "models": {
-    "title": "Våra Modeller",
+    "title": "Modeller",
     "description": "Få tillgång till ett brett urval av kraftfulla öppna modeller för att bygga AI-lösningar.",
-    "requestModel": "Önska en Modell",
+    "requestModel": "Önska en modell",
     "viewAll": "Se alla",
-    "viewDocs": "Se Modelldokumentation",
+    "viewDocs": "Se modelldokumentation",
     "comprehensive": {
-      "title": "Omfattande Modellutbud",
+      "title": "Omfattande modellutbud",
       "point1": "Brett urval av modelltyper inklusive instruct, embedding, re-rerank och moderationsmodeller",
       "point2": "Optimerade för agentbaserade applikationer och komplexa AI-arbetsflöden",
       "point3": "Stöd för flera modaliteter: text, bild, tal-till-text och text-till-tal"
@@ -266,24 +266,24 @@
     },
     "types": {
       "text-generation": "Textgenerering",
-      "speech-to-text": "Tal till Text",
+      "speech-to-text": "Tal till text",
       "image-generation": "Bildgenerering",
       "embedding": "Embedding",
       "rerank": "Rerank"
     },
     "status": {
       "available": "Tillgänglig",
-      "coming-soon": "Kommer Snart"
+      "coming-soon": "Kommer snart"
     }
   },
   "developers": {
     "hero": {
-      "title": "Byggt av Utvecklare för Utvecklare",
+      "title": "Byggt av utvecklare för utvecklare",
       "description": "En enkel och utvecklarvänlig plattform designad för effektivitet, skalbarhet och kontroll"
     },
     "features": {
       "flexibility": {
-        "title": "Full Flexibilitet och Kontroll",
+        "title": "Full flexibilitet och kontroll",
         "description": "Allt du behöver, inget du inte behöver",
         "items": [
           "Enkel användarupplevelse",
@@ -293,7 +293,7 @@
         ]
       },
       "security": {
-        "title": "Inbyggd Säkerhet & Integritet",
+        "title": "Inbyggd säkerhet och integritet",
         "description": "Enterprise-säkerhet som standard",
         "items": [
           "OWASP-standard",
@@ -312,10 +312,10 @@
       }
     },
     "cta": {
-      "title": "Redo att Börja Bygga?",
-      "description": "Gå med och börja bygga framtidens AI med Berget.",
+      "title": "Redo att börja bygga?",
+      "description": "Gå med och börja bygga framtidens AI med Berget AI.",
       "getStarted": "Kom igång",
-      "viewDocs": "Se Dokumentation"
+      "viewDocs": "Se dokumentation"
     }
   },
   "whyBerget": {
@@ -464,11 +464,11 @@
       }
     },
     "getStarted": "Kom igång",
-    "contactSales": "Kontakta Försäljning",
+    "contactSales": "Kontakta försäljning",
     "getStartedlink": "https://console.berget.ai",
     "contactSaleslink": "/contact",
     "moneyBackGuarantee": "30 dagars pengarna-tillbaka-garanti",
-    "compareWithAlternatives": "Jämför med Alternativ",
+    "compareWithAlternatives": "Jämför med alternativ",
     "comparisonTooltip": "Baserat på offentlig prissättning"
   },
   "status": {
@@ -508,7 +508,7 @@
       "title": "Villkor",
       "privacy": "Integritet",
       "dpa": "Personuppgiftsbiträdesavtal",
-      "terms": "Allmäna villkor",
+      "terms": "Allmänna villkor",
       "security": "Responsible Disclosure",
       "acceptableUse": "Användningsvillkor",
       "sla": "SLA"
@@ -550,7 +550,7 @@
         "name": "Schrems kompatibel",
         "description": "Ingen exponering för US Cloud Act",
         "benefits": [
-          "Endast Infrastruktur i EU",
+          "Endast infrastruktur i EU",
           "Ingen US-entitetsinblandning",
           "Du vet alltid var din data är",
           "Juridisk tydlighet"
@@ -575,33 +575,33 @@
       "security": "Enterprise-anpassad säkerhet och övervakning"
     },
     "aiApis": {
-      "title": "AI-APIer & Tjänster",
+      "title": "AI-APIer och tjänster",
       "description": "Anslut till de AI-tjänster eller modeller du behöver",
       "hybridCloud": "Redo för hybridlösningar"
     }
   },
   "whyBergetSection": {
-    "title": "Varför Välja Berget",
+    "title": "Varför välja Berget AI",
     "description": "Byggt för europeiska företag och organisationer som behöver säker, compliant AI-infrastruktur",
     "features": {
       "european": {
-        "title": "Europeisk Innovation & Suveränitet",
-        "description": "Byggt och drivet i Europa, ger företag och företag äkta AI & Data-suveränitet"
+        "title": "Europeisk innovation och suveränitet",
+        "description": "Byggt och drivet i Europa, ger företag äkta AI- och datasuveränitet"
       },
       "security": {
         "title": "Enterprise-anpassad säkerhet",
         "description": "Säkerhet inbyggd i varje lager"
       },
       "alternative": {
-        "title": "Bortom Publika Moln",
+        "title": "Bortom publika moln",
         "description": "Det säkra alternativet när publika moln inte är ett alternativ för känsliga laster"
       },
       "privacy": {
-        "title": "Fullständig Dataintegritet",
+        "title": "Fullständig dataintegritet",
         "description": "Din data lämnar aldrig vår säkra EU-infrastruktur med noll-retention policy"
       }
     },
-    "discoverMore": "Upptäck Mer"
+    "discoverMore": "Upptäck mer"
   },
   "partnerQuotes": {
     "title": "Varför behöver vi Berget?",
@@ -630,7 +630,7 @@
     "description": "Vi bygger Europas mest hållbara AI-infrastruktur. Vårt miljöengagemang är grundläggande för vår verksamhet, inte en eftertanke.",
     "points": [
       {
-        "title": "100% Fossilfri el",
+        "title": "100% fossilfri el",
         "description": "Våra datacenter drivs uteslutande med certifierad fossilfri energi från Sveriges unika energimix av vattenkraft, vindkraft och kärnkraft, samt solceller på taket av våra anläggningar.",
         "stats": "100% fossilfri energi"
       },
@@ -740,7 +740,7 @@
     "title": "Modellbibliotek",
     "intro": "På Berget AI brinner vi för att tillhandahålla de mest kraftfulla öppna modellerna, noggrant utvalda för att möjliggöra för våra kunder att bygga sofistikerade AI-applikationer:",
     "principles": [
-      "Vi tillhandahåller tillgång till de mest kraftfulla öppen spårkmodellerna, så att våra kunder har tillgång till kraftfulla och kostnadseffektiva modeller som krävs för avancerade AI-applikationer.",
+      "Vi tillhandahåller tillgång till de mest kraftfulla öppen språkmodellerna, så att våra kunder har tillgång till kraftfulla och kostnadseffektiva modeller som krävs för avancerade AI-applikationer.",
       "Vi stödjer AI-suveränitet i Europa vill vi särskilt erbjuda modeller som är flerspråkiga och som stödjer europeiska språk och förståelse för våra värderingar.",
       "Vi balanserar prestanda, hastighet och kostnad över olika modeltyper och storlekar, så att du kan hitta den perfekta lösningen för dina behov.",
       "Våra modeller är särskilt utvalda för agentbaserade applikationer på vår plattform."

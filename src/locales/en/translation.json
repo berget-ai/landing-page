@@ -6,8 +6,8 @@
       "part2": ""
     },
     "description": "EU-compliant inference service and AI infrastructure built by developers for developers.",
-    "getStarted": "Get Started",
-    "learnMore": "Learn More"
+    "getStarted": "Get started",
+    "learnMore": "Learn more"
   },
   "about": {
     "hero": {
@@ -16,22 +16,22 @@
     },
     "origin": {
       "title": "Our Story",
-      "description": "We realised that many organisations are held back in their pursuit of AI by a range of obstacles. Some struggle with legal and regulatory challenges, others simply don’t have the skills or capital to train, host and serve their own AI models. Many are reluctant to invest upfront in GPUs or lack access to local language-capable large language models. That’s why we built Berget AI – to unlock the full potential of AI for innovation and growth by championing sovereign, open and sustainable AI.",
+      "description": "We realised that many organisations are held back in their pursuit of AI by a range of obstacles. Some struggle with legal and regulatory challenges, others simply don’t have the skills or capital to train, host and serve their own AI models. Many are reluctant to invest upfront in GPUs or lack access to local language-capable large language models. That’s why we built Berget AI – to unlock the full potential of AI for innovation and growth by championing sovereign, open, and sustainable AI.",
       "nameOrigin": "The name is Swedish for \"mountain\", which we have plenty of in Sweden, many of which host underground Data Centers. So why have your data in the cloud when you can have in \"Berget\"?"
     },
     "values": {
       "title": "Our Values",
       "openSource": {
-        "title": "Open Source & Community",
-        "description": "We are passionate about Open Source and Community Driven Innovation and are true believers that open source is key for safe, transparent and cost efficient AI in the future. History has plenty of examples where a determined community can overcome seemingly impossible obstacles, innovate new tools and create worldwide standards, that are open, interoperable and accessible and affordable for all."
+        "title": "Open source",
+        "description": "We are passionate about Open Source and Community Driven Innovation and are true believers that open source is key for safe, transparent and cost efficient AI in the future. History has plenty of examples where a determined community can overcome seemingly impossible obstacles, innovate new tools and create worldwide standards, that are open, interoperable, accessible, and affordable for all."
       },
       "european": {
-        "title": "European Innovation",
-        "description": "We are passionate about European competitiveness overall, and in particular in the field of AI. Europe needs to have its own AI agenda, innovation system and sovereignty, especially in an increasingly volatile geopolitical context. It needs to be enabled by EU and its members states, and driven by businesses, organisations and communities."
+        "title": "European innovation",
+        "description": "We are passionate about European competitiveness overall, and in particular in the field of AI. Europe needs to have its own AI agenda, innovation system and sovereignty, especially in an increasingly volatile geopolitical context. It needs to be enabled by EU and its members states, and driven by businesses, organisations, and communities."
       },
       "integrity": {
-        "title": "Integrity & Privacy",
-        "description": "We think integrity, data privacy and regulations are good as long as it ensures a level playing field, fosters simplicity over complexity and ensures openness and broad participation. We want to be a key enabler for European organizations and unlock AI innovations in a safe and responsible way."
+        "title": "Integrity and privacy",
+        "description": "We think integrity, data privacy and regulations are good as long as it ensures a level playing field, fosters simplicity over complexity and ensures openness and broad participation. We want to be a key enabler for European organisations and unlock AI innovations in a safe and responsible way."
       }
     },
     "promises": {
@@ -47,13 +47,13 @@
       ]
     },
     "team": {
-      "title": "Our Team",
+      "title": "The team",
       "description": "We are entrepreneurs with decades of experience in technology and AI",
       "members": {
         "christian": {
           "name": "Christian Landgren",
           "role": "Co-founder & CPTO",
-          "bio": "30 years of experience helping organizations with digitalization and AI, passionate about AI and software development, deeply engaged in open source and open innovations, trusted advisor to government and public sector, challenger and technology optimist",
+          "bio": "30 years of experience helping organisations with digitalisation and AI, passionate about AI and software development, deeply engaged in open source and open innovations, trusted advisor to government and public sector, challenger and technology optimist",
           "image": "/team/christian.png"
         },
         "andreas": {
@@ -93,15 +93,15 @@
     "navigation": {
       "products": "Products",
       "whyBerget": "Why Berget",
-      "developers": "For Developers",
+      "developers": "Developers",
       "pricing": "Pricing",
       "api": "API",
       "blog": "Blog",
-      "models": "Our Models"
+      "models": "Models"
     },
     "buttons": {
-      "signIn": "Sign In",
-      "getStarted": "Get Started"
+      "signIn": "Sign in",
+      "getStarted": "Get started"
     },
     "openMenu": "Open navigation menu",
     "closeMenu": "Close navigation menu"
@@ -109,7 +109,7 @@
   "products": {
     "hero": {
       "title": "Inference services and agentic infrastructure in one place",
-      "description": "Sovereign, Open and Sustainable AI – ready to scale.",
+      "description": "Sovereign, open, and sustainable AI – ready to scale",
       "exploreMore": "Learn more"
     },
     "serverless": {
@@ -125,7 +125,7 @@
           ]
         },
         "usage": {
-          "title": "Flexible Usage",
+          "title": "Flexible usage",
           "items": [
             "Pay-as-you-go pricing",
             "Rich selection of models",
@@ -147,24 +147,24 @@
       "description": "Run and scale any model, including your own fine-tuned models on dedicated capacity.",
       "features": {
         "deployment": {
-          "title": "Custom Deployment",
+          "title": "Custom deployment",
           "items": [
-            "Customizable instances",
+            "Customisable instances",
             "High-demand workloads",
             "Dedicated resources"
           ]
         },
         "control": {
-          "title": "Model Control",
+          "title": "Model control",
           "items": [
             "Control and own your models",
             "Models, data and apps in one place"
           ]
         },
         "performance": {
-          "title": "Optimized Performance",
+          "title": "Optimised performance",
           "items": [
-            "Optimize cost and performance",
+            "Optimise cost and performance",
             "Scale as you go",
             "Easy cost management"
           ]
@@ -176,7 +176,7 @@
       "description": "Unlock your developer team with our intuitive platform designed for development and deployment of AI applications.",
       "features": {
         "toolset": {
-          "title": "Full Flexibility and Control",
+          "title": "Full flexibility and control",
           "items": [
             "Powerful dashboard",
             "Resource management",
@@ -184,7 +184,7 @@
           ]
         },
         "services": {
-          "title": "Ready-to-Use Services",
+          "title": "Ready-to-use services",
           "items": [
             "Pre-configured recipes",
             "Most popular AI building tools",
@@ -192,17 +192,17 @@
           ]
         },
         "infrastructure": {
-          "title": "All infra as Code",
+          "title": "All infra as code",
           "items": ["Persistent clusters", "Simple setup", "GitHub integration"]
         }
       }
     },
     "architecture": {
-      "title": "Our solutions",
+      "title": "Solutions",
       "description": "A comprehensive stack designed for enterprise AI development and deployment",
       "layers": {
         "tools": {
-          "title": "Tools & Marketplace",
+          "title": "Tools and marketplace",
           "items": ["Databases", "Vector DB", "DevOps", "Agentic Frameworks"]
         },
         "llm": {
@@ -215,45 +215,45 @@
           ]
         },
         "compute": {
-          "title": "Storage & Compute",
-          "items": ["CPU", "GPU", "Local Storage", "Premium Storage"]
+          "title": "Storage and Compute",
+          "items": ["CPU", "GPU", "Local storage", "Premium storage"]
         },
         "connectivity": {
           "title": "Connectivity",
-          "items": ["Isolated Network", "VPN", "Cloud Connectors"]
+          "items": ["Isolated network", "VPN", "Cloud connectors"]
         },
         "management": {
           "title": "Management",
           "items": [
-            "Management Console",
-            "User & Team Management",
-            "Service Management",
-            "Resource & Cost Management"
+            "Management console",
+            "User and team management",
+            "Service management",
+            "Resource and cost management"
           ]
         }
       }
     },
     "cta": {
-      "title": "Ready to Start Building?",
+      "title": "Ready to start building?",
       "description": "Get started today and discover the benefits of a secure, compliant, and sustainable AI infrastructure.",
       "getStarted": "Sign up!"
     },
     "models": {
-      "title": "Access the Latest and Most Powerful Open LLMs",
+      "title": "Access the latest and most powerful open LLMs",
       "description": "Use our range of models to power your agentic workflows",
-      "requestModel": "Request a Model"
+      "requestModel": "Request a model"
     }
   },
   "models": {
-    "title": "Our Models",
+    "title": "Models",
     "description": "Access a broad selection of powerful open models to build diverse AI solutions.",
-    "requestModel": "Request a Model",
+    "requestModel": "Request a model",
     "viewAll": "View all",
-    "viewDocs": "View Model Documentation",
+    "viewDocs": "View model documentation",
     "comprehensive": {
-      "title": "Comprehensive Model Selection",
+      "title": "Comprehensive model selection",
       "point1": "Broad selection of model types including instruct, re-rerank, and moderation models",
-      "point2": "Optimized for agentic applications and complex AI workflows",
+      "point2": "Optimised for agentic applications and complex AI workflows",
       "point3": "Support for multiple modalities: text, image, speech-to-text, and text-to-speech"
     },
     "table": {
@@ -263,25 +263,25 @@
       "status": "Status"
     },
     "types": {
-      "text-generation": "Text Generation",
-      "speech-to-text": "Speech to Text",
-      "image-generation": "Image Generation",
+      "text-generation": "Text generation",
+      "speech-to-text": "Speech to text",
+      "image-generation": "Image generation",
       "embedding": "Embedding",
       "rerank": "Rerank"
     },
     "status": {
       "available": "Available",
-      "coming-soon": "Coming Soon"
+      "coming-soon": "Coming soon"
     }
   },
   "developers": {
     "hero": {
-      "title": "Built by Developers for Developers",
+      "title": "Built by developers for developers",
       "description": "A flexible and developer-friendly platform designed for efficiency, scalability, and control"
     },
     "features": {
       "flexibility": {
-        "title": "Full Flexibility and Control",
+        "title": "Full flexibility and control",
         "description": "Everything you need, nothing you don't",
         "items": [
           "Simple user experience",
@@ -291,7 +291,7 @@
         ]
       },
       "security": {
-        "title": "Security & Privacy Built In",
+        "title": "Security and privacy built in",
         "description": "Enterprise-grade security by default",
         "items": [
           "OWASP standards compliance",
@@ -301,7 +301,7 @@
         ]
       },
       "resources": {
-        "title": "Resource Control",
+        "title": "Resource control",
         "description": "Complete control over your infrastructure",
         "items": [
           "Infrastructure as code",
@@ -312,10 +312,10 @@
       }
     },
     "cta": {
-      "title": "Ready to Start Building?",
-      "description": "Join other developers building the future of AI with Berget",
-      "getStarted": "Get Started",
-      "viewDocs": "View Documentation"
+      "title": "Ready to start building?",
+      "description": "Join other developers building the future of AI with Berget AI",
+      "getStarted": "Get started",
+      "viewDocs": "View documentation"
     }
   },
   "whyBerget": {
@@ -323,8 +323,8 @@
       "tagline": "No data leaves Sweden",
       "title": "Why Choose Berget AI?",
       "description": "No dependencies, no legal exposure, no data retention",
-      "getStarted": "Get Started",
-      "bookDemo": "Book Demo"
+      "getStarted": "Get started",
+      "bookDemo": "Book demo"
     },
     "benefits": {
       "title": "Benefits of Berget AI",
@@ -333,7 +333,7 @@
         "title": "Sovereign AI",
         "description": "Run models while all data stays within EU borders, our infrastructure is all in Europe, with full compliance with EU regulations.",
         "features": [
-          "Enables AI and Data Sovereignty",
+          "Enables AI and data sovereignty",
           "Aligned with EU regulations",
           "Full control of your data"
         ]
@@ -342,20 +342,20 @@
         "title": "Sustainable AI",
         "description": "Our infrastructure is built with sustainability in focus, from fossil-free electricity to heat recovery and circular hardware.",
         "features": [
-          "100% Fossil-free Energy",
-          "CO₂ Tracking",
-          "Circular Hardware"
+          "100% fossil-free energy",
+          "CO₂ tracking",
+          "Circular hardware"
         ]
       },
       "flexible": {
         "title": "(truly) Open AI",
         "description": "We are champions of open innovation and we host and serve open models. Our services are fully built on open source.",
-        "features": ["Open Models", "Open Source", "Open Innovation"]
+        "features": ["Open models", "Open source", "Open innovation"]
       }
     },
     "features": {
       "european": {
-        "title": "European Innovation and Data Sovereignty",
+        "title": "European innovation and data sovereignty",
         "description": "At Berget AI, we empower European companies to innovate without compromises. We're building a future where Europe leads in secure and ethical AI solutions.",
         "points": [
           "Your data, your models, your infrastructure — all in one secure, compliant place",
@@ -364,7 +364,7 @@
         ]
       },
       "privacy": {
-        "title": "Simple Data Privacy and Compliance",
+        "title": "Simple data privacy and compliance",
         "description": "Navigating data protection laws is complex—we make it simple. Our infrastructure is built to meet the strictest European regulations.",
         "points": [
           "Store your data, host your applications, and run your inference - all in one place!",
@@ -373,7 +373,7 @@
         ]
       },
       "alternative": {
-        "title": "Alternative to On-Prem and Public Cloud",
+        "title": "Alternative to on-prem and public cloud",
         "description": "When public cloud isn't an option, Berget AI is your secure and scalable alternative. We combine the benefits of cloud services and on-premises solutions.",
         "points": [
           "Perfect for companies with sensitive data that can't be stored on public cloud infrastructure",
@@ -382,7 +382,7 @@
         ]
       },
       "security": {
-        "title": "Built-in Security and Privacy",
+        "title": "Built-in security and privacy",
         "description": "Our infrastructure is designed to protect your data at every step. We've built security from the ground up, not as an afterthought.",
         "points": [
           "Developed with OWASP standards to ensure highest level security",
@@ -392,26 +392,26 @@
       }
     },
     "cta": {
-      "title": "Ready to Build with Berget AI?",
+      "title": "Ready to build with Berget AI?",
       "description": "No up front investments, no hidden costs, no lock-ins.",
-      "createAccount": "Create Account",
-      "contactSales": "Contact Us"
+      "createAccount": "Create account",
+      "contactSales": "Contact us"
     }
   },
   "pricing": {
-    "title": "Simple, Transparent Pricing",
+    "title": "Simple, transparent pricing",
     "description": "Pay for exactly what you use. Choose a plan that fits your needs, and scale up as your usage grows.",
     "moneyBackDescription": "The above price plans include pre-paid compute and tokens at a discount compared to list price. Any usage above the included amount is charged on top, and any remaining balance is rolled over to the next month.",
     "moneyBackBullets": [
       "Credit Card pre-payment for all plans",
-      "Invoice and Peppol avaibale for Enterprise customers",
+      "Invoice and Peppol available for Enterprise customers",
       "Automatic top-up of wallet at a set threshold"
     ],
     "moneyBackNote": "Prices above are for monthly pre-payments",
     "section": {
-      "title": "Plans for Every Need",
+      "title": "Plans for every need",
       "description": "Choose the plan that works best for you",
-      "viewPricing": "View Full Pricing"
+      "viewPricing": "View full pricing"
     },
     "tiers": {
       "payg": {
@@ -443,7 +443,7 @@
         "price": "€50 / month",
         "features": [
           "55€ monthly wallet refill",
-          "10% Extra Credits",
+          "10% extra credits",
           "Priority support",
           "Best value for money"
         ]
@@ -454,28 +454,28 @@
         "price": "€500 / month",
         "features": [
           "550€ monthly wallet refill",
-          "+10% Extra Credits",
+          "+10% extra credits",
           "No rate limits",
           "Dedicated support"
         ]
       }
     },
-    "getStarted": "Get Started",
-    "contactSales": "Contact Sales",
+    "getStarted": "Get started",
+    "contactSales": "Contact sales",
     "getStartedlink": "https://console.berget.ai",
     "contactSaleslink": "/contact",
     "moneyBackGuarantee": "30-day money-back guarantee",
-    "detailedPricing": "Detailed Pricing",
+    "detailedPricing": "Detailed pricing",
     "tooltip": "All prices exclude VAT",
-    "compareWithAlternatives": "Compare with Alternatives",
+    "compareWithAlternatives": "Compare with alternatives",
     "comparisonTooltip": "Based on public pricing"
   },
   "status": {
-    "title": "System Status",
-    "critical": "We are having hardware problems with one of our GPU:s, expecting replacement ASAP. Please visit https://berget.ai/status for more information.",
+    "title": "System status",
+    "critical": "We are having hardware problems with one of our GPUs, expecting replacement ASAP. Please visit https://berget.ai/status for more information.",
     "degraded": "Some services are experiencing issues. Please visit https://berget.ai/status for more information.",
     "reportIssues": {
-      "title": "Report Issues or Get Updates",
+      "title": "Report issues or get updates",
       "description": "If you're experiencing problems or need more detailed updates, please visit our <forum>community forum</forum> to report issues and get real-time information."
     }
   },
@@ -527,16 +527,16 @@
     "description": "No dependencies, no legal exposure, no data retention.",
     "regulations": {
       "gdpr": {
-        "name": "GDPR Compliance",
+        "name": "GDPR compliance",
         "description": "Built-in data protection and privacy controls",
         "benefits": [
           "Data stays in EU",
           "Audit trails",
-          "Data minimization by design"
+          "Data minimisation by design"
         ]
       },
       "nis2": {
-        "name": "NIS2 Aligned",
+        "name": "NIS2 aligned",
         "description": "Meeting requirements for critical infrastructure",
         "benefits": [
           "24/7 security monitoring",
@@ -546,7 +546,7 @@
         ]
       },
       "schrems2": {
-        "name": "Limit Schrems II Exposure",
+        "name": "Limit Schrems II exposure",
         "description": "No exposure to US Cloud Act",
         "benefits": [
           "EU-only infrastructure",
@@ -556,25 +556,25 @@
         ]
       }
     },
-    "learnMore": "Learn More About Compliance"
+    "learnMore": "Learn more about compliance"
   },
   "overview": {
     "whatIsGitOps": {
-      "title": "Manage Your Infrastructure with GitOps",
+      "title": "Manage your infrastructure with GitOps",
       "description": "GitOps brings the best practices of software development to infrastructure management. Version control, collaboration, and automated deployments - all through Git."
     },
     "gitRepository": {
-      "title": "Git Repository",
+      "title": "Git repository",
       "description": "Your infrastructure defined as code, version controlled and collaborative",
       "sync": "Automatic sync with your infrastructure"
     },
     "bergetCluster": {
-      "title": "Berget Cluster",
+      "title": "Berget cluster",
       "description": "Secure and scalable Kubernetes cluster for your AI workloads",
       "security": "Enterprise-grade security and monitoring"
     },
     "aiApis": {
-      "title": "AI APIs & Services",
+      "title": "AI APIs and services",
       "description": "Connect to any AI service or model you need",
       "hybridCloud": "Hybrid cloud ready"
     }
@@ -584,23 +584,23 @@
     "description": "No dependencies, no legal exposure, no data retention.",
     "features": {
       "european": {
-        "title": "European Sovereignty",
+        "title": "European sovereignty",
         "description": "Built and operated in Europe, empowering businesses with true digital sovereignty"
       },
       "security": {
-        "title": "Designed for Security",
+        "title": "Designed for security",
         "description": "Security and comprehensive compliance built into every layer"
       },
       "alternative": {
-        "title": "Beyond Public Cloud",
+        "title": "Beyond public cloud",
         "description": "The secure alternative when public cloud isn't an option for sensitive workloads"
       },
       "privacy": {
-        "title": "Complete Data Privacy",
+        "title": "Complete data privacy",
         "description": "Your data never leaves our secure EU infrastructure with zero retention policy"
       }
     },
-    "discoverMore": "Discover More"
+    "discoverMore": "Discover more"
   },
   "partnerQuotes": {
     "title": "Why do we need Berget?",
@@ -624,22 +624,22 @@
     ]
   },
   "SustainabilitySection": {
-    "badge": "Built for sunstainable AI",
+    "badge": "Built for sustainable AI",
     "title": "Our sustainability promise",
     "description": "We are building Europe’s most sustainable AI infrastructure. Our environmental commitment is foundational to our operations, not an afterthought.",
     "points": [
       {
-        "title": "100% Fossil-Free Electricity",
+        "title": "100% fossil-free electricity",
         "description": "Our data centers run exclusively on certified fossil-free energy from Sweden’s unique energy mix of hydropower, wind power, nuclear, and rooftop solar.",
         "stats": "100% fossil-free energy"
       },
       {
-        "title": "Circular Hardware",
+        "title": "Circular hardware",
         "description": "We use circular hardware as much as possible to reduce emissions from production. Our servers have extended lifecycles through certified reuse processes.",
         "stats": "75% hardware CO₂e footprint."
       },
       {
-        "title": "CO₂e Tracking",
+        "title": "CO₂e tracking",
         "description": "Each AI request includes CO₂e emission data per response from our APIs and summaries, helping developers choose the most energy-efficient model.",
         "stats": "Transparent emission tracking"
       }
@@ -647,7 +647,7 @@
   },
   "contact": {
     "hero": {
-      "title": "Contact Us",
+      "title": "Contact us",
       "description": "Have questions about Berget AI? Our team is here to help.",
       "getInTouch": "Get in touch"
     },
@@ -658,11 +658,11 @@
       "namePlaceholder": "Your name",
       "emailPlaceholder": "you@company.com",
       "messagePlaceholder": "Your message...",
-      "submit": "Send Message",
+      "submit": "Send message",
       "sending": "Sending..."
     },
     "team": {
-      "title": "Leadership Team",
+      "title": "Leadership team",
       "cpto": "Co-founder & CPTO",
       "ceo": "Co-founder & CEO",
       "emailCpto": "christian@berget.ai",
@@ -679,13 +679,13 @@
   },
   "DevelopersPage": {
     "hero": {
-      "title": "Inference and AI Infrastructure for Developers and DevOps Teams",
+      "title": "Inference and AI infrastructure for developers and DevOps teams",
       "description": "Run your AI models and applications in a secure, EU-based environment with full control over your code and data."
     },
     "sections": [
       {
         "icon": "github",
-        "title": "GitOps-Based Infrastructure",
+        "title": "GitOps-based infrastructure",
         "description": "Skip complex Terraform scripts and the AWS console. Define your infrastructure using simple YAML files in your Git repo.",
         "bullets": [
           "Automatic sync – changes in your repo are automatically applied to your infrastructure",
@@ -696,7 +696,7 @@
       },
       {
         "icon": "lock",
-        "title": "OpenAI-Compatible API",
+        "title": "OpenAI-compatible API",
         "description": "Use the same code and libraries you're already using with OpenAI, but with full control over your data.",
         "bullets": [
           "Minimal code change – just switch your API key and endpoint to migrate from OpenAI",
@@ -707,7 +707,7 @@
       },
       {
         "icon": "server",
-        "title": "Kubernetes Without the Complexity",
+        "title": "Kubernetes without the complexity",
         "description": "Get the benefits of Kubernetes without having to manage the infrastructure yourself.",
         "bullets": [
           "Preconfigured clusters – get started in minutes instead of days",
@@ -718,25 +718,25 @@
       },
       {
         "icon": "database",
-        "title": "Developer Tools That Simplify",
+        "title": "Developer tools that simplify",
         "description": "Tools to help you build, test, and deploy your AI applications faster.",
         "bullets": [
           "CLI tools – manage your resources directly from the terminal",
           "Logging and monitoring – built-in integration with Prometheus and Grafana",
-          "Cost tracking – see exactly what costs and optimize your resources",
+          "Cost tracking – see exactly what costs and optimise your resources",
           "Developer environments – preconfigured environments for rapid development"
         ]
       }
     ],
     "cta": {
-      "title": "Ready to Start Building?",
+      "title": "Ready to start building?",
       "description": "Get started in under 5 minutes with our CLI tool and build your first AI application.",
-      "signup": "Create Account",
-      "docs": "Read the Documentation"
+      "signup": "Create account",
+      "docs": "Read the documentation"
     }
   },
   "modelPage": {
-    "title": "Model Library",
+    "title": "Model library",
     "intro": "At Berget AI, we're committed to providing the most powerful open models available, carefully selected to enable our customers to build and deploy sophisticated AI applications. Our model library is designed with the following principles in mind:",
     "principles": [
       "We provide access to the most powerful open source models, ensuring you have the power, speed and cost-efficiency needed for advanced AI development.",
@@ -755,7 +755,7 @@
     "noModels": "No models found matching your filter criteria.",
     "models": {
       "llama_1b": "Compact instruction-tuned language model for high speed and low cost...",
-      "llama_3b": "Instruction-tuned variant of Llama 3 optimized for task completion...",
+      "llama_3b": "Instruction-tuned variant of Llama 3 optimised for task completion...",
       "llama_8b": "Mid-sized instruction-tuned language model with balanced performance...",
       "gemma_12b": "Advanced language model with strong reasoning capabilities...",
       "gemma_27b": "Advanced language model with strong performance across various tasks.",
@@ -764,21 +764,21 @@
       "deepseek_r1": "The premier Open Source Reasoning model...",
       "e5_large": "Large multilingual embedding model based on E5 Mistral 7B...",
       "e5_small": "Compact but powerful text embedding model...",
-      "sd_xl": "High-performance image generation model optimized for AMD hardware.",
+      "sd_xl": "High-performance image generation model optimised for AMD hardware.",
       "flux_1": "Fast and efficient image generation model...",
       "flux_1_dev": "Developer-focused variant of Flux.1...",
       "llama_guard": "Advanced content moderation model for detecting...",
-      "shieldgemma": "Specialized model for content moderation...",
+      "shieldgemma": "Specialised model for content moderation...",
       "qwen_vl_72b": "Large-scale vision-language model with advanced multimodal capabilities...",
-      "qwen_vl_7b": "Efficient vision-language model optimized for real-time applications.",
+      "qwen_vl_7b": "Efficient vision-language model optimised for real-time applications.",
       "rerank_base": "Reranking model for search result optimization...",
       "bge_reranker": "Lightweight reranker model, possesses strong multilingual capabilities.",
       "whisper_large": "Large speech recognition and transcription model...",
-      "kb_whisper": "Customized Whisper model optimized for Swedish language...",
-      "whisper_turbo": "Optimized version of Whisper with improved speed and efficiency.",
-      "kokoro": "Lightweight text-to-speech model optimized for efficiency.",
+      "kb_whisper": "Customised Whisper model optimised for Swedish language...",
+      "whisper_turbo": "Optimised version of Whisper with improved speed and efficiency.",
+      "kokoro": "Lightweight text-to-speech model optimised for efficiency.",
       "csm_1b": "Compact text-to-speech model with specialized capabilities.",
-      "qwen_coder": "Specialized model for code generation and software development.",
+      "qwen_coder": "Specialised model for code generation and software development.",
       "deepcoder": "Preview version of advanced code generation model."
     }
   },
@@ -786,37 +786,37 @@
     "title": "Serverless Inference",
     "intro": "Access our comprehensive selection of AI models through our OpenAI compliant API. Pay only for what you use with no upfront commitments.",
     "text": {
-      "title": "Text Generation Models",
+      "title": "Text generation models",
       "description": "High-performance language models for text generation, chat, and completion tasks"
     },
     "multimodal": {
-      "title": "Multimodal Models",
+      "title": "Multimodal models",
       "description": "Models that let you use both text and images as input to build powerful applications"
     },
     "rerank": {
-      "title": "Rerank Models",
+      "title": "Rerank models",
       "description": "Improve search quality by reranking results based on semantic relevance"
     },
     "embedding": {
-      "title": "Embedding Models",
+      "title": "Embedding models",
       "description": "Create vector embeddings for semantic search and RAG applications"
     },
     "moderation": {
-      "title": "Moderation Models",
+      "title": "Moderation models",
       "description": "Detect potentially harmful language and keep your applications safe"
     },
     "stt": {
-      "title": "Speech-to-Text Models",
+      "title": "Speech-to-text models",
       "description": "Convert between speech and text with high accuracy",
       "note": "Prices are per 1000 minutes of voice input. Billed on per second intervals."
     },
     "tts": {
-      "title": "Text-to-Speech Models",
+      "title": "Text-to-speech models",
       "description": "Add a voice to your agents for convincing and seamless interaction",
       "note": "Prices are per million input characters"
     },
     "image": {
-      "title": "Image Models",
+      "title": "Image models",
       "description": "Generate and manipulate images with state-of-the-art models",
       "note": "SDXL standard is 30 steps per image. Flux.1 [schnell] standard is 4 steps per image. Flux.1 Dev is 28 steps per image"
     },
@@ -827,17 +827,17 @@
     "title": "Switch between English and Swedish"
   },
   "notFound": {
-    "title": "Page Not Found",
+    "title": "Page not found",
     "description": "The page you are looking for could not be found",
-    "heading": "Page Not Found",
+    "heading": "Page not found",
     "message": "Sorry, we could not find the page you are looking for. It may have been moved or does not exist.",
     "buttons": {
-      "home": "Go Home",
-      "products": "Browse Products",
-      "contact": "Contact Us"
+      "home": "Go home",
+      "products": "Browse products",
+      "contact": "Contact us"
     },
     "help": {
-      "title": "Need Help?",
+      "title": "Need help?",
       "description": "If you believe this is an error or need assistance, please contact our support team."
     }
   }
